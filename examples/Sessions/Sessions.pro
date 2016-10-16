@@ -6,14 +6,14 @@
 
 QT       += core network xml
 
-TARGET = ShowFile
+TARGET = Sessions
 CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 
-SOURCES += showfile.cpp \     
+SOURCES += sessions.cpp \
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
@@ -40,7 +40,9 @@ SOURCES += showfile.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
     cwf/sessionidgenerator.cpp \
-    servlets/showfileservlet.cpp
+    servlets/loginservlet.cpp \
+    servlets/indexservlet.cpp \
+    entities/user.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -71,7 +73,9 @@ HEADERS += \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
     cwf/sessionidgenerator.h \
-    servlets/showfileservlet.h
+    servlets/loginservlet.h \
+    servlets/indexservlet.h \
+    entities/user.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -81,4 +85,5 @@ OTHER_FILES += \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \
-    server/pages/showfile.xhtml
+    server/pages/index.xhtml \
+    server/pages/login.xhtml

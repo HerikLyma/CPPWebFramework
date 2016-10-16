@@ -79,3 +79,6 @@ OTHER_FILES += \
     server/config/CPPWeb.ini \
     server/log/CPPWebServer.log \
     server/config/log/CPPWebServer.log
+
+DISTFILES += \
+    server/pages/savefiles.xhtml
