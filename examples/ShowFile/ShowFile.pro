@@ -6,15 +6,14 @@
 
 QT       += core network xml
 
-TARGET = HelloWorld
+TARGET = ShowFile
 CONFIG   += console
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
 
-SOURCES += helloworld.cpp \     
-    servlets/helloworldservlet.cpp \   
+SOURCES += showfile.cpp \     
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
@@ -40,10 +39,10 @@ SOURCES += helloworld.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
-    cwf/sessionidgenerator.cpp
+    cwf/sessionidgenerator.cpp \
+    servlets/showfileservlet.cpp
 
 HEADERS += \    
-    servlets/helloworldservlet.h \    
     cwf/configuration.h \
     cwf/cppwebapplication.h \
     cwf/cppwebserver.h \
@@ -71,7 +70,8 @@ HEADERS += \
     cwf/qlistobject.h \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
-    cwf/sessionidgenerator.h
+    cwf/sessionidgenerator.h \
+    servlets/showfileservlet.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
