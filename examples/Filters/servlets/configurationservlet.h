@@ -1,19 +1,19 @@
 /**
-  @file indexservlet.h
+  @file configurationservlet.h
   @author Herik Lima
 */
 
-#ifndef INDEXSERVLET_H
-#define INDEXSERVLET_H
+#ifndef CONFIGURATIONSERVLET_H
+#define CONFIGURATIONSERVLET_H
 
 #include "cwf/httpservlet.h"
 #include "cwf/httpservletrequest.h"
 #include "cwf/httpservletresponse.h"
 
-class IndexServlet : public CWF::HttpServlet
+class ConfigurationServlet : public CWF::HttpServlet
 {
 public:
     void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response);
 };
 
-#endif // INDEXSERVLET_H
+#endif // CONFIGURATIONSERVLET_H

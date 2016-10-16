@@ -1,20 +1,21 @@
 /**
-  @file savefilesservlet.h
+  @file loginservlet.h
   @author Herik Lima
 */
 
-#ifndef SAVEFILESSERVLET_H
-#define SAVEFILESSERVLET_H
+#ifndef LOGINSERVLET_H
+#define LOGINSERVLET_H
 
 #include "cwf/httpservlet.h"
 #include "cwf/httpservletrequest.h"
 #include "cwf/httpservletresponse.h"
+#include "entities/user.h"
 
-class SaveFilesServlet : public CWF::HttpServlet
+class LoginServlet : public CWF::HttpServlet
 {
 public:
     void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response);
     void doPost(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response);
 };
 
-#endif // SAVEFILESSERVLET_H
+#endif // LOGINSERVLET_H

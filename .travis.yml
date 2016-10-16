@@ -39,3 +39,8 @@ script:
   - cd Sessions
   - /opt/qt55/bin/qmake Sessions.pro
   - make
+
+  - cd ..
+  - cd Filters
+  - /opt/qt55/bin/qmake Filters.pro
+  - make
