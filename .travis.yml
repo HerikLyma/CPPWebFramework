@@ -19,3 +19,7 @@ script:
   - cd CPPWebFramework
   - /opt/qt55/bin/qmake CPPWebFramework.pro
   - make
+  - cd ..
+  - cd examples/HelloWorld
+  - /opt/qt55/bin/qmake HelloWorld.pro
+  - make
