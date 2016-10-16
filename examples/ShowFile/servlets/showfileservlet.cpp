@@ -19,8 +19,8 @@ void ShowFileServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletR
         for(auto it = files.begin(); it != files.end(); ++it)
         {
             QString fileName = it.key();
-            QString extention = CWF::FileManager().fileExtention(fileName);
-            extention = extention.toLower();
+            QString extention = CWF::FileManager().fileExtention(fileName).toLower();
+
             if(extention == "png" || extention == "gif" || extention == "bmp")
                 response.addHeader("Content-Type", ("image/" + extention.toLatin1()));
             else if(extention == "jpe" || extention == "jpg")
