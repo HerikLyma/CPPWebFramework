@@ -23,3 +23,7 @@ script:
   - cd examples/HelloWorld
   - /opt/qt55/bin/qmake HelloWorld.pro
   - make
+  - cd ..
+  - cd SaveFiles
+  - /opt/qt55/bin/qmake SaveFiles.pro
+  - make
