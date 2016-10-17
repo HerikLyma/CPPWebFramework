@@ -1,6 +1,6 @@
 /**
   @file httpcookie.h
-  @author Foi utilizado o HttpCookie de Stefan Frings, com pequenas alterações
+  @author Stefan Frings
 */
 
 #ifndef HTTPCOOKIE_H
@@ -11,6 +11,9 @@
 
 namespace CWF
 {
+    /**
+     * @brief This class represents a HTTP Cookie.
+     */
     class HttpCookie
     {
         QByteArray name;
@@ -19,13 +22,13 @@ namespace CWF
         QByteArray domain;        
         QByteArray path;        
         int maxAge  = 0;
-        int version = 0;
+        int version = 1;
         bool secure = false;
     public:
         /**
          * @brief This is the cookie's default constructor.
          */
-        HttpCookie();
+        HttpCookie() = default;
 
         /**
          * @brief This is an overloaded constructor that receives a cookie's name and value.

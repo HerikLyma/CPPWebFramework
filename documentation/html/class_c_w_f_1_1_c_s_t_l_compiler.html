@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -73,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,16 +95,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library).  
+ <a href="class_c_w_f_1_1_c_s_t_l_compiler.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="cstlcompiler_8h_source.html">cstlcompiler.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a58e8247e5bd5b41a175aee75b9ddf6fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html#a58e8247e5bd5b41a175aee75b9ddf6fc">CSTLCompiler</a> (const QByteArray &amp;str, QMap&lt; QString, QObject * &gt; &amp;objects, bool isStrFileName=true)</td></tr>
+<tr class="memdesc:a58e8247e5bd5b41a175aee75b9ddf6fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the str, objects and isStrFileName properties.  <a href="#a58e8247e5bd5b41a175aee75b9ddf6fc">More...</a><br /></td></tr>
 <tr class="separator:a58e8247e5bd5b41a175aee75b9ddf6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa28ba20afd8d5ff643a773d7fa5c0b54"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html#aa28ba20afd8d5ff643a773d7fa5c0b54">output</a> ()</td></tr>
+<tr class="memdesc:aa28ba20afd8d5ff643a773d7fa5c0b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the compiled xhtml page.  <a href="#aa28ba20afd8d5ff643a773d7fa5c0b54">More...</a><br /></td></tr>
 <tr class="separator:aa28ba20afd8d5ff643a773d7fa5c0b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a58e8247e5bd5b41a175aee75b9ddf6fc"></a>
 <div class="memitem">
 <div class="memproto">
@@ -136,6 +142,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialize the str, objects and isStrFileName properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QByteArray &amp;str : If isStrFileName is true, it should be a file name, else, it should be the file content. </td></tr>
+    <tr><td class="paramname">QMap&lt;QString,QObject</td><td>*&gt; &amp;objects : Container objects that can be compiled into the xhtml page. </td></tr>
+    <tr><td class="paramname">bool</td><td>isStrFileName : It indicates whether str is the name of a file or its contents. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -152,6 +168,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the compiled xhtml page. </p>
+<dl class="section return"><dt>Returns</dt><dd>QByteArray : Compiled page. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -161,7 +180,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

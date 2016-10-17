@@ -12,7 +12,7 @@ namespace CWF
 {
     class CSTLCompilerObject : public QObject
     {
-    Q_OBJECT
+        Q_OBJECT
         QString value;
         QString type;
     public:

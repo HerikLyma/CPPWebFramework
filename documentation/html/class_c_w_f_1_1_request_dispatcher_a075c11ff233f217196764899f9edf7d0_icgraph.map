@@ -1,6 +1,0 @@
-<map id="CWF::RequestDispatcher::forward" name="CWF::RequestDispatcher::forward">
-<area shape="rect" id="node2" href="$class_c_w_f_1_1_cpp_web_servlet.html#abccb89389697d9c6837e589cf7af02b6" title="This is an virtual method that can be overloaded to attend the get request method. " alt="" coords="237,5,391,47"/>
-<area shape="rect" id="node3" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="227,71,401,98"/>
-<area shape="rect" id="node4" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="449,46,591,73"/>
-<area shape="rect" id="node5" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="639,71,831,98"/>
-</map>

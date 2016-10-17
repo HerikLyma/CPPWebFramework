@@ -1,5 +1,0 @@
-<map id="CWF::HttpRequestMethod::getDelete" name="CWF::HttpRequestMethod::getDelete">
-<area shape="rect" id="node2" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="232,31,407,57"/>
-<area shape="rect" id="node3" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="455,5,596,32"/>
-<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="644,31,836,57"/>
-</map>

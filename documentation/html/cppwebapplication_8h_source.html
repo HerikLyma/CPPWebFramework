@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,45 +89,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="cppwebapplication_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef CPPWEBAPPLICATION_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define CPPWEBAPPLICATION_H</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QMessageLogContext&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cppwebserver_8h.html">cppwebserver.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_w_f.html">CWF</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_cpp_web_application.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_cpp_web_application.html">CppWebApplication</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        QCoreApplication application;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_server.html">CppWebServer</a>     *server;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> configureLog(QtMsgType type, <span class="keyword">const</span> QMessageLogContext &amp;logContext, <span class="keyword">const</span> QString &amp;msg);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a7852928699b0de956fa8f6267fef311c">CppWebApplication</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keyword">const</span> <a class="code" href="class_c_w_f_1_1_configuration.html">Configuration</a> &amp;config, <a class="code" href="class_c_w_f_1_1_filter.html">Filter</a> *filter = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a29277658a0564c06e2b4116d1527513c">~CppWebApplication</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#ac9e3224ae26dea5fc61328ae8c49f22d">addUrlServlet</a>(<span class="keyword">const</span> QString &amp;url, <a class="code" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> *servlet);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a859f3b5472685da6b2722f9e44b2a2f9">start</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif // CPPWEBAPPLICATION_H</span></div>
-<div class="ttc" id="class_c_w_f_1_1_http_servlet_html"><div class="ttname"><a href="class_c_w_f_1_1_http_servlet.html">CWF::HttpServlet</a></div><div class="ttdef"><b>Definition:</b> httpservlet.h:24</div></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef CPPWEBAPPLICATION_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define CPPWEBAPPLICATION_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;QMessageLogContext&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="cppwebserver_8h.html">cppwebserver.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_w_f.html">CWF</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_cpp_web_application.html">   27</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_cpp_web_application.html">CppWebApplication</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        QCoreApplication application;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_server.html">CppWebServer</a>     *server;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> writeLog(QtMsgType type, <span class="keyword">const</span> QMessageLogContext &amp;logContext, <span class="keyword">const</span> QString &amp;msg);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a7852928699b0de956fa8f6267fef311c">CppWebApplication</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[], <span class="keyword">const</span> <a class="code" href="class_c_w_f_1_1_configuration.html">Configuration</a> &amp;config, <a class="code" href="class_c_w_f_1_1_filter.html">Filter</a> *filter = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a29277658a0564c06e2b4116d1527513c">~CppWebApplication</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#ac9e3224ae26dea5fc61328ae8c49f22d">addUrlServlet</a>(<span class="keyword">const</span> QString &amp;url, <a class="code" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> *servlet);        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_c_w_f_1_1_cpp_web_application.html#a859f3b5472685da6b2722f9e44b2a2f9">start</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif // CPPWEBAPPLICATION_H</span></div>
+<div class="ttc" id="class_c_w_f_1_1_http_servlet_html"><div class="ttname"><a href="class_c_w_f_1_1_http_servlet.html">CWF::HttpServlet</a></div><div class="ttdoc">The HttpServlet class is responsable to attend a request from a specific url. You will need to create...</div><div class="ttdef"><b>Definition:</b> httpservlet.h:24</div></div>
 <div class="ttc" id="class_c_w_f_1_1_filter_html"><div class="ttname"><a href="class_c_w_f_1_1_filter.html">CWF::Filter</a></div><div class="ttdoc">The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...</div><div class="ttdef"><b>Definition:</b> filter.h:22</div></div>
-<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">The HttpServlet class is responsable to attend a request from a specific url. You will need to create...</div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
+<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
 <div class="ttc" id="cppwebserver_8h_html"><div class="ttname"><a href="cppwebserver_8h.html">cppwebserver.h</a></div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_ac9e3224ae26dea5fc61328ae8c49f22d"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#ac9e3224ae26dea5fc61328ae8c49f22d">CWF::CppWebApplication::addUrlServlet</a></div><div class="ttdeci">void addUrlServlet(const QString &amp;url, HttpServlet *servlet)</div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:37</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a859f3b5472685da6b2722f9e44b2a2f9"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a859f3b5472685da6b2722f9e44b2a2f9">CWF::CppWebApplication::start</a></div><div class="ttdeci">int start()</div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:42</div></div>
-<div class="ttc" id="class_c_w_f_1_1_configuration_html"><div class="ttname"><a href="class_c_w_f_1_1_configuration.html">CWF::Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.h:17</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a29277658a0564c06e2b4116d1527513c"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a29277658a0564c06e2b4116d1527513c">CWF::CppWebApplication::~CppWebApplication</a></div><div class="ttdeci">~CppWebApplication()</div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:31</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_ac9e3224ae26dea5fc61328ae8c49f22d"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#ac9e3224ae26dea5fc61328ae8c49f22d">CWF::CppWebApplication::addUrlServlet</a></div><div class="ttdeci">void addUrlServlet(const QString &amp;url, HttpServlet *servlet)</div><div class="ttdoc">Hitches a url to a Servlet. </div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:37</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a859f3b5472685da6b2722f9e44b2a2f9"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a859f3b5472685da6b2722f9e44b2a2f9">CWF::CppWebApplication::start</a></div><div class="ttdeci">int start()</div><div class="ttdoc">Starts the server and QCoreApplication. </div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:42</div></div>
+<div class="ttc" id="class_c_w_f_1_1_configuration_html"><div class="ttname"><a href="class_c_w_f_1_1_configuration.html">CWF::Configuration</a></div><div class="ttdoc">This class is responsable to read a ini file and extract its information. </div><div class="ttdef"><b>Definition:</b> configuration.h:23</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a29277658a0564c06e2b4116d1527513c"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a29277658a0564c06e2b4116d1527513c">CWF::CppWebApplication::~CppWebApplication</a></div><div class="ttdeci">~CppWebApplication()</div><div class="ttdoc">Destroys the server dynamically allocated. </div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:31</div></div>
 <div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html">CWF::CppWebServer</a></div><div class="ttdoc">The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. </div><div class="ttdef"><b>Definition:</b> cppwebserver.h:32</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a7852928699b0de956fa8f6267fef311c"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a7852928699b0de956fa8f6267fef311c">CWF::CppWebApplication::CppWebApplication</a></div><div class="ttdeci">CppWebApplication(int argc, char *argv[], const Configuration &amp;config, Filter *filter=nullptr)</div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:13</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html">CWF::CppWebApplication</a></div><div class="ttdef"><b>Definition:</b> cppwebapplication.h:16</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html_a7852928699b0de956fa8f6267fef311c"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html#a7852928699b0de956fa8f6267fef311c">CWF::CppWebApplication::CppWebApplication</a></div><div class="ttdeci">CppWebApplication(int argc, char *argv[], const Configuration &amp;config, Filter *filter=nullptr)</div><div class="ttdoc">Constructs a QCoreApplication, a CppWebServer and install the message handler. </div><div class="ttdef"><b>Definition:</b> cppwebapplication.cpp:13</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_application_html"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_application.html">CWF::CppWebApplication</a></div><div class="ttdoc">This class is responsible for encapsulating the QCoreApplication, the CppWebServer and configure the ...</div><div class="ttdef"><b>Definition:</b> cppwebapplication.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

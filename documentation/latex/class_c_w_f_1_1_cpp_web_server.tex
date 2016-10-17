@@ -20,26 +20,15 @@ Inheritance diagram for C\+W\+F\+:\+:Cpp\+Web\+Server\+:
 \includegraphics[width=193pt]{class_c_w_f_1_1_cpp_web_server__inherit__graph}
 \end{center}
 \end{figure}
-
-
-Collaboration diagram for C\+W\+F\+:\+:Cpp\+Web\+Server\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=193pt]{class_c_w_f_1_1_cpp_web_server__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_w_f_1_1_cpp_web_server_ae462074ec43b8fc04d3239cde4b7f602}{Cpp\+Web\+Server} (\hyperlink{class_c_w_f_1_1_filter}{Filter} $\ast$filter=nullptr)
-\begin{DoxyCompactList}\small\item\em This is a constructor and receives the max thread number, a \hyperlink{class_c_w_f_1_1_filter}{Filter}, apath, a domain, the time out in milliseconds~\newline
- the session expire time, the clean time, and a parent. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Load S\+S\+L configuration, configure the thread pool and the filter. \end{DoxyCompactList}\item 
 \hyperlink{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}{$\sim$\+Cpp\+Web\+Server} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroys all servlets and sessions. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e}{add\+Url\+Servlet} (const Q\+String \&url, \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} $\ast$servlet)
-\begin{DoxyCompactList}\small\item\em add\+Url\+Servlet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Hitches a url to a Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -55,26 +44,11 @@ The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} class is a H\+T
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_c_w_f_1_1_cpp_web_server_ae462074ec43b8fc04d3239cde4b7f602}
 
 
-This is a constructor and receives the max thread number, a \hyperlink{class_c_w_f_1_1_filter}{Filter}, apath, a domain, the time out in milliseconds~\newline
- the session expire time, the clean time, and a parent. 
+Load S\+S\+L configuration, configure the thread pool and the filter. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em max\+Thread} & \\
-\hline
-{\em filter} & \\
-\hline
-{\em path} & \\
-\hline
-{\em domain} & \\
-\hline
-{\em time\+Out\+In\+Ms} & \\
-\hline
-{\em session\+Expiration\+Time} & \\
-\hline
-{\em cleanup\+Interval} & \\
-\hline
-{\em parent} & \\
+{\em \hyperlink{class_c_w_f_1_1_filter}{Filter}} & $\ast$filter \+: Install a filter for requests on the server. Optional. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}{\index{C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}!````~Cpp\+Web\+Server@{$\sim$\+Cpp\+Web\+Server}}
@@ -84,6 +58,10 @@ This is a constructor and receives the max thread number, a \hyperlink{class_c_w
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}
+
+
+Destroys all servlets and sessions. 
+
 
 
 \subsection{Member Function Documentation}
@@ -97,27 +75,15 @@ This is a constructor and receives the max thread number, a \hyperlink{class_c_w
 )}}\label{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e}
 
 
-add\+Url\+Servlet 
+Hitches a url to a Servlet. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em url} & \\
+{\em const} & Q\+String \&url \+: Url name. \\
 \hline
-{\em servlet} & \\
+{\em \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet}} & $\ast$servlet \+: Servlet that will answer requests made to url. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph}
-\end{center}
-\end{figure}
-
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

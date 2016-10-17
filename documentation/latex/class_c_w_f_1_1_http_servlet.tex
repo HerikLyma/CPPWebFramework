@@ -3,6 +3,11 @@
 }
 
 
+The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet.  
+
+
+
+
 {\ttfamily \#include $<$httpservlet.\+h$>$}
 
 
@@ -33,6 +38,9 @@ virtual void \hyperlink{class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718b
 virtual void \hyperlink{class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367}{do\+Trace} (\hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response} \&resp)
 \begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the trace request method. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_c_w_f_1_1_http_servlet_a62a6b834356c237ad9787d838d0b8776}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!````~Http\+Servlet@{$\sim$\+Http\+Servlet}}
@@ -68,18 +76,6 @@ This is an virtual method that can be overloaded to attend the delete request me
 {\em resp} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_a10f9bd01fac297a92c39e4eb3ca652fe_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!do\+Get@{do\+Get}}
 \index{do\+Get@{do\+Get}!C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}}
 \subsubsection[{do\+Get}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Servlet\+::do\+Get (
@@ -101,19 +97,7 @@ This is an virtual method that can be overloaded to attend the get request metho
 \end{DoxyParams}
 
 
-Reimplemented in \hyperlink{class_c_w_f_1_1_cpp_web_servlet_abccb89389697d9c6837e589cf7af02b6}{C\+W\+F\+::\+Cpp\+Web\+Servlet}.
-
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20_icgraph}
-\end{center}
-\end{figure}
-
+Reimplemented in \hyperlink{class_c_w_f_1_1_cpp_web_servlet_a0dca0ce47c2c1d8ecd8d8493773575f8}{C\+W\+F\+::\+Cpp\+Web\+Servlet}.
 
 \hypertarget{class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!do\+Options@{do\+Options}}
 \index{do\+Options@{do\+Options}!C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}}
@@ -134,18 +118,6 @@ This is an virtual method that can be overloaded to attend the options request m
 {\em resp} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!do\+Post@{do\+Post}}
 \index{do\+Post@{do\+Post}!C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}}
 \subsubsection[{do\+Post}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Servlet\+::do\+Post (
@@ -165,18 +137,6 @@ This is an virtual method that can be overloaded to attend the post request meth
 {\em resp} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!do\+Put@{do\+Put}}
 \index{do\+Put@{do\+Put}!C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}}
 \subsubsection[{do\+Put}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Servlet\+::do\+Put (
@@ -196,18 +156,6 @@ This is an virtual method that can be overloaded to attend the put request metho
 {\em resp} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367}{\index{C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}!do\+Trace@{do\+Trace}}
 \index{do\+Trace@{do\+Trace}!C\+W\+F\+::\+Http\+Servlet@{C\+W\+F\+::\+Http\+Servlet}}
 \subsubsection[{do\+Trace}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Servlet\+::do\+Trace (
@@ -227,18 +175,6 @@ This is an virtual method that can be overloaded to attend the trace request met
 {\em resp} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367_icgraph}
-\end{center}
-\end{figure}
-
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

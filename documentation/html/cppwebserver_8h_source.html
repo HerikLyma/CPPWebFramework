@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -124,38 +123,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        QSslConfiguration *sslConfiguration = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> sleepTime = 10;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span> block = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> loadSslConfiguration();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#ae462074ec43b8fc04d3239cde4b7f602">CppWebServer</a>(<a class="code" href="class_c_w_f_1_1_filter.html">Filter</a> *filter = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd">~CppWebServer</a>();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#a8acbe56b5d63ded67879f4ed31170c2e">addUrlServlet</a>(<span class="keyword">const</span> QString &amp;url, <a class="code" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> *servlet);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">void</span> incomingConnection(qintptr socketfd);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> doClean();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif // CPPWEBSERVER_H</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> loadSslConfiguration();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#ae462074ec43b8fc04d3239cde4b7f602">CppWebServer</a>(<a class="code" href="class_c_w_f_1_1_filter.html">Filter</a> *filter = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd">~CppWebServer</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_cpp_web_server.html#a8acbe56b5d63ded67879f4ed31170c2e">addUrlServlet</a>(<span class="keyword">const</span> QString &amp;url, <a class="code" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> *servlet);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">void</span> incomingConnection(qintptr socketfd) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> doClean();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    };</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // CPPWEBSERVER_H</span></div>
 <div class="ttc" id="httpservletresponse_8h_html"><div class="ttname"><a href="httpservletresponse_8h.html">httpservletresponse.h</a></div></div>
 <div class="ttc" id="filter_8h_html"><div class="ttname"><a href="filter_8h.html">filter.h</a></div></div>
-<div class="ttc" id="class_c_w_f_1_1_http_servlet_html"><div class="ttname"><a href="class_c_w_f_1_1_http_servlet.html">CWF::HttpServlet</a></div><div class="ttdef"><b>Definition:</b> httpservlet.h:24</div></div>
+<div class="ttc" id="class_c_w_f_1_1_http_servlet_html"><div class="ttname"><a href="class_c_w_f_1_1_http_servlet.html">CWF::HttpServlet</a></div><div class="ttdoc">The HttpServlet class is responsable to attend a request from a specific url. You will need to create...</div><div class="ttdef"><b>Definition:</b> httpservlet.h:24</div></div>
 <div class="ttc" id="class_c_w_f_1_1_filter_html"><div class="ttname"><a href="class_c_w_f_1_1_filter.html">CWF::Filter</a></div><div class="ttdoc">The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...</div><div class="ttdef"><b>Definition:</b> filter.h:22</div></div>
-<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">The HttpServlet class is responsable to attend a request from a specific url. You will need to create...</div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_ab00bb24440420f41b7328a47def0c0cd"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd">CWF::CppWebServer::~CppWebServer</a></div><div class="ttdeci">~CppWebServer()</div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:27</div></div>
+<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_ab00bb24440420f41b7328a47def0c0cd"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd">CWF::CppWebServer::~CppWebServer</a></div><div class="ttdeci">~CppWebServer()</div><div class="ttdoc">Destroys all servlets and sessions. </div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:27</div></div>
 <div class="ttc" id="httpservletrequest_8h_html"><div class="ttname"><a href="httpservletrequest_8h.html">httpservletrequest.h</a></div></div>
 <div class="ttc" id="qmapthreadsafety_8h_html"><div class="ttname"><a href="qmapthreadsafety_8h.html">qmapthreadsafety.h</a></div></div>
 <div class="ttc" id="configuration_8h_html"><div class="ttname"><a href="configuration_8h.html">configuration.h</a></div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_ae462074ec43b8fc04d3239cde4b7f602"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#ae462074ec43b8fc04d3239cde4b7f602">CWF::CppWebServer::CppWebServer</a></div><div class="ttdeci">CppWebServer(Filter *filter=nullptr)</div><div class="ttdoc">This is a constructor and receives the max thread number, a Filter, apath, a domain, the time out in milliseconds  the session expire time, the clean time, and a parent. </div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:13</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_ae462074ec43b8fc04d3239cde4b7f602"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#ae462074ec43b8fc04d3239cde4b7f602">CWF::CppWebServer::CppWebServer</a></div><div class="ttdeci">CppWebServer(Filter *filter=nullptr)</div><div class="ttdoc">Load SSL configuration, configure the thread pool and the filter. </div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:13</div></div>
 <div class="ttc" id="httpsession_8h_html"><div class="ttname"><a href="httpsession_8h.html">httpsession.h</a></div></div>
 <div class="ttc" id="httpservlet_8h_html"><div class="ttname"><a href="httpservlet_8h.html">httpservlet.h</a></div></div>
 <div class="ttc" id="httpreadrequest_8h_html"><div class="ttname"><a href="httpreadrequest_8h.html">httpreadrequest.h</a></div></div>
 <div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html">CWF::CppWebServer</a></div><div class="ttdoc">The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. </div><div class="ttdef"><b>Definition:</b> cppwebserver.h:32</div></div>
-<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_a8acbe56b5d63ded67879f4ed31170c2e"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#a8acbe56b5d63ded67879f4ed31170c2e">CWF::CppWebServer::addUrlServlet</a></div><div class="ttdeci">void addUrlServlet(const QString &amp;url, HttpServlet *servlet)</div><div class="ttdoc">addUrlServlet </div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:55</div></div>
+<div class="ttc" id="class_c_w_f_1_1_cpp_web_server_html_a8acbe56b5d63ded67879f4ed31170c2e"><div class="ttname"><a href="class_c_w_f_1_1_cpp_web_server.html#a8acbe56b5d63ded67879f4ed31170c2e">CWF::CppWebServer::addUrlServlet</a></div><div class="ttdeci">void addUrlServlet(const QString &amp;url, HttpServlet *servlet)</div><div class="ttdoc">Hitches a url to a Servlet. </div><div class="ttdef"><b>Definition:</b> cppwebserver.cpp:55</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_map_thread_safety_html"><div class="ttname"><a href="class_c_w_f_1_1_q_map_thread_safety.html">CWF::QMapThreadSafety</a></div><div class="ttdoc">The QMapThreadSafety class is a thread safe map. </div><div class="ttdef"><b>Definition:</b> qmapthreadsafety.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

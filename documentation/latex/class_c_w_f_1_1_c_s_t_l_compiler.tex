@@ -3,16 +3,24 @@
 }
 
 
+This class compiles xhtml pages with C\+S\+T\+L (C++ Server Pages Standard Tags Library).  
+
+
+
+
 {\ttfamily \#include $<$cstlcompiler.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_a58e8247e5bd5b41a175aee75b9ddf6fc}{C\+S\+T\+L\+Compiler} (const Q\+Byte\+Array \&str, Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ \&objects, bool is\+Str\+File\+Name=true)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the str, objects and is\+Str\+File\+Name properties. \end{DoxyCompactList}\item 
 Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_aa28ba20afd8d5ff643a773d7fa5c0b54}{output} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the compiled xhtml page. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class compiles xhtml pages with C\+S\+T\+L (C++ Server Pages Standard Tags Library). 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_c_w_f_1_1_c_s_t_l_compiler_a58e8247e5bd5b41a175aee75b9ddf6fc}{\index{C\+W\+F\+::\+C\+S\+T\+L\+Compiler@{C\+W\+F\+::\+C\+S\+T\+L\+Compiler}!C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
@@ -26,6 +34,19 @@ Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_aa28ba20afd8d5ff643a7
 )}}\label{class_c_w_f_1_1_c_s_t_l_compiler_a58e8247e5bd5b41a175aee75b9ddf6fc}
 
 
+Initialize the str, objects and is\+Str\+File\+Name properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Byte\+Array \&str \+: If is\+Str\+File\+Name is true, it should be a file name, else, it should be the file content. \\
+\hline
+{\em Q\+Map$<$\+Q\+String,Q\+Object} & $\ast$$>$ \&objects \+: Container objects that can be compiled into the xhtml page. \\
+\hline
+{\em bool} & is\+Str\+File\+Name \+: It indicates whether str is the name of a file or its contents. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_c_w_f_1_1_c_s_t_l_compiler_aa28ba20afd8d5ff643a773d7fa5c0b54}{\index{C\+W\+F\+::\+C\+S\+T\+L\+Compiler@{C\+W\+F\+::\+C\+S\+T\+L\+Compiler}!output@{output}}
 \index{output@{output}!C\+W\+F\+::\+C\+S\+T\+L\+Compiler@{C\+W\+F\+::\+C\+S\+T\+L\+Compiler}}
@@ -34,6 +55,13 @@ Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_aa28ba20afd8d5ff643a7
 {}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_c_s_t_l_compiler_aa28ba20afd8d5ff643a773d7fa5c0b54}
+
+
+Returns the compiled xhtml page. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array \+: Compiled page. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 
 #include <QCoreApplication>
 #include <servlets/helloworldservlet.h>
-#include "cwf/cppwebapplication.h"
+#include <cwf/cppwebapplication.h>
 
 int main(int argc, char *argv[])
 {        

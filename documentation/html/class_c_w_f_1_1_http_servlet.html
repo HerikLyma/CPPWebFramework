@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -73,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,13 +95,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> class is responsable to attend a request from a specific url. You will need to create a derived class from <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the ConfigureCppWebServer using the method addUrlServlet.  
+ <a href="class_c_w_f_1_1_http_servlet.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="httpservlet_8h_source.html">httpservlet.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CWF::HttpServlet:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_w_f_1_1_http_servlet__inherit__graph.png" border="0" usemap="#_c_w_f_1_1_http_servlet_inherit__map" alt="Inheritance graph"/></div>
 <map name="_c_w_f_1_1_http_servlet_inherit__map" id="_c_w_f_1_1_http_servlet_inherit__map">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_cpp_web_servlet.html" title="CWF::CppWebServlet" alt="" coords="5,80,159,107"/></map>
+<area shape="rect" id="node2" href="class_c_w_f_1_1_cpp_web_servlet.html" title="This class is responsible for displaying the standard pages of C++ Web Framework: index..." alt="" coords="5,80,159,107"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -129,7 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaa4d7914915bdbf290245365dba85367"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an virtual method that can be overloaded to attend the trace request method.  <a href="#aaa4d7914915bdbf290245365dba85367">More...</a><br /></td></tr>
 <tr class="separator:aaa4d7914915bdbf290245365dba85367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> class is responsable to attend a request from a specific url. You will need to create a derived class from <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the ConfigureCppWebServer using the method addUrlServlet. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a62a6b834356c237ad9787d838d0b8776"></a>
 <div class="memitem">
 <div class="memproto">
@@ -197,15 +201,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_a10f9bd01fac297a92c39e4eb3ca652fe_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_a10f9bd01fac297a92c39e4eb3ca652fe_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_a10f9bd01fac297a92c39e4eb3ca652fe_icgraph" id="class_c_w_f_1_1_http_servlet_a10f9bd01fac297a92c39e4eb3ca652fe_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="240,31,415,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="463,5,604,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="652,31,844,57"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="ad05501d3611f28b20d2c045515119f20"></a>
@@ -249,16 +244,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_c_w_f_1_1_cpp_web_servlet.html#abccb89389697d9c6837e589cf7af02b6">CWF::CppWebServlet</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20_icgraph" id="class_c_w_f_1_1_http_servlet_ad05501d3611f28b20d2c045515119f20_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="224,31,399,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="447,5,588,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="636,31,828,57"/></map>
-</div>
-</p>
+<p>Reimplemented in <a class="el" href="class_c_w_f_1_1_cpp_web_servlet.html#a0dca0ce47c2c1d8ecd8d8493773575f8">CWF::CppWebServlet</a>.</p>
 
 </div>
 </div>
@@ -303,15 +289,6 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91_icgraph" id="class_c_w_f_1_1_http_servlet_afa172deaf51e527c474ccdd093075e91_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="248,31,423,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="471,5,612,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="660,31,852,57"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a65ddc8bb71865d748c1b1b3303e593b3"></a>
@@ -354,15 +331,6 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3_icgraph" id="class_c_w_f_1_1_http_servlet_a65ddc8bb71865d748c1b1b3303e593b3_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="229,31,404,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="452,5,593,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="641,31,833,57"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -407,15 +375,6 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f_icgraph" id="class_c_w_f_1_1_http_servlet_a847d042eaebf7fbe02a0ab718bdded0f_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="223,31,397,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="445,5,587,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="635,31,827,57"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="aaa4d7914915bdbf290245365dba85367"></a>
@@ -459,15 +418,6 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367_icgraph.png" border="0" usemap="#class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367_icgraph" id="class_c_w_f_1_1_http_servlet_aaa4d7914915bdbf290245365dba85367_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="236,31,411,57"/><area shape="rect" id="node3" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="459,5,600,32"/><area shape="rect" id="node4" href="class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="648,31,840,57"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -477,7 +427,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

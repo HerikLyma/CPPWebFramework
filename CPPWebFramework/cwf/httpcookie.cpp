@@ -1,19 +1,12 @@
 /**
   @file httpcookie.cpp
-  @author Foi utilizado o HttpCookie de Stefan Frings, com pequenas alterações
+  @author Stefan Frings
 */
 
 #include "httpcookie.h"
 
 namespace CWF
 {
-    HttpCookie::HttpCookie()
-    {
-        version=1;
-        maxAge=0;
-        secure=false;
-    }
-
     HttpCookie::HttpCookie(const QByteArray &name, const QByteArray &value)
     {
         this->name = name;

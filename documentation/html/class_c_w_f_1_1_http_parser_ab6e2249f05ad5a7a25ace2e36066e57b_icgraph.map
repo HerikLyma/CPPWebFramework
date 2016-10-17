@@ -1,9 +1,0 @@
-<map id="CWF::HttpParser::getUrl" name="CWF::HttpParser::getUrl">
-<area shape="rect" id="node2" href="$class_c_w_f_1_1_http_servlet_request.html#a9408f2866aa0fc49242e74b85a514869" title="This method returns the requested url. " alt="" coords="220,27,396,68"/>
-<area shape="rect" id="node7" href="$class_c_w_f_1_1_http_servlet_request.html#ade6b21cdd789a5892e472915ede386fd" title="This method returns the requested url. " alt="" coords="220,92,396,133"/>
-<area shape="rect" id="node8" href="$class_c_w_f_1_1_session_id_generator.html#a8aada44d07a73e07c4172725519c64f9" title="This method process some informations of httpParser and generates a session id. " alt="" coords="667,151,843,192"/>
-<area shape="rect" id="node3" href="$class_c_w_f_1_1_cpp_web_servlet.html#abccb89389697d9c6837e589cf7af02b6" title="This is an virtual method that can be overloaded to attend the get request method. " alt="" coords="455,5,608,47"/>
-<area shape="rect" id="node4" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="444,71,619,98"/>
-<area shape="rect" id="node5" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="684,49,825,75"/>
-<area shape="rect" id="node6" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="891,99,1083,126"/>
-</map>

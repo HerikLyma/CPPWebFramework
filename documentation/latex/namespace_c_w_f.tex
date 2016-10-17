@@ -3,24 +3,24 @@
 }
 
 
-The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet.  
+All classes of C++ Web Framework are contained within the namespace \hyperlink{namespace_c_w_f}{C\+W\+F}.  
 
 
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{class_c_w_f_1_1_configuration}{Configuration}
-\item 
+\begin{DoxyCompactList}\small\item\em This class is responsable to read a ini file and extract its information. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_cpp_web_application}{Cpp\+Web\+Application}
-\item 
+\begin{DoxyCompactList}\small\item\em This class is responsible for encapsulating the Q\+Core\+Application, the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} and configure the server logging mechanism. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} class is a H\+T\+T\+P server, responsable to receive and dispatch the requisitions. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_cpp_web_servlet}{Cpp\+Web\+Servlet}
-\item 
+\begin{DoxyCompactList}\small\item\em This class is responsible for displaying the standard pages of C++ Web Framework\+: index, examples, documentation, ssl and authors. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler}
-\item 
+\begin{DoxyCompactList}\small\item\em This class compiles xhtml pages with C\+S\+T\+L (C++ Server Pages Standard Tags Library). \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_attributes}{C\+S\+T\+L\+Compiler\+Attributes}
-\item 
+\begin{DoxyCompactList}\small\item\em This class search for expressions(\#\{obj.\+get\}) and compiles it. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_for}{C\+S\+T\+L\+Compiler\+For}
 \item 
 class \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler_if}{C\+S\+T\+L\+Compiler\+If}
@@ -36,7 +36,7 @@ class \hyperlink{class_c_w_f_1_1_filter_chain}{Filter\+Chain}
 class \hyperlink{class_c_w_f_1_1_for_attributes}{For\+Attributes}
 \begin{DoxyCompactList}\small\item\em The For\+A\+T\+T\+R\+I\+B\+U\+T\+E class is an auxiliar class to the \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler}. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_http_cookie}{Http\+Cookie}
-\item 
+\begin{DoxyCompactList}\small\item\em This class represents a H\+T\+T\+P Cookie. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_http_parser}{Http\+Parser}
 \item 
 class \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request}
@@ -45,7 +45,7 @@ class \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request}
 class \hyperlink{class_c_w_f_1_1_http_request_method}{Http\+Request\+Method}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_request_method}{Http\+Request\+Method} class holds fixed strings that represents request methods. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet}
-\item 
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request} class holds all information about a http request. \end{DoxyCompactList}\item 
 class \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}
@@ -74,7 +74,7 @@ class \hyperlink{class_c_w_f_1_1_session_id_generator}{Session\+Id\+Generator}
 
 
 \subsection{Detailed Description}
-The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. 
+All classes of C++ Web Framework are contained within the namespace \hyperlink{namespace_c_w_f}{C\+W\+F}. 
 
 \subsection{Variable Documentation}
 \hypertarget{namespace_c_w_f_a2f275195c5c69646f7df4e917febe552}{\index{C\+W\+F@{C\+W\+F}!configuration@{configuration}}

@@ -1,6 +1,0 @@
-<map id="CWF::HttpServletResponse::write" name="CWF::HttpServletResponse::write">
-<area shape="rect" id="node2" href="$class_c_w_f_1_1_http_servlet_response.html#acfe923500ad8cee08c5acf6767e571bc" title="CWF::HttpServletResponse\l::flushBuffer" alt="" coords="240,35,427,76"/>
-<area shape="rect" id="node3" href="$class_c_w_f_1_1_http_servlet_response.html#a6a377703f21bb5578d5103acb2e397d1" title="CWF::HttpServletResponse\l::writeHeaders" alt="" coords="475,5,661,47"/>
-<area shape="rect" id="node5" href="$class_c_w_f_1_1_http_servlet_response.html#a1e6bf9efa60fa22dd2b058b69bd735c9" title="CWF::HttpServletResponse\l::writeToSocket" alt="" coords="718,64,905,105"/>
-<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_cookie.html#a84c6628ab6c1955fe784bfbe6e66ca7e" title="CWF::HttpCookie::toByteArray" alt="" coords="709,13,913,39"/>
-</map>

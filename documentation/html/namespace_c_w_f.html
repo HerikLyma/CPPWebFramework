@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,23 +89,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> class is responsable to attend a request from a specific url. You will need to create a derived class from <a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the ConfigureCppWebServer using the method addUrlServlet.  
+<p>All classes of C++ Web Framework are contained within the namespace <a class="el" href="namespace_c_w_f.html" title="All classes of C++ Web Framework are contained within the namespace CWF. ">CWF</a>.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_configuration.html">Configuration</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is responsable to read a ini file and extract its information.  <a href="class_c_w_f_1_1_configuration.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_application.html">CppWebApplication</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is responsible for encapsulating the QCoreApplication, the <a class="el" href="class_c_w_f_1_1_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> and configure the server logging mechanism.  <a href="class_c_w_f_1_1_cpp_web_application.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_server.html">CppWebServer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> class is a HTTP server, responsable to receive and dispatch the requisitions.  <a href="class_c_w_f_1_1_cpp_web_server.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_servlet.html">CppWebServlet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is responsible for displaying the standard pages of C++ Web Framework: index, examples, documentation, ssl and authors.  <a href="class_c_w_f_1_1_cpp_web_servlet.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html">CSTLCompiler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library).  <a href="class_c_w_f_1_1_c_s_t_l_compiler.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler_attributes.html">CSTLCompilerAttributes</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class search for expressions(#{obj.get}) and compiles it.  <a href="class_c_w_f_1_1_c_s_t_l_compiler_attributes.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler_for.html">CSTLCompilerFor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,9 +128,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a> class is responsable to dispatch a requisition. This class was built to work with <a class="el" href="class_c_w_f_1_1_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. Always when a <a class="el" href="class_c_w_f_1_1_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a> makes all the necessary validations, it can dispatches the requisition to the <a class="el" href="class_c_w_f_1_1_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a>. NOTE: It is a final class, you can't derive from it.  <a href="class_c_w_f_1_1_filter_chain.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_for_attributes.html">ForAttributes</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ForATTRIBUTE class is an auxiliar class to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html">CSTLCompiler</a>.  <a href="class_c_w_f_1_1_for_attributes.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ForATTRIBUTE class is an auxiliar class to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>.  <a href="class_c_w_f_1_1_for_attributes.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_cookie.html">HttpCookie</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class represents a HTTP Cookie.  <a href="class_c_w_f_1_1_http_cookie.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +143,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_http_request_method.html" title="The HttpRequestMethod class holds fixed strings that represents request methods. ">HttpRequestMethod</a> class holds fixed strings that represents request methods.  <a href="class_c_w_f_1_1_http_request_method.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> class is responsable to attend a request from a specific url. You will need to create a derived class from <a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a> and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the ConfigureCppWebServer using the method addUrlServlet.  <a href="class_c_w_f_1_1_http_servlet.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html">HttpServletRequest</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">HttpServletRequest</a> class holds all information about a http request.  <a href="class_c_w_f_1_1_http_servlet_request.html#details">More...</a><br /></td></tr>
@@ -153,7 +159,7 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html">MetaClassParser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_properties.html">Properties</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_properties.html" title="The Properties class is an auxiliar class to the CSTLCompiler. ">Properties</a> class is an auxiliar class to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html">CSTLCompiler</a>.  <a href="class_c_w_f_1_1_properties.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_properties.html" title="The Properties class is an auxiliar class to the CSTLCompiler. ">Properties</a> class is an auxiliar class to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>.  <a href="class_c_w_f_1_1_properties.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_q_list_object.html">QListObject</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="class_c_w_f_1_1_q_list_object.html" title="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...">QListObject</a> class is used to pass a list of object to a xhtml page. NOTE: Always when you need to pass a list of object to a xhtml page you will need to use this class, your class need to inherit from the QObject class and all the methods needs to be in the public slots session.  <a href="class_c_w_f_1_1_q_list_object.html#details">More...</a><br /></td></tr>
@@ -174,7 +180,7 @@ Variables</h2></td></tr>
 <tr class="separator:a2f275195c5c69646f7df4e917febe552"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> class is responsable to attend a request from a specific url. You will need to create a derived class from <a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the ConfigureCppWebServer using the method addUrlServlet. </p>
+<div class="textblock"><p>All classes of C++ Web Framework are contained within the namespace <a class="el" href="namespace_c_w_f.html" title="All classes of C++ Web Framework are contained within the namespace CWF. ">CWF</a>. </p>
 </div><h2 class="groupheader">Variable Documentation</h2>
 <a class="anchor" id="a2f275195c5c69646f7df4e917febe552"></a>
 <div class="memitem">
@@ -191,7 +197,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

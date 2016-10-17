@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -73,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,24 +106,17 @@ Inheritance diagram for CWF::CppWebServer:</div>
 <map name="_c_w_f_1_1_cpp_web_server_inherit__map" id="_c_w_f_1_1_cpp_web_server_inherit__map">
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for CWF::CppWebServer:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_cpp_web_server__coll__graph.png" border="0" usemap="#_c_w_f_1_1_cpp_web_server_coll__map" alt="Collaboration graph"/></div>
-<map name="_c_w_f_1_1_cpp_web_server_coll__map" id="_c_w_f_1_1_cpp_web_server_coll__map">
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae462074ec43b8fc04d3239cde4b7f602"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_server.html#ae462074ec43b8fc04d3239cde4b7f602">CppWebServer</a> (<a class="el" href="class_c_w_f_1_1_filter.html">Filter</a> *filter=nullptr)</td></tr>
-<tr class="memdesc:ae462074ec43b8fc04d3239cde4b7f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a constructor and receives the max thread number, a <a class="el" href="class_c_w_f_1_1_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>, apath, a domain, the time out in milliseconds<br />
- the session expire time, the clean time, and a parent.  <a href="#ae462074ec43b8fc04d3239cde4b7f602">More...</a><br /></td></tr>
+<tr class="memdesc:ae462074ec43b8fc04d3239cde4b7f602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load SSL configuration, configure the thread pool and the filter.  <a href="#ae462074ec43b8fc04d3239cde4b7f602">More...</a><br /></td></tr>
 <tr class="separator:ae462074ec43b8fc04d3239cde4b7f602"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab00bb24440420f41b7328a47def0c0cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd">~CppWebServer</a> ()</td></tr>
+<tr class="memdesc:ab00bb24440420f41b7328a47def0c0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all servlets and sessions.  <a href="#ab00bb24440420f41b7328a47def0c0cd">More...</a><br /></td></tr>
 <tr class="separator:ab00bb24440420f41b7328a47def0c0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8acbe56b5d63ded67879f4ed31170c2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_cpp_web_server.html#a8acbe56b5d63ded67879f4ed31170c2e">addUrlServlet</a> (const QString &amp;url, <a class="el" href="class_c_w_f_1_1_http_servlet.html">HttpServlet</a> *servlet)</td></tr>
-<tr class="memdesc:a8acbe56b5d63ded67879f4ed31170c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">addUrlServlet  <a href="#a8acbe56b5d63ded67879f4ed31170c2e">More...</a><br /></td></tr>
+<tr class="memdesc:a8acbe56b5d63ded67879f4ed31170c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a Servlet.  <a href="#a8acbe56b5d63ded67879f4ed31170c2e">More...</a><br /></td></tr>
 <tr class="separator:a8acbe56b5d63ded67879f4ed31170c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -152,18 +144,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This is a constructor and receives the max thread number, a <a class="el" href="class_c_w_f_1_1_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>, apath, a domain, the time out in milliseconds<br />
- the session expire time, the clean time, and a parent. </p>
+<p>Load SSL configuration, configure the thread pool and the filter. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">maxThread</td><td></td></tr>
-    <tr><td class="paramname">filter</td><td></td></tr>
-    <tr><td class="paramname">path</td><td></td></tr>
-    <tr><td class="paramname">domain</td><td></td></tr>
-    <tr><td class="paramname">timeOutInMs</td><td></td></tr>
-    <tr><td class="paramname">sessionExpirationTime</td><td></td></tr>
-    <tr><td class="paramname">cleanupInterval</td><td></td></tr>
-    <tr><td class="paramname">parent</td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="class_c_w_f_1_1_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a></td><td>*filter : Install a filter for requests on the server. Optional. </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,6 +166,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroys all servlets and sessions. </p>
 
 </div>
 </div>
@@ -210,23 +196,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>addUrlServlet </p>
+<p>Hitches a url to a Servlet. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">url</td><td></td></tr>
-    <tr><td class="paramname">servlet</td><td></td></tr>
+    <tr><td class="paramname">const</td><td>QString &amp;url : Url name. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a></td><td>*servlet : Servlet that will answer requests made to url. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph.png" border="0" usemap="#class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph" alt=""/></div>
-<map name="class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph" id="class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph">
-<area shape="rect" id="node2" href="class_c_w_f_1_1_cpp_web_application.html#a7852928699b0de956fa8f6267fef311c" title="CWF::CppWebApplication\l::CppWebApplication" alt="" coords="212,5,388,47"/><area shape="rect" id="node3" href="class_c_w_f_1_1_cpp_web_application.html#ac9e3224ae26dea5fc61328ae8c49f22d" title="CWF::CppWebApplication\l::addUrlServlet" alt="" coords="212,71,388,112"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -237,7 +214,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

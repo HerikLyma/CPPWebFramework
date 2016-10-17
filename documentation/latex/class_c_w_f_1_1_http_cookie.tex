@@ -3,12 +3,17 @@
 }
 
 
+This class represents a H\+T\+T\+P Cookie.  
+
+
+
+
 {\ttfamily \#include $<$httpcookie.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_c_w_f_1_1_http_cookie_a8d52ec650d065ef3a9b25d9a52d51f5d}{Http\+Cookie} ()
+\hyperlink{class_c_w_f_1_1_http_cookie_a36fafa10bc6c2580acf0b11f007b11ae}{Http\+Cookie} ()=default
 \begin{DoxyCompactList}\small\item\em This is the cookie's default constructor. \end{DoxyCompactList}\item 
 \hyperlink{class_c_w_f_1_1_http_cookie_a2429ad80884ddb6712a9f1fa98e03eac}{Http\+Cookie} (const Q\+Byte\+Array \&name, const Q\+Byte\+Array \&value)
 \begin{DoxyCompactList}\small\item\em This is an overloaded constructor that receives a cookie's name and value. \end{DoxyCompactList}\item 
@@ -55,14 +60,17 @@ static Q\+List$<$ Q\+Byte\+Array $>$ \hyperlink{class_c_w_f_1_1_http_cookie_a480
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+This class represents a H\+T\+T\+P Cookie. 
+
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_c_w_f_1_1_http_cookie_a8d52ec650d065ef3a9b25d9a52d51f5d}{\index{C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}!Http\+Cookie@{Http\+Cookie}}
+\hypertarget{class_c_w_f_1_1_http_cookie_a36fafa10bc6c2580acf0b11f007b11ae}{\index{C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}!Http\+Cookie@{Http\+Cookie}}
 \index{Http\+Cookie@{Http\+Cookie}!C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}}
 \subsubsection[{Http\+Cookie}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Http\+Cookie\+::\+Http\+Cookie (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_c_w_f_1_1_http_cookie_a8d52ec650d065ef3a9b25d9a52d51f5d}
+)\hspace{0.3cm}{\ttfamily [default]}}}\label{class_c_w_f_1_1_http_cookie_a36fafa10bc6c2580acf0b11f007b11ae}
 
 
 This is the cookie's default constructor. 
@@ -111,18 +119,6 @@ Create a cookie from a string.
 {\em source} & String as received in a H\+T\+T\+P Cookie2 header. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_cookie_aaad501280c779b4601d1de1fc6e78d4e_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 \subsection{Member Function Documentation}
@@ -238,19 +234,7 @@ Set the value of this cookie \hypertarget{class_c_w_f_1_1_http_cookie_a4806d182d
 \item[{const Q\+Byte\+Array}]{source}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_w_f_1_1_http_cookie_a4806d182d52218366eba504d505ec59f}
-Split a string list into parts, where each part is delimited by semicolon. Semicolons within double quotes are skipped. Double quotes are removed. 
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_cookie_a4806d182d52218366eba504d505ec59f_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_c_w_f_1_1_http_cookie_a84c6628ab6c1955fe784bfbe6e66ca7e}{\index{C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}!to\+Byte\+Array@{to\+Byte\+Array}}
+Split a string list into parts, where each part is delimited by semicolon. Semicolons within double quotes are skipped. Double quotes are removed. \hypertarget{class_c_w_f_1_1_http_cookie_a84c6628ab6c1955fe784bfbe6e66ca7e}{\index{C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}!to\+Byte\+Array@{to\+Byte\+Array}}
 \index{to\+Byte\+Array@{to\+Byte\+Array}!C\+W\+F\+::\+Http\+Cookie@{C\+W\+F\+::\+Http\+Cookie}}
 \subsubsection[{to\+Byte\+Array}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Cookie\+::to\+Byte\+Array (
 \begin{DoxyParamCaption}
@@ -258,18 +242,6 @@ Here is the caller graph for this function\+:
 \end{DoxyParamCaption}
 ) const}}\label{class_c_w_f_1_1_http_cookie_a84c6628ab6c1955fe784bfbe6e66ca7e}
 Convert this cookie to a string that may be used in a Set-\/\+Cookie header. 
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_c_w_f_1_1_http_cookie_a84c6628ab6c1955fe784bfbe6e66ca7e_icgraph}
-\end{center}
-\end{figure}
-
-
-
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

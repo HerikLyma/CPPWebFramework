@@ -41,7 +41,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -70,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">CSTLCompilerObject</a> : <span class="keyword">public</span> QObject</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Q_OBJECT</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        QString value;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        QString type;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
@@ -117,13 +116,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a1c20bd083beceaaef00fcaf10f9e061c"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a1c20bd083beceaaef00fcaf10f9e061c">CWF::CSTLCompilerObject::CSTLCompilerObject</a></div><div class="ttdeci">CSTLCompilerObject(QObject *parent=0)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:5</div></div>
 <div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a92137c536b356e4f6eeb76a3c1b65e54"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a92137c536b356e4f6eeb76a3c1b65e54">CWF::CSTLCompilerObject::getValue</a></div><div class="ttdeci">QString getValue() const </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:9</div></div>
 <div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_acf0a476bd687e47edb169c480193654f"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#acf0a476bd687e47edb169c480193654f">CWF::CSTLCompilerObject::setValue</a></div><div class="ttdeci">void setValue(const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:14</div></div>
-<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">The HttpServlet class is responsable to attend a request from a specific url. You will need to create...</div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
+<div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
 <div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a51e99c46daee9cb1f14088d69d2d4e0e"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a51e99c46daee9cb1f14088d69d2d4e0e">CWF::CSTLCompilerObject::setType</a></div><div class="ttdeci">void setType(const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:24</div></div>
 <div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_ac7cd5fe07f3b71e0d4b6342db1a4cd29"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#ac7cd5fe07f3b71e0d4b6342db1a4cd29">CWF::CSTLCompilerObject::getType</a></div><div class="ttdeci">QString getType() const </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 16 2016 23:13:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
