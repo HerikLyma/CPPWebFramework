@@ -1,6 +1,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/HerikLyma/CPPWebFramework.svg)](https://github.com/HerikLyma/CPPWebFramework/issues)
 [![Travis-CI](https://travis-ci.org/HerikLyma/CPPWebFramework.svg?branch=master)](https://travis-ci.org/HerikLyma/CPPWebFramework)
-[![Language (C++)](https://img.shields.io/badge/powered_by-C++-red.svg?style=flat-square)](https://img.shields.io/badge/powered_by-C++-red.svg?style=flat-square)
+[![Language (C++)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)
 
 # C++ Web Framework
 
