@@ -1,0 +1,6 @@
+<map id="CWF::HttpParser::getMethod" name="CWF::HttpParser::getMethod">
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="247,56,421,83"/>
+<area shape="rect" id="node5" href="$class_c_w_f_1_1_session_id_generator.html#a8aada44d07a73e07c4172725519c64f9" title="This method process some informations of httpParser and generates a session id. " alt="" coords="469,107,645,149"/>
+<area shape="rect" id="node3" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="487,5,628,32"/>
+<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="693,56,885,83"/>
+</map>

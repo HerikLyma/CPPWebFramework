@@ -1,0 +1,12 @@
+<map id="CWF::HttpServletResponse::writeToSocket" name="CWF::HttpServletResponse::writeToSocket">
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_http_servlet_response.html#acfe923500ad8cee08c5acf6767e571bc" title="CWF::HttpServletResponse\l::flushBuffer" alt="" coords="475,39,661,80"/>
+<area shape="rect" id="node10" href="$class_c_w_f_1_1_http_servlet_response.html#a218be925792dfe06096d63d05e28edce" title="CWF::HttpServletResponse\l::sendError" alt="" coords="475,117,661,159"/>
+<area shape="rect" id="node11" href="$class_c_w_f_1_1_http_servlet_response.html#a6a377703f21bb5578d5103acb2e397d1" title="CWF::HttpServletResponse\l::writeHeaders" alt="" coords="240,84,427,125"/>
+<area shape="rect" id="node3" href="$class_c_w_f_1_1_http_servlet_response.html#ae4fdbaa3d3edd4234955fadc20cb896c" title="CWF::HttpServletResponse\l::write" alt="" coords="709,39,896,80"/>
+<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_servlet_response.html#a665b695119c30234b2b77665c36e010d" title="CWF::HttpServletResponse\l::sendRedirect" alt="" coords="944,5,1131,47"/>
+<area shape="rect" id="node5" href="$class_c_w_f_1_1_request_dispatcher.html#a075c11ff233f217196764899f9edf7d0" title="This method will dispatch the xhtml file specificated in path to the CSTLCompiler, the CSTLCompiler will compile the xhtml file and returns the result. After this, the RequestDispatcher will take the return and write it on the response. " alt="" coords="951,71,1124,112"/>
+<area shape="rect" id="node6" href="$class_c_w_f_1_1_cpp_web_servlet.html#abccb89389697d9c6837e589cf7af02b6" title="This is an virtual method that can be overloaded to attend the get request method. " alt="" coords="1189,41,1343,83"/>
+<area shape="rect" id="node7" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="1179,107,1353,134"/>
+<area shape="rect" id="node8" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="1401,82,1543,109"/>
+<area shape="rect" id="node9" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="1591,107,1783,134"/>
+</map>

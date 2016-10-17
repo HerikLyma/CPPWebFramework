@@ -1,0 +1,41 @@
+\hypertarget{httpservletrequest_8h}{\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.h File Reference}
+\label{httpservletrequest_8h}\index{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+h@{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+h}}
+}
+{\ttfamily \#include $<$Q\+Thread$>$}\\*
+{\ttfamily \#include $<$Q\+Tcp\+Socket$>$}\\*
+{\ttfamily \#include \char`\"{}httpsession.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}requestdispatcher.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpparser.\+h\char`\"{}}\\*
+Include dependency graph for httpservletrequest.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{httpservletrequest_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{httpservletrequest_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_w_f_1_1_http_servlet_request}{C\+W\+F\+::\+Http\+Servlet\+Request}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request} class holds all information about a http request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_c_w_f}{C\+W\+F}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Herik Lima 
+\end{DoxyAuthor}

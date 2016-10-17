@@ -1,0 +1,91 @@
+\hypertarget{class_c_w_f_1_1_filter}{\section{C\+W\+F\+:\+:Filter Class Reference}
+\label{class_c_w_f_1_1_filter}\index{C\+W\+F\+::\+Filter@{C\+W\+F\+::\+Filter}}
+}
+
+
+The \hyperlink{class_c_w_f_1_1_filter}{Filter} class works like a filter. You can use this class to validate sessions or measuring runtime of a specific method, for example. To use this class, you will need to create a derived class and reconstruct the do\+Filter method, after this, you will need to configure it into the Configure\+Cpp\+Web\+Server, using the set\+Filter method.  
+
+
+
+
+{\ttfamily \#include $<$filter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_c_w_f_1_1_filter_aa0ba072123bbcd95de94ff17d65e35aa}{$\sim$\+Filter} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_c_w_f_1_1_filter_aa66add142c4f09a0b26f8d97a59650ba}{do\+Filter} (\hyperlink{class_c_w_f_1_1_http_servlet_request}{C\+W\+F\+::\+Http\+Servlet\+Request} \&request, \hyperlink{class_c_w_f_1_1_http_servlet_response}{C\+W\+F\+::\+Http\+Servlet\+Response} \&response, \hyperlink{class_c_w_f_1_1_filter_chain}{Filter\+Chain} \&chain)
+\begin{DoxyCompactList}\small\item\em This method will be called always that the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} receives a requisition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_c_w_f_1_1_filter}{Filter} class works like a filter. You can use this class to validate sessions or measuring runtime of a specific method, for example. To use this class, you will need to create a derived class and reconstruct the do\+Filter method, after this, you will need to configure it into the Configure\+Cpp\+Web\+Server, using the set\+Filter method. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_w_f_1_1_filter_aa0ba072123bbcd95de94ff17d65e35aa}{\index{C\+W\+F\+::\+Filter@{C\+W\+F\+::\+Filter}!````~Filter@{$\sim$\+Filter}}
+\index{````~Filter@{$\sim$\+Filter}!C\+W\+F\+::\+Filter@{C\+W\+F\+::\+Filter}}
+\subsubsection[{$\sim$\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Filter\+::$\sim$\+Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_w_f_1_1_filter_aa0ba072123bbcd95de94ff17d65e35aa}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_w_f_1_1_filter_aa66add142c4f09a0b26f8d97a59650ba}{\index{C\+W\+F\+::\+Filter@{C\+W\+F\+::\+Filter}!do\+Filter@{do\+Filter}}
+\index{do\+Filter@{do\+Filter}!C\+W\+F\+::\+Filter@{C\+W\+F\+::\+Filter}}
+\subsubsection[{do\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Filter\+::do\+Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+W\+F\+::\+Http\+Servlet\+Request} \&}]{request, }
+\item[{{\bf C\+W\+F\+::\+Http\+Servlet\+Response} \&}]{response, }
+\item[{{\bf Filter\+Chain} \&}]{chain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_w_f_1_1_filter_aa66add142c4f09a0b26f8d97a59650ba}
+
+
+This method will be called always that the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} receives a requisition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em response} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+{\em chain} & \+: This is a reference to the \hyperlink{class_c_w_f_1_1_filter_chain}{Filter\+Chain}. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_filter_aa66add142c4f09a0b26f8d97a59650ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_filter_aa66add142c4f09a0b26f8d97a59650ba_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{filter_8h}{filter.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{filter_8cpp}{filter.\+cpp}\end{DoxyCompactItemize}

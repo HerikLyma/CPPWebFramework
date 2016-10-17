@@ -1,0 +1,5 @@
+<map id="CWF::HttpParser::getHttpVersion" name="CWF::HttpParser::getHttpVersion">
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_http_servlet_request.html#a487fd95aa9c7f64cfa438097a59a30ca" title="This method returns the http protocol. " alt="" coords="228,5,404,47"/>
+<area shape="rect" id="node3" href="$class_c_w_f_1_1_session_id_generator.html#a8aada44d07a73e07c4172725519c64f9" title="This method process some informations of httpParser and generates a session id. " alt="" coords="228,71,404,112"/>
+<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="452,78,644,105"/>
+</map>

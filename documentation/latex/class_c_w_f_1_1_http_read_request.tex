@@ -1,0 +1,126 @@
+\hypertarget{class_c_w_f_1_1_http_read_request}{\section{C\+W\+F\+:\+:Http\+Read\+Request Class Reference}
+\label{class_c_w_f_1_1_http_read_request}\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}}
+}
+
+
+The \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} class is created automatically by the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} and inserted ~\newline
+ in a Q\+Thread\+Pool, always when the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} has a call by a client(\+Browser).  
+
+
+
+
+{\ttfamily \#include $<$httpreadrequest.\+h$>$}
+
+
+
+Inheritance diagram for C\+W\+F\+:\+:Http\+Read\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_c_w_f_1_1_http_read_request__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+W\+F\+:\+:Http\+Read\+Request\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_c_w_f_1_1_http_read_request__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_w_f_1_1_http_read_request_ade7aa5ac198bb40ce98de9f9ac9ff4d2}{Http\+Read\+Request} (qintptr socket\+Descriptor, \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} $\ast$ $>$ \&url\+Servlet, \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_c_w_f_1_1_http_session}{Http\+Session} $\ast$ $>$ \&sessions, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \hyperlink{class_c_w_f_1_1_filter}{Filter} $\ast$filter)
+\begin{DoxyCompactList}\small\item\em This constructor needs to receive the parent, a socket descriptor, all the mapped servlets, all the sessions,~\newline
+ a filter, the default path to the pages and resources like\+: xhtml pages, images, css...~\newline
+ a domain, and a session expire time to the sessions(optional). \end{DoxyCompactList}\item 
+\hyperlink{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}{$\sim$\+Http\+Read\+Request} ()
+\begin{DoxyCompactList}\small\item\em Starts to read the requisition. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} class is created automatically by the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} and inserted ~\newline
+ in a Q\+Thread\+Pool, always when the \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} has a call by a client(\+Browser). 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_w_f_1_1_http_read_request_ade7aa5ac198bb40ce98de9f9ac9ff4d2}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
+\index{Http\+Read\+Request@{Http\+Read\+Request}!C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}}
+\subsubsection[{Http\+Read\+Request}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Http\+Read\+Request\+::\+Http\+Read\+Request (
+\begin{DoxyParamCaption}
+\item[{qintptr}]{socket\+Descriptor, }
+\item[{{\bf Q\+Map\+Thread\+Safety}$<$ Q\+String, {\bf Http\+Servlet} $\ast$ $>$ \&}]{url\+Servlet, }
+\item[{{\bf Q\+Map\+Thread\+Safety}$<$ Q\+String, {\bf Http\+Session} $\ast$ $>$ \&}]{sessions, }
+\item[{Q\+Ssl\+Configuration $\ast$}]{ssl\+Configuration, }
+\item[{{\bf Filter} $\ast$}]{filter}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_http_read_request_ade7aa5ac198bb40ce98de9f9ac9ff4d2}
+
+
+This constructor needs to receive the parent, a socket descriptor, all the mapped servlets, all the sessions,~\newline
+ a filter, the default path to the pages and resources like\+: xhtml pages, images, css...~\newline
+ a domain, and a session expire time to the sessions(optional). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & \+: This is a pointer to Q\+Object. \\
+\hline
+{\em socket\+Descriptor} & \+: This is a qintptr. \\
+\hline
+{\em url\+Servlet} & \+: This is a reference to a \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}. \\
+\hline
+{\em sessions} & \+: This is a reference to a \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}. \\
+\hline
+{\em filter} & \+: This is a pointer to a \hyperlink{class_c_w_f_1_1_filter}{Filter}. \\
+\hline
+{\em path} & \+: This is a reference to a Q\+String. \\
+\hline
+{\em domain} & \+: This is a reference to a Q\+String. \\
+\hline
+{\em session\+Expiration\+Time} & \+: This is a qint64. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!````~Http\+Read\+Request@{$\sim$\+Http\+Read\+Request}}
+\index{````~Http\+Read\+Request@{$\sim$\+Http\+Read\+Request}!C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}}
+\subsubsection[{$\sim$\+Http\+Read\+Request}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Http\+Read\+Request\+::$\sim$\+Http\+Read\+Request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}
+
+
+Starts to read the requisition. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!run@{run}}
+\index{run@{run}!C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Read\+Request\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpreadrequest_8h}{httpreadrequest.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpreadrequest_8cpp}{httpreadrequest.\+cpp}\end{DoxyCompactItemize}

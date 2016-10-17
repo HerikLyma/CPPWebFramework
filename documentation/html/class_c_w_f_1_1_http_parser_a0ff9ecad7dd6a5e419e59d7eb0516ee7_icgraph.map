@@ -1,0 +1,4 @@
+<map id="CWF::HttpParser::getParameters" name="CWF::HttpParser::getParameters">
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_http_servlet_request.html#a82a05ddb8d91c72a28846ffc0e811ee7" title="CWF::HttpServletRequest\l::fillQObject" alt="" coords="271,5,447,47"/>
+<area shape="rect" id="node3" href="$class_c_w_f_1_1_http_servlet_request.html#afc56e6e1a1d76c727924de6847c4ef27" title="This method returns the parameters from a request given an specific name. " alt="" coords="271,71,447,112"/>
+</map>

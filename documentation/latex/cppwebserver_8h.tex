@@ -1,0 +1,51 @@
+\hypertarget{cppwebserver_8h}{\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/cppwebserver.h File Reference}
+\label{cppwebserver_8h}\index{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/cppwebserver.\+h@{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/cppwebserver.\+h}}
+}
+{\ttfamily \#include $<$Q\+Tcp\+Server$>$}\\*
+{\ttfamily \#include $<$Q\+Ssl\+Key$>$}\\*
+{\ttfamily \#include $<$Q\+Ssl\+Certificate$>$}\\*
+{\ttfamily \#include $<$Q\+Http\+Multi\+Part$>$}\\*
+{\ttfamily \#include $<$Q\+Mutex$>$}\\*
+{\ttfamily \#include $<$Q\+Thread\+Pool$>$}\\*
+{\ttfamily \#include $<$Q\+Timer$>$}\\*
+{\ttfamily \#include $<$atomic$>$}\\*
+{\ttfamily \#include \char`\"{}qmapthreadsafety.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpreadrequest.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpservlet.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpsession.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filter.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpservletrequest.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}httpservletresponse.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}configuration.\+h\char`\"{}}\\*
+Include dependency graph for cppwebserver.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cppwebserver_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cppwebserver_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_w_f_1_1_cpp_web_server}{C\+W\+F\+::\+Cpp\+Web\+Server}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} class is a H\+T\+T\+P server, responsable to receive and dispatch the requisitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_c_w_f}{C\+W\+F}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Herik Lima 
+\end{DoxyAuthor}

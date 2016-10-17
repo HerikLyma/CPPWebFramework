@@ -1,0 +1,126 @@
+\hypertarget{class_c_w_f_1_1_cpp_web_server}{\section{C\+W\+F\+:\+:Cpp\+Web\+Server Class Reference}
+\label{class_c_w_f_1_1_cpp_web_server}\index{C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}}
+}
+
+
+The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} class is a H\+T\+T\+P server, responsable to receive and dispatch the requisitions.  
+
+
+
+
+{\ttfamily \#include $<$cppwebserver.\+h$>$}
+
+
+
+Inheritance diagram for C\+W\+F\+:\+:Cpp\+Web\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_c_w_f_1_1_cpp_web_server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+W\+F\+:\+:Cpp\+Web\+Server\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_c_w_f_1_1_cpp_web_server__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_w_f_1_1_cpp_web_server_ae462074ec43b8fc04d3239cde4b7f602}{Cpp\+Web\+Server} (\hyperlink{class_c_w_f_1_1_filter}{Filter} $\ast$filter=nullptr)
+\begin{DoxyCompactList}\small\item\em This is a constructor and receives the max thread number, a \hyperlink{class_c_w_f_1_1_filter}{Filter}, apath, a domain, the time out in milliseconds~\newline
+ the session expire time, the clean time, and a parent. \end{DoxyCompactList}\item 
+\hyperlink{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}{$\sim$\+Cpp\+Web\+Server} ()
+\item 
+void \hyperlink{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e}{add\+Url\+Servlet} (const Q\+String \&url, \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} $\ast$servlet)
+\begin{DoxyCompactList}\small\item\em add\+Url\+Servlet \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} class is a H\+T\+T\+P server, responsable to receive and dispatch the requisitions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_w_f_1_1_cpp_web_server_ae462074ec43b8fc04d3239cde4b7f602}{\index{C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}}
+\subsubsection[{Cpp\+Web\+Server}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Cpp\+Web\+Server\+::\+Cpp\+Web\+Server (
+\begin{DoxyParamCaption}
+\item[{{\bf Filter} $\ast$}]{filter = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_c_w_f_1_1_cpp_web_server_ae462074ec43b8fc04d3239cde4b7f602}
+
+
+This is a constructor and receives the max thread number, a \hyperlink{class_c_w_f_1_1_filter}{Filter}, apath, a domain, the time out in milliseconds~\newline
+ the session expire time, the clean time, and a parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Thread} & \\
+\hline
+{\em filter} & \\
+\hline
+{\em path} & \\
+\hline
+{\em domain} & \\
+\hline
+{\em time\+Out\+In\+Ms} & \\
+\hline
+{\em session\+Expiration\+Time} & \\
+\hline
+{\em cleanup\+Interval} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}{\index{C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}!````~Cpp\+Web\+Server@{$\sim$\+Cpp\+Web\+Server}}
+\index{````~Cpp\+Web\+Server@{$\sim$\+Cpp\+Web\+Server}!C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}}
+\subsubsection[{$\sim$\+Cpp\+Web\+Server}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Cpp\+Web\+Server\+::$\sim$\+Cpp\+Web\+Server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_cpp_web_server_ab00bb24440420f41b7328a47def0c0cd}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e}{\index{C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}!add\+Url\+Servlet@{add\+Url\+Servlet}}
+\index{add\+Url\+Servlet@{add\+Url\+Servlet}!C\+W\+F\+::\+Cpp\+Web\+Server@{C\+W\+F\+::\+Cpp\+Web\+Server}}
+\subsubsection[{add\+Url\+Servlet}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Cpp\+Web\+Server\+::add\+Url\+Servlet (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{url, }
+\item[{{\bf Http\+Servlet} $\ast$}]{servlet}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e}
+
+
+add\+Url\+Servlet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & \\
+\hline
+{\em servlet} & \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_cpp_web_server_a8acbe56b5d63ded67879f4ed31170c2e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cppwebserver_8h}{cppwebserver.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cppwebserver_8cpp}{cppwebserver.\+cpp}\end{DoxyCompactItemize}

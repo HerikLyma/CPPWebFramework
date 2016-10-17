@@ -1,0 +1,291 @@
+\hypertarget{class_c_w_f_1_1_http_parser}{\section{C\+W\+F\+:\+:Http\+Parser Class Reference}
+\label{class_c_w_f_1_1_http_parser}\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+}
+
+
+{\ttfamily \#include $<$httpparser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_w_f_1_1_http_parser_a622e35e9c7de9a29cfe3a2cf63eccef0}{Http\+Parser} (Q\+Byte\+Array \&http\+Message)
+\item 
+qint64 \hyperlink{class_c_w_f_1_1_http_parser_af6b66138a1afe71e15640d4108d426fc}{get\+Content\+Lenght} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_ae25e55945b9b364a20c9f5d3a8696f15}{get\+Content\+Type} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_af8ceae98ad9e63dd30c56409438f4131}{get\+Http\+Version} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_aef9dffb5672f9db22cf2a590dc641706}{get\+Method} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_a4c3be05ffe5ca08abf2e244e08d3de37}{get\+Body} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_a6067d805528a11425f4b58f81218c17f}{get\+Session\+Id} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_ab6e2249f05ad5a7a25ace2e36066e57b}{get\+Url} () const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_acc4042b879ad71e4c1b82bfb78033a92}{get\+Parameter} (const Q\+Byte\+Array \&name) const 
+\item 
+Q\+Byte\+Array\+List \hyperlink{class_c_w_f_1_1_http_parser_a0ff9ecad7dd6a5e419e59d7eb0516ee7}{get\+Parameters} (const Q\+Byte\+Array \&name) const 
+\item 
+Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_c_w_f_1_1_http_parser_a3991b21e344eac5e60da64a2c1959702}{get\+Parameters} () const 
+\item 
+Q\+Vector$<$ \hyperlink{class_c_w_f_1_1_http_cookie}{Http\+Cookie} $>$ \hyperlink{class_c_w_f_1_1_http_parser_a0643a4a7672347f8185dd5ffd1016944}{get\+Cookies} () const 
+\item 
+Q\+Byte\+Array\+List \hyperlink{class_c_w_f_1_1_http_parser_a62ca43a32ee902e94863e3574eb968cb}{get\+Header\+Fields} (const Q\+Byte\+Array \&header\+Field) const 
+\item 
+Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_parser_ab171d96734fcd84fedc1ddcc57809130}{get\+Header\+Field} (const Q\+Byte\+Array \&header\+Field) const 
+\item 
+bool \hyperlink{class_c_w_f_1_1_http_parser_a389b222c042abe6ce98412d43b6af4c2}{is\+Valid} () const 
+\item 
+bool \hyperlink{class_c_w_f_1_1_http_parser_a25a2d703b1ad5d2e660b63decf05800f}{is\+Multi\+Part} () const 
+\item 
+bool \hyperlink{class_c_w_f_1_1_http_parser_ae448f57d8b83e68f72c208df25fa68c3}{get\+Read\+File} () const 
+\item 
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_c_w_f_1_1_http_parser_a1f1f898cb71d02928d733d04e882a2eb}{get\+Uploaded\+Files} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_c_w_f_1_1_http_parser_a4d54f5003e07e218070a449c22a52c7c}{Http\+Read\+Request}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_c_w_f_1_1_http_parser_a622e35e9c7de9a29cfe3a2cf63eccef0}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!Http\+Parser@{Http\+Parser}}
+\index{Http\+Parser@{Http\+Parser}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{Http\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}C\+W\+F\+::\+Http\+Parser\+::\+Http\+Parser (
+\begin{DoxyParamCaption}
+\item[{Q\+Byte\+Array \&}]{http\+Message}
+\end{DoxyParamCaption}
+)}}\label{class_c_w_f_1_1_http_parser_a622e35e9c7de9a29cfe3a2cf63eccef0}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_c_w_f_1_1_http_parser_a4c3be05ffe5ca08abf2e244e08d3de37}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Body}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a4c3be05ffe5ca08abf2e244e08d3de37}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_a4c3be05ffe5ca08abf2e244e08d3de37_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_af6b66138a1afe71e15640d4108d426fc}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Content\+Lenght@{get\+Content\+Lenght}}
+\index{get\+Content\+Lenght@{get\+Content\+Lenght}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Content\+Lenght}]{\setlength{\rightskip}{0pt plus 5cm}qint64 C\+W\+F\+::\+Http\+Parser\+::get\+Content\+Lenght (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_af6b66138a1afe71e15640d4108d426fc}
+\hypertarget{class_c_w_f_1_1_http_parser_ae25e55945b9b364a20c9f5d3a8696f15}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Content\+Type@{get\+Content\+Type}}
+\index{get\+Content\+Type@{get\+Content\+Type}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Content\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Content\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_ae25e55945b9b364a20c9f5d3a8696f15}
+\hypertarget{class_c_w_f_1_1_http_parser_a0643a4a7672347f8185dd5ffd1016944}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Cookies@{get\+Cookies}}
+\index{get\+Cookies@{get\+Cookies}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Cookies}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Vector$<$ {\bf Http\+Cookie} $>$ C\+W\+F\+::\+Http\+Parser\+::get\+Cookies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a0643a4a7672347f8185dd5ffd1016944}
+\hypertarget{class_c_w_f_1_1_http_parser_ab171d96734fcd84fedc1ddcc57809130}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Header\+Field@{get\+Header\+Field}}
+\index{get\+Header\+Field@{get\+Header\+Field}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Header\+Field}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Header\+Field (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{header\+Field}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_ab171d96734fcd84fedc1ddcc57809130}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_ab171d96734fcd84fedc1ddcc57809130_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_a62ca43a32ee902e94863e3574eb968cb}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Header\+Fields@{get\+Header\+Fields}}
+\index{get\+Header\+Fields@{get\+Header\+Fields}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Header\+Fields}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array\+List C\+W\+F\+::\+Http\+Parser\+::get\+Header\+Fields (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{header\+Field}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a62ca43a32ee902e94863e3574eb968cb}
+\hypertarget{class_c_w_f_1_1_http_parser_af8ceae98ad9e63dd30c56409438f4131}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Http\+Version@{get\+Http\+Version}}
+\index{get\+Http\+Version@{get\+Http\+Version}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Http\+Version}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Http\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_af8ceae98ad9e63dd30c56409438f4131}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_af8ceae98ad9e63dd30c56409438f4131_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_aef9dffb5672f9db22cf2a590dc641706}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Method@{get\+Method}}
+\index{get\+Method@{get\+Method}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Method}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_aef9dffb5672f9db22cf2a590dc641706}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_aef9dffb5672f9db22cf2a590dc641706_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_acc4042b879ad71e4c1b82bfb78033a92}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Parameter@{get\+Parameter}}
+\index{get\+Parameter@{get\+Parameter}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Parameter (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_acc4042b879ad71e4c1b82bfb78033a92}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_acc4042b879ad71e4c1b82bfb78033a92_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_a0ff9ecad7dd6a5e419e59d7eb0516ee7}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Parameters@{get\+Parameters}}
+\index{get\+Parameters@{get\+Parameters}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array\+List C\+W\+F\+::\+Http\+Parser\+::get\+Parameters (
+\begin{DoxyParamCaption}
+\item[{const Q\+Byte\+Array \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a0ff9ecad7dd6a5e419e59d7eb0516ee7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_a0ff9ecad7dd6a5e419e59d7eb0516ee7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_a3991b21e344eac5e60da64a2c1959702}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Parameters@{get\+Parameters}}
+\index{get\+Parameters@{get\+Parameters}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ C\+W\+F\+::\+Http\+Parser\+::get\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a3991b21e344eac5e60da64a2c1959702}
+\hypertarget{class_c_w_f_1_1_http_parser_ae448f57d8b83e68f72c208df25fa68c3}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Read\+File@{get\+Read\+File}}
+\index{get\+Read\+File@{get\+Read\+File}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Read\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+W\+F\+::\+Http\+Parser\+::get\+Read\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_ae448f57d8b83e68f72c208df25fa68c3}
+\hypertarget{class_c_w_f_1_1_http_parser_a6067d805528a11425f4b58f81218c17f}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Session\+Id@{get\+Session\+Id}}
+\index{get\+Session\+Id@{get\+Session\+Id}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Session\+Id}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Session\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a6067d805528a11425f4b58f81218c17f}
+\hypertarget{class_c_w_f_1_1_http_parser_a1f1f898cb71d02928d733d04e882a2eb}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Uploaded\+Files@{get\+Uploaded\+Files}}
+\index{get\+Uploaded\+Files@{get\+Uploaded\+Files}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Uploaded\+Files}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ C\+W\+F\+::\+Http\+Parser\+::get\+Uploaded\+Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a1f1f898cb71d02928d733d04e882a2eb}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_a1f1f898cb71d02928d733d04e882a2eb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_ab6e2249f05ad5a7a25ace2e36066e57b}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!get\+Url@{get\+Url}}
+\index{get\+Url@{get\+Url}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{get\+Url}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Byte\+Array C\+W\+F\+::\+Http\+Parser\+::get\+Url (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_ab6e2249f05ad5a7a25ace2e36066e57b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_w_f_1_1_http_parser_ab6e2249f05ad5a7a25ace2e36066e57b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_c_w_f_1_1_http_parser_a25a2d703b1ad5d2e660b63decf05800f}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!is\+Multi\+Part@{is\+Multi\+Part}}
+\index{is\+Multi\+Part@{is\+Multi\+Part}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{is\+Multi\+Part}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+W\+F\+::\+Http\+Parser\+::is\+Multi\+Part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a25a2d703b1ad5d2e660b63decf05800f}
+\hypertarget{class_c_w_f_1_1_http_parser_a389b222c042abe6ce98412d43b6af4c2}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\+W\+F\+::\+Http\+Parser\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_c_w_f_1_1_http_parser_a389b222c042abe6ce98412d43b6af4c2}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_c_w_f_1_1_http_parser_a4d54f5003e07e218070a449c22a52c7c}{\index{C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}!Http\+Read\+Request@{Http\+Read\+Request}}
+\index{Http\+Read\+Request@{Http\+Read\+Request}!C\+W\+F\+::\+Http\+Parser@{C\+W\+F\+::\+Http\+Parser}}
+\subsubsection[{Http\+Read\+Request}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Http\+Read\+Request}\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_c_w_f_1_1_http_parser_a4d54f5003e07e218070a449c22a52c7c}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpparser_8h}{httpparser.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpparser_8cpp}{httpparser.\+cpp}\end{DoxyCompactItemize}

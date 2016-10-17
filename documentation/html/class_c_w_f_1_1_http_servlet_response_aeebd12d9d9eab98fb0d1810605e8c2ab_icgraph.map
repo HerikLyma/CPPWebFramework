@@ -1,0 +1,6 @@
+<map id="CWF::HttpServletResponse::setStatus" name="CWF::HttpServletResponse::setStatus">
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca" title="This method dispaches a requisition to a HttpServletRequest or, if the requesition is for a file..." alt="" coords="246,31,421,57"/>
+<area shape="rect" id="node5" href="$class_c_w_f_1_1_http_servlet_response.html#a665b695119c30234b2b77665c36e010d" title="CWF::HttpServletResponse\l::sendRedirect" alt="" coords="240,82,427,123"/>
+<area shape="rect" id="node3" href="$class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba" title="This method will be called always that the CppWebServer receives a requisition. " alt="" coords="475,5,616,32"/>
+<area shape="rect" id="node4" href="$class_c_w_f_1_1_http_read_request.html#a45c1183b9857a34d4a53452917f7bcec" title="CWF::HttpReadRequest::run" alt="" coords="664,31,856,57"/>
+</map>
