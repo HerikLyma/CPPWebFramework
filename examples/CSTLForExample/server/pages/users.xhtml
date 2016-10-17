@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<html>
+    <head>
+        <title>Users</title>
+    </head>
+     <body>                                       
+        <table border="1">
+            <tr>
+                <td>
+                    <b>ID</b>
+                </td>
+                <td>
+                    <b>Gender</b>
+                </td>
+                <td>
+                    <b>Name</b>
+                </td>
+                <td>
+                    <b>Address</b>
+                </td>
+            </tr>
+            <for items="users" var="user">
+                <tr>
+                    <td>
+                        <out value="#{user.getId}"/>
+                    </td>
+                    <td>
+                        <out value="#{user.getGender}"/>
+                    </td>
+                    <td>
+                        <out value="#{user.getName}"/>
+                    </td>
+                    <td>
+                        <out value="#{user.getAddress}"/>
+                    </td>
+                </tr>
+            </for>
+        </table>
+    </body>
+</html>

@@ -49,3 +49,8 @@ script:
   - cd CSTLOutExample
   - /opt/qt55/bin/qmake CSTLOutExample.pro
   - make
+
+  - cd ..
+  - cd CSTLForExample
+  - /opt/qt55/bin/qmake CSTLForExample.pro
+  - make
