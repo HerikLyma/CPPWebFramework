@@ -44,3 +44,8 @@ script:
   - cd Filters
   - /opt/qt55/bin/qmake Filters.pro
   - make
+
+  - cd ..
+  - cd CSTLOutExample
+  - /opt/qt55/bin/qmake CSTLOutExample.pro
+  - make
