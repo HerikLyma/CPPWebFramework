@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['qlistobject',['QListObject',['../class_c_w_f_1_1_q_list_object.html',1,'CWF']]],
-  ['qlistobject',['QListObject',['../class_c_w_f_1_1_q_list_object.html#a6b056337424f80209ceabb4a3e13b9f8',1,'CWF::QListObject']]],
-  ['qlistobject_2ecpp',['qlistobject.cpp',['../qlistobject_8cpp.html',1,'']]],
-  ['qlistobject_2eh',['qlistobject.h',['../qlistobject_8h.html',1,'']]],
-  ['qmapthreadsafety',['QMapThreadSafety',['../class_c_w_f_1_1_q_map_thread_safety.html',1,'CWF']]],
-  ['qmapthreadsafety',['QMapThreadSafety',['../class_c_w_f_1_1_q_map_thread_safety.html#aa28e819ea29dda98fd7c59b065fffb5b',1,'CWF::QMapThreadSafety::QMapThreadSafety()=default'],['../class_c_w_f_1_1_q_map_thread_safety.html#ab9689787571fcba2c0b01ffadeaeaf53',1,'CWF::QMapThreadSafety::QMapThreadSafety(std::initializer_list&lt; std::pair&lt; Key, T &gt;&gt; list)'],['../class_c_w_f_1_1_q_map_thread_safety.html#a8548badbf58d475d80975c93fc691402',1,'CWF::QMapThreadSafety::QMapThreadSafety(const QMap&lt; Key, T &gt; &amp;other)'],['../class_c_w_f_1_1_q_map_thread_safety.html#af6419868bb72e73f260158d8b8fa33f0',1,'CWF::QMapThreadSafety::QMapThreadSafety(const std::map&lt; Key, T &gt; &amp;other)'],['../class_c_w_f_1_1_q_map_thread_safety.html#a3ea02eba2e70b15a41ebea53409b2504',1,'CWF::QMapThreadSafety::QMapThreadSafety(QMap&lt; Key, T &gt; &amp;&amp;other)']]],
-  ['qmapthreadsafety_2eh',['qmapthreadsafety.h',['../qmapthreadsafety_8h.html',1,'']]],
-  ['qmapthreadsafety_3c_20qstring_2c_20cwf_3a_3ahttpservlet_20_2a_20_3e',['QMapThreadSafety&lt; QString, CWF::HttpServlet * &gt;',['../class_c_w_f_1_1_q_map_thread_safety.html',1,'CWF']]],
-  ['qmapthreadsafety_3c_20qstring_2c_20cwf_3a_3ahttpsession_20_2a_20_3e',['QMapThreadSafety&lt; QString, CWF::HttpSession * &gt;',['../class_c_w_f_1_1_q_map_thread_safety.html',1,'CWF']]],
-  ['qmapthreadsafety_3c_20qstring_2c_20qobject_20_2a_20_3e',['QMapThreadSafety&lt; QString, QObject * &gt;',['../class_c_w_f_1_1_q_map_thread_safety.html',1,'CWF']]]
+  ['readall',['readAll',['../class_c_w_f_1_1_file_manager.html#ad0e948a2e72ffa137027a3daa6055747',1,'CWF::FileManager']]],
+  ['remove',['remove',['../class_c_w_f_1_1_q_list_object.html#a4d8b3e00c8ee8add45a473582ec0253b',1,'CWF::QListObject::remove()'],['../class_c_w_f_1_1_q_map_thread_safety.html#a3e4e9879b69f6e2dc96b2a872af47bfe',1,'CWF::QMapThreadSafety::remove()']]],
+  ['removeattribute',['removeAttribute',['../class_c_w_f_1_1_http_session.html#aa2c8fba3e49fd8c43c601d81bf964650',1,'CWF::HttpSession']]],
+  ['removefirstbar',['removeFirstBar',['../class_c_w_f_1_1_file_manager.html#aa7918801a52bd8789239542b1c368889',1,'CWF::FileManager']]],
+  ['removelastbar',['removeLastBar',['../class_c_w_f_1_1_file_manager.html#a0b00584a292008515b686c67187bac13',1,'CWF::FileManager']]],
+  ['requestdispatcher',['RequestDispatcher',['../class_c_w_f_1_1_http_servlet_request.html#ae82f2dbbf52e70637edba766141fd80e',1,'CWF::HttpServletRequest::RequestDispatcher()'],['../class_c_w_f_1_1_request_dispatcher.html#a165259f215b920a52573dbc37c3985f2',1,'CWF::RequestDispatcher::RequestDispatcher()']]],
+  ['requestdispatcher',['RequestDispatcher',['../class_c_w_f_1_1_request_dispatcher.html',1,'CWF']]],
+  ['requestdispatcher_2ecpp',['requestdispatcher.cpp',['../requestdispatcher_8cpp.html',1,'']]],
+  ['requestdispatcher_2eh',['requestdispatcher.h',['../requestdispatcher_8h.html',1,'']]],
+  ['run',['run',['../class_c_w_f_1_1_http_read_request.html#a8c7de493baefa696920be2588129f5fd',1,'CWF::HttpReadRequest']]]
 ];

@@ -39,8 +39,6 @@ SOURCES += main.cpp \
     cwf/cstlcompilerfor.cpp \
     cwf/cstlcompilerif.cpp \
     cwf/cstlcompilerobject.cpp \
-    cwf/forattributes.cpp \
-    cwf/ifattributes.cpp \
     cwf/metaclassparser.cpp
 
 HEADERS += \
@@ -69,8 +67,6 @@ HEADERS += \
     cwf/cstlcompilerfor.h \
     cwf/cstlcompilerif.h \
     cwf/cstlcompilerobject.h \
-    cwf/forattributes.h \
-    cwf/ifattributes.h \
     cwf/metaclassparser.h
 
 QMAKE_CXXFLAGS += -std=c++11

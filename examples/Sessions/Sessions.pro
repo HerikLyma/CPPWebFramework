@@ -26,15 +26,13 @@ SOURCES += sessions.cpp \
     cwf/filemanager.cpp \
     cwf/filter.cpp \
     cwf/filterchain.cpp \
-    cwf/forattributes.cpp \
     cwf/httpcookie.cpp \
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
     cwf/httpservlet.cpp \
     cwf/httpservletrequest.cpp \
     cwf/httpservletresponse.cpp \
-    cwf/httpsession.cpp \
-    cwf/ifattributes.cpp \
+    cwf/httpsession.cpp \    
     cwf/metaclassparser.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
@@ -57,7 +55,6 @@ HEADERS += \
     cwf/filemanager.h \
     cwf/filter.h \
     cwf/filterchain.h \
-    cwf/forattributes.h \
     cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
@@ -66,7 +63,6 @@ HEADERS += \
     cwf/httpservletrequest.h \
     cwf/httpservletresponse.h \
     cwf/httpsession.h \
-    cwf/ifattributes.h \
     cwf/metaclassparser.h \
     cwf/properties.h \
     cwf/qlistobject.h \

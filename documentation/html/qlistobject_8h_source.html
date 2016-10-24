@@ -98,40 +98,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_q_list_object.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_q_list_object.html">QListObject</a> : <span class="keyword">public</span> QObject</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        Q_OBJECT</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> autoDelete = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#a6b056337424f80209ceabb4a3e13b9f8">QListObject</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_c_w_f_1_1_q_list_object.html#a9d1a062c955dad25d5b6261d73f6c87c">~QListObject</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        QObject *<a class="code" href="class_c_w_f_1_1_q_list_object.html#a987e849c926c80558272f6d0fc019fae">operator []</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="class_c_w_f_1_1_q_list_object.html#a9d1a062c955dad25d5b6261d73f6c87c">~QListObject</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        QObject *<a class="code" href="class_c_w_f_1_1_q_list_object.html#a987e849c926c80558272f6d0fc019fae">operator []</a>(<span class="keywordtype">int</span> index) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#a2de65b58fcc28b3d40de2af763b5e6f4">size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#ac05809bbe119d6d4964efd721d0bef3a">add</a>(QObject *<span class="keywordtype">object</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(QObject *object);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#a8154d32ef214c0e765aebd29cc284572">getAutoDelete</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#aefb8c78635548e4fba6e47449d47353c">setAutoDelete</a>(<span class="keywordtype">bool</span> value);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif // QLISTOBJECT_H</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#ac05809bbe119d6d4964efd721d0bef3a">add</a>(QObject *<span class="keywordtype">object</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <span class="keyword">remove</span>(QObject *object);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#a8154d32ef214c0e765aebd29cc284572">getAutoDelete</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_q_list_object.html#aefb8c78635548e4fba6e47449d47353c">setAutoDelete</a>(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // QLISTOBJECT_H</span></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a6b056337424f80209ceabb4a3e13b9f8"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a6b056337424f80209ceabb4a3e13b9f8">CWF::QListObject::QListObject</a></div><div class="ttdeci">QListObject(QObject *parent=0)</div><div class="ttdoc">This constructor can receive a parent. </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:10</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a9d1a062c955dad25d5b6261d73f6c87c"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a9d1a062c955dad25d5b6261d73f6c87c">CWF::QListObject::~QListObject</a></div><div class="ttdeci">~QListObject()</div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:15</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a987e849c926c80558272f6d0fc019fae"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a987e849c926c80558272f6d0fc019fae">CWF::QListObject::operator[]</a></div><div class="ttdeci">QObject * operator[](int index) const </div><div class="ttdoc">This is an operator overload and returns a QObject given an specific index. </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:28</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html_ac05809bbe119d6d4964efd721d0bef3a"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#ac05809bbe119d6d4964efd721d0bef3a">CWF::QListObject::add</a></div><div class="ttdeci">void add(QObject *object)</div><div class="ttdoc">This method add a new QObject to the list. </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:38</div></div>
 <div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html">CWF::QListObject</a></div><div class="ttdoc">The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...</div><div class="ttdef"><b>Definition:</b> qlistobject.h:18</div></div>
-<div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a8154d32ef214c0e765aebd29cc284572"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a8154d32ef214c0e765aebd29cc284572">CWF::QListObject::getAutoDelete</a></div><div class="ttdeci">bool getAutoDelete() const </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:48</div></div>
+<div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a8154d32ef214c0e765aebd29cc284572"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a8154d32ef214c0e765aebd29cc284572">CWF::QListObject::getAutoDelete</a></div><div class="ttdeci">bool getAutoDelete() const </div><div class="ttdoc">getAutoDelete </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:48</div></div>
 <div class="ttc" id="class_c_w_f_1_1_q_list_object_html_a2de65b58fcc28b3d40de2af763b5e6f4"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#a2de65b58fcc28b3d40de2af763b5e6f4">CWF::QListObject::size</a></div><div class="ttdeci">int size() const </div><div class="ttdoc">This method returns the number of elements in this QListObject. </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:33</div></div>
-<div class="ttc" id="class_c_w_f_1_1_q_list_object_html_aefb8c78635548e4fba6e47449d47353c"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#aefb8c78635548e4fba6e47449d47353c">CWF::QListObject::setAutoDelete</a></div><div class="ttdeci">void setAutoDelete(bool value)</div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:53</div></div>
+<div class="ttc" id="class_c_w_f_1_1_q_list_object_html_aefb8c78635548e4fba6e47449d47353c"><div class="ttname"><a href="class_c_w_f_1_1_q_list_object.html#aefb8c78635548e4fba6e47449d47353c">CWF::QListObject::setAutoDelete</a></div><div class="ttdeci">void setAutoDelete(bool value)</div><div class="ttdoc">setAutoDelete </div><div class="ttdef"><b>Definition:</b> qlistobject.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:56 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -59,3 +59,8 @@ script:
   - cd CSTLIfExample
   - /opt/qt55/bin/qmake CSTLIfExample.pro
   - make
+
+  - cd ..
+  - cd FillObjectBMI
+  - /opt/qt55/bin/qmake FillObjectBMI.pro
+  - make

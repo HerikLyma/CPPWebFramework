@@ -1,38 +1,13 @@
 /**
   @file httpcookie.cpp
-  @author Foi utilizado o HttpCookie de Stefan Frings, com pequenas alterações
+  @author Stefan Frings
 */
 
 #include "httpcookie.h"
 
 namespace CWF
-{
-    HttpCookie::HttpCookie()
-    {
-        version=1;
-        maxAge=0;
-        secure=false;
-    }
-
-    HttpCookie::HttpCookie(const QByteArray &name, const QByteArray &value)
-    {
-        this->name = name;
-        this->value = value;
-    }
-
-    HttpCookie::HttpCookie(const QByteArray name, const QByteArray value, const int maxAge, const QByteArray path, const QByteArray comment, const QByteArray domain, const bool secure)
-    {
-        this->name=name;
-        this->value=value;
-        this->maxAge=maxAge;
-        this->path=path;
-        this->comment=comment;
-        this->domain=domain;
-        this->secure=secure;
-        this->version=1;
-    }
-
-    HttpCookie::HttpCookie(const QByteArray source)
+{    
+    HttpCookie::HttpCookie(const QByteArray &source)
     {
         version=1;
         maxAge=0;
@@ -95,6 +70,10 @@ namespace CWF
         }
     }
 
+    HttpCookie::HttpCookie(const QByteArray &name, const QByteArray &value) : name(name), value(value)
+    {
+    }
+
     QByteArray HttpCookie::toByteArray() const
     {
         QByteArray buffer(name);
@@ -128,37 +107,37 @@ namespace CWF
         return buffer;
     }
 
-    void HttpCookie::setName(const QByteArray name)
+    void HttpCookie::setName(const QByteArray &name)
     {
         this->name=name;
     }
 
-    void HttpCookie::setValue(const QByteArray value)
+    void HttpCookie::setValue(const QByteArray &value)
     {
         this->value=value;
     }
 
-    void HttpCookie::setComment(const QByteArray comment)
+    void HttpCookie::setComment(const QByteArray &comment)
     {
         this->comment=comment;
     }
 
-    void HttpCookie::setDomain(const QByteArray domain)
+    void HttpCookie::setDomain(const QByteArray &domain)
     {
         this->domain=domain;
     }
 
-    void HttpCookie::setMaxAge(const int maxAge)
+    void HttpCookie::setMaxAge(int maxAge)
     {
         this->maxAge=maxAge;
     }
 
-    void HttpCookie::setPath(const QByteArray path)
+    void HttpCookie::setPath(const QByteArray &path)
     {
         this->path=path;
     }
 
-    void HttpCookie::setSecure(const bool secure)
+    void HttpCookie::setSecure(bool secure)
     {
         this->secure=secure;
     }
@@ -203,7 +182,7 @@ namespace CWF
         return version;
     }
 
-    QList<QByteArray> HttpCookie::splitCSV(const QByteArray source)
+    QList<QByteArray> HttpCookie::splitCSV(const QByteArray &source)
     {
         bool inString=false;
         QList<QByteArray> list;

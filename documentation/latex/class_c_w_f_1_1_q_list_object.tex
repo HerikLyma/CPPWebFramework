@@ -12,8 +12,7 @@ The \hyperlink{class_c_w_f_1_1_q_list_object}{Q\+List\+Object} class is used to 
 
 
 
-Inheritance diagram for C\+W\+F\+:\+:Q\+List\+Object\+:
-\nopagebreak
+Inheritance diagram for C\+W\+F\+:\+:Q\+List\+Object\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,11 +33,11 @@ int \hyperlink{class_c_w_f_1_1_q_list_object_a2de65b58fcc28b3d40de2af763b5e6f4}{
 void \hyperlink{class_c_w_f_1_1_q_list_object_ac05809bbe119d6d4964efd721d0bef3a}{add} (Q\+Object $\ast$object)
 \begin{DoxyCompactList}\small\item\em This method add a new Q\+Object to the list. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_w_f_1_1_q_list_object_a4d8b3e00c8ee8add45a473582ec0253b}{remove} (Q\+Object $\ast$object)
-\begin{DoxyCompactList}\small\item\em This method remove. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This method remove and object from the list. \end{DoxyCompactList}\item 
 bool \hyperlink{class_c_w_f_1_1_q_list_object_a8154d32ef214c0e765aebd29cc284572}{get\+Auto\+Delete} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em get\+Auto\+Delete \end{DoxyCompactList}\item 
 void \hyperlink{class_c_w_f_1_1_q_list_object_aefb8c78635548e4fba6e47449d47353c}{set\+Auto\+Delete} (bool value)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em set\+Auto\+Delete \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -58,7 +57,7 @@ This constructor can receive a parent.
 
 
 \begin{DoxyParams}{Parameters}
-{\em parent()} & \+: This is a pointer to a Q\+Object. \\
+{\em Q\+Object} & $\ast$parent \+: Parent. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_q_list_object_a9d1a062c955dad25d5b6261d73f6c87c}{\index{C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}!````~Q\+List\+Object@{$\sim$\+Q\+List\+Object}}
@@ -84,7 +83,7 @@ This method add a new Q\+Object to the list.
 
 
 \begin{DoxyParams}{Parameters}
-{\em o} & \+: This is a pointer to a Q\+Object. \\
+{\em Q\+Object} & $\ast$object \+: Object. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_q_list_object_a8154d32ef214c0e765aebd29cc284572}{\index{C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}!get\+Auto\+Delete@{get\+Auto\+Delete}}
@@ -94,6 +93,13 @@ This method add a new Q\+Object to the list.
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_c_w_f_1_1_q_list_object_a8154d32ef214c0e765aebd29cc284572}
+
+
+get\+Auto\+Delete 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{class_c_w_f_1_1_q_list_object_a987e849c926c80558272f6d0fc019fae}{\index{C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
 \index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}}
 \subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Object $\ast$ C\+W\+F\+::\+Q\+List\+Object\+::operator\mbox{[}$\,$\mbox{]} (
@@ -122,7 +128,7 @@ Q\+Object $\ast$
 )}}\label{class_c_w_f_1_1_q_list_object_a4d8b3e00c8ee8add45a473582ec0253b}
 
 
-This method remove. 
+This method remove and object from the list. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -136,6 +142,15 @@ This method remove.
 \item[{bool}]{value}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_q_list_object_aefb8c78635548e4fba6e47449d47353c}
+
+
+set\+Auto\+Delete 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_q_list_object_a2de65b58fcc28b3d40de2af763b5e6f4}{\index{C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}!size@{size}}
 \index{size@{size}!C\+W\+F\+::\+Q\+List\+Object@{C\+W\+F\+::\+Q\+List\+Object}}
 \subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int C\+W\+F\+::\+Q\+List\+Object\+::size (

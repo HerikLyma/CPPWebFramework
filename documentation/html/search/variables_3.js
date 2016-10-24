@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['from',['from',['../class_c_w_f_1_1_for_attributes.html#acb6db58dc865974f20f1b9a291f7a94b',1,'CWF::ForAttributes']]]
+  ['properties',['properties',['../class_c_w_f_1_1_meta_class_parser.html#a24721c126dfff6fba83a4d5dd088ee69',1,'CWF::MetaClassParser']]]
 ];

@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_c_w_f_1_1_http_request_method.html" title="The HttpRequestMethod class holds fixed strings that represents request methods. " alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node1" href="$class_c_w_f_1_1_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create..." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$class_c_w_f_1_1_cpp_web_servlet.html" title="This class is responsible for displaying the standard pages of C++ Web Framework: index..." alt="" coords="180,5,333,32"/>
 </map>

@@ -156,16 +156,6 @@ namespace CWF
         host = value;
     }
 
-    QMap<QString, HttpServlet *> Configuration::getUrlServlet() const
-    {
-        return urlServlet;
-    }
-
-    void Configuration::setUrlServlet(const QMap<QString, HttpServlet *> &value)
-    {
-        urlServlet = value;
-    }
-
     qint64 Configuration::getMaxUploadFile() const
     {
         return maxUploadFile;

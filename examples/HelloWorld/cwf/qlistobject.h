@@ -17,43 +17,49 @@ namespace CWF
      */
     class QListObject : public QObject
     {
-    Q_OBJECT
+        Q_OBJECT
     private:
         bool autoDelete = false;
     public:
         /**
          * @brief This constructor can receive a parent.
-         * @param parent() : This is a pointer to a QObject.
+         * @param QObject *parent : Parent.
          */
         explicit QListObject(QObject *parent = 0);
-
+        /**
+         * @brief
+         */
         ~QListObject();
-
         /**
          * @brief This is an operator overload and returns a QObject given an specific index.
          * @param index : This is an integer value.
          * @return QObject *
          */
         QObject *operator [](int index) const;
-
         /**
          * @brief This method returns the number of elements in this QListObject.
          * @return int
          */
         int size() const;
-
         /**
          * @brief This method add a new QObject to the list.
-         * @param o : This is a pointer to a QObject.
+         * @param QObject *object : Object.
          */
         void add(QObject *object);
-
         /**
-         * @brief This method remove
+         * @brief This method remove and object from the list.
          * @param o
          */
         void remove(QObject *object);
+        /**
+         * @brief getAutoDelete
+         * @return
+         */
         bool getAutoDelete() const;
+        /**
+         * @brief setAutoDelete
+         * @param value
+         */
         void setAutoDelete(bool value);
     };
 }

@@ -96,33 +96,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_c_w_f.html">CWF</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">CSTLCompilerObject</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Q_OBJECT</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        QString value;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        QString type;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a1c20bd083beceaaef00fcaf10f9e061c">CSTLCompilerObject</a>(QObject *parent = 0);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        QString <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a92137c536b356e4f6eeb76a3c1b65e54">getValue</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#acf0a476bd687e47edb169c480193654f">setValue</a>(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        QString <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#ac7cd5fe07f3b71e0d4b6342db1a4cd29">getType</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a51e99c46daee9cb1f14088d69d2d4e0e">setType</a>(<span class="keyword">const</span> QString &amp;value);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif // CSTLCOMPILEROBJECT_H</span></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">CWF::CSTLCompilerObject</a></div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.h:13</div></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a1c20bd083beceaaef00fcaf10f9e061c"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a1c20bd083beceaaef00fcaf10f9e061c">CWF::CSTLCompilerObject::CSTLCompilerObject</a></div><div class="ttdeci">CSTLCompilerObject(QObject *parent=0)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:5</div></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a92137c536b356e4f6eeb76a3c1b65e54"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a92137c536b356e4f6eeb76a3c1b65e54">CWF::CSTLCompilerObject::getValue</a></div><div class="ttdeci">QString getValue() const </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:9</div></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_acf0a476bd687e47edb169c480193654f"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#acf0a476bd687e47edb169c480193654f">CWF::CSTLCompilerObject::setValue</a></div><div class="ttdeci">void setValue(const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:14</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">CSTLCompilerObject</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;       Q_OBJECT</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        QString value;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        QString type;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a1c20bd083beceaaef00fcaf10f9e061c">CSTLCompilerObject</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        QString <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a92137c536b356e4f6eeb76a3c1b65e54">getValue</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#acf0a476bd687e47edb169c480193654f">setValue</a>(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        QString <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#ac7cd5fe07f3b71e0d4b6342db1a4cd29">getType</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a51e99c46daee9cb1f14088d69d2d4e0e">setType</a>(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // CSTLCOMPILEROBJECT_H</span></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html">CWF::CSTLCompilerObject</a></div><div class="ttdoc">The Properties class is an auxiliar class to the CSTLCompiler. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.h:16</div></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a1c20bd083beceaaef00fcaf10f9e061c"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a1c20bd083beceaaef00fcaf10f9e061c">CWF::CSTLCompilerObject::CSTLCompilerObject</a></div><div class="ttdeci">CSTLCompilerObject(QObject *parent=0)</div><div class="ttdoc">This constructor can set the CSTLCompilerObject&#39;s parent. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:5</div></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a92137c536b356e4f6eeb76a3c1b65e54"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a92137c536b356e4f6eeb76a3c1b65e54">CWF::CSTLCompilerObject::getValue</a></div><div class="ttdeci">QString getValue() const </div><div class="ttdoc">Returns the value. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:9</div></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_acf0a476bd687e47edb169c480193654f"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#acf0a476bd687e47edb169c480193654f">CWF::CSTLCompilerObject::setValue</a></div><div class="ttdeci">void setValue(const QString &amp;value)</div><div class="ttdoc">Sets the value. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:14</div></div>
 <div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a51e99c46daee9cb1f14088d69d2d4e0e"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a51e99c46daee9cb1f14088d69d2d4e0e">CWF::CSTLCompilerObject::setType</a></div><div class="ttdeci">void setType(const QString &amp;value)</div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:24</div></div>
-<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_ac7cd5fe07f3b71e0d4b6342db1a4cd29"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#ac7cd5fe07f3b71e0d4b6342db1a4cd29">CWF::CSTLCompilerObject::getType</a></div><div class="ttdeci">QString getType() const </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:19</div></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_a51e99c46daee9cb1f14088d69d2d4e0e"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#a51e99c46daee9cb1f14088d69d2d4e0e">CWF::CSTLCompilerObject::setType</a></div><div class="ttdeci">void setType(const QString &amp;value)</div><div class="ttdoc">Sets the type. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:24</div></div>
+<div class="ttc" id="class_c_w_f_1_1_c_s_t_l_compiler_object_html_ac7cd5fe07f3b71e0d4b6342db1a4cd29"><div class="ttname"><a href="class_c_w_f_1_1_c_s_t_l_compiler_object.html#ac7cd5fe07f3b71e0d4b6342db1a4cd29">CWF::CSTLCompilerObject::getType</a></div><div class="ttdeci">QString getType() const </div><div class="ttdoc">Returns the type. </div><div class="ttdef"><b>Definition:</b> cstlcompilerobject.cpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:56 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

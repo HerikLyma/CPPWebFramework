@@ -97,20 +97,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This class extracts all information from a QObject.  
+ <a href="class_c_w_f_1_1_meta_class_parser.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="metaclassparser_8h_source.html">metaclassparser.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af831499a518f79c328a71d8d8ec53b0f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html#af831499a518f79c328a71d8d8ec53b0f">MetaClassParser</a> (QObject *object)</td></tr>
+<tr class="memdesc:af831499a518f79c328a71d8d8ec53b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts all properties and methods names from a QObject.  <a href="#af831499a518f79c328a71d8d8ec53b0f">More...</a><br /></td></tr>
 <tr class="separator:af831499a518f79c328a71d8d8ec53b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bd37870867411d803411339d1d97c49"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html#a2bd37870867411d803411339d1d97c49">getReturnType</a> (const QString &amp;methodName)</td></tr>
+<tr class="memdesc:a2bd37870867411d803411339d1d97c49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the method return type given a method name.  <a href="#a2bd37870867411d803411339d1d97c49">More...</a><br /></td></tr>
 <tr class="separator:a2bd37870867411d803411339d1d97c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a560be3a1d52f822eab715faa0b1fbe15"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html#a560be3a1d52f822eab715faa0b1fbe15">getParameterType</a> (const QString &amp;methodName)</td></tr>
+<tr class="memdesc:a560be3a1d52f822eab715faa0b1fbe15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the method parameter type given a method name.  <a href="#a560be3a1d52f822eab715faa0b1fbe15">More...</a><br /></td></tr>
 <tr class="separator:a560be3a1d52f822eab715faa0b1fbe15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d9a5f5b026f0fc7e257fa58bbc72adf"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html#a0d9a5f5b026f0fc7e257fa58bbc72adf">instantiateClassByName</a> (const QByteArray &amp;name)</td></tr>
+<tr class="memdesc:a0d9a5f5b026f0fc7e257fa58bbc72adf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiate a class by name.  <a href="#a0d9a5f5b026f0fc7e257fa58bbc72adf">More...</a><br /></td></tr>
 <tr class="separator:a0d9a5f5b026f0fc7e257fa58bbc72adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -121,7 +128,9 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
 <tr class="memitem:a24721c126dfff6fba83a4d5dd088ee69"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QMetaProperty &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_meta_class_parser.html#a24721c126dfff6fba83a4d5dd088ee69">properties</a></td></tr>
 <tr class="separator:a24721c126dfff6fba83a4d5dd088ee69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class extracts all information from a QObject. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af831499a518f79c328a71d8d8ec53b0f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -144,6 +153,14 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
 </table>
 </div><div class="memdoc">
 
+<p>Extracts all properties and methods names from a QObject. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QObject</td><td>*object : Object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -161,6 +178,15 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
       </table>
 </div><div class="memdoc">
 
+<p>Returns the method parameter type given a method name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString &amp;methodName : Method name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString : Parameter type. </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a2bd37870867411d803411339d1d97c49"></a>
@@ -176,6 +202,15 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the method return type given a method name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QString &amp;methodName : Method name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString : Return type. </dd></dl>
 
 </div>
 </div>
@@ -200,6 +235,15 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Instantiate a class by name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>QByteArray &amp;name : Class name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void * : Returns nullptr if fails. </dd></dl>
 
 </div>
 </div>
@@ -235,7 +279,7 @@ QString &gt;, QMetaMethod &gt;&#160;</td><td class="memItemRight" valign="bottom
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:57 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

@@ -7,19 +7,19 @@
 
 namespace CWF
 {
-    void CppWebServlet::doGet(CWF::HttpServletRequest &req, CWF::HttpServletResponse &resp)
+    void CppWebServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
     {
-        Q_UNUSED(resp)
-        QString url(req.getRequestURL());
+        Q_UNUSED(response)
+        QString url(request.getRequestURL());
         if(url.endsWith("/index"))
-            req.getRequestDispatcher("/config/cppwebserverpages/index").forward(req, resp);
+            request.getRequestDispatcher("/config/cppwebserverpages/index").forward(request, response);
         else if(url.endsWith("/examples"))
-            req.getRequestDispatcher("/config/cppwebserverpages/examples").forward(req, resp);
+            request.getRequestDispatcher("/config/cppwebserverpages/examples").forward(request, response);
         else if(url.endsWith("/documentation"))
-            req.getRequestDispatcher("/config/cppwebserverpages/documentation").forward(req, resp);
+            request.getRequestDispatcher("/config/cppwebserverpages/documentation").forward(request, response);
         else if(url.endsWith("/ssl"))
-            req.getRequestDispatcher("/config/cppwebserverpages/ssl").forward(req, resp);
+            request.getRequestDispatcher("/config/cppwebserverpages/ssl").forward(request, response);
         else if(url.endsWith("/authors"))
-            req.getRequestDispatcher("/config/cppwebserverpages/authors").forward(req, resp);
+            request.getRequestDispatcher("/config/cppwebserverpages/authors").forward(request, response);
     }
 }

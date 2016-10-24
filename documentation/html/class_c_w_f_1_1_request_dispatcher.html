@@ -106,7 +106,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a165259f215b920a52573dbc37c3985f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor receives a path to a xhtml file.  <a href="#a165259f215b920a52573dbc37c3985f2">More...</a><br /></td></tr>
 <tr class="separator:a165259f215b920a52573dbc37c3985f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668e801a8b718373e9e886c613ed54ad"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_request_dispatcher.html#a668e801a8b718373e9e886c613ed54ad">~RequestDispatcher</a> ()</td></tr>
-<tr class="memdesc:a668e801a8b718373e9e886c613ed54ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a668e801a8b718373e9e886c613ed54ad">More...</a><br /></td></tr>
+<tr class="memdesc:a668e801a8b718373e9e886c613ed54ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#a668e801a8b718373e9e886c613ed54ad">More...</a><br /></td></tr>
 <tr class="separator:a668e801a8b718373e9e886c613ed54ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075c11ff233f217196764899f9edf7d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_request_dispatcher.html#a075c11ff233f217196764899f9edf7d0">forward</a> (<a class="el" href="class_c_w_f_1_1_http_servlet_request.html">CWF::HttpServletRequest</a> &amp;request, <a class="el" href="class_c_w_f_1_1_http_servlet_response.html">CWF::HttpServletResponse</a> &amp;response)</td></tr>
 <tr class="memdesc:a075c11ff233f217196764899f9edf7d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will dispatch the xhtml file specificated in path to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>, the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> will compile the xhtml file and returns the result. After this, the <a class="el" href="class_c_w_f_1_1_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> will take the return and write it on the response.  <a href="#a075c11ff233f217196764899f9edf7d0">More...</a><br /></td></tr>
@@ -132,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <p>This constructor receives a path to a xhtml file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>: This is the path to the xhtml file </td></tr>
+    <tr><td class="paramname">const</td><td>QString &amp;path : Path to the xhtml file. </td></tr>
   </table>
   </dd>
 </dl>
@@ -160,7 +160,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destructor. </p>
+<p>Virtual destructor. </p>
 
 </div>
 </div>
@@ -192,8 +192,8 @@ Public Member Functions</h2></td></tr>
 <p>This method will dispatch the xhtml file specificated in path to the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>, the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> will compile the xhtml file and returns the result. After this, the <a class="el" href="class_c_w_f_1_1_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> will take the return and write it on the response. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td>: This is a reference to the <a class="el" href="class_c_w_f_1_1_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">HttpServletRequest</a>. </td></tr>
-    <tr><td class="paramname">response</td><td>: This is a reference to the <a class="el" href="class_c_w_f_1_1_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">HttpServletResponse</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">CWF::HttpServletRequest</a></td><td>&amp;request : Used to process the response. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_c_w_f_1_1_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">CWF::HttpServletResponse</a></td><td>&amp;response : Used to response. </td></tr>
   </table>
   </dd>
 </dl>
@@ -207,7 +207,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:57 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

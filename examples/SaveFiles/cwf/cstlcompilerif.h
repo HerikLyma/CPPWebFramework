@@ -11,10 +11,17 @@
 
 namespace CWF
 {
+    /**
+     * @brief Extracts and valites all attibutes from a "if" tag.
+     */
     class CSTLCompilerIf
     {
     public:
         QMap<QString, QString> attributes;
+        /**
+         * @brief This constructor processes and validates the attributes of "if" tag.
+         * @param const QXmlStreamAttributes &attr : XML tag attributes.
+         */
         CSTLCompilerIf(const QXmlStreamAttributes &attr);
     };
 }

@@ -19,12 +19,12 @@ namespace CWF
     public:
         /**
          * @brief This constructor receives a HttpParser
-         * @param httpParser : This is a reference to a HttpParser
+         * @param const HttpParser &httpParser : Used to generate Session ID.
          */
         SessionIdGenerator(const HttpParser &httpParser);
         /**
          * @brief This method process some informations of httpParser and generates a session id.
-         * @return QString.
+         * @return QByteArray : Session ID.
          */
         QByteArray getSessionID() const;
     };

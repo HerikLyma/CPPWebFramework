@@ -16,7 +16,7 @@ namespace CWF
 {
     template <typename Key, typename T>
     /**
-     * @brief The QMapThreadSafety class is a thread safe map.
+     * @brief The QMapThreadSafety class is a thread safe QMap.
      */
     class QMapThreadSafety
     {

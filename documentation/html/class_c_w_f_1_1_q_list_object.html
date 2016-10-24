@@ -103,8 +103,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for CWF::QListObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_w_f_1_1_q_list_object__inherit__graph.png" border="0" usemap="#_c_w_f_1_1_q_list_object_inherit__map" alt="Inheritance graph"/></div>
-<map name="_c_w_f_1_1_q_list_object_inherit__map" id="_c_w_f_1_1_q_list_object_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -124,11 +122,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac05809bbe119d6d4964efd721d0bef3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add a new QObject to the list.  <a href="#ac05809bbe119d6d4964efd721d0bef3a">More...</a><br /></td></tr>
 <tr class="separator:ac05809bbe119d6d4964efd721d0bef3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8b3e00c8ee8add45a473582ec0253b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_q_list_object.html#a4d8b3e00c8ee8add45a473582ec0253b">remove</a> (QObject *object)</td></tr>
-<tr class="memdesc:a4d8b3e00c8ee8add45a473582ec0253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method remove.  <a href="#a4d8b3e00c8ee8add45a473582ec0253b">More...</a><br /></td></tr>
+<tr class="memdesc:a4d8b3e00c8ee8add45a473582ec0253b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method remove and object from the list.  <a href="#a4d8b3e00c8ee8add45a473582ec0253b">More...</a><br /></td></tr>
 <tr class="separator:a4d8b3e00c8ee8add45a473582ec0253b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8154d32ef214c0e765aebd29cc284572"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_q_list_object.html#a8154d32ef214c0e765aebd29cc284572">getAutoDelete</a> () const </td></tr>
+<tr class="memdesc:a8154d32ef214c0e765aebd29cc284572"><td class="mdescLeft">&#160;</td><td class="mdescRight">getAutoDelete  <a href="#a8154d32ef214c0e765aebd29cc284572">More...</a><br /></td></tr>
 <tr class="separator:a8154d32ef214c0e765aebd29cc284572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefb8c78635548e4fba6e47449d47353c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_q_list_object.html#aefb8c78635548e4fba6e47449d47353c">setAutoDelete</a> (bool value)</td></tr>
+<tr class="memdesc:aefb8c78635548e4fba6e47449d47353c"><td class="mdescLeft">&#160;</td><td class="mdescRight">setAutoDelete  <a href="#aefb8c78635548e4fba6e47449d47353c">More...</a><br /></td></tr>
 <tr class="separator:aefb8c78635548e4fba6e47449d47353c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -159,7 +159,7 @@ Public Member Functions</h2></td></tr>
 <p>This constructor can receive a parent. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent()</td><td>: This is a pointer to a QObject. </td></tr>
+    <tr><td class="paramname">QObject</td><td>*parent : Parent. </td></tr>
   </table>
   </dd>
 </dl>
@@ -199,7 +199,7 @@ Public Member Functions</h2></td></tr>
 <p>This method add a new QObject to the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">o</td><td>: This is a pointer to a QObject. </td></tr>
+    <tr><td class="paramname">QObject</td><td>*object : Object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -218,6 +218,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>getAutoDelete </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -260,7 +263,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method remove. </p>
+<p>This method remove and object from the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">o</td><td></td></tr>
@@ -283,6 +286,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>setAutoDelete </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -311,7 +322,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:57 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

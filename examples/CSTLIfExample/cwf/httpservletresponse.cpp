@@ -230,11 +230,4 @@ namespace CWF
     const int HttpServletResponse::SC_GATEWAY_TIMEOUT = 504;
 
     const int HttpServletResponse::SC_HTTP_VERSION_NOT_SUPPORTED = 505;
-
-
-
-    /** \example /home/herik/CWF/prototipos/HelloWorld/servlets/helloworldservlet.cpp
-     * This is an example of how to use the HttpServletResponse class.
-     * More details about this example.
-     */
 }

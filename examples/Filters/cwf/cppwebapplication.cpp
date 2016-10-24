@@ -16,7 +16,7 @@ namespace CWF
     {
         configuration = config;
         server = new CppWebServer(filter);
-        qInstallMessageHandler(CppWebApplication::configureLog);
+        qInstallMessageHandler(CppWebApplication::writeLog);
 
         if(configuration.accessServerPages)
         {
@@ -52,8 +52,7 @@ namespace CWF
         return application.exec();
     }
 
-
-    void CppWebApplication::configureLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
+    void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
     {
         QMutex mutex;
         QMutexLocker locker(&mutex);

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ifattributes',['IfAttributes',['../class_c_w_f_1_1_if_attributes.html',1,'CWF']]]
+  ['metaclassparser',['MetaClassParser',['../class_c_w_f_1_1_meta_class_parser.html',1,'CWF']]]
 ];

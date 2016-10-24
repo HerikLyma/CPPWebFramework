@@ -22,7 +22,7 @@ namespace CWF
          QString fileExtention(QString &name) const;
          void removeLastBar(QString &path) const;
          void removeFirstBar(QString &path) const;
-         void putFirstBar(QString &path) const;
+         void putFirstBar(QString &path) const;         
          QByteArray readAll(const QString &fileName, QFileDevice::FileError &fileErro) const;
     };
 }

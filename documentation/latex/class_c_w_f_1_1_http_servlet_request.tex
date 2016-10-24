@@ -12,8 +12,7 @@ The \hyperlink{class_c_w_f_1_1_http_servlet_request}{Http\+Servlet\+Request} cla
 
 
 
-Inheritance diagram for C\+W\+F\+:\+:Http\+Servlet\+Request\+:
-\nopagebreak
+Inheritance diagram for C\+W\+F\+:\+:Http\+Servlet\+Request\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,15 +25,15 @@ Inheritance diagram for C\+W\+F\+:\+:Http\+Servlet\+Request\+:
 \hyperlink{class_c_w_f_1_1_http_servlet_request_a9fdd1aeaccd42c3043bff902cf6e6e09}{Http\+Servlet\+Request} (Q\+Tcp\+Socket \&socket, const Q\+String \&path, const Q\+String \&suffix)
 \begin{DoxyCompactList}\small\item\em This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+Array. The parameter parent is optional. N\+O\+T\+E\+: The \hyperlink{class_c_w_f_1_1_cpp_web_server}{Cpp\+Web\+Server} is responsable to create the Q\+Tcp\+Socket, and the \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} is responsable to create a \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} and a \hyperlink{class_c_w_f_1_1_http_servlet_response}{Http\+Servlet\+Response}. \end{DoxyCompactList}\item 
 virtual \hyperlink{class_c_w_f_1_1_http_servlet_request_a41867870bf0c9f23ef74d70b10c0d357}{$\sim$\+Http\+Servlet\+Request} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Destroys dynamically allocated resources. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_w_f_1_1_http_servlet_request_ad4777049d7043e62535fa658fd61be1d}{add\+Attribute} (const Q\+String \&name, Q\+Object $\ast$value)
-\begin{DoxyCompactList}\small\item\em This method add an attribute that will be passed to a xhtml page. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml C\+S\+T\+L. For this to be possible the object must inherit from Q\+Object and methods and must be in session \char`\"{}public slots\char`\"{}. \end{DoxyCompactList}\item 
 Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ \hyperlink{class_c_w_f_1_1_http_servlet_request_a3855042c53725e7ef753bee620e01297}{get\+Attributes} () const 
 \begin{DoxyCompactList}\small\item\em This method returns all the attributes of a \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
 const Q\+Object $\ast$ \hyperlink{class_c_w_f_1_1_http_servlet_request_a6833f3628440cfa4a6dc45fcd6783eee}{get\+Attribute} (const Q\+String \&name) const 
 \begin{DoxyCompactList}\small\item\em This method returns a specific object given its name. \end{DoxyCompactList}\item 
 const Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_servlet_request_a9b46d51ca2410ec587f980fc86d75027}{get\+Body} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Returns. \end{DoxyCompactList}\item 
 \hyperlink{class_c_w_f_1_1_request_dispatcher}{Request\+Dispatcher} \& \hyperlink{class_c_w_f_1_1_http_servlet_request_a0ce93d793a178c7e0e5fef4044b48bdc}{get\+Request\+Dispatcher} (const Q\+String \&page)
 \begin{DoxyCompactList}\small\item\em This method returns a request\+Dispatcher given an specific page. \end{DoxyCompactList}\item 
 Q\+Byte\+Array \hyperlink{class_c_w_f_1_1_http_servlet_request_a487fd95aa9c7f64cfa438097a59a30ca}{get\+Protocol} () const 
@@ -68,7 +67,7 @@ Q\+String \hyperlink{class_c_w_f_1_1_http_servlet_request_ad26dd1fc71d21453fc0e2
 Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_c_w_f_1_1_http_servlet_request_a67e5b7ef1e55618ff787ab3d5e229246}{get\+Uploaded\+Files} () const 
 \begin{DoxyCompactList}\small\item\em This method returns all the files that the user has sent. \end{DoxyCompactList}\item 
 void \hyperlink{class_c_w_f_1_1_http_servlet_request_a82a05ddb8d91c72a28846ffc0e811ee7}{fill\+Q\+Object} (Q\+Object $\ast$object)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fill a Q\+Object using parameters of a H\+T\+T\+P message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -113,7 +112,7 @@ This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+A
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_c_w_f_1_1_http_servlet_request_a41867870bf0c9f23ef74d70b10c0d357}
 
 
-Destructor. 
+Destroys dynamically allocated resources. 
 
 
 
@@ -128,13 +127,13 @@ Destructor.
 )}}\label{class_c_w_f_1_1_http_servlet_request_ad4777049d7043e62535fa658fd61be1d}
 
 
-This method add an attribute that will be passed to a xhtml page. 
+This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml C\+S\+T\+L. For this to be possible the object must inherit from Q\+Object and methods and must be in session \char`\"{}public slots\char`\"{}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em path} & \+: This is a reference to a Q\+Byte\+Array and holds a name of a object that will be used in a xhtml page. \\
+{\em const} & Q\+String \&name \+: \\
 \hline
-{\em value} & \+: This is a pointer to a Q\+Object and holds the object that will be used by the \hyperlink{class_c_w_f_1_1_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler} to process a xhtml page and generates its output. \\
+{\em Q\+Object} & $\ast$value \+: \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_http_servlet_request_a1e17ba223b17b4b390c9a351d4fff78e}{\index{C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}!clear\+Attributes@{clear\+Attributes}}
@@ -155,6 +154,195 @@ This method will clear all the attributes.
 \item[{Q\+Object $\ast$}]{object}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_http_servlet_request_a82a05ddb8d91c72a28846ffc0e811ee7}
+
+
+Fill a Q\+Object using parameters of a H\+T\+T\+P message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Object} & $\ast$object \+: Object to be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}
+\textcolor{comment}{//----------------bmi.xhtml----------------}
+
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"iso-8859-1"} ?>
+<html>
+     <head>
+         <title>Body Mass Index (BMI)</title>
+     </head>
+     <body>
+         <form method=\textcolor{stringliteral}{"POST"} action=\textcolor{stringliteral}{"/bmi"}>
+             Name<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"name"}/><br/>
+             Mass(KG)<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"mass"}/><br/>
+             Height(m)<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"height"}/><br/><br/>
+             <input type=\textcolor{stringliteral}{"submit"} name=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"Calculate"}/>
+         </form>
+     </body>
+ </html>
+
+\textcolor{comment}{//----------------bmiresults.xhtml----------------}
+
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"iso-8859-1"} ?>
+<html>
+     <head>
+         <title>Body Mass Index (BMI) - Results</title>
+     </head>
+     <body>
+         Name: <out value=\textcolor{stringliteral}{"#\{user.getName\}"}/><br/>
+         Mass(KG): <out value=\textcolor{stringliteral}{"#\{user.getMass\}"}/><br/>
+         Height(m): <out value=\textcolor{stringliteral}{"#\{user.getHeight\}"}/><br/>
+         BMI: <out value=\textcolor{stringliteral}{"#\{user.getBmi\}"}/><br/>
+         Category: <out value=\textcolor{stringliteral}{"#\{user.getCategory\}"}/>
+     </body>
+</html>
+
+\textcolor{comment}{//----------------user.h----------------}
+
+#ifndef USER\_H
+#define USER\_H
+
+#include <QObject>
+#include <QString>
+
+class User : public QObject
+\{
+    Q\_OBJECT
+\textcolor{keyword}{private}:
+    QString name;
+    QString category;
+    \textcolor{keywordtype}{double} mass = 0;
+    \textcolor{keywordtype}{double} height = 0;
+    \textcolor{keywordtype}{double} bmi = 0;
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{explicit} User(QObject *parent = 0) : QObject(parent)
+    \{
+    \}
+\textcolor{keyword}{public} slots:
+    QString getName()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} name;
+    \}
+    \textcolor{keywordtype}{void} setName(\textcolor{keyword}{const} QString &value)
+    \{
+        name = value;
+    \}
+    QString getCategory()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} category;
+    \}
+    \textcolor{keywordtype}{double} getMass()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} mass;
+    \}
+    \textcolor{keywordtype}{void} setMass(\textcolor{keywordtype}{double} value)
+    \{
+        mass = value;
+    \}
+    \textcolor{keywordtype}{double} getHeight()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} height;
+    \}
+    \textcolor{keywordtype}{void} setHeight(\textcolor{keywordtype}{double} value)
+    \{
+        height = value;
+    \}
+    \textcolor{keywordtype}{double} getBmi()
+    \{
+        bmi = height != 0 ? mass / (height * height) : 0;
+
+        \textcolor{keywordflow}{if}(bmi <= 15)
+        \{
+            category = \textcolor{stringliteral}{"Very severely underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 15 && bmi <= 16)
+        \{
+            category = \textcolor{stringliteral}{"Severely underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 16 && bmi <= 18.5)
+        \{
+            category = \textcolor{stringliteral}{"Underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 18.5 && bmi <= 25)
+        \{
+            category = \textcolor{stringliteral}{"Normal (healthy weight)"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 25 && bmi <= 30)
+        \{
+            category = \textcolor{stringliteral}{"Overweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 30 && bmi <= 35)
+        \{
+            category = \textcolor{stringliteral}{"Obese Class I (Moderately obese)"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 35 && bmi <= 40)
+        \{
+            category = \textcolor{stringliteral}{"Obese Class II (Severely obese)"};
+        \}
+        \textcolor{keywordflow}{else}
+        \{
+            category = \textcolor{stringliteral}{"Obese Class III (Very severely obese)"};
+        \}
+
+        \textcolor{keywordflow}{return} bmi;
+    \}
+\};
+
+\textcolor{preprocessor}{#endif // USER\_H}
+
+\textcolor{comment}{//----------------bmicontroller.h----------------}
+
+\textcolor{preprocessor}{#ifndef BMISERVLET\_H}
+\textcolor{preprocessor}{#define BMISERVLET\_H}
+
+\textcolor{preprocessor}{#include "\hyperlink{httpservlet_8h}{cwf/httpservlet.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{httpservletrequest_8h}{cwf/httpservletrequest.h}"}
+\textcolor{preprocessor}{#include "\hyperlink{httpservletresponse_8h}{cwf/httpservletresponse.h}"}
+\textcolor{preprocessor}{#include "entities/user.h"}
+
+\textcolor{keyword}{class }BmiServlet : \textcolor{keyword}{public} \hyperlink{class_c_w_f_1_1_http_servlet}{CWF::HttpServlet}
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keywordtype}{void} doGet(\hyperlink{class_c_w_f_1_1_http_servlet_request}{CWF::HttpServletRequest} &request, 
+      \hyperlink{class_c_w_f_1_1_http_servlet_response}{CWF::HttpServletResponse} &response)\textcolor{keyword}{ override}
+\textcolor{keyword}{    }\{
+        request.\hyperlink{class_c_w_f_1_1_http_servlet_request_a0ce93d793a178c7e0e5fef4044b48bdc}{getRequestDispatcher}(\textcolor{stringliteral}{"/pages/bmi"}).\hyperlink{class_c_w_f_1_1_request_dispatcher_a075c11ff233f217196764899f9edf7d0}{forward}(request, response);
+    \}
+    \textcolor{keywordtype}{void} doPost(\hyperlink{class_c_w_f_1_1_http_servlet_request}{CWF::HttpServletRequest} &request, 
+      \hyperlink{class_c_w_f_1_1_http_servlet_response}{CWF::HttpServletResponse} &response)\textcolor{keyword}{ override}
+\textcolor{keyword}{    }\{
+        User user;
+        request.\hyperlink{class_c_w_f_1_1_http_servlet_request_a82a05ddb8d91c72a28846ffc0e811ee7}{fillQObject}(&user);
+        request.\hyperlink{class_c_w_f_1_1_http_servlet_request_ad4777049d7043e62535fa658fd61be1d}{addAttribute}(\textcolor{stringliteral}{"user"}, &user);
+        request.\hyperlink{class_c_w_f_1_1_http_servlet_request_a0ce93d793a178c7e0e5fef4044b48bdc}{getRequestDispatcher}(\textcolor{stringliteral}{"/pages/bmiresults"}).
+      \hyperlink{class_c_w_f_1_1_request_dispatcher_a075c11ff233f217196764899f9edf7d0}{forward}(request, response);
+    \}
+\};
+
+\textcolor{preprocessor}{#endif // BMISERVLET\_H}
+
+\textcolor{comment}{//----------------main.cpp----------------}
+
+\textcolor{preprocessor}{#include <QCoreApplication>}
+\textcolor{preprocessor}{#include <\hyperlink{cppwebapplication_8h}{cwf/cppwebapplication.h}>}
+\textcolor{preprocessor}{#include <servlets/bmiservlet.h>}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+\{
+    \hyperlink{class_c_w_f_1_1_cpp_web_application}{CWF::CppWebApplication} server(argc,
+                                  argv,
+                                  \hyperlink{class_c_w_f_1_1_configuration}{CWF::Configuration}(\textcolor{stringliteral}{"
+      /home/herik/CPPWebFramework/examples/FillObjectBMI/server"}));
+
+    server.addUrlServlet(\textcolor{stringliteral}{"/bmi"}, \textcolor{keyword}{new} BmiServlet);
+
+    \textcolor{keywordflow}{return} server.start();
+\}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
 \hypertarget{class_c_w_f_1_1_http_servlet_request_a6833f3628440cfa4a6dc45fcd6783eee}{\index{C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}!get\+Attribute@{get\+Attribute}}
 \index{get\+Attribute@{get\+Attribute}!C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}}
 \subsubsection[{get\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}const Q\+Object $\ast$ C\+W\+F\+::\+Http\+Servlet\+Request\+::get\+Attribute (
@@ -172,7 +360,7 @@ This method returns a specific object given its name.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-const Q\+Object $\ast$ 
+const Q\+Object $\ast$ \+: Attributte's name. 
 \end{DoxyReturn}
 \hypertarget{class_c_w_f_1_1_http_servlet_request_a3855042c53725e7ef753bee620e01297}{\index{C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}!get\+Attributes@{get\+Attributes}}
 \index{get\+Attributes@{get\+Attributes}!C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}}
@@ -209,6 +397,13 @@ bool
 {}
 \end{DoxyParamCaption}
 ) const}}\label{class_c_w_f_1_1_http_servlet_request_a9b46d51ca2410ec587f980fc86d75027}
+
+
+Returns. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \hypertarget{class_c_w_f_1_1_http_servlet_request_a3bb5c268aecca784c632c673078b4150}{\index{C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}!get\+Http\+Parser@{get\+Http\+Parser}}
 \index{get\+Http\+Parser@{get\+Http\+Parser}!C\+W\+F\+::\+Http\+Servlet\+Request@{C\+W\+F\+::\+Http\+Servlet\+Request}}
 \subsubsection[{get\+Http\+Parser}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Http\+Parser} \& C\+W\+F\+::\+Http\+Servlet\+Request\+::get\+Http\+Parser (

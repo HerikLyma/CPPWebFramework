@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['requestdispatcher',['RequestDispatcher',['../class_c_w_f_1_1_request_dispatcher.html',1,'CWF']]]
+  ['sessionidgenerator',['SessionIdGenerator',['../class_c_w_f_1_1_session_id_generator.html',1,'CWF']]]
 ];

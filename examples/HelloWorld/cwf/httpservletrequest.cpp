@@ -37,7 +37,6 @@ namespace CWF
         QMap<QByteArray, QByteArray> parameters(std::move(httpParser->getParameters()));
         MetaClassParser meta(object);
 
-
         for(QMap<QByteArray, QByteArray>::iterator it = parameters.begin(); it != parameters.end(); ++it)
         {
             QString method = it.key();
@@ -120,7 +119,7 @@ namespace CWF
                 }
                 else if(parameterType == "double")
                 {
-                    QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(float, value.toDouble()));
+                    QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(double, value.toDouble()));
                 }
             }
         }

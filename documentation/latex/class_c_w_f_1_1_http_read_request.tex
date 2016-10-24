@@ -13,8 +13,7 @@ The \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} class is 
 
 
 
-Inheritance diagram for C\+W\+F\+:\+:Http\+Read\+Request\+:
-\nopagebreak
+Inheritance diagram for C\+W\+F\+:\+:Http\+Read\+Request\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,13 +24,11 @@ Inheritance diagram for C\+W\+F\+:\+:Http\+Read\+Request\+:
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_w_f_1_1_http_read_request_ade7aa5ac198bb40ce98de9f9ac9ff4d2}{Http\+Read\+Request} (qintptr socket\+Descriptor, \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} $\ast$ $>$ \&url\+Servlet, \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_c_w_f_1_1_http_session}{Http\+Session} $\ast$ $>$ \&sessions, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \hyperlink{class_c_w_f_1_1_filter}{Filter} $\ast$filter)
-\begin{DoxyCompactList}\small\item\em This constructor needs to receive the parent, a socket descriptor, all the mapped servlets, all the sessions,~\newline
- a filter, the default path to the pages and resources like\+: xhtml pages, images, css...~\newline
- a domain, and a session expire time to the sessions(optional). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This constructor provides the necessary information to create a \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
 \hyperlink{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}{$\sim$\+Http\+Read\+Request} ()
-\begin{DoxyCompactList}\small\item\em Starts to read the requisition. \end{DoxyCompactList}\item 
-void \hyperlink{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}{run} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destroys dynamically allocated resources. \end{DoxyCompactList}\item 
+void \hyperlink{class_c_w_f_1_1_http_read_request_a8c7de493baefa696920be2588129f5fd}{run} () override
+\begin{DoxyCompactList}\small\item\em Starts to read the requisition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,27 +49,19 @@ The \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request} class is 
 )}}\label{class_c_w_f_1_1_http_read_request_ade7aa5ac198bb40ce98de9f9ac9ff4d2}
 
 
-This constructor needs to receive the parent, a socket descriptor, all the mapped servlets, all the sessions,~\newline
- a filter, the default path to the pages and resources like\+: xhtml pages, images, css...~\newline
- a domain, and a session expire time to the sessions(optional). 
+This constructor provides the necessary information to create a \hyperlink{class_c_w_f_1_1_http_read_request}{Http\+Read\+Request}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em parent} & \+: This is a pointer to Q\+Object. \\
+{\em qintptr} & socket\+Descriptor \+: Used to create a socket. \\
 \hline
-{\em socket\+Descriptor} & \+: This is a qintptr. \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet}} & $\ast$$>$ \&url\+Servlet \+: All mapped servlets \\
 \hline
-{\em url\+Servlet} & \+: This is a reference to a \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}. \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_c_w_f_1_1_http_session}{Http\+Session}} & $\ast$$>$ \&sessions \+: Sessions. \\
 \hline
-{\em sessions} & \+: This is a reference to a \hyperlink{class_c_w_f_1_1_q_map_thread_safety}{Q\+Map\+Thread\+Safety}. \\
+{\em Q\+Ssl\+Configuration} & $\ast$ssl\+Configuration \+: S\+S\+L configuration. \\
 \hline
-{\em filter} & \+: This is a pointer to a \hyperlink{class_c_w_f_1_1_filter}{Filter}. \\
-\hline
-{\em path} & \+: This is a reference to a Q\+String. \\
-\hline
-{\em domain} & \+: This is a reference to a Q\+String. \\
-\hline
-{\em session\+Expiration\+Time} & \+: This is a qint64. \\
+{\em \hyperlink{class_c_w_f_1_1_filter}{Filter}} & $\ast$filter \+: \hyperlink{class_c_w_f_1_1_filter}{Filter} \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!````~Http\+Read\+Request@{$\sim$\+Http\+Read\+Request}}
@@ -84,18 +73,22 @@ This constructor needs to receive the parent, a socket descriptor, all the mappe
 )}}\label{class_c_w_f_1_1_http_read_request_ad2013577721f188ab3e94c9b977fe3ee}
 
 
-Starts to read the requisition. 
+Destroys dynamically allocated resources. 
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!run@{run}}
+\hypertarget{class_c_w_f_1_1_http_read_request_a8c7de493baefa696920be2588129f5fd}{\index{C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}!run@{run}}
 \index{run@{run}!C\+W\+F\+::\+Http\+Read\+Request@{C\+W\+F\+::\+Http\+Read\+Request}}
 \subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void C\+W\+F\+::\+Http\+Read\+Request\+::run (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_c_w_f_1_1_http_read_request_a45c1183b9857a34d4a53452917f7bcec}
+)\hspace{0.3cm}{\ttfamily [override]}}}\label{class_c_w_f_1_1_http_read_request_a8c7de493baefa696920be2588129f5fd}
+
+
+Starts to read the requisition. 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

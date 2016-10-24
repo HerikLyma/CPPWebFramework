@@ -100,37 +100,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_c_w_f_1_1_properties.html">Properties</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35">Properties</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html#ad37244d75ca8ae82b8122b2f5d6952a2">   21</a></span>&#160;        <a class="code" href="class_c_w_f_1_1_properties.html#ad37244d75ca8ae82b8122b2f5d6952a2">Properties</a>(<span class="keyword">const</span> QString &amp;classAndMethod)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            QStringList temp = classAndMethod.split(<span class="charliteral">&#39;.&#39;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span>(temp.size() == 2)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">m_class</a>  = temp[0];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">m_method</a> = temp[1];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(temp.size() == 1)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <a class="code" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">m_class</a>  = temp[0];</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <a class="code" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">m_method</a> = <span class="stringliteral">&quot;getValue&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">   35</a></span>&#160;        QString <a class="code" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">m_class</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">   36</a></span>&#160;        QString <a class="code" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">m_method</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // PROPERTIES_H</span></div>
-<div class="ttc" id="class_c_w_f_1_1_properties_html_a417638a2312fba16104f19bc59190b35"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35">CWF::Properties::Properties</a></div><div class="ttdeci">Properties()=default</div></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">   20</a></span>&#160;        QString <a class="code" href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">m_class</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">   21</a></span>&#160;        QString <a class="code" href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">m_method</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35">Properties</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35">Properties</a>(<span class="keyword">const</span> QString &amp;classAndMethod);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // PROPERTIES_H</span></div>
+<div class="ttc" id="class_c_w_f_1_1_properties_html_a417638a2312fba16104f19bc59190b35"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35">CWF::Properties::Properties</a></div><div class="ttdeci">Properties()=default</div><div class="ttdoc">Default constructor. </div></div>
 <div class="ttc" id="class_c_w_f_1_1_properties_html"><div class="ttname"><a href="class_c_w_f_1_1_properties.html">CWF::Properties</a></div><div class="ttdoc">The Properties class is an auxiliar class to the CSTLCompiler. </div><div class="ttdef"><b>Definition:</b> properties.h:17</div></div>
 <div class="ttc" id="namespace_c_w_f_html"><div class="ttname"><a href="namespace_c_w_f.html">CWF</a></div><div class="ttdoc">All classes of C++ Web Framework are contained within the namespace CWF. </div><div class="ttdef"><b>Definition:</b> configuration.cpp:8</div></div>
-<div class="ttc" id="class_c_w_f_1_1_properties_html_ad77aa99c8e2ea4afe6300d739ba22308"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">CWF::Properties::m_class</a></div><div class="ttdeci">QString m_class</div><div class="ttdef"><b>Definition:</b> properties.h:35</div></div>
-<div class="ttc" id="class_c_w_f_1_1_properties_html_a70682c472acdeef56e50a79f2436833e"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">CWF::Properties::m_method</a></div><div class="ttdeci">QString m_method</div><div class="ttdef"><b>Definition:</b> properties.h:36</div></div>
-<div class="ttc" id="class_c_w_f_1_1_properties_html_ad37244d75ca8ae82b8122b2f5d6952a2"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#ad37244d75ca8ae82b8122b2f5d6952a2">CWF::Properties::Properties</a></div><div class="ttdeci">Properties(const QString &amp;classAndMethod)</div><div class="ttdef"><b>Definition:</b> properties.h:21</div></div>
+<div class="ttc" id="class_c_w_f_1_1_properties_html_ad77aa99c8e2ea4afe6300d739ba22308"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#ad77aa99c8e2ea4afe6300d739ba22308">CWF::Properties::m_class</a></div><div class="ttdeci">QString m_class</div><div class="ttdef"><b>Definition:</b> properties.h:20</div></div>
+<div class="ttc" id="class_c_w_f_1_1_properties_html_a70682c472acdeef56e50a79f2436833e"><div class="ttname"><a href="class_c_w_f_1_1_properties.html#a70682c472acdeef56e50a79f2436833e">CWF::Properties::m_method</a></div><div class="ttdeci">QString m_method</div><div class="ttdef"><b>Definition:</b> properties.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:56 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

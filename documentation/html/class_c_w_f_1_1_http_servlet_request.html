@@ -104,8 +104,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for CWF::HttpServletRequest:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_c_w_f_1_1_http_servlet_request__inherit__graph.png" border="0" usemap="#_c_w_f_1_1_http_servlet_request_inherit__map" alt="Inheritance graph"/></div>
-<map name="_c_w_f_1_1_http_servlet_request_inherit__map" id="_c_w_f_1_1_http_servlet_request_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -114,10 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9fdd1aeaccd42c3043bff902cf6e6e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor needs to receive a reference to a QTcpSocket and QByteArray. The parameter parent is optional. NOTE: The <a class="el" href="class_c_w_f_1_1_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> is responsable to create the QTcpSocket, and the <a class="el" href="class_c_w_f_1_1_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a> is responsable to create a <a class="el" href="class_c_w_f_1_1_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a> and a <a class="el" href="class_c_w_f_1_1_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">HttpServletResponse</a>.  <a href="#a9fdd1aeaccd42c3043bff902cf6e6e09">More...</a><br /></td></tr>
 <tr class="separator:a9fdd1aeaccd42c3043bff902cf6e6e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41867870bf0c9f23ef74d70b10c0d357"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a41867870bf0c9f23ef74d70b10c0d357">~HttpServletRequest</a> ()</td></tr>
-<tr class="memdesc:a41867870bf0c9f23ef74d70b10c0d357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a41867870bf0c9f23ef74d70b10c0d357">More...</a><br /></td></tr>
+<tr class="memdesc:a41867870bf0c9f23ef74d70b10c0d357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys dynamically allocated resources.  <a href="#a41867870bf0c9f23ef74d70b10c0d357">More...</a><br /></td></tr>
 <tr class="separator:a41867870bf0c9f23ef74d70b10c0d357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4777049d7043e62535fa658fd61be1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#ad4777049d7043e62535fa658fd61be1d">addAttribute</a> (const QString &amp;name, QObject *value)</td></tr>
-<tr class="memdesc:ad4777049d7043e62535fa658fd61be1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add an attribute that will be passed to a xhtml page.  <a href="#ad4777049d7043e62535fa658fd61be1d">More...</a><br /></td></tr>
+<tr class="memdesc:ad4777049d7043e62535fa658fd61be1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml CSTL. For this to be possible the object must inherit from QObject and methods and must be in session "public slots".  <a href="#ad4777049d7043e62535fa658fd61be1d">More...</a><br /></td></tr>
 <tr class="separator:ad4777049d7043e62535fa658fd61be1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3855042c53725e7ef753bee620e01297"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a3855042c53725e7ef753bee620e01297">getAttributes</a> () const </td></tr>
 <tr class="memdesc:a3855042c53725e7ef753bee620e01297"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns all the attributes of a <a class="el" href="class_c_w_f_1_1_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a>.  <a href="#a3855042c53725e7ef753bee620e01297">More...</a><br /></td></tr>
@@ -126,6 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6833f3628440cfa4a6dc45fcd6783eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns a specific object given its name.  <a href="#a6833f3628440cfa4a6dc45fcd6783eee">More...</a><br /></td></tr>
 <tr class="separator:a6833f3628440cfa4a6dc45fcd6783eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b46d51ca2410ec587f980fc86d75027"><td class="memItemLeft" align="right" valign="top">const QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a9b46d51ca2410ec587f980fc86d75027">getBody</a> () const </td></tr>
+<tr class="memdesc:a9b46d51ca2410ec587f980fc86d75027"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns.  <a href="#a9b46d51ca2410ec587f980fc86d75027">More...</a><br /></td></tr>
 <tr class="separator:a9b46d51ca2410ec587f980fc86d75027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ce93d793a178c7e0e5fef4044b48bdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_w_f_1_1_request_dispatcher.html">RequestDispatcher</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a0ce93d793a178c7e0e5fef4044b48bdc">getRequestDispatcher</a> (const QString &amp;page)</td></tr>
 <tr class="memdesc:a0ce93d793a178c7e0e5fef4044b48bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns a requestDispatcher given an specific page.  <a href="#a0ce93d793a178c7e0e5fef4044b48bdc">More...</a><br /></td></tr>
@@ -137,10 +136,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1e17ba223b17b4b390c9a351d4fff78e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will clear all the attributes.  <a href="#a1e17ba223b17b4b390c9a351d4fff78e">More...</a><br /></td></tr>
 <tr class="separator:a1e17ba223b17b4b390c9a351d4fff78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c28aa6bbd0cf10b482098c70fe2c0fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a0c28aa6bbd0cf10b482098c70fe2c0fd">setHttpParser</a> (<a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a> &amp;httpParser)</td></tr>
-<tr class="memdesc:a0c28aa6bbd0cf10b482098c70fe2c0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method set the <a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a>.  <a href="#a0c28aa6bbd0cf10b482098c70fe2c0fd">More...</a><br /></td></tr>
+<tr class="memdesc:a0c28aa6bbd0cf10b482098c70fe2c0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method set the <a class="el" href="class_c_w_f_1_1_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>.  <a href="#a0c28aa6bbd0cf10b482098c70fe2c0fd">More...</a><br /></td></tr>
 <tr class="separator:a0c28aa6bbd0cf10b482098c70fe2c0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb5c268aecca784c632c673078b4150"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a3bb5c268aecca784c632c673078b4150">getHttpParser</a> () const </td></tr>
-<tr class="memdesc:a3bb5c268aecca784c632c673078b4150"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the <a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a>.  <a href="#a3bb5c268aecca784c632c673078b4150">More...</a><br /></td></tr>
+<tr class="memdesc:a3bb5c268aecca784c632c673078b4150"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the <a class="el" href="class_c_w_f_1_1_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>.  <a href="#a3bb5c268aecca784c632c673078b4150">More...</a><br /></td></tr>
 <tr class="separator:a3bb5c268aecca784c632c673078b4150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9408f2866aa0fc49242e74b85a514869"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a9408f2866aa0fc49242e74b85a514869">getRequestURL</a> () const </td></tr>
 <tr class="memdesc:a9408f2866aa0fc49242e74b85a514869"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the requested url.  <a href="#a9408f2866aa0fc49242e74b85a514869">More...</a><br /></td></tr>
@@ -176,6 +175,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a67e5b7ef1e55618ff787ab3d5e229246"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns all the files that the user has sent.  <a href="#a67e5b7ef1e55618ff787ab3d5e229246">More...</a><br /></td></tr>
 <tr class="separator:a67e5b7ef1e55618ff787ab3d5e229246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a05ddb8d91c72a28846ffc0e811ee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_http_servlet_request.html#a82a05ddb8d91c72a28846ffc0e811ee7">fillQObject</a> (QObject *object)</td></tr>
+<tr class="memdesc:a82a05ddb8d91c72a28846ffc0e811ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a QObject using parameters of a HTTP message.  <a href="#a82a05ddb8d91c72a28846ffc0e811ee7">More...</a><br /></td></tr>
 <tr class="separator:a82a05ddb8d91c72a28846ffc0e811ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -259,7 +259,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destructor. </p>
+<p>Destroys dynamically allocated resources. </p>
 
 </div>
 </div>
@@ -288,11 +288,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method add an attribute that will be passed to a xhtml page. </p>
+<p>This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml CSTL. For this to be possible the object must inherit from QObject and methods and must be in session "public slots". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">path</td><td>: This is a reference to a QByteArray and holds a name of a object that will be used in a xhtml page. </td></tr>
-    <tr><td class="paramname">value</td><td>: This is a pointer to a QObject and holds the object that will be used by the <a class="el" href="class_c_w_f_1_1_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> to process a xhtml page and generates its output. </td></tr>
+    <tr><td class="paramname">const</td><td>QString &amp;name : </td></tr>
+    <tr><td class="paramname">QObject</td><td>*value : </td></tr>
   </table>
   </dd>
 </dl>
@@ -330,6 +330,185 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fill a QObject using parameters of a HTTP message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QObject</td><td>*object : Object to be filled. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="comment">//----------------bmi.xhtml----------------</span></div>
+<div class="line"></div>
+<div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;iso-8859-1&quot;</span> ?&gt;</div>
+<div class="line">&lt;html&gt;</div>
+<div class="line">     &lt;head&gt;</div>
+<div class="line">         &lt;title&gt;Body Mass Index (BMI)&lt;/title&gt;</div>
+<div class="line">     &lt;/head&gt;</div>
+<div class="line">     &lt;body&gt;</div>
+<div class="line">         &lt;form method=<span class="stringliteral">&quot;POST&quot;</span> action=<span class="stringliteral">&quot;/bmi&quot;</span>&gt;</div>
+<div class="line">             Name&lt;br/&gt;&lt;input type=<span class="stringliteral">&quot;text&quot;</span> name=<span class="stringliteral">&quot;name&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">             Mass(KG)&lt;br/&gt;&lt;input type=<span class="stringliteral">&quot;text&quot;</span> name=<span class="stringliteral">&quot;mass&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">             Height(m)&lt;br/&gt;&lt;input type=<span class="stringliteral">&quot;text&quot;</span> name=<span class="stringliteral">&quot;height&quot;</span>/&gt;&lt;br/&gt;&lt;br/&gt;</div>
+<div class="line">             &lt;input type=<span class="stringliteral">&quot;submit&quot;</span> name=<span class="stringliteral">&quot;submit&quot;</span> value=<span class="stringliteral">&quot;Calculate&quot;</span>/&gt;</div>
+<div class="line">         &lt;/form&gt;</div>
+<div class="line">     &lt;/body&gt;</div>
+<div class="line"> &lt;/html&gt;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">//----------------bmiresults.xhtml----------------</span></div>
+<div class="line"></div>
+<div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;iso-8859-1&quot;</span> ?&gt;</div>
+<div class="line">&lt;html&gt;</div>
+<div class="line">     &lt;head&gt;</div>
+<div class="line">         &lt;title&gt;Body Mass Index (BMI) - Results&lt;/title&gt;</div>
+<div class="line">     &lt;/head&gt;</div>
+<div class="line">     &lt;body&gt;</div>
+<div class="line">         Name: &lt;out value=<span class="stringliteral">&quot;#{user.getName}&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">         Mass(KG): &lt;out value=<span class="stringliteral">&quot;#{user.getMass}&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">         Height(m): &lt;out value=<span class="stringliteral">&quot;#{user.getHeight}&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">         BMI: &lt;out value=<span class="stringliteral">&quot;#{user.getBmi}&quot;</span>/&gt;&lt;br/&gt;</div>
+<div class="line">         Category: &lt;out value=<span class="stringliteral">&quot;#{user.getCategory}&quot;</span>/&gt;</div>
+<div class="line">     &lt;/body&gt;</div>
+<div class="line">&lt;/html&gt;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">//----------------user.h----------------</span></div>
+<div class="line"></div>
+<div class="line">#ifndef USER_H</div>
+<div class="line">#define USER_H</div>
+<div class="line"></div>
+<div class="line">#include &lt;QObject&gt;</div>
+<div class="line">#include &lt;QString&gt;</div>
+<div class="line"></div>
+<div class="line">class User : public QObject</div>
+<div class="line">{</div>
+<div class="line">    Q_OBJECT</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    QString name;</div>
+<div class="line">    QString category;</div>
+<div class="line">    <span class="keywordtype">double</span> mass = 0;</div>
+<div class="line">    <span class="keywordtype">double</span> height = 0;</div>
+<div class="line">    <span class="keywordtype">double</span> bmi = 0;</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">explicit</span> User(QObject *parent = 0) : QObject(parent)</div>
+<div class="line">    {</div>
+<div class="line">    }</div>
+<div class="line"><span class="keyword">public</span> slots:</div>
+<div class="line">    QString getName()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> name;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">void</span> setName(<span class="keyword">const</span> QString &amp;value)</div>
+<div class="line">    {</div>
+<div class="line">        name = value;</div>
+<div class="line">    }</div>
+<div class="line">    QString getCategory()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> category;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">double</span> getMass()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> mass;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">void</span> setMass(<span class="keywordtype">double</span> value)</div>
+<div class="line">    {</div>
+<div class="line">        mass = value;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">double</span> getHeight()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> height;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">void</span> setHeight(<span class="keywordtype">double</span> value)</div>
+<div class="line">    {</div>
+<div class="line">        height = value;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">double</span> getBmi()</div>
+<div class="line">    {</div>
+<div class="line">        bmi = height != 0 ? mass / (height * height) : 0;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span>(bmi &lt;= 15)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Very severely underweight&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 15 &amp;&amp; bmi &lt;= 16)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Severely underweight&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 16 &amp;&amp; bmi &lt;= 18.5)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Underweight&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 18.5 &amp;&amp; bmi &lt;= 25)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Normal (healthy weight)&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 25 &amp;&amp; bmi &lt;= 30)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Overweight&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 30 &amp;&amp; bmi &lt;= 35)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Obese Class I (Moderately obese)&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(bmi &gt; 35 &amp;&amp; bmi &lt;= 40)</div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Obese Class II (Severely obese)&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span></div>
+<div class="line">        {</div>
+<div class="line">            category = <span class="stringliteral">&quot;Obese Class III (Very severely obese)&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">return</span> bmi;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#endif // USER_H</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//----------------bmicontroller.h----------------</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#ifndef BMISERVLET_H</span></div>
+<div class="line"><span class="preprocessor">#define BMISERVLET_H</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="httpservlet_8h.html">cwf/httpservlet.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="httpservletrequest_8h.html">cwf/httpservletrequest.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="httpservletresponse_8h.html">cwf/httpservletresponse.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;entities/user.h&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">class </span>BmiServlet : <span class="keyword">public</span> <a class="code" href="class_c_w_f_1_1_http_servlet.html">CWF::HttpServlet</a></div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> doGet(<a class="code" href="class_c_w_f_1_1_http_servlet_request.html">CWF::HttpServletRequest</a> &amp;request, <a class="code" href="class_c_w_f_1_1_http_servlet_response.html">CWF::HttpServletResponse</a> &amp;response)<span class="keyword"> override</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#a0ce93d793a178c7e0e5fef4044b48bdc">getRequestDispatcher</a>(<span class="stringliteral">&quot;/pages/bmi&quot;</span>).<a class="code" href="class_c_w_f_1_1_request_dispatcher.html#a075c11ff233f217196764899f9edf7d0">forward</a>(request, response);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">void</span> doPost(<a class="code" href="class_c_w_f_1_1_http_servlet_request.html">CWF::HttpServletRequest</a> &amp;request, <a class="code" href="class_c_w_f_1_1_http_servlet_response.html">CWF::HttpServletResponse</a> &amp;response)<span class="keyword"> override</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        User user;</div>
+<div class="line">        request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#a82a05ddb8d91c72a28846ffc0e811ee7">fillQObject</a>(&amp;user);</div>
+<div class="line">        request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#ad4777049d7043e62535fa658fd61be1d">addAttribute</a>(<span class="stringliteral">&quot;user&quot;</span>, &amp;user);</div>
+<div class="line">        request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#a0ce93d793a178c7e0e5fef4044b48bdc">getRequestDispatcher</a>(<span class="stringliteral">&quot;/pages/bmiresults&quot;</span>).<a class="code" href="class_c_w_f_1_1_request_dispatcher.html#a075c11ff233f217196764899f9edf7d0">forward</a>(request, response);</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#endif // BMISERVLET_H</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//----------------main.cpp----------------</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="cppwebapplication_8h.html">cwf/cppwebapplication.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;servlets/bmiservlet.h&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="class_c_w_f_1_1_cpp_web_application.html">CWF::CppWebApplication</a> server(argc,</div>
+<div class="line">                                  argv,</div>
+<div class="line">                                  <a class="code" href="class_c_w_f_1_1_configuration.html">CWF::Configuration</a>(<span class="stringliteral">&quot;/home/herik/CPPWebFramework/examples/FillObjectBMI/server&quot;</span>));</div>
+<div class="line"></div>
+<div class="line">    server.addUrlServlet(<span class="stringliteral">&quot;/bmi&quot;</span>, <span class="keyword">new</span> BmiServlet);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> server.start();</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a6833f3628440cfa4a6dc45fcd6783eee"></a>
@@ -353,7 +532,7 @@ Friends</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const QObject * </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const QObject * : Attributte's name. </dd></dl>
 
 </div>
 </div>
@@ -406,6 +585,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a3bb5c268aecca784c632c673078b4150"></a>
@@ -421,8 +603,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method returns the <a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a> </dd></dl>
+<p>This method returns the <a class="el" href="class_c_w_f_1_1_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_c_w_f_1_1_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a> </dd></dl>
 
 </div>
 </div>
@@ -664,7 +846,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method set the <a class="el" href="class_c_w_f_1_1_http_parser.html">HttpParser</a>. </p>
+<p>This method set the <a class="el" href="class_c_w_f_1_1_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">httpParser</td><td></td></tr>
@@ -741,7 +923,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:56 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

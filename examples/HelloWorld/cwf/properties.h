@@ -17,23 +17,17 @@ namespace CWF
     class Properties
     {
     public:
-        Properties() = default;
-        Properties(const QString &classAndMethod)
-        {
-            QStringList temp = classAndMethod.split('.');
-            if(temp.size() == 2)
-            {
-                m_class  = temp[0];
-                m_method = temp[1];
-            }
-            else if(temp.size() == 1)
-            {
-                m_class  = temp[0];
-                m_method = "getValue";
-            }
-        }
         QString m_class;
         QString m_method;
+        /**
+         * @brief Default constructor.
+         */
+        Properties() = default;
+        /**
+         * @brief Extracts class and method name.
+         * @param const QString &classAndMethod : Class and method name.
+         */
+        Properties(const QString &classAndMethod);
     };
 }
 

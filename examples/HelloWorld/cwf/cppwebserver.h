@@ -40,30 +40,35 @@ namespace CWF
         QSslConfiguration *sslConfiguration = nullptr;
         const int sleepTime = 10;
         bool block = false;
+        /**
+         * @brief Load the SSL Configuration to the server.
+         */
         void loadSslConfiguration();
     public:
         /**
-         * @brief This is a constructor and receives the max thread number, a Filter, apath, a domain, the time out in milliseconds<br>
-         * the session expire time, the clean time, and a parent.
-         * @param maxThread
-         * @param filter
-         * @param path
-         * @param domain
-         * @param timeOutInMs
-         * @param sessionExpirationTime
-         * @param cleanupInterval
-         * @param parent
+         * @brief Load SSL configuration, configure the thread pool and the filter.
+         * @param Filter *filter : Install a filter for requests on the server. Optional.
          */
         explicit CppWebServer(Filter *filter = nullptr);
+        /**
+         * @brief Destroys all servlets and sessions.
+        */
         ~CppWebServer();
         /**
-         * @brief addUrlServlet
-         * @param url
-         * @param servlet
+         * @brief Hitches a url to a Servlet.
+         * @param const QString &url   : Url name.
+         * @param HttpServlet *servlet : Servlet that will answer requests made to url.
          */
         void addUrlServlet(const QString &url, HttpServlet *servlet);
     private slots:
-        void incomingConnection(qintptr socketfd);
+        /**
+         * @brief incomingConnection
+         * @param qintptr socketfd : Socket descriptor.
+         */
+        void incomingConnection(qintptr socketfd) override;
+        /**
+         * @brief Clean expired sessions on Server.
+         */
         void doClean();
     };
 }

@@ -295,7 +295,7 @@ namespace CWF
         return valid;
     }
 
-    QMap<QByteArray, QByteArray> HttpParser::getParameters() const
+    QMultiMap<QByteArray, QByteArray> HttpParser::getParameters() const
     {
         return parameters;
     }
@@ -305,14 +305,14 @@ namespace CWF
         return cookies;
     }
 
-    QByteArrayList HttpParser::getHeaderFields(const QByteArray &headerField) const
+    QByteArrayList HttpParser::getHeaderFields(const QByteArray &name) const
     {
-        return this->headerField.values(headerField);
+        return headerField.values(name);
     }
 
-    QByteArray HttpParser::getHeaderField(const QByteArray &headerField) const
+    QByteArray HttpParser::getHeaderField(const QByteArray &name) const
     {
-        return this->headerField.value(headerField);
+        return headerField.value(name);
     }
 
     QByteArrayList HttpParser::getParameters(const QByteArray &name) const

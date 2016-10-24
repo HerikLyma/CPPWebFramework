@@ -23,7 +23,7 @@ namespace CWF
     {
     public:
         /**
-         * @brief Destructor
+         * @brief Virtual destructor.
          */
         virtual ~Filter();
         /**
@@ -31,6 +31,61 @@ namespace CWF
          * @param request  : This is a reference to the HttpServletRequest.
          * @param response : This is a reference to the HttpServletResponse.
          * @param chain    : This is a reference to the FilterChain.
+         * @par Example
+         * @code
+         * //----loginfilter.h-----
+         *
+         * #ifndef LOGINFILTER_H
+         * #define LOGINFILTER_H
+         *
+         * #include "cwf/filter.h"
+         *
+         * class LoginFilter : public CWF::Filter
+         * {
+         * public:
+         *     void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, CWF::FilterChain &chain)
+         *     {
+         *         QString url = request.getRequestURL();
+         *         if(url.endsWith(".css") || url.endsWith(".png") || url.endsWith(".jpg"))
+         *         {
+         *             chain.doFilter(request, response);
+         *         }
+         *         else if(url != "/login")
+         *         {
+         *             if(request.getSession().getAttribute("user") == nullptr || request.getSession().isExpired())
+         *             {
+         *                 request.getRequestDispatcher("/pages/login").forward(request, response);
+         *             }
+         *             else
+         *             {
+         *                 chain.doFilter(request, response);
+         *             }
+         *          }
+         *          else
+         *          {
+         *              chain.doFilter(request, response);
+         *          }
+         *     }
+         * };
+         *
+         * #endif // LOGINFILTER_H
+         *
+         * //----main.h-----
+         *
+         * #include <filter/loginfilter.h>
+         * #include "cwf/cppwebapplication.h"
+         *
+         * int main(int argc, char *argv[])
+         * {
+         *     CWF::CppWebApplication server(argc,
+         *                                   argv,
+         *                                   CWF::Configuration("/home/herik/CPPWebFramework/examples/Filters/server"),
+         *                                   new LoginFilter);
+         *
+         *     return server.start();
+         * }
+         *
+         * @endcode
          */
         virtual void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain);
     };

@@ -3,22 +3,27 @@
 }
 
 
+This class extracts all information from a Q\+Object.  
+
+
+
+
 {\ttfamily \#include $<$metaclassparser.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_c_w_f_1_1_meta_class_parser_af831499a518f79c328a71d8d8ec53b0f}{Meta\+Class\+Parser} (Q\+Object $\ast$object)
-\item 
+\begin{DoxyCompactList}\small\item\em Extracts all properties and methods names from a Q\+Object. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_c_w_f_1_1_meta_class_parser_a2bd37870867411d803411339d1d97c49}{get\+Return\+Type} (const Q\+String \&method\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the method return type given a method name. \end{DoxyCompactList}\item 
 Q\+String \hyperlink{class_c_w_f_1_1_meta_class_parser_a560be3a1d52f822eab715faa0b1fbe15}{get\+Parameter\+Type} (const Q\+String \&method\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the method parameter type given a method name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static void $\ast$ \hyperlink{class_c_w_f_1_1_meta_class_parser_a0d9a5f5b026f0fc7e257fa58bbc72adf}{instantiate\+Class\+By\+Name} (const Q\+Byte\+Array \&name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instantiate a class by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,6 +33,9 @@ Q\+String $>$, Q\+Meta\+Method $>$ \hyperlink{class_c_w_f_1_1_meta_class_parser_
 Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_c_w_f_1_1_meta_class_parser_a24721c126dfff6fba83a4d5dd088ee69}{properties}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class extracts all information from a Q\+Object. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{class_c_w_f_1_1_meta_class_parser_af831499a518f79c328a71d8d8ec53b0f}{\index{C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
@@ -39,6 +47,15 @@ Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_c_w_f_1_1_meta_class
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_c_w_f_1_1_meta_class_parser_af831499a518f79c328a71d8d8ec53b0f}
 
 
+Extracts all properties and methods names from a Q\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Object} & $\ast$object \+: Object. \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
 \hypertarget{class_c_w_f_1_1_meta_class_parser_a560be3a1d52f822eab715faa0b1fbe15}{\index{C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}!get\+Parameter\+Type@{get\+Parameter\+Type}}
 \index{get\+Parameter\+Type@{get\+Parameter\+Type}!C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}}
@@ -47,6 +64,18 @@ Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_c_w_f_1_1_meta_class
 \item[{const Q\+String \&}]{method\+Name}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_meta_class_parser_a560be3a1d52f822eab715faa0b1fbe15}
+
+
+Returns the method parameter type given a method name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&method\+Name \+: Method name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String \+: Parameter type. 
+\end{DoxyReturn}
 \hypertarget{class_c_w_f_1_1_meta_class_parser_a2bd37870867411d803411339d1d97c49}{\index{C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}!get\+Return\+Type@{get\+Return\+Type}}
 \index{get\+Return\+Type@{get\+Return\+Type}!C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}}
 \subsubsection[{get\+Return\+Type}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String C\+W\+F\+::\+Meta\+Class\+Parser\+::get\+Return\+Type (
@@ -54,6 +83,18 @@ Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_c_w_f_1_1_meta_class
 \item[{const Q\+String \&}]{method\+Name}
 \end{DoxyParamCaption}
 )}}\label{class_c_w_f_1_1_meta_class_parser_a2bd37870867411d803411339d1d97c49}
+
+
+Returns the method return type given a method name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&method\+Name \+: Method name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String \+: Return type. 
+\end{DoxyReturn}
 \hypertarget{class_c_w_f_1_1_meta_class_parser_a0d9a5f5b026f0fc7e257fa58bbc72adf}{\index{C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}!instantiate\+Class\+By\+Name@{instantiate\+Class\+By\+Name}}
 \index{instantiate\+Class\+By\+Name@{instantiate\+Class\+By\+Name}!C\+W\+F\+::\+Meta\+Class\+Parser@{C\+W\+F\+::\+Meta\+Class\+Parser}}
 \subsubsection[{instantiate\+Class\+By\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ C\+W\+F\+::\+Meta\+Class\+Parser\+::instantiate\+Class\+By\+Name (
@@ -61,6 +102,18 @@ Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_c_w_f_1_1_meta_class
 \item[{const Q\+Byte\+Array \&}]{name}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{class_c_w_f_1_1_meta_class_parser_a0d9a5f5b026f0fc7e257fa58bbc72adf}
+
+
+Instantiate a class by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Byte\+Array \&name \+: Class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void $\ast$ \+: Returns nullptr if fails. 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}

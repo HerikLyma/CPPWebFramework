@@ -14,6 +14,9 @@
 
 namespace CWF
 {
+   /**
+    * @brief This class search for expressions #{obj.get} and compiles it.
+    */
     class CSTLCompilerAttributes
     {
         QMap<QString, QObject *> &objects;

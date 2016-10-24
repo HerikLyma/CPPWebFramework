@@ -103,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0ba072123bbcd95de94ff17d65e35aa"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_filter.html#aa0ba072123bbcd95de94ff17d65e35aa">~Filter</a> ()</td></tr>
-<tr class="memdesc:aa0ba072123bbcd95de94ff17d65e35aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#aa0ba072123bbcd95de94ff17d65e35aa">More...</a><br /></td></tr>
+<tr class="memdesc:aa0ba072123bbcd95de94ff17d65e35aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#aa0ba072123bbcd95de94ff17d65e35aa">More...</a><br /></td></tr>
 <tr class="separator:aa0ba072123bbcd95de94ff17d65e35aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa66add142c4f09a0b26f8d97a59650ba"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba">doFilter</a> (<a class="el" href="class_c_w_f_1_1_http_servlet_request.html">CWF::HttpServletRequest</a> &amp;request, <a class="el" href="class_c_w_f_1_1_http_servlet_response.html">CWF::HttpServletResponse</a> &amp;response, <a class="el" href="class_c_w_f_1_1_filter_chain.html">FilterChain</a> &amp;chain)</td></tr>
 <tr class="memdesc:aa66add142c4f09a0b26f8d97a59650ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will be called always that the <a class="el" href="class_c_w_f_1_1_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> receives a requisition.  <a href="#aa66add142c4f09a0b26f8d97a59650ba">More...</a><br /></td></tr>
@@ -133,7 +133,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Destructor. </p>
+<p>Virtual destructor. </p>
 
 </div>
 </div>
@@ -185,6 +185,58 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="comment">//----loginfilter.h-----</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#ifndef LOGINFILTER_H</span></div>
+<div class="line"><span class="preprocessor">#define LOGINFILTER_H</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="filter_8h.html">cwf/filter.h</a>&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">class </span>LoginFilter : <span class="keyword">public</span> <a class="code" href="class_c_w_f_1_1_filter.html">CWF::Filter</a></div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code" href="class_c_w_f_1_1_filter.html#aa66add142c4f09a0b26f8d97a59650ba">doFilter</a>(<a class="code" href="class_c_w_f_1_1_http_servlet_request.html">CWF::HttpServletRequest</a> &amp;request, <a class="code" href="class_c_w_f_1_1_http_servlet_response.html">CWF::HttpServletResponse</a> &amp;response, <a class="code" href="class_c_w_f_1_1_filter_chain.html">CWF::FilterChain</a> &amp;chain)</div>
+<div class="line">    {</div>
+<div class="line">        QString url = request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#a9408f2866aa0fc49242e74b85a514869">getRequestURL</a>();</div>
+<div class="line">        <span class="keywordflow">if</span>(url.endsWith(<span class="stringliteral">&quot;.css&quot;</span>) || url.endsWith(<span class="stringliteral">&quot;.png&quot;</span>) || url.endsWith(<span class="stringliteral">&quot;.jpg&quot;</span>))</div>
+<div class="line">        {</div>
+<div class="line">            chain.<a class="code" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca">doFilter</a>(request, response);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(url != <span class="stringliteral">&quot;/login&quot;</span>)</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">if</span>(request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#aad0cadb7d24101705a6f83b82eb7c025">getSession</a>().<a class="code" href="class_c_w_f_1_1_http_session.html#a44f59df340395d9c298c93ee5307b392">getAttribute</a>(<span class="stringliteral">&quot;user&quot;</span>) == <span class="keyword">nullptr</span> || request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#aad0cadb7d24101705a6f83b82eb7c025">getSession</a>().<a class="code" href="class_c_w_f_1_1_http_session.html#aebc716e79896ed61527ff4dac933558e">isExpired</a>())</div>
+<div class="line">            {</div>
+<div class="line">                request.<a class="code" href="class_c_w_f_1_1_http_servlet_request.html#a0ce93d793a178c7e0e5fef4044b48bdc">getRequestDispatcher</a>(<span class="stringliteral">&quot;/pages/login&quot;</span>).<a class="code" href="class_c_w_f_1_1_request_dispatcher.html#a075c11ff233f217196764899f9edf7d0">forward</a>(request, response);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">else</span></div>
+<div class="line">            {</div>
+<div class="line">                chain.<a class="code" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca">doFilter</a>(request, response);</div>
+<div class="line">            }</div>
+<div class="line">         }</div>
+<div class="line">         <span class="keywordflow">else</span></div>
+<div class="line">         {</div>
+<div class="line">             chain.<a class="code" href="class_c_w_f_1_1_filter_chain.html#a438bc63ea1fa575ae8882fb05a31feca">doFilter</a>(request, response);</div>
+<div class="line">         }</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#endif // LOGINFILTER_H</span></div>
+<div class="line"></div>
+<div class="line"><span class="comment">//----main.h-----</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#include &lt;filter/loginfilter.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cppwebapplication_8h.html">cwf/cppwebapplication.h</a>&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line">{</div>
+<div class="line">    <a class="code" href="class_c_w_f_1_1_cpp_web_application.html">CWF::CppWebApplication</a> server(argc,</div>
+<div class="line">                                  argv,</div>
+<div class="line">                                  <a class="code" href="class_c_w_f_1_1_configuration.html">CWF::Configuration</a>(<span class="stringliteral">&quot;/home/herik/CPPWebFramework/examples/Filters/server&quot;</span>),</div>
+<div class="line">                                  <span class="keyword">new</span> LoginFilter);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> server.start();</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -195,7 +247,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 17 2016 16:36:33 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 24 2016 18:00:56 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

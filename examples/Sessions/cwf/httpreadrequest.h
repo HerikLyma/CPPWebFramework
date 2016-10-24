@@ -48,17 +48,12 @@ namespace CWF
         void createSocket();
     public:
         /**
-         * @brief This constructor needs to receive the parent, a socket descriptor, all the mapped servlets, all the sessions,<br>
-         * a filter, the default path to the pages and resources like: xhtml pages, images, css...<br>
-         * a domain, and a session expire time to the sessions(optional).
-         * @param parent            : This is a pointer to QObject.
-         * @param socketDescriptor  : This is a qintptr.
-         * @param urlServlet        : This is a reference to a QMapThreadSafety.
-         * @param sessions          : This is a reference to a QMapThreadSafety.
-         * @param filter            : This is a pointer to a Filter.
-         * @param path              : This is a reference to a QString.
-         * @param domain            : This is a reference to a QString.
-         * @param sessionExpirationTime : This is a qint64.
+         * @brief This constructor provides the necessary information to create a HttpReadRequest
+         * @param qintptr socketDescriptor                             : Used to create a socket.
+         * @param QMapThreadSafety<QString, HttpServlet *> &urlServlet : All mapped servlets
+         * @param QMapThreadSafety<QString, HttpSession *> &sessions   : Sessions.
+         * @param QSslConfiguration *sslConfiguration                  : SSL configuration.
+         * @param Filter *filter                                       : Filter
          */
         HttpReadRequest(qintptr socketDescriptor,
                         QMapThreadSafety<QString, HttpServlet *> &urlServlet,
@@ -66,13 +61,14 @@ namespace CWF
                         QSslConfiguration *sslConfiguration,
                         Filter *filter);
 
-
+        /**
+         * @brief Destroys dynamically allocated resources.
+         */
+        ~HttpReadRequest();
         /**
          * @brief Starts to read the requisition.
          */
-
-        ~HttpReadRequest();
-        void run();
+        void run() override;
     };
 }
 

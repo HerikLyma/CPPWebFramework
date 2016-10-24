@@ -9,18 +9,18 @@
 #include <QString>
 #include "httpservletrequest.h"
 
-/**
- * @brief The HttpServlet class is responsable to attend a request from a specific url.
- * You will need to create a derived class from HttpServlet and then, reconstruct the
- * desired method to response a request, after this, you will need mapping the url to the
- * new servlet that you created, you need to do it into the ConfigureCppWebServer using
- * the method addUrlServlet.
- */
 namespace CWF
 {
     class HttpServletRequest;
     class HttpServletResponse;
 
+    /**
+     * @brief The HttpServlet class is responsable to attend a request from a specific url.
+     * You will need to create a derived class from HttpServlet and then, reconstruct the
+     * desired method to response a request, after this, you will need mapping the url to the
+     * new servlet that you created, you need to do it into the ConfigureCppWebServer using
+     * the method addUrlServlet.
+     */
     class HttpServlet
     {
         /**
