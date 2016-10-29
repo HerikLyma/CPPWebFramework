@@ -11,12 +11,24 @@
 
 namespace CWF
 {
+    enum class RelationalOperator : char
+    {
+        EQUAL,
+        DIFFERENT,
+        GREATER,
+        GREATER_EQUAL,
+        LESS,
+        LESS_EQUAL,
+        ERROR
+    };
     /**
      * @brief Extracts and valites all attibutes from a "if" tag.
      */
     class CSTLCompilerIf
     {
     public:
+        RelationalOperator relationalOperator;
+        bool isNumber = false;
         QMap<QString, QString> attributes;
         /**
          * @brief This constructor processes and validates the attributes of "if" tag.

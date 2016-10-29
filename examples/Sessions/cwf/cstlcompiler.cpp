@@ -165,33 +165,89 @@ namespace CWF
         QByteArray htmlOut;
         CSTLCompilerIf ifAttributes(xml.attributes());
 
-        if(ifAttributes.attributes.contains("error"))
+        if(ifAttributes.relationalOperator == RelationalOperator::ERROR)
         {
             getBody(xml, tagName);
             htmlOut = ifAttributes.attributes["error"].toLatin1();
         }
         else
         {
-            QString var(ifAttributes.attributes["var"]), equal(ifAttributes.attributes["equal"]);
-            CSTLCompilerObject equalObj, varObj;
-            bool removeVar = false, removeEqual = false;
+            QString var(ifAttributes.attributes["var"]), condition(ifAttributes.attributes["condition"]);
+            CSTLCompilerObject conditionObj, varObj;
+            bool removeVar = false, removeCondition = false;
             if(!objects.contains(var))
             {
                 removeVar = true;
                 varObj.setValue(var);
                 objects.insert(var, &varObj);
             }
-            if(!objects.contains(equal))
+            if(!objects.contains(condition))
             {
-                removeEqual = true;
-                equalObj.setValue(equal);
-                objects.insert(equal, &equalObj);
+                removeCondition = true;
+                conditionObj.setValue(condition);
+                objects.insert(condition, &conditionObj);
             }
 
             CSTLCompilerAttributes compilerAttributes(objects);
             QString tagBody(std::move(getBody(xml, tagName)));
             compilerAttributes.compileAttributes(ifAttributes.attributes);
-            if(ifAttributes.attributes["var"] == ifAttributes.attributes["equal"])
+
+            bool isTrue = false;
+
+            if(ifAttributes.relationalOperator == RelationalOperator::EQUAL)
+            {
+                isTrue = ifAttributes.attributes["var"] == ifAttributes.attributes["condition"];
+            }
+            else if(ifAttributes.relationalOperator == RelationalOperator::DIFFERENT)
+            {
+                isTrue = ifAttributes.attributes["var"] != ifAttributes.attributes["condition"];
+            }
+            else if(ifAttributes.relationalOperator == RelationalOperator::GREATER)
+            {
+                if(ifAttributes.isNumber)
+                {
+                    isTrue = ifAttributes.attributes["var"].toDouble() > ifAttributes.attributes["condition"].toDouble();
+                }
+                else
+                {
+                    isTrue = ifAttributes.attributes["var"] > ifAttributes.attributes["condition"];
+                }
+            }
+            else if(ifAttributes.relationalOperator == RelationalOperator::GREATER_EQUAL)
+            {
+                if(ifAttributes.isNumber)
+                {
+                    isTrue = ifAttributes.attributes["var"].toDouble() >= ifAttributes.attributes["condition"].toDouble();
+                }
+                else
+                {
+                    isTrue = ifAttributes.attributes["var"] >= ifAttributes.attributes["condition"];
+                }
+            }
+            else if(ifAttributes.relationalOperator == RelationalOperator::LESS)
+            {
+                if(ifAttributes.isNumber)
+                {
+                    isTrue = ifAttributes.attributes["var"].toDouble() < ifAttributes.attributes["condition"].toDouble();
+                }
+                else
+                {
+                    isTrue = ifAttributes.attributes["var"] < ifAttributes.attributes["condition"];
+                }
+            }
+            else if(ifAttributes.relationalOperator == RelationalOperator::LESS_EQUAL)
+            {
+                if(ifAttributes.isNumber)
+                {
+                    isTrue = ifAttributes.attributes["var"].toDouble() <= ifAttributes.attributes["condition"].toDouble();
+                }
+                else
+                {
+                    isTrue = ifAttributes.attributes["var"] <= ifAttributes.attributes["condition"];
+                }
+            }
+
+            if(isTrue)
             {
                 if(!tagBody.contains("<") || !tagBody.contains("</"))
                 {
@@ -203,10 +259,11 @@ namespace CWF
                 QXmlStreamReader forBody(tagBody);
                 htmlOut += processXml(forBody);
             }
+
             if(removeVar)
                 objects.remove(var);
-            if(removeEqual)
-                objects.remove(equal);
+            if(removeCondition)
+                objects.remove(condition);
         }
         return htmlOut;
     }
