@@ -39,7 +39,8 @@ SOURCES += cstlifexample.cpp \
     cwf/requestdispatcher.cpp \
     cwf/sessionidgenerator.cpp \
     entities/user.cpp \
-    servlets/usersservlet.cpp
+    servlets/usersservlet.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \        
     cwf/configuration.h \
@@ -69,7 +70,8 @@ HEADERS += \
     cwf/requestdispatcher.h \
     cwf/sessionidgenerator.h \
     entities/user.h \
-    servlets/usersservlet.h
+    servlets/usersservlet.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

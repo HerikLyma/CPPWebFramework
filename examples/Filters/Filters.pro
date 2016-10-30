@@ -42,7 +42,8 @@ SOURCES += filters.cpp \
     servlets/indexservlet.cpp \
     entities/user.cpp \
     filter/loginfilter.cpp \
-    servlets/configurationservlet.cpp
+    servlets/configurationservlet.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -75,7 +76,8 @@ HEADERS += \
     servlets/indexservlet.h \
     entities/user.h \
     filter/loginfilter.h \
-    servlets/configurationservlet.h
+    servlets/configurationservlet.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

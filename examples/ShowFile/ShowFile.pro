@@ -38,7 +38,8 @@ SOURCES += showfile.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
     cwf/sessionidgenerator.cpp \
-    servlets/showfileservlet.cpp
+    servlets/showfileservlet.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -67,7 +68,8 @@ HEADERS += \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
     cwf/sessionidgenerator.h \
-    servlets/showfileservlet.h
+    servlets/showfileservlet.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

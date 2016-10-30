@@ -39,7 +39,8 @@ SOURCES += main.cpp \
     cwf/requestdispatcher.cpp \
     cwf/sessionidgenerator.cpp \
     servlets/bmiservlet.cpp \
-    entities/user.cpp
+    entities/user.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -69,7 +70,8 @@ HEADERS += \
     cwf/requestdispatcher.h \
     cwf/sessionidgenerator.h \
     servlets/bmiservlet.h \
-    entities/user.h
+    entities/user.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

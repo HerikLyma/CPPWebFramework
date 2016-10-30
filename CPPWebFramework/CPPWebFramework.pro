@@ -39,7 +39,8 @@ SOURCES += main.cpp \
     cwf/cstlcompilerfor.cpp \
     cwf/cstlcompilerif.cpp \
     cwf/cstlcompilerobject.cpp \
-    cwf/metaclassparser.cpp
+    cwf/metaclassparser.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \
     cwf/configuration.h \
@@ -67,7 +68,8 @@ HEADERS += \
     cwf/cstlcompilerfor.h \
     cwf/cstlcompilerif.h \
     cwf/cstlcompilerobject.h \
-    cwf/metaclassparser.h
+    cwf/metaclassparser.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

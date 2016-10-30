@@ -40,7 +40,8 @@ SOURCES += sessions.cpp \
     cwf/sessionidgenerator.cpp \
     servlets/loginservlet.cpp \
     servlets/indexservlet.cpp \
-    entities/user.cpp
+    entities/user.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -71,7 +72,8 @@ HEADERS += \
     cwf/sessionidgenerator.h \
     servlets/loginservlet.h \
     servlets/indexservlet.h \
-    entities/user.h
+    entities/user.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

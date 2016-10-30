@@ -38,7 +38,8 @@ SOURCES += helloworld.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
-    cwf/sessionidgenerator.cpp
+    cwf/sessionidgenerator.cpp \
+    cwf/urlencoder.cpp
 
 HEADERS += \    
     servlets/helloworldservlet.h \    
@@ -67,7 +68,8 @@ HEADERS += \
     cwf/qlistobject.h \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
-    cwf/sessionidgenerator.h
+    cwf/sessionidgenerator.h \
+    cwf/urlencoder.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
