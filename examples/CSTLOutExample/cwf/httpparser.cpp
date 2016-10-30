@@ -126,7 +126,6 @@ namespace CWF
             else if(p.size() == 1)
                 parameters.insert(std::move(p[0]), std::move(""));
         }
-        adjustParameters();
     }
 
     void HttpParser::extractCookies()
@@ -139,60 +138,6 @@ namespace CWF
             if(cookie.getName() == "sessionId")
                 sessionId = cookie.getValue();
             cookies.push_back(std::move(cookie));
-        }
-    }
-
-    void HttpParser::adjustParameters()
-    {
-        for(QMultiMap<QByteArray, QByteArray>::iterator it = parameters.begin();
-            it != parameters.end();
-            ++it)
-        {
-            QByteArray &tmp = it.value();
-            tmp.replace("+", " ");
-
-            tmp.replace("%2B", "+");
-            tmp.replace("%C3%B5", "%");
-
-            tmp.replace("%C3%A3", "ã");
-            tmp.replace("%C3%A1", "á");
-            tmp.replace("%C3%A0", "à");
-            tmp.replace("%C3%83", "Ã");
-            tmp.replace("%C3%81", "Á");
-            tmp.replace("%C3%80", "À");
-            tmp.replace("%C3%B5", "õ");
-
-            tmp.replace("%C3%A9", "é");
-            tmp.replace("%C3%AA", "ê");
-            tmp.replace("%E1%BA%BD", "ẽ");
-            tmp.replace("%C3%89", "É");
-            tmp.replace("%C3%8A", "Ê");
-            tmp.replace("%E1%BA%BC", "Ẽ");
-
-            tmp.replace("%C3%AD", "í");
-            tmp.replace("%C3%AC", "ì");
-            tmp.replace("%C3%8D", "Í");
-            tmp.replace("%C3%8C", "Ì");
-
-            tmp.replace("%C3%B3", "ó");
-            tmp.replace("%C3%B2", "ò");
-            tmp.replace("%C3%B5", "õ");
-            tmp.replace("%C3%93", "Ó");
-            tmp.replace("%C3%92", "Ò");
-            tmp.replace("%C3%95", "Õ");
-
-            tmp.replace("%C3%BA", "ú");
-            tmp.replace("%C3%B9", "ù");
-            tmp.replace("%C5%A9", "ũ");
-            tmp.replace("%C3%9A", "Ú");
-            tmp.replace("%C3%99", "Ù");
-            tmp.replace("%C5%A8", "Ũ");
-
-            tmp.replace("%C3%A7", "ç");
-            tmp.replace("%C3%87", "Ç");
-
-            tmp.replace("%C3%B1", "ñ");
-            tmp.replace("%C3%91", "Ñ");
         }
     }
 

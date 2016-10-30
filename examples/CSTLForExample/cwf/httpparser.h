@@ -40,7 +40,6 @@ namespace CWF
         void    doParseBody();
         void    doParseFiles();
         void    extractCookies();
-        void    adjustParameters();
     public:
         /**
          * @brief This constructor receives a HTTP message and parses it.
