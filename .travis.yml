@@ -64,3 +64,8 @@ script:
   - cd FillObjectBMI
   - /opt/qt55/bin/qmake FillObjectBMI.pro
   - make
+
+  - cd ..
+  - cd CSTLImportExample
+  - /opt/qt55/bin/qmake CSTLImportExample.pro
+  - make

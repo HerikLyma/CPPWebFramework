@@ -8,7 +8,7 @@
 
 namespace CWF
 {
-    Configuration configuration;
+    CWF::Configuration configuration;
 
     CppWebApplication::CppWebApplication(int argc, char *argv[],
                                          const Configuration &config,

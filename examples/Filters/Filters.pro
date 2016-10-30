@@ -13,7 +13,7 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += filters.cpp \
+SOURCES += main.cpp \
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
@@ -43,7 +43,8 @@ SOURCES += filters.cpp \
     entities/user.cpp \
     filter/loginfilter.cpp \
     servlets/configurationservlet.cpp \
-    cwf/urlencoder.cpp
+    cwf/urlencoder.cpp \
+    cwf/cstlcompilerimport.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -77,7 +78,8 @@ HEADERS += \
     entities/user.h \
     filter/loginfilter.h \
     servlets/configurationservlet.h \
-    cwf/urlencoder.h
+    cwf/urlencoder.h \
+    cwf/cstlcompilerimport.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

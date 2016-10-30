@@ -40,7 +40,8 @@ SOURCES += main.cpp \
     cwf/sessionidgenerator.cpp \
     servlets/bmiservlet.cpp \
     entities/user.cpp \
-    cwf/urlencoder.cpp
+    cwf/urlencoder.cpp \
+    cwf/cstlcompilerimport.cpp
 
 HEADERS += \    
     cwf/configuration.h \
@@ -71,13 +72,13 @@ HEADERS += \
     cwf/sessionidgenerator.h \
     servlets/bmiservlet.h \
     entities/user.h \
-    cwf/urlencoder.h
+    cwf/urlencoder.h \
+    cwf/cstlcompilerimport.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \
-    server/log/CPPWebServer.log \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \

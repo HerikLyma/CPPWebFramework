@@ -13,7 +13,7 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += helloworld.cpp \     
+SOURCES += main.cpp \     
     servlets/helloworldservlet.cpp \   
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
@@ -39,7 +39,8 @@ SOURCES += helloworld.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
     cwf/sessionidgenerator.cpp \
-    cwf/urlencoder.cpp
+    cwf/urlencoder.cpp \
+    cwf/cstlcompilerimport.cpp
 
 HEADERS += \    
     servlets/helloworldservlet.h \    
@@ -69,11 +70,11 @@ HEADERS += \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
     cwf/sessionidgenerator.h \
-    cwf/urlencoder.h
+    cwf/urlencoder.h \
+    cwf/cstlcompilerimport.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \
-    server/log/CPPWebServer.log \
     server/config/log/CPPWebServer.log

@@ -13,7 +13,7 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += cstlifexample.cpp \     
+SOURCES += main.cpp \     
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
@@ -40,7 +40,8 @@ SOURCES += cstlifexample.cpp \
     cwf/sessionidgenerator.cpp \
     entities/user.cpp \
     servlets/usersservlet.cpp \
-    cwf/urlencoder.cpp
+    cwf/urlencoder.cpp \
+    cwf/cstlcompilerimport.cpp
 
 HEADERS += \        
     cwf/configuration.h \
@@ -71,13 +72,13 @@ HEADERS += \
     cwf/sessionidgenerator.h \
     entities/user.h \
     servlets/usersservlet.h \
-    cwf/urlencoder.h
+    cwf/urlencoder.h \
+    cwf/cstlcompilerimport.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
 OTHER_FILES += \
-    server/config/CPPWeb.ini \
-    server/log/CPPWebServer.log \
+    server/config/CPPWeb.ini \    
     server/config/log/CPPWebServer.log
 
 DISTFILES += \

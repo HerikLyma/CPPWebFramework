@@ -1,5 +1,5 @@
 /**
-  @file helloworld.cpp
+  @file main.cpp
   @author Herik Lima
 */
 

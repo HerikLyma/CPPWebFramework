@@ -1,5 +1,5 @@
 /**
-  @file cstlifexample.cpp
+  @file main.cpp
   @author Herik Lima
 */
 

@@ -8,6 +8,7 @@
 #include "cstlcompilerfor.h"
 #include "cstlcompilerobject.h"
 #include "cstlcompilerif.h"
+#include "cstlcompilerimport.h"
 
 namespace CWF
 {
@@ -294,6 +295,16 @@ namespace CWF
             {
                 htmlOut += processIfTag(xml);
                 name.clear();
+            }
+            else if(name == "import" && xml.isStartElement())
+            {
+                CSTLCompilerImport importUrl(xml.attributes());
+                if(!importUrl.attributes.contains("error"))
+                    htmlOut += importUrl.attributes["url"].toLatin1();
+                else
+                    htmlOut += importUrl.attributes["error"].toLatin1();
+                name.clear();
+
             }
             else
             {
