@@ -7,7 +7,6 @@
 #include "httpservletrequest.h"
 #include "httpservletresponse.h"
 #include "cstlcompiler.h"
-#include <QByteArray>
 
 namespace CWF
 {
@@ -21,9 +20,9 @@ namespace CWF
 
     void RequestDispatcher::forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
     {
-        CSTLCompiler cstl(path.toStdString().data(), request.attributes);
-        response.addHeader("Content-Type", "text/html; charset=UTF-8");
-        QString page( std::move(QString::fromUtf8(cstl.output())) );
-        response.write(page.toUtf8());
+        CSTLCompiler cstl(path.toStdString().data(), request.attributes);                                 
+        QString pageStr(cstl.output());
+
+        response.write(pageStr.toLatin1());
     }
 }

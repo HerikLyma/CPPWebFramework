@@ -37,7 +37,8 @@ QString User::getName() const
 
 void User::setName(const QString &value)
 {
-    name = value;
+    name = value.toUtf8();
+    int x = 10;
 }
 
 QString User::getAddress() const

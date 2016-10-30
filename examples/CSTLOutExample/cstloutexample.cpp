@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
     CWF::CppWebApplication server(argc, argv,
                                   CWF::Configuration("/home/herik/CPPWebFramework/examples/CSTLOutExample/server"));
 
-
     server.addUrlServlet("/user", new UserServlet);
 
     return server.start();

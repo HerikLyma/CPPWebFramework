@@ -120,6 +120,12 @@ namespace CWF
         buffer.append(' ');
         buffer.append(statusText);
         buffer.append("\r\n");
+
+        if(!headers.contains("Content-Type"))
+        {
+            headers.insert("Content-Type", "text/html; charset=utf-8");
+        }
+
         foreach(QByteArray name, headers.keys())
         {
             buffer.append(name);
@@ -132,7 +138,7 @@ namespace CWF
             buffer.append("Set-Cookie: ");
             buffer.append(cookie.toByteArray());
             buffer.append("\r\n");
-        }
+        }        
         buffer.append("\r\n");
         writeToSocket(buffer);
     }

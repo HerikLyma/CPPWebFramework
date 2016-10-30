@@ -8,5 +8,5 @@
 void HelloWorldServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
     Q_UNUSED(request)
-    response.write("<html><body>Hello world</body></html>");
+    response.write("<html><body>Hello World!</body></html>");
 }
