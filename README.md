@@ -8,18 +8,14 @@ The C++ Web Framework is a framework created in C++ with Qt for use in developin
 
 Steps:
 
-1º: Download and install Qt Creator: https://www.qt.io/download-open-source/
+<ol>
+	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
+	<li>Install Qt Libraries: sudo apt-get install qt5-default</li>
+	<li>Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git</li>
+	<li>Open the CPPWebFramework.pro file using Qt Creator</li>
+	<li>Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, CWF::Configuration("/home/MYNAME/CPPWebFramework/CPPWebFramework/server/"));</li>
+	<li>Change the path in the CPPWeb.ini file: path=/home/MYNAME/CPPWebFramework/CPPWebFramework/server/</li>
+	<li>Run the project</li>
+	<li>Open your browser and type: http://127.0.0.1:8080</li>
+</ol>
 
-2º: Install Qt Libraries: sudo apt-get install qt5-default
-
-3º: Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git
-
-4º: Open the CPPWebFramework.pro file using Qt Creator
-
-5º: Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, CWF::Configuration("/home/MYNAME/CPPWebFramework/CPPWebFramework/server/"));
-
-6º: Change the path in the CPPWeb.ini file: path=/home/MYNAME/CPPWebFramework/CPPWebFramework/server/
-
-7º: Run the project
-
-8º: Open your browser and type: http://127.0.0.1:8080
