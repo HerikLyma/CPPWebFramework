@@ -33,7 +33,7 @@ namespace CWF
           Create a cookie from a string.
           @param source String as received in a HTTP Cookie2 header.
         */
-        HttpCookie(const QByteArray &source);
+        explicit HttpCookie(const QByteArray &source);
         /**
          * @brief This is an overloaded constructor that receives a cookie's name and value.
          * @param name  : This is a reference to a QByteArray. It will change the cookie's name.

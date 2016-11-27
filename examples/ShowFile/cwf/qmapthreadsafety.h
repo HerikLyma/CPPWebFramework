@@ -29,13 +29,13 @@ namespace CWF
 
         QMapThreadSafety() = default;
 
-        QMapThreadSafety(std::initializer_list<std::pair<Key, T>> list) : m_map(list){}
+        explicit QMapThreadSafety(std::initializer_list<std::pair<Key, T>> &list) : m_map(list){}
 
-        QMapThreadSafety(const QMap<Key, T> &other) : m_map(other){}
+        explicit QMapThreadSafety(const QMap<Key, T> &other) : m_map(other){}
 
-        QMapThreadSafety(const std::map<Key, T> &other) : m_map(other){}
+        explicit QMapThreadSafety(const std::map<Key, T> &other) : m_map(other){}
 
-        QMapThreadSafety(QMap<Key, T> &&other) : m_map(other){}
+        explicit QMapThreadSafety(QMap<Key, T> &&other) : m_map(other){}
 
         /**
          * @brief This method retuns the begin iterator.

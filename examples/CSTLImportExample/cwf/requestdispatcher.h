@@ -23,7 +23,7 @@ namespace CWF
          * @brief This constructor receives a path to a xhtml file.
          * @param const QString &path : Path to the xhtml file.
          */
-        RequestDispatcher(const QString &path);
+        explicit RequestDispatcher(const QString &path);
         /**
          * @brief Virtual destructor.
          */

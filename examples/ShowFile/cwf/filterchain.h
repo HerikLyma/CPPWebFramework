@@ -41,7 +41,7 @@ namespace CWF
          * @brief FilterChain
          * @param servlet
          */
-        FilterChain(HttpServlet *servlet);
+        explicit FilterChain(HttpServlet *servlet);
         /**
          * @brief This method dispaches a requisition to a HttpServletRequest or, if the requesition
          * is for a file, it can reads and send the file through the HttpServletResponse.

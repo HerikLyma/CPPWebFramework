@@ -34,7 +34,7 @@ namespace CWF
          * @brief This constructor processes and validates the attributes of "if" tag.
          * @param const QXmlStreamAttributes &attr : XML tag attributes.
          */
-        CSTLCompilerIf(const QXmlStreamAttributes &attr);
+        explicit CSTLCompilerIf(const QXmlStreamAttributes &attr);
     };
 }
 

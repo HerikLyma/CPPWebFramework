@@ -24,7 +24,7 @@ namespace CWF
          * @brief This constructor can set the CSTLCompilerObject's parent.
          * @param QObject *parent : parent.
          */
-        CSTLCompilerObject(QObject *parent = 0);
+        explicit CSTLCompilerObject(QObject *parent = 0);
     public slots:
         /**
          * @brief Returns the value.

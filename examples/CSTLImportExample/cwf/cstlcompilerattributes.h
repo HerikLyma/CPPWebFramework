@@ -21,7 +21,7 @@ namespace CWF
     {
         QMap<QString, QObject *> &objects;
     public:
-        CSTLCompilerAttributes(QMap<QString, QObject *> &objects);
+        explicit CSTLCompilerAttributes(QMap<QString, QObject *> &objects);
         QString buildAttributes(QMap<QString, QString> &attr, bool keyValue = true);
         void compileAttributes(QMap<QString, QString> &attr);
         void compile(QString &text, QString &outPutText);

@@ -22,7 +22,7 @@ namespace CWF
          * @brief This constructor processes and validates the attributes of "for" tags.
          * @param const QXmlStreamAttributes &attr : XML tag attributes.
          */
-        CSTLCompilerFor(const QXmlStreamAttributes &attr);
+        explicit CSTLCompilerFor(const QXmlStreamAttributes &attr);
     };
 }
 

@@ -27,7 +27,7 @@ namespace CWF
          * @brief Extracts class and method name.
          * @param const QString &classAndMethod : Class and method name.
          */
-        Properties(const QString &classAndMethod);
+        explicit Properties(const QString &classAndMethod);
     };
 }
 

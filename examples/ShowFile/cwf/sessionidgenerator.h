@@ -21,7 +21,7 @@ namespace CWF
          * @brief This constructor receives a HttpParser
          * @param const HttpParser &httpParser : Used to generate Session ID.
          */
-        SessionIdGenerator(const HttpParser &httpParser);
+        explicit SessionIdGenerator(const HttpParser &httpParser);
         /**
          * @brief This method process some informations of httpParser and generates a session id.
          * @return QByteArray : Session ID.

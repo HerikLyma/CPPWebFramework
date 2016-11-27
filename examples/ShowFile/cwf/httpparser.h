@@ -45,7 +45,7 @@ namespace CWF
          * @brief This constructor receives a HTTP message and parses it.
          * @param QByteArray &httpMessage : HTTP message.
          */
-        HttpParser(QByteArray &httpMessage);
+        explicit HttpParser(QByteArray &httpMessage);
         /**
          * @brief Returns the content lenght.
          * @return qint64 : Content length.

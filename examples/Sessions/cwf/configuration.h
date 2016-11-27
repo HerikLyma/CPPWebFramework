@@ -63,7 +63,7 @@ namespace CWF
          * }
          * @endcode
          */
-        Configuration(QString serverFilesPath = "");
+        explicit Configuration(QString serverFilesPath = "");
         /**
          * @brief Returns the timeOut property that will be used by the server to expire threads that are not in use.
          * Such threads will be restarted as needed. The default timeOut is 30000 milliseconds (30 seconds).

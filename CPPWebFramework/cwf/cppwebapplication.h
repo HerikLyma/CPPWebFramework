@@ -36,6 +36,10 @@ namespace CWF
          * @param const QString &msg                   : The message that will be written to the log file.
          */
         static void writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg);
+
+        CppWebApplication(const CppWebApplication &other) = delete;
+
+        CppWebApplication &operator=(const CppWebApplication &other) = delete;
     public:
         /**
          * @brief Constructs a QCoreApplication, a CppWebServer and install the message handler.

@@ -13,7 +13,7 @@ namespace CWF
     public:
         QMap<QString, QString> attributes;
 
-        CSTLCompilerImport(const QXmlStreamAttributes &attr);
+        explicit CSTLCompilerImport(const QXmlStreamAttributes &attr);
     };
 }
 
