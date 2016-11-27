@@ -82,5 +82,5 @@ OTHER_FILES += \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \
-    server/pages/bmi.xhtml \
-    server/pages/bmiresults.xhtml
+    server/pages/bmiresults.xhtml \
+    server/pages/bmi.html

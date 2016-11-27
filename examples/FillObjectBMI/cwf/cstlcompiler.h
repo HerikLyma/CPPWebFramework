@@ -30,6 +30,7 @@ namespace CWF
         QByteArray str;
         QMap<QString, QObject *>  &objects;
         bool isStrFileName;
+        bool isXHTML = true;
         /**
          * @brief Try to open the xhtml page, if it fails, it will return an error QByteArray, else, it will return an empty QByteArray.
          * @param QXmlStreamReader &xml : The opened xml.

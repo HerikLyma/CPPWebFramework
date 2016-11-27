@@ -18,6 +18,8 @@ namespace CWF
                                                      objects(objects),
                                                      isStrFileName(isStrFileName)
     {
+        if(isStrFileName)
+            isXHTML = str.toLower().endsWith(".xhtml");
     }
 
     QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
@@ -27,9 +29,17 @@ namespace CWF
             QFile file(str);
             if(!file.open(QIODevice::ReadOnly))
                 return "<html><body>" + file.errorString().toLatin1() + "</body></html>";
+
             QByteArray content(std::move(file.readAll()));
             file.close();
-            xml.addData(content);
+            if(isXHTML)
+            {
+                xml.addData(content);
+            }
+            else
+            {
+                return content;
+            }
         }
         else
         {
@@ -337,9 +347,12 @@ namespace CWF
     QByteArray CSTLCompiler::output()
     {
         QXmlStreamReader xml;
-        QByteArray htmlOutput(std::move(openFile(xml)));
-        if(htmlOutput.isEmpty())
-            return processXml(xml);
+        QByteArray htmlOutput(std::move(openFile(xml)));        
+        if(isXHTML)
+        {
+            if(htmlOutput.isEmpty())
+                return processXml(xml);
+        }
         return htmlOutput;
     }
 }

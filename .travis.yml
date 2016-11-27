@@ -69,3 +69,8 @@ script:
   - cd CSTLImportExample
   - /opt/qt55/bin/qmake CSTLImportExample.pro
   - make
+
+  - cd ..
+  - cd WebServices
+  - /opt/qt55/bin/qmake WebServices.pro
+  - make

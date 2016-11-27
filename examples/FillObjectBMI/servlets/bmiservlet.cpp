@@ -2,7 +2,7 @@
 
 void BmiServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
-    request.getRequestDispatcher("/pages/bmi").forward(request, response);
+    request.getRequestDispatcher("/pages/bmi.html").forward(request, response);
 }
 
 void BmiServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
@@ -10,6 +10,6 @@ void BmiServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletRespon
     User user;
     request.fillQObject(&user);    
     request.addAttribute("user", &user);
-    request.getRequestDispatcher("/pages/bmiresults").forward(request, response);
+    request.getRequestDispatcher("/pages/bmiresults.xhtml").forward(request, response);
 }
 
