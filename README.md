@@ -10,14 +10,14 @@ JavaServer Pages Standard Tag Library (JSTL), designed to consume few computatio
 memory and processing and, a low response time for requests while keeping the presentation and the 
 business layer separated through the C++ Server Pages Standard Tag Library (CSTL). 
 Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
-<ol>
+<ul>
     <li><b>Desktop:</b> Linux, OS X, Windows</li>
     <li><b>Embedded and RTOS:</b> Linux, QNX, VxWorks, Windows</li>
     <li><b>Mobile:</b> Android, iOS, Windows</li>
-</ol>
+</ul>
 This web framework has a simplified set of classes and only one configuration file, called CPPWeb.ini,
 to make web development as simple as possible, even for developers starting in the web development world.</br></br>
-Steps see the C++ Web Framework examples:
+<b>Steps test the C++ Web Framework examples:</b>
 <ol>
 	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
 	<li>Install Qt Libraries: sudo apt-get install qt5-default</li>
@@ -28,6 +28,6 @@ Steps see the C++ Web Framework examples:
 	<li>Run the project</li>
 	<li>Open your browser and type: http://127.0.0.1:8080</li>
 </ol>
-Documentation: http://www.cppwebframework.com <br>
-Videos: https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
+<b>Documentation:</b> http://www.cppwebframework.com <br>
+<b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
 
