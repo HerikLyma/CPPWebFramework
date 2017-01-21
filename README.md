@@ -4,7 +4,7 @@
 
 # C++ Web Framework
 
-The C++ Web Framework (CWF) is a web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT license</a>, created by Herik Lima and Marcelo Eler, 
+The C++ Web Framework (CWF) is a web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, created by Herik Lima and Marcelo Eler, 
 using C++ with Qt to be used in the development of web applications, having been heavily inspired by Java Servlets,
 JavaServer Pages Standard Tag Library (JSTL), designed to consume few computational resources such as 
 memory and processing and, a low response time for requests while keeping the presentation and the 
