@@ -4,8 +4,8 @@
 
 # C++ Web Framework
 
-The C++ Web Framework (CWF) is a web framework created by Herik Lima and Marcelo Eler, using C++ with Qt
-to be used in the development of web applications, having been heavily inspired by Java Servlets,
+The C++ Web Framework (CWF) is a web framework created by Herik Lima and Marcelo Eler, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT license</a>, 
+using C++ with Qt to be used in the development of web applications, having been heavily inspired by Java Servlets,
 JavaServer Pages Standard Tag Library (JSTL), designed to consume few computational resources such as 
 memory and processing and, a low response time for requests while keeping the presentation and the 
 business layer separated through the C++ Server Pages Standard Tag Library (CSTL). 
@@ -17,7 +17,7 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
 </ul>
 This web framework has a simplified set of classes and only one configuration file, called CPPWeb.ini,
 to make web development as simple as possible, even for developers starting in the web development world.</br></br>
-<b>Steps test the C++ Web Framework examples:</b>
+<b>Steps to test the C++ Web Framework's examples:</b>
 <ol>
 	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
 	<li>Install Qt Libraries: sudo apt-get install qt5-default</li>
