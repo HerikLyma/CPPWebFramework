@@ -4,9 +4,11 @@
 
 # C++ Web Framework
 
-The C++ Web Framework is a framework created in C++ with Qt for use in developing applications for the Web.
+The C++ Web Framework is a framework created in C++ with Qt for use in web application development, having been heavily inspired by the Java Servlets and JavaServer Pages Standard Tag Library (JSTL) and designed to consume few computational resources such as memory and processing.
+This web framework consists of a simplified set of classes and just one configuration file, called CPPWeb.ini, to make web development as simple as possible, even for developers starting in the web development world.
 
-Steps:
+
+Steps to use the C++ Web Framework:
 
 <ol>
 	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
@@ -18,6 +20,9 @@ Steps:
 	<li>Run the project</li>
 	<li>Open your browser and type: http://127.0.0.1:8080</li>
 </ol>
+
+
+
 
 Documentation: http://www.cppwebframework.com <br>
 Videos: https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ

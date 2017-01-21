@@ -1,6 +1,8 @@
-/**
-  @file showfileservlet.h
-  @author Herik Lima
+/*
+ Copyright 2017 Herik Lima de Castro and Marcelo Medeiros Eler
+ Distributed under MIT license, or public domain if desired and
+ recognized in your jurisdiction.
+ See file LICENSE for detail.
 */
 
 #include "showfileservlet.h"
@@ -33,6 +35,21 @@ void ShowFileServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletR
     }
     else
     {
-        response.write("<html><head><title>Falha</title></head><body><center><font color=\"red\" size = \"6\">Nenhum arquivo salvo.\n</font></center></body></html>");
+        QByteArray text;
+        text  = "<html>";
+        text +=     "<head>";
+        text +=         "<title>";
+        text +=             "Failure";
+        text +=         "</title>";
+        text +=     "</head>";
+        text +=     "<body>";
+        text +=         "<center>";
+        text +=             "<font color=\"red\" size = \"6\">";
+        text +=                 "Error.";
+        text +=             "</font>";
+        text +=         "</center>";
+        text +=     "</body>";
+        text += "</html>";
+        response.write(text);
     }
 }

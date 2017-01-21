@@ -1,24 +1,23 @@
-/**
-  @file main.cpp
-  @author Herik Lima
+/*
+ Copyright 2017 Herik Lima de Castro and Marcelo Medeiros Eler
+ Distributed under MIT license, or public domain if desired and
+ recognized in your jurisdiction.
+ See file LICENSE for detail.
 */
 
-#include <QCoreApplication>
+#include <filter/loginfilter.h>
+#include <cwf/cppwebapplication.h>
 #include <servlets/indexservlet.h>
 #include <servlets/loginservlet.h>
-#include <servlets/configurationservlet.h>
-#include <filter/loginfilter.h>
-#include "cwf/cppwebapplication.h"
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv,
-                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/Filters/server"),
+                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/Filters/server/"),
                                   new LoginFilter);
 
     server.addUrlServlet("/login", new LoginServlet);
     server.addUrlServlet("/index", new IndexServlet);
-    server.addUrlServlet("/configuration", new ConfigurationServlet);
 
     return server.start();
 }
