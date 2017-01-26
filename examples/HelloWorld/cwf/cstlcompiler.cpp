@@ -129,7 +129,7 @@ namespace CWF
                     }
                     else
                     {
-                        QListObject *qListObject = (QListObject*)object;
+                        QListObject *qListObject = static_cast<QListObject*>(object);
                         QString ret(std::move(getBody(xml, tagName)));
                         QString var(forAttributes.attributes["var"]);
                         var.replace("#{", "").replace("}", "");
