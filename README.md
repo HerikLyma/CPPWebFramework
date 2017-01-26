@@ -1,6 +1,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/HerikLyma/CPPWebFramework.svg)](https://github.com/HerikLyma/CPPWebFramework/issues)
 [![Travis-CI](https://travis-ci.org/HerikLyma/CPPWebFramework.svg?branch=master)](https://travis-ci.org/HerikLyma/CPPWebFramework)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/HerikLyma/CPPWebFramework.git)
 [![Language (C++)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/HerikLyma/CPPWebFramework)
 
 # C++ Web Framework
 
@@ -15,6 +17,7 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
     <li><b>Embedded and RTOS:</b> Linux, QNX, VxWorks, Windows</li>
     <li><b>Mobile:</b> Android, iOS, Windows</li>
 </ul>
+<hr/>
 This web framework has a simplified set of classes and only one configuration file, called CPPWeb.ini,
 to make web development as simple as possible, even for developers starting in the web development world.</br></br>
 <b>Steps to test the C++ Web Framework's examples:</b>
@@ -28,6 +31,7 @@ to make web development as simple as possible, even for developers starting in t
 	<li>Run the project</li>
 	<li>Open your browser and type: http://127.0.0.1:8080</li>
 </ol>
+<hr/>
 <b>Site and documentation:</b> http://www.cppwebframework.com <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
 
