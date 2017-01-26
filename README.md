@@ -2,7 +2,6 @@
 [![Travis-CI](https://travis-ci.org/HerikLyma/CPPWebFramework.svg?branch=master)](https://travis-ci.org/HerikLyma/CPPWebFramework)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/HerikLyma/CPPWebFramework.git)
 [![Language (C++)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/HerikLyma/CPPWebFramework)
 
 # C++ Web Framework
 
