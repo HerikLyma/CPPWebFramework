@@ -130,15 +130,17 @@ namespace CWF
                             }
                             else if(methodReturnType == "char*")
                             {
-                                char *returnValue;
+                                char *returnValue = nullptr;
                                 ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(char *, returnValue));
-                                value.push_back(returnValue);
+                                if(returnValue)
+                                    value.push_back(returnValue);
                             }
                             else if(methodReturnType == "unsigned char*")
                             {
-                                unsigned char *returnValue;
+                                unsigned char *returnValue = nullptr;
                                 ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(unsigned char *, returnValue));
-                                value = *returnValue;
+                                if(returnValue)
+                                    value = *returnValue;
                             }
                             else if(methodReturnType == "short")
                             {
