@@ -31,7 +31,7 @@ to make web development as simple as possible, even for developers starting in t
 	<li>Run the project</li>
 	<li>Open your browser and type: http://127.0.0.1:8080</li>
 </ol>
-<hr/>
+<hr/> 
 <b>Site and documentation:</b> http://www.cppwebframework.com <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
 
