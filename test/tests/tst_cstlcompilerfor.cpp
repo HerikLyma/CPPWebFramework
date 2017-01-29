@@ -1,6 +1,6 @@
 #include "tst_cstlcompilerfor.h"
 
-void TST_CSTLCompilerFor::init()
+void TST_CSTLCompilerFor::test()
 {
 
 }

@@ -8,7 +8,7 @@ class TST_QListObject : public QObject
 {
     Q_OBJECT
 private slots:
-    void init();
+    void test();
 };
 
 #endif // TST_QLISTOBJECT_H

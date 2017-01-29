@@ -1,6 +1,6 @@
 #include "tst_cstlcompilerif.h"
 
-void TST_CSTLCompilerIf::init()
+void TST_CSTLCompilerIf::test()
 {
 
 }

@@ -1,6 +1,6 @@
 #include "tst_cppwebservlet.h"
 
-void TST_CppWebServlet::init()
+void TST_CppWebServlet::test()
 {
 
 }

@@ -8,7 +8,7 @@ class TST_HttpParser : public QObject
 {
     Q_OBJECT
 private slots:
-    void init();
+    void test();
 };
 
 #endif // TST_HTTPPARSER_H

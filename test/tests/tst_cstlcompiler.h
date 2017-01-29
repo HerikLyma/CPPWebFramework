@@ -8,7 +8,7 @@ class TST_CSTLCompiler : public QObject
 {
     Q_OBJECT
 private slots:
-    void init();
+    void test();
 };
 
 #endif // TST_CSTLCOMPILER_H

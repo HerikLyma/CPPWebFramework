@@ -8,7 +8,7 @@ class TST_FilterChain : public QObject
 {
     Q_OBJECT
 private slots:
-    void init();
+    void test();
 };
 
 #endif // TST_FILTERCHAIN_H

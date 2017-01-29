@@ -1,6 +1,6 @@
 #include "tst_filter.h"
 
-void TST_Filter::init()
+void TST_Filter::test()
 {
 
 }

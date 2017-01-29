@@ -1,7 +1,7 @@
 #include "tst_httprequestmethod.h"
 
 
-void TST_HttpRequestMethod::init()
+void TST_HttpRequestMethod::test()
 {
     QVERIFY2(CWF::HttpRequestMethod::getDelete()  == "DELETE" , "Shoud be equal DELETE");
     QVERIFY2(CWF::HttpRequestMethod::getGet()     == "GET"    , "Shoud be equal GET");

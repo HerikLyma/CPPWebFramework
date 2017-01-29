@@ -1,6 +1,6 @@
 #include "tst_filemanager.h"
 
-void TST_FileManager::init()
+void TST_FileManager::test()
 {
 
 }

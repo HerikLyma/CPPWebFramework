@@ -1,6 +1,6 @@
 #include "tst_urlencoder.h"
 
-void TST_URLEncoder::init()
+void TST_URLEncoder::test()
 {
 
 }

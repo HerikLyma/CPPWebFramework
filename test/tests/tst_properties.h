@@ -7,12 +7,8 @@
 class TST_Properties : public QObject
 {
     Q_OBJECT
-public:
-    explicit TST_Properties(QObject *parent = 0);
-
-signals:
-
-public slots:
+private slots:
+    void test();
 };
 
 #endif // TST_PROPERTIES_H

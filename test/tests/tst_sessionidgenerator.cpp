@@ -1,6 +1,6 @@
 #include "tst_sessionidgenerator.h"
 
-void TST_SessionIdGenerator::init()
+void TST_SessionIdGenerator::test()
 {
 
 }

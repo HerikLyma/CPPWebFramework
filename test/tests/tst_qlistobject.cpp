@@ -1,6 +1,6 @@
 #include "tst_qlistobject.h"
 
-void TST_QListObject::init()
+void TST_QListObject::test()
 {
     CWF::QListObject listObj;
 

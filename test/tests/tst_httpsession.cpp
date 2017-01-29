@@ -1,6 +1,6 @@
 #include "tst_httpsession.h"
 
-void TST_HttpSession::init()
+void TST_HttpSession::test()
 {
 
 }

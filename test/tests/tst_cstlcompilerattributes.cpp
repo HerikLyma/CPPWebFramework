@@ -1,6 +1,6 @@
 #include "tst_cstlcompilerattributes.h"
 
-void TST_CSTLCompilerAttributes::init()
+void TST_CSTLCompilerAttributes::test()
 {
 
 }

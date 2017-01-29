@@ -1,6 +1,6 @@
 #include "tst_qmapthreadsafety.h"
 
-void TST_QMapThreadSafety::init()
+void TST_QMapThreadSafety::test()
 {
 
 }
