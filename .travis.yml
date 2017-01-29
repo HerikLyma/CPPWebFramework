@@ -32,6 +32,7 @@ script:
   - ./UnitTests
   - rm *tst_*
   - rm main*
+  - rm moc*
   - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
   - cd ..
