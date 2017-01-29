@@ -1,5 +1,8 @@
 language: cpp
 
+env:
+  - COVERALLS_REPO_TOKEN=KPDH1Nr3wpZZiXko19X4tkSjcvBUlNoSH
+
 compiler:
   - gcc
 
@@ -8,6 +11,8 @@ dist: trusty
 
 
 before_install:
+  - pip install --user cpp-coveralls
+  - sudo apt-get install lcov
   - sudo add-apt-repository --yes ppa:beineri/opt-qt551-trusty
   - sudo apt-get update -qq
 
@@ -19,6 +24,15 @@ script:
   - cd CPPWebFramework
   - /opt/qt55/bin/qmake CPPWebFramework.pro
   - make
+
+  - cd ..
+  - cd test
+  - /opt/qt55/bin/qmake UnitTests.pro
+  - make
+  - ./UnitTests
+  - rm *tst_*
+  - rm main*
+  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
   - cd ..
   - cd examples/HelloWorld
