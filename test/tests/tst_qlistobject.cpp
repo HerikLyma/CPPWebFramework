@@ -12,6 +12,6 @@ void TST_QListObject::test()
     QVERIFY2(obj != nullptr, "Should be different nullptr");
     listObj.remove(obj);
     QVERIFY2(listObj.size() == 1, "Should be equal 1");
-    listObj.setAutoDelete(true);
-    QVERIFY2(listObj.getAutoDelete() == true, "Should be equal true");
+    listObj.setAutoDelete(false);
+    QVERIFY2(listObj.getAutoDelete() == false, "Should be equal false");
 }
