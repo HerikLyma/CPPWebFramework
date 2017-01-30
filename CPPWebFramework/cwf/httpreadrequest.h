@@ -43,8 +43,7 @@ namespace CWF
         QMapThreadSafety<QString, HttpSession *> &sessions;        
         QSslConfiguration *sslConfiguration;
         Filter      *filter;
-        QTcpSocket  *socket = nullptr;
-        QMutex mutex;                
+        QTcpSocket  *socket = nullptr;        
         qint64 maxUploadFile;
         bool readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response);
         void createSocket();

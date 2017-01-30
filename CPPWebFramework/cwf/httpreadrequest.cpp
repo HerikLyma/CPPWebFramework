@@ -11,6 +11,7 @@
 namespace CWF
 {
     extern Configuration configuration;
+    QMutex mutex;
 
     HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
                                      QMapThreadSafety<QString, HttpServlet *> &urlServlet,
