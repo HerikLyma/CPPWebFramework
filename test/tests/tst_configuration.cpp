@@ -32,7 +32,7 @@ void TST_Configuration::test()
 }
 
 void TST_Configuration::testReadFromFile()
-{
+{    
     CWF::Configuration configuration(QDir::currentPath() + "/server");
     QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be 127.0.0.1");
     QVERIFY2(configuration.getPort() == 8080, "Should be 8080");
@@ -42,5 +42,7 @@ void TST_Configuration::testReadFromFile()
     QVERIFY2(configuration.getSessionExpirationTime() == 6000, "Should return 6000");
     QVERIFY2(configuration.getMaxUploadFile() == 20971520, "Should return 20971520");
     QVERIFY2(configuration.getPath() == "/home/herik/CPPWebFramework/CPPWebFramework/server", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server");
-    QVERIFY2(configuration.getLogFilePath() == "/home/herik/CPPWebFramework/CPPWebFramework/server/config/log", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server/config/log");
+    QVERIFY2(configuration.getLogFilePath() == "/home/herik/CPPWebFramework/CPPWebFramework/server/config/log", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server/config/log");    
+    QVERIFY2(configuration.getSslCertFile() == "/home/herik/CPPWebFramework/CPPWebFramework/server/config/ssl/my.cert", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server/config/ssl/my.cert");
+    QVERIFY2(configuration.getSslKeyFile() == "/home/herik/CPPWebFramework/CPPWebFramework/server/config/ssl/my.key", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server/config/ssl/my.key");
 }
