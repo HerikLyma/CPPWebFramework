@@ -42,7 +42,5 @@ void TST_Configuration::testReadFromFile()
     QVERIFY2(configuration.getSessionExpirationTime() == 6000, "Should return 6000");
     QVERIFY2(configuration.getMaxUploadFile() == 20971520, "Should return 20971520");
     QVERIFY2(configuration.getPath() == "/home/herik/CPPWebFramework/CPPWebFramework/server", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server");
-    QVERIFY2(configuration.getLogFilePath().endsWith("log") == true, "Should be true");
-    QVERIFY2(configuration.getSslCertFile().endsWith("my.cert") == true, "Should be true");
-    QVERIFY2(configuration.getSslKeyFile().endsWith("my.key") == true, "Should be true");
+    QVERIFY2(configuration.getLogFilePath().endsWith("log") == true, "Should be true");    
 }
