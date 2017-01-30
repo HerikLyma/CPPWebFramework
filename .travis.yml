@@ -23,12 +23,12 @@ script:
   - source /opt/qt57/bin/qt57-env.sh;
   - cd CPPWebFramework
   - /opt/qt57/bin/qmake CPPWebFramework.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd test
   - /opt/qt57/bin/qmake UnitTests.pro
-  - make
+  - make -j 8
   - ./UnitTests
   - rm *tst_*
   - rm main*
@@ -38,27 +38,27 @@ script:
   - cd ..
   - cd examples/HelloWorld
   - /opt/qt57/bin/qmake HelloWorld.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd ShowFile
   - /opt/qt57/bin/qmake ShowFile.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd SaveFiles
   - /opt/qt57/bin/qmake SaveFiles.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd Sessions
   - /opt/qt57/bin/qmake Sessions.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd Filters
   - /opt/qt57/bin/qmake Filters.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd CSTLOutExample
@@ -68,24 +68,24 @@ script:
   - cd ..
   - cd CSTLForExample
   - /opt/qt57/bin/qmake CSTLForExample.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd CSTLIfExample
   - /opt/qt57/bin/qmake CSTLIfExample.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd FillObjectBMI
   - /opt/qt57/bin/qmake FillObjectBMI.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd CSTLImportExample
   - /opt/qt57/bin/qmake CSTLImportExample.pro
-  - make
+  - make -j 8
 
   - cd ..
   - cd WebServices
   - /opt/qt57/bin/qmake WebServices.pro
-  - make
+  - make -j 8
