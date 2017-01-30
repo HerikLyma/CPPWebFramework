@@ -6,8 +6,10 @@ void TST_Configuration::test()
     configuration.setHost(QHostAddress("127.0.0.1"));
     configuration.setPort(8080);
     configuration.setDomain("www.test.com.xyz");
+    configuration.setMaxThread(200);
 
     QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be 127.0.0.1");
     QVERIFY2(configuration.getPort() == 8080, "Should be 8080");
     QVERIFY2(configuration.getDomain() == "www.test.com.xyz", "Should be www.test.com.xyz");
+    QVERIFY2(configuration.getPort() == 200, "Should be 200");
 }
