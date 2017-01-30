@@ -17,7 +17,7 @@ namespace CWF
             serverFilesPath += "/config/CPPWeb.ini";
             QSettings settings(serverFilesPath, QSettings::Format::IniFormat);
             settings.beginGroup("config");
-            host                  = settings.value("host").toString();
+            host.setAddress(settings.value("host").toString());
             port                  = settings.value("port").toInt();
             maxThread             = settings.value("maxThread").toInt();
             cleanupInterval       = settings.value("cleanupInterval").toInt();

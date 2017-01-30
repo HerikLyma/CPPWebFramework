@@ -1,15 +1,10 @@
-/*
- Copyright 2017 Herik Lima de Castro and Marcelo Medeiros Eler
- Distributed under MIT license, or public domain if desired and
- recognized in your jurisdiction.
- See file LICENSE for detail.
-*/
-
 #ifndef HTTPCOOKIE_H
 #define HTTPCOOKIE_H
 
-#include <QByteArray>
 #include <QList>
+#include <QDebug>
+#include <QByteArray>
+
 
 namespace CWF
 {
@@ -45,54 +40,100 @@ namespace CWF
         /** Convert this cookie to a string that may be used in a Set-Cookie header. */
         QByteArray toByteArray() const ;
         /**
-          Split a string list into parts, where each part is delimited by semicolon.
-          Semicolons within double quotes are skipped. Double quotes are removed.
-        */
+         * @brief splitCSV
+         * @param source
+         * @return
+         */
         static QList<QByteArray> splitCSV(const QByteArray &source);
 
-        /** Set the name of this cookie */
+        /**
+         * @brief setName
+         * @param name
+         */
         void setName(const QByteArray &name);
 
-        /** Set the value of this cookie */
+        /**
+         * @brief setValue
+         * @param value
+         */
         void setValue(const QByteArray &value);
 
-        /** Set the comment of this cookie */
+        /**
+         * @brief setComment
+         * @param comment
+         */
         void setComment(const QByteArray &comment);
 
-        /** Set the domain of this cookie */
+        /**
+         * @brief setDomain
+         * @param domain
+         */
         void setDomain(const QByteArray &domain);
 
-        /** Set the maximum age of this cookie in seconds. 0=discard immediately */
+        /**
+         * @brief setMaxAge
+         * @param maxAge
+         */
         void setMaxAge(int maxAge);
 
-        /** Set the path for that the cookie will be sent, default="/" which means the whole domain */
+        /**
+         * @brief setPath
+         * @param path
+         */
         void setPath(const QByteArray &path);
 
-        /** Set secure mode, so that the cokkie will only be sent on secure connections */
+        /**
+         * @brief setSecure
+         * @param secure
+         */
         void setSecure(bool secure);
 
-        /** Get the name of this cookie */
+        /**
+         * @brief getName
+         * @return
+         */
         QByteArray getName() const;
 
-        /** Get the value of this cookie */
+        /**
+         * @brief getValue
+         * @return
+         */
         QByteArray getValue() const;
 
-        /** Get the comment of this cookie */
+        /**
+         * @brief getComment
+         * @return
+         */
         QByteArray getComment() const;
 
-        /** Get the domain of this cookie */
+        /**
+         * @brief getDomain
+         * @return
+         */
         QByteArray getDomain() const;
 
-        /** Set the maximum age of this cookie in seconds. */
+        /**
+         * @brief getMaxAge
+         * @return
+         */
         int getMaxAge() const;
 
-        /** Set the path of this cookie */
+        /**
+         * @brief getPath
+         * @return
+         */
         QByteArray getPath() const;
 
-        /** Get the secure flag of this cookie */
+        /**
+         * @brief getSecure
+         * @return
+         */
         bool getSecure() const;
 
-        /** Returns always 1 */
+        /**
+         * @brief getVersion
+         * @return
+         */
         int getVersion() const;
     };
 }

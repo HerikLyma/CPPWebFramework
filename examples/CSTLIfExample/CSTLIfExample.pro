@@ -14,68 +14,69 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \     
-    cwf/configuration.cpp \
-    cwf/cppwebapplication.cpp \
-    cwf/cppwebserver.cpp \
-    cwf/cppwebservlet.cpp \
-    cwf/cstlcompiler.cpp \
-    cwf/cstlcompilerattributes.cpp \
-    cwf/cstlcompilerfor.cpp \
-    cwf/cstlcompilerif.cpp \
-    cwf/cstlcompilerobject.cpp \
-    cwf/filemanager.cpp \
-    cwf/filter.cpp \
-    cwf/filterchain.cpp \    
-    cwf/httpcookie.cpp \
-    cwf/httpparser.cpp \
-    cwf/httpreadrequest.cpp \
-    cwf/httpservlet.cpp \
-    cwf/httpservletrequest.cpp \
-    cwf/httpservletresponse.cpp \
-    cwf/httpsession.cpp \
-    cwf/metaclassparser.cpp \
-    cwf/properties.cpp \
-    cwf/qlistobject.cpp \
-    cwf/requestdispatcher.cpp \
-    cwf/sessionidgenerator.cpp \
+    ../../CPPWebFramework/cwf/configuration.cpp \
+    ../../CPPWebFramework/cwf/cppwebapplication.cpp \
+    ../../CPPWebFramework/cwf/cppwebserver.cpp \
+    ../../CPPWebFramework/cwf/cppwebservlet.cpp \
+    ../../CPPWebFramework/cwf/cstlcompiler.cpp \
+    ../../CPPWebFramework/cwf/cstlcompilerattributes.cpp \
+    ../../CPPWebFramework/cwf/cstlcompilerfor.cpp \
+    ../../CPPWebFramework/cwf/cstlcompilerif.cpp \
+    ../../CPPWebFramework/cwf/cstlcompilerobject.cpp \
+    ../../CPPWebFramework/cwf/filemanager.cpp \
+    ../../CPPWebFramework/cwf/filter.cpp \
+    ../../CPPWebFramework/cwf/filterchain.cpp \    
+    ../../CPPWebFramework/cwf/httpcookie.cpp \
+    ../../CPPWebFramework/cwf/httpparser.cpp \
+    ../../CPPWebFramework/cwf/httpreadrequest.cpp \
+    ../../CPPWebFramework/cwf/httpservlet.cpp \
+    ../../CPPWebFramework/cwf/httpservletrequest.cpp \
+    ../../CPPWebFramework/cwf/httpservletresponse.cpp \
+    ../../CPPWebFramework/cwf/httpsession.cpp \
+    ../../CPPWebFramework/cwf/metaclassparser.cpp \
+    ../../CPPWebFramework/cwf/properties.cpp \
+    ../../CPPWebFramework/cwf/qlistobject.cpp \
+    ../../CPPWebFramework/cwf/requestdispatcher.cpp \
+    ../../CPPWebFramework/cwf/sessionidgenerator.cpp \
     entities/user.cpp \
     servlets/usersservlet.cpp \
-    cwf/urlencoder.cpp \
-    cwf/cstlcompilerimport.cpp
+    ../../CPPWebFramework/cwf/urlencoder.cpp \
+    ../../CPPWebFramework/cwf/cstlcompilerimport.cpp
 
 HEADERS += \        
-    cwf/configuration.h \
-    cwf/cppwebapplication.h \
-    cwf/cppwebserver.h \
-    cwf/cppwebservlet.h \
-    cwf/cstlcompiler.h \
-    cwf/cstlcompilerattributes.h \
-    cwf/cstlcompilerfor.h \
-    cwf/cstlcompilerif.h \
-    cwf/cstlcompilerobject.h \
-    cwf/filemanager.h \
-    cwf/filter.h \
-    cwf/filterchain.h \
-    cwf/httpcookie.h \
-    cwf/httpparser.h \
-    cwf/httpreadrequest.h \
-    cwf/httprequestmethod.h \
-    cwf/httpservlet.h \
-    cwf/httpservletrequest.h \
-    cwf/httpservletresponse.h \
-    cwf/httpsession.h \
-    cwf/metaclassparser.h \
-    cwf/properties.h \
-    cwf/qlistobject.h \
-    cwf/qmapthreadsafety.h \
-    cwf/requestdispatcher.h \
-    cwf/sessionidgenerator.h \
+    ../../CPPWebFramework/cwf/configuration.h \
+    ../../CPPWebFramework/cwf/cppwebapplication.h \
+    ../../CPPWebFramework/cwf/cppwebserver.h \
+    ../../CPPWebFramework/cwf/cppwebservlet.h \
+    ../../CPPWebFramework/cwf/cstlcompiler.h \
+    ../../CPPWebFramework/cwf/cstlcompilerattributes.h \
+    ../../CPPWebFramework/cwf/cstlcompilerfor.h \
+    ../../CPPWebFramework/cwf/cstlcompilerif.h \
+    ../../CPPWebFramework/cwf/cstlcompilerobject.h \
+    ../../CPPWebFramework/cwf/filemanager.h \
+    ../../CPPWebFramework/cwf/filter.h \
+    ../../CPPWebFramework/cwf/filterchain.h \
+    ../../CPPWebFramework/cwf/httpcookie.h \
+    ../../CPPWebFramework/cwf/httpparser.h \
+    ../../CPPWebFramework/cwf/httpreadrequest.h \
+    ../../CPPWebFramework/cwf/httprequestmethod.h \
+    ../../CPPWebFramework/cwf/httpservlet.h \
+    ../../CPPWebFramework/cwf/httpservletrequest.h \
+    ../../CPPWebFramework/cwf/httpservletresponse.h \
+    ../../CPPWebFramework/cwf/httpsession.h \
+    ../../CPPWebFramework/cwf/metaclassparser.h \
+    ../../CPPWebFramework/cwf/properties.h \
+    ../../CPPWebFramework/cwf/qlistobject.h \
+    ../../CPPWebFramework/cwf/qmapthreadsafety.h \
+    ../../CPPWebFramework/cwf/requestdispatcher.h \
+    ../../CPPWebFramework/cwf/sessionidgenerator.h \
     entities/user.h \
     servlets/usersservlet.h \
-    cwf/urlencoder.h \
-    cwf/cstlcompilerimport.h
+    ../../CPPWebFramework/cwf/urlencoder.h \
+    ../../CPPWebFramework/cwf/cstlcompilerimport.h
 
 QMAKE_CXXFLAGS += -std=c++11
+INCLUDEPATH += ../../CPPWebFramework
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \    

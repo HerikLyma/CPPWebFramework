@@ -8,6 +8,8 @@
 #include "httpservletresponse.h"
 #include "configuration.h"
 
+QMutex HttpServletResponseMutex;
+
 namespace CWF
 {
     extern Configuration configuration;
@@ -27,16 +29,18 @@ namespace CWF
         if(!content.isEmpty())
         {
             bool biggerThanLimit = content.size() > max;
+            headers.insert("Content-Length", QByteArray::number(content.size()));
+            headers.insert("Server", "C++-Web-Server/1.0");
+            headers.insert("Data", QByteArray(std::move(QDateTime::currentDateTime().toString("ddd, dd MMM yyyy hh:mm:ss").toLatin1() + " GMT")));
+
             if(!biggerThanLimit)
             {
                 writeHeaders();
-                writeToSocket(content);
-                writeToSocket("\r\n\r\n");
+                writeToSocket(content);                
             }
             else
             {
-                headers.insert("Transfer-Encoding","chunked");
-                headers.insert("Content-Length", QByteArray::number(content.size()));
+                headers.insert("Transfer-Encoding","chunked");                
                 writeHeaders();
                 int total = (content.size() / max) + 1, last = 0;
 
@@ -108,11 +112,11 @@ namespace CWF
             socket->write(data, data.size());
             socket->flush();
             if(socket->ConnectingState)
-            {
-                QMutex mutex;
-                mutex.lock();
-                socket->waitForBytesWritten(configuration.timeOut);
-                mutex.unlock();
+            {                
+                HttpServletResponseMutex.lock();
+                int timeOut = configuration.timeOut;
+                HttpServletResponseMutex.unlock();
+                socket->waitForBytesWritten(timeOut);
             }
         }
     }
@@ -132,14 +136,16 @@ namespace CWF
             headers.insert("Content-Type", "text/html; charset=utf-8");
         }
 
-        foreach(QByteArray name, headers.keys())
+        QList<QByteArray> headersList(std::move(headers.keys()));
+
+        for(QByteArray &name : headersList)
         {
             buffer.append(name);
             buffer.append(": ");
             buffer.append(headers.value(name));
             buffer.append("\r\n");
         }
-        foreach(HttpCookie cookie, cookies)
+        for(HttpCookie &cookie : cookies)
         {
             buffer.append("Set-Cookie: ");
             buffer.append(cookie.toByteArray());
