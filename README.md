@@ -26,11 +26,11 @@ to make web development as simple as possible, even for developers starting in t
 	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
 	<li>Install Qt Libraries: sudo apt-get install qt5-default</li>
 	<li>Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git</li>
-	<li>Open the CPPWebFramework.pro file using Qt Creator</li>
-	<li>Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, CWF::Configuration("/home/MYNAME/CPPWebFramework/CPPWebFramework/server/"));</li>
-	<li>Change the path in the CPPWeb.ini file: path=/home/MYNAME/CPPWebFramework/CPPWebFramework/server/</li>
+	<li>Open the a .pro file from a example using Qt Creator</li>
+	<li>Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, CWF::Configuration("/PATH_TO_EXAMPLE/server/"));</li>
+	<li>Change the path in the CPPWeb.ini file: path=/PATH_TO_EXAMPLE/server/</li>
 	<li>Run the project</li>
-	<li>Open your browser and type: http://127.0.0.1:8080</li>
+	<li>Open your browser and type: http://127.0.0.1:8080 to check if the server is online</li>
 </ol>
 <hr/> 
 <b>Site and documentation:</b> http://www.cppwebframework.com <br>

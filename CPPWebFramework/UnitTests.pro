@@ -30,32 +30,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     tests/tst_configuration.cpp \
-    ../CPPWebFramework/cwf/configuration.cpp \
-    ../CPPWebFramework/cwf/cppwebapplication.cpp \
-    ../CPPWebFramework/cwf/cppwebserver.cpp \
-    ../CPPWebFramework/cwf/cppwebservlet.cpp \
-    ../CPPWebFramework/cwf/cstlcompiler.cpp \
-    ../CPPWebFramework/cwf/cstlcompilerattributes.cpp \
-    ../CPPWebFramework/cwf/cstlcompilerfor.cpp \
-    ../CPPWebFramework/cwf/cstlcompilerif.cpp \
-    ../CPPWebFramework/cwf/cstlcompilerimport.cpp \
-    ../CPPWebFramework/cwf/cstlcompilerobject.cpp \
-    ../CPPWebFramework/cwf/filemanager.cpp \
-    ../CPPWebFramework/cwf/filter.cpp \
-    ../CPPWebFramework/cwf/filterchain.cpp \
-    ../CPPWebFramework/cwf/httpcookie.cpp \
-    ../CPPWebFramework/cwf/httpparser.cpp \
-    ../CPPWebFramework/cwf/httpreadrequest.cpp \
-    ../CPPWebFramework/cwf/httpservlet.cpp \
-    ../CPPWebFramework/cwf/httpservletrequest.cpp \
-    ../CPPWebFramework/cwf/httpservletresponse.cpp \
-    ../CPPWebFramework/cwf/httpsession.cpp \
-    ../CPPWebFramework/cwf/metaclassparser.cpp \
-    ../CPPWebFramework/cwf/properties.cpp \
-    ../CPPWebFramework/cwf/qlistobject.cpp \
-    ../CPPWebFramework/cwf/requestdispatcher.cpp \
-    ../CPPWebFramework/cwf/sessionidgenerator.cpp \
-    ../CPPWebFramework/cwf/urlencoder.cpp \
+    cwf/configuration.cpp \
+    cwf/cppwebapplication.cpp \
+    cwf/cppwebserver.cpp \
+    cwf/cppwebservlet.cpp \
+    cwf/cstlcompiler.cpp \
+    cwf/cstlcompilerattributes.cpp \
+    cwf/cstlcompilerfor.cpp \
+    cwf/cstlcompilerif.cpp \
+    cwf/cstlcompilerimport.cpp \
+    cwf/cstlcompilerobject.cpp \
+    cwf/filemanager.cpp \
+    cwf/filter.cpp \
+    cwf/filterchain.cpp \
+    cwf/httpcookie.cpp \
+    cwf/httpparser.cpp \
+    cwf/httpreadrequest.cpp \
+    cwf/httpservlet.cpp \
+    cwf/httpservletrequest.cpp \
+    cwf/httpservletresponse.cpp \
+    cwf/httpsession.cpp \
+    cwf/metaclassparser.cpp \
+    cwf/properties.cpp \
+    cwf/qlistobject.cpp \
+    cwf/requestdispatcher.cpp \
+    cwf/sessionidgenerator.cpp \
+    cwf/urlencoder.cpp \
     tests/tst_cppwebapplication.cpp \
     tests/tst_cppwebserver.cpp \
     tests/tst_cppwebservlet.cpp \
@@ -86,34 +86,34 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
     tests/tst_configuration.h \
-    ../CPPWebFramework/cwf/configuration.h \
-    ../CPPWebFramework/cwf/cppwebapplication.h \
-    ../CPPWebFramework/cwf/cppwebserver.h \
-    ../CPPWebFramework/cwf/cppwebservlet.h \
-    ../CPPWebFramework/cwf/cstlcompiler.h \
-    ../CPPWebFramework/cwf/cstlcompilerattributes.h \
-    ../CPPWebFramework/cwf/cstlcompilerfor.h \
-    ../CPPWebFramework/cwf/cstlcompilerif.h \
-    ../CPPWebFramework/cwf/cstlcompilerimport.h \
-    ../CPPWebFramework/cwf/cstlcompilerobject.h \
-    ../CPPWebFramework/cwf/filemanager.h \
-    ../CPPWebFramework/cwf/filter.h \
-    ../CPPWebFramework/cwf/filterchain.h \
-    ../CPPWebFramework/cwf/httpcookie.h \
-    ../CPPWebFramework/cwf/httpparser.h \
-    ../CPPWebFramework/cwf/httpreadrequest.h \
-    ../CPPWebFramework/cwf/httprequestmethod.h \
-    ../CPPWebFramework/cwf/httpservlet.h \
-    ../CPPWebFramework/cwf/httpservletrequest.h \
-    ../CPPWebFramework/cwf/httpservletresponse.h \
-    ../CPPWebFramework/cwf/httpsession.h \
-    ../CPPWebFramework/cwf/metaclassparser.h \
-    ../CPPWebFramework/cwf/properties.h \
-    ../CPPWebFramework/cwf/qlistobject.h \
-    ../CPPWebFramework/cwf/qmapthreadsafety.h \
-    ../CPPWebFramework/cwf/requestdispatcher.h \
-    ../CPPWebFramework/cwf/sessionidgenerator.h \
-    ../CPPWebFramework/cwf/urlencoder.h \
+    cwf/configuration.h \
+    cwf/cppwebapplication.h \
+    cwf/cppwebserver.h \
+    cwf/cppwebservlet.h \
+    cwf/cstlcompiler.h \
+    cwf/cstlcompilerattributes.h \
+    cwf/cstlcompilerfor.h \
+    cwf/cstlcompilerif.h \
+    cwf/cstlcompilerimport.h \
+    cwf/cstlcompilerobject.h \
+    cwf/filemanager.h \
+    cwf/filter.h \
+    cwf/filterchain.h \
+    cwf/httpcookie.h \
+    cwf/httpparser.h \
+    cwf/httpreadrequest.h \
+    cwf/httprequestmethod.h \
+    cwf/httpservlet.h \
+    cwf/httpservletrequest.h \
+    cwf/httpservletresponse.h \
+    cwf/httpsession.h \
+    cwf/metaclassparser.h \
+    cwf/properties.h \
+    cwf/qlistobject.h \
+    cwf/qmapthreadsafety.h \
+    cwf/requestdispatcher.h \
+    cwf/sessionidgenerator.h \
+    cwf/urlencoder.h \
     tests/tst_cppwebapplication.h \
     tests/tst_cppwebserver.h \
     tests/tst_cppwebservlet.h \
@@ -140,8 +140,6 @@ HEADERS += \
     tests/tst_urlencoder.h \
     tests/tst_httprequestmethod.h \
     tests/tst_httpservletrequest.h
-
-INCLUDEPATH += ../CPPWebFramework/
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0
