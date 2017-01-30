@@ -2,6 +2,7 @@
 #define TST_CONFIGURATION_H
 
 #include <QDir>
+#include <QFile>
 #include <QtTest>
 #include <cwf/configuration.h>
 

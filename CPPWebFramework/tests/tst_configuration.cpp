@@ -33,7 +33,30 @@ void TST_Configuration::test()
 
 void TST_Configuration::testReadFromFile()
 {    
-    CWF::Configuration configuration(QDir::currentPath() + "/server");
+    QString path(QDir::currentPath() + "/server");
+    QFile file(path + "/config/CPPWeb.ini");
+    file.open(QIODevice::WriteOnly);
+
+    file.write("[config]\n");
+    file.write("host=127.0.0.1\n");
+    file.write("port=8080\n");
+    file.write("maxThread=200\n");
+    file.write("cleanupInterval=60000\n");
+    file.write("timeOut=60000\n");
+    file.write("sessionExpirationTime=6000\n");
+    file.write("maxUploadFile=20971520\n");
+    file.write("path=" + path.toLatin1() + "\n");
+    file.write("suffix=.xhtml\n");
+    file.write("logFilePath=/config/log/\n");
+    file.write("sslKeyFile=/config/ssl/my.key\n");
+    file.write("sslCertFile=/config/ssl/my.cert\n");
+    file.write("indexPage=/config/cppwebserverpages/index\n");
+    file.write("accessCPPWebIni=false\n");
+    file.write("accessServerPages=true");
+
+    file.close();
+
+    CWF::Configuration configuration(path);
     QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be 127.0.0.1");
     QVERIFY2(configuration.getPort() == 8080, "Should be 8080");
     QVERIFY2(configuration.getMaxThread() == 200, "Should be 200");
@@ -41,6 +64,8 @@ void TST_Configuration::testReadFromFile()
     QVERIFY2(configuration.getTimeOut() == 60000, "Should return 60000");
     QVERIFY2(configuration.getSessionExpirationTime() == 6000, "Should return 6000");
     QVERIFY2(configuration.getMaxUploadFile() == 20971520, "Should return 20971520");
-    QVERIFY2(configuration.getPath() == "/home/herik/CPPWebFramework/CPPWebFramework/server", "Should be /home/herik/CPPWebFramework/CPPWebFramework/server");
-    QVERIFY2(configuration.getLogFilePath().endsWith("log") == true, "Should be true");    
+    QVERIFY2(configuration.getPath() == path, QString("Should be " + path).toStdString().data());
+    QVERIFY2(configuration.getLogFilePath().endsWith("log") == true, "Should be true");
+    QVERIFY2(configuration.getSslCertFile().endsWith("my.cert") == true, "Should be true");
+    QVERIFY2(configuration.getSslKeyFile().endsWith("my.key") == true, "Should be true");
 }
