@@ -22,10 +22,6 @@ namespace CWF
         QString m_class;
         QString m_method;
         /**
-         * @brief Default constructor.
-         */
-        Properties() = default;
-        /**
          * @brief Extracts class and method name.
          * @param const QString &classAndMethod : Class and method name.
          */
