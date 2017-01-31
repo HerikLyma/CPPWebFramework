@@ -2,228 +2,220 @@
 
 namespace CWF
 {    
-    HttpCookie::HttpCookie(const QByteArray &source)
-    {
-        QList<QByteArray> list(std::move(splitCSV(source)));
-        for(QByteArray &current : list)
-        {
-            QByteArray name;
-            QByteArray value;
-            int position = current.indexOf('=');
-            if(position)
-            {
-                name  = current.left(position).trimmed();
-                value = current.mid(position + 1).trimmed();
-            }
-            else
-            {
-                name = current.trimmed();
-                value = "";
-            }
+HttpCookie::HttpCookie(const QByteArray &source)
+   {
+       QList<QByteArray> list(std::move(splitCSV(source)));
+       for(QByteArray &current : list)
+       {
+           QByteArray name;
+           QByteArray value;
+           int position = current.indexOf('=');
+           if(position)
+           {
+               name  = current.left(position).trimmed();
+               value = current.mid(position + 1).trimmed();
+           }
+           else
+           {
+               name = current.trimmed();
+               value = "";
+           }
 
-            if(name == "Comment")
-            {
-                comment = value;
-            }
-            else if(name == "Domain")
-            {
-                domain = value;
-            }
-            else if(name == "Max-Age")
-            {
-                maxAge = value.toInt();
-            }
-            else if(name == "Path")
-            {
-                path = value;
-            }
-            else if(name == "Name")
-            {
-                this->name = value;
-            }
-            else if(name == "Secure")
-            {
-                secure = true;
-            }
-            else if(name == "Version")
-            {
-                version = value.toInt();
-            }
-            else if(name == "Value")
-            {
-                this->value = value;
-            }
-            else
-            {
-                if (this->name.isEmpty())
-                {
-                    this->name  = name;
-                    this->value = value;
-                }
-                else
-                {
-                    qDebug() << "HttpCookie: Ignoring unknown " << name.data() << "=" << value.data();
-                }
-            }
-        }
-    }
+           if(name == "Comment")
+           {
+               comment = value;
+           }
+           else if(name == "Domain")
+           {
+               domain = value;
+           }
+           else if(name == "Max-Age")
+           {
+               maxAge = value.toInt();
+           }
+           else if(name == "Path")
+           {
+               path = value;
+           }
+           else if(name == "Secure")
+           {
+               secure = true;
+           }
+           else if(name == "Version")
+           {
+               version = value.toInt();
+           }
+           else
+           {
+               if (this->name.isEmpty())
+               {
+                   this->name  = name;
+                   this->value = value;
+               }
+               else
+               {
+                   qDebug() << "HttpCookie: Ignoring unknown " << name.data() << "=" << value.data();
+               }
+           }
+       }
+   }
 
-    HttpCookie::HttpCookie(const QByteArray &name, const QByteArray &value) : name(name), value(value)
-    {
-    }
+   HttpCookie::HttpCookie(const QByteArray &name, const QByteArray &value) : name(name), value(value)
+   {
+   }
 
-    QByteArray HttpCookie::toByteArray() const
-    {
-        QByteArray buffer(name);
-        buffer.append('=');
-        buffer.append(value);
-        if(!comment.isEmpty())
-        {
-            buffer.append("; Comment=");
-            buffer.append(comment);
-        }
-        if(!domain.isEmpty())
-        {
-            buffer.append("; Domain=");
-            buffer.append(domain);
-        }
-        if(maxAge != 0)
-        {
-            buffer.append("; Max-Age=");
-            buffer.append(QByteArray::number(maxAge));
-        }
-        if(!path.isEmpty())
-        {
-            buffer.append("; Path=");
-            buffer.append(path);
-        }
-        if(secure)
-        {
-            buffer.append("; Secure");
-        }
-        buffer.append("; Version=");
-        buffer.append(QByteArray::number(version));
-        return buffer;
-    }
+   QByteArray HttpCookie::toByteArray() const
+   {
+       QByteArray buffer(name);
+       buffer.append('=');
+       buffer.append(value);
+       if(!comment.isEmpty())
+       {
+           buffer.append("; Comment=");
+           buffer.append(comment);
+       }
+       if(!domain.isEmpty())
+       {
+           buffer.append("; Domain=");
+           buffer.append(domain);
+       }
+       if(maxAge != 0)
+       {
+           buffer.append("; Max-Age=");
+           buffer.append(QByteArray::number(maxAge));
+       }
+       if(!path.isEmpty())
+       {
+           buffer.append("; Path=");
+           buffer.append(path);
+       }
+       if(secure)
+       {
+           buffer.append("; Secure");
+       }
+       buffer.append("; Version=");
+       buffer.append(QByteArray::number(version));
+       return buffer;
+   }
 
-    void HttpCookie::setName(const QByteArray &name)
-    {
-        this->name = name;
-    }
+   void HttpCookie::setName(const QByteArray &name)
+   {
+       this->name = name;
+   }
 
-    void HttpCookie::setValue(const QByteArray &value)
-    {
-        this->value = value;
-    }
+   void HttpCookie::setValue(const QByteArray &value)
+   {
+       this->value = value;
+   }
 
-    void HttpCookie::setComment(const QByteArray &comment)
-    {
-        this->comment = comment;
-    }
+   void HttpCookie::setComment(const QByteArray &comment)
+   {
+       this->comment = comment;
+   }
 
-    void HttpCookie::setDomain(const QByteArray &domain)
-    {
-        this->domain = domain;
-    }
+   void HttpCookie::setDomain(const QByteArray &domain)
+   {
+       this->domain = domain;
+   }
 
-    void HttpCookie::setMaxAge(int maxAge)
-    {
-        this->maxAge = maxAge;
-    }
+   void HttpCookie::setMaxAge(int maxAge)
+   {
+       this->maxAge = maxAge;
+   }
 
-    void HttpCookie::setPath(const QByteArray &path)
-    {
-        this->path = path;
-    }
+   void HttpCookie::setPath(const QByteArray &path)
+   {
+       this->path = path;
+   }
 
-    void HttpCookie::setSecure(bool secure)
-    {
-        this->secure = secure;
-    }
+   void HttpCookie::setSecure(bool secure)
+   {
+       this->secure = secure;
+   }
 
-    QByteArray HttpCookie::getName() const
-    {
-        return name;
-    }
+   QByteArray HttpCookie::getName() const
+   {
+       return name;
+   }
 
-    QByteArray HttpCookie::getValue() const
-    {
-        return value;
-    }
+   QByteArray HttpCookie::getValue() const
+   {
+       return value;
+   }
 
-    QByteArray HttpCookie::getComment() const
-    {
-        return comment;
-    }
+   QByteArray HttpCookie::getComment() const
+   {
+       return comment;
+   }
 
-    QByteArray HttpCookie::getDomain() const
-    {
-        return domain;
-    }
+   QByteArray HttpCookie::getDomain() const
+   {
+       return domain;
+   }
 
-    int HttpCookie::getMaxAge() const
-    {
-        return maxAge;
-    }
+   int HttpCookie::getMaxAge() const
+   {
+       return maxAge;
+   }
 
-    QByteArray HttpCookie::getPath() const
-    {
-        return path;
-    }
+   QByteArray HttpCookie::getPath() const
+   {
+       return path;
+   }
 
-    bool HttpCookie::getSecure() const
-    {
-        return secure;
-    }
+   bool HttpCookie::getSecure() const
+   {
+       return secure;
+   }
 
-    int HttpCookie::getVersion() const
-    {
-        return version;
-    }
+   int HttpCookie::getVersion() const
+   {
+       return version;
+   }
 
-    QList<QByteArray> HttpCookie::splitCSV(const QByteArray &source)
-    {
-        bool inString = false;
-        QList<QByteArray> list;
-        QByteArray buffer;
-        int size = source.size();
-        for(int i = 0; i < size; ++i)
-        {
-            char c = source.at(i);
-            if(inString==false)
-            {
-                if(c == '\"')
-                {
-                    inString=true;
-                }
-                else if(c == ';')
-                {
-                    QByteArray trimmed(std::move(buffer.trimmed()));
-                    if(!trimmed.isEmpty())
-                    {
-                        list.append(trimmed);
-                    }
-                    buffer.clear();
-                }
-                else
-                {
-                    buffer.append(c);
-                }
-            }
-            else if(c == '\"')
-            {                
-                inString = false;
-            }
-            else
-            {
-                buffer.append(c);
-            }
-        }
-        QByteArray trimmed(std::move(buffer.trimmed()));
-        if(!trimmed.isEmpty())
-        {
-            list.append(trimmed);
-        }
-        return list;
-    }
+   QList<QByteArray> HttpCookie::splitCSV(const QByteArray &source)
+   {
+       bool inString = false;
+       QList<QByteArray> list;
+       QByteArray buffer;
+       int size = source.size();
+       for(int i = 0; i < size; ++i)
+       {
+           char c = source.at(i);
+           if(inString==false)
+           {
+               if(c == '\"')
+               {
+                   inString=true;
+               }
+               else if(c == ';')
+               {
+                   QByteArray trimmed(std::move(buffer.trimmed()));
+                   if (!trimmed.isEmpty())
+                   {
+                       list.append(trimmed);
+                   }
+                   buffer.clear();
+               }
+               else
+               {
+                   buffer.append(c);
+               }
+           }
+           else if(c == '\"')
+           {
+               inString = false;
+           }
+           else
+           {
+               buffer.append(c);
+           }
+       }
+       QByteArray trimmed(std::move(buffer.trimmed()));
+       if(!trimmed.isEmpty())
+       {
+           list.append(trimmed);
+       }
+       return list;
+   }
 }
