@@ -37,13 +37,21 @@ namespace CWF
             {
                 path = value;
             }
+            else if(name == "Name")
+            {
+                this->name = value;
+            }
             else if(name == "Secure")
             {
                 secure = true;
             }
             else if(name == "Version")
             {
-                version=value.toInt();
+                version = value.toInt();
+            }
+            else if(name == "Value")
+            {
+                this->value = value;
             }
             else
             {
@@ -191,7 +199,7 @@ namespace CWF
                 else if(c == ';')
                 {
                     QByteArray trimmed(std::move(buffer.trimmed()));
-                    if (!trimmed.isEmpty())
+                    if(!trimmed.isEmpty())
                     {
                         list.append(trimmed);
                     }
