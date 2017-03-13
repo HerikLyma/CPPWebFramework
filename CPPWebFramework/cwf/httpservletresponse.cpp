@@ -7,6 +7,7 @@
 
 #include "httpservletresponse.h"
 #include "configuration.h"
+#include "constants.h"
 
 QMutex HttpServletResponseMutex;
 
@@ -29,18 +30,18 @@ namespace CWF
         if(!content.isEmpty())
         {
             bool biggerThanLimit = content.size() > max;
-            headers.insert("Content-Length", QByteArray::number(content.size()));
-            headers.insert("Server", "C++-Web-Server/1.0");
-            headers.insert("Data", QByteArray(std::move(QDateTime::currentDateTime().toString("ddd, dd MMM yyyy hh:mm:ss").toLatin1() + " GMT")));
+            headers.insert(HTTP::CONTENT_LENGTH, QByteArray::number(content.size()));
+            headers.insert(HTTP::SERVER, HTTP::SERVER_VERSION);
+            headers.insert(HTTP::DATA, QByteArray(std::move(QDateTime::currentDateTime().toString("ddd, dd MMM yyyy hh:mm:ss").toLatin1() + " GMT")));
 
             if(!biggerThanLimit)
             {
                 writeHeaders();
-                writeToSocket(content);                
+                writeToSocket(content);
             }
             else
             {
-                headers.insert("Transfer-Encoding","chunked");                
+                headers.insert(HTTP::TRANSFER_ENCODING, HTTP::CHUNKED);
                 writeHeaders();
                 int total = (content.size() / max) + 1, last = 0;
 
@@ -63,7 +64,7 @@ namespace CWF
                         writeToSocket("\r\n");
                     }
                 }
-                writeToSocket("0\r\n\r\n");
+                writeToSocket("0" + HTTP::END_OF_MENSAGE);
             }
             socket->disconnectFromHost();
             content.clear();
@@ -131,9 +132,9 @@ namespace CWF
         buffer.append(statusText);
         buffer.append("\r\n");
 
-        if(!headers.contains("Content-Type"))
+        if(!headers.contains(HTTP::CONTENT_TYPE))
         {
-            headers.insert("Content-Type", "text/html; charset=utf-8");
+            headers.insert(HTTP::CONTENT_TYPE, HTTP::TEXT_HTML_UTF8);
         }
 
         QList<QByteArray> headersList(std::move(headers.keys()));
@@ -162,9 +163,9 @@ namespace CWF
 
     void HttpServletResponse::sendRedirect(const QByteArray &url)
     {
-        setStatus(HttpServletResponse::SC_SEE_OTHER, "See Other");
-        addHeader("Location", url);
-        write("Redirect", true);
+        setStatus(HttpServletResponse::SC_SEE_OTHER, HTTP::SEE_OTHER);
+        addHeader(HTTP::LOCATION, url);
+        write(HTTP::REDIRECT, true);
     }
 
     const int HttpServletResponse::SC_CONTINUE = 100;

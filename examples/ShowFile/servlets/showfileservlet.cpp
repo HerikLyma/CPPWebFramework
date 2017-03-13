@@ -10,7 +10,7 @@
 void ShowFileServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
     Q_UNUSED(response)
-    request.getRequestDispatcher("/pages/showfile").forward(request, response);
+    request.getRequestDispatcher("/pages/showfile.xhtml").forward(request, response);
 }
 
 void ShowFileServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)

@@ -1,9 +1,10 @@
 #include "httpcookie.h"
+#include "constants.h"
 
 namespace CWF
 {    
-HttpCookie::HttpCookie(const QByteArray &source)
-   {
+    HttpCookie::HttpCookie(const QByteArray &source)
+    {
        QList<QByteArray> list(std::move(splitCSV(source)));
        for(QByteArray &current : list)
        {
@@ -21,27 +22,27 @@ HttpCookie::HttpCookie(const QByteArray &source)
                value = "";
            }
 
-           if(name == "Comment")
+           if(name == COOKIE::COMMENT)
            {
                comment = value;
            }
-           else if(name == "Domain")
+           else if(name == COOKIE::DOMAIN_COOKIE)
            {
                domain = value;
            }
-           else if(name == "Max-Age")
+           else if(name == COOKIE::MAX_AGE)
            {
                maxAge = value.toInt();
            }
-           else if(name == "Path")
+           else if(name == COOKIE::PATH)
            {
                path = value;
            }
-           else if(name == "Secure")
+           else if(name == COOKIE::SECURE)
            {
                secure = true;
            }
-           else if(name == "Version")
+           else if(name == COOKIE::VERSION)
            {
                version = value.toInt();
            }

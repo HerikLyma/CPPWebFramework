@@ -15,7 +15,6 @@
 #include <tests/tst_httpcookie.h>
 #include <tests/tst_httpparser.h>
 #include <tests/tst_httpreadrequest.h>
-#include <tests/tst_httprequestmethod.h>
 #include <tests/tst_httpservletrequest.h>
 #include <tests/tst_httpservletresponse.h>
 #include <tests/tst_httpsession.h>
@@ -49,8 +48,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_FilterChain);
    ASSERT_TEST(new TST_HttpCookie);
    ASSERT_TEST(new TST_HttpParser);
-   ASSERT_TEST(new TST_HttpReadRequest);
-   ASSERT_TEST(new TST_HttpRequestMethod);
+   ASSERT_TEST(new TST_HttpReadRequest);   
    ASSERT_TEST(new TST_HttpServletRequest);
    ASSERT_TEST(new TST_HttpServletResponse);
    ASSERT_TEST(new TST_HttpSession);

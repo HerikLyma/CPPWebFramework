@@ -6,6 +6,7 @@
 */
 
 #include "sessionidgenerator.h"
+#include "constants.h"
 #include <QCryptographicHash>
 #include <QDateTime>
 
@@ -19,12 +20,12 @@ namespace CWF
     {
         QByteArray session = httpParser.getUrl();
 
-        session += httpParser.getHeaderField("Accept-Encoding");
-        session += httpParser.getHeaderField("Accept-Language");
-        session += httpParser.getHeaderField("Host");
+        session += httpParser.getHeaderField(HTTP::ACCEPT_ENCODING);
+        session += httpParser.getHeaderField(HTTP::ACCEPT_LANGUAGE);
+        session += httpParser.getHeaderField(HTTP::HOST);
         session += httpParser.getHttpVersion();
         session += httpParser.getMethod();
-        session += httpParser.getHeaderField("User-Agent");
+        session += httpParser.getHeaderField(HTTP::USER_AGENT);
         session += QDateTime::currentDateTime().toString("dd/MM/yyyy hh:mm:ss:zzz");
 
         return QCryptographicHash::hash(session, QCryptographicHash::Sha1).toHex();

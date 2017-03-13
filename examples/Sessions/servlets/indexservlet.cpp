@@ -16,6 +16,6 @@ void IndexServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletRespo
     }
     else
     {
-        request.getRequestDispatcher("/pages/index").forward(request, response);
+        request.getRequestDispatcher("/pages/index.xhtml").forward(request, response);
     }
 }

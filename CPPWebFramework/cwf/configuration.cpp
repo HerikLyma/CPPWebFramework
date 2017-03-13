@@ -6,6 +6,7 @@
 */
 
 #include "configuration.h"
+#include "constants.h"
 
 namespace CWF
 {
@@ -29,8 +30,7 @@ namespace CWF
             path                  = settings.value("path").toString();
             maxUploadFile         = settings.value("maxUploadFile").toLongLong();
             indexPage             = settings.value("indexPage").toString();
-            accessCPPWebIni       = settings.value("accessCPPWebIni").toBool();
-            suffix                = settings.value("suffix").toString();
+            accessCPPWebIni       = settings.value("accessCPPWebIni").toBool();            
             accessServerPages     = settings.value("accessServerPages").toBool();
 
             FileManager fileManager;

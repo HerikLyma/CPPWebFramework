@@ -6,6 +6,7 @@
 */
 
 #include "httpparser.h"
+#include "constants.h"
 #include <QNetworkRequest>
 #include <QDebug>
 #include <QMultiMap>
@@ -14,7 +15,7 @@ namespace CWF
 {
     bool HttpParser::extractHeaderAndBody(QByteArray &httpMessage)
     {
-        int index = httpMessage.indexOf("\r\n\r\n");
+        int index = httpMessage.indexOf(HTTP::END_OF_MENSAGE);
         if(index != -1)
         {
             index += 4;
@@ -51,7 +52,7 @@ namespace CWF
         url         = std::move(firstHeaderLine[1]);
         httpVersion = std::move(firstHeaderLine[2]);
 
-        if(method == "GET")
+        if(method == GET_SET::GET_UPPER)
             doParseUrl();
 
         int size = lines.size();
@@ -64,10 +65,10 @@ namespace CWF
             headerField.insert(std::move(line.left(column).trimmed()), std::move(line.mid(column + 1).trimmed()));
         }
 
-        contentLenght = headerField.value("Content-Length").toLongLong();
-        contentType   = headerField.value("Content-Type");
-        multiPart     = contentType.contains("multipart");
-        if(contentType.contains("urlencoded"))
+        contentLenght = headerField.value(HTTP::CONTENT_LENGTH).toLongLong();
+        contentType   = headerField.value(HTTP::CONTENT_TYPE);
+        multiPart     = contentType.contains(HTTP::MULTIPART);
+        if(contentType.contains(HTTP::URLENCODED))
             doParseBody();
 
         extractCookies();
@@ -132,12 +133,12 @@ namespace CWF
 
     void HttpParser::extractCookies()
     {
-        QByteArrayList temp(headerField.values("Cookie"));
+        QByteArrayList temp(headerField.values(HTTP::COOKIE));
         int size = temp.size();
         for(int i = 0; i < size; ++i)
         {
             HttpCookie cookie(temp[i]);
-            if(cookie.getName() == "sessionId")
+            if(cookie.getName() == HTTP::SESSION_ID)
                 sessionId = cookie.getValue();
             cookies.push_back(std::move(cookie));
         }
@@ -145,8 +146,8 @@ namespace CWF
 
     void HttpParser::doParseFiles()
     {
-        if(!body.startsWith("Content-Disposition:"))
-            body.remove(0, body.indexOf("Content-Disposition:"));
+        if(!body.startsWith(HTTP::CONTENT_DISPOSITION_COLON))
+            body.remove(0, body.indexOf(HTTP::CONTENT_DISPOSITION_COLON));
 
         QByteArrayList cont(std::move(body.split('\n')));
         body.clear();
@@ -155,10 +156,10 @@ namespace CWF
         for(int i = 0; i < total; ++i)
         {
             QByteArray &temp = cont[i];
-            if(temp.contains("Content-Disposition: "))
+            if(temp.contains(HTTP::CONTENT_DISPOSITION_COLON_SPACE))
             {
-                temp.replace("Content-Disposition: ", "").replace("form-data; ","").replace("\r", "").replace("\"", "");
-                if(temp.contains("filename"))
+                temp.replace(HTTP::CONTENT_DISPOSITION_COLON, "").replace(HTTP::FORM_DATA_COLON_SPACE,"").replace("\r", "").replace("\"", "");
+                if(temp.contains(HTTP::FILENAME))
                 {
                     if(!fileName.isEmpty())
                     {
@@ -169,7 +170,7 @@ namespace CWF
                     for(int j = 0; j < tmp.size(); ++j)
                     {
                         QByteArray &name = tmp[j];
-                        if(name.contains("filename"))
+                        if(name.contains(HTTP::FILENAME))
                         {
                             ++j;
                             if(j < tmp.size())
@@ -195,7 +196,7 @@ namespace CWF
                     break;
                 }
             }
-            if(!temp.contains("WebKit") && !temp.contains("--------"))
+            if(!temp.contains(HTTP::WEBKIT) && !temp.contains("--------"))
                 body += temp + "\n";
         }
         if(files.isEmpty() && !fileName.isEmpty())

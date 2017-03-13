@@ -10,7 +10,7 @@
 void SaveFilesServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
     Q_UNUSED(response)
-    request.getRequestDispatcher("/pages/savefiles").forward(request, response);
+    request.getRequestDispatcher("/pages/savefiles.xhtml").forward(request, response);
 }
 
 void SaveFilesServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)

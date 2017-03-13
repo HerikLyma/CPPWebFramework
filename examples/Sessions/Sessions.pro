@@ -45,6 +45,7 @@ SOURCES += main.cpp \
     ../../CPPWebFramework/cwf/cstlcompilerimport.cpp
 
 HEADERS += \    
+    ../../CPPWebFramework/cwf/constants.h \
     ../../CPPWebFramework/cwf/configuration.h \
     ../../CPPWebFramework/cwf/cppwebapplication.h \
     ../../CPPWebFramework/cwf/cppwebserver.h \
@@ -59,8 +60,7 @@ HEADERS += \
     ../../CPPWebFramework/cwf/filterchain.h \
     ../../CPPWebFramework/cwf/httpcookie.h \
     ../../CPPWebFramework/cwf/httpparser.h \
-    ../../CPPWebFramework/cwf/httpreadrequest.h \
-    ../../CPPWebFramework/cwf/httprequestmethod.h \
+    ../../CPPWebFramework/cwf/httpreadrequest.h \    
     ../../CPPWebFramework/cwf/httpservlet.h \
     ../../CPPWebFramework/cwf/httpservletrequest.h \
     ../../CPPWebFramework/cwf/httpservletresponse.h \
@@ -85,5 +85,7 @@ OTHER_FILES += \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \
+    server/pages/index.xhtml \
+    server/pages/login.xhtml \
     server/pages/index.xhtml \
     server/pages/login.xhtml

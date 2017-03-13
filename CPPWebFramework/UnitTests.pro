@@ -80,7 +80,6 @@ SOURCES += \
     tests/tst_requestdispatcher.cpp \
     tests/tst_sessionidgenerator.cpp \
     tests/tst_urlencoder.cpp \
-    tests/tst_httprequestmethod.cpp \
     tests/tst_httpservletrequest.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
@@ -102,7 +101,6 @@ HEADERS += \
     cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
-    cwf/httprequestmethod.h \
     cwf/httpservlet.h \
     cwf/httpservletrequest.h \
     cwf/httpservletresponse.h \
@@ -138,8 +136,8 @@ HEADERS += \
     tests/tst_requestdispatcher.h \
     tests/tst_sessionidgenerator.h \
     tests/tst_urlencoder.h \
-    tests/tst_httprequestmethod.h \
-    tests/tst_httpservletrequest.h
+    tests/tst_httpservletrequest.h \
+    cwf/constants.h
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0

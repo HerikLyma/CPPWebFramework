@@ -18,7 +18,7 @@ void LoginFilter::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
     {
         if(request.getSession().getAttribute("user") == nullptr || request.getSession().isExpired())
         {
-            request.getRequestDispatcher("/pages/login").forward(request, response);
+            request.getRequestDispatcher("/pages/login.xhtml").forward(request, response);
         }
         else
         {

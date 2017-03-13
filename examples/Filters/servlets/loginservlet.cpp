@@ -10,7 +10,7 @@
 
 void LoginServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
-    request.getRequestDispatcher("/pages/login").forward(request, response);
+    request.getRequestDispatcher("/pages/login.xhtml").forward(request, response);
 }
 
 void LoginServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)

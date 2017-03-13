@@ -14,7 +14,7 @@
 #include "httpservlet.h"
 #include "filterchain.h"
 #include "httpparser.h"
-#include "httprequestmethod.h"
+#include "constants.h"
 #include "requestdispatcher.h"
 #include <QFile>
 

@@ -6,6 +6,7 @@
 */
 
 #include "cstlcompilerfor.h"
+#include "constants.h"
 
 namespace CWF
 {
@@ -15,24 +16,25 @@ namespace CWF
         {
             QString name(attr[i].name().toString().toLower());
             QString value(attr[i].value().toString());
-            if(name != "items" && name != "var" && name != "from" &&
-               name != "to" && name != "increment")
+            if(name != CSTL::TAG::PROPERTY::FOR::ITEMS && name != CSTL::TAG::PROPERTY::VAR &&
+               name != CSTL::TAG::PROPERTY::FOR::FROM  && name != CSTL::TAG::PROPERTY::FOR::TO  &&
+               name != CSTL::TAG::PROPERTY::FOR::INCREMENT)
             {
-                attributes.insert("error", "***ERROR FOR TAG - FOR TAG DOESN'T PERMITS AN ATTRIBUTE CALLED " + name + "***");
+                attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR FOR TAG - FOR TAG DOESN'T PERMITS AN ATTRIBUTE CALLED " + name + "***");
                 return;
             }
             attributes.insert(name, value);
         }
-        if(!attributes.contains("items") || !attributes.contains("var"))
+        if(!attributes.contains(CSTL::TAG::PROPERTY::FOR::ITEMS) || !attributes.contains(CSTL::TAG::PROPERTY::VAR))
         {
             bool from, to, increment;
-            attributes["from"].toInt(&from);
-            attributes["to"].toInt(&to);
-            attributes["increment"].toInt(&increment);
+            attributes[CSTL::TAG::PROPERTY::FOR::FROM].toInt(&from);
+            attributes[CSTL::TAG::PROPERTY::FOR::TO].toInt(&to);
+            attributes[CSTL::TAG::PROPERTY::FOR::INCREMENT].toInt(&increment);
 
-            if(!(from && to && increment) || !attributes.contains("var"))
+            if(!(from && to && increment) || !attributes.contains(CSTL::TAG::PROPERTY::VAR))
             {
-                attributes.insert("error", "***ERROR FOR TAG - USE THE CORRECT ATTRIBUTES (FROM, TO, INCREMENT, VAR OR ITEMS, VAR)***");
+                attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR FOR TAG - USE THE CORRECT ATTRIBUTES (FROM, TO, INCREMENT, VAR OR ITEMS, VAR)***");
             }
         }
     }

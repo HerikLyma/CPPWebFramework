@@ -7,10 +7,12 @@
 
 #include "filterchain.h"
 #include "configuration.h"
+#include "constants.h"
 
 namespace CWF
 {
     extern Configuration configuration;
+
 
     FilterChain::FilterChain(HttpServlet *servlet) :  servlet(servlet)
     {
@@ -20,18 +22,18 @@ namespace CWF
     {
         if(servlet != nullptr)
         {
-            const HttpParser &parser = request.getHttpParser();
-            if(parser.getMethod() == HttpRequestMethod::getGet())
+            const HttpParser &parser = request.getHttpParser();                        
+            if(parser.getMethod()      == HTTP::METHOD::GET)
                 servlet->doGet(request, response);
-            else if(parser.getMethod() == HttpRequestMethod::getPost())
+            else if(parser.getMethod() == HTTP::METHOD::POST)
                 servlet->doPost(request, response);
-            else if(parser.getMethod() == HttpRequestMethod::getPut())
+            else if(parser.getMethod() == HTTP::METHOD::PUT)
                 servlet->doPut(request, response);
-            else if(parser.getMethod() == HttpRequestMethod::getDelete())
+            else if(parser.getMethod() == HTTP::METHOD::DELETE)
                 servlet->doDelete(request, response);
-            else if(parser.getMethod() == HttpRequestMethod::getOptions())
+            else if(parser.getMethod() == HTTP::METHOD::OPTIONS)
                 servlet->doOptions(request, response);
-            else if(parser.getMethod() == HttpRequestMethod::getTrace())
+            else if(parser.getMethod() == HTTP::METHOD::TRACE)
                 servlet->doTrace(request, response);
         }
         else
@@ -41,125 +43,127 @@ namespace CWF
             QString path = request.getPath();
             const QString &extention = fileManager.fileExtention(url);
 
-            if(url == "/")
+            if(url == FILE_EXTENTION::BAR)
             {
                 QMutex mutex;
                 QMutexLocker locker(&mutex);
                 request.getRequestDispatcher(configuration.indexPage).forward(request, response);
             }
-            else if(extention == "html" || extention == "htm")
+            else if(extention == FILE_EXTENTION::HTML || extention == FILE_EXTENTION::HTM)
             {
-                write(response, path, url, "Content-Type", "text/html; charset=UTF-8");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::TEXT_HTML_UTF8);
             }
-            else if(extention == "css" || extention == "txt" || extention == "php")
+            else if(extention == FILE_EXTENTION::CSS || extention == FILE_EXTENTION::TXT || extention == FILE_EXTENTION::PHP)
             {
-                write(response, path, url, "Content-Type", ("text/" + extention.toLatin1() + "; charset=UTF-8") );
+                write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
             }
-            else if(extention == "ico")
+            else if(extention == FILE_EXTENTION::ICO)
             {
-                write(response, path, url, "Content-Type", "image/vnd.microsoft.icon");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::IMAGE_MICROSOFT_ICO);
             }
-            else if(extention == "png" || extention == "gif" || extention == "bmp")
+            else if(extention == FILE_EXTENTION::PNG || extention == FILE_EXTENTION::GIF || extention == FILE_EXTENTION::BMP)
             {
-                write(response, path, url, "Content-Type", ("image/" + extention.toLatin1()));
+                write(response, path, url, HTTP::CONTENT_TYPE, ("image/" + extention.toLatin1()));
             }
-            else if(extention == "jpe" || extention == "jpg")
+            else if(extention == FILE_EXTENTION::JPE || extention == FILE_EXTENTION::JPG)
             {
-                write(response, path, url, "Content-Type", "image/jpeg");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::IMAGE_JPEG);
             }
-            else if(extention == "tiff" || extention == "tif")
+            else if(extention == FILE_EXTENTION::TIFF || extention == FILE_EXTENTION::TIF)
             {
-                write(response, path, url, "Content-Type", "image/tiff");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::IMAGE_TIFF);
             }
-            else if(extention == "svg" || extention == "svgz")
+            else if(extention == FILE_EXTENTION::SVG || extention == FILE_EXTENTION::SVGZ)
             {
-                write(response, path, url, "Content-Type", "image/svg+xml");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::IMAGE_SVG_XML);
             }
-            else if(extention == "pdf" || extention == "xml" || extention == "json" || extention == "zip")
+            else if(extention == FILE_EXTENTION::PDF  || extention == FILE_EXTENTION::XML ||
+                    extention == FILE_EXTENTION::JSON || extention == FILE_EXTENTION::ZIP)
             {
-                write(response, path, url, "Content-Type", ("application/" + extention.toLatin1()) );
+                write(response, path, url, HTTP::CONTENT_TYPE, ("application/" + extention.toLatin1()) );
             }
-            else if(extention == "mp3")
+            else if(extention == FILE_EXTENTION::MP3)
             {
-                write(response, path, url, "Content-Type", "audio/mpeg");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::AUDIO_MP3);
             }
-            else if(extention == "mp4")
+            else if(extention == FILE_EXTENTION::MP4)
             {
-                write(response, path, url, "Content-Type", "video/mp4");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::AUDIO_MP4);
             }
-            else if(extention == "flv")
+            else if(extention == FILE_EXTENTION::FLV)
             {
-                write(response, path, url, "Content-Type", "video/x-flv");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::VIDEO_FLV);
             }
-            else if(extention == "doc")
+            else if(extention == FILE_EXTENTION::DOC)
             {
-                write(response, path, url, "Content-Type", "application/msword");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_MSWORD);
             }
-            else if(extention == "rtf")
+            else if(extention == FILE_EXTENTION::RTF)
             {
-                write(response, path, url, "Content-Type", "application/rtf");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_RTF);
             }
-            else if(extention == "xls")
+            else if(extention == FILE_EXTENTION::XLS)
             {
-                write(response, path, url, "Content-Type", "application/vnd.ms-excel");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_EXCEL);
             }
-            else if(extention == "ppt")
+            else if(extention == FILE_EXTENTION::PPT)
             {
-                write(response, path, url, "Content-Type", "application/vnd.ms-powerpoint");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_POWER_POINT);
             }
-            else if(extention == "js")
+            else if(extention == FILE_EXTENTION::JS)
             {
-                write(response, path, url, "Content-Type", "application/javascript");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_JAVASCRIPT);
             }
-            else if(extention == "odt")
+            else if(extention == FILE_EXTENTION::ODT)
             {
-                write(response, path, url, "Content-Type", "application/vnd.oasis.opendocument.text");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_OPEN_DOCUMENT_TEXT);
             }
-            else if(extention == "ods")
+            else if(extention == FILE_EXTENTION::ODS)
             {
-                write(response, path, url, "Content-Type", "application/vnd.oasis.opendocument.spreadsheet");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_OPEN_DOCUMENT_SPREADSHEET);
             }
-            else if(extention == "swf")
+            else if(extention == FILE_EXTENTION::SWF)
             {
-                write(response, path, url, "Content-Type", "application/x-shockwave-flash");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_SHOCKWAVE_FLASH);
             }
-            else if(extention == "rar")
+            else if(extention == FILE_EXTENTION::RAR)
             {
-                write(response, path, url, "Content-Type", "application/x-rar-compressed");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_RAR_COMPRESSED);
             }
-            else if(extention == "exe" || extention == "msi")
+            else if(extention == FILE_EXTENTION::EXE || extention == FILE_EXTENTION::MSI)
             {
-                write(response, path, url, "Content-Type", "application/x-msdownload");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_MS_DOWNLOAD);
             }
-            else if(extention == "cab")
+            else if(extention == FILE_EXTENTION::CAB)
             {
-                write(response, path, url, "Content-Type", "application/vnd.ms-cab-compressed");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_CAB_COMPRESSED);
             }
-            else if(extention == "psd")
+            else if(extention == FILE_EXTENTION::PSD)
             {
-                write(response, path, url, "Content-Type", "image/vnd.adobe.photoshop");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_PHOTOSHOP);
             }
-            else if(extention == "ai" || extention == "eps" || extention == "ps")
+            else if(extention == FILE_EXTENTION::AI || extention == FILE_EXTENTION::EPS ||
+                    extention == FILE_EXTENTION::PS)
             {
-                write(response, path, url, "Content-Type", "application/postscript");
+                write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_POSTSCRIPT);
             }
-            else if(extention == "ini")
+            else if(extention == FILE_EXTENTION::INI)
             {
                 QMutex mutex;
                 QMutexLocker locker(&mutex);
                 QString file(std::move(fileManager.fileName(url)));
-                if(file != "CPPWeb.ini")
-                    write(response, path, url, "Content-Type", ("text/" + extention.toLatin1() + "; charset=UTF-8") );
+                if(file != CONFIGURATION::CPP_WEB_INI)
+                    write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
                 else if(configuration.accessCPPWebIni)
-                    write(response, path, url, "Content-Type", ("text/" + extention.toLatin1() + "; charset=UTF-8") );
+                    write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
                 else
-                    request.getRequestDispatcher("/config/cppwebserverpages/401").forward(request, response);
+                    request.getRequestDispatcher(STATUS::STATUS_401).forward(request, response);
             }
             else
             {
-                response.setStatus(HttpServletResponse::SC_NOT_FOUND, "Not Found");
+                response.setStatus(HttpServletResponse::SC_NOT_FOUND, STATUS::NOT_FOUND);
                 response.addHeader("Content-Type; charset=UTF-8", "text/html");                
-                request.getRequestDispatcher("/config/cppwebserverpages/404").forward(request, response);
+                request.getRequestDispatcher(STATUS::STATUS_404).forward(request, response);
             }
         }
     }

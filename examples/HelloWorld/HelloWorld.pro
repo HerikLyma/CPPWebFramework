@@ -58,8 +58,7 @@ HEADERS += \
     ../../CPPWebFramework/cwf/filterchain.h \
     ../../CPPWebFramework/cwf/httpcookie.h \
     ../../CPPWebFramework/cwf/httpparser.h \
-    ../../CPPWebFramework/cwf/httpreadrequest.h \
-    ../../CPPWebFramework/cwf/httprequestmethod.h \
+    ../../CPPWebFramework/cwf/httpreadrequest.h \   
     ../../CPPWebFramework/cwf/httpservlet.h \
     ../../CPPWebFramework/cwf/httpservletrequest.h \
     ../../CPPWebFramework/cwf/httpservletresponse.h \

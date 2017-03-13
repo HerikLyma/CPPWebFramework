@@ -24,7 +24,7 @@
 #include "httpsession.h"
 #include "filter.h"
 #include "httpparser.h"
-#include "httprequestmethod.h"
+#include "constants.h"
 #include "filterchain.h"
 #include "httpcookie.h"
 #include "sessionidgenerator.h"

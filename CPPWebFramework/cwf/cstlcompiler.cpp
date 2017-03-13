@@ -11,6 +11,7 @@
 #include "cstlcompilerobject.h"
 #include "cstlcompilerif.h"
 #include "cstlcompilerimport.h"
+#include "constants.h"
 
 namespace CWF
 {
@@ -66,7 +67,7 @@ namespace CWF
 
     QByteArray CSTLCompiler::getBody(QXmlStreamReader &xml, const QString &tagName)
     {
-        QByteArray name, text, content("<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>\n");
+        QByteArray name, text, content(XML::HEADER);
         QString att;
         CSTLCompilerAttributes compilerAttributes(objects);
         QMap<QString, QString> attributes;
@@ -99,21 +100,20 @@ namespace CWF
     }
 
     QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
-    {
-        const QString tagName("for");
+    {        
         QByteArray htmlOut;
         CSTLCompilerFor forAttributes(xml.attributes());
         CSTLCompilerAttributes compilerAttributes(objects);
 
 
-        if(forAttributes.attributes.contains("error"))
+        if(forAttributes.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
         {
-            getBody(xml, tagName);
-            htmlOut = forAttributes.attributes["error"].toLatin1();
+            getBody(xml, CSTL::TAG::FOR);
+            htmlOut = forAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
         }
         else
         {            
-            QString items(forAttributes.attributes["items"]);
+            QString items(forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::ITEMS]);
             items.replace("#{", "").replace("}", "");
             if(objects.contains(items))
             {                
@@ -122,16 +122,16 @@ namespace CWF
 
                 if(!items.isEmpty())
                 {
-                    if(type != "CWF::QListObject")
+                    if(type != CSTL::SUPPORTED_TYPES::CWF_QLISTOBJECT)
                     {
                         htmlOut = "***ERROR - " + type.toLatin1() + " ISN'T A CWF::QListObject***";
-                        getBody(xml, tagName);
+                        getBody(xml, CSTL::TAG::FOR);
                     }
                     else
                     {
                         QListObject *qListObject = static_cast<QListObject*>(object);
-                        QString ret(std::move(getBody(xml, tagName)));
-                        QString var(forAttributes.attributes["var"]);
+                        QString ret(std::move(getBody(xml, CSTL::TAG::FOR)));
+                        QString var(forAttributes.attributes[CSTL::TAG::PROPERTY::VAR]);
                         var.replace("#{", "").replace("}", "");
                         for(int iL = 0; iL < qListObject->size(); ++iL)
                         {                            
@@ -145,11 +145,11 @@ namespace CWF
             }
             else
             {
-                int from      = forAttributes.attributes["from"].toInt();
-                int to        = forAttributes.attributes["to"].toInt();
-                int increment = forAttributes.attributes["increment"].toInt();
-                QString tagBody(std::move(getBody(xml, tagName)));
-                QString &var = forAttributes.attributes["var"];
+                int from      = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::FROM].toInt();
+                int to        = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::TO].toInt();
+                int increment = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::INCREMENT].toInt();
+                QString tagBody(std::move(getBody(xml, CSTL::TAG::FOR)));
+                QString &var = forAttributes.attributes[CSTL::TAG::PROPERTY::VAR];
                 for(int i = from; i <= to; i += increment)
                 {                    
                     QString copy(tagBody);
@@ -157,11 +157,11 @@ namespace CWF
                     obj.setValue(QString::number(i));
                     objects.insert(var, &obj);
 
-                    copy.replace("<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>", "");
+                    copy.replace(XML::HEADER, "");
                     QString outPutText;
                     compilerAttributes.compile(copy, outPutText);
                     copy = "<out>" + outPutText + "</out>";
-                    copy = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>" + copy;
+                    copy = XML::HEADER + copy;
 
                     QXmlStreamReader forBody(copy);
                     htmlOut += processXml(forBody);
@@ -173,19 +173,18 @@ namespace CWF
     }
 
     QByteArray CSTLCompiler::processIfTag(QXmlStreamReader &xml)
-    {
-        const QString tagName("if");
+    {        
         QByteArray htmlOut;
         CSTLCompilerIf ifAttributes(xml.attributes());
 
         if(ifAttributes.relationalOperator == RelationalOperator::ERROR)
         {
-            getBody(xml, tagName);
-            htmlOut = ifAttributes.attributes["error"].toLatin1();
+            getBody(xml, CSTL::TAG::IF);
+            htmlOut = ifAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
         }
         else
         {
-            QString var(ifAttributes.attributes["var"]), condition(ifAttributes.attributes["condition"]);
+            QString var(ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR]), condition(ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION]);
             CSTLCompilerObject conditionObj, varObj;
             bool removeVar = false, removeCondition = false;
             if(!objects.contains(var))
@@ -202,61 +201,61 @@ namespace CWF
             }
 
             CSTLCompilerAttributes compilerAttributes(objects);
-            QString tagBody(std::move(getBody(xml, tagName)));
+            QString tagBody(std::move(getBody(xml, CSTL::TAG::IF)));
             compilerAttributes.compileAttributes(ifAttributes.attributes);
 
             bool isTrue = false;
 
             if(ifAttributes.relationalOperator == RelationalOperator::EQUAL)
             {
-                isTrue = ifAttributes.attributes["var"] == ifAttributes.attributes["condition"];
+                isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] == ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
             }
             else if(ifAttributes.relationalOperator == RelationalOperator::DIFFERENT)
             {
-                isTrue = ifAttributes.attributes["var"] != ifAttributes.attributes["condition"];
+                isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] != ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
             }
             else if(ifAttributes.relationalOperator == RelationalOperator::GREATER)
             {
                 if(ifAttributes.isNumber)
                 {
-                    isTrue = ifAttributes.attributes["var"].toDouble() > ifAttributes.attributes["condition"].toDouble();
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR].toDouble() > ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION].toDouble();
                 }
                 else
                 {
-                    isTrue = ifAttributes.attributes["var"] > ifAttributes.attributes["condition"];
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] > ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
                 }
             }
             else if(ifAttributes.relationalOperator == RelationalOperator::GREATER_EQUAL)
             {
                 if(ifAttributes.isNumber)
                 {
-                    isTrue = ifAttributes.attributes["var"].toDouble() >= ifAttributes.attributes["condition"].toDouble();
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR].toDouble() >= ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION].toDouble();
                 }
                 else
                 {
-                    isTrue = ifAttributes.attributes["var"] >= ifAttributes.attributes["condition"];
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] >= ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
                 }
             }
             else if(ifAttributes.relationalOperator == RelationalOperator::LESS)
             {
                 if(ifAttributes.isNumber)
                 {
-                    isTrue = ifAttributes.attributes["var"].toDouble() < ifAttributes.attributes["condition"].toDouble();
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR].toDouble() < ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION].toDouble();
                 }
                 else
                 {
-                    isTrue = ifAttributes.attributes["var"] < ifAttributes.attributes["condition"];
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] < ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
                 }
             }
             else if(ifAttributes.relationalOperator == RelationalOperator::LESS_EQUAL)
             {
                 if(ifAttributes.isNumber)
                 {
-                    isTrue = ifAttributes.attributes["var"].toDouble() <= ifAttributes.attributes["condition"].toDouble();
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR].toDouble() <= ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION].toDouble();
                 }
                 else
                 {
-                    isTrue = ifAttributes.attributes["var"] <= ifAttributes.attributes["condition"];
+                    isTrue = ifAttributes.attributes[CSTL::TAG::PROPERTY::VAR] <= ifAttributes.attributes[CSTL::TAG::PROPERTY::CONDITION];
                 }
             }
 
@@ -264,10 +263,10 @@ namespace CWF
             {
                 if(!tagBody.contains("<") || !tagBody.contains("</"))
                 {
-                    tagBody.replace("<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?>", "");
+                    tagBody.replace(XML::HEADER, "");
                     QString outPutText;
                     compilerAttributes.compile(tagBody, outPutText);
-                    tagBody = "<?xml version=\"1.0\" encoding=\"iso-8859-1\" ?><out>" + outPutText + "</out>";
+                    tagBody = XML::HEADER + "<out>" + outPutText + "</out>";
                 }
                 QXmlStreamReader forBody(tagBody);
                 htmlOut += processXml(forBody);
@@ -292,35 +291,35 @@ namespace CWF
             QString tagAttributes;
             QMap<QString, QString> attr;
 
-            if(name == "out" && xml.isStartElement())
+            if(name == CSTL::TAG::OUT && xml.isStartElement())
             {
                 attr = std::move(compilerAttributes.getAttributes(xml.attributes()));
                 htmlOut += processOutTag(attr);
                 name.clear();
             }
-            else if(name == "for" && xml.isStartElement())
+            else if(name == CSTL::TAG::FOR && xml.isStartElement())
             {
                 htmlOut += processForTag(xml);
                 name.clear();
             }
-            else if(name == "if" && xml.isStartElement())
+            else if(name == CSTL::TAG::IF && xml.isStartElement())
             {
                 htmlOut += processIfTag(xml);
                 name.clear();
             }
-            else if(name == "import" && xml.isStartElement())
+            else if(name == CSTL::TAG::IMPORT && xml.isStartElement())
             {
                 CSTLCompilerImport importUrl(xml.attributes());
-                if(!importUrl.attributes.contains("error"))
-                    htmlOut += importUrl.attributes["url"].toLatin1();
+                if(!importUrl.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
+                    htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::IMPORT::URL].toLatin1();
                 else
-                    htmlOut += importUrl.attributes["error"].toLatin1();
+                    htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
                 name.clear();
 
             }
             else
             {
-                if(name != "out" && name != "if" && name != "for")
+                if(name != CSTL::TAG::OUT && name != CSTL::TAG::IF && name != CSTL::TAG::FOR)
                 {
                     attr = std::move(compilerAttributes.getAttributes(xml.attributes()));
                     tagAttributes = compilerAttributes.buildAttributes(attr);

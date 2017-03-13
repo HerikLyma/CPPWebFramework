@@ -38,5 +38,5 @@ void UsersServlet::doGet(CWF::HttpServletRequest &req, CWF::HttpServletResponse 
     users.add(&userFour);
 
     req.addAttribute("users", &users);
-    req.getRequestDispatcher("/pages/users").forward(req, resp);
+    req.getRequestDispatcher("/pages/users.xhtml").forward(req, resp);
 }

@@ -43,8 +43,7 @@ namespace CWF
         QString path;
         QString domain;
         QString logFilePath;
-        QString indexPage;
-        QString suffix;
+        QString indexPage;        
         QHostAddress host;
         qint64 maxUploadFile = 2097152;
     public:

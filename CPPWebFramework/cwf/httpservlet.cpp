@@ -6,6 +6,7 @@
 */
 
 #include "httpservlet.h"
+#include "constants.h"
 #include "httpservletrequest.h"
 #include "httpservletresponse.h"
 #include <QTcpSocket>
@@ -25,31 +26,31 @@ namespace CWF
 
     void HttpServlet::doDelete(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "delete");
+        doMessage(req, resp, HTTP::METHOD::DELETE);
     }
 
     void HttpServlet::doGet(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "get");
+        doMessage(req, resp, HTTP::METHOD::GET);
     }
 
     void HttpServlet::doOptions(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "options");
+        doMessage(req, resp, HTTP::METHOD::OPTIONS);
     }
 
     void HttpServlet::doPost(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "post");
+        doMessage(req, resp, HTTP::METHOD::POST);
     }
 
     void HttpServlet::doPut(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "put");
+        doMessage(req, resp, HTTP::METHOD::PUT);
     }
 
     void HttpServlet::doTrace(HttpServletRequest &req, HttpServletResponse &resp)
     {
-        doMessage(req, resp, "trace");
+        doMessage(req, resp, HTTP::METHOD::TRACE);
     }
 }

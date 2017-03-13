@@ -7,6 +7,7 @@
 
 #include "httpreadrequest.h"
 #include "configuration.h"
+#include "constants.h"
 
 namespace CWF
 {
@@ -64,7 +65,7 @@ namespace CWF
                     HttpServlet          *servlet  = nullptr;
                     HttpSession          *session  = nullptr;
                     mutex.lock();
-                    HttpServletRequest   request(*socket, configuration.path, configuration.suffix);                    
+                    HttpServletRequest   request(*socket, configuration.path);
                     mutex.unlock();
                     HttpServletResponse  response(*socket);
                     request.httpParser = &parser;
@@ -120,7 +121,7 @@ namespace CWF
                             if(dontHasSessionId)
                             {
                                 sessionId = SessionIdGenerator(parser).getSessionID();
-                                response.addCookie(HttpCookie("sessionId", sessionId));
+                                response.addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
                             }
 
                             session = new HttpSession(sessionId);
@@ -177,13 +178,13 @@ namespace CWF
         }
         if(content.size() > maxUploadFile)
         {
-            request.getRequestDispatcher("/config/cppwebserverpages/403").forward(request, response);
+            request.getRequestDispatcher(STATUS::STATUS_403).forward(request, response);
             return false;
         }
 
         parser.body = std::move(content);
 
-        if(parser.contentType.contains("application/x-www-form-urlencoded"))
+        if(parser.contentType.contains(HTTP::APPLICATION_WWW_FORM_URLENCODED))
             parser.doParseBody();
         else if(parser.multiPart)
             parser.doParseFiles();

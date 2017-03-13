@@ -8,6 +8,7 @@
 #include "cstlcompilerimport.h"
 #include "configuration.h"
 #include "filemanager.h"
+#include "constants.h"
 
 namespace CWF
 {
@@ -18,16 +19,16 @@ namespace CWF
         int size = attr.size();
         if(size == 0)
         {
-            attributes.insert("error", "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
+            attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
         }
         else if(size == 1)
         {
              QString name(std::move(attr[0].name().toString().toLower()));
              QString value(std::move(attr[0].value().toString()));
 
-             if(name != "url")
+             if(name != CSTL::TAG::PROPERTY::IMPORT::URL)
              {
-                 attributes.insert("error", "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
+                 attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
              }
              else
              {
@@ -38,12 +39,12 @@ namespace CWF
                  fileName += value;
 
                  QFile::FileError fileError;
-                 attributes.insert("url", fileManager.readAll(fileName, fileError));
+                 attributes.insert(CSTL::TAG::PROPERTY::IMPORT::URL, fileManager.readAll(fileName, fileError));
              }
         }
         else
         {
-            attributes.insert("error", "***ERROR IMPORT TAG - IMPORT TAG ONLY NEEDS THE URL ATTRIBUTE***");
+            attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR IMPORT TAG - IMPORT TAG ONLY NEEDS THE URL ATTRIBUTE***");
         }
     }
 }

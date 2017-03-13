@@ -7,14 +7,13 @@
 
 #include "httpservletrequest.h"
 #include "metaclassparser.h"
+#include "constants.h"
 
 namespace CWF
 {
     HttpServletRequest::HttpServletRequest(QTcpSocket &socket,
-                                           const QString &path,
-                                           const QString &suffix) : socket(&socket),
-                                                                    path(path),
-                                                                    suffix(suffix)
+                                           const QString &path) : socket(&socket),
+                                                                  path(path)
     {
     }
 
@@ -47,79 +46,79 @@ namespace CWF
                 QString value = it.value();
 
                 method[0] = method[0].toUpper();
-                method = "set" + method;
+                method = GET_SET::SET_LOWER + method;
 
                 QString parameterType(std::move(meta.getParameterType(method)));
 
-                if(parameterType == "QString")
+                if(parameterType == CSTL::SUPPORTED_TYPES::QSTRING)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(QString, value));
                 }
-                else if(parameterType == "std::string")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::STD_STRING)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(std::string, value.toStdString()));
                 }
-                else if(parameterType == "bool")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::BOOL)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(bool, value.toInt() == 0));
                 }
-                else if(parameterType == "char")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::CHAR)
                 {
                     if(value.isEmpty())
                         value.push_back(' ');
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(char, value.toStdString()[0]));
                 }
-                else if(parameterType == "unsigned char")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_CHAR)
                 {
                     if(value.isEmpty())
                         value.push_back(' ');
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned char, (unsigned char)value.toStdString()[0]));
                 }
-                else if(parameterType == "char*")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::CHAR_POINTER)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(char*, (char *)value.toStdString().data()));
                 }
-                else if(parameterType == "unsigned char*")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_CHAR_POINTER)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned char*, (unsigned char *)value.toStdString().data()));
                 }
-                else if(parameterType == "short")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::SHORT)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(short, (short)value.toInt()));
                 }
-                else if(parameterType == "unsigned short")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_SHORT)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned short, value.toInt()));
                 }
-                else if(parameterType == "int")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::INT)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(int, value.toInt()));
                 }
-                else if(parameterType == "unsigned int")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_INT)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned int, value.toUInt()));
                 }
-                else if(parameterType == "long")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::LONG)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(long, value.toLong()));
                 }
-                else if(parameterType == "unsigned long")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_LONG)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned long, value.toULong()));
                 }
-                else if(parameterType == "long long")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::LONG_LONG)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(long long, value.toLongLong()));
                 }
-                else if(parameterType == "unsigned long long")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_LONG_LONG)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned long long, value.toULongLong()));
                 }
-                else if(parameterType == "float")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::FLOAT)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(float, value.toFloat()));
                 }
-                else if(parameterType == "double")
+                else if(parameterType == CSTL::SUPPORTED_TYPES::DOUBLE)
                 {
                     QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(double, value.toDouble()));
                 }
@@ -147,7 +146,7 @@ namespace CWF
         if(requestDispatcher)
             delete requestDispatcher;
 
-        requestDispatcher = new RequestDispatcher(this->path + page + suffix);
+        requestDispatcher = new RequestDispatcher(this->path + page);
         return *requestDispatcher;
     }
 

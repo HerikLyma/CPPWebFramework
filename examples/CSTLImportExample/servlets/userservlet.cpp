@@ -16,5 +16,5 @@ void UserServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletRespon
     user.setAddress("350 5th Ave, New York, NY 10118, EUA");
 
     request.addAttribute("user", &user);
-    request.getRequestDispatcher("/pages/user").forward(request, response);
+    request.getRequestDispatcher("/pages/user.xhtml").forward(request, response);
 }

@@ -25,8 +25,7 @@ namespace CWF
         friend class HttpReadRequest;
         friend class RequestDispatcher;
         QTcpSocket        *socket;
-        QString  path;
-        QString suffix;
+        QString  path;        
         HttpSession *session = nullptr;
         HttpParser *httpParser  = nullptr;
         RequestDispatcher *requestDispatcher = nullptr;
@@ -42,7 +41,7 @@ namespace CWF
          * @param path   : This is a reference to a QByteArray.
          * @param parent : This is a pointer to a QObject.
          */
-        explicit HttpServletRequest(QTcpSocket &socket, const QString &path, const QString &suffix);
+        explicit HttpServletRequest(QTcpSocket &socket, const QString &path);
         /**
          * @brief Destroys dynamically allocated resources.
          */
