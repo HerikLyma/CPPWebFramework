@@ -119,6 +119,7 @@ namespace CWF
         const QByteArray TRANSFER_ENCODING                = "Transfer-Encoding";
         const QByteArray CHUNKED                          = "chunked";
         const QByteArray END_OF_MENSAGE                   = "\r\n\r\n";
+        const QByteArray END_OF_MENSAGE_WITH_ZERO         = "0\r\n\r\n";
         const QByteArray CONTENT_TYPE                     = "Content-Type";
         const QByteArray CONTENT_LENGTH                   = "Content-Length";
         const QByteArray CONTENT_DISPOSITION              = "Content-Disposition";

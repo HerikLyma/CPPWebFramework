@@ -64,7 +64,7 @@ namespace CWF
                         writeToSocket("\r\n");
                     }
                 }
-                writeToSocket("0" + HTTP::END_OF_MENSAGE);
+                writeToSocket(HTTP::END_OF_MENSAGE_WITH_ZERO);
             }
             socket->disconnectFromHost();
             content.clear();
