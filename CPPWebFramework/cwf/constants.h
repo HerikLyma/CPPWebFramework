@@ -117,7 +117,8 @@ namespace CWF
         const QByteArray SERVER_VERSION                   = "C++-Web-Server/1.0";
         const QByteArray DATA                             = "Data";
         const QByteArray TRANSFER_ENCODING                = "Transfer-Encoding";
-        const QByteArray CHUNKED                          = "chunked";
+        const QByteArray CHUNKED                          = "chunked";        
+        const QByteArray END_LINE                         = "\r\n";
         const QByteArray END_OF_MENSAGE                   = "\r\n\r\n";
         const QByteArray END_OF_MENSAGE_WITH_ZERO         = "0\r\n\r\n";
         const QByteArray CONTENT_TYPE                     = "Content-Type";
@@ -139,6 +140,7 @@ namespace CWF
         const QByteArray ACCEPT_LANGUAGE                  = "Accept-Language";
         const QByteArray HOST                             = "Host";
         const QByteArray USER_AGENT                       = "User-Agent";
+        const QByteArray OK                               = "OK";
         /*
         const QByteArray            = "";
         const QByteArray            = "";

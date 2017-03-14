@@ -17,7 +17,7 @@ namespace CWF
     HttpServletResponse::HttpServletResponse(QTcpSocket &socket) : socket(&socket)
     {
         statusCode       = HttpServletResponse::SC_OK;
-        statusText       = "OK";        
+        statusText       = HTTP::OK;
     }
 
     HttpServletResponse::~HttpServletResponse()
@@ -58,10 +58,10 @@ namespace CWF
                     if(!data.isEmpty())
                     {
                         QByteArray buffer(std::move(QByteArray::number(data.size(), 16)));
-                        buffer.append("\r\n");
+                        buffer.append(HTTP::END_LINE);
                         writeToSocket(buffer);
                         writeToSocket(data);
-                        writeToSocket("\r\n");
+                        writeToSocket(HTTP::END_LINE);
                     }
                 }
                 writeToSocket(HTTP::END_OF_MENSAGE_WITH_ZERO);
@@ -130,7 +130,7 @@ namespace CWF
         buffer.append(QByteArray::number(statusCode));
         buffer.append(' ');
         buffer.append(statusText);
-        buffer.append("\r\n");
+        buffer.append(HTTP::END_LINE);
 
         if(!headers.contains(HTTP::CONTENT_TYPE))
         {
@@ -144,15 +144,15 @@ namespace CWF
             buffer.append(name);
             buffer.append(": ");
             buffer.append(headers.value(name));
-            buffer.append("\r\n");
+            buffer.append(HTTP::END_LINE);
         }
         for(HttpCookie &cookie : cookies)
         {
             buffer.append("Set-Cookie: ");
             buffer.append(cookie.toByteArray());
-            buffer.append("\r\n");
+            buffer.append(HTTP::END_LINE);
         }        
-        buffer.append("\r\n");
+        buffer.append(HTTP::END_LINE);
         writeToSocket(buffer);
     }
 
