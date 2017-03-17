@@ -173,7 +173,7 @@ namespace CWF
                                 ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(long, returnValue));
                                 value = std::move(QString::number(returnValue));
                             }
-                            else if(methodReturnType == CSTL::SUPPORTED_TYPES::UNSIGNED_LONG_LONG)
+                            else if(methodReturnType == CSTL::SUPPORTED_TYPES::UNSIGNED_LONG)
                             {
                                 unsigned long returnValue;
                                 ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(unsigned long, returnValue));
