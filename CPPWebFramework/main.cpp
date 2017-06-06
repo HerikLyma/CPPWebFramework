@@ -23,7 +23,6 @@
 #include <tests/tst_qlistobject.h>
 #include <tests/tst_qmapthreadsafety.h>
 #include <tests/tst_requestdispatcher.h>
-#include <tests/tst_sessionidgenerator.h>
 #include <tests/tst_urlencoder.h>
 
 
@@ -56,8 +55,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_Properties);
    ASSERT_TEST(new TST_QListObject);
    ASSERT_TEST(new TST_QMapThreadSafety);
-   ASSERT_TEST(new TST_RequestDispatcher);
-   ASSERT_TEST(new TST_SessionIdGenerator);
+   ASSERT_TEST(new TST_RequestDispatcher);   
    ASSERT_TEST(new TST_URLEncoder);
 
    return status;

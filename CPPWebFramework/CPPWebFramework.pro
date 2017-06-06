@@ -49,7 +49,6 @@ SOURCES += \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
-    cwf/sessionidgenerator.cpp \
     cwf/urlencoder.cpp
 
 HEADERS += \
@@ -81,7 +80,6 @@ HEADERS += \
     cwf/qlistobject.h \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
-    cwf/sessionidgenerator.h \
     cwf/urlencoder.h
 
 unix {

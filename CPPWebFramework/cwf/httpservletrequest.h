@@ -24,13 +24,15 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpServletRequest : public QObject
 {
     friend class HttpReadRequest;
     friend class RequestDispatcher;
-    QTcpSocket        *socket;
-    QString  path;
-    HttpSession *session = nullptr;
-    HttpParser *httpParser  = nullptr;
-    RequestDispatcher *requestDispatcher = nullptr;
-    bool autoDeleteAttribute = false;
+    QTcpSocket               *socket;
+    QString                  path;
+    HttpSession              *session            = nullptr;
+    HttpParser               *httpParser         = nullptr;
+    RequestDispatcher        *requestDispatcher  = nullptr;
+    HttpServletResponse      *response           = nullptr;
+    bool                     autoDeleteAttribute = false;
     QMap<QString, QObject *> attributes;
+    QMapThreadSafety<QString, HttpSession *> &sessions;
 public:
     /**
      * @brief This constructor needs to receive a reference to a QTcpSocket and QByteArray.
@@ -41,7 +43,7 @@ public:
      * @param path   : This is a reference to a QByteArray.
      * @param parent : This is a pointer to a QObject.
      */
-    explicit HttpServletRequest(QTcpSocket &socket, const QString &path);
+    explicit HttpServletRequest(QTcpSocket &socket, const QString &path, QMapThreadSafety<QString, HttpSession *> &sessions);
     /**
      * @brief Destroys dynamically allocated resources.
      */
@@ -108,7 +110,7 @@ public:
     /**
      * @brief This method returns the user's session.
      */
-    HttpSession &getSession() const;
+    HttpSession &getSession();
     /**
      * @brief This method set the user's session.
      * @return HttpSession
@@ -334,6 +336,6 @@ public:
     void fillQObject(QObject *object);
 };
 
-    CWF_END_NAMESPACE
+CWF_END_NAMESPACE
 
 #endif // HTTPSERVLETREQUEST_H

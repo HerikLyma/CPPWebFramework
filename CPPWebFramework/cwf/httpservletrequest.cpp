@@ -8,12 +8,20 @@
 #include "httpservletrequest.h"
 #include "metaclassparser.h"
 #include "constants.h"
+#include "httpservletresponse.h"
+#include "configuration.h"
+#include <QUuid>
 
 CWF_BEGIN_NAMESPACE
 
+extern QMutex mutex;
+extern Configuration configuration;
+
 HttpServletRequest::HttpServletRequest(QTcpSocket &socket,
-                                       const QString &path) : socket(&socket),
-                                                              path(path)
+                                       const QString &path,
+                                       QMapThreadSafety<QString, HttpSession *> &sessions) : socket(&socket),
+                                                                                             path(path),
+                                                                                             sessions(sessions)
 {
 }
 
@@ -180,8 +188,28 @@ QByteArray HttpServletRequest::getRequestURI() const
     return httpParser != nullptr ? httpParser->getUrl() : "";
 }
 
-HttpSession &HttpServletRequest::getSession() const
+HttpSession &HttpServletRequest::getSession()
 {
+    qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
+    if(!session)
+    {
+        QByteArray sessionId  = httpParser->getSessionId();
+        if(sessionId.isEmpty() || !sessions.contains(sessionId))
+        {
+            sessionId = QUuid::createUuid().toString().toLocal8Bit();
+            response->addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
+            session = new HttpSession(sessionId);
+            session->creationTime = currentTimeInt;
+            session->sessionExpirationTime = (currentTimeInt + configuration.getSessionExpirationTime());
+            sessions.insert(session->getId(), session);
+        }
+        else
+        {
+            session = sessions[sessionId];
+        }
+    }
+    session->expired          = (currentTimeInt >= session->sessionExpirationTime);
+    session->lastAccessedTime = currentTimeInt;
     return *session;
 }
 

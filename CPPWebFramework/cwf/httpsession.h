@@ -24,9 +24,13 @@ CWF_BEGIN_NAMESPACE
 /**
  * @brief The HttpSession class holds information about a client.
  */
+
+class HttpServletRequest;
+
 class CPPWEBFRAMEWORKSHARED_EXPORT HttpSession
 {
     friend class HttpReadRequest;
+    friend class HttpServletRequest;
     QString id;
     qint64 creationTime;
     qint64 lastAccessedTime;

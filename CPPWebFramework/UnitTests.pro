@@ -53,8 +53,7 @@ SOURCES += \
     cwf/metaclassparser.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
-    cwf/requestdispatcher.cpp \
-    cwf/sessionidgenerator.cpp \
+    cwf/requestdispatcher.cpp \    
     cwf/urlencoder.cpp \
     tests/tst_cppwebapplication.cpp \
     tests/tst_cppwebserver.cpp \
@@ -78,7 +77,6 @@ SOURCES += \
     tests/tst_qlistobject.cpp \
     tests/tst_qmapthreadsafety.cpp \
     tests/tst_requestdispatcher.cpp \
-    tests/tst_sessionidgenerator.cpp \
     tests/tst_urlencoder.cpp \
     tests/tst_httpservletrequest.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
@@ -109,8 +107,7 @@ HEADERS += \
     cwf/properties.h \
     cwf/qlistobject.h \
     cwf/qmapthreadsafety.h \
-    cwf/requestdispatcher.h \
-    cwf/sessionidgenerator.h \
+    cwf/requestdispatcher.h \    
     cwf/urlencoder.h \
     tests/tst_cppwebapplication.h \
     tests/tst_cppwebserver.h \
@@ -134,7 +131,6 @@ HEADERS += \
     tests/tst_qlistobject.h \
     tests/tst_qmapthreadsafety.h \
     tests/tst_requestdispatcher.h \
-    tests/tst_sessionidgenerator.h \
     tests/tst_urlencoder.h \
     tests/tst_httpservletrequest.h \
     cwf/constants.h \

@@ -27,7 +27,6 @@
 #include "constants.h"
 #include "filterchain.h"
 #include "httpcookie.h"
-#include "sessionidgenerator.h"
 #include "qmapthreadsafety.h"
 #include "cppwebframework_global.h"
 
@@ -72,6 +71,6 @@ public:
     void run() override;
 };
 
-    CWF_END_NAMESPACE
+CWF_END_NAMESPACE
 
 #endif // HTTPREADREQUEST_H

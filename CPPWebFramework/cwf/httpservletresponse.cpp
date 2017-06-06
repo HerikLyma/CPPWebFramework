@@ -112,6 +112,7 @@ void HttpServletResponse::writeToSocket(const QByteArray &data)
     {
         socket->write(data, data.size());
         socket->flush();
+        //qDebug() << data;
         if(socket->ConnectingState)
         {
             HttpServletResponseMutex.lock();

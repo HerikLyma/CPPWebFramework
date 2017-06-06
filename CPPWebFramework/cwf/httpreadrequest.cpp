@@ -62,14 +62,13 @@ void HttpReadRequest::run()
             if(parser.valid)
             {
                 QString               url      = parser.url;
-                HttpServlet          *servlet  = nullptr;
-                HttpSession          *session  = nullptr;
+                HttpServlet          *servlet  = nullptr;                
                 mutex.lock();
-                HttpServletRequest   request(*socket, configuration.path);
+                HttpServletRequest   request(*socket, configuration.path, sessions);
                 mutex.unlock();
                 HttpServletResponse  response(*socket);
                 request.httpParser = &parser;
-
+                request.response   = &response;
 
                 if(parser.contentLenght > parser.body.size())
                 {
@@ -101,44 +100,8 @@ void HttpReadRequest::run()
                 if(contains)
                 {
                     servlet = urlServlet[url];
-                    QByteArray sessionId(parser.sessionId);
-                    bool dontHasSessionId = sessionId.isEmpty();
-                    qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
-                    if(sessions.contains(sessionId))
-                    {
-                        session = sessions[sessionId];
-                        mutex.lock();
-                        if(!session->expired)
-                        {
-                            session->expired = (currentTimeInt >= session->sessionExpirationTime);
-                            if(!session->expired)
-                                session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);
-                        }
-                        mutex.unlock();
-                    }
-                    else
-                    {
-                        if(dontHasSessionId)
-                        {
-                            sessionId = SessionIdGenerator(parser).getSessionID();
-                            response.addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
-                        }
-
-                        session = new HttpSession(sessionId);
-                        session->creationTime = currentTimeInt;
-                        mutex.lock();
-                        session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);
-                        mutex.unlock();
-                        sessions.insert(session->getId(), session);
-                    }
-
-                    mutex.lock();
-                    session->lastAccessedTime = currentTimeInt;
-                    mutex.unlock();
-                    request.session = session;
                     FilterChain chain(servlet);
-                    filter != nullptr ? filter->doFilter(request, response, chain) :
-                                        chain.doFilter(request, response);
+                    filter != nullptr ? filter->doFilter(request, response, chain) : chain.doFilter(request, response);
                 }
                 else
                 {
