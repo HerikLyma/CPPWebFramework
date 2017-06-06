@@ -21,7 +21,11 @@ install:
 
 script:
   - source /opt/qt57/bin/qt57-env.sh;
+
   - cd CPPWebFramework
+  - /opt/qt57/bin/qmake CPPWebFramework.pro
+  - make -j 8
+
   - /opt/qt57/bin/qmake UnitTests.pro
   - make -j 8
   - ./UnitTests
