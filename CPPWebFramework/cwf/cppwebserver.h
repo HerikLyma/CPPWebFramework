@@ -37,6 +37,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT CppWebServer : public QTcpServer
 private:
     Filter *filter;
     QTimer *timer;
+    QThreadPool pool;
     QMapThreadSafety<QString, HttpServlet *> urlServlet;
     QMapThreadSafety<QString, HttpSession *> sessions;
     QSslConfiguration *sslConfiguration = nullptr;

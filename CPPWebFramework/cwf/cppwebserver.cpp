@@ -19,8 +19,8 @@ CppWebServer::CppWebServer(Filter *filter) : filter(filter)
 
     if(this->filter == nullptr)
         this->filter = new Filter;
-    QThreadPool::globalInstance()->setMaxThreadCount(configuration.maxThread);
-    QThreadPool::globalInstance()->setExpiryTimeout(configuration.timeOut);
+    pool.setMaxThreadCount(configuration.maxThread);
+    pool.setExpiryTimeout(configuration.timeOut);
     timer = new QTimer;
     connect(timer, SIGNAL(timeout()), this, SLOT(doClean()));
     timer->start(configuration.cleanupInterval);
@@ -28,7 +28,7 @@ CppWebServer::CppWebServer(Filter *filter) : filter(filter)
 
 CppWebServer::~CppWebServer()
 {
-    while(!QThreadPool::globalInstance()->waitForDone());
+    while(!pool.waitForDone());
     for(QMapThreadSafety<QString, HttpServlet*>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
     {
         HttpServlet *o = it.value();
@@ -70,7 +70,7 @@ void CppWebServer::incomingConnection(qintptr socketfd)
                                                 sslConfiguration,
                                                 filter);
     read->setAutoDelete(true);
-    QThreadPool::globalInstance()->start(read, QThread::TimeCriticalPriority);
+    pool.start(read, QThread::TimeCriticalPriority);
 }
 
 void CppWebServer::doClean()
@@ -79,7 +79,7 @@ void CppWebServer::doClean()
     mutex.lock();
     block = true;
     mutex.unlock();
-    while(!QThreadPool::globalInstance()->waitForDone(sleepTime));
+    while(!pool.waitForDone(sleepTime));
 
     HttpSession *session = nullptr;
     QStringList idSessionsToDelete;
