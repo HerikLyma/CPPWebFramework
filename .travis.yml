@@ -25,6 +25,7 @@ script:
   - cd CPPWebFramework
   - /opt/qt57/bin/qmake CPPWebFramework.pro
   - make -j 8
+  - make install
 
   - /opt/qt57/bin/qmake UnitTests.pro
   - make -j 8

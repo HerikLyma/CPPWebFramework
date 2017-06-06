@@ -13,35 +13,9 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp \     
-    ../../CPPWebFramework/cwf/configuration.cpp \
-    ../../CPPWebFramework/cwf/cppwebapplication.cpp \
-    ../../CPPWebFramework/cwf/cppwebserver.cpp \
-    ../../CPPWebFramework/cwf/cppwebservlet.cpp \
-    ../../CPPWebFramework/cwf/cstlcompiler.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerattributes.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerfor.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerif.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerobject.cpp \
-    ../../CPPWebFramework/cwf/filemanager.cpp \
-    ../../CPPWebFramework/cwf/filter.cpp \
-    ../../CPPWebFramework/cwf/filterchain.cpp \
-    ../../CPPWebFramework/cwf/httpcookie.cpp \
-    ../../CPPWebFramework/cwf/httpparser.cpp \
-    ../../CPPWebFramework/cwf/httpreadrequest.cpp \
-    ../../CPPWebFramework/cwf/httpservlet.cpp \
-    ../../CPPWebFramework/cwf/httpservletrequest.cpp \
-    ../../CPPWebFramework/cwf/httpservletresponse.cpp \
-    ../../CPPWebFramework/cwf/httpsession.cpp \
-    ../../CPPWebFramework/cwf/metaclassparser.cpp \
-    ../../CPPWebFramework/cwf/properties.cpp \
-    ../../CPPWebFramework/cwf/qlistobject.cpp \
-    ../../CPPWebFramework/cwf/requestdispatcher.cpp \
-    ../../CPPWebFramework/cwf/sessionidgenerator.cpp \
+SOURCES += main.cpp \         
     servlets/bmiservlet.cpp \
-    entities/user.cpp \
-    ../../CPPWebFramework/cwf/urlencoder.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerimport.cpp
+    entities/user.cpp
 
 HEADERS += \    
     ../../CPPWebFramework/cwf/constants.h \
@@ -69,12 +43,12 @@ HEADERS += \
     ../../CPPWebFramework/cwf/qlistobject.h \
     ../../CPPWebFramework/cwf/qmapthreadsafety.h \
     ../../CPPWebFramework/cwf/requestdispatcher.h \
-    ../../CPPWebFramework/cwf/sessionidgenerator.h \
-    servlets/bmiservlet.h \
-    entities/user.h \
+    ../../CPPWebFramework/cwf/sessionidgenerator.h \    
     ../../CPPWebFramework/cwf/urlencoder.h \
     ../../CPPWebFramework/cwf/cstlcompilerimport.h \
-    ../../CPPWebFramework/cwf/cppwebframework_global.h
+    ../../CPPWebFramework/cwf/cppwebframework_global.h\
+    servlets/bmiservlet.h \
+    entities/user.h
 
 
 QMAKE_CXXFLAGS += -std=c++11
@@ -83,3 +57,5 @@ INCLUDEPATH += ../../CPPWebFramework
 OTHER_FILES += \
     server/config/CPPWeb.ini \
     server/config/log/CPPWebServer.log
+
+LIBS += -lCPPWebFramework

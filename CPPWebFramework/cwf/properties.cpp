@@ -7,7 +7,9 @@
 
 #include "properties.h"
 
-CWF::Properties::Properties(const QString &classAndMethod)
+CWF_BEGIN_NAMESPACE
+
+Properties::Properties(const QString &classAndMethod)
 {
     QStringList temp = classAndMethod.split('.');
     if(temp.size() == 2)
@@ -21,3 +23,5 @@ CWF::Properties::Properties(const QString &classAndMethod)
         m_method = "getValue";
     }
 }
+
+CWF_END_NAMESPACE

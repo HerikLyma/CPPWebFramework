@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += network testlib
+QT       += network testlib xml
 
 QT       -= gui
 

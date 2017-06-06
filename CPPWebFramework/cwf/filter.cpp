@@ -7,15 +7,15 @@
 
 #include "filter.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+
+Filter::~Filter()
 {
-    Filter::~Filter()
-    {
-
-    }
-
-    void Filter::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain)
-    {
-        chain.doFilter(request, response);
-    }
 }
+
+void Filter::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain)
+{
+    chain.doFilter(request, response);
+}
+
+CWF_END_NAMESPACE

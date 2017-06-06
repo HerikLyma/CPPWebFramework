@@ -10,21 +10,22 @@
 #include "httpservletresponse.h"
 #include "cstlcompiler.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+
+RequestDispatcher::RequestDispatcher(const QString &path) : path(path)
 {
-    RequestDispatcher::RequestDispatcher(const QString &path) : path(path)
-    {
-    }
-
-    RequestDispatcher::~RequestDispatcher()
-    {
-    }
-
-    void RequestDispatcher::forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
-    {
-        CSTLCompiler cstl(path.toStdString().data(), request.attributes);                                 
-        QString pageStr(cstl.output());
-
-        response.write(pageStr.toLatin1());
-    }
 }
+
+RequestDispatcher::~RequestDispatcher()
+{
+}
+
+void RequestDispatcher::forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
+{
+    CSTLCompiler cstl(path.toStdString().data(), request.attributes);
+    QString pageStr(cstl.output());
+
+    response.write(pageStr.toLatin1());
+}
+
+CWF_END_NAMESPACE

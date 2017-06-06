@@ -9,200 +9,201 @@
 #include "configuration.h"
 #include "constants.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+
+extern Configuration configuration;
+QMutex mutex;
+
+HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
+                                 QMapThreadSafety<QString, HttpServlet *> &urlServlet,
+                                 QMapThreadSafety<QString, HttpSession *> &sessions,
+                                 QSslConfiguration *sslConfiguration,
+                                 Filter *filter) :
+                                                    socketDescriptor(socketDescriptor),
+                                                    urlServlet(urlServlet),
+                                                    sessions(sessions),
+                                                    sslConfiguration(sslConfiguration),
+                                                    filter(filter)
 {
-    extern Configuration configuration;
-    QMutex mutex;
+}
 
-    HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
-                                     QMapThreadSafety<QString, HttpServlet *> &urlServlet,
-                                     QMapThreadSafety<QString, HttpSession *> &sessions,
-                                     QSslConfiguration *sslConfiguration,
-                                     Filter *filter) :
-                                                        socketDescriptor(socketDescriptor),
-                                                        urlServlet(urlServlet),                                                        
-                                                        sessions(sessions),
-                                                        sslConfiguration(sslConfiguration),
-                                                        filter(filter)
+HttpReadRequest::~HttpReadRequest()
+{
+    if(socket)
     {
+        delete socket;
     }
+}
 
-    HttpReadRequest::~HttpReadRequest()
-    {
-        if(socket)
-        {
-            delete socket;
-        }
-    }
-
-    void HttpReadRequest::run()
-    {
-        createSocket();
-        socket->setSocketDescriptor(socketDescriptor);
+void HttpReadRequest::run()
+{
+    createSocket();
+    socket->setSocketDescriptor(socketDescriptor);
 
 #ifndef QT_NO_OPENSSL
-        if (sslConfiguration)
-        {
-            ((QSslSocket*)socket)->startServerEncryption();
-        }
+    if (sslConfiguration)
+    {
+        ((QSslSocket*)socket)->startServerEncryption();
+    }
 #endif
-        socket->thread()->setPriority(QThread::TimeCriticalPriority);
-        mutex.lock();
-        maxUploadFile = configuration.maxUploadFile;
-        mutex.unlock();
-        socket->setReadBufferSize(maxUploadFile);
-        if(socket->ConnectedState)
+    socket->thread()->setPriority(QThread::TimeCriticalPriority);
+    mutex.lock();
+    maxUploadFile = configuration.maxUploadFile;
+    mutex.unlock();
+    socket->setReadBufferSize(maxUploadFile);
+    if(socket->ConnectedState)
+    {
+        if(socket->waitForReadyRead())
         {
-            if(socket->waitForReadyRead())
+            QByteArray req(std::move(socket->readAll()));
+            //qDebug() << req;
+
+            HttpParser parser(req);
+            if(parser.valid)
             {
-                QByteArray req(std::move(socket->readAll()));
-                //qDebug() << req;
-
-                HttpParser parser(req);
-                if(parser.valid)
-                {                    
-                    QString               url      = parser.url;
-                    HttpServlet          *servlet  = nullptr;
-                    HttpSession          *session  = nullptr;
-                    mutex.lock();
-                    HttpServletRequest   request(*socket, configuration.path);
-                    mutex.unlock();
-                    HttpServletResponse  response(*socket);
-                    request.httpParser = &parser;
+                QString               url      = parser.url;
+                HttpServlet          *servlet  = nullptr;
+                HttpSession          *session  = nullptr;
+                mutex.lock();
+                HttpServletRequest   request(*socket, configuration.path);
+                mutex.unlock();
+                HttpServletResponse  response(*socket);
+                request.httpParser = &parser;
 
 
-                    if(parser.contentLenght > parser.body.size())
+                if(parser.contentLenght > parser.body.size())
+                {
+                    if(!readBody(parser, request, response))
                     {
-                        if(!readBody(parser, request, response))
-                        {
-                            return;
-                        }
+                        return;
                     }
+                }
 
-                    bool contains = urlServlet.contains(url);
-                    if(!contains)
+                bool contains = urlServlet.contains(url);
+                if(!contains)
+                {
+                    for(QMapThreadSafety<QString, HttpServlet *>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
                     {
-                        for(QMapThreadSafety<QString, HttpServlet *>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
+                        const QString &key = it.key();
+                        if(key.endsWith('*'))
                         {
-                            const QString &key = it.key();
-                            if(key.endsWith('*'))
+                            QString trueUrl(std::move(key.mid(0, key.size() - 1)));
+                            if(url.startsWith(trueUrl))
                             {
-                                QString trueUrl(std::move(key.mid(0, key.size() - 1)));
-                                if(url.startsWith(trueUrl))
-                                {
-                                    url = trueUrl + "*";
-                                    contains = true;
-                                    break;
-                                }
+                                url = trueUrl + "*";
+                                contains = true;
+                                break;
                             }
                         }
                     }
+                }
 
-                    if(contains)
+                if(contains)
+                {
+                    servlet = urlServlet[url];
+                    QByteArray sessionId(parser.sessionId);
+                    bool dontHasSessionId = sessionId.isEmpty();
+                    qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
+                    if(sessions.contains(sessionId))
                     {
-                        servlet = urlServlet[url];
-                        QByteArray sessionId(parser.sessionId);
-                        bool dontHasSessionId = sessionId.isEmpty();                        
-                        qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
-                        if(sessions.contains(sessionId))
-                        {
-                            session = sessions[sessionId];
-                            mutex.lock();
-                            if(!session->expired)
-                            {
-                                session->expired = (currentTimeInt >= session->sessionExpirationTime);
-                                if(!session->expired)
-                                    session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);                                    
-                            }
-                            mutex.unlock();
-                        }
-                        else
-                        {
-                            if(dontHasSessionId)
-                            {
-                                sessionId = SessionIdGenerator(parser).getSessionID();
-                                response.addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
-                            }
-
-                            session = new HttpSession(sessionId);
-                            session->creationTime = currentTimeInt;
-                            mutex.lock();
-                            session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);
-                            mutex.unlock();
-                            sessions.insert(session->getId(), session);
-                        }
-
+                        session = sessions[sessionId];
                         mutex.lock();
-                        session->lastAccessedTime = currentTimeInt;
+                        if(!session->expired)
+                        {
+                            session->expired = (currentTimeInt >= session->sessionExpirationTime);
+                            if(!session->expired)
+                                session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);
+                        }
                         mutex.unlock();
-                        request.session = session;
-                        FilterChain chain(servlet);
-                        filter != nullptr ? filter->doFilter(request, response, chain) :
-                                            chain.doFilter(request, response);
                     }
                     else
                     {
-                        FilterChain chain(servlet);
-                        chain.doFilter(request, response);
+                        if(dontHasSessionId)
+                        {
+                            sessionId = SessionIdGenerator(parser).getSessionID();
+                            response.addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
+                        }
+
+                        session = new HttpSession(sessionId);
+                        session->creationTime = currentTimeInt;
+                        mutex.lock();
+                        session->sessionExpirationTime = (currentTimeInt + configuration.sessionExpirationTime);
+                        mutex.unlock();
+                        sessions.insert(session->getId(), session);
                     }
+
+                    mutex.lock();
+                    session->lastAccessedTime = currentTimeInt;
+                    mutex.unlock();
+                    request.session = session;
+                    FilterChain chain(servlet);
+                    filter != nullptr ? filter->doFilter(request, response, chain) :
+                                        chain.doFilter(request, response);
+                }
+                else
+                {
+                    FilterChain chain(servlet);
+                    chain.doFilter(request, response);
                 }
             }
         }
     }
-
-    bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response)
-    {
-        qint64 contentLength = parser.contentLenght;
-        QByteArray content(std::move(parser.body));
-        mutex.lock();
-        int maximumTime = configuration.timeOut / 2;        
-        std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-        mutex.unlock();
-
-        while(true)
-        {
-            if(socket->waitForReadyRead(10))
-                content += socket->readAll();
-
-            int spendTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
-
-            if(content.size() > contentLength)
-            {
-                content.remove(contentLength, content.size());
-                break;
-            }
-            else if(content.size() == contentLength)
-                break;
-            if(spendTime >= maximumTime)
-                break;
-        }
-        if(content.size() > maxUploadFile)
-        {
-            request.getRequestDispatcher(STATUS::STATUS_403).forward(request, response);
-            return false;
-        }
-
-        parser.body = std::move(content);
-
-        if(parser.contentType.contains(HTTP::APPLICATION_WWW_FORM_URLENCODED))
-            parser.doParseBody();
-        else if(parser.multiPart)
-            parser.doParseFiles();
-
-        return true;
-    }
-
-    void HttpReadRequest::createSocket()
-    {
-        #ifndef QT_NO_OPENSSL
-            if (sslConfiguration)
-            {
-                QSslSocket *sslSocket = new QSslSocket;
-                sslSocket->setSslConfiguration(*sslConfiguration);
-                socket = sslSocket;
-                return;
-            }
-        #endif
-        socket = new QTcpSocket;
-    }
 }
+
+bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response)
+{
+    qint64 contentLength = parser.contentLenght;
+    QByteArray content(std::move(parser.body));
+    mutex.lock();
+    int maximumTime = configuration.timeOut / 2;
+    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+    mutex.unlock();
+
+    while(true)
+    {
+        if(socket->waitForReadyRead(10))
+            content += socket->readAll();
+
+        int spendTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
+
+        if(content.size() > contentLength)
+        {
+            content.remove(contentLength, content.size());
+            break;
+        }
+        else if(content.size() == contentLength)
+            break;
+        if(spendTime >= maximumTime)
+            break;
+    }
+    if(content.size() > maxUploadFile)
+    {
+        request.getRequestDispatcher(STATUS::STATUS_403).forward(request, response);
+        return false;
+    }
+
+    parser.body = std::move(content);
+
+    if(parser.contentType.contains(HTTP::APPLICATION_WWW_FORM_URLENCODED))
+        parser.doParseBody();
+    else if(parser.multiPart)
+        parser.doParseFiles();
+
+    return true;
+}
+
+void HttpReadRequest::createSocket()
+{
+    #ifndef QT_NO_OPENSSL
+        if (sslConfiguration)
+        {
+            QSslSocket *sslSocket = new QSslSocket;
+            sslSocket->setSslConfiguration(*sslConfiguration);
+            socket = sslSocket;
+            return;
+        }
+    #endif
+    socket = new QTcpSocket;
+}
+
+CWF_END_NAMESPACE

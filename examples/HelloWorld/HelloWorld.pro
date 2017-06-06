@@ -14,33 +14,7 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \     
-    servlets/helloworldservlet.cpp \   
-    ../../CPPWebFramework/cwf/configuration.cpp \
-    ../../CPPWebFramework/cwf/cppwebapplication.cpp \
-    ../../CPPWebFramework/cwf/cppwebserver.cpp \
-    ../../CPPWebFramework/cwf/cppwebservlet.cpp \
-    ../../CPPWebFramework/cwf/cstlcompiler.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerattributes.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerfor.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerif.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerobject.cpp \
-    ../../CPPWebFramework/cwf/filemanager.cpp \
-    ../../CPPWebFramework/cwf/filter.cpp \
-    ../../CPPWebFramework/cwf/filterchain.cpp \
-    ../../CPPWebFramework/cwf/httpcookie.cpp \
-    ../../CPPWebFramework/cwf/httpparser.cpp \
-    ../../CPPWebFramework/cwf/httpreadrequest.cpp \
-    ../../CPPWebFramework/cwf/httpservlet.cpp \
-    ../../CPPWebFramework/cwf/httpservletrequest.cpp \
-    ../../CPPWebFramework/cwf/httpservletresponse.cpp \
-    ../../CPPWebFramework/cwf/httpsession.cpp \
-    ../../CPPWebFramework/cwf/metaclassparser.cpp \
-    ../../CPPWebFramework/cwf/properties.cpp \
-    ../../CPPWebFramework/cwf/qlistobject.cpp \
-    ../../CPPWebFramework/cwf/requestdispatcher.cpp \
-    ../../CPPWebFramework/cwf/sessionidgenerator.cpp \
-    ../../CPPWebFramework/cwf/urlencoder.cpp \
-    ../../CPPWebFramework/cwf/cstlcompilerimport.cpp
+    servlets/helloworldservlet.cpp
 
 HEADERS += \    
     servlets/helloworldservlet.h \    
@@ -79,3 +53,5 @@ INCLUDEPATH += ../../CPPWebFramework
 OTHER_FILES += \
     server/config/CPPWeb.ini \
     server/config/log/CPPWebServer.log
+
+LIBS += -lCPPWebFramework
