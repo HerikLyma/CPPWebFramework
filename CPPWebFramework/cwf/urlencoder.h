@@ -10,40 +10,41 @@
 
 #include <QUrl>
 #include <QByteArray>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief The URLEncoder class
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT URLEncoder
 {
+public:
     /**
-     * @brief The URLEncoder class
+     * @brief decode
+     * @param url
+     * @return
      */
-    class URLEncoder
-    {
-    public:
-        /**
-         * @brief decode
-         * @param url
-         * @return
-         */
-        static QString decode(const QByteArray &url);
-        /**
-         * @brief encode
-         * @param url
-         * @return
-         */
-        static QString encode(const QByteArray &url);
-        /**
-         * @brief paramEncode
-         * @param param
-         * @return
-         */
-        static QString paramEncode(const QByteArray &param);
-        /**
-         * @brief paramDecode
-         * @param param
-         * @return
-         */
-        static QString paramDecode(const QByteArray &param);
-    };
-}
+    static QString decode(const QByteArray &url);
+    /**
+     * @brief encode
+     * @param url
+     * @return
+     */
+    static QString encode(const QByteArray &url);
+    /**
+     * @brief paramEncode
+     * @param param
+     * @return
+     */
+    static QString paramEncode(const QByteArray &param);
+    /**
+     * @brief paramDecode
+     * @param param
+     * @return
+     */
+    static QString paramDecode(const QByteArray &param);
+};
+
+CWF_END_NAMESPACE
 
 #endif // URLENCODER_H

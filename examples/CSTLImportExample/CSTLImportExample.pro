@@ -75,7 +75,8 @@ HEADERS += \
     servlets/userservlet.h \
     ../../CPPWebFramework/cwf/urlencoder.h \
     servlets/homeservlet.h \
-    ../../CPPWebFramework/cwf/cstlcompilerimport.h
+    ../../CPPWebFramework/cwf/cstlcompilerimport.h \
+    ../../CPPWebFramework/cwf/cppwebframework_global.h
 
 QMAKE_CXXFLAGS += -std=c++11
 INCLUDEPATH += ../../CPPWebFramework

@@ -12,16 +12,18 @@
 #include <QFile>
 #include <QString>
 #include <QXmlStreamAttributes>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+
+class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerImport
 {
-    class CSTLCompilerImport
-    {
-    public:
-        QMap<QString, QString> attributes;
+public:
+    QMap<QString, QString> attributes;
 
-        explicit CSTLCompilerImport(const QXmlStreamAttributes &attr);
-    };
-}
+    explicit CSTLCompilerImport(const QXmlStreamAttributes &attr);
+};
+
+CWF_END_NAMESPACE
 
 #endif // CSTLCOMPILERIMPORT_H

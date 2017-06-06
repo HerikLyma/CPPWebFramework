@@ -10,35 +10,37 @@
 
 #include <QMap>
 #include <QXmlStreamAttributes>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+
+enum class RelationalOperator : char
 {
-    enum class RelationalOperator : char
-    {
-        EQUAL,
-        DIFFERENT,
-        GREATER,
-        GREATER_EQUAL,
-        LESS,
-        LESS_EQUAL,
-        ERROR
-    };
+    EQUAL,
+    DIFFERENT,
+    GREATER,
+    GREATER_EQUAL,
+    LESS,
+    LESS_EQUAL,
+    ERROR
+};
+/**
+ * @brief Extracts and valites all attibutes from a "if" tag.
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerIf
+{
+public:
+    RelationalOperator relationalOperator;
+    bool isNumber = false;
+    QMap<QString, QString> attributes;
     /**
-     * @brief Extracts and valites all attibutes from a "if" tag.
+     * @brief This constructor processes and validates the attributes of "if" tag.
+     * @param const QXmlStreamAttributes &attr : XML tag attributes.
      */
-    class CSTLCompilerIf
-    {
-    public:
-        RelationalOperator relationalOperator;
-        bool isNumber = false;
-        QMap<QString, QString> attributes;
-        /**
-         * @brief This constructor processes and validates the attributes of "if" tag.
-         * @param const QXmlStreamAttributes &attr : XML tag attributes.
-         */
-        explicit CSTLCompilerIf(const QXmlStreamAttributes &attr);
-    };
-}
+    explicit CSTLCompilerIf(const QXmlStreamAttributes &attr);
+};
+
+CWF_END_NAMESPACE
 
 
 #endif // CSTLCOMPILERIF_H

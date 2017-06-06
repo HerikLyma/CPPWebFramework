@@ -13,333 +13,335 @@
 #include <QMutex>
 #include <QMutexLocker>
 #include <atomic>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+template <typename Key, typename T>
+/**
+ * @brief The QMapThreadSafety class is a thread safe QMap.
+ */
+class QMapThreadSafety
 {
-    template <typename Key, typename T>
+    mutable QMap<Key, T> m_map;
+    mutable QMutex mutex;
+public:
+    typedef typename QMap<Key, T>::iterator iterator;
+
+    typedef typename QMap<Key, T>::const_iterator const_iterator;
+
+    QMapThreadSafety() = default;
+
+    explicit QMapThreadSafety(std::initializer_list<std::pair<Key, T>> &list) : m_map(list){}
+
+    explicit QMapThreadSafety(const QMap<Key, T> &other) : m_map(other){}
+
+    explicit QMapThreadSafety(const std::map<Key, T> &other) : m_map(other){}
+
+    explicit QMapThreadSafety(QMap<Key, T> &&other) : m_map(other){}
+
     /**
-     * @brief The QMapThreadSafety class is a thread safe QMap.
+     * @brief This method retuns the begin iterator.
+     * @return iterator
      */
-    class QMapThreadSafety
+    iterator begin() const
     {
-        mutable QMap<Key, T> m_map;
-        mutable QMutex mutex;
-    public:
-        typedef typename QMap<Key, T>::iterator iterator;
+        QMutexLocker locker(&mutex);
+        return m_map.begin();
+    }
 
-        typedef typename QMap<Key, T>::const_iterator const_iterator;
+    const_iterator cbegin() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.cbegin();
+    }
 
-        QMapThreadSafety() = default;
+    const_iterator cend() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.cend();
+    }
 
-        explicit QMapThreadSafety(std::initializer_list<std::pair<Key, T>> &list) : m_map(list){}
+    const_iterator constBegin() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.constBegin();
+    }
 
-        explicit QMapThreadSafety(const QMap<Key, T> &other) : m_map(other){}
+    const_iterator constEnd() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.constEnd();
+    }
 
-        explicit QMapThreadSafety(const std::map<Key, T> &other) : m_map(other){}
+    const_iterator constFind(const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.constFind(key);
+    }
+    /**
+     * @brief This method checks if the map contains and specific element given a specific key.
+     * @param key : This represents the key that you want to find.
+     * @return returns true if find the key and false if not find.
+     */
+    bool contains(const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.contains(key);
+    }
 
-        explicit QMapThreadSafety(QMap<Key, T> &&other) : m_map(other){}
+    int count(const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.count(key);
+    }
 
-        /**
-         * @brief This method retuns the begin iterator.
-         * @return iterator
-         */
-        iterator begin() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.begin();
-        }
+    int count() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.count();
+    }
 
-        const_iterator cbegin() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.cbegin();
-        }
+    bool empty() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.empty();
+    }
+    /**
+     * @brief This method retuns the end iterator.
+     * @return iterator
+     */
+    iterator end()
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.end();
+    }
 
-        const_iterator cend() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.cend();
-        }
+    QPair<iterator, iterator> equal_range(const Key &key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.equal_range(key);
+    }
 
-        const_iterator constBegin() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.constBegin();
-        }
+    iterator erase(iterator pos)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.erase(pos);
+    }
 
-        const_iterator constEnd() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.constEnd();
-        }
+    iterator find(const Key &key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.find(key);
+    }
 
-        const_iterator constFind(const Key &key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.constFind(key);
-        }
-        /**
-         * @brief This method checks if the map contains and specific element given a specific key.
-         * @param key : This represents the key that you want to find.
-         * @return returns true if find the key and false if not find.
-         */
-        bool contains(const Key &key) const
-        {
-            QMutexLocker locker(&mutex);          
-            return m_map.contains(key);
-        }
+    const_iterator find(const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.find(key);
+    }
 
-        int count(const Key &key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.count(key);
-        }
+    T & first()
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.first();
+    }
 
-        int count() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.count();
-        }
+    const T & first() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.first();
+    }
 
-        bool empty() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.empty();
-        }
-        /**
-         * @brief This method retuns the end iterator.
-         * @return iterator
-         */
-        iterator end()
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.end();
-        }
+    const Key & firstKey() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.firstKey();
+    }
 
-        QPair<iterator, iterator> equal_range(const Key &key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.equal_range(key);
-        }
+    /**
+     * @brief This method inserts a new key and value in the map.
+     * @param key   : This represents the key that will be insert.
+     * @param value : This represents the value that will be insert.
+     */
+    iterator insert(const Key &key, const T &value)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.insert(key, value);
+    }
 
-        iterator erase(iterator pos)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.erase(pos);
-        }
+    iterator insert(const_iterator pos, const Key &key, const T &value)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.insert(pos, key, value);
+    }
 
-        iterator find(const Key &key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.find(key);
-        }
+    iterator insertMulti(const Key &key, const T &value)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.insertMulti(key, value);
+    }
 
-        const_iterator find(const Key &key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.find(key);
-        }
+    bool isEmpty() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.isEmpty();
+    }
 
-        T & first()
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.first();
-        }
+    QList<Key> keys() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.keys();
+    }
 
-        const T & first() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.first();
-        }
+    QList<Key> keys(const T &value) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.keys();
+    }
 
-        const Key & firstKey() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.firstKey();
-        }
+    T &last()
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.last();
+    }
 
-        /**
-         * @brief This method inserts a new key and value in the map.
-         * @param key   : This represents the key that will be insert.
-         * @param value : This represents the value that will be insert.
-         */
-        iterator insert(const Key &key, const T &value)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.insert(key, value);
-        }
-
-        iterator insert(const_iterator pos, const Key &key, const T &value)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.insert(pos, key, value);
-        }
-
-        iterator insertMulti(const Key &key, const T &value)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.insertMulti(key, value);
-        }
-
-        bool isEmpty() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.isEmpty();
-        }
-
-        QList<Key> keys() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.keys();
-        }
-
-        QList<Key> keys(const T &value) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.keys();
-        }
-
-        T &last()
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.last();
-        }
-
-        const T &last() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.last();
-        }
+    const T &last() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.last();
+    }
 
 
-        iterator lowerBound(const Key &key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.lowerBound(key);
-        }
+    iterator lowerBound(const Key &key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.lowerBound(key);
+    }
 
-        const_iterator lowerBound(const Key &key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.lowerBound(key);
-        }
-        /**
-         * @brief This method removes a specific element given a specific key.
-         * @param key   : This represents the key that will be insert.
-         * @return int
-         */
-        int remove(const Key &key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.remove(key);
-        }
+    const_iterator lowerBound(const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.lowerBound(key);
+    }
+    /**
+     * @brief This method removes a specific element given a specific key.
+     * @param key   : This represents the key that will be insert.
+     * @return int
+     */
+    int remove(const Key &key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.remove(key);
+    }
 
-        int size() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.size();
-        }
+    int size() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.size();
+    }
 
-        void swap(QMap<Key, T> & other)
-        {
-            QMutexLocker locker(&mutex);
-            m_map.swap(other);
-        }
+    void swap(QMap<Key, T> & other)
+    {
+        QMutexLocker locker(&mutex);
+        m_map.swap(other);
+    }
 
-        T take(const Key &key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.take(key);
-        }
+    T take(const Key &key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.take(key);
+    }
 
-        std::map<Key, T> toStdMap() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.toStdMap();
-        }
+    std::map<Key, T> toStdMap() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.toStdMap();
+    }
 
-        QList<Key> uniqueKeys() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.uniqueKeys();
-        }
+    QList<Key> uniqueKeys() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.uniqueKeys();
+    }
 
-        QMap<Key, T> &unite(const QMap<Key, T> & other)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.unite(other);
-        }
+    QMap<Key, T> &unite(const QMap<Key, T> & other)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.unite(other);
+    }
 
-        iterator upperBound(const Key & key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.upperBound(key);
-        }
+    iterator upperBound(const Key & key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.upperBound(key);
+    }
 
-        const_iterator upperBound(const Key & key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.upperBound(key);
-        }
+    const_iterator upperBound(const Key & key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.upperBound(key);
+    }
 
-        const T value(const Key & key, const T & defaultValue = T()) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.value(key, defaultValue);
-        }
+    const T value(const Key & key, const T & defaultValue = T()) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.value(key, defaultValue);
+    }
 
-        QList<T> values() const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.values();
-        }
+    QList<T> values() const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.values();
+    }
 
-        QList<T> values(const Key & key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.values(key);
-        }
+    QList<T> values(const Key & key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.values(key);
+    }
 
-        bool operator!=(const QMap<Key, T> & other) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator !=(other);
-        }
+    bool operator!=(const QMap<Key, T> & other) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator !=(other);
+    }
 
-        QMap<Key, T> & operator=(const QMap<Key, T> & other)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator =(other);
-        }
+    QMap<Key, T> & operator=(const QMap<Key, T> & other)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator =(other);
+    }
 
-        QMap<Key, T> & operator=(QMap<Key, T> && other)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator =(other);
-        }
+    QMap<Key, T> & operator=(QMap<Key, T> && other)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator =(other);
+    }
 
-        bool operator==(const QMap<Key, T> & other) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator ==(other);
-        }
+    bool operator==(const QMap<Key, T> & other) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator ==(other);
+    }
 
-        T &	operator[](const Key & key)
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator [](key);
-        }
+    T &	operator[](const Key & key)
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator [](key);
+    }
 
-        /**
-         * @brief This method is an overload of the operator [] and returns a value given a specific key.
-         * @param key : This represents the key that you want to find.
-         * @return T
-         */
-        const T operator [](const Key &key) const
-        {
-            QMutexLocker locker(&mutex);
-            return m_map.operator [](key);
-        }
-    };
-}
+    /**
+     * @brief This method is an overload of the operator [] and returns a value given a specific key.
+     * @param key : This represents the key that you want to find.
+     * @return T
+     */
+    const T operator [](const Key &key) const
+    {
+        QMutexLocker locker(&mutex);
+        return m_map.operator [](key);
+    }
+};
+
+CWF_END_NAMESPACE
+
 #endif // QMAPTHREADSAFETY_H

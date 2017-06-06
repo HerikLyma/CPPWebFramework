@@ -10,22 +10,24 @@
 
 #include <QString>
 #include <QFile>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief The FileManager class can manage file's name.
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT FileManager
 {
-    /**
-     * @brief The FileManager class can manage file's name.
-     */
-    class FileManager
-    {
-    public:        
-         QString extract(QString &name, char ch) const;
-         QString fileName(QString &name) const;
-         QString fileExtention(QString &name) const;
-         void removeLastBar(QString &path) const;
-         void removeFirstBar(QString &path) const;
-         void putFirstBar(QString &path) const;         
-         QByteArray readAll(const QString &fileName, QFileDevice::FileError &fileErro) const;
-    };
-}
+public:
+     QString extract(QString &name, char ch) const;
+     QString fileName(QString &name) const;
+     QString fileExtention(QString &name) const;
+     void removeLastBar(QString &path) const;
+     void removeFirstBar(QString &path) const;
+     void putFirstBar(QString &path) const;
+     QByteArray readAll(const QString &fileName, QFileDevice::FileError &fileErro) const;
+};
+
+CWF_END_NAMESPACE
+
 #endif // FILEMANAGER_H

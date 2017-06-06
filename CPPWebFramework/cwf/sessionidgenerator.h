@@ -9,27 +9,28 @@
 #define SESSIONIDGENERATOR_H
 
 #include "httpparser.h"
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief The SessionIdGenerator class is responsable to generate sessions id to the clients.
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT SessionIdGenerator
 {
+    const HttpParser &httpParser;
+public:
     /**
-     * @brief The SessionIdGenerator class is responsable to generate sessions id to the clients.
+     * @brief This constructor receives a HttpParser
+     * @param const HttpParser &httpParser : Used to generate Session ID.
      */
-    class SessionIdGenerator
-    {
-        const HttpParser &httpParser;
-    public:
-        /**
-         * @brief This constructor receives a HttpParser
-         * @param const HttpParser &httpParser : Used to generate Session ID.
-         */
-        explicit SessionIdGenerator(const HttpParser &httpParser);
-        /**
-         * @brief This method process some informations of httpParser and generates a session id.
-         * @return QByteArray : Session ID.
-         */
-        QByteArray getSessionID() const;
-    };
-}
+    explicit SessionIdGenerator(const HttpParser &httpParser);
+    /**
+     * @brief This method process some informations of httpParser and generates a session id.
+     * @return QByteArray : Session ID.
+     */
+    QByteArray getSessionID() const;
+};
+
+CWF_END_NAMESPACE
 
 #endif // SESSIONIDGENERATOR_H

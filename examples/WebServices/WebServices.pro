@@ -73,7 +73,8 @@ HEADERS += \
     servlets/bmiservlet.h \
     entities/user.h \
     ../../CPPWebFramework/cwf/urlencoder.h \
-    ../../CPPWebFramework/cwf/cstlcompilerimport.h
+    ../../CPPWebFramework/cwf/cstlcompilerimport.h \
+    ../../CPPWebFramework/cwf/cppwebframework_global.h
 
 
 QMAKE_CXXFLAGS += -std=c++11

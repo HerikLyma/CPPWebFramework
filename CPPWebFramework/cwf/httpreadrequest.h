@@ -29,48 +29,49 @@
 #include "httpcookie.h"
 #include "sessionidgenerator.h"
 #include "qmapthreadsafety.h"
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief The HttpReadRequest class is created automatically by the CppWebServer and inserted <br>
+ * in a QThreadPool, always when the CppWebServer has a call by a client(Browser).
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT HttpReadRequest : public QRunnable
 {
+    qintptr     socketDescriptor;
+    QMapThreadSafety<QString, HttpServlet *> &urlServlet;
+    QMapThreadSafety<QString, HttpSession *> &sessions;
+    QSslConfiguration *sslConfiguration;
+    Filter      *filter;
+    QTcpSocket  *socket = nullptr;
+    qint64 maxUploadFile;
+    bool readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response);
+    void createSocket();
+public:
     /**
-     * @brief The HttpReadRequest class is created automatically by the CppWebServer and inserted <br>
-     * in a QThreadPool, always when the CppWebServer has a call by a client(Browser).
+     * @brief This constructor provides the necessary information to create a HttpReadRequest
+     * @param qintptr socketDescriptor                             : Used to create a socket.
+     * @param QMapThreadSafety<QString, HttpServlet *> &urlServlet : All mapped servlets
+     * @param QMapThreadSafety<QString, HttpSession *> &sessions   : Sessions.
+     * @param QSslConfiguration *sslConfiguration                  : SSL configuration.
+     * @param Filter *filter                                       : Filter
      */
-    class HttpReadRequest : public QRunnable
-    {
-        qintptr     socketDescriptor;
-        QMapThreadSafety<QString, HttpServlet *> &urlServlet;
-        QMapThreadSafety<QString, HttpSession *> &sessions;        
-        QSslConfiguration *sslConfiguration;
-        Filter      *filter;
-        QTcpSocket  *socket = nullptr;        
-        qint64 maxUploadFile;
-        bool readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response);
-        void createSocket();
-    public:
-        /**
-         * @brief This constructor provides the necessary information to create a HttpReadRequest
-         * @param qintptr socketDescriptor                             : Used to create a socket.
-         * @param QMapThreadSafety<QString, HttpServlet *> &urlServlet : All mapped servlets
-         * @param QMapThreadSafety<QString, HttpSession *> &sessions   : Sessions.
-         * @param QSslConfiguration *sslConfiguration                  : SSL configuration.
-         * @param Filter *filter                                       : Filter
-         */
-        HttpReadRequest(qintptr socketDescriptor,
-                        QMapThreadSafety<QString, HttpServlet *> &urlServlet,
-                        QMapThreadSafety<QString, HttpSession *> &sessions,
-                        QSslConfiguration *sslConfiguration,
-                        Filter *filter);
+    HttpReadRequest(qintptr socketDescriptor,
+                    QMapThreadSafety<QString, HttpServlet *> &urlServlet,
+                    QMapThreadSafety<QString, HttpSession *> &sessions,
+                    QSslConfiguration *sslConfiguration,
+                    Filter *filter);
 
-        /**
-         * @brief Destroys dynamically allocated resources.
-         */
-        ~HttpReadRequest();
-        /**
-         * @brief Starts to read the requisition.
-         */
-        void run() override;
-    };
-}
+    /**
+     * @brief Destroys dynamically allocated resources.
+     */
+    ~HttpReadRequest();
+    /**
+     * @brief Starts to read the requisition.
+     */
+    void run() override;
+};
+
+    CWF_END_NAMESPACE
 
 #endif // HTTPREADREQUEST_H

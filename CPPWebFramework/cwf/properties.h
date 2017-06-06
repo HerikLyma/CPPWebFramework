@@ -10,23 +10,24 @@
 
 #include <QString>
 #include <QStringList>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief The Properties class is an auxiliar class to the CSTLCompiler.
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT Properties
 {
+public:
+    QString m_class;
+    QString m_method;
     /**
-     * @brief The Properties class is an auxiliar class to the CSTLCompiler.
+     * @brief Extracts class and method name.
+     * @param const QString &classAndMethod : Class and method name.
      */
-    class Properties
-    {
-    public:
-        QString m_class;
-        QString m_method;
-        /**
-         * @brief Extracts class and method name.
-         * @param const QString &classAndMethod : Class and method name.
-         */
-        explicit Properties(const QString &classAndMethod);
-    };
-}
+    explicit Properties(const QString &classAndMethod);
+};
+
+CWF_END_NAMESPACE
 
 #endif // PROPERTIES_H

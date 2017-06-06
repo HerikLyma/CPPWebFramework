@@ -10,22 +10,23 @@
 
 #include <QMap>
 #include <QXmlStreamAttributes>
+#include "cppwebframework_global.h"
 
-namespace CWF
+CWF_BEGIN_NAMESPACE
+/**
+ * @brief Extracts and valites all attibutes from a "for" tag.
+ */
+class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerFor
 {
+public:
+    QMap<QString, QString> attributes;
     /**
-     * @brief Extracts and valites all attibutes from a "for" tag.
+     * @brief This constructor processes and validates the attributes of "for" tags.
+     * @param const QXmlStreamAttributes &attr : XML tag attributes.
      */
-    class CSTLCompilerFor
-    {
-    public:
-        QMap<QString, QString> attributes;
-        /**
-         * @brief This constructor processes and validates the attributes of "for" tags.
-         * @param const QXmlStreamAttributes &attr : XML tag attributes.
-         */
-        explicit CSTLCompilerFor(const QXmlStreamAttributes &attr);
-    };
-}
+    explicit CSTLCompilerFor(const QXmlStreamAttributes &attr);
+};
+
+CWF_END_NAMESPACE
 
 #endif // CSTLCOMPILERFOR_H
