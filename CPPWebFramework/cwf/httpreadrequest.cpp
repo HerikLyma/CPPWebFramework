@@ -56,7 +56,7 @@ void HttpReadRequest::run()
         if(socket->waitForReadyRead())
         {
             QByteArray req(std::move(socket->readAll()));
-            //qDebug() << req;
+            qDebug() << req;
 
             HttpParser parser(req);
             if(parser.valid)

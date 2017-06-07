@@ -63,6 +63,11 @@ void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logCo
 
     QFile file(configuration.logFilePath + "/CPPWebServer.log");
 
+    if(file.size() > configuration.maxLogFile)
+    {
+        file.resize(0);
+    }
+
     if(file.open(QIODevice::Append))
     {
         QTextStream out(&file);

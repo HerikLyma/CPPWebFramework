@@ -10,6 +10,16 @@
 
 CWF_BEGIN_NAMESPACE
 
+qint64 Configuration::getMaxLogFile() const
+{
+    return maxLogFile;
+}
+
+void Configuration::setMaxLogFile(const qint64 &value)
+{
+    maxLogFile = value;
+}
+
 Configuration::Configuration(QString serverFilesPath)
 {
     if(!serverFilesPath.isEmpty())
@@ -32,6 +42,7 @@ Configuration::Configuration(QString serverFilesPath)
         indexPage             = settings.value("indexPage").toString();
         accessCPPWebIni       = settings.value("accessCPPWebIni").toBool();
         accessServerPages     = settings.value("accessServerPages").toBool();
+        maxLogFile            = settings.value("maxLogFile").toLongLong();
 
         FileManager fileManager;
         fileManager.removeLastBar(path);

@@ -46,6 +46,7 @@ private:
     QString indexPage;
     QHostAddress host;
     qint64 maxUploadFile = 2097152;
+    qint64 maxLogFile    = 20000000;
 public:
     /**
      * @brief Will make reading the CPPWeb.ini file and extract all of its properties.
@@ -187,6 +188,16 @@ public:
      * @param const qint64 &value : Max upload file size in bytes.
      */
     void setMaxUploadFile(const qint64 &value);
+    /**
+     * @brief getMaxLogFile the max file log
+     * @return qint64 : Max file log in bytes.
+     */
+    qint64 getMaxLogFile() const;
+    /**
+     * @brief Set maxLogFile property in bytes.
+     * @param const qint64 &value : Max file size in bytes.
+     */
+    void setMaxLogFile(const qint64 &value);
 };
 
 CWF_END_NAMESPACE
