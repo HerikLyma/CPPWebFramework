@@ -24,7 +24,9 @@ HEADERS += \
 
 
 QMAKE_CXXFLAGS += -std=c++11
-INCLUDEPATH += ../../CPPWebFramework
+QMAKE_CXXFLAGS_RELEASE -= -O1
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \
@@ -33,4 +35,17 @@ OTHER_FILES += \
 DISTFILES += \
     server/pages/user.xhtml
 
-LIBS += -lCPPWebFramework
+unix {
+    INCLUDEPATH += /usr/lib
+    LIBS += -L/usr/lib/cwf -lCPPWebFramework
+}
+
+macx {
+    INCLUDEPATH += /usr/local/lib
+    LIBS += -L/usr/local/lib/cwf -lCPPWebFramework
+}
+
+win32 {
+    INCLUDEPATH += C:/
+    LIBS += -LC:/cwf -lCPPWebFramework
+}

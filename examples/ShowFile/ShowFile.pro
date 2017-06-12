@@ -17,39 +17,12 @@ SOURCES += main.cpp \
     servlets/showfileservlet.cpp
 
 HEADERS += \    
-    servlets/showfileservlet.h \
-    ../../CPPWebFramework/cwf/constants.h \
-    ../../CPPWebFramework/cwf/configuration.h \
-    ../../CPPWebFramework/cwf/cppwebapplication.h \
-    ../../CPPWebFramework/cwf/cppwebserver.h \
-    ../../CPPWebFramework/cwf/cppwebservlet.h \
-    ../../CPPWebFramework/cwf/cstlcompiler.h \
-    ../../CPPWebFramework/cwf/cstlcompilerattributes.h \
-    ../../CPPWebFramework/cwf/cstlcompilerfor.h \
-    ../../CPPWebFramework/cwf/cstlcompilerif.h \
-    ../../CPPWebFramework/cwf/cstlcompilerobject.h \
-    ../../CPPWebFramework/cwf/filemanager.h \
-    ../../CPPWebFramework/cwf/filter.h \
-    ../../CPPWebFramework/cwf/filterchain.h \
-    ../../CPPWebFramework/cwf/httpcookie.h \
-    ../../CPPWebFramework/cwf/httpparser.h \
-    ../../CPPWebFramework/cwf/httpreadrequest.h \    
-    ../../CPPWebFramework/cwf/httpservlet.h \
-    ../../CPPWebFramework/cwf/httpservletrequest.h \
-    ../../CPPWebFramework/cwf/httpservletresponse.h \
-    ../../CPPWebFramework/cwf/httpsession.h \
-    ../../CPPWebFramework/cwf/metaclassparser.h \
-    ../../CPPWebFramework/cwf/properties.h \
-    ../../CPPWebFramework/cwf/qlistobject.h \
-    ../../CPPWebFramework/cwf/qmapthreadsafety.h \
-    ../../CPPWebFramework/cwf/requestdispatcher.h \
-    ../../CPPWebFramework/cwf/sessionidgenerator.h \    
-    ../../CPPWebFramework/cwf/urlencoder.h \
-    ../../CPPWebFramework/cwf/cstlcompilerimport.h \
-    ../../CPPWebFramework/cwf/cppwebframework_global.h
+    servlets/showfileservlet.h 
 
 QMAKE_CXXFLAGS += -std=c++11
-INCLUDEPATH += ../../CPPWebFramework
+QMAKE_CXXFLAGS_RELEASE -= -O1
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \
@@ -58,4 +31,17 @@ OTHER_FILES += \
 DISTFILES += \
     server/pages/showfile.xhtml
 
-LIBS += -lCPPWebFramework
+unix {
+    INCLUDEPATH += /usr/lib
+    LIBS += -L/usr/lib/cwf -lCPPWebFramework
+}
+
+macx {
+    INCLUDEPATH += /usr/local/lib
+    LIBS += -L/usr/local/lib/cwf -lCPPWebFramework
+}
+
+win32 {
+    INCLUDEPATH += C:/
+    LIBS += -LC:/cwf -lCPPWebFramework
+}

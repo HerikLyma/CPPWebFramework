@@ -24,6 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+QMAKE_CXXFLAGS_RELEASE -= -O1
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
+
 SOURCES += \
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
@@ -83,10 +87,23 @@ HEADERS += \
     cwf/urlencoder.h
 
 unix {
-    target.path = /usr/lib
-    INSTALLS += target
+    headers.path   = /usr/lib/cwf
+    headers.files += $$HEADERS
+    target.path    = /usr/lib/cwf
 }
 
-QMAKE_CXXFLAGS_RELEASE -= -O1
-QMAKE_CXXFLAGS_RELEASE -= -O2
-QMAKE_CXXFLAGS_RELEASE += -O3
+macx {
+    headers.path   = /usr/local/lib/cwf
+    headers.files += $$HEADERS
+    target.path = /usr/local/lib/cwf
+}
+
+win32 {
+    headers.path   = C:/cwf
+    headers.files += $$HEADERS
+    target.path = C:/cwf
+}
+
+INSTALLS += target
+INSTALLS += headers
+
