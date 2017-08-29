@@ -16,11 +16,17 @@
 
 CWF_BEGIN_NAMESPACE
 
+/**
+ * @brief Extracts and valites all attibutes from a "import" tag.
+ */
 class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerImport
 {
 public:
     QMap<QString, QString> attributes;
-
+    /**
+     * @brief This constructor processes and validates the attributes of "import" tag.
+     * @param const QXmlStreamAttributes &attr : XML tag attributes.
+     */
     explicit CSTLCompilerImport(const QXmlStreamAttributes &attr);
 };
 
