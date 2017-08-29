@@ -14,8 +14,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern QMutex mutex;
-extern Configuration configuration;
+extern const Configuration configuration;
 
 HttpServletRequest::HttpServletRequest(QTcpSocket &socket,
                                        const QString &path,
@@ -190,6 +189,8 @@ QByteArray HttpServletRequest::getRequestURI() const
 
 HttpSession &HttpServletRequest::getSession()
 {
+    QMutex mutex;
+    QMutexLocker locker(&mutex);
     qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
     if(!session)
     {

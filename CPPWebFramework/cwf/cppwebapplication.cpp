@@ -10,13 +10,16 @@
 
 CWF_BEGIN_NAMESPACE
 
-CWF::Configuration configuration;
+extern const Configuration configuration;
+const Configuration configuration;
 
 CppWebApplication::CppWebApplication(int argc, char *argv[],
                                      const Configuration &config,
                                      Filter *filter) : application(argc, argv)
 {
-    configuration = config;
+    CWF::Configuration *c = const_cast<CWF::Configuration*>(&configuration);
+    *c = config;
+
     server = new CppWebServer(filter);
     qInstallMessageHandler(CppWebApplication::writeLog);
 
@@ -55,11 +58,10 @@ int CppWebApplication::start()
 }
 
 void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
-{
-    QMutex mutex;
-    QMutexLocker locker(&mutex);
+{        
     FileManager fileManager;
-    fileManager.removeLastBar(configuration.logFilePath);
+    QString logFilePath = configuration.logFilePath;
+    fileManager.removeLastBar(logFilePath);
 
     QFile file(configuration.logFilePath + "/CPPWebServer.log");
 

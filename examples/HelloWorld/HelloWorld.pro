@@ -44,4 +44,3 @@ win32 {
     INCLUDEPATH += C:/
     LIBS += -LC:/cwf -lCPPWebFramework
 }
-

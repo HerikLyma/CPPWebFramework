@@ -11,7 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern Configuration configuration;
+extern const Configuration configuration;
 
 FilterChain::FilterChain(HttpServlet *servlet) :  servlet(servlet)
 {
@@ -44,8 +44,6 @@ void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
 
         if(url == FILE_EXTENTION::BAR)
         {
-            QMutex mutex;
-            QMutexLocker locker(&mutex);
             request.getRequestDispatcher(configuration.indexPage).forward(request, response);
         }
         else if(extention == FILE_EXTENTION::HTML || extention == FILE_EXTENTION::HTM)
@@ -148,8 +146,6 @@ void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
         }
         else if(extention == FILE_EXTENTION::INI)
         {
-            QMutex mutex;
-            QMutexLocker locker(&mutex);
             QString file(std::move(fileManager.fileName(url)));
             if(file != CONFIGURATION::CPP_WEB_INI)
                 write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );

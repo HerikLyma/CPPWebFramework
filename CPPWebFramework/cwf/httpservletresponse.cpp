@@ -11,8 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-QMutex HttpServletResponseMutex;
-extern Configuration configuration;
+extern const Configuration configuration;
 
 HttpServletResponse::HttpServletResponse(QTcpSocket &socket) : socket(&socket)
 {
@@ -108,16 +107,14 @@ void HttpServletResponse::setStatus(const int &statusCode, const QByteArray &des
 void HttpServletResponse::writeToSocket(const QByteArray &data)
 {
     socket->moveToThread(QThread::currentThread());
-    if(socket->ConnectingState && data.size() > 0)
+    if(socket->ConnectingState > 0 && data.size() > 0)
     {
         socket->write(data, data.size());
         socket->flush();
         //qDebug() << data;
-        if(socket->ConnectingState)
-        {
-            HttpServletResponseMutex.lock();
-            int timeOut = configuration.timeOut;
-            HttpServletResponseMutex.unlock();
+        if(socket->ConnectingState > 0)
+        {            
+            int timeOut = configuration.timeOut;            
             socket->waitForBytesWritten(timeOut);
         }
     }

@@ -32,11 +32,11 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpSession
     friend class HttpReadRequest;
     friend class HttpServletRequest;
     QString id;
-    qint64 creationTime;
-    qint64 lastAccessedTime;
-    qint64 sessionExpirationTime;
-    bool   autoClearAttributes = false;
-    bool   expired = false;
+    QAtomicInteger<qint64> creationTime;
+    QAtomicInteger<qint64> lastAccessedTime;
+    QAtomicInteger<qint64> sessionExpirationTime;
+    QAtomicInteger<qint8>  autoClearAttributes = 0;
+    QAtomicInteger<qint8>  expired = 0;
     QMapThreadSafety<QString, QObject*> attributes;
     mutable QMutex mutex;
 public:

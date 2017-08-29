@@ -12,7 +12,6 @@
 #include <QSslKey>
 #include <QSslCertificate>
 #include <QHttpMultiPart>
-#include <QMutex>
 #include <QThreadPool>
 #include <QTimer>
 #include <atomic>
@@ -42,7 +41,7 @@ private:
     QMapThreadSafety<QString, HttpSession *> sessions;
     QSslConfiguration *sslConfiguration = nullptr;
     const int sleepTime = 10;
-    bool block = false;
+    QAtomicInteger<qint8> block = 0;
     /**
      * @brief Load the SSL Configuration to the server.
      */

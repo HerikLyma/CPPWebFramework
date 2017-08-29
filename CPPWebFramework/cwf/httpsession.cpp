@@ -10,7 +10,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern Configuration configuration;
+extern const Configuration configuration;
 HttpSession::HttpSession(const QString &id) : id(id),
                                               autoClearAttributes(false),
                                               expired (false)
@@ -39,8 +39,7 @@ QObject *HttpSession::getAttribute(const QString &name) const
 }
 
 QStringList HttpSession::getAttributeNames()
-{
-    QMutexLocker locker(&mutex);
+{    
     QStringList list;
     for(QMapThreadSafety<QString, QObject*>::iterator it = attributes.begin(); it != attributes.end(); ++it)
         list.push_back(it.key());
@@ -48,8 +47,7 @@ QStringList HttpSession::getAttributeNames()
 }
 
 qint64 HttpSession::getCreationTime() const
-{
-    QMutexLocker locker(&mutex);
+{    
     return creationTime;
 }
 
@@ -60,24 +58,22 @@ QString HttpSession::getId() const
 }
 
 qint64 HttpSession::getLastAccessedTime() const
-{
-    QMutexLocker locker(&mutex);
+{    
     return lastAccessedTime;
 }
 
 void HttpSession::validate()
 {
     QMutexLocker locker(&mutex);
-    expired = false;
+    expired = 1;
     qint64 currentTime     = QDateTime::currentMSecsSinceEpoch();
     lastAccessedTime       = currentTime;
     sessionExpirationTime  = currentTime + configuration.sessionExpirationTime;
 }
 
 void HttpSession::invalidate()
-{
-    QMutexLocker locker(&mutex);
-    expired = true;
+{    
+    expired = 1;
 }
 
 void HttpSession::removeAttribute(const QString &name)
@@ -91,14 +87,12 @@ void HttpSession::addAttribute(const QString &name, QObject *value)
 }
 
 bool HttpSession::getAutoClearAttributes() const
-{
-    QMutexLocker locker(&mutex);
+{    
     return autoClearAttributes;
 }
 
 void HttpSession::setAutoClearAttributes(bool value)
-{
-    QMutexLocker locker(&mutex);
+{    
     autoClearAttributes = value;
 }
 

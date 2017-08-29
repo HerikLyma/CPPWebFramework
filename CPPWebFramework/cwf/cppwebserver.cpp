@@ -74,11 +74,8 @@ void CppWebServer::incomingConnection(qintptr socketfd)
 }
 
 void CppWebServer::doClean()
-{
-    QMutex mutex;
-    mutex.lock();
-    block = true;
-    mutex.unlock();
+{    
+    block = 1;
     while(!pool.waitForDone(sleepTime));
 
     HttpSession *session = nullptr;
@@ -95,9 +92,7 @@ void CppWebServer::doClean()
     for(int i = 0; i < idSessionsToDelete.size(); ++i)
         sessions.remove(idSessionsToDelete[i]);
 
-    mutex.lock();
-    block = false;
-    mutex.unlock();
+    block = 0;
 }
 
 void CppWebServer::loadSslConfiguration()

@@ -10,7 +10,6 @@
 
 #include <QMap>
 #include <QFile>
-#include <QMutex>
 #include <chrono>
 #include <QDateTime>
 #include <QRunnable>

@@ -11,8 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern Configuration configuration;
-QMutex mutex;
+extern const Configuration configuration;
 
 HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
                                  QMapThreadSafety<QString, HttpServlet *> &urlServlet,
@@ -46,26 +45,22 @@ void HttpReadRequest::run()
         ((QSslSocket*)socket)->startServerEncryption();
     }
 #endif
-    socket->thread()->setPriority(QThread::TimeCriticalPriority);
-    mutex.lock();
-    maxUploadFile = configuration.maxUploadFile;
-    mutex.unlock();
+    socket->thread()->setPriority(QThread::TimeCriticalPriority);    
+    maxUploadFile = configuration.maxUploadFile;    
     socket->setReadBufferSize(maxUploadFile);
-    if(socket->ConnectedState)
+    if(socket->ConnectedState > 0)
     {
         if(socket->waitForReadyRead())
         {
             QByteArray req(std::move(socket->readAll()));
-            qDebug() << req;
+            //qDebug() << req;
 
             HttpParser parser(req);
             if(parser.valid)
             {
                 QString               url      = parser.url;
-                HttpServlet          *servlet  = nullptr;                
-                mutex.lock();
-                HttpServletRequest   request(*socket, configuration.path, sessions);
-                mutex.unlock();
+                HttpServlet          *servlet  = nullptr;                                
+                HttpServletRequest   request(*socket, configuration.path, sessions);                
                 HttpServletResponse  response(*socket);
                 request.httpParser = &parser;
                 request.response   = &response;
@@ -116,11 +111,9 @@ void HttpReadRequest::run()
 bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response)
 {
     qint64 contentLength = parser.contentLenght;
-    QByteArray content(std::move(parser.body));
-    mutex.lock();
+    QByteArray content(std::move(parser.body));    
     int maximumTime = configuration.timeOut / 2;
-    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
-    mutex.unlock();
+    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();    
 
     while(true)
     {

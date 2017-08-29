@@ -12,7 +12,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern Configuration configuration;
+extern const Configuration configuration;
 
 CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr)
 {
