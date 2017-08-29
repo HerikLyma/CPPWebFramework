@@ -1,0 +1,131 @@
+\hypertarget{class_meta_class_parser}{}\section{Meta\+Class\+Parser Class Reference}
+\label{class_meta_class_parser}\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+
+
+This class extracts all information from a Q\+Object.  
+
+
+
+
+{\ttfamily \#include $<$metaclassparser.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_meta_class_parser_ae3df53e78d823b2edaa38fe6184c9e01}{Meta\+Class\+Parser} (Q\+Object $\ast$object)
+\begin{DoxyCompactList}\small\item\em Extracts all properties and methods names from a Q\+Object. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_meta_class_parser_adf9eefe961550b4aaa9432532f5723f4}{get\+Return\+Type} (const Q\+String \&method\+Name)
+\begin{DoxyCompactList}\small\item\em Returns the method return type given a method name. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_meta_class_parser_ada953748a39a39968054231128a08667}{get\+Parameter\+Type} (const Q\+String \&method\+Name)
+\begin{DoxyCompactList}\small\item\em Returns the method parameter type given a method name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void $\ast$ \hyperlink{class_meta_class_parser_a1441f0bf6e0db301ea726279d535c49b}{instantiate\+Class\+By\+Name} (const Q\+Byte\+Array \&name)
+\begin{DoxyCompactList}\small\item\em Instantiate a class by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ std\+::tuple$<$ Q\+String, Q\+String $>$, Q\+Meta\+Method $>$ \hyperlink{class_meta_class_parser_a4c5651fa8ac8528bc01c0d2406a89c28}{methods}
+\item 
+Q\+Map$<$ Q\+String, Q\+Meta\+Property $>$ \hyperlink{class_meta_class_parser_ac79cc08f53b738fdb4e3c57d48474ac8}{properties}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class extracts all information from a Q\+Object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_meta_class_parser_ae3df53e78d823b2edaa38fe6184c9e01}\label{class_meta_class_parser_ae3df53e78d823b2edaa38fe6184c9e01}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{Meta\+Class\+Parser()}{MetaClassParser()}}
+{\footnotesize\ttfamily \hyperlink{cppwebframework__global_8h_a7492e9498cbaf9cd17dbc2215d3a0e48}{C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE} Meta\+Class\+Parser\+::\+Meta\+Class\+Parser (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Extracts all properties and methods names from a Q\+Object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Object} & $\ast$object \+: Object. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_meta_class_parser_ada953748a39a39968054231128a08667}\label{class_meta_class_parser_ada953748a39a39968054231128a08667}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!get\+Parameter\+Type@{get\+Parameter\+Type}}
+\index{get\+Parameter\+Type@{get\+Parameter\+Type}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{get\+Parameter\+Type()}{getParameterType()}}
+{\footnotesize\ttfamily Q\+String Meta\+Class\+Parser\+::get\+Parameter\+Type (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{method\+Name }\end{DoxyParamCaption})}
+
+
+
+Returns the method parameter type given a method name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&method\+Name \+: Method name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String \+: Parameter type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_meta_class_parser_adf9eefe961550b4aaa9432532f5723f4}\label{class_meta_class_parser_adf9eefe961550b4aaa9432532f5723f4}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!get\+Return\+Type@{get\+Return\+Type}}
+\index{get\+Return\+Type@{get\+Return\+Type}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{get\+Return\+Type()}{getReturnType()}}
+{\footnotesize\ttfamily Q\+String Meta\+Class\+Parser\+::get\+Return\+Type (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{method\+Name }\end{DoxyParamCaption})}
+
+
+
+Returns the method return type given a method name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&method\+Name \+: Method name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String \+: Return type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_meta_class_parser_a1441f0bf6e0db301ea726279d535c49b}\label{class_meta_class_parser_a1441f0bf6e0db301ea726279d535c49b}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!instantiate\+Class\+By\+Name@{instantiate\+Class\+By\+Name}}
+\index{instantiate\+Class\+By\+Name@{instantiate\+Class\+By\+Name}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{instantiate\+Class\+By\+Name()}{instantiateClassByName()}}
+{\footnotesize\ttfamily void $\ast$ Meta\+Class\+Parser\+::instantiate\+Class\+By\+Name (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instantiate a class by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Byte\+Array \&name \+: Class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void $\ast$ \+: Returns nullptr if fails. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_meta_class_parser_a4c5651fa8ac8528bc01c0d2406a89c28}\label{class_meta_class_parser_a4c5651fa8ac8528bc01c0d2406a89c28}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!methods@{methods}}
+\index{methods@{methods}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily Q\+Map$<$std\+::tuple$<$Q\+String, Q\+String$>$, Q\+Meta\+Method$>$ Meta\+Class\+Parser\+::methods}
+
+\mbox{\Hypertarget{class_meta_class_parser_ac79cc08f53b738fdb4e3c57d48474ac8}\label{class_meta_class_parser_ac79cc08f53b738fdb4e3c57d48474ac8}} 
+\index{Meta\+Class\+Parser@{Meta\+Class\+Parser}!properties@{properties}}
+\index{properties@{properties}!Meta\+Class\+Parser@{Meta\+Class\+Parser}}
+\subsubsection{\texorpdfstring{properties}{properties}}
+{\footnotesize\ttfamily Q\+Map$<$Q\+String, Q\+Meta\+Property$>$ Meta\+Class\+Parser\+::properties}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{metaclassparser_8h}{metaclassparser.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{metaclassparser_8cpp}{metaclassparser.\+cpp}\end{DoxyCompactItemize}

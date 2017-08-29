@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['properties',['Properties',['../class_c_w_f_1_1_properties.html',1,'CWF']]]
+  ['properties',['Properties',['../class_properties.html',1,'']]]
 ];

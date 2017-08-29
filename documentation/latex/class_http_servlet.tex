@@ -1,0 +1,168 @@
+\hypertarget{class_http_servlet}{}\section{Http\+Servlet Class Reference}
+\label{class_http_servlet}\index{Http\+Servlet@{Http\+Servlet}}
+
+
+The \hyperlink{class_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet.  
+
+
+
+
+{\ttfamily \#include $<$httpservlet.\+h$>$}
+
+
+
+Inheritance diagram for Http\+Servlet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_http_servlet__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_http_servlet_a912d39c84d82c498e0a5b319dcbe2be4}{$\sim$\+Http\+Servlet} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a773a855260ff0977ae4c4a861008092c}{do\+Delete} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the delete request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a7c851e2989b7a61e5c8470b562690516}{do\+Get} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the get request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a1abc608f8ac9b682a59f2231775330c6}{do\+Options} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the options request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a6b94fb3bb052b2138ee673feb65e37c9}{do\+Post} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the post request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a33edf48c6762b1c9f5e7faaf47135073}{do\+Put} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the put request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_http_servlet_a42a6a6a556f43b3447d4ff56d9d574cb}{do\+Trace} (\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&req, \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&resp)
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the trace request method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_http_servlet_a912d39c84d82c498e0a5b319dcbe2be4}\label{class_http_servlet_a912d39c84d82c498e0a5b319dcbe2be4}} 
+\index{Http\+Servlet@{Http\+Servlet}!````~Http\+Servlet@{$\sim$\+Http\+Servlet}}
+\index{````~Http\+Servlet@{$\sim$\+Http\+Servlet}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{$\sim$\+Http\+Servlet()}{~HttpServlet()}}
+{\footnotesize\ttfamily Http\+Servlet\+::$\sim$\+Http\+Servlet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_http_servlet_a773a855260ff0977ae4c4a861008092c}\label{class_http_servlet_a773a855260ff0977ae4c4a861008092c}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Delete@{do\+Delete}}
+\index{do\+Delete@{do\+Delete}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Delete()}{doDelete()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Delete (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the delete request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_http_servlet_a7c851e2989b7a61e5c8470b562690516}\label{class_http_servlet_a7c851e2989b7a61e5c8470b562690516}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Get@{do\+Get}}
+\index{do\+Get@{do\+Get}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Get()}{doGet()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Get (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the get request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_cpp_web_servlet_a8d32d5ba8ba73c10a7c1abc81497d898}{Cpp\+Web\+Servlet}.
+
+\mbox{\Hypertarget{class_http_servlet_a1abc608f8ac9b682a59f2231775330c6}\label{class_http_servlet_a1abc608f8ac9b682a59f2231775330c6}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Options@{do\+Options}}
+\index{do\+Options@{do\+Options}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Options()}{doOptions()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Options (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the options request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_http_servlet_a6b94fb3bb052b2138ee673feb65e37c9}\label{class_http_servlet_a6b94fb3bb052b2138ee673feb65e37c9}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Post@{do\+Post}}
+\index{do\+Post@{do\+Post}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Post()}{doPost()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Post (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the post request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_http_servlet_a33edf48c6762b1c9f5e7faaf47135073}\label{class_http_servlet_a33edf48c6762b1c9f5e7faaf47135073}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Put@{do\+Put}}
+\index{do\+Put@{do\+Put}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Put()}{doPut()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Put (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the put request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_http_servlet_a42a6a6a556f43b3447d4ff56d9d574cb}\label{class_http_servlet_a42a6a6a556f43b3447d4ff56d9d574cb}} 
+\index{Http\+Servlet@{Http\+Servlet}!do\+Trace@{do\+Trace}}
+\index{do\+Trace@{do\+Trace}!Http\+Servlet@{Http\+Servlet}}
+\subsubsection{\texorpdfstring{do\+Trace()}{doTrace()}}
+{\footnotesize\ttfamily void Http\+Servlet\+::do\+Trace (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} \&}]{req,  }\item[{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} \&}]{resp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the trace request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpservlet_8h}{httpservlet.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpservlet_8cpp}{httpservlet.\+cpp}\end{DoxyCompactItemize}

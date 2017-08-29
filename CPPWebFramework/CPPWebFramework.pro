@@ -53,7 +53,8 @@ SOURCES += \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
-    cwf/urlencoder.cpp
+    cwf/urlencoder.cpp \
+    cwf/variant.cpp
 
 HEADERS += \
         cwf/cppwebframework_global.h \
@@ -84,7 +85,8 @@ HEADERS += \
     cwf/qlistobject.h \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
-    cwf/urlencoder.h
+    cwf/urlencoder.h \
+    cwf/variant.h
 
 unix {
     headers.path   = /usr/lib/cwf

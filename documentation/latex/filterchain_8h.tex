@@ -1,15 +1,15 @@
-\hypertarget{filterchain_8h}{\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filterchain.h File Reference}
+\hypertarget{filterchain_8h}{}\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filterchain.h File Reference}
 \label{filterchain_8h}\index{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filterchain.\+h@{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filterchain.\+h}}
-}
-{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}httpservletrequest.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}httpservletresponse.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}httpservlet.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}filterchain.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}httpparser.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}httprequestmethod.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}requestdispatcher.\+h\char`\"{}}\\*
-{\ttfamily \#include $<$Q\+File$>$}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}httpservletrequest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}httpservletresponse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}httpservlet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}filterchain.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}httpparser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}requestdispatcher.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cppwebframework\+\_\+global.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+File$>$}\newline
 Include dependency graph for filterchain.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -27,16 +27,5 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_c_w_f_1_1_filter_chain}{C\+W\+F\+::\+Filter\+Chain}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_filter_chain}{Filter\+Chain} class is responsable to dispatch a requisition. This class was built to work with \hyperlink{class_c_w_f_1_1_filter}{Filter}. Always when a \hyperlink{class_c_w_f_1_1_filter}{Filter} makes all the necessary validations, it can dispatches the requisition to the \hyperlink{class_c_w_f_1_1_filter_chain}{Filter\+Chain}. N\+O\+T\+E\+: It is a final class, you can't derive from it. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
- \hyperlink{namespace_c_w_f}{C\+W\+F}
-\begin{DoxyCompactList}\small\item\em All classes of C++ Web Framework are contained within the namespace \hyperlink{namespace_c_w_f}{C\+W\+F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Detailed Description}
-\begin{DoxyAuthor}{Author}
-Herik Lima 
-\end{DoxyAuthor}
+class \hyperlink{class_filter_chain}{Filter\+Chain}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_filter_chain}{Filter\+Chain} class is responsable to dispatch a requisition. This class was built to work with \hyperlink{class_filter}{Filter}. Always when a \hyperlink{class_filter}{Filter} makes all the necessary validations, it can dispatches the requisition to the \hyperlink{class_filter_chain}{Filter\+Chain}. N\+O\+TE\+: It is a final class, you can\textquotesingle{}t derive from it. \end{DoxyCompactList}\end{DoxyCompactItemize}

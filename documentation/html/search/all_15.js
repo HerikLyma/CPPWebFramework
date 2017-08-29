@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['_7ecppwebapplication',['~CppWebApplication',['../class_c_w_f_1_1_cpp_web_application.html#a29277658a0564c06e2b4116d1527513c',1,'CWF::CppWebApplication']]],
-  ['_7ecppwebserver',['~CppWebServer',['../class_c_w_f_1_1_cpp_web_server.html#ab00bb24440420f41b7328a47def0c0cd',1,'CWF::CppWebServer']]],
-  ['_7efilter',['~Filter',['../class_c_w_f_1_1_filter.html#aa0ba072123bbcd95de94ff17d65e35aa',1,'CWF::Filter']]],
-  ['_7ehttpreadrequest',['~HttpReadRequest',['../class_c_w_f_1_1_http_read_request.html#ad2013577721f188ab3e94c9b977fe3ee',1,'CWF::HttpReadRequest']]],
-  ['_7ehttpservlet',['~HttpServlet',['../class_c_w_f_1_1_http_servlet.html#a62a6b834356c237ad9787d838d0b8776',1,'CWF::HttpServlet']]],
-  ['_7ehttpservletrequest',['~HttpServletRequest',['../class_c_w_f_1_1_http_servlet_request.html#a41867870bf0c9f23ef74d70b10c0d357',1,'CWF::HttpServletRequest']]],
-  ['_7ehttpservletresponse',['~HttpServletResponse',['../class_c_w_f_1_1_http_servlet_response.html#a2081a62779b85a5805812cb06807f6bb',1,'CWF::HttpServletResponse']]],
-  ['_7ehttpsession',['~HttpSession',['../class_c_w_f_1_1_http_session.html#a4bd78eaae88a81643a9e3a911c21759a',1,'CWF::HttpSession']]],
-  ['_7eqlistobject',['~QListObject',['../class_c_w_f_1_1_q_list_object.html#a9d1a062c955dad25d5b6261d73f6c87c',1,'CWF::QListObject']]],
-  ['_7erequestdispatcher',['~RequestDispatcher',['../class_c_w_f_1_1_request_dispatcher.html#a668e801a8b718373e9e886c613ed54ad',1,'CWF::RequestDispatcher']]]
+  ['validate',['validate',['../class_http_session.html#adc118d02431eec30977bd1cb3429eb79',1,'HttpSession']]],
+  ['value',['value',['../class_q_map_thread_safety.html#a3c5caec402261554fd4d73e36e9ca6bc',1,'QMapThreadSafety']]],
+  ['values',['values',['../class_q_map_thread_safety.html#a6395316e7fec3faea0dcf150a3dab897',1,'QMapThreadSafety::values() const'],['../class_q_map_thread_safety.html#afffdf1fc9bd98f9bfede07549533da53',1,'QMapThreadSafety::values(const Key &amp;key) const']]],
+  ['var',['VAR',['../namespace_c_s_t_l_1_1_t_a_g_1_1_p_r_o_p_e_r_t_y.html#a19cc186d6c9044fa89a0c3f17d7bdf1b',1,'CSTL::TAG::PROPERTY']]],
+  ['variant',['Variant',['../class_variant.html',1,'Variant'],['../class_variant.html#a594b84b7c7a7e997aac3354bbdaa2d97',1,'Variant::Variant()=default'],['../class_variant.html#a4bca2cf3c097e4fa9aea5c87c947e9a0',1,'Variant::Variant(int value)'],['../class_variant.html#a7e7d9a46e166e059ce75b76b92b11457',1,'Variant::Variant(double value)'],['../class_variant.html#a6f86cea152e761f48700e41f210fe251',1,'Variant::Variant(qlonglong value)'],['../class_variant.html#a2a2d8b7cc035142a795f86d481adde0c',1,'Variant::Variant(const QString &amp;value)']]],
+  ['variant_2ecpp',['variant.cpp',['../variant_8cpp.html',1,'']]],
+  ['variant_2eh',['variant.h',['../variant_8h.html',1,'']]],
+  ['version',['VERSION',['../namespace_c_o_o_k_i_e.html#a93f141a88a2b7b73078a041dbfaccaf7',1,'COOKIE']]],
+  ['video_5fflv',['VIDEO_FLV',['../namespace_h_t_t_p.html#a50f56f9e688d4d6888b31d2dd4fb7297',1,'HTTP']]]
 ];

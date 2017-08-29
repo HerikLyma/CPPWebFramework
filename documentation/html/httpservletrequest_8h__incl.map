@@ -1,8 +1,9 @@
 <map id="/home/herik/CPPWebFramework/CPPWebFramework/cwf/httpservletrequest.h" name="/home/herik/CPPWebFramework/CPPWebFramework/cwf/httpservletrequest.h">
-<area shape="rect" id="node4" href="$httpsession_8h.html" title="httpsession.h" alt="" coords="446,95,546,121"/>
-<area shape="rect" id="node17" href="$requestdispatcher_8h.html" title="requestdispatcher.h" alt="" coords="1057,95,1193,121"/>
-<area shape="rect" id="node19" href="$filemanager_8h.html" title="filemanager.h" alt="" coords="1217,95,1317,121"/>
-<area shape="rect" id="node21" href="$httpparser_8h.html" title="httpparser.h" alt="" coords="823,95,913,121"/>
-<area shape="rect" id="node6" href="$httpcookie_8h.html" title="httpcookie.h" alt="" coords="837,169,931,196"/>
-<area shape="rect" id="node15" href="$qmapthreadsafety_8h.html" title="qmapthreadsafety.h" alt="" coords="427,169,565,196"/>
+<area shape="rect" id="node4" href="$httpsession_8h.html" title="httpsession.h" alt="" coords="554,95,654,121"/>
+<area shape="rect" id="node10" href="$cppwebframework__global_8h.html" title="cppwebframework_global.h" alt="" coords="813,244,993,271"/>
+<area shape="rect" id="node20" href="$requestdispatcher_8h.html" title="requestdispatcher.h" alt="" coords="889,95,1025,121"/>
+<area shape="rect" id="node22" href="$filemanager_8h.html" title="filemanager.h" alt="" coords="1050,95,1150,121"/>
+<area shape="rect" id="node24" href="$httpparser_8h.html" title="httpparser.h" alt="" coords="1219,95,1309,121"/>
+<area shape="rect" id="node6" href="$httpcookie_8h.html" title="httpcookie.h" alt="" coords="1260,169,1353,196"/>
+<area shape="rect" id="node18" href="$qmapthreadsafety_8h.html" title="qmapthreadsafety.h" alt="" coords="429,169,566,196"/>
 </map>

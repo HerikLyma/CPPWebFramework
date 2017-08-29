@@ -21,12 +21,12 @@
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
-/**
- * @brief The HttpSession class holds information about a client.
- */
 
 class HttpServletRequest;
 
+/**
+ * @brief The HttpSession class holds information about a client session.
+ */
 class CPPWEBFRAMEWORKSHARED_EXPORT HttpSession
 {
     friend class HttpReadRequest;
@@ -41,51 +41,45 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpSession
     mutable QMutex mutex;
 public:
     /**
-     * @brief
-     * @param id
-     * @param parent
+     * @brief Construct a session with a unique identifier
      */
-    explicit HttpSession(const QString &id);
+    explicit HttpSession(const QString &id);      
     ~HttpSession();
     /**
-     * @brief getAttribute
-     * @param name
-     * @return
+     * @brief Returns a session attribute given a name.
+     * @warning: If the parameter is not found, nullptr is returned.
      */
-    QObject *getAttribute(const QString &name) const;
+    QObject *getAttribute(const QString &name) const;    
     /**
-     * @brief getAttributeNames
-     * @return
+     * @brief Returns a session attribute given a name.
      */
     QStringList getAttributeNames();
     /**
      * @brief getCreationTime
-     * @return
      */
     qint64 getCreationTime() const;
     /**
-     * @brief getId
-     * @return
+     * @brief Returns the unique id
      */
     QString getId() const;
     /**
-     * @brief getLastAccessedTime
-     * @return
+     * @brief Returns the time of the last session access.
      */
     qint64 getLastAccessedTime() const;
     /**
-     * @brief validate
+     * @brief Make a valid session.
      */
     void validate();
     /**
-     * @brief invalidate
+     * @brief Make a invalid session.
      */
     void invalidate();
     /**
-     * @brief removeAttribute
-     * @param name
+     * @brief Removes all the items that have the key key from the map.
+     * Returns the number of items removed which is usually 1 but will be 0
+     * if the key isn't in the map, or > 1 if insertMulti() has been used with the key.
      */
-    void removeAttribute(const QString &name);
+    int removeAttribute(const QString &name);
     /**
      * @brief This method add an attribute to the session.
      * @param name
@@ -103,8 +97,7 @@ public:
      */
     void setAutoClearAttributes(bool value);
     /**
-     * @brief This method checks if the session is expired.
-     * @return bool
+     * @brief This method returns true if the session is expired otherwise returns false.
      */
     bool isExpired();
 };

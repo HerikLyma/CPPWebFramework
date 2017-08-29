@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['httpcookie',['HttpCookie',['../class_c_w_f_1_1_http_cookie.html#a36fafa10bc6c2580acf0b11f007b11ae',1,'CWF::HttpCookie::HttpCookie()=default'],['../class_c_w_f_1_1_http_cookie.html#a8e43ce5eabd7a7e8dd375232ad3b568e',1,'CWF::HttpCookie::HttpCookie(const QByteArray &amp;source)'],['../class_c_w_f_1_1_http_cookie.html#a2429ad80884ddb6712a9f1fa98e03eac',1,'CWF::HttpCookie::HttpCookie(const QByteArray &amp;name, const QByteArray &amp;value)']]],
-  ['httpparser',['HttpParser',['../class_c_w_f_1_1_http_parser.html#a622e35e9c7de9a29cfe3a2cf63eccef0',1,'CWF::HttpParser']]],
-  ['httpreadrequest',['HttpReadRequest',['../class_c_w_f_1_1_http_read_request.html#ade7aa5ac198bb40ce98de9f9ac9ff4d2',1,'CWF::HttpReadRequest']]],
-  ['httpservletrequest',['HttpServletRequest',['../class_c_w_f_1_1_http_servlet_request.html#a9fdd1aeaccd42c3043bff902cf6e6e09',1,'CWF::HttpServletRequest']]],
-  ['httpservletresponse',['HttpServletResponse',['../class_c_w_f_1_1_http_servlet_response.html#a5c89f340f44874457e680b02ab31d290',1,'CWF::HttpServletResponse']]],
-  ['httpsession',['HttpSession',['../class_c_w_f_1_1_http_session.html#ada538681cbb10e52155e1bcf1a709cf8',1,'CWF::HttpSession']]]
+  ['httpcookie',['HttpCookie',['../class_http_cookie.html#a728bef99b74d352b1762cc98e67cc93c',1,'HttpCookie::HttpCookie()=default'],['../class_http_cookie.html#aeb0f2cb5f7e8ef2fc7503663e29941c4',1,'HttpCookie::HttpCookie(const QByteArray &amp;source)'],['../class_http_cookie.html#a2037d1e3f9a6f65f0f3575df1cfcc200',1,'HttpCookie::HttpCookie(const QByteArray &amp;name, const QByteArray &amp;value)']]],
+  ['httpparser',['HttpParser',['../class_http_parser.html#a91e6c1876337b53694347476f277d1a2',1,'HttpParser']]],
+  ['httpreadrequest',['HttpReadRequest',['../class_http_read_request.html#ae585e99b43ee991c3b4884a1852eeb82',1,'HttpReadRequest']]],
+  ['httpservletrequest',['HttpServletRequest',['../class_http_servlet_request.html#acda91961621ef7bcd0fe061d0612bc2c',1,'HttpServletRequest']]],
+  ['httpservletresponse',['HttpServletResponse',['../class_http_servlet_response.html#ac275248f0418ac2a300dc3cbb71056eb',1,'HttpServletResponse']]],
+  ['httpsession',['HttpSession',['../class_http_session.html#adbc731f974a6de5996b7878303f351af',1,'HttpSession']]]
 ];

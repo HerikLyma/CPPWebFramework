@@ -1,8 +1,9 @@
-\hypertarget{httpservlet_8h}{\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservlet.h File Reference}
+\hypertarget{httpservlet_8h}{}\section{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservlet.h File Reference}
 \label{httpservlet_8h}\index{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservlet.\+h@{/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservlet.\+h}}
-}
-{\ttfamily \#include $<$Q\+String$>$}\\*
-{\ttfamily \#include \char`\"{}httpservletrequest.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$Q\+String$>$}\newline
+{\ttfamily \#include \char`\"{}variant.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}httpservletrequest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cppwebframework\+\_\+global.\+h\char`\"{}}\newline
 Include dependency graph for httpservlet.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,16 +21,5 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_c_w_f_1_1_http_servlet}{C\+W\+F\+::\+Http\+Servlet}
-\begin{DoxyCompactList}\small\item\em The \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_c_w_f_1_1_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
- \hyperlink{namespace_c_w_f}{C\+W\+F}
-\begin{DoxyCompactList}\small\item\em All classes of C++ Web Framework are contained within the namespace \hyperlink{namespace_c_w_f}{C\+W\+F}. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Detailed Description}
-\begin{DoxyAuthor}{Author}
-Herik Lima 
-\end{DoxyAuthor}
+class \hyperlink{class_http_servlet}{Http\+Servlet}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_http_servlet}{Http\+Servlet} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_http_servlet}{Http\+Servlet} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new servlet that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}

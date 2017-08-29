@@ -76,9 +76,9 @@ void HttpSession::invalidate()
     expired = 1;
 }
 
-void HttpSession::removeAttribute(const QString &name)
+int HttpSession::removeAttribute(const QString &name)
 {
-    attributes.remove(name);
+    return attributes.remove(name);
 }
 
 void HttpSession::addAttribute(const QString &name, QObject *value)

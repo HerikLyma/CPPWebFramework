@@ -1,0 +1,575 @@
+\hypertarget{class_q_map_thread_safety}{}\section{Q\+Map\+Thread\+Safety$<$ Key, T $>$ Class Template Reference}
+\label{class_q_map_thread_safety}\index{Q\+Map\+Thread\+Safety$<$ Key, T $>$@{Q\+Map\+Thread\+Safety$<$ Key, T $>$}}
+
+
+The \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} class is a thread safe Q\+Map.  
+
+
+
+
+{\ttfamily \#include $<$qmapthreadsafety.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Q\+Map$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}
+\item 
+typedef Q\+Map$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_map_thread_safety_a8fb3ac28b9f65184a844cf76938df0f6}{Q\+Map\+Thread\+Safety} ()=default
+\item 
+\hyperlink{class_q_map_thread_safety_a8b1bc71d8c92c4d01b6b3baae9787bb4}{Q\+Map\+Thread\+Safety} (std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$$>$ \&list)
+\item 
+\hyperlink{class_q_map_thread_safety_a368c8f4f05a48864209ab6ff5cf2f090}{Q\+Map\+Thread\+Safety} (const Q\+Map$<$ Key, T $>$ \&other)
+\item 
+\hyperlink{class_q_map_thread_safety_a1335c04a2df7eda320f7a778854531fc}{Q\+Map\+Thread\+Safety} (const std\+::map$<$ Key, T $>$ \&other)
+\item 
+\hyperlink{class_q_map_thread_safety_a9aacfb2a81fb927546a222cbfd78000d}{Q\+Map\+Thread\+Safety} (Q\+Map$<$ Key, T $>$ \&\&other)
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_ac197a5375913e4ac19910b9bc4191a95}{begin} () const
+\begin{DoxyCompactList}\small\item\em This method retuns the begin iterator. \end{DoxyCompactList}\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_aeddc5f7a55aebb3e93d78cf30a3dd2e1}{cbegin} () const
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_a199144509173057ede04d61f7294b266}{cend} () const
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_a300f55a4c8e8ed3b5ccc2824dc18e60c}{const\+Begin} () const
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_aa98a2af8cafc423c6bc6a04fec106b39}{const\+End} () const
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_ac364cabf8837a0b174016656b6bda81b}{const\+Find} (const Key \&key) const
+\item 
+bool \hyperlink{class_q_map_thread_safety_acaafd9933cb391e27a81c26df712786b}{contains} (const Key \&key) const
+\begin{DoxyCompactList}\small\item\em This method checks if the map contains and specific element given a specific key. \end{DoxyCompactList}\item 
+int \hyperlink{class_q_map_thread_safety_a4542fc3dc112550bf8b0833338bfcaaf}{count} (const Key \&key) const
+\item 
+int \hyperlink{class_q_map_thread_safety_a8adacf9b06525045bd79c909cea90f0a}{count} () const
+\item 
+bool \hyperlink{class_q_map_thread_safety_a5becb3980d1b35a27edde74f78ed43e2}{empty} () const
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a64a700a04a692176f00e119500dd1b23}{end} ()
+\begin{DoxyCompactList}\small\item\em This method retuns the end iterator. \end{DoxyCompactList}\item 
+Q\+Pair$<$ \hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}, \hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} $>$ \hyperlink{class_q_map_thread_safety_aea999f181f31f0ac6bd01bcc016a673c}{equal\+\_\+range} (const Key \&key)
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a11c11617434ce781961ee8f722208d0e}{erase} (\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} pos)
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a3e4df3d688c99d259c6245a6f612c096}{find} (const Key \&key)
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_a2564aae6f1946dfc48ae0576f4de0434}{find} (const Key \&key) const
+\item 
+T \& \hyperlink{class_q_map_thread_safety_a3709dc412a794c75c4f678409324006f}{first} ()
+\item 
+const T \& \hyperlink{class_q_map_thread_safety_ac2f2f58bb6a3dbd370134a96d3310222}{first} () const
+\item 
+const Key \& \hyperlink{class_q_map_thread_safety_ae1f69d7b72decd18f00f97d70e3daf88}{first\+Key} () const
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a156afe871591b26ce155da6ce6409ad6}{insert} (const Key \&key, const T \&\hyperlink{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}{value})
+\begin{DoxyCompactList}\small\item\em This method inserts a new key and value in the map. \end{DoxyCompactList}\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a479e559360d2ba5471304b3dc9deb9dd}{insert} (\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} pos, const Key \&key, const T \&\hyperlink{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}{value})
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_adb0bc3f6ee968de8b71a141bcc517d4c}{insert\+Multi} (const Key \&key, const T \&\hyperlink{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}{value})
+\item 
+bool \hyperlink{class_q_map_thread_safety_a2dc915bd74285298d93eb17440587931}{is\+Empty} () const
+\item 
+Q\+List$<$ Key $>$ \hyperlink{class_q_map_thread_safety_a51d0d694a419e2d0958b16f7089ab444}{keys} () const
+\item 
+Q\+List$<$ Key $>$ \hyperlink{class_q_map_thread_safety_a721c6cae55a5c046a2fca6efc8fa49c3}{keys} (const T \&\hyperlink{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}{value}) const
+\item 
+T \& \hyperlink{class_q_map_thread_safety_a87a87d963bc7624cc6330060d5a65f85}{last} ()
+\item 
+const T \& \hyperlink{class_q_map_thread_safety_a60bbb036a7cb0b05254a0171ad81e2db}{last} () const
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_a0589ec5e16479a92c0c50f86b32c1307}{lower\+Bound} (const Key \&key)
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_a21e8f53194d173f6cedb8d60a86a4a19}{lower\+Bound} (const Key \&key) const
+\item 
+int \hyperlink{class_q_map_thread_safety_a91e703ad03572023876108c2b7bc3540}{remove} (const Key \&key)
+\begin{DoxyCompactList}\small\item\em This method removes a specific element given a specific key. \end{DoxyCompactList}\item 
+int \hyperlink{class_q_map_thread_safety_a0331b4ea9616aa81d1ede4066113c35b}{size} () const
+\item 
+void \hyperlink{class_q_map_thread_safety_addcefa9985e7fa96939eca2a8e2b1fcc}{swap} (Q\+Map$<$ Key, T $>$ \&other)
+\item 
+T \hyperlink{class_q_map_thread_safety_a03f5056559f4d0f2500ddcb8ddf55098}{take} (const Key \&key)
+\item 
+std\+::map$<$ Key, T $>$ \hyperlink{class_q_map_thread_safety_ad145bbf62ebe8d796ed1a8216bfbe69d}{to\+Std\+Map} () const
+\item 
+Q\+List$<$ Key $>$ \hyperlink{class_q_map_thread_safety_a8d3498ec21684e0c221ce2eddb437ecd}{unique\+Keys} () const
+\item 
+Q\+Map$<$ Key, T $>$ \& \hyperlink{class_q_map_thread_safety_a784205cd91eaed840f8d2554a07d3c22}{unite} (const Q\+Map$<$ Key, T $>$ \&other)
+\item 
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety_aa43810522d484b2364777e0701486109}{upper\+Bound} (const Key \&key)
+\item 
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety_a24c3c21d5d756ff3592a3139a9710995}{upper\+Bound} (const Key \&key) const
+\item 
+const T \hyperlink{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}{value} (const Key \&key, const T \&default\+Value=T()) const
+\item 
+Q\+List$<$ T $>$ \hyperlink{class_q_map_thread_safety_a6395316e7fec3faea0dcf150a3dab897}{values} () const
+\item 
+Q\+List$<$ T $>$ \hyperlink{class_q_map_thread_safety_afffdf1fc9bd98f9bfede07549533da53}{values} (const Key \&key) const
+\item 
+bool \hyperlink{class_q_map_thread_safety_a48d648aa531db7c8ecd7f2efe2153707}{operator!=} (const Q\+Map$<$ Key, T $>$ \&other) const
+\item 
+Q\+Map$<$ Key, T $>$ \& \hyperlink{class_q_map_thread_safety_af33ed0b71924a4281f4f25bf5eda1cfd}{operator=} (const Q\+Map$<$ Key, T $>$ \&other)
+\item 
+Q\+Map$<$ Key, T $>$ \& \hyperlink{class_q_map_thread_safety_a0845272b1bc863dd153607e63efa839d}{operator=} (Q\+Map$<$ Key, T $>$ \&\&other)
+\item 
+bool \hyperlink{class_q_map_thread_safety_a343008196414aa4fe66ff2de5ca29986}{operator==} (const Q\+Map$<$ Key, T $>$ \&other) const
+\item 
+T \& \hyperlink{class_q_map_thread_safety_ac9c974843e1bbf7f4bff2acc4f88f300}{operator\mbox{[}$\,$\mbox{]}} (const Key \&key)
+\item 
+const T \hyperlink{class_q_map_thread_safety_a0cdacf0e7048c4ef7e0960a371c32668}{operator\mbox{[}$\,$\mbox{]}} (const Key \&key) const
+\begin{DoxyCompactList}\small\item\em This method is an overload of the operator \mbox{[}\mbox{]} and returns a value given a specific key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Key, typename T$>$\newline
+class Q\+Map\+Thread\+Safety$<$ Key, T $>$}
+
+The \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} class is a thread safe Q\+Map. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}\label{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+typedef Q\+Map$<$Key, T$>$\+::\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}\label{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!iterator@{iterator}}
+\index{iterator@{iterator}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+typedef Q\+Map$<$Key, T$>$\+::\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_q_map_thread_safety_a8fb3ac28b9f65184a844cf76938df0f6}\label{class_q_map_thread_safety_a8fb3ac28b9f65184a844cf76938df0f6}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{Q\+Map\+Thread\+Safety()}{QMapThreadSafety()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a8b1bc71d8c92c4d01b6b3baae9787bb4}\label{class_q_map_thread_safety_a8b1bc71d8c92c4d01b6b3baae9787bb4}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{Q\+Map\+Thread\+Safety()}{QMapThreadSafety()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ std\+::pair$<$ Key, T $>$$>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a368c8f4f05a48864209ab6ff5cf2f090}\label{class_q_map_thread_safety_a368c8f4f05a48864209ab6ff5cf2f090}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{Q\+Map\+Thread\+Safety()}{QMapThreadSafety()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a1335c04a2df7eda320f7a778854531fc}\label{class_q_map_thread_safety_a1335c04a2df7eda320f7a778854531fc}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{Q\+Map\+Thread\+Safety()}{QMapThreadSafety()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} (\begin{DoxyParamCaption}\item[{const std\+::map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a9aacfb2a81fb927546a222cbfd78000d}\label{class_q_map_thread_safety_a9aacfb2a81fb927546a222cbfd78000d}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{Q\+Map\+Thread\+Safety()}{QMapThreadSafety()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety} (\begin{DoxyParamCaption}\item[{Q\+Map$<$ Key, T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_map_thread_safety_ac197a5375913e4ac19910b9bc4191a95}\label{class_q_map_thread_safety_ac197a5375913e4ac19910b9bc4191a95}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!begin@{begin}}
+\index{begin@{begin}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method retuns the begin iterator. 
+
+\begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_q_map_thread_safety_aeddc5f7a55aebb3e93d78cf30a3dd2e1}\label{class_q_map_thread_safety_aeddc5f7a55aebb3e93d78cf30a3dd2e1}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a199144509173057ede04d61f7294b266}\label{class_q_map_thread_safety_a199144509173057ede04d61f7294b266}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!cend@{cend}}
+\index{cend@{cend}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a300f55a4c8e8ed3b5ccc2824dc18e60c}\label{class_q_map_thread_safety_a300f55a4c8e8ed3b5ccc2824dc18e60c}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!const\+Begin@{const\+Begin}}
+\index{const\+Begin@{const\+Begin}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{const\+Begin()}{constBegin()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::const\+Begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_aa98a2af8cafc423c6bc6a04fec106b39}\label{class_q_map_thread_safety_aa98a2af8cafc423c6bc6a04fec106b39}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!const\+End@{const\+End}}
+\index{const\+End@{const\+End}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{const\+End()}{constEnd()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::const\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_ac364cabf8837a0b174016656b6bda81b}\label{class_q_map_thread_safety_ac364cabf8837a0b174016656b6bda81b}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!const\+Find@{const\+Find}}
+\index{const\+Find@{const\+Find}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{const\+Find()}{constFind()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::const\+Find (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_acaafd9933cb391e27a81c26df712786b}\label{class_q_map_thread_safety_acaafd9933cb391e27a81c26df712786b}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!contains@{contains}}
+\index{contains@{contains}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+bool \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::contains (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method checks if the map contains and specific element given a specific key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \+: This represents the key that you want to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if find the key and false if not find. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_q_map_thread_safety_a4542fc3dc112550bf8b0833338bfcaaf}\label{class_q_map_thread_safety_a4542fc3dc112550bf8b0833338bfcaaf}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!count@{count}}
+\index{count@{count}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+int \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::count (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a8adacf9b06525045bd79c909cea90f0a}\label{class_q_map_thread_safety_a8adacf9b06525045bd79c909cea90f0a}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!count@{count}}
+\index{count@{count}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{count()}{count()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+int \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a5becb3980d1b35a27edde74f78ed43e2}\label{class_q_map_thread_safety_a5becb3980d1b35a27edde74f78ed43e2}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!empty@{empty}}
+\index{empty@{empty}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+bool \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a64a700a04a692176f00e119500dd1b23}\label{class_q_map_thread_safety_a64a700a04a692176f00e119500dd1b23}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!end@{end}}
+\index{end@{end}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method retuns the end iterator. 
+
+\begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_q_map_thread_safety_aea999f181f31f0ac6bd01bcc016a673c}\label{class_q_map_thread_safety_aea999f181f31f0ac6bd01bcc016a673c}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!equal\+\_\+range@{equal\+\_\+range}}
+\index{equal\+\_\+range@{equal\+\_\+range}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{equal\+\_\+range()}{equal\_range()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+Pair$<$\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}, \hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::equal\+\_\+range (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a11c11617434ce781961ee8f722208d0e}\label{class_q_map_thread_safety_a11c11617434ce781961ee8f722208d0e}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!erase@{erase}}
+\index{erase@{erase}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a3e4df3d688c99d259c6245a6f612c096}\label{class_q_map_thread_safety_a3e4df3d688c99d259c6245a6f612c096}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!find@{find}}
+\index{find@{find}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::find (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a2564aae6f1946dfc48ae0576f4de0434}\label{class_q_map_thread_safety_a2564aae6f1946dfc48ae0576f4de0434}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!find@{find}}
+\index{find@{find}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::find (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a3709dc412a794c75c4f678409324006f}\label{class_q_map_thread_safety_a3709dc412a794c75c4f678409324006f}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!first@{first}}
+\index{first@{first}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+T\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_ac2f2f58bb6a3dbd370134a96d3310222}\label{class_q_map_thread_safety_ac2f2f58bb6a3dbd370134a96d3310222}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!first@{first}}
+\index{first@{first}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{first()}{first()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+const T\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_ae1f69d7b72decd18f00f97d70e3daf88}\label{class_q_map_thread_safety_ae1f69d7b72decd18f00f97d70e3daf88}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!first\+Key@{first\+Key}}
+\index{first\+Key@{first\+Key}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{first\+Key()}{firstKey()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+const Key\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::first\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a156afe871591b26ce155da6ce6409ad6}\label{class_q_map_thread_safety_a156afe871591b26ce155da6ce6409ad6}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!insert@{insert}}
+\index{insert@{insert}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::insert (\begin{DoxyParamCaption}\item[{const Key \&}]{key,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method inserts a new key and value in the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \+: This represents the key that will be insert. \\
+\hline
+{\em value} & \+: This represents the value that will be insert. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_q_map_thread_safety_a479e559360d2ba5471304b3dc9deb9dd}\label{class_q_map_thread_safety_a479e559360d2ba5471304b3dc9deb9dd}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!insert@{insert}}
+\index{insert@{insert}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator}}]{pos,  }\item[{const Key \&}]{key,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_adb0bc3f6ee968de8b71a141bcc517d4c}\label{class_q_map_thread_safety_adb0bc3f6ee968de8b71a141bcc517d4c}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!insert\+Multi@{insert\+Multi}}
+\index{insert\+Multi@{insert\+Multi}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{insert\+Multi()}{insertMulti()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::insert\+Multi (\begin{DoxyParamCaption}\item[{const Key \&}]{key,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a2dc915bd74285298d93eb17440587931}\label{class_q_map_thread_safety_a2dc915bd74285298d93eb17440587931}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+bool \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a51d0d694a419e2d0958b16f7089ab444}\label{class_q_map_thread_safety_a51d0d694a419e2d0958b16f7089ab444}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!keys@{keys}}
+\index{keys@{keys}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{keys()}{keys()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+List$<$Key$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a721c6cae55a5c046a2fca6efc8fa49c3}\label{class_q_map_thread_safety_a721c6cae55a5c046a2fca6efc8fa49c3}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!keys@{keys}}
+\index{keys@{keys}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{keys()}{keys()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+List$<$Key$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::keys (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a87a87d963bc7624cc6330060d5a65f85}\label{class_q_map_thread_safety_a87a87d963bc7624cc6330060d5a65f85}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!last@{last}}
+\index{last@{last}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{last()}{last()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+T\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a60bbb036a7cb0b05254a0171ad81e2db}\label{class_q_map_thread_safety_a60bbb036a7cb0b05254a0171ad81e2db}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!last@{last}}
+\index{last@{last}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{last()}{last()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+const T\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a0589ec5e16479a92c0c50f86b32c1307}\label{class_q_map_thread_safety_a0589ec5e16479a92c0c50f86b32c1307}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!lower\+Bound@{lower\+Bound}}
+\index{lower\+Bound@{lower\+Bound}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{lower\+Bound()}{lowerBound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::lower\+Bound (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a21e8f53194d173f6cedb8d60a86a4a19}\label{class_q_map_thread_safety_a21e8f53194d173f6cedb8d60a86a4a19}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!lower\+Bound@{lower\+Bound}}
+\index{lower\+Bound@{lower\+Bound}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{lower\+Bound()}{lowerBound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::lower\+Bound (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a48d648aa531db7c8ecd7f2efe2153707}\label{class_q_map_thread_safety_a48d648aa531db7c8ecd7f2efe2153707}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+bool \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_af33ed0b71924a4281f4f25bf5eda1cfd}\label{class_q_map_thread_safety_af33ed0b71924a4281f4f25bf5eda1cfd}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator=@{operator=}}
+\index{operator=@{operator=}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+Map$<$Key, T$>$\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a0845272b1bc863dd153607e63efa839d}\label{class_q_map_thread_safety_a0845272b1bc863dd153607e63efa839d}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator=@{operator=}}
+\index{operator=@{operator=}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+Map$<$Key, T$>$\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{Q\+Map$<$ Key, T $>$ \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a343008196414aa4fe66ff2de5ca29986}\label{class_q_map_thread_safety_a343008196414aa4fe66ff2de5ca29986}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator==@{operator==}}
+\index{operator==@{operator==}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+bool \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_ac9c974843e1bbf7f4bff2acc4f88f300}\label{class_q_map_thread_safety_ac9c974843e1bbf7f4bff2acc4f88f300}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+T\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a0cdacf0e7048c4ef7e0960a371c32668}\label{class_q_map_thread_safety_a0cdacf0e7048c4ef7e0960a371c32668}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+const T \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is an overload of the operator \mbox{[}\mbox{]} and returns a value given a specific key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \+: This represents the key that you want to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_q_map_thread_safety_a91e703ad03572023876108c2b7bc3540}\label{class_q_map_thread_safety_a91e703ad03572023876108c2b7bc3540}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!remove@{remove}}
+\index{remove@{remove}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+int \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::remove (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method removes a specific element given a specific key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \+: This represents the key that will be insert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_q_map_thread_safety_a0331b4ea9616aa81d1ede4066113c35b}\label{class_q_map_thread_safety_a0331b4ea9616aa81d1ede4066113c35b}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!size@{size}}
+\index{size@{size}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+int \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_addcefa9985e7fa96939eca2a8e2b1fcc}\label{class_q_map_thread_safety_addcefa9985e7fa96939eca2a8e2b1fcc}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!swap@{swap}}
+\index{swap@{swap}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+void \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::swap (\begin{DoxyParamCaption}\item[{Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a03f5056559f4d0f2500ddcb8ddf55098}\label{class_q_map_thread_safety_a03f5056559f4d0f2500ddcb8ddf55098}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!take@{take}}
+\index{take@{take}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{take()}{take()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+T \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::take (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_ad145bbf62ebe8d796ed1a8216bfbe69d}\label{class_q_map_thread_safety_ad145bbf62ebe8d796ed1a8216bfbe69d}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!to\+Std\+Map@{to\+Std\+Map}}
+\index{to\+Std\+Map@{to\+Std\+Map}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{to\+Std\+Map()}{toStdMap()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+std\+::map$<$Key, T$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::to\+Std\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a8d3498ec21684e0c221ce2eddb437ecd}\label{class_q_map_thread_safety_a8d3498ec21684e0c221ce2eddb437ecd}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!unique\+Keys@{unique\+Keys}}
+\index{unique\+Keys@{unique\+Keys}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{unique\+Keys()}{uniqueKeys()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+List$<$Key$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::unique\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a784205cd91eaed840f8d2554a07d3c22}\label{class_q_map_thread_safety_a784205cd91eaed840f8d2554a07d3c22}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!unite@{unite}}
+\index{unite@{unite}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{unite()}{unite()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+Map$<$Key, T$>$\& \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::unite (\begin{DoxyParamCaption}\item[{const Q\+Map$<$ Key, T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_aa43810522d484b2364777e0701486109}\label{class_q_map_thread_safety_aa43810522d484b2364777e0701486109}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!upper\+Bound@{upper\+Bound}}
+\index{upper\+Bound@{upper\+Bound}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{upper\+Bound()}{upperBound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_a454c8af3f68e6d61aecaf1b918aa525b}{iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::upper\+Bound (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a24c3c21d5d756ff3592a3139a9710995}\label{class_q_map_thread_safety_a24c3c21d5d756ff3592a3139a9710995}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!upper\+Bound@{upper\+Bound}}
+\index{upper\+Bound@{upper\+Bound}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{upper\+Bound()}{upperBound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+\hyperlink{class_q_map_thread_safety_aa58d8479729f72b33e305a4d0ca957bd}{const\+\_\+iterator} \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::upper\+Bound (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}\label{class_q_map_thread_safety_a3c5caec402261554fd4d73e36e9ca6bc}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!value@{value}}
+\index{value@{value}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+const T \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::value (\begin{DoxyParamCaption}\item[{const Key \&}]{key,  }\item[{const T \&}]{default\+Value = {\ttfamily T()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_a6395316e7fec3faea0dcf150a3dab897}\label{class_q_map_thread_safety_a6395316e7fec3faea0dcf150a3dab897}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!values@{values}}
+\index{values@{values}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{values()}{values()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+List$<$T$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_q_map_thread_safety_afffdf1fc9bd98f9bfede07549533da53}\label{class_q_map_thread_safety_afffdf1fc9bd98f9bfede07549533da53}} 
+\index{Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}!values@{values}}
+\index{values@{values}!Q\+Map\+Thread\+Safety@{Q\+Map\+Thread\+Safety}}
+\subsubsection{\texorpdfstring{values()}{values()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Key, typename T$>$ \\
+Q\+List$<$T$>$ \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Key, T $>$\+::values (\begin{DoxyParamCaption}\item[{const Key \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{qmapthreadsafety_8h}{qmapthreadsafety.\+h}\end{DoxyCompactItemize}

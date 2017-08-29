@@ -1,0 +1,86 @@
+\hypertarget{class_cpp_web_server}{}\section{Cpp\+Web\+Server Class Reference}
+\label{class_cpp_web_server}\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+
+
+The \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} class is a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} server, responsable to receive and dispatch the requisitions.  
+
+
+
+
+{\ttfamily \#include $<$cppwebserver.\+h$>$}
+
+
+
+Inheritance diagram for Cpp\+Web\+Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{class_cpp_web_server__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cpp_web_server_a7cfe4db08561ebe79168d8b638a6cd7f}{Cpp\+Web\+Server} (\hyperlink{class_filter}{Filter} $\ast$filter=nullptr)
+\begin{DoxyCompactList}\small\item\em Load S\+SL configuration, configure the thread pool and the filter. \end{DoxyCompactList}\item 
+\hyperlink{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}{$\sim$\+Cpp\+Web\+Server} ()
+\begin{DoxyCompactList}\small\item\em Destroys all servlets and sessions. \end{DoxyCompactList}\item 
+void \hyperlink{class_cpp_web_server_ae94dcf116776b97ec7d5a00cde87c6bd}{add\+Url\+Servlet} (const Q\+String \&url, \hyperlink{class_http_servlet}{Http\+Servlet} $\ast$servlet)
+\begin{DoxyCompactList}\small\item\em Hitches a url to a Servlet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} class is a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} server, responsable to receive and dispatch the requisitions. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cpp_web_server_a7cfe4db08561ebe79168d8b638a6cd7f}\label{class_cpp_web_server_a7cfe4db08561ebe79168d8b638a6cd7f}} 
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\subsubsection{\texorpdfstring{Cpp\+Web\+Server()}{CppWebServer()}}
+{\footnotesize\ttfamily Cpp\+Web\+Server\+::\+Cpp\+Web\+Server (\begin{DoxyParamCaption}\item[{\hyperlink{class_filter}{Filter} $\ast$}]{filter = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Load S\+SL configuration, configure the thread pool and the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{class_filter}{Filter}} & $\ast$filter \+: Install a filter for requests on the server. Optional. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}\label{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}} 
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!````~Cpp\+Web\+Server@{$\sim$\+Cpp\+Web\+Server}}
+\index{````~Cpp\+Web\+Server@{$\sim$\+Cpp\+Web\+Server}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\subsubsection{\texorpdfstring{$\sim$\+Cpp\+Web\+Server()}{~CppWebServer()}}
+{\footnotesize\ttfamily Cpp\+Web\+Server\+::$\sim$\+Cpp\+Web\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys all servlets and sessions. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cpp_web_server_ae94dcf116776b97ec7d5a00cde87c6bd}\label{class_cpp_web_server_ae94dcf116776b97ec7d5a00cde87c6bd}} 
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!add\+Url\+Servlet@{add\+Url\+Servlet}}
+\index{add\+Url\+Servlet@{add\+Url\+Servlet}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\subsubsection{\texorpdfstring{add\+Url\+Servlet()}{addUrlServlet()}}
+{\footnotesize\ttfamily void Cpp\+Web\+Server\+::add\+Url\+Servlet (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{url,  }\item[{\hyperlink{class_http_servlet}{Http\+Servlet} $\ast$}]{servlet }\end{DoxyParamCaption})}
+
+
+
+Hitches a url to a Servlet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&url \+: Url name. \\
+\hline
+{\em \hyperlink{class_http_servlet}{Http\+Servlet}} & $\ast$servlet \+: Servlet that will answer requests made to url. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cppwebserver_8h}{cppwebserver.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cppwebserver_8cpp}{cppwebserver.\+cpp}\end{DoxyCompactItemize}

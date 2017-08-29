@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['properties',['Properties',['../class_c_w_f_1_1_properties.html#a417638a2312fba16104f19bc59190b35',1,'CWF::Properties::Properties()=default'],['../class_c_w_f_1_1_properties.html#ad37244d75ca8ae82b8122b2f5d6952a2',1,'CWF::Properties::Properties(const QString &amp;classAndMethod)']]],
-  ['putfirstbar',['putFirstBar',['../class_c_w_f_1_1_file_manager.html#af1c46c869cd3eece80c937556ecef9c8',1,'CWF::FileManager']]]
+  ['paramdecode',['paramDecode',['../class_u_r_l_encoder.html#a8780e1a9f6186726c83776a5c3543b6e',1,'URLEncoder']]],
+  ['paramencode',['paramEncode',['../class_u_r_l_encoder.html#a1621d8a57c2fd83dabce790a8eeef976',1,'URLEncoder']]],
+  ['properties',['Properties',['../class_properties.html#a8ec1c6bfb9eb2da106cffba3a3d5c18e',1,'Properties']]],
+  ['putfirstbar',['putFirstBar',['../class_file_manager.html#a1fac5226f52353dd6e928ce25ae5c1cb',1,'FileManager']]]
 ];

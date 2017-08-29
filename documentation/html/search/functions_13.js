@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['validate',['validate',['../class_c_w_f_1_1_http_session.html#a9702d3c0b959cb59aac53d9eb9a05fd7',1,'CWF::HttpSession']]],
-  ['value',['value',['../class_c_w_f_1_1_q_map_thread_safety.html#a185ea368c05d4a7c8311b6f32909cf9b',1,'CWF::QMapThreadSafety']]],
-  ['values',['values',['../class_c_w_f_1_1_q_map_thread_safety.html#a3a0154af2bbadc389a6b0b45c1a64c19',1,'CWF::QMapThreadSafety::values() const '],['../class_c_w_f_1_1_q_map_thread_safety.html#a83b7a0c82b2928a279d8a1ace410cc04',1,'CWF::QMapThreadSafety::values(const Key &amp;key) const ']]]
+  ['validate',['validate',['../class_http_session.html#adc118d02431eec30977bd1cb3429eb79',1,'HttpSession']]],
+  ['value',['value',['../class_q_map_thread_safety.html#a3c5caec402261554fd4d73e36e9ca6bc',1,'QMapThreadSafety']]],
+  ['values',['values',['../class_q_map_thread_safety.html#a6395316e7fec3faea0dcf150a3dab897',1,'QMapThreadSafety::values() const'],['../class_q_map_thread_safety.html#afffdf1fc9bd98f9bfede07549533da53',1,'QMapThreadSafety::values(const Key &amp;key) const']]],
+  ['variant',['Variant',['../class_variant.html#a594b84b7c7a7e997aac3354bbdaa2d97',1,'Variant::Variant()=default'],['../class_variant.html#a4bca2cf3c097e4fa9aea5c87c947e9a0',1,'Variant::Variant(int value)'],['../class_variant.html#a7e7d9a46e166e059ce75b76b92b11457',1,'Variant::Variant(double value)'],['../class_variant.html#a6f86cea152e761f48700e41f210fe251',1,'Variant::Variant(qlonglong value)'],['../class_variant.html#a2a2d8b7cc035142a795f86d481adde0c',1,'Variant::Variant(const QString &amp;value)']]]
 ];

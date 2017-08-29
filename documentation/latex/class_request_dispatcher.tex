@@ -1,0 +1,77 @@
+\hypertarget{class_request_dispatcher}{}\section{Request\+Dispatcher Class Reference}
+\label{class_request_dispatcher}\index{Request\+Dispatcher@{Request\+Dispatcher}}
+
+
+The \hyperlink{class_request_dispatcher}{Request\+Dispatcher} class can be used to dispatch a requisition to a xhtml page.  
+
+
+
+
+{\ttfamily \#include $<$requestdispatcher.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_request_dispatcher_accb486106fd9d814d44222594a174fbb}{Request\+Dispatcher} (const Q\+String \&path)
+\begin{DoxyCompactList}\small\item\em This constructor receives a path to a xhtml file. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_request_dispatcher_a1b09805ab31a0f96d9823a2bf9de3771}{$\sim$\+Request\+Dispatcher} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_request_dispatcher_aa3ccc7d3debc6555da0f6e437cfb036e}{forward} (C\+W\+F\+::\+Http\+Servlet\+Request \&request, C\+W\+F\+::\+Http\+Servlet\+Response \&response)
+\begin{DoxyCompactList}\small\item\em This method will dispatch the xhtml file specificated in path to the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler}, the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler} will compile the xhtml file and returns the result. After this, the \hyperlink{class_request_dispatcher}{Request\+Dispatcher} will take the return and write it on the response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_request_dispatcher}{Request\+Dispatcher} class can be used to dispatch a requisition to a xhtml page. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_request_dispatcher_accb486106fd9d814d44222594a174fbb}\label{class_request_dispatcher_accb486106fd9d814d44222594a174fbb}} 
+\index{Request\+Dispatcher@{Request\+Dispatcher}!Request\+Dispatcher@{Request\+Dispatcher}}
+\index{Request\+Dispatcher@{Request\+Dispatcher}!Request\+Dispatcher@{Request\+Dispatcher}}
+\subsubsection{\texorpdfstring{Request\+Dispatcher()}{RequestDispatcher()}}
+{\footnotesize\ttfamily \hyperlink{cppwebframework__global_8h_a7492e9498cbaf9cd17dbc2215d3a0e48}{C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE} Request\+Dispatcher\+::\+Request\+Dispatcher (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This constructor receives a path to a xhtml file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&path \+: Path to the xhtml file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_request_dispatcher_a1b09805ab31a0f96d9823a2bf9de3771}\label{class_request_dispatcher_a1b09805ab31a0f96d9823a2bf9de3771}} 
+\index{Request\+Dispatcher@{Request\+Dispatcher}!````~Request\+Dispatcher@{$\sim$\+Request\+Dispatcher}}
+\index{````~Request\+Dispatcher@{$\sim$\+Request\+Dispatcher}!Request\+Dispatcher@{Request\+Dispatcher}}
+\subsubsection{\texorpdfstring{$\sim$\+Request\+Dispatcher()}{~RequestDispatcher()}}
+{\footnotesize\ttfamily Request\+Dispatcher\+::$\sim$\+Request\+Dispatcher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_dispatcher_aa3ccc7d3debc6555da0f6e437cfb036e}\label{class_request_dispatcher_aa3ccc7d3debc6555da0f6e437cfb036e}} 
+\index{Request\+Dispatcher@{Request\+Dispatcher}!forward@{forward}}
+\index{forward@{forward}!Request\+Dispatcher@{Request\+Dispatcher}}
+\subsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily void Request\+Dispatcher\+::forward (\begin{DoxyParamCaption}\item[{C\+W\+F\+::\+Http\+Servlet\+Request \&}]{request,  }\item[{C\+W\+F\+::\+Http\+Servlet\+Response \&}]{response }\end{DoxyParamCaption})}
+
+
+
+This method will dispatch the xhtml file specificated in path to the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler}, the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler} will compile the xhtml file and returns the result. After this, the \hyperlink{class_request_dispatcher}{Request\+Dispatcher} will take the return and write it on the response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em C\+W\+F\+::\+Http\+Servlet\+Request} & \&request \+: Used to process the response. \\
+\hline
+{\em C\+W\+F\+::\+Http\+Servlet\+Response} & \&response \+: Used to response. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{requestdispatcher_8h}{requestdispatcher.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{requestdispatcher_8cpp}{requestdispatcher.\+cpp}\end{DoxyCompactItemize}

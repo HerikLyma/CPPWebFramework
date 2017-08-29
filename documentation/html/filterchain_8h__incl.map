@@ -1,12 +1,14 @@
 <map id="/home/herik/CPPWebFramework/CPPWebFramework/cwf/filterchain.h" name="/home/herik/CPPWebFramework/CPPWebFramework/cwf/filterchain.h">
-<area shape="rect" id="node2" href="$filemanager_8h.html" title="filemanager.h" alt="" coords="487,244,587,271"/>
-<area shape="rect" id="node5" href="$httpservletrequest_8h.html" title="httpservletrequest.h" alt="" coords="615,169,753,196"/>
-<area shape="rect" id="node21" href="$requestdispatcher_8h.html" title="requestdispatcher.h" alt="" coords="328,244,464,271"/>
-<area shape="rect" id="node22" href="$httpparser_8h.html" title="httpparser.h" alt="" coords="1243,244,1333,271"/>
-<area shape="rect" id="node24" href="$httpservletresponse_8h.html" title="httpservletresponse.h" alt="" coords="845,244,992,271"/>
-<area shape="rect" id="node26" href="$httpservlet_8h.html" title="httpservlet.h" alt="" coords="575,95,670,121"/>
-<area shape="rect" id="node27" href="$httprequestmethod_8h.html" title="httprequestmethod.h" alt="" coords="15,169,156,196"/>
-<area shape="rect" id="node8" href="$httpsession_8h.html" title="httpsession.h" alt="" coords="611,244,711,271"/>
-<area shape="rect" id="node10" href="$httpcookie_8h.html" title="httpcookie.h" alt="" coords="1200,319,1293,345"/>
-<area shape="rect" id="node19" href="$qmapthreadsafety_8h.html" title="qmapthreadsafety.h" alt="" coords="309,319,446,345"/>
+<area shape="rect" id="node2" href="$filemanager_8h.html" title="filemanager.h" alt="" coords="497,244,597,271"/>
+<area shape="rect" id="node5" href="$cppwebframework__global_8h.html" title="cppwebframework_global.h" alt="" coords="606,393,786,420"/>
+<area shape="rect" id="node7" href="$httpservletrequest_8h.html" title="httpservletrequest.h" alt="" coords="657,169,794,196"/>
+<area shape="rect" id="node24" href="$requestdispatcher_8h.html" title="requestdispatcher.h" alt="" coords="336,244,472,271"/>
+<area shape="rect" id="node25" href="$httpparser_8h.html" title="httpparser.h" alt="" coords="120,244,211,271"/>
+<area shape="rect" id="node27" href="$httpservletresponse_8h.html" title="httpservletresponse.h" alt="" coords="887,244,1033,271"/>
+<area shape="rect" id="node29" href="$httpservlet_8h.html" title="httpservlet.h" alt="" coords="386,95,481,121"/>
+<area shape="rect" id="node32" href="$constants_8h.html" title="constants.h" alt="" coords="5,244,96,271"/>
+<area shape="rect" id="node10" href="$httpsession_8h.html" title="httpsession.h" alt="" coords="1618,244,1718,271"/>
+<area shape="rect" id="node12" href="$httpcookie_8h.html" title="httpcookie.h" alt="" coords="913,319,1007,345"/>
+<area shape="rect" id="node22" href="$qmapthreadsafety_8h.html" title="qmapthreadsafety.h" alt="" coords="1894,319,2031,345"/>
+<area shape="rect" id="node30" href="$variant_8h.html" title="variant.h" alt="" coords="672,244,744,271"/>
 </map>

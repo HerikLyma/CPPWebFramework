@@ -9,6 +9,7 @@
 #define HTTPSERVLET_H
 
 #include <QString>
+#include "variant.h"
 #include "httpservletrequest.h"
 #include "cppwebframework_global.h"
 

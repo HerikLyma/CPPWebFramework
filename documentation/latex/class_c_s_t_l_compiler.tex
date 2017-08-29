@@ -1,0 +1,65 @@
+\hypertarget{class_c_s_t_l_compiler}{}\section{C\+S\+T\+L\+Compiler Class Reference}
+\label{class_c_s_t_l_compiler}\index{C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
+
+
+This class compiles xhtml pages with \hyperlink{namespace_c_s_t_l}{C\+S\+TL} (C++ Server Pages Standard Tags Library).  
+
+
+
+
+{\ttfamily \#include $<$cstlcompiler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_s_t_l_compiler_ad29e2a98129d37e8b4f332f93a66736c}{C\+S\+T\+L\+Compiler} (const Q\+Byte\+Array \&str, Q\+Map$<$ Q\+String, Q\+Object $\ast$$>$ \&objects, bool is\+Str\+File\+Name=true)
+\begin{DoxyCompactList}\small\item\em Initialize the str, objects and is\+Str\+File\+Name properties. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_c_s_t_l_compiler_a3cce5a503e81c5de099859fe0ae1c386}{output} ()
+\begin{DoxyCompactList}\small\item\em Returns the compiled xhtml page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class compiles xhtml pages with \hyperlink{namespace_c_s_t_l}{C\+S\+TL} (C++ Server Pages Standard Tags Library). 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_s_t_l_compiler_ad29e2a98129d37e8b4f332f93a66736c}\label{class_c_s_t_l_compiler_ad29e2a98129d37e8b4f332f93a66736c}} 
+\index{C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}!C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
+\index{C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}!C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
+\subsubsection{\texorpdfstring{C\+S\+T\+L\+Compiler()}{CSTLCompiler()}}
+{\footnotesize\ttfamily \hyperlink{cppwebframework__global_8h_a7492e9498cbaf9cd17dbc2215d3a0e48}{C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE} C\+S\+T\+L\+Compiler\+::\+C\+S\+T\+L\+Compiler (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{str,  }\item[{Q\+Map$<$ Q\+String, Q\+Object $\ast$$>$ \&}]{objects,  }\item[{bool}]{is\+Str\+File\+Name = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Initialize the str, objects and is\+Str\+File\+Name properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+Byte\+Array \&str \+: If is\+Str\+File\+Name is true, it should be a file name, else, it should be the file content. \\
+\hline
+{\em Q\+Map$<$\+Q\+String,Q\+Object} & $\ast$$>$ \&objects \+: Container objects that can be compiled into the xhtml page. \\
+\hline
+{\em bool} & is\+Str\+File\+Name \+: It indicates whether str is the name of a file or its contents. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_s_t_l_compiler_a3cce5a503e81c5de099859fe0ae1c386}\label{class_c_s_t_l_compiler_a3cce5a503e81c5de099859fe0ae1c386}} 
+\index{C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}!output@{output}}
+\index{output@{output}!C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
+\subsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily Q\+Byte\+Array C\+S\+T\+L\+Compiler\+::output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the compiled xhtml page. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array \+: Compiled page. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cstlcompiler_8h}{cstlcompiler.\+h}\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{cstlcompiler_8cpp}{cstlcompiler.\+cpp}\end{DoxyCompactItemize}
