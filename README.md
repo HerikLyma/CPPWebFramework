@@ -24,9 +24,9 @@ to make web development as simple as possible, even for developers starting in t
 <b>Steps to test the C++ Web Framework's examples:</b>
 <ol>
 	<li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
+    <li>Open the terminal</li>
 	<li>Install Qt Libraries: sudo apt-get install qt5-default</li>
 	<li>Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git</li>
-    <li>Open the terminal</li>
     <li>cd CPPWebFramework/CPPWebFramework</li>
     <li>qmake CPPWebFramework.pro</li>
     <li>make</li>
