@@ -91,21 +91,20 @@ HEADERS += \
 unix {
     headers.path   = /usr/lib/cwf
     headers.files += $$HEADERS
-    target.path    = /usr/lib/cwf
+    target.path    = /usr/lib
 }
 
 macx {
     headers.path   = /usr/local/lib/cwf
     headers.files += $$HEADERS
-    target.path = /usr/local/lib/cwf
+    target.path = /usr/local/lib
 }
 
 win32 {
     headers.path   = C:/cwf
     headers.files += $$HEADERS
-    target.path = C:/cwf
+    target.path = C:/Windows/System32
 }
 
 INSTALLS += target
 INSTALLS += headers
-

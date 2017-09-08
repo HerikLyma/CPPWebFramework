@@ -44,8 +44,7 @@ void HttpReadRequest::run()
     {
         ((QSslSocket*)socket)->startServerEncryption();
     }
-#endif
-    socket->thread()->setPriority(QThread::TimeCriticalPriority);    
+#endif    
     maxUploadFile = configuration.maxUploadFile;    
     socket->setReadBufferSize(maxUploadFile);
     if(socket->ConnectedState > 0)
