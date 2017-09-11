@@ -121,6 +121,8 @@ public:
 
     virtual ~HttpServletResponse();
 
+    void write(QByteArray &&data);
+
     void write(const QByteArray &data, bool flush = true);
 
     void writeHeaders();

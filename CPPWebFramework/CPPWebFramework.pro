@@ -106,5 +106,8 @@ win32 {
     target.path = C:/Windows/System32
 }
 
+#Strongly recommended
+#LIBS += -ljemalloc
+
 INSTALLS += target
 INSTALLS += headers

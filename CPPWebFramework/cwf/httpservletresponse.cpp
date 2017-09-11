@@ -23,6 +23,7 @@ HttpServletResponse::~HttpServletResponse()
 {
 }
 
+
 void HttpServletResponse::flushBuffer()
 {
     const int max = 32768;
@@ -79,6 +80,13 @@ void HttpServletResponse::sendError(int sc, const QByteArray &msg)
 {
     writeHeaders();
     writeToSocket("<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>");
+}
+
+
+void HttpServletResponse::write(QByteArray &&data)
+{
+    content = std::move(data);
+    flushBuffer();
 }
 
 void HttpServletResponse::write(const QByteArray &data, bool flush)
