@@ -86,7 +86,8 @@ HEADERS += \
     cwf/qmapthreadsafety.h \
     cwf/requestdispatcher.h \
     cwf/urlencoder.h \
-    cwf/variant.h
+    cwf/variant.h \
+    cwf/sqldatabasestorage.h
 
 unix {
     headers.path   = /usr/lib/cwf
