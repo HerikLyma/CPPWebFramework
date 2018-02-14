@@ -2,7 +2,7 @@
 \label{class_http_session}\index{Http\+Session@{Http\+Session}}
 
 
-The \hyperlink{class_http_session}{Http\+Session} class holds information about a client session.  
+The \mbox{\hyperlink{class_http_session}{Http\+Session}} class holds information about a client session.  
 
 
 
@@ -12,64 +12,54 @@ The \hyperlink{class_http_session}{Http\+Session} class holds information about 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_http_session_adbc731f974a6de5996b7878303f351af}{Http\+Session} (const Q\+String \&id)
+\mbox{\Hypertarget{class_http_session_adbc731f974a6de5996b7878303f351af}\label{class_http_session_adbc731f974a6de5996b7878303f351af}} 
+\mbox{\hyperlink{class_http_session_adbc731f974a6de5996b7878303f351af}{Http\+Session}} (const Q\+String \&id)
 \begin{DoxyCompactList}\small\item\em Construct a session with a unique identifier. \end{DoxyCompactList}\item 
-\hyperlink{class_http_session_afb9e986ea06dc1cb767d3d6fbf6f420c}{$\sim$\+Http\+Session} ()
-\item 
-Q\+Object $\ast$ \hyperlink{class_http_session_acef8380ce20f3adb9d2bb9aad0ff3f46}{get\+Attribute} (const Q\+String \&name) const
+Q\+Object $\ast$ \mbox{\hyperlink{class_http_session_acef8380ce20f3adb9d2bb9aad0ff3f46}{get\+Attribute}} (const Q\+String \&name) const
 \begin{DoxyCompactList}\small\item\em Returns a session attribute given a name. \end{DoxyCompactList}\item 
-Q\+String\+List \hyperlink{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}{get\+Attribute\+Names} ()
+\mbox{\Hypertarget{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}\label{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}} 
+Q\+String\+List \mbox{\hyperlink{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}{get\+Attribute\+Names}} ()
 \begin{DoxyCompactList}\small\item\em Returns a session attribute given a name. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_http_session_a2904b92fb73b8cead32068611878a9eb}{get\+Creation\+Time} () const
+\mbox{\Hypertarget{class_http_session_a2904b92fb73b8cead32068611878a9eb}\label{class_http_session_a2904b92fb73b8cead32068611878a9eb}} 
+qint64 \mbox{\hyperlink{class_http_session_a2904b92fb73b8cead32068611878a9eb}{get\+Creation\+Time}} () const
 \begin{DoxyCompactList}\small\item\em get\+Creation\+Time \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_http_session_a358bfe548463d39bbdc167bd8c630edc}{get\+Id} () const
+\mbox{\Hypertarget{class_http_session_a358bfe548463d39bbdc167bd8c630edc}\label{class_http_session_a358bfe548463d39bbdc167bd8c630edc}} 
+Q\+String \mbox{\hyperlink{class_http_session_a358bfe548463d39bbdc167bd8c630edc}{get\+Id}} () const
 \begin{DoxyCompactList}\small\item\em Returns the unique id. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}{get\+Last\+Accessed\+Time} () const
+\mbox{\Hypertarget{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}\label{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}} 
+qint64 \mbox{\hyperlink{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}{get\+Last\+Accessed\+Time}} () const
 \begin{DoxyCompactList}\small\item\em Returns the time of the last session access. \end{DoxyCompactList}\item 
-void \hyperlink{class_http_session_adc118d02431eec30977bd1cb3429eb79}{validate} ()
+\mbox{\Hypertarget{class_http_session_adc118d02431eec30977bd1cb3429eb79}\label{class_http_session_adc118d02431eec30977bd1cb3429eb79}} 
+void \mbox{\hyperlink{class_http_session_adc118d02431eec30977bd1cb3429eb79}{validate}} ()
 \begin{DoxyCompactList}\small\item\em Make a valid session. \end{DoxyCompactList}\item 
-void \hyperlink{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}{invalidate} ()
+\mbox{\Hypertarget{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}\label{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}} 
+void \mbox{\hyperlink{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}{invalidate}} ()
 \begin{DoxyCompactList}\small\item\em Make a invalid session. \end{DoxyCompactList}\item 
-int \hyperlink{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}{remove\+Attribute} (const Q\+String \&name)
+\mbox{\Hypertarget{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}\label{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}} 
+int \mbox{\hyperlink{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}{remove\+Attribute}} (const Q\+String \&name)
 \begin{DoxyCompactList}\small\item\em Removes all the items that have the key key from the map. Returns the number of items removed which is usually 1 but will be 0 if the key isn\textquotesingle{}t in the map, or $>$ 1 if insert\+Multi() has been used with the key. \end{DoxyCompactList}\item 
-void \hyperlink{class_http_session_a9d7250801e2b43f61b28facf2b48c1b5}{add\+Attribute} (const Q\+String \&name, Q\+Object $\ast$value)
+void \mbox{\hyperlink{class_http_session_a9d7250801e2b43f61b28facf2b48c1b5}{add\+Attribute}} (const Q\+String \&name, Q\+Object $\ast$value)
 \begin{DoxyCompactList}\small\item\em This method add an attribute to the session. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_session_a0bb33f4c387b07264245de390984be10}{get\+Auto\+Clear\+Attributes} () const
+bool \mbox{\hyperlink{class_http_session_a0bb33f4c387b07264245de390984be10}{get\+Auto\+Clear\+Attributes}} () const
 \begin{DoxyCompactList}\small\item\em get\+Auto\+Clear\+Attributes \end{DoxyCompactList}\item 
-void \hyperlink{class_http_session_a6ba761b5e4935168f867b3e4953a4179}{set\+Auto\+Clear\+Attributes} (bool value)
+void \mbox{\hyperlink{class_http_session_a6ba761b5e4935168f867b3e4953a4179}{set\+Auto\+Clear\+Attributes}} (bool value)
 \begin{DoxyCompactList}\small\item\em set\+Auto\+Clear\+Attributes \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}{is\+Expired} ()
+\mbox{\Hypertarget{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}\label{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}} 
+bool \mbox{\hyperlink{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}{is\+Expired}} ()
 \begin{DoxyCompactList}\small\item\em This method returns true if the session is expired otherwise returns false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_http_session_a4d54f5003e07e218070a449c22a52c7c}{Http\+Read\+Request}
+\mbox{\Hypertarget{class_http_session_a4d54f5003e07e218070a449c22a52c7c}\label{class_http_session_a4d54f5003e07e218070a449c22a52c7c}} 
+class {\bfseries Http\+Read\+Request}
 \item 
-class \hyperlink{class_http_session_aebfae296d1cbb22eed705b7950266081}{Http\+Servlet\+Request}
+\mbox{\Hypertarget{class_http_session_aebfae296d1cbb22eed705b7950266081}\label{class_http_session_aebfae296d1cbb22eed705b7950266081}} 
+class {\bfseries Http\+Servlet\+Request}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \hyperlink{class_http_session}{Http\+Session} class holds information about a client session. 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_http_session_adbc731f974a6de5996b7878303f351af}\label{class_http_session_adbc731f974a6de5996b7878303f351af}} 
-\index{Http\+Session@{Http\+Session}!Http\+Session@{Http\+Session}}
-\index{Http\+Session@{Http\+Session}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{Http\+Session()}{HttpSession()}}
-{\footnotesize\ttfamily Http\+Session\+::\+Http\+Session (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Construct a session with a unique identifier. 
-
-\mbox{\Hypertarget{class_http_session_afb9e986ea06dc1cb767d3d6fbf6f420c}\label{class_http_session_afb9e986ea06dc1cb767d3d6fbf6f420c}} 
-\index{Http\+Session@{Http\+Session}!````~Http\+Session@{$\sim$\+Http\+Session}}
-\index{````~Http\+Session@{$\sim$\+Http\+Session}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{$\sim$\+Http\+Session()}{~HttpSession()}}
-{\footnotesize\ttfamily Http\+Session\+::$\sim$\+Http\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
+The \mbox{\hyperlink{class_http_session}{Http\+Session}} class holds information about a client session. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_http_session_a9d7250801e2b43f61b28facf2b48c1b5}\label{class_http_session_a9d7250801e2b43f61b28facf2b48c1b5}} 
@@ -102,16 +92,6 @@ Returns a session attribute given a name.
 \begin{DoxyWarning}{Warning}
 \+: If the parameter is not found, nullptr is returned. 
 \end{DoxyWarning}
-\mbox{\Hypertarget{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}\label{class_http_session_aca7b24bde0466a8140c30f6642c8dfc4}} 
-\index{Http\+Session@{Http\+Session}!get\+Attribute\+Names@{get\+Attribute\+Names}}
-\index{get\+Attribute\+Names@{get\+Attribute\+Names}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{get\+Attribute\+Names()}{getAttributeNames()}}
-{\footnotesize\ttfamily Q\+String\+List Http\+Session\+::get\+Attribute\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Returns a session attribute given a name. 
-
 \mbox{\Hypertarget{class_http_session_a0bb33f4c387b07264245de390984be10}\label{class_http_session_a0bb33f4c387b07264245de390984be10}} 
 \index{Http\+Session@{Http\+Session}!get\+Auto\+Clear\+Attributes@{get\+Auto\+Clear\+Attributes}}
 \index{get\+Auto\+Clear\+Attributes@{get\+Auto\+Clear\+Attributes}!Http\+Session@{Http\+Session}}
@@ -125,66 +105,6 @@ get\+Auto\+Clear\+Attributes
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_session_a2904b92fb73b8cead32068611878a9eb}\label{class_http_session_a2904b92fb73b8cead32068611878a9eb}} 
-\index{Http\+Session@{Http\+Session}!get\+Creation\+Time@{get\+Creation\+Time}}
-\index{get\+Creation\+Time@{get\+Creation\+Time}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{get\+Creation\+Time()}{getCreationTime()}}
-{\footnotesize\ttfamily qint64 Http\+Session\+::get\+Creation\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-get\+Creation\+Time 
-
-\mbox{\Hypertarget{class_http_session_a358bfe548463d39bbdc167bd8c630edc}\label{class_http_session_a358bfe548463d39bbdc167bd8c630edc}} 
-\index{Http\+Session@{Http\+Session}!get\+Id@{get\+Id}}
-\index{get\+Id@{get\+Id}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
-{\footnotesize\ttfamily Q\+String Http\+Session\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Returns the unique id. 
-
-\mbox{\Hypertarget{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}\label{class_http_session_a539bf0c99bad1aae86ff9b8f411740e1}} 
-\index{Http\+Session@{Http\+Session}!get\+Last\+Accessed\+Time@{get\+Last\+Accessed\+Time}}
-\index{get\+Last\+Accessed\+Time@{get\+Last\+Accessed\+Time}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{get\+Last\+Accessed\+Time()}{getLastAccessedTime()}}
-{\footnotesize\ttfamily qint64 Http\+Session\+::get\+Last\+Accessed\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Returns the time of the last session access. 
-
-\mbox{\Hypertarget{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}\label{class_http_session_a1656b24f54bcd539f01022323a3c3b3c}} 
-\index{Http\+Session@{Http\+Session}!invalidate@{invalidate}}
-\index{invalidate@{invalidate}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{invalidate()}{invalidate()}}
-{\footnotesize\ttfamily void Http\+Session\+::invalidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Make a invalid session. 
-
-\mbox{\Hypertarget{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}\label{class_http_session_a32e93aea1e8bbadcdf0d755110a95335}} 
-\index{Http\+Session@{Http\+Session}!is\+Expired@{is\+Expired}}
-\index{is\+Expired@{is\+Expired}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{is\+Expired()}{isExpired()}}
-{\footnotesize\ttfamily bool Http\+Session\+::is\+Expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This method returns true if the session is expired otherwise returns false. 
-
-\mbox{\Hypertarget{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}\label{class_http_session_a9102eedc7002a96cd64c080af9c4ac47}} 
-\index{Http\+Session@{Http\+Session}!remove\+Attribute@{remove\+Attribute}}
-\index{remove\+Attribute@{remove\+Attribute}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{remove\+Attribute()}{removeAttribute()}}
-{\footnotesize\ttfamily int Http\+Session\+::remove\+Attribute (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})}
-
-
-
-Removes all the items that have the key key from the map. Returns the number of items removed which is usually 1 but will be 0 if the key isn\textquotesingle{}t in the map, or $>$ 1 if insert\+Multi() has been used with the key. 
-
 \mbox{\Hypertarget{class_http_session_a6ba761b5e4935168f867b3e4953a4179}\label{class_http_session_a6ba761b5e4935168f867b3e4953a4179}} 
 \index{Http\+Session@{Http\+Session}!set\+Auto\+Clear\+Attributes@{set\+Auto\+Clear\+Attributes}}
 \index{set\+Auto\+Clear\+Attributes@{set\+Auto\+Clear\+Attributes}!Http\+Session@{Http\+Session}}
@@ -200,34 +120,9 @@ set\+Auto\+Clear\+Attributes
 {\em value} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_http_session_adc118d02431eec30977bd1cb3429eb79}\label{class_http_session_adc118d02431eec30977bd1cb3429eb79}} 
-\index{Http\+Session@{Http\+Session}!validate@{validate}}
-\index{validate@{validate}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{validate()}{validate()}}
-{\footnotesize\ttfamily void Http\+Session\+::validate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Make a valid session. 
-
-
-
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{class_http_session_a4d54f5003e07e218070a449c22a52c7c}\label{class_http_session_a4d54f5003e07e218070a449c22a52c7c}} 
-\index{Http\+Session@{Http\+Session}!Http\+Read\+Request@{Http\+Read\+Request}}
-\index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{Http\+Read\+Request}{HttpReadRequest}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_read_request}{Http\+Read\+Request}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_http_session_aebfae296d1cbb22eed705b7950266081}\label{class_http_session_aebfae296d1cbb22eed705b7950266081}} 
-\index{Http\+Session@{Http\+Session}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!Http\+Session@{Http\+Session}}
-\subsubsection{\texorpdfstring{Http\+Servlet\+Request}{HttpServletRequest}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}\hspace{0.3cm}{\ttfamily [friend]}}
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpsession_8h}{httpsession.\+h}\item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpsession_8cpp}{httpsession.\+cpp}\end{DoxyCompactItemize}
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpsession.\+h\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpsession.\+cpp\end{DoxyCompactItemize}

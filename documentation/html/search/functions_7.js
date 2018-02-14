@@ -4,6 +4,5 @@ var searchData=
   ['httpparser',['HttpParser',['../class_http_parser.html#a91e6c1876337b53694347476f277d1a2',1,'HttpParser']]],
   ['httpreadrequest',['HttpReadRequest',['../class_http_read_request.html#ae585e99b43ee991c3b4884a1852eeb82',1,'HttpReadRequest']]],
   ['httpservletrequest',['HttpServletRequest',['../class_http_servlet_request.html#acda91961621ef7bcd0fe061d0612bc2c',1,'HttpServletRequest']]],
-  ['httpservletresponse',['HttpServletResponse',['../class_http_servlet_response.html#ac275248f0418ac2a300dc3cbb71056eb',1,'HttpServletResponse']]],
   ['httpsession',['HttpSession',['../class_http_session.html#adbc731f974a6de5996b7878303f351af',1,'HttpSession']]]
 ];

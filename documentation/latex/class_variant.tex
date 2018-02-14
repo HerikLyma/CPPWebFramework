@@ -2,7 +2,7 @@
 \label{class_variant}\index{Variant@{Variant}}
 
 
-This class is designed to facilitate the passing of simple type parameters such as qlonglong, double, int, and Q\+String to the \hyperlink{namespace_c_s_t_l}{C\+S\+TL} (C++ Server Pages Standard Tags Library).  
+This class is designed to facilitate the passing of simple type parameters such as qlonglong, double, int, and Q\+String to the C\+S\+TL (C++ Server Pages Standard Tags Library).  
 
 
 
@@ -11,144 +11,56 @@ This class is designed to facilitate the passing of simple type parameters such 
 
 
 
-Inheritance diagram for Variant\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=133pt]{class_variant__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Variant\+:
+% FIG 0
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_variant_ae38d113834d5d53ca9c7f36366a25288}{to\+Int} (bool $\ast$ok=nullptr) const
+int \mbox{\hyperlink{class_variant_ae38d113834d5d53ca9c7f36366a25288}{to\+Int}} (bool $\ast$ok=nullptr) const
 \begin{DoxyCompactList}\small\item\em Returns the variant as an int if the variant has user\+Type() Q\+Meta\+Type\+::\+Int, Q\+Meta\+Type\+::\+Bool, Q\+Meta\+Type\+::\+Q\+Byte\+Array, Q\+Meta\+Type\+::\+Q\+Char, Q\+Meta\+Type\+::\+Double, Q\+Meta\+Type\+::\+Long\+Long, Q\+Meta\+Type\+::\+Q\+String, Q\+Meta\+Type\+::\+U\+Int, or Q\+Meta\+Type\+::\+U\+Long\+Long; otherwise returns 0. \end{DoxyCompactList}\item 
-void \hyperlink{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}{set\+Int} (int value)
+\mbox{\Hypertarget{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}\label{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}} 
+void \mbox{\hyperlink{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}{set\+Int}} (int value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an int value. \end{DoxyCompactList}\item 
-double \hyperlink{class_variant_a543a5e6579cea7fcd8e6413921e8fd44}{to\+Double} (bool $\ast$ok=nullptr) const
+double \mbox{\hyperlink{class_variant_a543a5e6579cea7fcd8e6413921e8fd44}{to\+Double}} (bool $\ast$ok=nullptr) const
 \begin{DoxyCompactList}\small\item\em Returns the variant as a double if the variant has user\+Type() Q\+Meta\+Type\+::\+Double, Q\+Meta\+Type\+::\+Float, Q\+Meta\+Type\+::\+Bool, Q\+Meta\+Type\+::\+Q\+Byte\+Array, Q\+Meta\+Type\+::\+Int, Q\+Meta\+Type\+::\+Long\+Long, Q\+Meta\+Type\+::\+Q\+String, Q\+Meta\+Type\+::\+U\+Int, or Q\+Meta\+Type\+::\+U\+Long\+Long; otherwise returns 0.\+0. \end{DoxyCompactList}\item 
-void \hyperlink{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}{set\+Double} (double value)
+\mbox{\Hypertarget{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}\label{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}} 
+void \mbox{\hyperlink{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}{set\+Double}} (double value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an double value. \end{DoxyCompactList}\item 
-qlonglong \hyperlink{class_variant_ad6c7084a71cb3189d302160a160bb36b}{to\+Long\+Long} (bool $\ast$ok=nullptr) const
+qlonglong \mbox{\hyperlink{class_variant_ad6c7084a71cb3189d302160a160bb36b}{to\+Long\+Long}} (bool $\ast$ok=nullptr) const
 \begin{DoxyCompactList}\small\item\em Returns the variant as a long long int if the variant has user\+Type() Q\+Meta\+Type\+::\+Long\+Long, Q\+Meta\+Type\+::\+Bool, Q\+Meta\+Type\+::\+Q\+Byte\+Array, Q\+Meta\+Type\+::\+Q\+Char, Q\+Meta\+Type\+::\+Double, Q\+Meta\+Type\+::\+Int, Q\+Meta\+Type\+::\+Q\+String, Q\+Meta\+Type\+::\+U\+Int, or Q\+Meta\+Type\+::\+U\+Long\+Long; otherwise returns 0. \end{DoxyCompactList}\item 
-void \hyperlink{class_variant_a71259193b1023a8ef4761cc92b4c96b4}{set\+Long\+Long} (qlonglong value)
+\mbox{\Hypertarget{class_variant_a71259193b1023a8ef4761cc92b4c96b4}\label{class_variant_a71259193b1023a8ef4761cc92b4c96b4}} 
+void \mbox{\hyperlink{class_variant_a71259193b1023a8ef4761cc92b4c96b4}{set\+Long\+Long}} (qlonglong value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an qlonglong value. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}{to\+String} () const
+\mbox{\Hypertarget{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}\label{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}} 
+Q\+String \mbox{\hyperlink{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}{to\+String}} () const
 \begin{DoxyCompactList}\small\item\em Returns the variant as a Q\+String if the variant has user\+Type() Q\+Meta\+Type\+::\+Q\+String, Q\+Meta\+Type\+::\+Bool, Q\+Meta\+Type\+::\+Q\+Byte\+Array, Q\+Meta\+Type\+::\+Q\+Char, Q\+Meta\+Type\+::\+Q\+Date, Q\+Meta\+Type\+::\+Q\+Date\+Time, Q\+Meta\+Type\+::\+Double, Q\+Meta\+Type\+::\+Int, Q\+Meta\+Type\+::\+Long\+Long, Q\+Meta\+Type\+::\+Q\+String\+List, Q\+Meta\+Type\+::\+Q\+Time, Q\+Meta\+Type\+::\+U\+Int, or Q\+Meta\+Type\+::\+U\+Long\+Long; otherwise returns an empty string. \end{DoxyCompactList}\item 
-void \hyperlink{class_variant_a16fb274754b40796aa8341456c53d53c}{set\+String} (const Q\+String \&value)
+\mbox{\Hypertarget{class_variant_a16fb274754b40796aa8341456c53d53c}\label{class_variant_a16fb274754b40796aa8341456c53d53c}} 
+void \mbox{\hyperlink{class_variant_a16fb274754b40796aa8341456c53d53c}{set\+String}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an Q\+String value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}{Variant} ()=default
+\mbox{\Hypertarget{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}\label{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}} 
+\mbox{\hyperlink{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}{Variant}} ()=default
 \begin{DoxyCompactList}\small\item\em Constructs an invalid variant. \end{DoxyCompactList}\item 
-\hyperlink{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}{Variant} (int value)
+\mbox{\Hypertarget{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}\label{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}} 
+\mbox{\hyperlink{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}{Variant}} (int value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an integer value. \end{DoxyCompactList}\item 
-\hyperlink{class_variant_a7e7d9a46e166e059ce75b76b92b11457}{Variant} (double value)
+\mbox{\Hypertarget{class_variant_a7e7d9a46e166e059ce75b76b92b11457}\label{class_variant_a7e7d9a46e166e059ce75b76b92b11457}} 
+\mbox{\hyperlink{class_variant_a7e7d9a46e166e059ce75b76b92b11457}{Variant}} (double value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an double value. \end{DoxyCompactList}\item 
-\hyperlink{class_variant_a6f86cea152e761f48700e41f210fe251}{Variant} (qlonglong value)
+\mbox{\Hypertarget{class_variant_a6f86cea152e761f48700e41f210fe251}\label{class_variant_a6f86cea152e761f48700e41f210fe251}} 
+\mbox{\hyperlink{class_variant_a6f86cea152e761f48700e41f210fe251}{Variant}} (qlonglong value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an qlonglong value. \end{DoxyCompactList}\item 
-\hyperlink{class_variant_a2a2d8b7cc035142a795f86d481adde0c}{Variant} (const Q\+String \&value)
+\mbox{\Hypertarget{class_variant_a2a2d8b7cc035142a795f86d481adde0c}\label{class_variant_a2a2d8b7cc035142a795f86d481adde0c}} 
+\mbox{\hyperlink{class_variant_a2a2d8b7cc035142a795f86d481adde0c}{Variant}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Constructs a new variant with an Q\+String value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This class is designed to facilitate the passing of simple type parameters such as qlonglong, double, int, and Q\+String to the \hyperlink{namespace_c_s_t_l}{C\+S\+TL} (C++ Server Pages Standard Tags Library). 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}\label{class_variant_a594b84b7c7a7e997aac3354bbdaa2d97}} 
-\index{Variant@{Variant}!Variant@{Variant}}
-\index{Variant@{Variant}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily Variant\+::\+Variant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
-
-
-
-Constructs an invalid variant. 
-
-\mbox{\Hypertarget{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}\label{class_variant_a4bca2cf3c097e4fa9aea5c87c947e9a0}} 
-\index{Variant@{Variant}!Variant@{Variant}}
-\index{Variant@{Variant}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily \hyperlink{cppwebframework__global_8h_a7492e9498cbaf9cd17dbc2215d3a0e48}{C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE} Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Constructs a new variant with an integer value. 
-
-\mbox{\Hypertarget{class_variant_a7e7d9a46e166e059ce75b76b92b11457}\label{class_variant_a7e7d9a46e166e059ce75b76b92b11457}} 
-\index{Variant@{Variant}!Variant@{Variant}}
-\index{Variant@{Variant}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Constructs a new variant with an double value. 
-
-\mbox{\Hypertarget{class_variant_a6f86cea152e761f48700e41f210fe251}\label{class_variant_a6f86cea152e761f48700e41f210fe251}} 
-\index{Variant@{Variant}!Variant@{Variant}}
-\index{Variant@{Variant}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{qlonglong}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Constructs a new variant with an qlonglong value. 
-
-\mbox{\Hypertarget{class_variant_a2a2d8b7cc035142a795f86d481adde0c}\label{class_variant_a2a2d8b7cc035142a795f86d481adde0c}} 
-\index{Variant@{Variant}!Variant@{Variant}}
-\index{Variant@{Variant}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{Variant()}{Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily Variant\+::\+Variant (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Constructs a new variant with an Q\+String value. 
-
-
+This class is designed to facilitate the passing of simple type parameters such as qlonglong, double, int, and Q\+String to the C\+S\+TL (C++ Server Pages Standard Tags Library). 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}\label{class_variant_a9cf99c99f688ecafaf0ccfe1fb6aee52}} 
-\index{Variant@{Variant}!set\+Double@{set\+Double}}
-\index{set\+Double@{set\+Double}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{set\+Double}{setDouble}}
-{\footnotesize\ttfamily void Variant\+::set\+Double (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Constructs a new variant with an double value. 
-
-\mbox{\Hypertarget{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}\label{class_variant_aa4fe139cfa2b949c68fd2cc61118dd12}} 
-\index{Variant@{Variant}!set\+Int@{set\+Int}}
-\index{set\+Int@{set\+Int}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{set\+Int}{setInt}}
-{\footnotesize\ttfamily void Variant\+::set\+Int (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Constructs a new variant with an int value. 
-
-\mbox{\Hypertarget{class_variant_a71259193b1023a8ef4761cc92b4c96b4}\label{class_variant_a71259193b1023a8ef4761cc92b4c96b4}} 
-\index{Variant@{Variant}!set\+Long\+Long@{set\+Long\+Long}}
-\index{set\+Long\+Long@{set\+Long\+Long}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{set\+Long\+Long}{setLongLong}}
-{\footnotesize\ttfamily void Variant\+::set\+Long\+Long (\begin{DoxyParamCaption}\item[{qlonglong}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Constructs a new variant with an qlonglong value. 
-
-\mbox{\Hypertarget{class_variant_a16fb274754b40796aa8341456c53d53c}\label{class_variant_a16fb274754b40796aa8341456c53d53c}} 
-\index{Variant@{Variant}!set\+String@{set\+String}}
-\index{set\+String@{set\+String}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{set\+String}{setString}}
-{\footnotesize\ttfamily void Variant\+::set\+String (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Constructs a new variant with an Q\+String value. 
-
 \mbox{\Hypertarget{class_variant_a543a5e6579cea7fcd8e6413921e8fd44}\label{class_variant_a543a5e6579cea7fcd8e6413921e8fd44}} 
 \index{Variant@{Variant}!to\+Double@{to\+Double}}
 \index{to\+Double@{to\+Double}!Variant@{Variant}}
@@ -197,19 +109,9 @@ Returns the variant as a long long int if the variant has user\+Type() Q\+Meta\+
 {\em If} & ok is non-\/null\+: $\ast$ok is set to true if the value could be converted to an int; otherwise $\ast$ok is set to false. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}\label{class_variant_a72d36925a5a47a1138a339cd4c4d3feb}} 
-\index{Variant@{Variant}!to\+String@{to\+String}}
-\index{to\+String@{to\+String}!Variant@{Variant}}
-\subsubsection{\texorpdfstring{to\+String}{toString}}
-{\footnotesize\ttfamily Q\+String Variant\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [slot]}}
-
-
-
-Returns the variant as a Q\+String if the variant has user\+Type() Q\+Meta\+Type\+::\+Q\+String, Q\+Meta\+Type\+::\+Bool, Q\+Meta\+Type\+::\+Q\+Byte\+Array, Q\+Meta\+Type\+::\+Q\+Char, Q\+Meta\+Type\+::\+Q\+Date, Q\+Meta\+Type\+::\+Q\+Date\+Time, Q\+Meta\+Type\+::\+Double, Q\+Meta\+Type\+::\+Int, Q\+Meta\+Type\+::\+Long\+Long, Q\+Meta\+Type\+::\+Q\+String\+List, Q\+Meta\+Type\+::\+Q\+Time, Q\+Meta\+Type\+::\+U\+Int, or Q\+Meta\+Type\+::\+U\+Long\+Long; otherwise returns an empty string. 
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{variant_8h}{variant.\+h}\item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{variant_8cpp}{variant.\+cpp}\end{DoxyCompactItemize}
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/variant.\+h\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/variant.\+cpp\end{DoxyCompactItemize}

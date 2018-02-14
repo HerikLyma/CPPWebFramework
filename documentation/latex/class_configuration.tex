@@ -12,74 +12,81 @@ All classes of C++ Web Framework are contained within the namespace C\+WF.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_configuration_af5d72b2e949b80b291b1013268cff405}{Configuration} (Q\+String server\+Files\+Path=\char`\"{}\char`\"{})
+\mbox{\hyperlink{class_configuration_af5d72b2e949b80b291b1013268cff405}{Configuration}} (Q\+String server\+Files\+Path=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Will make reading the C\+P\+P\+Web.\+ini file and extract all of its properties. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_a3cd126ebe20117c04b4d38797e06551d}{get\+Time\+Out} () const
+int \mbox{\hyperlink{class_configuration_a3cd126ebe20117c04b4d38797e06551d}{get\+Time\+Out}} () const
 \begin{DoxyCompactList}\small\item\em Returns the time\+Out property that will be used by the server to expire threads that are not in use. Such threads will be restarted as needed. The default time\+Out is 30000 milliseconds (30 seconds). If time\+Out is negative, newly created threads will not expire, e.\+g., they will not exit until the thread pool is destroyed. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a4fc1c685775b37e7b553c3393f1b2998}{set\+Time\+Out} (int value)
+void \mbox{\hyperlink{class_configuration_a4fc1c685775b37e7b553c3393f1b2998}{set\+Time\+Out}} (int value)
 \begin{DoxyCompactList}\small\item\em Set the time\+Out property. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_af14b4f22fdcdfc32fbcac712a9868fd4}{get\+Session\+Expiration\+Time} () const
+int \mbox{\hyperlink{class_configuration_af14b4f22fdcdfc32fbcac712a9868fd4}{get\+Session\+Expiration\+Time}} () const
 \begin{DoxyCompactList}\small\item\em Returns the time that a session takes to expire. The default is 1800000(ms). \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a306d88e7d7c2b8394844936b49be9013}{set\+Session\+Expiration\+Time} (int value)
+void \mbox{\hyperlink{class_configuration_a306d88e7d7c2b8394844936b49be9013}{set\+Session\+Expiration\+Time}} (int value)
 \begin{DoxyCompactList}\small\item\em Set the session\+Expiration\+Time property. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_a6a592b2194d4059f31aaf4223ee2e70e}{get\+Cleanup\+Interval} () const
+int \mbox{\hyperlink{class_configuration_a6a592b2194d4059f31aaf4223ee2e70e}{get\+Cleanup\+Interval}} () const
 \begin{DoxyCompactList}\small\item\em Returns the cleanup\+Interval that indicates how often the server will perform the cleanup of expired sessions. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a5d6a822ffd2c3c029ae1864f8358a592}{set\+Cleanup\+Interval} (int value)
+void \mbox{\hyperlink{class_configuration_a5d6a822ffd2c3c029ae1864f8358a592}{set\+Cleanup\+Interval}} (int value)
 \begin{DoxyCompactList}\small\item\em Set the cleanup\+Interval property that will be used by the server. The default is 86400000(ms). \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_ab34eb25aa1e175c7ac8323300b298a8a}{get\+Port} () const
+int \mbox{\hyperlink{class_configuration_ab34eb25aa1e175c7ac8323300b298a8a}{get\+Port}} () const
 \begin{DoxyCompactList}\small\item\em Returns the port number that will be used by the server. The default is 8080. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_aae5aafdfeb2a6e110ef8bad90a85be5e}{set\+Port} (int value)
+void \mbox{\hyperlink{class_configuration_aae5aafdfeb2a6e110ef8bad90a85be5e}{set\+Port}} (int value)
 \begin{DoxyCompactList}\small\item\em Set the port number property. \end{DoxyCompactList}\item 
-Q\+Host\+Address \hyperlink{class_configuration_a37ca7476a8ab5a1e6c4b5a3e07670d9f}{get\+Host} () const
+Q\+Host\+Address \mbox{\hyperlink{class_configuration_a37ca7476a8ab5a1e6c4b5a3e07670d9f}{get\+Host}} () const
 \begin{DoxyCompactList}\small\item\em Returns the port number that will be used by the server. The default is 127.\+0.\+0.\+1. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a0851c4f93476b80acebd88204c4a86c6}{set\+Host} (const Q\+Host\+Address \&value)
+void \mbox{\hyperlink{class_configuration_a0851c4f93476b80acebd88204c4a86c6}{set\+Host}} (const Q\+Host\+Address \&value)
 \begin{DoxyCompactList}\small\item\em Set the host property. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_ad0e836129d0a7e0111b1f2c092729939}{get\+Max\+Thread} () const
+int \mbox{\hyperlink{class_configuration_ad0e836129d0a7e0111b1f2c092729939}{get\+Max\+Thread}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum number of threads that can be created by the server. The default is 100. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_ab242af54d85d49b88b778a50a77949a5}{set\+Max\+Thread} (int value)
+void \mbox{\hyperlink{class_configuration_ab242af54d85d49b88b778a50a77949a5}{set\+Max\+Thread}} (int value)
 \begin{DoxyCompactList}\small\item\em Set the max\+Thread property. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a96082bdd3333d8ddf2017a95fe302225}{get\+Ssl\+Key\+File} () const
+Q\+String \mbox{\hyperlink{class_configuration_a96082bdd3333d8ddf2017a95fe302225}{get\+Ssl\+Key\+File}} () const
 \begin{DoxyCompactList}\small\item\em Retuns the ssl\+Key\+File name property that can be used by the server to make the S\+SL configuration. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a646d1ce1463b0519c745483a228c4949}{set\+Ssl\+Key\+File} (const Q\+String \&value)
+void \mbox{\hyperlink{class_configuration_a646d1ce1463b0519c745483a228c4949}{set\+Ssl\+Key\+File}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Set the ssl\+Key\+File name property. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a10405dacfb3b61f60b290c0a5d79a8fb}{get\+Ssl\+Cert\+File} () const
+Q\+String \mbox{\hyperlink{class_configuration_a10405dacfb3b61f60b290c0a5d79a8fb}{get\+Ssl\+Cert\+File}} () const
 \begin{DoxyCompactList}\small\item\em Retuns the ssl\+Cert\+File name property that can be used by the server to make the S\+SL configuration. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a16eecdd98ab2b9c4737f3178656bb3ad}{set\+Ssl\+Cert\+File} (const Q\+String \&value)
+void \mbox{\hyperlink{class_configuration_a16eecdd98ab2b9c4737f3178656bb3ad}{set\+Ssl\+Cert\+File}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Set the ssl\+Cert\+File name property. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a43acf80f787217903281b0a6d3e01e11}{get\+Path} () const
+Q\+String \mbox{\hyperlink{class_configuration_a43acf80f787217903281b0a6d3e01e11}{get\+Path}} () const
 \begin{DoxyCompactList}\small\item\em Returns the path should point to the server folder. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_ade67019de7f09f22093d920fc30152e5}{set\+Path} (const Q\+String \&value)
+void \mbox{\hyperlink{class_configuration_ade67019de7f09f22093d920fc30152e5}{set\+Path}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Set the path property. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_ab58d8dc13a90745af4925e9b238c8cff}{get\+Domain} () const
+Q\+String \mbox{\hyperlink{class_configuration_ab58d8dc13a90745af4925e9b238c8cff}{get\+Domain}} () const
 \begin{DoxyCompactList}\small\item\em Returns the applications domain name. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_af31a608106ec376f01acc028ccb09cb8}{set\+Domain} (const Q\+String \&value)
+void \mbox{\hyperlink{class_configuration_af31a608106ec376f01acc028ccb09cb8}{set\+Domain}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Set domain property. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a005e1d10c605e08d73ff274f2b19fc48}{get\+Log\+File\+Path} () const
+Q\+String \mbox{\hyperlink{class_configuration_a005e1d10c605e08d73ff274f2b19fc48}{get\+Log\+File\+Path}} () const
 \begin{DoxyCompactList}\small\item\em Returns the path to the log file and must to be relative to the path set in the \char`\"{}path\char`\"{}. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a83269c31da560355e67fdf452f7e24b0}{set\+Log\+File\+Path} (const Q\+String \&value)
+\mbox{\Hypertarget{class_configuration_a83269c31da560355e67fdf452f7e24b0}\label{class_configuration_a83269c31da560355e67fdf452f7e24b0}} 
+void \mbox{\hyperlink{class_configuration_a83269c31da560355e67fdf452f7e24b0}{set\+Log\+File\+Path}} (const Q\+String \&value)
 \begin{DoxyCompactList}\small\item\em Set the log\+File\+Path property. const Q\+String \&value \+: Log file path. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_configuration_a8bc88e3cfe151837ee77e213e441953e}{get\+Max\+Upload\+File} () const
+qint64 \mbox{\hyperlink{class_configuration_a8bc88e3cfe151837ee77e213e441953e}{get\+Max\+Upload\+File}} () const
 \begin{DoxyCompactList}\small\item\em Returns the maximum upload file size in bytes. \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_ada37d2f25a05d7b9fa5676f824b7e3be}{set\+Max\+Upload\+File} (const qint64 \&value)
+void \mbox{\hyperlink{class_configuration_ada37d2f25a05d7b9fa5676f824b7e3be}{set\+Max\+Upload\+File}} (const qint64 \&value)
 \begin{DoxyCompactList}\small\item\em Set max\+Upload\+File property in bytes. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_configuration_a05ee88466fbe346175ec6420b6857b98}{get\+Max\+Log\+File} () const
+qint64 \mbox{\hyperlink{class_configuration_a05ee88466fbe346175ec6420b6857b98}{get\+Max\+Log\+File}} () const
 \begin{DoxyCompactList}\small\item\em get\+Max\+Log\+File the max file log \end{DoxyCompactList}\item 
-void \hyperlink{class_configuration_a3c26bb11f458d7374fd4c5b53e181aee}{set\+Max\+Log\+File} (const qint64 \&value)
+void \mbox{\hyperlink{class_configuration_a3c26bb11f458d7374fd4c5b53e181aee}{set\+Max\+Log\+File}} (const qint64 \&value)
 \begin{DoxyCompactList}\small\item\em Set max\+Log\+File property in bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_configuration_af35951d3389bacc3d625fc73174f7364}{Cpp\+Web\+Server}
+\mbox{\Hypertarget{class_configuration_af35951d3389bacc3d625fc73174f7364}\label{class_configuration_af35951d3389bacc3d625fc73174f7364}} 
+class {\bfseries Cpp\+Web\+Server}
 \item 
-class \hyperlink{class_configuration_a84765570a5386c96f10067fb0e11bc13}{Http\+Servlet\+Response}
+\mbox{\Hypertarget{class_configuration_a84765570a5386c96f10067fb0e11bc13}\label{class_configuration_a84765570a5386c96f10067fb0e11bc13}} 
+class {\bfseries Http\+Servlet\+Response}
 \item 
-class \hyperlink{class_configuration_a3e611175a551b64dda26f513067e0d04}{Http\+Session}
+\mbox{\Hypertarget{class_configuration_a3e611175a551b64dda26f513067e0d04}\label{class_configuration_a3e611175a551b64dda26f513067e0d04}} 
+class {\bfseries Http\+Session}
 \item 
-class \hyperlink{class_configuration_a4d54f5003e07e218070a449c22a52c7c}{Http\+Read\+Request}
+\mbox{\Hypertarget{class_configuration_a4d54f5003e07e218070a449c22a52c7c}\label{class_configuration_a4d54f5003e07e218070a449c22a52c7c}} 
+class {\bfseries Http\+Read\+Request}
 \item 
-class \hyperlink{class_configuration_af79af37b83b26f7eeb57dcb953a09845}{Cpp\+Web\+Application}
+\mbox{\Hypertarget{class_configuration_af79af37b83b26f7eeb57dcb953a09845}\label{class_configuration_af79af37b83b26f7eeb57dcb953a09845}} 
+class {\bfseries Cpp\+Web\+Application}
 \item 
-class \hyperlink{class_configuration_a14d4dda0e6f3fa404ebad6cc84ab5ca6}{Filter\+Chain}
+\mbox{\Hypertarget{class_configuration_a14d4dda0e6f3fa404ebad6cc84ab5ca6}\label{class_configuration_a14d4dda0e6f3fa404ebad6cc84ab5ca6}} 
+class {\bfseries Filter\+Chain}
 \end{DoxyCompactItemize}
 
 
@@ -108,12 +115,12 @@ Will make reading the C\+P\+P\+Web.\+ini file and extract all of its properties.
 
 \begin{DoxyCode}
 \textcolor{preprocessor}{#include <QCoreApplication>}
-\textcolor{preprocessor}{#include <\hyperlink{cppwebapplication_8h}{cwf/cppwebapplication.h}>}
+\textcolor{preprocessor}{#include <cwf/cppwebapplication.h>}
 
 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
 \{
-    CWF::Configuration \hyperlink{cppwebapplication_8cpp_a0c57a5200dbf000342deff1e7e8843de}{configuration}(\textcolor{stringliteral}{"/home/herik/CPPWebFramework/CPPWebFramework/server/"});
-    CWF::CppWebApplication a(argc, argv, \hyperlink{cppwebapplication_8cpp_a0c57a5200dbf000342deff1e7e8843de}{configuration});
+    CWF::Configuration configuration(\textcolor{stringliteral}{"/home/herik/CPPWebFramework/CPPWebFramework/server/"});
+    CWF::CppWebApplication a(argc, argv, configuration);
 
     \textcolor{keywordflow}{return} a.start();
 \}
@@ -181,7 +188,7 @@ Q\+String \+: Log File Path.
 \index{Configuration@{Configuration}!get\+Max\+Log\+File@{get\+Max\+Log\+File}}
 \index{get\+Max\+Log\+File@{get\+Max\+Log\+File}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Max\+Log\+File()}{getMaxLogFile()}}
-{\footnotesize\ttfamily \hyperlink{cppwebframework__global_8h_a7492e9498cbaf9cd17dbc2215d3a0e48}{C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE} qint64 Configuration\+::get\+Max\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE qint64 Configuration\+::get\+Max\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -343,16 +350,6 @@ Set the host property.
 {\em const} & Q\+Host\+Address \&value \+: Host address. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a83269c31da560355e67fdf452f7e24b0}\label{class_configuration_a83269c31da560355e67fdf452f7e24b0}} 
-\index{Configuration@{Configuration}!set\+Log\+File\+Path@{set\+Log\+File\+Path}}
-\index{set\+Log\+File\+Path@{set\+Log\+File\+Path}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{set\+Log\+File\+Path()}{setLogFilePath()}}
-{\footnotesize\ttfamily void Configuration\+::set\+Log\+File\+Path (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
-
-
-
-Set the log\+File\+Path property. const Q\+String \&value \+: Log file path. 
-
 \mbox{\Hypertarget{class_configuration_a3c26bb11f458d7374fd4c5b53e181aee}\label{class_configuration_a3c26bb11f458d7374fd4c5b53e181aee}} 
 \index{Configuration@{Configuration}!set\+Max\+Log\+File@{set\+Max\+Log\+File}}
 \index{set\+Max\+Log\+File@{set\+Max\+Log\+File}!Configuration@{Configuration}}
@@ -490,46 +487,7 @@ Set the time\+Out property.
 \end{DoxyParams}
 
 
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{class_configuration_af79af37b83b26f7eeb57dcb953a09845}\label{class_configuration_af79af37b83b26f7eeb57dcb953a09845}} 
-\index{Configuration@{Configuration}!Cpp\+Web\+Application@{Cpp\+Web\+Application}}
-\index{Cpp\+Web\+Application@{Cpp\+Web\+Application}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Cpp\+Web\+Application}{CppWebApplication}}
-{\footnotesize\ttfamily friend class \hyperlink{class_cpp_web_application}{Cpp\+Web\+Application}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_configuration_af35951d3389bacc3d625fc73174f7364}\label{class_configuration_af35951d3389bacc3d625fc73174f7364}} 
-\index{Configuration@{Configuration}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
-\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Cpp\+Web\+Server}{CppWebServer}}
-{\footnotesize\ttfamily friend class \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_configuration_a14d4dda0e6f3fa404ebad6cc84ab5ca6}\label{class_configuration_a14d4dda0e6f3fa404ebad6cc84ab5ca6}} 
-\index{Configuration@{Configuration}!Filter\+Chain@{Filter\+Chain}}
-\index{Filter\+Chain@{Filter\+Chain}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Filter\+Chain}{FilterChain}}
-{\footnotesize\ttfamily friend class \hyperlink{class_filter_chain}{Filter\+Chain}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_configuration_a4d54f5003e07e218070a449c22a52c7c}\label{class_configuration_a4d54f5003e07e218070a449c22a52c7c}} 
-\index{Configuration@{Configuration}!Http\+Read\+Request@{Http\+Read\+Request}}
-\index{Http\+Read\+Request@{Http\+Read\+Request}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Http\+Read\+Request}{HttpReadRequest}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_read_request}{Http\+Read\+Request}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_configuration_a84765570a5386c96f10067fb0e11bc13}\label{class_configuration_a84765570a5386c96f10067fb0e11bc13}} 
-\index{Configuration@{Configuration}!Http\+Servlet\+Response@{Http\+Servlet\+Response}}
-\index{Http\+Servlet\+Response@{Http\+Servlet\+Response}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Http\+Servlet\+Response}{HttpServletResponse}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}\hspace{0.3cm}{\ttfamily [friend]}}
-
-\mbox{\Hypertarget{class_configuration_a3e611175a551b64dda26f513067e0d04}\label{class_configuration_a3e611175a551b64dda26f513067e0d04}} 
-\index{Configuration@{Configuration}!Http\+Session@{Http\+Session}}
-\index{Http\+Session@{Http\+Session}!Configuration@{Configuration}}
-\subsubsection{\texorpdfstring{Http\+Session}{HttpSession}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_session}{Http\+Session}\hspace{0.3cm}{\ttfamily [friend]}}
-
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{configuration_8h}{configuration.\+h}\item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{configuration_8cpp}{configuration.\+cpp}\end{DoxyCompactItemize}
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/configuration.\+h\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/configuration.\+cpp\end{DoxyCompactItemize}

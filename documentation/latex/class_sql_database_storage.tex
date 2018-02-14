@@ -1,0 +1,73 @@
+\hypertarget{class_sql_database_storage}{}\section{Sql\+Database\+Storage Class Reference}
+\label{class_sql_database_storage}\index{Sql\+Database\+Storage@{Sql\+Database\+Storage}}
+
+
+The \mbox{\hyperlink{class_sql_database_storage}{Sql\+Database\+Storage}} class allows you to reuse connections made to the database through the Q\+Sql\+Database class within Q\+Thread\+Pool.  
+
+
+
+
+{\ttfamily \#include $<$sqldatabasestorage.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sql_database_storage_a691465c618b8050f5c67543f57fc4d15}{Sql\+Database\+Storage}} (const Q\+String \&type=\char`\"{}\char`\"{}, const Q\+String \&host\+Name=\char`\"{}\char`\"{}, const Q\+String \&database\+Name=\char`\"{}\char`\"{}, const Q\+String \&user\+Name=\char`\"{}\char`\"{}, const Q\+String \&password=\char`\"{}\char`\"{}, int port=0)
+\begin{DoxyCompactList}\small\item\em This constructor receives informations to create a connection to the database. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_af63f84ae9263c490325f10bbb352c983}\label{class_sql_database_storage_af63f84ae9263c490325f10bbb352c983}} 
+Q\+String \mbox{\hyperlink{class_sql_database_storage_af63f84ae9263c490325f10bbb352c983}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Returns the type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_a1f87803a1217305b4bc05fd13bf36ba6}\label{class_sql_database_storage_a1f87803a1217305b4bc05fd13bf36ba6}} 
+Q\+String \mbox{\hyperlink{class_sql_database_storage_a1f87803a1217305b4bc05fd13bf36ba6}{get\+Password}} () const
+\begin{DoxyCompactList}\small\item\em Returns the password. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_a23a969c1fd094a15b1787add541e9bb5}\label{class_sql_database_storage_a23a969c1fd094a15b1787add541e9bb5}} 
+Q\+String \mbox{\hyperlink{class_sql_database_storage_a23a969c1fd094a15b1787add541e9bb5}{get\+Host\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the host name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_a69dd2e9296bc727fa396316d1746dee8}\label{class_sql_database_storage_a69dd2e9296bc727fa396316d1746dee8}} 
+Q\+String \mbox{\hyperlink{class_sql_database_storage_a69dd2e9296bc727fa396316d1746dee8}{get\+Database\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the database\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_afc4b98c1eb06e868ce0b317aa381a899}\label{class_sql_database_storage_afc4b98c1eb06e868ce0b317aa381a899}} 
+Q\+String \mbox{\hyperlink{class_sql_database_storage_afc4b98c1eb06e868ce0b317aa381a899}{get\+User\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Returns the user\textquotesingle{}s name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_acf0079bd639d2e4ba91c9b007a6af263}\label{class_sql_database_storage_acf0079bd639d2e4ba91c9b007a6af263}} 
+int \mbox{\hyperlink{class_sql_database_storage_acf0079bd639d2e4ba91c9b007a6af263}{get\+Port}} () const
+\begin{DoxyCompactList}\small\item\em Returns the port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_sql_database_storage_a4184a8138d1f65bc644825f587436aea}\label{class_sql_database_storage_a4184a8138d1f65bc644825f587436aea}} 
+Q\+Sql\+Database \& \mbox{\hyperlink{class_sql_database_storage_a4184a8138d1f65bc644825f587436aea}{get\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Returns the existing connection to the current thread\textquotesingle{}s database. If there is no open connection to the current thread, a new connection will be created and returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{class_sql_database_storage}{Sql\+Database\+Storage}} class allows you to reuse connections made to the database through the Q\+Sql\+Database class within Q\+Thread\+Pool. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sql_database_storage_a691465c618b8050f5c67543f57fc4d15}\label{class_sql_database_storage_a691465c618b8050f5c67543f57fc4d15}} 
+\index{Sql\+Database\+Storage@{Sql\+Database\+Storage}!Sql\+Database\+Storage@{Sql\+Database\+Storage}}
+\index{Sql\+Database\+Storage@{Sql\+Database\+Storage}!Sql\+Database\+Storage@{Sql\+Database\+Storage}}
+\subsubsection{\texorpdfstring{Sql\+Database\+Storage()}{SqlDatabaseStorage()}}
+{\footnotesize\ttfamily Sql\+Database\+Storage\+::\+Sql\+Database\+Storage (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{type = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const Q\+String \&}]{host\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const Q\+String \&}]{database\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const Q\+String \&}]{user\+Name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const Q\+String \&}]{password = {\ttfamily \char`\"{}\char`\"{}},  }\item[{int}]{port = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This constructor receives informations to create a connection to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & Q\+String \&type \+: Driver type. \\
+\hline
+{\em const} & Q\+String \&host\+Name \+: Sets the connection\textquotesingle{}s host name to host. \\
+\hline
+{\em const} & Q\+String \&database\+Name \+: Sets the connection\textquotesingle{}s database name to name. \\
+\hline
+{\em const} & Q\+String \&user\+Name \+: Sets the connection\textquotesingle{}s user name to name. \\
+\hline
+{\em const} & Q\+String \&password \+: Sets the connection\textquotesingle{}s password to password. \\
+\hline
+{\em int} & port \+: Sets the connection\textquotesingle{}s port number to port. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/sqldatabasestorage.\+h\end{DoxyCompactItemize}

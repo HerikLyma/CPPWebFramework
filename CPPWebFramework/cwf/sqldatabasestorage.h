@@ -7,9 +7,11 @@
 #include <QSqlError>
 #include <QSqlDatabase>
 #include <QThreadStorage>
+#include "cppwebframework_global.h"
 
+CWF_BEGIN_NAMESPACE
 /**
- * The SqlDatabaseStorage class allows you to reuse connections made to the database through the QSqlDatabase class within QThreadPool.
+ * @brief The SqlDatabaseStorage class allows you to reuse connections made to the database through the QSqlDatabase class within QThreadPool.
  */
 class SqlDatabaseStorage
 {    
@@ -111,6 +113,8 @@ public:
         return *pool.localData().db;
     }
 };
+
+CWF_END_NAMESPACE
 
 #endif
 #endif // SQLDATABASESTORAGE_H

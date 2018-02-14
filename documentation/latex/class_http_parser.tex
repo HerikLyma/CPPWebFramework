@@ -2,7 +2,7 @@
 \label{class_http_parser}\index{Http\+Parser@{Http\+Parser}}
 
 
-The class parses a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message.  
+The class parses a H\+T\+TP message.  
 
 
 
@@ -12,51 +12,52 @@ The class parses a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_http_parser_a91e6c1876337b53694347476f277d1a2}{Http\+Parser} (Q\+Byte\+Array \&http\+Message)
-\begin{DoxyCompactList}\small\item\em This constructor receives a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message and parses it. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}{get\+Content\+Lenght} () const
+\mbox{\hyperlink{class_http_parser_a91e6c1876337b53694347476f277d1a2}{Http\+Parser}} (Q\+Byte\+Array \&http\+Message)
+\begin{DoxyCompactList}\small\item\em This constructor receives a H\+T\+TP message and parses it. \end{DoxyCompactList}\item 
+qint64 \mbox{\hyperlink{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}{get\+Content\+Lenght}} () const
 \begin{DoxyCompactList}\small\item\em Returns the content lenght. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a3adf500c4b0cf85d8249e071a7094f20}{get\+Content\+Type} () const
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a3adf500c4b0cf85d8249e071a7094f20}{get\+Content\+Type}} () const
 \begin{DoxyCompactList}\small\item\em Returns the content type. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a760eb9ec81fa1983b8eb5b088b0e6f41}{get\+Http\+Version} () const
-\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{namespace_h_t_t_p}{H\+T\+TP} version. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a283aa2b313491a592babdb5528086f71}{get\+Method} () const
-\begin{DoxyCompactList}\small\item\em Returns \hyperlink{namespace_h_t_t_p}{H\+T\+TP} method. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_abeee6e30f6494121010bc5498b162870}{get\+Body} () const
-\begin{DoxyCompactList}\small\item\em Returns \hyperlink{namespace_h_t_t_p}{H\+T\+TP} body message. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a60292a9b49d1e86becec848c3d0541bc}{get\+Session\+Id} () const
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a760eb9ec81fa1983b8eb5b088b0e6f41}{get\+Http\+Version}} () const
+\begin{DoxyCompactList}\small\item\em Returns the H\+T\+TP version. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a283aa2b313491a592babdb5528086f71}{get\+Method}} () const
+\begin{DoxyCompactList}\small\item\em Returns H\+T\+TP method. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_abeee6e30f6494121010bc5498b162870}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Returns H\+T\+TP body message. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a60292a9b49d1e86becec848c3d0541bc}{get\+Session\+Id}} () const
 \begin{DoxyCompactList}\small\item\em Returns session id. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a7a1db20efbebf30e1f16004a35ab665f}{get\+Url} () const
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a7a1db20efbebf30e1f16004a35ab665f}{get\+Url}} () const
 \begin{DoxyCompactList}\small\item\em Returns the url. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a69fb981ff2f60058277c51b674006663}{get\+Parameter} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_a69fb981ff2f60058277c51b674006663}{get\+Parameter}} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em Returns a specific parameter given a name. If the parameter name does not exists, the function returns default\+Value. If no default\+Value is specified, the function returns a default-\/constructed value. If there are multiple parameters with a name, the value of the most recently inserted one is returned. \end{DoxyCompactList}\item 
-Q\+Byte\+Array\+List \hyperlink{class_http_parser_ab0bb302010df956a954fada3061f59f0}{get\+Parameters} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array\+List \mbox{\hyperlink{class_http_parser_ab0bb302010df956a954fada3061f59f0}{get\+Parameters}} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em Returns all parameters with a specific name. \end{DoxyCompactList}\item 
-Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_ad71aba18e720a76588c1fed96c812f31}{get\+Parameters} () const
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \mbox{\hyperlink{class_http_parser_ad71aba18e720a76588c1fed96c812f31}{get\+Parameters}} () const
 \begin{DoxyCompactList}\small\item\em Returns all parameters. \end{DoxyCompactList}\item 
-Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_a7a887e3a35003a07ba3ec5600260194b}{get\+Uploaded\+Files} () const
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \mbox{\hyperlink{class_http_parser_a7a887e3a35003a07ba3ec5600260194b}{get\+Uploaded\+Files}} () const
 \begin{DoxyCompactList}\small\item\em Returns all uploaded files. \end{DoxyCompactList}\item 
-Q\+Vector$<$ \hyperlink{class_http_cookie}{Http\+Cookie} $>$ \hyperlink{class_http_parser_adacd6d1e9e28ddb21e35d47a965506e3}{get\+Cookies} () const
+Q\+Vector$<$ \mbox{\hyperlink{class_http_cookie}{Http\+Cookie}} $>$ \mbox{\hyperlink{class_http_parser_adacd6d1e9e28ddb21e35d47a965506e3}{get\+Cookies}} () const
 \begin{DoxyCompactList}\small\item\em Returns all cookies. \end{DoxyCompactList}\item 
-Q\+Byte\+Array\+List \hyperlink{class_http_parser_ad1db732c8824dd7e91653fd956fc3bf5}{get\+Header\+Fields} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array\+List \mbox{\hyperlink{class_http_parser_ad1db732c8824dd7e91653fd956fc3bf5}{get\+Header\+Fields}} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em Returns all header fields given a specific name. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_aa754b731300bd5cf6dc82fa038089aaa}{get\+Header\+Field} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array \mbox{\hyperlink{class_http_parser_aa754b731300bd5cf6dc82fa038089aaa}{get\+Header\+Field}} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em Returns a specific header field given a name. If the header field name does not exists, the function returns default\+Value. If no default\+Value is specified, the function returns a default-\/constructed value. If there are multiple header field with a name, the value of the most recently inserted one is returned. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_a75e0872ac2323b7bd583ea5547503a50}{is\+Valid} () const
-\begin{DoxyCompactList}\small\item\em Returns true if \hyperlink{namespace_h_t_t_p}{H\+T\+TP} is valid, else it returns false. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_acbb3148607d2a3c80ba4e74573165f1d}{is\+Multi\+Part} () const
+bool \mbox{\hyperlink{class_http_parser_a75e0872ac2323b7bd583ea5547503a50}{is\+Valid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if H\+T\+TP is valid, else it returns false. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_http_parser_acbb3148607d2a3c80ba4e74573165f1d}{is\+Multi\+Part}} () const
 \begin{DoxyCompactList}\small\item\em Returns the multi part. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_aba65276efdd7ccfd93ff03f29f80889f}{get\+Read\+File} () const
+bool \mbox{\hyperlink{class_http_parser_aba65276efdd7ccfd93ff03f29f80889f}{get\+Read\+File}} () const
 \begin{DoxyCompactList}\small\item\em Returns true if all message was read. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{class_http_parser_a4d54f5003e07e218070a449c22a52c7c}{Http\+Read\+Request}
+\mbox{\Hypertarget{class_http_parser_a4d54f5003e07e218070a449c22a52c7c}\label{class_http_parser_a4d54f5003e07e218070a449c22a52c7c}} 
+class {\bfseries Http\+Read\+Request}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The class parses a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message. 
+The class parses a H\+T\+TP message. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_http_parser_a91e6c1876337b53694347476f277d1a2}\label{class_http_parser_a91e6c1876337b53694347476f277d1a2}} 
@@ -67,11 +68,11 @@ The class parses a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message.
 
 
 
-This constructor receives a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message and parses it. 
+This constructor receives a H\+T\+TP message and parses it. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em Q\+Byte\+Array} & \&http\+Message \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message. \\
+{\em Q\+Byte\+Array} & \&http\+Message \+: H\+T\+TP message. \\
 \hline
 \end{DoxyParams}
 
@@ -85,10 +86,10 @@ This constructor receives a \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message and 
 
 
 
-Returns \hyperlink{namespace_h_t_t_p}{H\+T\+TP} body message. 
+Returns H\+T\+TP body message. 
 
 \begin{DoxyReturn}{Returns}
-Q\+Byte\+Array \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} body message. 
+Q\+Byte\+Array \+: H\+T\+TP body message. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}\label{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Content\+Lenght@{get\+Content\+Lenght}}
@@ -120,7 +121,7 @@ Q\+Byte\+Array \+: Content type.
 \index{Http\+Parser@{Http\+Parser}!get\+Cookies@{get\+Cookies}}
 \index{get\+Cookies@{get\+Cookies}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Cookies()}{getCookies()}}
-{\footnotesize\ttfamily Q\+Vector$<$ \hyperlink{class_http_cookie}{Http\+Cookie} $>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Vector$<$ \mbox{\hyperlink{class_http_cookie}{Http\+Cookie}} $>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -173,10 +174,10 @@ Q\+Byte\+Array\+List \+: Header fields.
 
 
 
-Returns the \hyperlink{namespace_h_t_t_p}{H\+T\+TP} version. 
+Returns the H\+T\+TP version. 
 
 \begin{DoxyReturn}{Returns}
-Q\+Byte\+Array \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} version. 
+Q\+Byte\+Array \+: H\+T\+TP version. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_parser_a283aa2b313491a592babdb5528086f71}\label{class_http_parser_a283aa2b313491a592babdb5528086f71}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Method@{get\+Method}}
@@ -186,10 +187,10 @@ Q\+Byte\+Array \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} version.
 
 
 
-Returns \hyperlink{namespace_h_t_t_p}{H\+T\+TP} method. 
+Returns H\+T\+TP method. 
 
 \begin{DoxyReturn}{Returns}
-Q\+Byte\+Array \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} method. 
+Q\+Byte\+Array \+: H\+T\+TP method. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_parser_a69fb981ff2f60058277c51b674006663}\label{class_http_parser_a69fb981ff2f60058277c51b674006663}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Parameter@{get\+Parameter}}
@@ -313,23 +314,14 @@ bool \+: Multi part.
 
 
 
-Returns true if \hyperlink{namespace_h_t_t_p}{H\+T\+TP} is valid, else it returns false. 
+Returns true if H\+T\+TP is valid, else it returns false. 
 
 \begin{DoxyReturn}{Returns}
-bool \+: \hyperlink{namespace_h_t_t_p}{H\+T\+TP} message valid. 
+bool \+: H\+T\+TP message valid. 
 \end{DoxyReturn}
-
-
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{class_http_parser_a4d54f5003e07e218070a449c22a52c7c}\label{class_http_parser_a4d54f5003e07e218070a449c22a52c7c}} 
-\index{Http\+Parser@{Http\+Parser}!Http\+Read\+Request@{Http\+Read\+Request}}
-\index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Parser@{Http\+Parser}}
-\subsubsection{\texorpdfstring{Http\+Read\+Request}{HttpReadRequest}}
-{\footnotesize\ttfamily friend class \hyperlink{class_http_read_request}{Http\+Read\+Request}\hspace{0.3cm}{\ttfamily [friend]}}
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpparser_8h}{httpparser.\+h}\item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpparser_8cpp}{httpparser.\+cpp}\end{DoxyCompactItemize}
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpparser.\+h\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpparser.\+cpp\end{DoxyCompactItemize}

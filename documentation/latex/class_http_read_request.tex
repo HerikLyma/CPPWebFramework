@@ -2,8 +2,8 @@
 \label{class_http_read_request}\index{Http\+Read\+Request@{Http\+Read\+Request}}
 
 
-The \hyperlink{class_http_read_request}{Http\+Read\+Request} class is created automatically by the \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} and inserted ~\newline
- in a Q\+Thread\+Pool, always when the \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} has a call by a client(\+Browser).  
+The \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} class is created automatically by the \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} and inserted ~\newline
+ in a Q\+Thread\+Pool, always when the \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} has a call by a client(\+Browser).  
 
 
 
@@ -12,78 +12,52 @@ The \hyperlink{class_http_read_request}{Http\+Read\+Request} class is created au
 
 
 
-Inheritance diagram for Http\+Read\+Request\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=175pt]{class_http_read_request__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Http\+Read\+Request\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_http_read_request_ae585e99b43ee991c3b4884a1852eeb82}{Http\+Read\+Request} (qintptr socket\+Descriptor, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_servlet}{Http\+Servlet} $\ast$$>$ \&url\+Servlet, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_session}{Http\+Session} $\ast$$>$ \&sessions, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \hyperlink{class_filter}{Filter} $\ast$filter)
-\begin{DoxyCompactList}\small\item\em This constructor provides the necessary information to create a \hyperlink{class_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
-\hyperlink{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}{$\sim$\+Http\+Read\+Request} ()
+\mbox{\hyperlink{class_http_read_request_ae585e99b43ee991c3b4884a1852eeb82}{Http\+Read\+Request}} (qintptr socket\+Descriptor, \mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_servlet}{Http\+Servlet}} $\ast$$>$ \&url\+Servlet, \mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_session}{Http\+Session}} $\ast$$>$ \&sessions, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \mbox{\hyperlink{class_filter}{Filter}} $\ast$filter)
+\begin{DoxyCompactList}\small\item\em This constructor provides the necessary information to create a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}\label{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}} 
+\mbox{\hyperlink{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}{$\sim$\+Http\+Read\+Request}} ()
 \begin{DoxyCompactList}\small\item\em Destroys dynamically allocated resources. \end{DoxyCompactList}\item 
-void \hyperlink{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}{run} () override
+\mbox{\Hypertarget{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}\label{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}} 
+void \mbox{\hyperlink{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}{run}} () override
 \begin{DoxyCompactList}\small\item\em Starts to read the requisition. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \hyperlink{class_http_read_request}{Http\+Read\+Request} class is created automatically by the \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} and inserted ~\newline
- in a Q\+Thread\+Pool, always when the \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} has a call by a client(\+Browser). 
+The \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} class is created automatically by the \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} and inserted ~\newline
+ in a Q\+Thread\+Pool, always when the \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} has a call by a client(\+Browser). 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_http_read_request_ae585e99b43ee991c3b4884a1852eeb82}\label{class_http_read_request_ae585e99b43ee991c3b4884a1852eeb82}} 
 \index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
 \index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
 \subsubsection{\texorpdfstring{Http\+Read\+Request()}{HttpReadRequest()}}
-{\footnotesize\ttfamily Http\+Read\+Request\+::\+Http\+Read\+Request (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_servlet}{Http\+Servlet} $\ast$$>$ \&}]{url\+Servlet,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_session}{Http\+Session} $\ast$$>$ \&}]{sessions,  }\item[{Q\+Ssl\+Configuration $\ast$}]{ssl\+Configuration,  }\item[{\hyperlink{class_filter}{Filter} $\ast$}]{filter }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Http\+Read\+Request\+::\+Http\+Read\+Request (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor,  }\item[{\mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_servlet}{Http\+Servlet}} $\ast$$>$ \&}]{url\+Servlet,  }\item[{\mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_session}{Http\+Session}} $\ast$$>$ \&}]{sessions,  }\item[{Q\+Ssl\+Configuration $\ast$}]{ssl\+Configuration,  }\item[{\mbox{\hyperlink{class_filter}{Filter}} $\ast$}]{filter }\end{DoxyParamCaption})}
 
 
 
-This constructor provides the necessary information to create a \hyperlink{class_http_read_request}{Http\+Read\+Request}. 
+This constructor provides the necessary information to create a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}}. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em qintptr} & socket\+Descriptor \+: Used to create a socket. \\
 \hline
-{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_http_servlet}{Http\+Servlet}} & $\ast$$>$ \&url\+Servlet \+: All mapped servlets \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\mbox{\hyperlink{class_http_servlet}{Http\+Servlet}}} & $\ast$$>$ \&url\+Servlet \+: All mapped servlets \\
 \hline
-{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_http_session}{Http\+Session}} & $\ast$$>$ \&sessions \+: Sessions. \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\mbox{\hyperlink{class_http_session}{Http\+Session}}} & $\ast$$>$ \&sessions \+: Sessions. \\
 \hline
 {\em Q\+Ssl\+Configuration} & $\ast$ssl\+Configuration \+: S\+SL configuration. \\
 \hline
-{\em \hyperlink{class_filter}{Filter}} & $\ast$filter \+: \hyperlink{class_filter}{Filter} \\
+{\em \mbox{\hyperlink{class_filter}{Filter}}} & $\ast$filter \+: \mbox{\hyperlink{class_filter}{Filter}} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}\label{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}} 
-\index{Http\+Read\+Request@{Http\+Read\+Request}!````~Http\+Read\+Request@{$\sim$\+Http\+Read\+Request}}
-\index{````~Http\+Read\+Request@{$\sim$\+Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
-\subsubsection{\texorpdfstring{$\sim$\+Http\+Read\+Request()}{~HttpReadRequest()}}
-{\footnotesize\ttfamily Http\+Read\+Request\+::$\sim$\+Http\+Read\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Destroys dynamically allocated resources. 
-
-
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}\label{class_http_read_request_a8db91de80ce8e83a3b89758a22eec5c3}} 
-\index{Http\+Read\+Request@{Http\+Read\+Request}!run@{run}}
-\index{run@{run}!Http\+Read\+Request@{Http\+Read\+Request}}
-\subsubsection{\texorpdfstring{run()}{run()}}
-{\footnotesize\ttfamily void Http\+Read\+Request\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
-
-
-
-Starts to read the requisition. 
-
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpreadrequest_8h}{httpreadrequest.\+h}\item 
-/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/\hyperlink{httpreadrequest_8cpp}{httpreadrequest.\+cpp}\end{DoxyCompactItemize}
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpreadrequest.\+h\item 
+C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpreadrequest.\+cpp\end{DoxyCompactItemize}

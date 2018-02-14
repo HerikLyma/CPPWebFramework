@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variant',['Variant',['../class_variant.html',1,'']]]
+  ['urlencoder',['URLEncoder',['../class_u_r_l_encoder.html',1,'']]]
 ];

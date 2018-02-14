@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="QMapThreadSafety\< Key, T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_map_thread_safety.html",tooltip="The QMapThreadSafety class is a thread safe QMap. "];
+}

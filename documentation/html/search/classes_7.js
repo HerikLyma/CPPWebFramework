@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['urlencoder',['URLEncoder',['../class_u_r_l_encoder.html',1,'']]]
+  ['sqldatabasestorage',['SqlDatabaseStorage',['../class_sql_database_storage.html',1,'']]]
 ];
