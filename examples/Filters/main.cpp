@@ -12,9 +12,7 @@
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv,
-                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/Filters/server/"),
-                                  new LoginFilter);
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Filters/server/", new LoginFilter);
 
     server.addUrlServlet("/login", new LoginServlet);
     server.addUrlServlet("/index", new IndexServlet);

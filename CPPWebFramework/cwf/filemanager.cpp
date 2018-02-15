@@ -6,10 +6,11 @@
 */
 
 #include "filemanager.h"
+#include <QDir>
 
 CWF_BEGIN_NAMESPACE
 
-QString FileManager::extract(QString &name, char ch) const
+QString FileManager::extract(QString &name, char ch)
 {
     QString fName;
     for(int i = (name.size() - 1); i >= 0 ; --i)
@@ -21,35 +22,35 @@ QString FileManager::extract(QString &name, char ch) const
     return fName;
 }
 
-QString FileManager::fileName(QString &name) const
+QString FileManager::fileName(QString &name)
 {
     return extract(name, '/');
 }
 
-QString FileManager::fileExtention(QString &name) const
+QString FileManager::fileExtention(QString &name)
 {
     return extract(name, '.');
 }
 
-void FileManager::removeLastBar(QString &path) const
+void FileManager::removeLastBar(QString &path)
 {
     if(path.endsWith("/"))
         path.remove(path.length() - 1, 1);
 }
 
-void FileManager::removeFirstBar(QString &path) const
+void FileManager::removeFirstBar(QString &path)
 {
     if(path.startsWith("/"))
         path.remove(0, 1);
 }
 
-void FileManager::putFirstBar(QString &path)  const
+void FileManager::putFirstBar(QString &path)
 {
     if(!path.startsWith("/"))
         path.push_front("/");
 }
 
-QByteArray FileManager::readAll(const QString &fileName, QFile::FileError &fileErro)  const
+QByteArray FileManager::readAll(const QString &fileName, QFile::FileError &fileErro)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -58,6 +59,45 @@ QByteArray FileManager::readAll(const QString &fileName, QFile::FileError &fileE
         return file.errorString().toLatin1();
     }
     return file.readAll();
+}
+
+bool FileManager::copyDirectoryFiles(const QString &fromDir, const QString &toDir, bool coverFileIfExist)
+{
+    QDir sourceDir(fromDir);
+    QDir targetDir(toDir);
+    if(!targetDir.exists())
+    {
+        if(!targetDir.mkdir(targetDir.absolutePath()))
+            return false;
+    }
+
+    QFileInfoList fileInfoList(std::move(sourceDir.entryInfoList()));
+    for(const QFileInfo &fileInfo : fileInfoList)
+    {
+        if(fileInfo.fileName() == "." || fileInfo.fileName() == "..")
+        {
+            continue;
+        }
+        if(fileInfo.isDir())
+        {
+            if(!copyDirectoryFiles(fileInfo.filePath(), targetDir.filePath(fileInfo.fileName()), coverFileIfExist))
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if(coverFileIfExist && targetDir.exists(fileInfo.fileName()))
+            {
+                targetDir.remove(fileInfo.fileName());
+            }
+            if(!QFile::copy(fileInfo.filePath(), targetDir.filePath(fileInfo.fileName())))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 CWF_END_NAMESPACE

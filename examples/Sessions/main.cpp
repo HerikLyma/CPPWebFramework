@@ -12,8 +12,7 @@
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv,
-                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/Sessions/server"));
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Sessions/server");
 
     server.addUrlServlet("/login", new LoginServlet);
     server.addUrlServlet("/index", new IndexServlet);

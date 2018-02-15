@@ -20,9 +20,7 @@ void BmiServlet::doGet(CWF::HttpServletRequest &request, CWF::HttpServletRespons
     json["mass"]     =  user.getMass();
     json["height"]   =  user.getHeight();
 
-
-    response.addHeader("Content-Type", "application/json");
-    response.write(QJsonDocument(json).toJson());
+    response.write(json);
     //Call
     //http://127.0.0.1:8080/bmi?name=Herik&mass=75&height=1.75
 }

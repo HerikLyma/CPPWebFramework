@@ -10,8 +10,7 @@
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv,
-                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/WebServices/server/"));
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/WebServices/server/");
 
     server.addUrlServlet("/bmi", new BmiServlet);
 

@@ -5,7 +5,6 @@
 #-------------------------------------------------
 
 QT       += network xml
-
 QT       -= gui
 
 TARGET = CPPWebFramework
@@ -89,26 +88,45 @@ HEADERS += \
     cwf/variant.h \
     cwf/sqldatabasestorage.h
 
+DISTFILES += \
+    server/config/ssl/my.key \
+    server/config/ssl/my.cert \
+    server/config/cppwebserverpages/403.xhtml \
+    server/config/cppwebserverpages/404.xhtml \
+    server/config/cppwebserverpages/index.xhtml \
+    server/config/cppwebserverpages/resources/images/logo.jpg \
+    server/config/cppwebserverpages/resources/images/favicon.ico \
+    server/config/cppwebserverpages/resources/css/cppweb.css \
+    server/config/CPPWeb.ini \
+    server/config/log/CPPWebServer.log
+
 unix {
     headers.path   = /usr/lib/cwf
     headers.files += $$HEADERS
     target.path    = /usr/lib
+    config.path    = /usr/lib/server
+    config.files   = server/*
 }
 
 macx {
     headers.path   = /usr/local/lib/cwf
     headers.files += $$HEADERS
-    target.path = /usr/local/lib
+    target.path    = /usr/local/lib
+    config.path    = /usr/local/lib/server
+    config.files   = server/*
 }
 
 win32 {
     headers.path   = C:/cwf
     headers.files += $$HEADERS
-    target.path = C:/Windows/System32
+    target.path    = C:/cwf
+    config.path    = C:/cwf/server
+    config.files   = server/*
 }
-
+s
 #Strongly recommended
 #LIBS += -ljemalloc
 
 INSTALLS += target
 INSTALLS += headers
+INSTALLS += config

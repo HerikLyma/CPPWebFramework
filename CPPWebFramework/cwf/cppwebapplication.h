@@ -44,12 +44,13 @@ class CPPWEBFRAMEWORKSHARED_EXPORT CppWebApplication
 public:
     /**
      * @brief Constructs a QCoreApplication, a CppWebServer and install the message handler.
+     * if the server folder's path was not found in the serverPath, it will look into the executable's folder.
      * @param int argc                    : Main function parameter used to build QCoreApplication.
      * @param char *argv[]                : Main function parameter used to build QCoreApplication.
      * @param const Configuration &config : Used to set the parameters of the server.
      * @param Filter *filter              : Install a filter for requests on the server. Optional.
      */
-    CppWebApplication(int argc, char *argv[], const Configuration &config, Filter *filter = nullptr);
+    CppWebApplication(int argc, char *argv[], const QString &serverPath, Filter *filter = nullptr);
     /**
      * @brief Destroys the server dynamically allocated.
      */

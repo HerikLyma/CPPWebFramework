@@ -13,6 +13,7 @@
 #include <QTextStream>
 #include <QFile>
 #include <QThread>
+#include <QJsonDocument>
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -120,6 +121,10 @@ public:
     explicit HttpServletResponse(QTcpSocket &socket);
 
     virtual ~HttpServletResponse();
+
+    void write(const QJsonObject &json, bool writeContentType = true);
+
+    void write(const QJsonArray &array, bool writeContentType = true);
 
     void write(QByteArray &&data);
 

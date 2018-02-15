@@ -16,7 +16,9 @@ CWF_BEGIN_NAMESPACE
 //CONFIGURATION CONSTANTS
 namespace CONFIGURATION
 {
+    const QByteArray CPP_CONFIG          = "/config/";
     const QByteArray CPP_WEB_INI         = "CPPWeb.ini";
+    const QByteArray CPP_LOG_FILE        = "CPPWebServer.log";
 }
 
 //XML CONSTANTS
@@ -168,6 +170,7 @@ namespace HTTP
     const QByteArray APPLICATION_MSWORD                      = "application/msword";
     const QByteArray APPLICATION_RTF                         = "application/rtf";
     const QByteArray APPLICATION_EXCEL                       = "application/vnd.ms-excel";
+    const QByteArray APPLICATION_JSON                        = "application/json";
     const QByteArray APPLICATION_POWER_POINT                 = "application/vnd.ms-powerpoint";
     const QByteArray APPLICATION_JAVASCRIPT                  = "application/javascript";
     const QByteArray APPLICATION_OPEN_DOCUMENT_TEXT          = "application/vnd.oasis.opendocument.text";

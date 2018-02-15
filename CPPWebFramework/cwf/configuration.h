@@ -14,7 +14,6 @@
 #include "filter.h"
 #include "filemanager.h"
 #include "cppwebframework_global.h"
-
 /**
  * @brief All classes of C++ Web Framework are contained within the namespace CWF.
  */
@@ -31,6 +30,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Configuration
     friend class CppWebApplication;
     friend class FilterChain;
 private:
+    bool valid                = false;
     bool accessCPPWebIni      = false;
     bool accessServerPages    = false;
     int timeOut               = 30000;
@@ -65,7 +65,9 @@ public:
      * }
      * @endcode
      */
-    explicit Configuration(QString serverFilesPath = "");
+    explicit Configuration(const QString &serverFilesPath = "");
+
+    void configure();
     /**
      * @brief Returns the timeOut property that will be used by the server to expire threads that are not in use.
      * Such threads will be restarted as needed. The default timeOut is 30000 milliseconds (30 seconds).
@@ -198,6 +200,8 @@ public:
      * @param const qint64 &value : Max file size in bytes.
      */
     void setMaxLogFile(const qint64 &value);
+
+    bool isValid() const;
 };
 
 CWF_END_NAMESPACE

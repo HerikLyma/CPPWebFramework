@@ -10,8 +10,7 @@
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv,
-                                  CWF::Configuration("/home/herik/CPPWebFramework/examples/CSTLOutExample/server/"));
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CSTLOutExample/server/");
 
     server.addUrlServlet("/user", new UserServlet);
 

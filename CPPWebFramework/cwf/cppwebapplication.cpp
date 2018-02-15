@@ -14,22 +14,29 @@ extern const Configuration configuration;
 const Configuration configuration;
 
 CppWebApplication::CppWebApplication(int argc, char *argv[],
-                                     const Configuration &config,
+                                     const QString &serverPath,
                                      Filter *filter) : application(argc, argv)
 {
     CWF::Configuration *c = const_cast<CWF::Configuration*>(&configuration);
-    *c = config;
+    *c = CWF::Configuration(serverPath);
 
-    server = new CppWebServer(filter);
-    qInstallMessageHandler(CppWebApplication::writeLog);
-
-    if(configuration.accessServerPages)
+    if(configuration.isValid())
     {
-        server->addUrlServlet("/examples"     , new CppWebServlet);
-        server->addUrlServlet("/authors"      , new CppWebServlet);
-        server->addUrlServlet("/documentation", new CppWebServlet);
-        server->addUrlServlet("/ssl"          , new CppWebServlet);
-        server->addUrlServlet("/index"        , new CppWebServlet);
+        server = new CppWebServer(filter);
+        qInstallMessageHandler(CppWebApplication::writeLog);
+
+        if(configuration.accessServerPages)
+        {
+            server->addUrlServlet("/examples"     , new CppWebServlet);
+            server->addUrlServlet("/authors"      , new CppWebServlet);
+            server->addUrlServlet("/documentation", new CppWebServlet);
+            server->addUrlServlet("/ssl"          , new CppWebServlet);
+            server->addUrlServlet("/index"        , new CppWebServlet);
+        }
+    }
+    else
+    {
+        qDebug() << "CPPWeb.ini not found. Please copy the CWF server folder to your project.";
     }
 }
 
@@ -46,6 +53,8 @@ void CppWebApplication::addUrlServlet(const QString &url, HttpServlet *servlet)
 
 int CppWebApplication::start()
 {
+    if(!configuration.isValid())
+        return -1;
     if(!server->listen(configuration.host, configuration.port))
     {
         qDebug() << "Error: " << server->errorString() << "\n";
@@ -59,11 +68,7 @@ int CppWebApplication::start()
 
 void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
 {        
-    FileManager fileManager;
-    QString logFilePath = configuration.logFilePath;
-    fileManager.removeLastBar(logFilePath);
-
-    QFile file(configuration.logFilePath + "/CPPWebServer.log");
+    QFile file(configuration.logFilePath);
 
     if(file.size() > configuration.maxLogFile)
     {

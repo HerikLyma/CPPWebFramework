@@ -8,7 +8,7 @@
 #include "cstlcompilerattributes.h"
 #include "constants.h"
 #include <QVariant>
-#include <cwf/metaclassparser.h>
+#include "metaclassparser.h"
 
 CWF_BEGIN_NAMESPACE
 

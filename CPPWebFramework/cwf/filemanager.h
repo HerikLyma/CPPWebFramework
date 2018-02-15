@@ -19,13 +19,14 @@ CWF_BEGIN_NAMESPACE
 class CPPWEBFRAMEWORKSHARED_EXPORT FileManager
 {
 public:
-     QString extract(QString &name, char ch) const;
-     QString fileName(QString &name) const;
-     QString fileExtention(QString &name) const;
-     void removeLastBar(QString &path) const;
-     void removeFirstBar(QString &path) const;
-     void putFirstBar(QString &path) const;
-     QByteArray readAll(const QString &fileName, QFileDevice::FileError &fileErro) const;
+     static QString extract(QString &name, char ch);
+     static QString fileName(QString &name);
+     static QString fileExtention(QString &name);
+     static void removeLastBar(QString &path);
+     static void removeFirstBar(QString &path);
+     static void putFirstBar(QString &path);
+     static QByteArray readAll(const QString &fileName, QFileDevice::FileError &fileErro);
+     static bool copyDirectoryFiles(const QString &fromDir, const QString &toDir, bool coverFileIfExist);
 };
 
 CWF_END_NAMESPACE

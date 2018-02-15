@@ -23,7 +23,6 @@ HttpServletResponse::~HttpServletResponse()
 {
 }
 
-
 void HttpServletResponse::flushBuffer()
 {
     const int max = 32768;
@@ -82,6 +81,22 @@ void HttpServletResponse::sendError(int sc, const QByteArray &msg)
     writeToSocket("<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>");
 }
 
+
+void HttpServletResponse::write(const QJsonObject &json, bool writeContentType)
+{
+    if(writeContentType)
+        addHeader(CWF::HTTP::CONTENT_TYPE, CWF::HTTP::APPLICATION_JSON);
+    content = std::move(QJsonDocument(json).toJson());
+    flushBuffer();
+}
+
+void HttpServletResponse::write(const QJsonArray &array, bool writeContentType)
+{
+    if(writeContentType)
+        addHeader(CWF::HTTP::CONTENT_TYPE, CWF::HTTP::APPLICATION_JSON);
+    content = std::move(QJsonDocument(array).toJson());
+    flushBuffer();
+}
 
 void HttpServletResponse::write(QByteArray &&data)
 {

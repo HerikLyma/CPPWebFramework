@@ -7,6 +7,7 @@
 
 #include "configuration.h"
 #include "constants.h"
+#include <QDir>
 
 CWF_BEGIN_NAMESPACE
 
@@ -20,13 +21,37 @@ void Configuration::setMaxLogFile(const qint64 &value)
     maxLogFile = value;
 }
 
-Configuration::Configuration(QString serverFilesPath)
-{
-    if(!serverFilesPath.isEmpty())
+Configuration::Configuration(const QString &serverFilesPath)
+{            
+    path = serverFilesPath;
+    FileManager::removeLastBar(path);
+    const QString iniFile("/config/CPPWeb.ini");
+    if(QFile(path + iniFile).exists())
     {
-        FileManager().removeLastBar(serverFilesPath);
-        serverFilesPath += "/config/CPPWeb.ini";
-        QSettings settings(serverFilesPath, QSettings::Format::IniFormat);
+        valid = true;
+        configure();
+    }
+    else
+    {
+        path = QDir::currentPath() + "/server";
+        if(QFile(path + iniFile).exists())
+        {
+            valid = true;
+            configure();
+        }
+        else
+        {
+            valid = false;
+        }
+    }
+}
+
+void Configuration::configure()
+{
+    const QString iniFile(path + "/config/CPPWeb.ini");
+    if(valid)
+    {
+        QSettings settings(iniFile, QSettings::Format::IniFormat);
         settings.beginGroup("config");
         host.setAddress(settings.value("host").toString());
         port                  = settings.value("port").toInt();
@@ -36,22 +61,15 @@ Configuration::Configuration(QString serverFilesPath)
         sslKeyFile            = settings.value("sslKeyFile").toString();
         sslCertFile           = settings.value("sslCertFile").toString();
         sessionExpirationTime = settings.value("sessionExpirationTime").toInt();
-        logFilePath           = settings.value("logFilePath").toString();
-        path                  = settings.value("path").toString();
         maxUploadFile         = settings.value("maxUploadFile").toLongLong();
         indexPage             = settings.value("indexPage").toString();
         accessCPPWebIni       = settings.value("accessCPPWebIni").toBool();
         accessServerPages     = settings.value("accessServerPages").toBool();
         maxLogFile            = settings.value("maxLogFile").toLongLong();
+        logFilePath = path + "/config/log/CPPWebServer.log";
 
-        FileManager fileManager;
-        fileManager.removeLastBar(path);
-        fileManager.removeFirstBar(sslCertFile);
-        fileManager.removeFirstBar(sslKeyFile);
-        fileManager.removeFirstBar(logFilePath);
-        fileManager.removeLastBar(logFilePath);
-        logFilePath = path + "/" + logFilePath;
-
+        FileManager::removeFirstBar(sslCertFile);
+        FileManager::removeFirstBar(sslKeyFile);
         if(!sslKeyFile.isEmpty())
             sslKeyFile           = path + "/" + sslKeyFile;
         if(!sslCertFile.isEmpty())
@@ -177,6 +195,11 @@ qint64 Configuration::getMaxUploadFile() const
 void Configuration::setMaxUploadFile(const qint64 &value)
 {
     maxUploadFile = value;
+}
+
+bool Configuration::isValid() const
+{
+    return valid;
 }
 
 CWF_END_NAMESPACE
