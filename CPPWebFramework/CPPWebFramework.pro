@@ -53,7 +53,8 @@ SOURCES += \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
     cwf/urlencoder.cpp \
-    cwf/variant.cpp
+    cwf/variant.cpp \
+    cwf/sqlquery.cpp
 
 HEADERS += \
         cwf/cppwebframework_global.h \
@@ -86,7 +87,8 @@ HEADERS += \
     cwf/requestdispatcher.h \
     cwf/urlencoder.h \
     cwf/variant.h \
-    cwf/sqldatabasestorage.h
+    cwf/sqldatabasestorage.h \
+    cwf/sqlquery.h
 
 DISTFILES += \
     server/config/ssl/my.key \

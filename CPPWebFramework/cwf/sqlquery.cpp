@@ -5,6 +5,7 @@
  See file LICENSE for detail.
 */
 
+#ifdef QT_SQL_LIB
 
 #include "sqlquery.h"
 #include <QSqlDriver>
@@ -151,3 +152,4 @@ QJsonObject SqlQuery::updateFromJson(const QJsonObject &json, const QString &tab
 }
 
 CWF_END_NAMESPACE
+#endif
