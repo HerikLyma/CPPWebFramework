@@ -51,9 +51,7 @@ void HttpParser::doParseHttpHeader(QByteArray &httpMessage)
     method      = std::move(firstHeaderLine[0].toUpper());
     url         = std::move(firstHeaderLine[1]);
     httpVersion = std::move(firstHeaderLine[2]);
-
-    if(method == GET_SET::GET_UPPER)
-        doParseUrl();
+    doParseUrl();
 
     int size = lines.size();
     for(int i = 1, column = 0; i < size; ++i)

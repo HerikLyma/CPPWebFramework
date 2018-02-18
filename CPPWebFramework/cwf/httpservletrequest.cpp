@@ -11,6 +11,8 @@
 #include "httpservletresponse.h"
 #include "configuration.h"
 #include <QUuid>
+#include <QJsonArray>
+#include <QJsonObject>
 
 CWF_BEGIN_NAMESPACE
 
@@ -146,6 +148,16 @@ const QObject *HttpServletRequest::getAttribute(const QString &name) const
 const QByteArray HttpServletRequest::getBody() const
 {
     return httpParser->getBody();
+}
+
+QJsonObject HttpServletRequest::bodyToJsonObject() const
+{
+    return QJsonDocument::fromJson(httpParser->getBody()).object();
+}
+
+QJsonArray HttpServletRequest::bodyToJsonArray() const
+{
+    return QJsonDocument::fromJson(httpParser->getBody()).array();
 }
 
 RequestDispatcher &HttpServletRequest::getRequestDispatcher(const QString &page)

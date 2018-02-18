@@ -39,9 +39,6 @@ public:
      * The parameter parent is optional.
      * NOTE: The CppWebServer is responsable to create the QTcpSocket, and the HttpReadRequest is
      * responsable to create a HttpReadRequest and a HttpServletResponse.
-     * @param socket : This is a reference to a QTcpSocket.
-     * @param path   : This is a reference to a QByteArray.
-     * @param parent : This is a pointer to a QObject.
      */
     explicit HttpServletRequest(QTcpSocket &socket, const QString &path, QMapThreadSafety<QString, HttpSession *> &sessions);
     /**
@@ -52,26 +49,28 @@ public:
      * @brief This method add an attribute that will be passed to a xhtml page.
      * The object can be processed within a page using xhtml CSTL. For this to be possible the object must
      * inherit from QObject and methods and must be in session "public slots".
-     * @param const QString &name :
-     * @param QObject *value      :
      */
     void addAttribute(const QString &name, QObject *value);
     /**
      * @brief This method returns all the attributes of a HttpReadRequest.
-     * @return QMap<QByteArray, QObject *>
      */
     QMap<QString, QObject *> getAttributes() const;
     /**
-     * @brief This method returns a specific object given its name.
-     * @param name : This is a reference to a QByteArray.
-     * @return const QObject * : Attributte's name.
+     * @brief This method returns a specific object given its name.     
      */
     const QObject *getAttribute(const QString &name) const;
     /**
-     * @brief Returns
-     * @return
+     * @brief Returns the request body.
      */
     const QByteArray getBody() const;
+    /**
+     * @brief Tries returns the body of the converted request to QJsonObject.
+     */
+    QJsonObject bodyToJsonObject() const;
+    /**
+     * @brief Tries returns the body of the converted request to QJsonArray.
+     */
+    QJsonArray bodyToJsonArray() const;
     /**
      * @brief This method returns a requestDispatcher given an specific page.
      * @param page : This is a reference to a QByteArray.
