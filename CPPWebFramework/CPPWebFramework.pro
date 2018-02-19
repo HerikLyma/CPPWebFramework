@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += network xml
+QT       += network xml sql
 QT       -= gui
 
 TARGET = CPPWebFramework

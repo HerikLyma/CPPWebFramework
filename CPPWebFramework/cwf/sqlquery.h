@@ -8,8 +8,6 @@
 #ifndef SQLQUERY_H
 #define SQLQUERY_H
 
-#ifdef QT_SQL_LIB
-
 #include <QVector>
 #include <QSqlQuery>
 #include <QSqlRecord>
@@ -85,5 +83,4 @@ public:
 
 CWF_END_NAMESPACE
 
-#endif
 #endif // SQLQUERY_H

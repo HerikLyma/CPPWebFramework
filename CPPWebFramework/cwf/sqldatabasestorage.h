@@ -7,7 +7,6 @@
 
 #ifndef SQLDATABASESTORAGE_H
 #define SQLDATABASESTORAGE_H
-#ifdef QT_SQL_LIB
 
 #include <QUuid>
 #include <QDebug>
@@ -123,5 +122,4 @@ public:
 
 CWF_END_NAMESPACE
 
-#endif
 #endif // SQLDATABASESTORAGE_H

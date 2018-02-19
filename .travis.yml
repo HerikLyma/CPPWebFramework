@@ -89,3 +89,8 @@ script:
   - cd WebServices
   - /opt/qt57/bin/qmake WebServices.pro
   - make -j 8
+
+  - cd ..
+  - cd CRUDRestWebService
+  - /opt/qt57/bin/qmake CRUDRestWebService.pro
+  - make -j 8

@@ -53,5 +53,5 @@ macx {
 
 win32 {
     INCLUDEPATH += C:/
-    LIBS += -LC:/Windows/System32 -lCPPWebFramework
+    LIBS += -LC:/cwf -lCPPWebFramework
 }
