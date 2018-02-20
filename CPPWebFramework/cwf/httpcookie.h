@@ -51,96 +51,66 @@ public:
      * @return
      */
     static QList<QByteArray> splitCSV(const QByteArray &source);
-
     /**
      * @brief setName
-     * @param name
      */
-    void setName(const QByteArray &name);
-
+    inline void setName(const QByteArray &value) { name = value; }
     /**
      * @brief setValue
-     * @param value
      */
-    void setValue(const QByteArray &value);
-
+    inline void setValue(const QByteArray &value) { this->value = value; }
     /**
      * @brief setComment
-     * @param comment
      */
-    void setComment(const QByteArray &comment);
-
+    inline void setComment(const QByteArray &value) { comment = value; }
     /**
-     * @brief setDomain
-     * @param domain
+     * @brief setDomain     
      */
-    void setDomain(const QByteArray &domain);
-
+    inline void setDomain(const QByteArray &value) { domain = value; }
     /**
      * @brief setMaxAge
-     * @param maxAge
      */
-    void setMaxAge(int maxAge);
-
+    inline void setMaxAge(int value) { maxAge = value; }
     /**
      * @brief setPath
-     * @param path
      */
-    void setPath(const QByteArray &path);
-
+    inline void setPath(const QByteArray &value) { path = value; }
     /**
      * @brief setSecure
-     * @param secure
      */
-    void setSecure(bool secure);
-
+    inline void setSecure(bool value) { secure = value; }
     /**
      * @brief getName
-     * @return
      */
-    QByteArray getName() const;
-
+    inline QByteArray getName() const { return name; }
     /**
      * @brief getValue
-     * @return
      */
-    QByteArray getValue() const;
-
+    inline QByteArray getValue() const { return value; }
     /**
      * @brief getComment
-     * @return
      */
-    QByteArray getComment() const;
-
+    inline QByteArray getComment() const { return comment; }
     /**
      * @brief getDomain
-     * @return
      */
-    QByteArray getDomain() const;
-
+    inline QByteArray getDomain() const { return domain; }
     /**
      * @brief getMaxAge
-     * @return
      */
-    int getMaxAge() const;
-
+    inline int getMaxAge() const { return maxAge; }
     /**
      * @brief getPath
-     * @return
      */
-    QByteArray getPath() const;
-
+    inline QByteArray getPath() const { return path; }
     /**
      * @brief getSecure
-     * @return
      */
-    bool getSecure() const;
-
+    inline bool getSecure() const { return secure; }
     /**
      * @brief getVersion
-     * @return
      */
-    int getVersion() const;
+    inline int getVersion() const { return version; }
 };
 
 CWF_END_NAMESPACE

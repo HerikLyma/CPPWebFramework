@@ -8,19 +8,15 @@
 #include "httpservletresponse.h"
 #include "configuration.h"
 #include "constants.h"
+#include <QDateTime>
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-
-HttpServletResponse::HttpServletResponse(QTcpSocket &socket) : socket(&socket)
+HttpServletResponse::HttpServletResponse(QTcpSocket &socket, const Configuration &configuration) : socket(&socket),
+                                                                                                   configuration(configuration)
 {
     statusCode       = HttpServletResponse::SC_OK;
     statusText       = HTTP::OK;
-}
-
-HttpServletResponse::~HttpServletResponse()
-{
 }
 
 void HttpServletResponse::flushBuffer()
@@ -70,17 +66,11 @@ void HttpServletResponse::flushBuffer()
     }
 }
 
-int HttpServletResponse::getBufferSize() const
-{
-    return content.size();
-}
-
 void HttpServletResponse::sendError(int sc, const QByteArray &msg)
 {
     writeHeaders();
     writeToSocket("<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>");
 }
-
 
 void HttpServletResponse::write(const QJsonObject &json, bool writeContentType)
 {
@@ -109,16 +99,6 @@ void HttpServletResponse::write(const QByteArray &data, bool flush)
     content += data;
     if(flush)
         flushBuffer();
-}
-
-void HttpServletResponse::addHeader(const QByteArray &name, const QByteArray &value)
-{
-    headers.insert(name,value);
-}
-
-void HttpServletResponse::addCookie(const HttpCookie &cookie)
-{
-    cookies.push_back(cookie);
 }
 
 void HttpServletResponse::setStatus(const int &statusCode, const QByteArray &description)
@@ -175,11 +155,6 @@ void HttpServletResponse::writeHeaders()
     }
     buffer.append(HTTP::END_LINE);
     writeToSocket(buffer);
-}
-
-QTcpSocket &HttpServletResponse::getSocket() const
-{
-    return *socket;
 }
 
 void HttpServletResponse::sendRedirect(const QByteArray &url)

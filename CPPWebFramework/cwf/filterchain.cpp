@@ -11,9 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-
-FilterChain::FilterChain(HttpServlet *servlet) :  servlet(servlet)
+FilterChain::FilterChain(HttpServlet *servlet, const Configuration &configuration) :  servlet(servlet), configuration(configuration)
 {
 }
 

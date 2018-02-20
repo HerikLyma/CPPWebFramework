@@ -12,9 +12,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-
-CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr)
+CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr, QString path)
 {
     int size = attr.size();
     if(size == 0)
@@ -31,15 +29,14 @@ CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr)
              attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
          }
          else
-         {
-             QString fileName(std::move(configuration.getPath()));
+         {             
              FileManager fileManager;
-             fileManager.removeLastBar(fileName);
+             fileManager.removeLastBar(path);
 
-             fileName += value;
+             path += value;
 
              QFile::FileError fileError;
-             attributes.insert(CSTL::TAG::PROPERTY::IMPORT::URL, fileManager.readAll(fileName, fileError));
+             attributes.insert(CSTL::TAG::PROPERTY::IMPORT::URL, fileManager.readAll(path, fileError));
          }
     }
     else

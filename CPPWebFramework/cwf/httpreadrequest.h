@@ -30,6 +30,7 @@
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
+class Configuration;
 /**
  * @brief The HttpReadRequest class is created automatically by the CppWebServer and inserted <br>
  * in a QThreadPool, always when the CppWebServer has a call by a client(Browser).
@@ -38,10 +39,11 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpReadRequest : public QRunnable
 {
     qintptr     socketDescriptor;
     QMapThreadSafety<QString, HttpServlet *> &urlServlet;
-    QMapThreadSafety<QString, HttpSession *> &sessions;
-    QSslConfiguration *sslConfiguration;
-    Filter      *filter;
-    QTcpSocket  *socket = nullptr;
+    QMapThreadSafety<QString, HttpSession *> &sessions;    
+    const Configuration &configuration;
+    QSslConfiguration   *sslConfiguration;
+    Filter              *filter;
+    QTcpSocket          *socket = nullptr;
     qint64 maxUploadFile;
     bool readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response);
     void createSocket();
@@ -57,7 +59,8 @@ public:
     HttpReadRequest(qintptr socketDescriptor,
                     QMapThreadSafety<QString, HttpServlet *> &urlServlet,
                     QMapThreadSafety<QString, HttpSession *> &sessions,
-                    QSslConfiguration *sslConfiguration,
+                    const Configuration &configuration,
+                    QSslConfiguration *sslConfiguration,                    
                     Filter *filter);
 
     /**

@@ -9,37 +9,22 @@
 #include "metaclassparser.h"
 #include "constants.h"
 #include "httpservletresponse.h"
-#include "configuration.h"
 #include <QUuid>
-#include <QJsonArray>
-#include <QJsonObject>
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-
 HttpServletRequest::HttpServletRequest(QTcpSocket &socket,
-                                       const QString &path,
-                                       QMapThreadSafety<QString, HttpSession *> &sessions) : socket(&socket),
-                                                                                             path(path),
-                                                                                             sessions(sessions)
-{
+                                       QMapThreadSafety<QString, HttpSession *> &sessions,
+                                       const Configuration &configuration) : socket(&socket),
+                                                                             sessions(sessions),
+                                                                             configuration(configuration)
+{    
 }
 
 HttpServletRequest::~HttpServletRequest()
 {
     if(requestDispatcher)
         delete requestDispatcher;
-}
-
-QMap<QString, QObject *> HttpServletRequest::getAttributes() const
-{
-    return attributes;
-}
-
-QMultiMap<QByteArray, QByteArray> HttpServletRequest::getUploadedFiles() const
-{
-    return httpParser->getUploadedFiles();
 }
 
 void HttpServletRequest::fillQObject(QObject *object)
@@ -135,68 +120,13 @@ void HttpServletRequest::fillQObject(QObject *object)
     }
 }
 
-void HttpServletRequest::addAttribute(const QString &name, QObject *value)
-{
-    attributes.insert(name, value);
-}
-
-const QObject *HttpServletRequest::getAttribute(const QString &name) const
-{
-    return attributes.contains(name) ? attributes[name] : nullptr;
-}
-
-const QByteArray HttpServletRequest::getBody() const
-{
-    return httpParser->getBody();
-}
-
-QJsonObject HttpServletRequest::bodyToJsonObject() const
-{
-    return QJsonDocument::fromJson(httpParser->getBody()).object();
-}
-
-QJsonArray HttpServletRequest::bodyToJsonArray() const
-{
-    return QJsonDocument::fromJson(httpParser->getBody()).array();
-}
-
 RequestDispatcher &HttpServletRequest::getRequestDispatcher(const QString &page)
 {
     if(requestDispatcher)
         delete requestDispatcher;
 
-    requestDispatcher = new RequestDispatcher(this->path + page);
+    requestDispatcher = new RequestDispatcher(configuration.getPath() + page);
     return *requestDispatcher;
-}
-
-QByteArray HttpServletRequest::getProtocol() const
-{
-    return httpParser != nullptr ? httpParser->getHttpVersion() : "";
-}
-
-void HttpServletRequest::clearAttributes()
-{
-    attributes.clear();
-}
-
-void HttpServletRequest::setHttpParser(HttpParser &httpParser)
-{
-    this->httpParser = &httpParser;
-}
-
-HttpParser &HttpServletRequest::getHttpParser() const
-{
-    return *httpParser;
-}
-
-QByteArray HttpServletRequest::getRequestURL() const
-{
-    return httpParser != nullptr ? httpParser->getUrl() : "";
-}
-
-QByteArray HttpServletRequest::getRequestURI() const
-{
-    return httpParser != nullptr ? httpParser->getUrl() : "";
 }
 
 HttpSession &HttpServletRequest::getSession()
@@ -204,16 +134,17 @@ HttpSession &HttpServletRequest::getSession()
     QMutex mutex;
     QMutexLocker locker(&mutex);
     qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
+    qint64 expiration = configuration.getSessionExpirationTime();
     if(!session)
     {
         QByteArray sessionId  = httpParser->getSessionId();
         if(sessionId.isEmpty() || !sessions.contains(sessionId))
         {
             sessionId = QUuid::createUuid().toString().toLocal8Bit();
-            response->addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));
-            session = new HttpSession(sessionId);
-            session->creationTime = currentTimeInt;
-            session->sessionExpirationTime = (currentTimeInt + configuration.getSessionExpirationTime());
+            response->addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));            
+            session = new HttpSession(sessionId, expiration);
+            session->creationTime = currentTimeInt;            
+            session->sessionExpirationTime = (currentTimeInt + expiration);
             sessions.insert(session->getId(), session);
         }
         else
@@ -223,42 +154,9 @@ HttpSession &HttpServletRequest::getSession()
     }
     session->expired          = (currentTimeInt >= session->sessionExpirationTime);
     session->lastAccessedTime = currentTimeInt;
+    if(!session->expired)
+        session->sessionExpirationTime = (currentTimeInt + expiration);
     return *session;
-}
-
-void HttpServletRequest::setSession(HttpSession &session)
-{
-    this->session = &session;
-}
-
-QByteArray HttpServletRequest::getParameter(const QByteArray &name) const
-{
-    return httpParser->getParameter(name);
-}
-
-QByteArrayList HttpServletRequest::getParameters(const QByteArray &name) const
-{
-    return httpParser->getParameters(name);
-}
-
-QTcpSocket &HttpServletRequest::getSocket() const
-{
-    return *socket;
-}
-
-bool HttpServletRequest::getAutoDeleteAttribute() const
-{
-    return autoDeleteAttribute;
-}
-
-void HttpServletRequest::setAutoDeleteAttribute(bool value)
-{
-    autoDeleteAttribute = value;
-}
-
-QString HttpServletRequest::getPath() const
-{
-    return path;
 }
 
 CWF_END_NAMESPACE

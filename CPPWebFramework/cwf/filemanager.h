@@ -20,8 +20,8 @@ class CPPWEBFRAMEWORKSHARED_EXPORT FileManager
 {
 public:
      static QString extract(QString &name, char ch);
-     static QString fileName(QString &name);
-     static QString fileExtention(QString &name);
+     inline static QString fileName(QString &name) { return extract(name, '/'); }
+     inline static QString fileExtention(QString &name) { return extract(name, '.'); }
      static void removeLastBar(QString &path);
      static void removeFirstBar(QString &path);
      static void putFirstBar(QString &path);

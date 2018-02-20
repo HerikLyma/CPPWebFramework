@@ -17,7 +17,7 @@ CWF_BEGIN_NAMESPACE
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerObject : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 private:
     QString value;
     QString type;
@@ -26,28 +26,28 @@ public:
      * @brief This constructor can set the CSTLCompilerObject's parent.
      * @param QObject *parent : parent.
      */
-    explicit CSTLCompilerObject(QObject *parent = 0);
+    explicit CSTLCompilerObject(QObject *parent = 0) : QObject(parent) {}
 public slots:
     /**
      * @brief Returns the value.
      * @return QString : Value.
      */
-    QString getValue() const;
+    inline QString getValue() const { return value; }
     /**
      * @brief Sets the value.
      * @param const QString &value : Value.
      */
-    void setValue(const QString &value);
+    inline void setValue(const QString &value) { this->value = value; }
     /**
      * @brief Returns the type.
      * @return QString : Type.
      */
-    QString getType() const;
+    inline QString getType() const { return type; }
     /**
      * @brief Sets the type.
      * @param const QString &value : Type.
      */
-    void setType(const QString &value);
+    inline void setType(const QString &value) { type = value; }
 };
 
 CWF_END_NAMESPACE

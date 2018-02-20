@@ -11,16 +11,16 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-
 HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
                                  QMapThreadSafety<QString, HttpServlet *> &urlServlet,
                                  QMapThreadSafety<QString, HttpSession *> &sessions,
+                                 const Configuration &configuration,
                                  QSslConfiguration *sslConfiguration,
                                  Filter *filter) :
                                                     socketDescriptor(socketDescriptor),
                                                     urlServlet(urlServlet),
                                                     sessions(sessions),
+                                                    configuration(configuration),
                                                     sslConfiguration(sslConfiguration),
                                                     filter(filter)
 {
@@ -59,8 +59,8 @@ void HttpReadRequest::run()
             {
                 QString               url      = parser.url;
                 HttpServlet          *servlet  = nullptr;                                
-                HttpServletRequest   request(*socket, configuration.path, sessions);                
-                HttpServletResponse  response(*socket);
+                HttpServletRequest   request(*socket, sessions, configuration);
+                HttpServletResponse  response(*socket, configuration);
                 request.httpParser = &parser;
                 request.response   = &response;
 
@@ -94,12 +94,12 @@ void HttpReadRequest::run()
                 if(contains)
                 {
                     servlet = urlServlet[url];
-                    FilterChain chain(servlet);
+                    FilterChain chain(servlet, configuration);
                     filter != nullptr ? filter->doFilter(request, response, chain) : chain.doFilter(request, response);
                 }
                 else
                 {
-                    FilterChain chain(servlet);
+                    FilterChain chain(servlet, configuration);
                     chain.doFilter(request, response);
                 }
             }

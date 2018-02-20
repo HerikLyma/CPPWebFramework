@@ -21,9 +21,9 @@
 #include "httpsession.h"
 #include "filter.h"
 #include "httpservlet.h"
+#include "configuration.h"
 #include "httpservletrequest.h"
 #include "httpservletresponse.h"
-#include "configuration.h"
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -34,6 +34,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT CppWebServer : public QTcpServer
 {
     Q_OBJECT
 private:
+    Configuration configuration;
     Filter *filter;
     QTimer *timer;
     QThreadPool pool;
@@ -41,7 +42,7 @@ private:
     QMapThreadSafety<QString, HttpSession *> sessions;
     QSslConfiguration *sslConfiguration = nullptr;
     const int sleepTime = 10;
-    QAtomicInteger<qint8> block = 0;
+    QAtomicInteger<qint8> block = 0;    
     /**
      * @brief Load the SSL Configuration to the server.
      */
@@ -51,7 +52,7 @@ public:
      * @brief Load SSL configuration, configure the thread pool and the filter.
      * @param Filter *filter : Install a filter for requests on the server. Optional.
      */
-    explicit CppWebServer(Filter *filter = nullptr);
+    explicit CppWebServer(const Configuration &configuration, Filter *filter = nullptr);
     /**
      * @brief Destroys all servlets and sessions.
     */
@@ -61,13 +62,14 @@ public:
      * @param const QString &url   : Url name.
      * @param HttpServlet *servlet : Servlet that will answer requests made to url.
      */
-    void addUrlServlet(const QString &url, HttpServlet *servlet);
-private slots:
+    inline void addUrlServlet(const QString &url, HttpServlet *servlet) { urlServlet.insert(url, servlet); }
+protected:
     /**
      * @brief incomingConnection
      * @param qintptr socketfd : Socket descriptor.
      */
     void incomingConnection(qintptr socketfd) override;
+private slots:
     /**
      * @brief Clean expired sessions on Server.
      */

@@ -16,8 +16,6 @@
 #include <QStringList>
 #include <QMetaObject>
 #include <QMetaMethod>
-#include <qdebug.h>
-#include <vector>
 #include "properties.h"
 #include "qlistobject.h"
 #include "cppwebframework_global.h"
@@ -29,8 +27,9 @@ CWF_BEGIN_NAMESPACE
 class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompiler
 {
     QByteArray str;
+    QString path;
     QMap<QString, QObject *>  &objects;
-    bool isStrFileName;
+    bool isStrFileName;    
     bool isXHTML = true;
     /**
      * @brief Try to open the xhtml page, if it fails, it will return an error QByteArray, else, it will return an empty QByteArray.
@@ -76,7 +75,7 @@ public:
      * @param QMap<QString, QObject *> &objects : Container objects that can be compiled into the xhtml page.
      * @param bool isStrFileName                : It indicates whether str is the name of a file or its contents.
      */
-    CSTLCompiler(const QByteArray &str, QMap<QString, QObject *> &objects, bool isStrFileName = true);
+    CSTLCompiler(const QByteArray &str, const QString &path, QMap<QString, QObject *> &objects, bool isStrFileName = true);
     /**
      * @brief Returns the compiled xhtml page.
      * @return QByteArray : Compiled page.

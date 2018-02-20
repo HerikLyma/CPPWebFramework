@@ -19,6 +19,8 @@ namespace CONFIGURATION
     const QByteArray CPP_CONFIG          = "/config/";
     const QByteArray CPP_WEB_INI         = "CPPWeb.ini";
     const QByteArray CPP_LOG_FILE        = "CPPWebServer.log";
+    const QString    CPP_LOG_VAR         = "cwf_log_file";
+    const QString    CPP_LOG_MAX_VAR     = "cwf_log_max";
 }
 
 //XML CONSTANTS

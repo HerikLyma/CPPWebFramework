@@ -37,9 +37,7 @@ SOURCES += \
     cwf/cstlcompilerfor.cpp \
     cwf/cstlcompilerif.cpp \
     cwf/cstlcompilerimport.cpp \
-    cwf/cstlcompilerobject.cpp \
     cwf/filemanager.cpp \
-    cwf/filter.cpp \
     cwf/filterchain.cpp \
     cwf/httpcookie.cpp \
     cwf/httpparser.cpp \

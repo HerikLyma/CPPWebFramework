@@ -17,23 +17,20 @@
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
+
+class Configuration;
 /**
  * @brief The HttpServletResponse class is responsable to response a Http request.
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT HttpServletResponse
 {
     QTcpSocket     *socket;
-
+    const Configuration &configuration;
     int            statusCode;
-
     QByteArray     content;
-
     QByteArray     statusText;
-
     QString        httpStatus;
-
     QMap<QByteArray,QByteArray> headers;
-
     QVector<HttpCookie> cookies;
 public:
     static const int SC_CONTINUE;
@@ -118,9 +115,9 @@ public:
 
     static const int SC_HTTP_VERSION_NOT_SUPPORTED;
 
-    explicit HttpServletResponse(QTcpSocket &socket);
+    HttpServletResponse(QTcpSocket &socket, const Configuration &configuration);
 
-    virtual ~HttpServletResponse();
+    virtual ~HttpServletResponse() {}
 
     void write(const QJsonObject &json, bool writeContentType = true);
 
@@ -138,15 +135,15 @@ public:
 
     void flushBuffer();
 
-    int getBufferSize() const;
+    inline int getBufferSize() const { return content.size(); }
 
-    void addHeader(const QByteArray &name, const QByteArray &value);
+    inline void addHeader(const QByteArray &name, const QByteArray &value) { headers.insert(name, value); }
 
-    void addCookie(const HttpCookie &cookie);
+    inline void addCookie(const HttpCookie &cookie) { cookies.push_back(cookie); }
+
+    inline QTcpSocket &getSocket() const { return *socket; }
 
     void setStatus(const int &statusCode, const QByteArray &description);
-
-    QTcpSocket &getSocket() const;
 
     void sendRedirect(const QByteArray &url);
 };

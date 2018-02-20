@@ -25,9 +25,8 @@ public:
     QMap<QString, QString> attributes;
     /**
      * @brief This constructor processes and validates the attributes of "import" tag.
-     * @param const QXmlStreamAttributes &attr : XML tag attributes.
      */
-    explicit CSTLCompilerImport(const QXmlStreamAttributes &attr);
+     CSTLCompilerImport(const QXmlStreamAttributes &attr, QString path);
 };
 
 CWF_END_NAMESPACE

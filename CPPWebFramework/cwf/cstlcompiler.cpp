@@ -15,9 +15,10 @@
 
 CWF_BEGIN_NAMESPACE
 
-CSTLCompiler::CSTLCompiler(const QByteArray &str,
+CSTLCompiler::CSTLCompiler(const QByteArray &str, const QString &path,
                            QMap<QString, QObject *> &objects,
                            bool isStrFileName) : str(str),
+                                                 path(path),
                                                  objects(objects),
                                                  isStrFileName(isStrFileName)
 {
@@ -309,7 +310,7 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
         }
         else if(name == CSTL::TAG::IMPORT && xml.isStartElement())
         {
-            CSTLCompilerImport importUrl(xml.attributes());
+            CSTLCompilerImport importUrl(xml.attributes(), path);
             if(!importUrl.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
                 htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::IMPORT::URL].toLatin1();
             else

@@ -22,6 +22,7 @@
 
 CWF_BEGIN_NAMESPACE
 
+class Configuration;
 class HttpServletRequest;
 
 /**
@@ -32,9 +33,11 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpSession
     friend class HttpReadRequest;
     friend class HttpServletRequest;
     QString id;
+    QAtomicInteger<qint64> sessionTimeOut;
     QAtomicInteger<qint64> creationTime;
     QAtomicInteger<qint64> lastAccessedTime;
     QAtomicInteger<qint64> sessionExpirationTime;
+    QAtomicInteger<qint64> timeOut;
     QAtomicInteger<qint8>  autoClearAttributes = 0;
     QAtomicInteger<qint8>  expired = 0;
     QMapThreadSafety<QString, QObject*> attributes;
@@ -43,13 +46,15 @@ public:
     /**
      * @brief Construct a session with a unique identifier
      */
-    explicit HttpSession(const QString &id);      
+    explicit HttpSession(const QString &id, qint64 sessionTimeOut);
+
+
     ~HttpSession();
     /**
      * @brief Returns a session attribute given a name.
      * @warning: If the parameter is not found, nullptr is returned.
      */
-    QObject *getAttribute(const QString &name) const;    
+    QObject *getAttribute(const QString &name) const;
     /**
      * @brief Returns a session attribute given a name.
      */
@@ -57,7 +62,7 @@ public:
     /**
      * @brief getCreationTime
      */
-    qint64 getCreationTime() const;
+    inline qint64 getCreationTime() const { return creationTime; }
     /**
      * @brief Returns the unique id
      */
@@ -65,7 +70,7 @@ public:
     /**
      * @brief Returns the time of the last session access.
      */
-    qint64 getLastAccessedTime() const;
+    inline qint64 getLastAccessedTime() const { return lastAccessedTime; }
     /**
      * @brief Make a valid session.
      */
@@ -73,33 +78,38 @@ public:
     /**
      * @brief Make a invalid session.
      */
-    void invalidate();
+    inline void invalidate() { expired = 1; }
     /**
      * @brief Removes all the items that have the key key from the map.
      * Returns the number of items removed which is usually 1 but will be 0
      * if the key isn't in the map, or > 1 if insertMulti() has been used with the key.
      */
-    int removeAttribute(const QString &name);
+    inline int removeAttribute(const QString &name) { return attributes.remove(name); }
     /**
      * @brief This method add an attribute to the session.
-     * @param name
-     * @param value
      */
-    void addAttribute(const QString &name, QObject *value);
+    inline void addAttribute(const QString &name, QObject *value) { attributes.insert(name, value); }
     /**
      * @brief getAutoClearAttributes
-     * @return bool
      */
-    bool getAutoClearAttributes() const;
+    inline bool getAutoClearAttributes() const { return autoClearAttributes; }
     /**
      * @brief setAutoClearAttributes
-     * @param value
      */
-    void setAutoClearAttributes(bool value);
+    inline void setAutoClearAttributes(bool value) { autoClearAttributes = value; }
     /**
      * @brief This method returns true if the session is expired otherwise returns false.
      */
     bool isExpired();
+    /**
+     * @brief Returns the session timeout.
+     */
+    inline qint64 getSessionTimeOut() const { return sessionTimeOut; }
+    /**
+     * @brief Sets the current session timeout.
+     * If value is negative then it will be configured according to sessionExpirationTime of the CPPWeb.ini file.
+     */
+    void setSessionTimeOut(qint64 value);
 };
 
 CWF_END_NAMESPACE

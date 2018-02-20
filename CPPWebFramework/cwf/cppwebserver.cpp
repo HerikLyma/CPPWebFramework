@@ -6,13 +6,10 @@
 */
 
 #include "cppwebserver.h"
-#include "configuration.h"
 
 CWF_BEGIN_NAMESPACE
 
-extern Configuration configuration;
-
-CppWebServer::CppWebServer(Filter *filter) : filter(filter)
+CppWebServer::CppWebServer(const Configuration &configuration, Filter *filter) : configuration(configuration), filter(filter)
 {
     loadSslConfiguration();
     this->thread()->setPriority(QThread::TimeCriticalPriority);
@@ -54,10 +51,6 @@ CppWebServer::~CppWebServer()
         delete sslConfiguration;
 }
 
-void CppWebServer::addUrlServlet(const QString &url, HttpServlet *servlet)
-{
-    urlServlet.insert(url, servlet);
-}
 
 void CppWebServer::incomingConnection(qintptr socketfd)
 {
@@ -67,6 +60,7 @@ void CppWebServer::incomingConnection(qintptr socketfd)
     HttpReadRequest *read = new HttpReadRequest(socketfd,
                                                 urlServlet,
                                                 sessions,
+                                                configuration,
                                                 sslConfiguration,
                                                 filter);
     read->setAutoDelete(true);
@@ -101,10 +95,10 @@ void CppWebServer::loadSslConfiguration()
     QString sslCert = configuration.sslCertFile;
     if (!sslKey.isEmpty() && !sslCert.isEmpty())
     {
-        #ifdef QT_NO_OPENSSL
+#ifdef QT_NO_OPENSSL
             qDebug() << "SSL is not supported";
             return;
-        #else
+#else
             QFile certFile(sslCert);
             QFile keyFile(sslKey);
 
@@ -141,7 +135,7 @@ void CppWebServer::loadSslConfiguration()
             sslConfiguration->setPrivateKey(key);
             sslConfiguration->setPeerVerifyMode(QSslSocket::VerifyNone);
             sslConfiguration->setProtocol(QSsl::TlsV1SslV3);
-         #endif
+#endif
     }
 }
 

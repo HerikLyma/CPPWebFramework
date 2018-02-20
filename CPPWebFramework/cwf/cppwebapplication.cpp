@@ -10,67 +10,36 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-const Configuration configuration;
-
-CppWebApplication::CppWebApplication(int argc, char *argv[],
-                                     const QString &serverPath,
-                                     Filter *filter) : application(argc, argv)
+QPair<QString, qint64> getFileAndMaxSize()
 {
-    CWF::Configuration *c = const_cast<CWF::Configuration*>(&configuration);
-    *c = CWF::Configuration(serverPath);
+    QPair<QString, qlonglong> info;
 
-    if(configuration.isValid())
+#ifdef Q_OS_WIN32
+    #if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
+        info.first  = qEnvironmentVariable(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
+        info.second = QString(qEnvironmentVariable(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
+    #else
+        info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
+        info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
+    #endif
+#else
+    info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
+    info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
+#endif
+
+    if(info.second <= 0)
     {
-        server = new CppWebServer(filter);
-        qInstallMessageHandler(CppWebApplication::writeLog);
-
-        if(configuration.accessServerPages)
-        {
-            server->addUrlServlet("/examples"     , new CppWebServlet);
-            server->addUrlServlet("/authors"      , new CppWebServlet);
-            server->addUrlServlet("/documentation", new CppWebServlet);
-            server->addUrlServlet("/ssl"          , new CppWebServlet);
-            server->addUrlServlet("/index"        , new CppWebServlet);
-        }
+        info.second = 20000000;
     }
-    else
-    {
-        qDebug() << "CPPWeb.ini not found. Please copy the CWF server folder to your project.";
-    }
+    return info;
 }
 
-CppWebApplication::~CppWebApplication()
+void writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
 {
-    if(!server)
-        delete server;
-}
+    QPair<QString, qint64> info(getFileAndMaxSize());
+    QFile file(info.first);
 
-void CppWebApplication::addUrlServlet(const QString &url, HttpServlet *servlet)
-{
-    server->addUrlServlet(url, servlet);
-}
-
-int CppWebApplication::start()
-{
-    if(!configuration.isValid())
-        return -1;
-    if(!server->listen(configuration.host, configuration.port))
-    {
-        qDebug() << "Error: " << server->errorString() << "\n";
-        qDebug() << "Server offline\n";
-        return -1;
-    }
-
-    qDebug() << "Server online\n";
-    return application.exec();
-}
-
-void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logContext, const QString &msg)
-{        
-    QFile file(configuration.logFilePath);
-
-    if(file.size() > configuration.maxLogFile)
+    if(file.size() > info.second)
     {
         file.resize(0);
     }
@@ -94,6 +63,68 @@ void CppWebApplication::writeLog(QtMsgType type, const QMessageLogContext &logCo
         }
         file.close();
     }
+}
+
+CppWebApplication::CppWebApplication(int argc, char *argv[],
+                                     const QString &serverPath,
+                                     Filter *filter) : application(argc, argv), configuration(serverPath)
+{
+    if(configuration.isValid())
+    {               
+        qunsetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
+        qunsetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data());
+
+        qputenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data(), configuration.logFilePath.toLatin1());
+        qputenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data(), QByteArray::number(configuration.maxLogFile));
+
+        QPair<QString, qint64> info(getFileAndMaxSize());
+        if(!QFile(info.first).exists())
+        {
+            configuration.valid = false;
+            qDebug() << "Path not found to log file: " << configuration.getLogFilePath();
+            qDebug() << "Note: Use only US-ASCII characters for the serverPath.";
+        }
+
+        if(configuration.isValid())
+        {
+            qInstallMessageHandler(writeLog);
+            server = new CppWebServer(configuration, filter);
+
+            if(configuration.accessServerPages)
+            {
+                server->addUrlServlet("/examples"     , new CppWebServlet);
+                server->addUrlServlet("/authors"      , new CppWebServlet);
+                server->addUrlServlet("/documentation", new CppWebServlet);
+                server->addUrlServlet("/ssl"          , new CppWebServlet);
+                server->addUrlServlet("/index"        , new CppWebServlet);
+            }
+        }
+    }
+    else
+    {
+        qDebug() << "CPPWeb.ini not found. Please copy the CWF server folder to your project.";
+    }
+}
+
+CppWebApplication::~CppWebApplication()
+{
+    if(!server)
+        delete server;
+}
+
+int CppWebApplication::start()
+{
+    if(!configuration.isValid())
+        return -1;
+    if(!server->listen(configuration.host, configuration.port))
+    {
+        qDebug() << "Error: " << server->errorString() << "\n";
+        qDebug() << "Server offline\n";
+        return -1;
+    }
+
+    qDebug() << "Server online\n";
+    return application.exec();
 }
 
 CWF_END_NAMESPACE

@@ -10,11 +10,11 @@
 
 CWF_BEGIN_NAMESPACE
 
-extern const Configuration configuration;
-HttpSession::HttpSession(const QString &id) : id(id),
-                                              autoClearAttributes(false),
-                                              expired (false)
-{
+HttpSession::HttpSession(const QString &id, qint64 sessionTimeOut) : id(id),
+    sessionTimeOut(sessionTimeOut),
+    autoClearAttributes(false),
+    expired (false)
+{    
 }
 
 HttpSession::~HttpSession()
@@ -46,20 +46,10 @@ QStringList HttpSession::getAttributeNames()
     return list;
 }
 
-qint64 HttpSession::getCreationTime() const
-{    
-    return creationTime;
-}
-
 QString HttpSession::getId() const
 {
     QMutexLocker locker(&mutex);
     return id;
-}
-
-qint64 HttpSession::getLastAccessedTime() const
-{    
-    return lastAccessedTime;
 }
 
 void HttpSession::validate()
@@ -68,32 +58,7 @@ void HttpSession::validate()
     expired = 1;
     qint64 currentTime     = QDateTime::currentMSecsSinceEpoch();
     lastAccessedTime       = currentTime;
-    sessionExpirationTime  = currentTime + configuration.sessionExpirationTime;
-}
-
-void HttpSession::invalidate()
-{    
-    expired = 1;
-}
-
-int HttpSession::removeAttribute(const QString &name)
-{
-    return attributes.remove(name);
-}
-
-void HttpSession::addAttribute(const QString &name, QObject *value)
-{
-    attributes.insert(name, value);
-}
-
-bool HttpSession::getAutoClearAttributes() const
-{    
-    return autoClearAttributes;
-}
-
-void HttpSession::setAutoClearAttributes(bool value)
-{    
-    autoClearAttributes = value;
+    sessionExpirationTime  = currentTime + sessionTimeOut;
 }
 
 bool HttpSession::isExpired()
@@ -105,6 +70,14 @@ bool HttpSession::isExpired()
         expired = currentTime >= sessionExpirationTime;
     }
     return expired;
+}
+
+void HttpSession::setSessionTimeOut(qint64 value)
+{
+    if(value >= 0)
+    {
+        sessionTimeOut = value;
+    }
 }
 
 CWF_END_NAMESPACE

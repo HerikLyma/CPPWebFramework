@@ -12,20 +12,11 @@
 
 CWF_BEGIN_NAMESPACE
 
-RequestDispatcher::RequestDispatcher(const QString &path) : path(path)
-{
-}
-
-RequestDispatcher::~RequestDispatcher()
-{
-}
-
 void RequestDispatcher::forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
 {
-    CSTLCompiler cstl(path.toStdString().data(), request.attributes);
+    CSTLCompiler cstl(file.toLatin1(), request.getPath(), request.attributes);
     QString pageStr(cstl.output());
-
-    response.write(pageStr.toLatin1());
+    response.write(std::move(pageStr.toLatin1()));
 }
 
 CWF_END_NAMESPACE

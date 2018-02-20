@@ -10,6 +10,7 @@
 
 #include <QString>
 #include "variant.h"
+#include "constants.h"
 #include "httpservletrequest.h"
 #include "cppwebframework_global.h"
 
@@ -37,49 +38,43 @@ public:
     /**
      * @brief Destructor.
      */
-    virtual ~HttpServlet();
-
+    virtual ~HttpServlet() {}
     /**
      * @brief This is an virtual method that can be overloaded to attend the delete request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doDelete(HttpServletRequest &req, HttpServletResponse &resp);
-
+    virtual void doDelete(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::DELETE); }
     /**
      * @brief This is an virtual method that can be overloaded to attend the get request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doGet(HttpServletRequest &req, HttpServletResponse &resp);
-
+    virtual void doGet(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::GET); }
     /**
      * @brief This is an virtual method that can be overloaded to attend the options request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doOptions(HttpServletRequest &req, HttpServletResponse &resp);
-
+    virtual void doOptions(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::OPTIONS); }
     /**
      * @brief This is an virtual method that can be overloaded to attend the post request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doPost(HttpServletRequest &req, HttpServletResponse &resp);
-
+    virtual void doPost(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::POST); }
     /**
      * @brief This is an virtual method that can be overloaded to attend the put request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doPut(HttpServletRequest &req, HttpServletResponse &resp);
-
+    virtual void doPut(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::PUT); }
     /**
      * @brief This is an virtual method that can be overloaded to attend the trace request method.
      * @param req    : This is a reference to the HttpServletRequest.
      * @param resp   : This is a reference to the HttpServletResponse.
      */
-    virtual void doTrace(HttpServletRequest &req, HttpServletResponse &resp);
+    virtual void doTrace(HttpServletRequest &req, HttpServletResponse &resp) { doMessage(req, resp, HTTP::METHOD::TRACE); }
 };
 
 CWF_END_NAMESPACE

@@ -26,7 +26,7 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~Filter();
+    virtual ~Filter() {}
     /**
      * @brief This method will be called always that the CppWebServer receives a requisition.
      * @param request  : This is a reference to the HttpServletRequest.
@@ -80,7 +80,7 @@ public:
      * {
      *     CWF::CppWebApplication server(argc,
      *                                   argv,
-     *                                   CWF::Configuration("/home/herik/CPPWebFramework/examples/Filters/server"),
+     *                                   "PATH_TO_SERVER_FOLDER",
      *                                   new LoginFilter);
      *
      *     return server.start();
@@ -88,7 +88,7 @@ public:
      *
      * @endcode
      */
-    virtual void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain);
+    virtual void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain) { chain.doFilter(request, response); }
 };
 
 CWF_END_NAMESPACE

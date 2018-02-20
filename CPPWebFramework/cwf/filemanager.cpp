@@ -22,16 +22,6 @@ QString FileManager::extract(QString &name, char ch)
     return fName;
 }
 
-QString FileManager::fileName(QString &name)
-{
-    return extract(name, '/');
-}
-
-QString FileManager::fileExtention(QString &name)
-{
-    return extract(name, '.');
-}
-
 void FileManager::removeLastBar(QString &path)
 {
     if(path.endsWith("/"))

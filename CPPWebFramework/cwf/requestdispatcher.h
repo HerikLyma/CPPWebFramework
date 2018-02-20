@@ -19,17 +19,16 @@ class HttpServletResponse;
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT RequestDispatcher
 {
-    QString path;
+    QString file;
 public:
     /**
-     * @brief This constructor receives a path to a xhtml file.
-     * @param const QString &path : Path to the xhtml file.
+     * @brief This constructor receives a file name.
      */
-    explicit RequestDispatcher(const QString &path);
+    explicit RequestDispatcher(const QString &file) : file(file) {}
     /**
      * @brief Virtual destructor.
      */
-    virtual ~RequestDispatcher();
+    virtual ~RequestDispatcher() {}
     /**
      * @brief This method will dispatch the xhtml file specificated in path to the CSTLCompiler,
      * the CSTLCompiler will compile the xhtml file and returns the result.

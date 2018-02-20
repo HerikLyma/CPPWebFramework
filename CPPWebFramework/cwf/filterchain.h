@@ -28,7 +28,8 @@ CWF_BEGIN_NAMESPACE
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT FilterChain final
 {
-    HttpServlet      *servlet = nullptr;
+    HttpServlet   *servlet = nullptr;
+    const Configuration &configuration;
     /**
      * @brief This method writes a response into the HttpServletResponse.
      * @param response : This is a reference to the HttpServletResponse.
@@ -43,7 +44,7 @@ public:
      * @brief FilterChain
      * @param servlet
      */
-    explicit FilterChain(HttpServlet *servlet);
+    FilterChain(HttpServlet *servlet, const Configuration &configuration);
     /**
      * @brief This method dispaches a requisition to a HttpServletRequest or, if the requesition
      * is for a file, it can reads and send the file through the HttpServletResponse.

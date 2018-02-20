@@ -10,10 +10,14 @@
 
 #include <QThread>
 #include <QTcpSocket>
-#include "httpsession.h"
-#include "requestdispatcher.h"
-#include "filemanager.h"
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
 #include "httpparser.h"
+#include "httpsession.h"
+#include "filemanager.h"
+#include "configuration.h"
+#include "requestdispatcher.h"
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -25,7 +29,6 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpServletRequest : public QObject
     friend class HttpReadRequest;
     friend class RequestDispatcher;
     QTcpSocket               *socket;
-    QString                  path;
     HttpSession              *session            = nullptr;
     HttpParser               *httpParser         = nullptr;
     RequestDispatcher        *requestDispatcher  = nullptr;
@@ -33,6 +36,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpServletRequest : public QObject
     bool                     autoDeleteAttribute = false;
     QMap<QString, QObject *> attributes;
     QMapThreadSafety<QString, HttpSession *> &sessions;
+    const Configuration &configuration;
 public:
     /**
      * @brief This constructor needs to receive a reference to a QTcpSocket and QByteArray.
@@ -40,7 +44,7 @@ public:
      * NOTE: The CppWebServer is responsable to create the QTcpSocket, and the HttpReadRequest is
      * responsable to create a HttpReadRequest and a HttpServletResponse.
      */
-    explicit HttpServletRequest(QTcpSocket &socket, const QString &path, QMapThreadSafety<QString, HttpSession *> &sessions);
+    explicit HttpServletRequest(QTcpSocket &socket, QMapThreadSafety<QString, HttpSession *> &sessions, const Configuration &configuration);
     /**
      * @brief Destroys dynamically allocated resources.
      */
@@ -50,27 +54,27 @@ public:
      * The object can be processed within a page using xhtml CSTL. For this to be possible the object must
      * inherit from QObject and methods and must be in session "public slots".
      */
-    void addAttribute(const QString &name, QObject *value);
+    inline void addAttribute(const QString &name, QObject *value) { attributes.insert(name, value); }
     /**
      * @brief This method returns all the attributes of a HttpReadRequest.
      */
-    QMap<QString, QObject *> getAttributes() const;
+    inline QMap<QString, QObject *> getAttributes() const { return attributes; }
     /**
      * @brief This method returns a specific object given its name.     
      */
-    const QObject *getAttribute(const QString &name) const;
+    inline const QObject *getAttribute(const QString &name) const { return attributes.contains(name) ? attributes[name] : nullptr; }
     /**
      * @brief Returns the request body.
      */
-    const QByteArray getBody() const;
+    inline const QByteArray getBody() const { return httpParser->getBody(); }
     /**
      * @brief Tries returns the body of the converted request to QJsonObject.
      */
-    QJsonObject bodyToJsonObject() const;
+    inline QJsonObject bodyToJsonObject() const { return QJsonDocument::fromJson(httpParser->getBody()).object(); }
     /**
      * @brief Tries returns the body of the converted request to QJsonArray.
      */
-    QJsonArray bodyToJsonArray() const;
+    inline QJsonArray bodyToJsonArray() const { return QJsonDocument::fromJson(httpParser->getBody()).array(); }
     /**
      * @brief This method returns a requestDispatcher given an specific page.
      * @param page : This is a reference to a QByteArray.
@@ -81,31 +85,31 @@ public:
      * @brief This method returns the http protocol.
      * @return QByteArray
      */
-    QByteArray getProtocol() const;
+    inline QByteArray getProtocol() const { return httpParser != nullptr ? httpParser->getHttpVersion() : ""; }
     /**
      * @brief This method will clear all the attributes.
      */
-    void clearAttributes();
+    inline void clearAttributes() { attributes.clear(); }
     /**
      * @brief This method set the HttpParser.
      * @param httpParser
      */
-    void setHttpParser(HttpParser &httpParser);
+    inline void setHttpParser(HttpParser &httpParser) { this->httpParser = &httpParser; }
     /**
      * @brief This method returns the HttpParser.
      * @return HttpParser
      */
-    HttpParser &getHttpParser() const;
+    inline HttpParser &getHttpParser() const { return *httpParser; }
     /**
      * @brief This method returns the requested url.
      * @return QByteArray
      */
-    QByteArray getRequestURL() const;
+    inline QByteArray getRequestURL() const { return httpParser != nullptr ? httpParser->getUrl() : ""; }
     /**
      * @brief This method returns the requested url.
      * @return QByteArray
      */
-    QByteArray getRequestURI() const;
+    inline QByteArray getRequestURI() const { return httpParser != nullptr ? httpParser->getUrl() : ""; }
     /**
      * @brief This method returns the user's session.
      */
@@ -114,29 +118,29 @@ public:
      * @brief This method set the user's session.
      * @return HttpSession
      */
-    void setSession(HttpSession &session);
+    inline void setSession(HttpSession &session) { this->session = &session; }
     /**
      * @brief This method returns the most recent parameter from a request given an specific name.
      * @param name : This is a reference to a QByteArray.
      * @return QByteArray
      */
-    QByteArray getParameter(const QByteArray &name) const;
+    inline QByteArray getParameter(const QByteArray &name) const { return httpParser->getParameter(name); }
     /**
      * @brief This method returns the parameters from a request given an specific name.
      * @param name : This is a reference to a QByteArray.
      * @return QByteArray
      */
-    QByteArrayList getParameters(const QByteArray &name) const;
+    inline QByteArrayList getParameters(const QByteArray &name) const { return httpParser->getParameters(name); }
     /**
      * @brief This method returns a reference to the current socket.
      * @return QTcpSocket
      */
-    QTcpSocket &getSocket() const;
+    inline QTcpSocket &getSocket() const { return *socket; }
     /**
      * @brief This method returns the auto delete attribute.
      * @return bool
      */
-    bool getAutoDeleteAttribute() const;
+    inline bool getAutoDeleteAttribute() const { return autoDeleteAttribute; }
     /**
      * @brief This method sets the auto delete attribute.
      * When the auto delete attribute is true and the HttpServletRequest is destroyed,
@@ -144,17 +148,17 @@ public:
      * NOTE: By default the auto delete attribute is false.
      * @param value : This sets the auto delete attribute.
      */
-    void setAutoDeleteAttribute(bool value);
+    inline void setAutoDeleteAttribute(bool value) { autoDeleteAttribute = value; }
     /**
      * @brief This method returns the path.
      * @return QString
      */
-    QString getPath() const;
+    inline QString getPath() const { return configuration.getPath(); }
     /**
      * @brief This method returns all the files that the user has sent.
      * @return QMap<QByteArray, QByteArray>
      */
-    QMultiMap<QByteArray, QByteArray> getUploadedFiles() const;
+    inline QMultiMap<QByteArray, QByteArray> getUploadedFiles() const { return httpParser->getUploadedFiles(); }
     /**
      * @brief Fill a QObject using parameters of a HTTP message.
      * @param QObject *object : Object to be filled.
@@ -322,9 +326,7 @@ public:
      *
      * int main(int argc, char *argv[])
      * {
-     *     CWF::CppWebApplication server(argc,
-     *                                   argv,
-     *                                   CWF::Configuration("/home/herik/CPPWebFramework/examples/FillObjectBMI/server"));
+     *     CWF::CppWebApplication server(argc, argv, "PATH_TO_SERVER_FOLDER");
      *
      *     server.addUrlServlet("/bmi", new BmiServlet);
      *

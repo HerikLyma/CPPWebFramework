@@ -27,7 +27,7 @@ public:
      * @brief This constructor can receive a parent.
      * @param QObject *parent : Parent.
      */
-    explicit QListObject(QObject *parent = 0);
+    explicit QListObject(QObject *parent = 0) : QObject(parent) {}
     /**
      * @brief
      */
@@ -37,32 +37,32 @@ public:
      * @param index : This is an integer value.
      * @return QObject *
      */
-    QObject *operator [](int index) const;
+    inline QObject *operator [](int index) const { return children()[index]; }
     /**
      * @brief This method returns the number of elements in this QListObject.
      * @return int
      */
-    int size() const;
+    inline int size() const { return children().count(); }
     /**
      * @brief This method add a new QObject to the list.
      * @param QObject *object : Object.
      */
-    void add(QObject *object);
+    inline void add(QObject *object) { object->setParent(this); }
     /**
      * @brief This method remove and object from the list.
      * @param o
      */
-    void remove(QObject *object);
+    inline void remove(QObject *object) { object->setParent(nullptr); }
     /**
      * @brief getAutoDelete
      * @return
      */
-    bool getAutoDelete() const;
+    inline bool getAutoDelete() const { return autoDelete; }
     /**
      * @brief setAutoDelete
      * @param value
      */
-    void setAutoDelete(bool value);
+    inline void setAutoDelete(bool value) { autoDelete = value; }
 };
 
 CWF_END_NAMESPACE
