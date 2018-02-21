@@ -25,7 +25,7 @@ This web framework consists of a simplified set of classes, only one configurati
 even for beginners.
 
 <hr/><b>Example:</b></br>
-```sh
+```C++
 #include "cppwebapplication.h"
 
 class HelloWorldServlet : public CWF::HttpServlet
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
     return server.start();
 }
 ```
+
 <hr/><b>Installation</b></br>
 <ol>
     <li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
