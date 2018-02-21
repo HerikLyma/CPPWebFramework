@@ -25,6 +25,29 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
 This web framework consists of a simplified set of classes, only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development as simple as possible, 
 even for beginners.</br></br>
 
+<b>Example:</b></br>
+```sh
+#include "cppwebapplication.h"
+
+class HelloWorldServlet : public CWF::HttpServlet
+{
+public:
+    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    {
+        response.write("<html><body>Hello World!</body></html>");
+    }
+};
+
+
+int main(int argc, char *argv[])
+{
+    CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
+    server.addUrlServlet("/hello", new HelloWorldServlet);
+    return server.start();
+}
+```
+</br><hr/></br> 
+
 <b>Installation</b></br>
 <ol>
     <li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
@@ -43,7 +66,7 @@ even for beginners.</br></br>
     <li>Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, "/PATH_TO_EXAMPLE/server/");</li>
     <li>Run the project</li>
     <li>Open your browser and type: http://localhost:8080 to check if the server is online</li>
-</ol><hr/></br></br> 
+</ol></br><hr/></br> 
 
 <b>Site and documentation:</b> https://www.cppwebframework.com <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
