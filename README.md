@@ -26,7 +26,7 @@ even for beginners.
 
 <hr/><b>Example</b></br></br>
 
-```sh
+```cpp
 #include "cppwebapplication.h"
 
 class HelloWorldServlet : public CWF::HttpServlet
