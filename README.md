@@ -58,6 +58,12 @@ int main(int argc, char *argv[])
     <li>make install (use sudo on Linux)</li>
 </ol><hr/>
 
+<b>jemalloc optional installation (recommended)</b></br>
+<ol>
+    <li>Install jemalloc: sudo apt-get install libjemalloc-dev (linux)</li>
+    <li>Enable jemalloc in the .pro file: LIBS += -ljemalloc</li>
+</ol><hr/>
+
 <b>Steps to test the C++ Web Framework's examples</b></br>
 <ol>
     <li>Open a .pro file from an example using Qt Creator</li>
