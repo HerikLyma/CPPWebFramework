@@ -20,10 +20,9 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
     <li><b>Embedded and RTOS:</b> Linux, QNX, VxWorks, Windows</li>
     <li><b>Mobile:</b> Android, iOS, Windows</li>
 </ul>
-<hr/>
 
 This web framework consists of a simplified set of classes, only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development as simple as possible, 
-even for beginners.</br></br>
+even for beginners.</br><hr/></br>
 
 <b>Example:</b></br>
 ```sh
