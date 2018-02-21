@@ -57,8 +57,7 @@ void HttpReadRequest::run()
             HttpParser parser(req);
             if(parser.valid)
             {
-                QString               url      = parser.url;
-                HttpServlet          *servlet  = nullptr;                                
+                QString               url      = parser.url;                  
                 HttpServletRequest   request(*socket, sessions, configuration);
                 HttpServletResponse  response(*socket, configuration);
                 request.httpParser = &parser;
@@ -72,8 +71,8 @@ void HttpReadRequest::run()
                     }
                 }
 
-                bool contains = urlServlet.contains(url);
-                if(!contains)
+                HttpServlet *servlet = urlServlet.value(url, nullptr);
+                if(!servlet)
                 {
                     for(QMapThreadSafety<QString, HttpServlet *>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
                     {
@@ -84,16 +83,15 @@ void HttpReadRequest::run()
                             if(url.startsWith(trueUrl))
                             {
                                 url = trueUrl + "*";
-                                contains = true;
+                                servlet = it.value();
                                 break;
                             }
                         }
                     }
                 }
 
-                if(contains)
+                if(servlet)
                 {
-                    servlet = urlServlet[url];
                     FilterChain chain(servlet, configuration);
                     filter != nullptr ? filter->doFilter(request, response, chain) : chain.doFilter(request, response);
                 }
