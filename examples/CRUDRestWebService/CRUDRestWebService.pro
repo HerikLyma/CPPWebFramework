@@ -39,3 +39,11 @@ win32 {
     INCLUDEPATH += C:/
     LIBS += -LC:/cwf -lCPPWebFramework
 }
+
+
+QMAKE_CXXFLAGS_RELEASE -= -O1
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
+
+#Strongly recommended
+#LIBS += -ljemalloc

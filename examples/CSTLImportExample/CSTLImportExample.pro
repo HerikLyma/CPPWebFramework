@@ -24,9 +24,6 @@ HEADERS += \
     servlets/homeservlet.h
 
 QMAKE_CXXFLAGS += -std=c++11
-QMAKE_CXXFLAGS_RELEASE -= -O1
-QMAKE_CXXFLAGS_RELEASE -= -O2
-QMAKE_CXXFLAGS_RELEASE += -O3
 
 OTHER_FILES += \
     server/config/CPPWeb.ini \
@@ -53,3 +50,10 @@ win32 {
     INCLUDEPATH += C:/
     LIBS += -LC:/cwf -lCPPWebFramework
 }
+
+QMAKE_CXXFLAGS_RELEASE -= -O1
+QMAKE_CXXFLAGS_RELEASE -= -O2
+QMAKE_CXXFLAGS_RELEASE += -O3
+
+#Strongly recommended
+#LIBS += -ljemalloc

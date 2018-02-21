@@ -6,7 +6,16 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <servlets/helloworldservlet.h>
+
+class HelloWorldServlet : public CWF::HttpServlet
+{
+public:
+    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    {
+        Q_UNUSED(request)
+        response.write("<html><body>Hello World!</body></html>");
+    }
+};
 
 int main(int argc, char *argv[])
 {        
