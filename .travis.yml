@@ -94,3 +94,9 @@ script:
   - cd CRUDRestWebService
   - /opt/qt57/bin/qmake CRUDRestWebService.pro
   - make -j 8
+
+  - cd ..
+  - cd HelloWorldFilter
+  - /opt/qt57/bin/qmake HelloWorldFilter.pro
+  - make -j 8
+
