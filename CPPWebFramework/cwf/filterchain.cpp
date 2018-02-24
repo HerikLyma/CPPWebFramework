@@ -42,7 +42,7 @@ void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
 
         if(url == FILE_EXTENTION::BAR)
         {
-            request.getRequestDispatcher(configuration.indexPage).forward(request, response);
+            request.getRequestDispatcher(configuration.getIndexPage()).forward(request, response);
         }
         else if(extention == FILE_EXTENTION::HTML || extention == FILE_EXTENTION::HTM)
         {
@@ -147,7 +147,7 @@ void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
             QString file(std::move(fileManager.fileName(url)));
             if(file != CONFIGURATION::CPP_WEB_INI)
                 write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
-            else if(configuration.accessCPPWebIni)
+            else if(configuration.getAccessServerPages())
                 write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
             else
                 request.getRequestDispatcher(STATUS::STATUS_401).forward(request, response);

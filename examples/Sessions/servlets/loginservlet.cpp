@@ -21,6 +21,7 @@ void LoginServlet::doPost(CWF::HttpServletRequest &request, CWF::HttpServletResp
     if(user->getName() == "herik" && user->getPassword() == "1234")
     {
         request.getSession().addAttribute("user", user);
+        request.getSession().validate();
         IndexServlet().doGet(request, response);
     }
     else

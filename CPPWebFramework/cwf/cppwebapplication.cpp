@@ -15,13 +15,13 @@ QPair<QString, qint64> getFileAndMaxSize()
     QPair<QString, qlonglong> info;
 
 #ifdef Q_OS_WIN32
-    #if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
+#   if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
         info.first  = qEnvironmentVariable(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
         info.second = QString(qEnvironmentVariable(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
-    #else
+#   else
         info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
         info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
-    #endif
+#   endif
 #else
     info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
     info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
@@ -74,23 +74,22 @@ CppWebApplication::CppWebApplication(int argc, char *argv[],
         qunsetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
         qunsetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data());
 
-        qputenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data(), configuration.logFilePath.toLatin1());
-        qputenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data(), QByteArray::number(configuration.maxLogFile));
+        qputenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data(), configuration.getLogFilePath().toLatin1());
+        qputenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data(), QByteArray::number(configuration.getMaxLogFile()));
 
         QPair<QString, qint64> info(getFileAndMaxSize());
         if(!QFile(info.first).exists())
-        {
-            configuration.valid = false;
+        {            
             qDebug() << "Path not found to log file: " << configuration.getLogFilePath();
             qDebug() << "Note: Use only US-ASCII characters for the serverPath.";
         }
-
-        if(configuration.isValid())
+        else if(configuration.isValid())
         {
+            valid = true;
             qInstallMessageHandler(writeLog);
             server = new CppWebServer(configuration, filter);
 
-            if(configuration.accessServerPages)
+            if(configuration.getAccessServerPages())
             {
                 server->addUrlServlet("/examples"     , new CppWebServlet);
                 server->addUrlServlet("/authors"      , new CppWebServlet);
@@ -98,7 +97,7 @@ CppWebApplication::CppWebApplication(int argc, char *argv[],
                 server->addUrlServlet("/ssl"          , new CppWebServlet);
                 server->addUrlServlet("/index"        , new CppWebServlet);
             }
-        }
+        }        
     }
     else
     {
@@ -114,9 +113,12 @@ CppWebApplication::~CppWebApplication()
 
 int CppWebApplication::start()
 {
-    if(!configuration.isValid())
+    if(!configuration.isValid() || !valid)
+    {
+        qDebug() << "Invalid configuration.\nServer offline\n";
         return -1;
-    if(!server->listen(configuration.host, configuration.port))
+    }
+    else if(!server->listen(configuration.getHost(), configuration.getPort()))
     {
         qDebug() << "Error: " << server->errorString() << "\n";
         qDebug() << "Server offline\n";

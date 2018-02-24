@@ -55,7 +55,7 @@ QString HttpSession::getId() const
 void HttpSession::validate()
 {
     QMutexLocker locker(&mutex);
-    expired = 1;
+    expired = 0;
     qint64 currentTime     = QDateTime::currentMSecsSinceEpoch();
     lastAccessedTime       = currentTime;
     sessionExpirationTime  = currentTime + sessionTimeOut;

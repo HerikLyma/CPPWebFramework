@@ -6,6 +6,7 @@
 */
 
 #include "cppwebserver.h"
+#include <QtConcurrent/QtConcurrent>
 
 CWF_BEGIN_NAMESPACE
 
@@ -13,14 +14,13 @@ CppWebServer::CppWebServer(const Configuration &configuration, Filter *filter) :
 {
     loadSslConfiguration();
     this->thread()->setPriority(QThread::TimeCriticalPriority);
-
-    if(this->filter == nullptr)
+    pool.setMaxThreadCount(configuration.getMaxThread());
+    pool.setExpiryTimeout(configuration.getTimeOut());
+    if(!filter)
         this->filter = new Filter;
-    pool.setMaxThreadCount(configuration.maxThread);
-    pool.setExpiryTimeout(configuration.timeOut);
     timer = new QTimer;
     connect(timer, SIGNAL(timeout()), this, SLOT(doClean()));
-    timer->start(configuration.cleanupInterval);
+    timer->start(configuration.getCleanupInterval());
 }
 
 CppWebServer::~CppWebServer()
@@ -51,20 +51,11 @@ CppWebServer::~CppWebServer()
         delete sslConfiguration;
 }
 
-
 void CppWebServer::incomingConnection(qintptr socketfd)
 {
     while(block)
-        this->thread()->msleep(sleepTime);
-
-    HttpReadRequest *read = new HttpReadRequest(socketfd,
-                                                urlServlet,
-                                                sessions,
-                                                configuration,
-                                                sslConfiguration,
-                                                filter);
-    read->setAutoDelete(true);
-    pool.start(read, QThread::TimeCriticalPriority);
+        this->thread()->msleep(sleepTime);   
+    pool.start(new HttpReadRequest(socketfd, urlServlet, sessions, configuration, sslConfiguration, filter));
 }
 
 void CppWebServer::doClean()
@@ -91,8 +82,8 @@ void CppWebServer::doClean()
 
 void CppWebServer::loadSslConfiguration()
 {
-    QString sslKey  = configuration.sslKeyFile;
-    QString sslCert = configuration.sslCertFile;
+    QString sslKey  = configuration.getSslKeyFile();
+    QString sslCert = configuration.getSslCertFile();
     if (!sslKey.isEmpty() && !sslCert.isEmpty())
     {
 #ifdef QT_NO_OPENSSL

@@ -117,7 +117,7 @@ void HttpServletResponse::writeToSocket(const QByteArray &data)
         //qDebug() << data;
         if(socket->ConnectingState > 0)
         {            
-            int timeOut = configuration.timeOut;            
+            int timeOut = configuration.getTimeOut();
             socket->waitForBytesWritten(timeOut);
         }
     }

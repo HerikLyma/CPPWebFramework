@@ -17,12 +17,12 @@ HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
                                  const Configuration &configuration,
                                  QSslConfiguration *sslConfiguration,
                                  Filter *filter) :
-                                                    socketDescriptor(socketDescriptor),
-                                                    urlServlet(urlServlet),
-                                                    sessions(sessions),
-                                                    configuration(configuration),
-                                                    sslConfiguration(sslConfiguration),
-                                                    filter(filter)
+    socketDescriptor(socketDescriptor),
+    urlServlet(urlServlet),
+    sessions(sessions),
+    configuration(configuration),
+    sslConfiguration(sslConfiguration),
+    filter(filter)
 {
 }
 
@@ -38,14 +38,13 @@ void HttpReadRequest::run()
 {
     createSocket();
     socket->setSocketDescriptor(socketDescriptor);
-
 #ifndef QT_NO_OPENSSL
     if (sslConfiguration)
     {
         ((QSslSocket*)socket)->startServerEncryption();
     }
 #endif    
-    maxUploadFile = configuration.maxUploadFile;    
+    maxUploadFile = configuration.getMaxUploadFile();
     socket->setReadBufferSize(maxUploadFile);
     if(socket->ConnectedState > 0)
     {
@@ -57,7 +56,7 @@ void HttpReadRequest::run()
             HttpParser parser(req);
             if(parser.valid)
             {
-                QString               url      = parser.url;                  
+                QString              url = parser.url;
                 HttpServletRequest   request(*socket, sessions, configuration);
                 HttpServletResponse  response(*socket, configuration);
                 request.httpParser = &parser;
@@ -70,7 +69,6 @@ void HttpReadRequest::run()
                         return;
                     }
                 }
-
                 HttpServlet *servlet = urlServlet.value(url, nullptr);
                 if(!servlet)
                 {
@@ -89,28 +87,23 @@ void HttpReadRequest::run()
                         }
                     }
                 }
-
-                if(servlet)
-                {
-                    FilterChain chain(servlet, configuration);
-                    filter != nullptr ? filter->doFilter(request, response, chain) : chain.doFilter(request, response);
-                }
+                FilterChain chain(servlet, configuration);
+                if(filter)
+                    filter->doFilter(request, response, chain);
                 else
-                {
-                    FilterChain chain(servlet, configuration);
                     chain.doFilter(request, response);
-                }
             }
         }
     }
 }
 
+
 bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response)
 {
     qint64 contentLength = parser.contentLenght;
-    QByteArray content(std::move(parser.body));    
-    int maximumTime = configuration.timeOut / 2;
-    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();    
+    QByteArray content(std::move(parser.body));
+    int maximumTime = configuration.getTimeOut() / 2;
+    std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
 
     while(true)
     {
@@ -147,15 +140,15 @@ bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, 
 
 void HttpReadRequest::createSocket()
 {
-    #ifndef QT_NO_OPENSSL
-        if (sslConfiguration)
-        {
-            QSslSocket *sslSocket = new QSslSocket;
-            sslSocket->setSslConfiguration(*sslConfiguration);
-            socket = sslSocket;
-            return;
-        }
-    #endif
+#ifndef QT_NO_OPENSSL
+    if (sslConfiguration)
+    {
+        QSslSocket *sslSocket = new QSslSocket;
+        sslSocket->setSslConfiguration(*sslConfiguration);
+        socket = sslSocket;
+        return;
+    }
+#endif
     socket = new QTcpSocket;
 }
 

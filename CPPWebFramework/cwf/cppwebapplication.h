@@ -30,6 +30,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT CppWebApplication
     QCoreApplication application;
     Configuration    configuration;
     CppWebServer     *server;
+    bool valid = false;
     CppWebApplication(const CppWebApplication &other) = delete;
     CppWebApplication &operator=(const CppWebApplication &other) = delete;        
 public:
@@ -39,7 +40,7 @@ public:
      * @param int argc                    : Main function parameter used to build QCoreApplication.
      * @param char *argv[]                : Main function parameter used to build QCoreApplication.
      * @param const Configuration &config : Used to set the parameters of the server.
-     * @param Filter *filter              : Install a filter for requests on the server. Optional.
+     * @param Filter *filter              : Install a filter for requests on the server.
      */
     CppWebApplication(int argc, char *argv[], const QString &serverPath, Filter *filter = nullptr);
     /**

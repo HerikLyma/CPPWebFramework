@@ -60,7 +60,8 @@ public:
     /**
      * @brief Hitches a url to a Servlet.
      * @param const QString &url   : Url name.
-     * @param HttpServlet *servlet : Servlet that will answer requests made to url.
+     * @param HttpServlet *servlet : Servlet that will answer requests made to url. If the filter is installed, all requests will be redirected to it and
+     * it will not be possible to map the servlets through the addUrlServlet function, instead everything should be handled inside the Filter.
      */
     inline void addUrlServlet(const QString &url, HttpServlet *servlet) { urlServlet.insert(url, servlet); }
 protected:

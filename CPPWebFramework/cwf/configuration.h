@@ -22,13 +22,6 @@ CWF_BEGIN_NAMESPACE
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT Configuration
 {
-    friend class CppWebServer;
-    friend class HttpServletResponse;
-    friend class HttpSession;
-    friend class HttpReadRequest;
-    friend class CppWebApplication;
-    friend class FilterChain;
-private:
     bool valid                = false;
     bool accessCPPWebIni      = false;
     bool accessServerPages    = false;
@@ -40,12 +33,12 @@ private:
     QString sslKeyFile;
     QString sslCertFile;
     QString path;
-    QString domain;
     QString logFilePath;
     QString indexPage;
     QHostAddress host;
     qint64 maxUploadFile = 2097152;
     qint64 maxLogFile    = 20000000;
+    void configure();
 public:
     /**
      * @brief Will make reading the CPPWeb.ini file and extract all of its properties.
@@ -62,9 +55,7 @@ public:
      * }
      * @endcode
      */
-    explicit Configuration(const QString &serverFilesPath = "");
-
-    void configure();
+    explicit Configuration(const QString &serverFilesPath = "");   
     /**
      * @brief Returns the timeOut property that will be used by the server to expire threads that are not in use.
      * Such threads will be restarted as needed. The default timeOut is 30000 milliseconds (30 seconds).
@@ -73,132 +64,73 @@ public:
      */
     inline int getTimeOut() const { return timeOut; }
     /**
-     * @brief Set the timeOut property.
-     * @param int value : New timeOut value in Milliseconds.
-     */
-    inline void setTimeOut(int value) { timeOut = value; }
-    /**
-     * @brief Returns the time that a session takes to expire. The default is 1800000(ms).
+     * @brief Returns the Session Expiration Time.
      * @param int : Time in milliseconds.
      */
     inline int getSessionExpirationTime() const { return sessionExpirationTime; }
     /**
-     * @brief Set the sessionExpirationTime property.
-     * @param int value : New sessionExpirationTime value in Milliseconds.
-     */
-    inline void setSessionExpirationTime(int value) { sessionExpirationTime = value; }
-    /**
-     * @brief Returns the cleanupInterval that indicates how often the server will perform the cleanup of expired sessions.
+     * @brief Returns the clean up interval Time.
      * @param int : Time in milliseconds.
      */
     inline int getCleanupInterval() const { return cleanupInterval; }
     /**
-     * @brief Set the cleanupInterval property that will be used by the server. The default is 86400000(ms).
-     * @param int : Time in milliseconds.
-     */
-    inline void setCleanupInterval(int value) { cleanupInterval = value; }
-    /**
-     * @brief Returns the port number that will be used by the server. The default is 8080.
-     * @return int : Port number.
+     * @brief Returns the port number.
+     * @param int : port.
      */
     inline int getPort() const { return port; }
     /**
-     * @brief Set the port number property.
-     * @param int value : Port number.
+     * @brief Returns the address.
+     * @param QHostAddress : host.
      */
-    inline void setPort(int value) { port = value; }
+    inline QHostAddress getHost() const { return host; }   
     /**
-     * @brief Returns the port number that will be used by the server. The default is 127.0.0.1.
-     * @return QHostAddress : Host address.
-     */
-    inline QHostAddress getHost() const { return host; }
-    /**
-     * @brief Set the host property.
-     * @param const QHostAddress &value : Host address.
-     */
-    inline void setHost(const QHostAddress &value) { host = value; }
-    /**
-     * @brief Returns the maximum number of threads that can be created by the server. The default is 100.
-     * @return int : Maximum number of threads.
+     * @brief Returns the max thread number.
+     * @param int : max.
      */
     inline int getMaxThread() const { return maxThread; }
     /**
-     * @brief Set the maxThread property.
-     * @param int value : Maximum number of threads.
-     */
-    inline void setMaxThread(int value) { maxThread = value; }
-    /**
-     * @brief Retuns the sslKeyFile name property that can be used by the server to make the SSL configuration.
-     * @return QString : SSL Key File name.
+     * @brief Returns the ssl key file.
+     * @param QString : sslKeyFile name.
      */
     inline QString getSslKeyFile() const { return sslKeyFile; }
     /**
-     * @brief Set the sslKeyFile name property.
-     * @param const QString &value : SSL Key File name.
-     */
-    inline void setSslKeyFile(const QString &value) { sslKeyFile = value; }
-    /**
-     * @brief Retuns the sslCertFile name property that can be used by the server to make the SSL configuration.
-     * @return QString : SSL Cert File name.
+     * @brief Returns the ssl cert file.
+     * @param QString : sslCertFile name.
      */
     inline QString getSslCertFile() const { return sslCertFile; }
     /**
-     * @brief Set the sslCertFile name property.
-     * @param const QString &value : SSL Cert File name.
-     */
-    void setSslCertFile(const QString &value) { sslCertFile = value; }
-    /**
-     * @brief Returns the path should point to the server folder.
-     * @return QString : Path.
+     * @brief Returns the path to the server's folder.
+     * @param QString : path.
      */
     inline QString getPath() const { return path; }
     /**
-     * @brief Set the path property.
-     * @param const QString &value :
-     */
-    inline void setPath(const QString &value) { path = value; }
-    /**
-     * @brief Returns the applications domain name
-     * @return QString : Domain name.
-     */
-    inline QString getDomain() const { return domain; }
-    /**
-     * @brief Set domain property.
-     * @param value :
-     */
-    inline void setDomain(const QString &value) { domain = value; }
-    /**
-     * @brief Returns the path to the log file and must to be relative to the path set in the "path".
-     * @return QString : Log File Path.
+     * @brief Returns the log file path.
+     * @param QString : log file.
      */
     inline QString getLogFilePath() const { return logFilePath; }
     /**
-     * @brief Set the logFilePath property.
-     * const QString &value : Log file path.
-     */
-    inline void setLogFilePath(const QString &value) { logFilePath = value; }
-    /**
-     * @brief Returns the maximum upload file size in bytes.
-     * @return qint64 : Max upload file size in bytes.
+     * @brief Returns max upload file size supported by the server.
+     * @param qint64: max file size.
      */
     inline qint64 getMaxUploadFile() const { return maxUploadFile; }
-    /**
-     * @brief Set maxUploadFile property in bytes.
-     * @param const qint64 &value : Max upload file size in bytes.
-     */
-    inline void setMaxUploadFile(const qint64 &value) { maxUploadFile = value; }
     /**
      * @brief getMaxLogFile the max file log
      * @return qint64 : Max file log in bytes.
      */
     inline qint64 getMaxLogFile() const { return maxLogFile; }
     /**
-     * @brief Set maxLogFile property in bytes.
-     * @param const qint64 &value : Max file size in bytes.
+     * @brief Returns the index page.
+     * @return QString : index page name.
      */
-    inline void setMaxLogFile(const qint64 &value) { maxLogFile = value; }
+    inline QString getIndexPage() const { return indexPage; }
     /**
-     * @brief isValid
+     * @brief Returns the access server page.
+     * @return bool : Access server pages.
+     */
+    inline bool getAccessServerPages() const { return accessServerPages; }
+    /**
+     * @brief Returns true if the Configuration is ok. Otherwise returns false.
+     * @param bool : is valid.
      */
     inline bool isValid() const { return valid; }
 };
