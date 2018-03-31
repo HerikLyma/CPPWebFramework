@@ -105,3 +105,8 @@ script:
   - /opt/qt57/bin/qmake HelloMVC.pro
   - make -j 8
 
+  - cd ..
+  - cd RESTWebService
+  - /opt/qt57/bin/qmake RESTWebService.pro
+  - make -j 8
+
