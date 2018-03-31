@@ -11,8 +11,8 @@
 
 The C++ Web Framework (CWF) is an Open Source web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, 
 created by Herik Lima and Marcelo Eler, using C++ with Qt to be used in the development of web applications, having been heavily inspired by 
-Java Servlets, JavaServer Pages Standard Tag Library (JSTL), designed to consume few computational resources such as memory and processing and, a low response time for requests 
-while keeping the presentation and the business layer separated through the C++ Server Pages Standard Tag Library (CSTL). 
+Java Servlets, JavaServer Pages Standard Tag Library (JSTL), designed to consume few computational resources such as memory and processing and a low response time for requests. The CWF also adopts the MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages to take care of data presentation (View) and use the servlets as a between the two layers (Controller). 
+
 Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
 
 <ul>
@@ -24,7 +24,7 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
 This web framework consists of a simplified set of classes, only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development as simple as possible, 
 even for beginners.
 
-<hr/><b>Example</b></br></br>
+<hr/><b>Hello World - Example</b></br></br>
 
 ```cpp
 #include "cppwebapplication.h"
@@ -42,6 +42,60 @@ int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
     server.addUrlServlet("/hello", new HelloWorldServlet);
+    return server.start();
+}
+```
+
+<hr/><b>MVC (Model-View-Controller) - Example</b></br></br>
+
+```cpp
+//hellomodel.h (Model)
+#include <QObject>
+
+class HelloModel : public QObject
+{
+    Q_OBJECT
+public slots:
+    QString greeting() const
+    {
+        return "Hello User!";
+    }
+};
+
+//helloview.xhtml (View)
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<html>
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+        <out value="#{model.greeting}"/>
+    </body>
+</html>
+
+//hellocontroller.h (Controller)
+#include <cwf/httpservlet.h>
+#include <model/hellomodel.h>
+
+class HelloController : public CWF::HttpServlet
+{
+public:
+    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    {
+        HelloModel model;
+        request.addAttribute("model", &model);
+        request.getRequestDispatcher("/pages/helloview.xhtml").forward(request, response);
+    }
+};
+
+//main.cpp
+#include <cwf/cppwebapplication.h>
+#include <controller/hellocontroller.h>
+
+int main(int argc, char *argv[])
+{
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloMVC/server");
+    server.addUrlServlet("/hello", new HelloController);
     return server.start();
 }
 ```
