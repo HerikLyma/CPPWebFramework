@@ -100,3 +100,8 @@ script:
   - /opt/qt57/bin/qmake HelloWorldFilter.pro
   - make -j 8
 
+  - cd ..
+  - cd HelloMVC
+  - /opt/qt57/bin/qmake HelloMVC.pro
+  - make -j 8
+
