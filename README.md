@@ -94,7 +94,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloMVC/server");
+    CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
     server.addUrlServlet("/hello", new HelloController);
     return server.start();
 }
@@ -109,12 +109,7 @@ int main(int argc, char *argv[])
 
 /* 
  * SQL Script
- * create table countries
- * (
- *     co_id serial primary key,
- *     co_name varchar unique
- * );
- *
+ * create table countries (co_id serial primary key, co_name varchar unique);
  * insert into countries (co_name) values ('BRAZIL'), ('UNITED STATES OF AMERICA'), ('CANADA');
  */
 
@@ -132,8 +127,8 @@ public:
 };
 
 int main(int argc, char *argv[])
-{        
-    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/RESTWebService/server");
+{
+    CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
     server.addUrlServlet("/countries", new CountriesServlet);
     return server.start();
 }
