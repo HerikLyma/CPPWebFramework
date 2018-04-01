@@ -2,43 +2,46 @@
 \label{class_file_manager}\index{File\+Manager@{File\+Manager}}
 
 
-The \mbox{\hyperlink{class_file_manager}{File\+Manager}} class can manage file\textquotesingle{}s name.  
+The \hyperlink{class_file_manager}{File\+Manager} class can manage file\textquotesingle{}s name.  
 
 
 
 
 {\ttfamily \#include $<$filemanager.\+h$>$}
 
-\subsection*{Public Member Functions}
+\subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_file_manager_a02a841bf0edcc2c338a315efdfbd716e}\label{class_file_manager_a02a841bf0edcc2c338a315efdfbd716e}} 
-Q\+String {\bfseries extract} (Q\+String \&name, char ch) const
+\mbox{\Hypertarget{class_file_manager_a56501ee7013e1d234ca11562635251c4}\label{class_file_manager_a56501ee7013e1d234ca11562635251c4}} 
+static Q\+String {\bfseries extract} (Q\+String \&name, char ch)
 \item 
-\mbox{\Hypertarget{class_file_manager_af8ecdb77f87698fb34f4c65ae9cde87e}\label{class_file_manager_af8ecdb77f87698fb34f4c65ae9cde87e}} 
-Q\+String {\bfseries file\+Name} (Q\+String \&name) const
+\mbox{\Hypertarget{class_file_manager_ab632757a3a632064b78c1c969a1638bd}\label{class_file_manager_ab632757a3a632064b78c1c969a1638bd}} 
+static Q\+String {\bfseries file\+Name} (Q\+String \&name)
 \item 
-\mbox{\Hypertarget{class_file_manager_a91752dbc36b0cd256d09917dbcf49f30}\label{class_file_manager_a91752dbc36b0cd256d09917dbcf49f30}} 
-Q\+String {\bfseries file\+Extention} (Q\+String \&name) const
+\mbox{\Hypertarget{class_file_manager_ac699c340c90b9d67a1bd508f37167580}\label{class_file_manager_ac699c340c90b9d67a1bd508f37167580}} 
+static Q\+String {\bfseries file\+Extention} (Q\+String \&name)
 \item 
-\mbox{\Hypertarget{class_file_manager_abebe8f302627b2e8db0bf911487bd04d}\label{class_file_manager_abebe8f302627b2e8db0bf911487bd04d}} 
-void {\bfseries remove\+Last\+Bar} (Q\+String \&path) const
+\mbox{\Hypertarget{class_file_manager_a4da1540323986b6a1c6e3b4af98ecc97}\label{class_file_manager_a4da1540323986b6a1c6e3b4af98ecc97}} 
+static void {\bfseries remove\+Last\+Bar} (Q\+String \&path)
 \item 
-\mbox{\Hypertarget{class_file_manager_a79f0d0e4d4528d0f98496c84a43ff06b}\label{class_file_manager_a79f0d0e4d4528d0f98496c84a43ff06b}} 
-void {\bfseries remove\+First\+Bar} (Q\+String \&path) const
+\mbox{\Hypertarget{class_file_manager_aa4c806c3e7a4073dec58e38856a23416}\label{class_file_manager_aa4c806c3e7a4073dec58e38856a23416}} 
+static void {\bfseries remove\+First\+Bar} (Q\+String \&path)
 \item 
-\mbox{\Hypertarget{class_file_manager_a1fac5226f52353dd6e928ce25ae5c1cb}\label{class_file_manager_a1fac5226f52353dd6e928ce25ae5c1cb}} 
-void {\bfseries put\+First\+Bar} (Q\+String \&path) const
+\mbox{\Hypertarget{class_file_manager_a4a40a32cba21d0d249327fbe95b0e4d2}\label{class_file_manager_a4a40a32cba21d0d249327fbe95b0e4d2}} 
+static void {\bfseries put\+First\+Bar} (Q\+String \&path)
 \item 
-\mbox{\Hypertarget{class_file_manager_a2f00c43fed6befb1136502c6db2f7dee}\label{class_file_manager_a2f00c43fed6befb1136502c6db2f7dee}} 
-Q\+Byte\+Array {\bfseries read\+All} (const Q\+String \&file\+Name, Q\+File\+Device\+::\+File\+Error \&file\+Erro) const
+\mbox{\Hypertarget{class_file_manager_a6198ea2747916b1566d667f634fd5fa1}\label{class_file_manager_a6198ea2747916b1566d667f634fd5fa1}} 
+static Q\+Byte\+Array {\bfseries read\+All} (const Q\+String \&file\+Name, Q\+File\+Device\+::\+File\+Error \&file\+Erro)
+\item 
+\mbox{\Hypertarget{class_file_manager_acd4af1aaaa8a914fc50aeea2a22257da}\label{class_file_manager_acd4af1aaaa8a914fc50aeea2a22257da}} 
+static bool {\bfseries copy\+Directory\+Files} (const Q\+String \&from\+Dir, const Q\+String \&to\+Dir, bool cover\+File\+If\+Exist)
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{class_file_manager}{File\+Manager}} class can manage file\textquotesingle{}s name. 
+The \hyperlink{class_file_manager}{File\+Manager} class can manage file\textquotesingle{}s name. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filemanager.\+h\item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filemanager.\+cpp\end{DoxyCompactItemize}
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filemanager.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/filemanager.\+cpp\end{DoxyCompactItemize}

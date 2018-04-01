@@ -13,10 +13,8 @@
 CWF_BEGIN_NAMESPACE
 
 void RequestDispatcher::forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
-{
-    CSTLCompiler cstl(file.toLatin1(), request.getPath(), request.attributes);
-    QString pageStr(cstl.output());
-    response.write(std::move(pageStr.toLatin1()));
+{    
+    response.write(std::move(CSTLCompiler(file.toLatin1(), request.getPath(), request.attributes).output()));
 }
 
 CWF_END_NAMESPACE

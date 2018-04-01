@@ -3,5 +3,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="URLEncoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_u_r_l_encoder.html",tooltip="The URLEncoder class. "];
+  Node5 [label="QSqlQuery",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="SqlQuery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sql_query.html",tooltip="The SqlQuery class was created to facilitate integration with SqlDataBaseStorage and manipulation to ..."];
 }

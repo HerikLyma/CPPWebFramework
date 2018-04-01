@@ -3,13 +3,13 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node8 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node8 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 [label="CSTLCompilerObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_t_l_compiler_object.html",tooltip="The Properties class is an auxiliar class to the CSTLCompiler. "];
-  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="HttpServletRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_http_servlet_request.html",tooltip="The HttpServletRequest class holds all information about a http request. "];
-  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="QListObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_list_object.html",tooltip="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to..."];
-  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node12 [label="Variant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_variant.html",tooltip="This class is designed to facilitate the passing of simple type parameters such as qlonglong..."];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="HttpServletRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_http_servlet_request.html",tooltip="The HttpServletRequest class holds all information about a http request. "];
+  Node9 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="QListObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_list_object.html",tooltip="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to..."];
+  Node9 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Variant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_variant.html",tooltip="This class is designed to facilitate the passing of simple type parameters such as qlonglong..."];
 }

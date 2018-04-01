@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['_7ecppwebapplication',['~CppWebApplication',['../class_cpp_web_application.html#a96a7655a25d2e35ed545cdb7b8d81cc5',1,'CppWebApplication']]],
-  ['_7ecppwebserver',['~CppWebServer',['../class_cpp_web_server.html#a6b9d6874d16f6491c511fb4b8793a5f8',1,'CppWebServer']]],
-  ['_7efilter',['~Filter',['../class_filter.html#ae68b45ae28ac3f31414f56ca8eda6d45',1,'Filter']]],
-  ['_7ehttpreadrequest',['~HttpReadRequest',['../class_http_read_request.html#a876bcf62d5428d982c5af6f35e59b963',1,'HttpReadRequest']]],
-  ['_7ehttpservlet',['~HttpServlet',['../class_http_servlet.html#a912d39c84d82c498e0a5b319dcbe2be4',1,'HttpServlet']]],
-  ['_7ehttpservletrequest',['~HttpServletRequest',['../class_http_servlet_request.html#aa3ed01e89a6d5390e61c0b0f3e6f83c2',1,'HttpServletRequest']]],
-  ['_7erequestdispatcher',['~RequestDispatcher',['../class_request_dispatcher.html#a1b09805ab31a0f96d9823a2bf9de3771',1,'RequestDispatcher']]]
+  ['validate',['validate',['../class_http_session.html#adc118d02431eec30977bd1cb3429eb79',1,'HttpSession']]],
+  ['variant',['Variant',['../class_variant.html#a594b84b7c7a7e997aac3354bbdaa2d97',1,'Variant::Variant()=default'],['../class_variant.html#a1015564e64eb9bc9ce894fb1f98b6e36',1,'Variant::Variant(int value)'],['../class_variant.html#a7e7d9a46e166e059ce75b76b92b11457',1,'Variant::Variant(double value)'],['../class_variant.html#a6f86cea152e761f48700e41f210fe251',1,'Variant::Variant(qlonglong value)'],['../class_variant.html#a2a2d8b7cc035142a795f86d481adde0c',1,'Variant::Variant(const QString &amp;value)']]]
 ];

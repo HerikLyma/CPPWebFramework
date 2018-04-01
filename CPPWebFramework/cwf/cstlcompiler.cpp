@@ -32,7 +32,7 @@ QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
     {
         QFile file(str);
         if(!file.open(QIODevice::ReadOnly))
-            return "<html><body>" + file.errorString().toLatin1() + "</body></html>";
+            return "<html><body>" + file.errorString().toUtf8() + "</body></html>";
 
         QByteArray content(std::move(file.readAll()));
         file.close();
@@ -51,7 +51,7 @@ QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
     }
 
     if (xml.hasError())
-        return "<html><body>XML ERROR: " + xml.errorString().toLatin1() + "</body></html>";
+        return "<html><body>XML ERROR: " + xml.errorString().toUtf8() + "</body></html>";
     return "";
 }
 
@@ -63,7 +63,7 @@ QByteArray CSTLCompiler::processOutTag(QMap<QString, QString> &attr)
     else if(size > 1)
         return "***ERROR - OUT TAG DOES NOT HAS MORE THAN PROPERTY***";
 
-    return CSTLCompilerAttributes(objects).buildAttributes(attr, false).toLatin1();
+    return CSTLCompilerAttributes(objects).buildAttributes(attr, false).toUtf8();
 }
 
 QByteArray CSTLCompiler::getBody(QXmlStreamReader &xml, const QString &tagName)
@@ -77,8 +77,8 @@ QByteArray CSTLCompiler::getBody(QXmlStreamReader &xml, const QString &tagName)
     xml.readNext();
     while(!xml.atEnd())
     {
-        name = xml.name().toLatin1().toLower();
-        text = xml.text().toLatin1();
+        name = xml.name().toUtf8().toLower();
+        text = xml.text().toUtf8();
 
         if(xml.isStartElement())
         {
@@ -110,7 +110,7 @@ QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
     if(forAttributes.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
     {
         getBody(xml, CSTL::TAG::FOR);
-        htmlOut = forAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
+        htmlOut = forAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toUtf8();
     }
     else
     {
@@ -125,7 +125,7 @@ QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
             {
                 if(type != CSTL::SUPPORTED_TYPES::CWF_QLISTOBJECT)
                 {
-                    htmlOut = "***ERROR - " + type.toLatin1() + " ISN'T A CWF::QListObject***";
+                    htmlOut = "***ERROR - " + type.toUtf8() + " ISN'T A CWF::QListObject***";
                     getBody(xml, CSTL::TAG::FOR);
                 }
                 else
@@ -181,7 +181,7 @@ QByteArray CSTLCompiler::processIfTag(QXmlStreamReader &xml)
     if(ifAttributes.relationalOperator == RelationalOperator::ERROR)
     {
         getBody(xml, CSTL::TAG::IF);
-        htmlOut = ifAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
+        htmlOut = ifAttributes.attributes[CSTL::TAG::PROPERTY::ERROR].toUtf8();
     }
     else
     {
@@ -312,9 +312,9 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
         {
             CSTLCompilerImport importUrl(xml.attributes(), path);
             if(!importUrl.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
-                htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::IMPORT::URL].toLatin1();
+                htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::IMPORT::URL].toUtf8();
             else
-                htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::ERROR].toLatin1();
+                htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::ERROR].toUtf8();
             name.clear();
 
         }
@@ -340,7 +340,7 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
         xml.readNext();
         if(xml.hasError())
         {
-            return "<html><body>XML ERROR: " + xml.errorString().toLatin1() + "</body></html>";
+            return "<html><body>XML ERROR: " + xml.errorString().toUtf8() + "</body></html>";
         }
     }
     return htmlOut;

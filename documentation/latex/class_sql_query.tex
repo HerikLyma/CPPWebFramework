@@ -1,0 +1,161 @@
+\hypertarget{class_sql_query}{}\section{Sql\+Query Class Reference}
+\label{class_sql_query}\index{Sql\+Query@{Sql\+Query}}
+
+
+The \hyperlink{class_sql_query}{Sql\+Query} class was created to facilitate integration with Sql\+Data\+Base\+Storage and manipulation to the database through J\+S\+ON.  
+
+
+
+
+{\ttfamily \#include $<$sqlquery.\+h$>$}
+
+
+
+Inheritance diagram for Sql\+Query\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sql_query_a81ec51c1f78134ed0d5016774335460c}{Sql\+Query} (\hyperlink{class_sql_database_storage}{Sql\+Database\+Storage} \&db\+Storage)
+\begin{DoxyCompactList}\small\item\em Constructs a Q\+Sql\+Query object using the database db\+Storage. \end{DoxyCompactList}\item 
+Q\+Json\+Object \hyperlink{class_sql_query_a2e52ed76e3683d7684fd792bec0b9a09}{exec} ()
+\begin{DoxyCompactList}\small\item\em Executes and returns a J\+S\+ON indicating success, or failure through the key success. \end{DoxyCompactList}\item 
+Q\+Json\+Object \hyperlink{class_sql_query_a5fa16018f76ee798660343bc5fabe8a0}{exec} (const Q\+String \&query)
+\begin{DoxyCompactList}\small\item\em Executes a query and returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. \end{DoxyCompactList}\item 
+Q\+Json\+Array \hyperlink{class_sql_query_a4f12c62fa99bb2f5738b54e5cbefa0f9}{to\+Json} ()
+\begin{DoxyCompactList}\small\item\em Returns the result of a select converted to a Q\+Json\+Array. If there is a failure, a J\+S\+ON object with two fields will be returned\+: \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. If there are no results, Q\+Json\+Array will return a empty object. \end{DoxyCompactList}\item 
+Q\+Json\+Object \hyperlink{class_sql_query_a5bf880f51ea330bbccc5815fac1430f2}{delete\+Record} (const Q\+String \&table, const Q\+String \&condition)
+\begin{DoxyCompactList}\small\item\em Delete a record given a table and a condition. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. \end{DoxyCompactList}\item 
+Q\+Json\+Object \hyperlink{class_sql_query_ad831477c3ce9914f7dcd8136e72af387}{insert\+From\+Json} (const Q\+Json\+Object \&json, const Q\+String \&table)
+\begin{DoxyCompactList}\small\item\em Insert a record given a json and a table. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. \end{DoxyCompactList}\item 
+Q\+Json\+Object \hyperlink{class_sql_query_a57821078a46629590e01e3645af13edf}{update\+From\+Json} (const Q\+Json\+Object \&json, const Q\+String \&table, const Q\+String \&condition)
+\begin{DoxyCompactList}\small\item\em Update a record given a json, a table and a condition. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_sql_query}{Sql\+Query} class was created to facilitate integration with Sql\+Data\+Base\+Storage and manipulation to the database through J\+S\+ON. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sql_query_a81ec51c1f78134ed0d5016774335460c}\label{class_sql_query_a81ec51c1f78134ed0d5016774335460c}} 
+\index{Sql\+Query@{Sql\+Query}!Sql\+Query@{Sql\+Query}}
+\index{Sql\+Query@{Sql\+Query}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{Sql\+Query()}{SqlQuery()}}
+{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE Sql\+Query\+::\+Sql\+Query (\begin{DoxyParamCaption}\item[{\hyperlink{class_sql_database_storage}{Sql\+Database\+Storage} \&}]{db\+Storage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructs a Q\+Sql\+Query object using the database db\+Storage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db\+Storage} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sql_query_a5bf880f51ea330bbccc5815fac1430f2}\label{class_sql_query_a5bf880f51ea330bbccc5815fac1430f2}} 
+\index{Sql\+Query@{Sql\+Query}!delete\+Record@{delete\+Record}}
+\index{delete\+Record@{delete\+Record}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{delete\+Record()}{deleteRecord()}}
+{\footnotesize\ttfamily Q\+Json\+Object Sql\+Query\+::delete\+Record (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{table,  }\item[{const Q\+String \&}]{condition }\end{DoxyParamCaption})}
+
+
+
+Delete a record given a table and a condition. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \\
+\hline
+{\em condition} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_query_a2e52ed76e3683d7684fd792bec0b9a09}\label{class_sql_query_a2e52ed76e3683d7684fd792bec0b9a09}} 
+\index{Sql\+Query@{Sql\+Query}!exec@{exec}}
+\index{exec@{exec}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{exec()}{exec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Json\+Object Sql\+Query\+::exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Executes and returns a J\+S\+ON indicating success, or failure through the key success. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_query_a5fa16018f76ee798660343bc5fabe8a0}\label{class_sql_query_a5fa16018f76ee798660343bc5fabe8a0}} 
+\index{Sql\+Query@{Sql\+Query}!exec@{exec}}
+\index{exec@{exec}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{exec()}{exec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+Json\+Object Sql\+Query\+::exec (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{query }\end{DoxyParamCaption})}
+
+
+
+Executes a query and returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_query_ad831477c3ce9914f7dcd8136e72af387}\label{class_sql_query_ad831477c3ce9914f7dcd8136e72af387}} 
+\index{Sql\+Query@{Sql\+Query}!insert\+From\+Json@{insert\+From\+Json}}
+\index{insert\+From\+Json@{insert\+From\+Json}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{insert\+From\+Json()}{insertFromJson()}}
+{\footnotesize\ttfamily Q\+Json\+Object Sql\+Query\+::insert\+From\+Json (\begin{DoxyParamCaption}\item[{const Q\+Json\+Object \&}]{json,  }\item[{const Q\+String \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Insert a record given a json and a table. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+{\em table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_query_a4f12c62fa99bb2f5738b54e5cbefa0f9}\label{class_sql_query_a4f12c62fa99bb2f5738b54e5cbefa0f9}} 
+\index{Sql\+Query@{Sql\+Query}!to\+Json@{to\+Json}}
+\index{to\+Json@{to\+Json}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{to\+Json()}{toJson()}}
+{\footnotesize\ttfamily Q\+Json\+Array Sql\+Query\+::to\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the result of a select converted to a Q\+Json\+Array. If there is a failure, a J\+S\+ON object with two fields will be returned\+: \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. If there are no results, Q\+Json\+Array will return a empty object. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sql_query_a57821078a46629590e01e3645af13edf}\label{class_sql_query_a57821078a46629590e01e3645af13edf}} 
+\index{Sql\+Query@{Sql\+Query}!update\+From\+Json@{update\+From\+Json}}
+\index{update\+From\+Json@{update\+From\+Json}!Sql\+Query@{Sql\+Query}}
+\subsubsection{\texorpdfstring{update\+From\+Json()}{updateFromJson()}}
+{\footnotesize\ttfamily Q\+Json\+Object Sql\+Query\+::update\+From\+Json (\begin{DoxyParamCaption}\item[{const Q\+Json\+Object \&}]{json,  }\item[{const Q\+String \&}]{table,  }\item[{const Q\+String \&}]{condition }\end{DoxyParamCaption})}
+
+
+
+Update a record given a json, a table and a condition. Returns a J\+S\+ON indicating success, or failure through the key \char`\"{}success\char`\"{} and \char`\"{}message\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+{\em table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Json\+Object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/sqlquery.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/sqlquery.\+cpp\end{DoxyCompactItemize}

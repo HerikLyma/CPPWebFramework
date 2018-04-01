@@ -2,7 +2,7 @@
 \label{class_http_servlet_request}\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 
 
-The \mbox{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}} class holds all information about a http request.  
+The \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} class holds all information about a http request.  
 
 
 
@@ -16,54 +16,65 @@ Inheritance diagram for Http\+Servlet\+Request\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_http_servlet_request_acda91961621ef7bcd0fe061d0612bc2c}{Http\+Servlet\+Request}} (Q\+Tcp\+Socket \&socket, const Q\+String \&path, \mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_session}{Http\+Session}} $\ast$$>$ \&sessions)
-\begin{DoxyCompactList}\small\item\em This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+Array. The parameter parent is optional. N\+O\+TE\+: The \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} is responsable to create the Q\+Tcp\+Socket, and the \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} is responsable to create a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} and a \mbox{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_http_servlet_request_aabbebe88ee8094555c82cea8fa2674f0}\label{class_http_servlet_request_aabbebe88ee8094555c82cea8fa2674f0}} 
+\hyperlink{class_http_servlet_request_aabbebe88ee8094555c82cea8fa2674f0}{Http\+Servlet\+Request} (Q\+Tcp\+Socket \&socket, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_session}{Http\+Session} $\ast$$>$ \&sessions, const \hyperlink{class_configuration}{Configuration} \&configuration)
+\begin{DoxyCompactList}\small\item\em This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+Array. The parameter parent is optional. N\+O\+TE\+: The \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} is responsable to create the Q\+Tcp\+Socket, and the \hyperlink{class_http_read_request}{Http\+Read\+Request} is responsable to create a \hyperlink{class_http_read_request}{Http\+Read\+Request} and a \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_http_servlet_request_aa3ed01e89a6d5390e61c0b0f3e6f83c2}\label{class_http_servlet_request_aa3ed01e89a6d5390e61c0b0f3e6f83c2}} 
-virtual \mbox{\hyperlink{class_http_servlet_request_aa3ed01e89a6d5390e61c0b0f3e6f83c2}{$\sim$\+Http\+Servlet\+Request}} ()
+virtual \hyperlink{class_http_servlet_request_aa3ed01e89a6d5390e61c0b0f3e6f83c2}{$\sim$\+Http\+Servlet\+Request} ()
 \begin{DoxyCompactList}\small\item\em Destroys dynamically allocated resources. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}{add\+Attribute}} (const Q\+String \&name, Q\+Object $\ast$value)
+\mbox{\Hypertarget{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}\label{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}} 
+void \hyperlink{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}{add\+Attribute} (const Q\+String \&name, Q\+Object $\ast$value)
 \begin{DoxyCompactList}\small\item\em This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml C\+S\+TL. For this to be possible the object must inherit from Q\+Object and methods and must be in session \char`\"{}public slots\char`\"{}. \end{DoxyCompactList}\item 
-Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ \mbox{\hyperlink{class_http_servlet_request_add50206d719a748a2162610fd30f060e}{get\+Attributes}} () const
-\begin{DoxyCompactList}\small\item\em This method returns all the attributes of a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}}. \end{DoxyCompactList}\item 
-const Q\+Object $\ast$ \mbox{\hyperlink{class_http_servlet_request_a6325279882fc5a910951b6ccec6ebb25}{get\+Attribute}} (const Q\+String \&name) const
+\mbox{\Hypertarget{class_http_servlet_request_ac059e7124ee117616c1040cbd8ef980d}\label{class_http_servlet_request_ac059e7124ee117616c1040cbd8ef980d}} 
+Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ \hyperlink{class_http_servlet_request_ac059e7124ee117616c1040cbd8ef980d}{get\+Attributes} () const
+\begin{DoxyCompactList}\small\item\em This method returns all the attributes of a \hyperlink{class_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_http_servlet_request_a77cab02aae290ed612c7ef50a72baccb}\label{class_http_servlet_request_a77cab02aae290ed612c7ef50a72baccb}} 
+const Q\+Object $\ast$ \hyperlink{class_http_servlet_request_a77cab02aae290ed612c7ef50a72baccb}{get\+Attribute} (const Q\+String \&name) const
 \begin{DoxyCompactList}\small\item\em This method returns a specific object given its name. \end{DoxyCompactList}\item 
-const Q\+Byte\+Array \mbox{\hyperlink{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}{get\+Body}} () const
-\begin{DoxyCompactList}\small\item\em Returns. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_request_dispatcher}{Request\+Dispatcher}} \& \mbox{\hyperlink{class_http_servlet_request_a965af0d27573882ca8a09cc813530a42}{get\+Request\+Dispatcher}} (const Q\+String \&page)
+\mbox{\Hypertarget{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}\label{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}} 
+const Q\+Byte\+Array \hyperlink{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}{get\+Body} () const
+\begin{DoxyCompactList}\small\item\em Returns the request body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_http_servlet_request_a1ebb0c27c68406e36eb83ef8aa2bf5b0}\label{class_http_servlet_request_a1ebb0c27c68406e36eb83ef8aa2bf5b0}} 
+Q\+Json\+Object \hyperlink{class_http_servlet_request_a1ebb0c27c68406e36eb83ef8aa2bf5b0}{body\+To\+Json\+Object} () const
+\begin{DoxyCompactList}\small\item\em Tries returns the body of the converted request to Q\+Json\+Object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_http_servlet_request_ab0e0e2c6e1f5a1839d21254882adc17a}\label{class_http_servlet_request_ab0e0e2c6e1f5a1839d21254882adc17a}} 
+Q\+Json\+Array \hyperlink{class_http_servlet_request_ab0e0e2c6e1f5a1839d21254882adc17a}{body\+To\+Json\+Array} () const
+\begin{DoxyCompactList}\small\item\em Tries returns the body of the converted request to Q\+Json\+Array. \end{DoxyCompactList}\item 
+\hyperlink{class_request_dispatcher}{Request\+Dispatcher} \& \hyperlink{class_http_servlet_request_a965af0d27573882ca8a09cc813530a42}{get\+Request\+Dispatcher} (const Q\+String \&page)
 \begin{DoxyCompactList}\small\item\em This method returns a request\+Dispatcher given an specific page. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \mbox{\hyperlink{class_http_servlet_request_af41af16fdcb738253fe34eaacff17af1}{get\+Protocol}} () const
+Q\+Byte\+Array \hyperlink{class_http_servlet_request_af41af16fdcb738253fe34eaacff17af1}{get\+Protocol} () const
 \begin{DoxyCompactList}\small\item\em This method returns the http protocol. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_http_servlet_request_a5bcadf4489d18ae04399c2340da4726a}\label{class_http_servlet_request_a5bcadf4489d18ae04399c2340da4726a}} 
-void \mbox{\hyperlink{class_http_servlet_request_a5bcadf4489d18ae04399c2340da4726a}{clear\+Attributes}} ()
+void \hyperlink{class_http_servlet_request_a5bcadf4489d18ae04399c2340da4726a}{clear\+Attributes} ()
 \begin{DoxyCompactList}\small\item\em This method will clear all the attributes. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_http_servlet_request_ab7bf2b4dc9f9335ce747e9dc2221e018}{set\+Http\+Parser}} (\mbox{\hyperlink{class_http_parser}{Http\+Parser}} \&http\+Parser)
-\begin{DoxyCompactList}\small\item\em This method set the \mbox{\hyperlink{class_http_parser}{Http\+Parser}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_http_parser}{Http\+Parser}} \& \mbox{\hyperlink{class_http_servlet_request_a26064824e0d709ee032b889147acd579}{get\+Http\+Parser}} () const
-\begin{DoxyCompactList}\small\item\em This method returns the \mbox{\hyperlink{class_http_parser}{Http\+Parser}}. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \mbox{\hyperlink{class_http_servlet_request_a81efdae7956ec53f0827da7ab39a7a4f}{get\+Request\+U\+RL}} () const
+void \hyperlink{class_http_servlet_request_ab7bf2b4dc9f9335ce747e9dc2221e018}{set\+Http\+Parser} (\hyperlink{class_http_parser}{Http\+Parser} \&http\+Parser)
+\begin{DoxyCompactList}\small\item\em This method set the \hyperlink{class_http_parser}{Http\+Parser}. \end{DoxyCompactList}\item 
+\hyperlink{class_http_parser}{Http\+Parser} \& \hyperlink{class_http_servlet_request_a5829880fa0effb4b13fbad10e1b4481f}{get\+Http\+Parser} () const
+\begin{DoxyCompactList}\small\item\em This method returns the \hyperlink{class_http_parser}{Http\+Parser}. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_http_servlet_request_a81efdae7956ec53f0827da7ab39a7a4f}{get\+Request\+U\+RL} () const
 \begin{DoxyCompactList}\small\item\em This method returns the requested url. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \mbox{\hyperlink{class_http_servlet_request_a788609a8520897ecaa91875a91b0e921}{get\+Request\+U\+RI}} () const
+Q\+Byte\+Array \hyperlink{class_http_servlet_request_a788609a8520897ecaa91875a91b0e921}{get\+Request\+U\+RI} () const
 \begin{DoxyCompactList}\small\item\em This method returns the requested url. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_http_servlet_request_a8e9c96dda35d8519290330258aa730c7}\label{class_http_servlet_request_a8e9c96dda35d8519290330258aa730c7}} 
-\mbox{\hyperlink{class_http_session}{Http\+Session}} \& \mbox{\hyperlink{class_http_servlet_request_a8e9c96dda35d8519290330258aa730c7}{get\+Session}} ()
+\hyperlink{class_http_session}{Http\+Session} \& \hyperlink{class_http_servlet_request_a8e9c96dda35d8519290330258aa730c7}{get\+Session} ()
 \begin{DoxyCompactList}\small\item\em This method returns the user\textquotesingle{}s session. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_http_servlet_request_a52143e9c7db683d28ca9763d4357308a}{set\+Session}} (\mbox{\hyperlink{class_http_session}{Http\+Session}} \&session)
+void \hyperlink{class_http_servlet_request_a52143e9c7db683d28ca9763d4357308a}{set\+Session} (\hyperlink{class_http_session}{Http\+Session} \&session)
 \begin{DoxyCompactList}\small\item\em This method set the user\textquotesingle{}s session. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \mbox{\hyperlink{class_http_servlet_request_a707c561d255615792ebe3bc9b8e3896c}{get\+Parameter}} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array \hyperlink{class_http_servlet_request_a707c561d255615792ebe3bc9b8e3896c}{get\+Parameter} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em This method returns the most recent parameter from a request given an specific name. \end{DoxyCompactList}\item 
-Q\+Byte\+Array\+List \mbox{\hyperlink{class_http_servlet_request_ab361a363bdd6d627aecba897dd12809b}{get\+Parameters}} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array\+List \hyperlink{class_http_servlet_request_ab361a363bdd6d627aecba897dd12809b}{get\+Parameters} (const Q\+Byte\+Array \&name) const
 \begin{DoxyCompactList}\small\item\em This method returns the parameters from a request given an specific name. \end{DoxyCompactList}\item 
-Q\+Tcp\+Socket \& \mbox{\hyperlink{class_http_servlet_request_ab2d9f9c1b6189a536a5c76dbb2c9dd70}{get\+Socket}} () const
+Q\+Tcp\+Socket \& \hyperlink{class_http_servlet_request_a010600c5c9d74b3877b133c1ad6a9250}{get\+Socket} () const
 \begin{DoxyCompactList}\small\item\em This method returns a reference to the current socket. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_http_servlet_request_a8c20ab8bd4ce24c33500b333b301e960}{get\+Auto\+Delete\+Attribute}} () const
+bool \hyperlink{class_http_servlet_request_a8c20ab8bd4ce24c33500b333b301e960}{get\+Auto\+Delete\+Attribute} () const
 \begin{DoxyCompactList}\small\item\em This method returns the auto delete attribute. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_http_servlet_request_a4e58953a673eb24cd67120ecc7f61e93}{set\+Auto\+Delete\+Attribute}} (bool value)
-\begin{DoxyCompactList}\small\item\em This method sets the auto delete attribute. When the auto delete attribute is true and the \mbox{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}} is destroyed, the attributes that you added will be destroyed. N\+O\+TE\+: By default the auto delete attribute is false. \end{DoxyCompactList}\item 
-Q\+String \mbox{\hyperlink{class_http_servlet_request_a99e9035246e9ba9701f4f0a435c2161c}{get\+Path}} () const
+void \hyperlink{class_http_servlet_request_a4e58953a673eb24cd67120ecc7f61e93}{set\+Auto\+Delete\+Attribute} (bool value)
+\begin{DoxyCompactList}\small\item\em This method sets the auto delete attribute. When the auto delete attribute is true and the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} is destroyed, the attributes that you added will be destroyed. N\+O\+TE\+: By default the auto delete attribute is false. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_http_servlet_request_a99e9035246e9ba9701f4f0a435c2161c}{get\+Path} () const
 \begin{DoxyCompactList}\small\item\em This method returns the path. \end{DoxyCompactList}\item 
-Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \mbox{\hyperlink{class_http_servlet_request_a8ea2cfef7079b3071f64a369f679b972}{get\+Uploaded\+Files}} () const
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_servlet_request_ac36163c6a4400a8068d746e530940f7a}{get\+Uploaded\+Files} () const
 \begin{DoxyCompactList}\small\item\em This method returns all the files that the user has sent. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_http_servlet_request_a5bed980c9d5d04cecee50ac6fe011a90}{fill\+Q\+Object}} (Q\+Object $\ast$object)
+void \hyperlink{class_http_servlet_request_a5bed980c9d5d04cecee50ac6fe011a90}{fill\+Q\+Object} (Q\+Object $\ast$object)
 \begin{DoxyCompactList}\small\item\em Fill a Q\+Object using parameters of a H\+T\+TP message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -77,48 +88,9 @@ class {\bfseries Request\+Dispatcher}
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}} class holds all information about a http request. 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_http_servlet_request_acda91961621ef7bcd0fe061d0612bc2c}\label{class_http_servlet_request_acda91961621ef7bcd0fe061d0612bc2c}} 
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\subsubsection{\texorpdfstring{Http\+Servlet\+Request()}{HttpServletRequest()}}
-{\footnotesize\ttfamily Http\+Servlet\+Request\+::\+Http\+Servlet\+Request (\begin{DoxyParamCaption}\item[{Q\+Tcp\+Socket \&}]{socket,  }\item[{const Q\+String \&}]{path,  }\item[{\mbox{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}}$<$ Q\+String, \mbox{\hyperlink{class_http_session}{Http\+Session}} $\ast$$>$ \&}]{sessions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+Array. The parameter parent is optional. N\+O\+TE\+: The \mbox{\hyperlink{class_cpp_web_server}{Cpp\+Web\+Server}} is responsable to create the Q\+Tcp\+Socket, and the \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} is responsable to create a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}} and a \mbox{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em socket} & \+: This is a reference to a Q\+Tcp\+Socket. \\
-\hline
-{\em path} & \+: This is a reference to a Q\+Byte\+Array. \\
-\hline
-{\em parent} & \+: This is a pointer to a Q\+Object. \\
-\hline
-\end{DoxyParams}
-
+The \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} class holds all information about a http request. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}\label{class_http_servlet_request_a2537c9716161ea25d83e2aea5b26a945}} 
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!add\+Attribute@{add\+Attribute}}
-\index{add\+Attribute@{add\+Attribute}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\subsubsection{\texorpdfstring{add\+Attribute()}{addAttribute()}}
-{\footnotesize\ttfamily void Http\+Servlet\+Request\+::add\+Attribute (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name,  }\item[{Q\+Object $\ast$}]{value }\end{DoxyParamCaption})}
-
-
-
-This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml C\+S\+TL. For this to be possible the object must inherit from Q\+Object and methods and must be in session \char`\"{}public slots\char`\"{}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em const} & Q\+String \&name \+: \\
-\hline
-{\em Q\+Object} & $\ast$value \+: \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_http_servlet_request_a5bed980c9d5d04cecee50ac6fe011a90}\label{class_http_servlet_request_a5bed980c9d5d04cecee50ac6fe011a90}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!fill\+Q\+Object@{fill\+Q\+Object}}
 \index{fill\+Q\+Object@{fill\+Q\+Object}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
@@ -299,10 +271,7 @@ class User : public QObject
 
 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
 \{
-    CWF::CppWebApplication server(argc,
-                                  argv,
-                                  CWF::Configuration(\textcolor{stringliteral}{"
-      /home/herik/CPPWebFramework/examples/FillObjectBMI/server"}));
+    CWF::CppWebApplication server(argc, argv, \textcolor{stringliteral}{"PATH\_TO\_SERVER\_FOLDER"});
 
     server.addUrlServlet(\textcolor{stringliteral}{"/bmi"}, \textcolor{keyword}{new} BmiServlet);
 
@@ -311,42 +280,11 @@ class User : public QObject
 \end{DoxyCode}
  
 \end{DoxyParagraph}
-\mbox{\Hypertarget{class_http_servlet_request_a6325279882fc5a910951b6ccec6ebb25}\label{class_http_servlet_request_a6325279882fc5a910951b6ccec6ebb25}} 
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Attribute@{get\+Attribute}}
-\index{get\+Attribute@{get\+Attribute}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\subsubsection{\texorpdfstring{get\+Attribute()}{getAttribute()}}
-{\footnotesize\ttfamily const Q\+Object $\ast$ Http\+Servlet\+Request\+::get\+Attribute (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption}) const}
-
-
-
-This method returns a specific object given its name. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em name} & \+: This is a reference to a Q\+Byte\+Array. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-const Q\+Object $\ast$ \+: Attributte\textquotesingle{}s name. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_http_servlet_request_add50206d719a748a2162610fd30f060e}\label{class_http_servlet_request_add50206d719a748a2162610fd30f060e}} 
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Attributes@{get\+Attributes}}
-\index{get\+Attributes@{get\+Attributes}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\subsubsection{\texorpdfstring{get\+Attributes()}{getAttributes()}}
-{\footnotesize\ttfamily Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ Http\+Servlet\+Request\+::get\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-This method returns all the attributes of a \mbox{\hyperlink{class_http_read_request}{Http\+Read\+Request}}. 
-
-\begin{DoxyReturn}{Returns}
-Q\+Map$<$\+Q\+Byte\+Array, Q\+Object $\ast$$>$ 
-\end{DoxyReturn}
 \mbox{\Hypertarget{class_http_servlet_request_a8c20ab8bd4ce24c33500b333b301e960}\label{class_http_servlet_request_a8c20ab8bd4ce24c33500b333b301e960}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Auto\+Delete\+Attribute@{get\+Auto\+Delete\+Attribute}}
 \index{get\+Auto\+Delete\+Attribute@{get\+Auto\+Delete\+Attribute}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Auto\+Delete\+Attribute()}{getAutoDeleteAttribute()}}
-{\footnotesize\ttfamily bool Http\+Servlet\+Request\+::get\+Auto\+Delete\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Http\+Servlet\+Request\+::get\+Auto\+Delete\+Attribute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -355,37 +293,24 @@ This method returns the auto delete attribute.
 \begin{DoxyReturn}{Returns}
 bool 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}\label{class_http_servlet_request_a94c089ed1819811cd02bd0c69f3546ca}} 
-\index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Body@{get\+Body}}
-\index{get\+Body@{get\+Body}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
-\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
-{\footnotesize\ttfamily const Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Returns. 
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_http_servlet_request_a26064824e0d709ee032b889147acd579}\label{class_http_servlet_request_a26064824e0d709ee032b889147acd579}} 
+\mbox{\Hypertarget{class_http_servlet_request_a5829880fa0effb4b13fbad10e1b4481f}\label{class_http_servlet_request_a5829880fa0effb4b13fbad10e1b4481f}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Http\+Parser@{get\+Http\+Parser}}
 \index{get\+Http\+Parser@{get\+Http\+Parser}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Http\+Parser()}{getHttpParser()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_http_parser}{Http\+Parser}} \& Http\+Servlet\+Request\+::get\+Http\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \hyperlink{class_http_parser}{Http\+Parser}\& Http\+Servlet\+Request\+::get\+Http\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-This method returns the \mbox{\hyperlink{class_http_parser}{Http\+Parser}}. 
+This method returns the \hyperlink{class_http_parser}{Http\+Parser}. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_http_parser}{Http\+Parser}} 
+\hyperlink{class_http_parser}{Http\+Parser} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_servlet_request_a707c561d255615792ebe3bc9b8e3896c}\label{class_http_servlet_request_a707c561d255615792ebe3bc9b8e3896c}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Parameter@{get\+Parameter}}
 \index{get\+Parameter@{get\+Parameter}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Parameter()}{getParameter()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Parameter (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Parameter (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -403,7 +328,7 @@ Q\+Byte\+Array
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Parameters@{get\+Parameters}}
 \index{get\+Parameters@{get\+Parameters}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Parameters()}{getParameters()}}
-{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Servlet\+Request\+::get\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Servlet\+Request\+::get\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -421,7 +346,7 @@ Q\+Byte\+Array
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Path@{get\+Path}}
 \index{get\+Path@{get\+Path}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
-{\footnotesize\ttfamily Q\+String Http\+Servlet\+Request\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+String Http\+Servlet\+Request\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -434,7 +359,7 @@ Q\+String
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Protocol@{get\+Protocol}}
 \index{get\+Protocol@{get\+Protocol}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Protocol()}{getProtocol()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Protocol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Protocol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -447,7 +372,7 @@ Q\+Byte\+Array
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Request\+Dispatcher@{get\+Request\+Dispatcher}}
 \index{get\+Request\+Dispatcher@{get\+Request\+Dispatcher}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Request\+Dispatcher()}{getRequestDispatcher()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_request_dispatcher}{Request\+Dispatcher}} \& Http\+Servlet\+Request\+::get\+Request\+Dispatcher (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{page }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_request_dispatcher}{Request\+Dispatcher} \& Http\+Servlet\+Request\+::get\+Request\+Dispatcher (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{page }\end{DoxyParamCaption})}
 
 
 
@@ -459,13 +384,13 @@ This method returns a request\+Dispatcher given an specific page.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_request_dispatcher}{Request\+Dispatcher}} 
+\hyperlink{class_request_dispatcher}{Request\+Dispatcher} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_servlet_request_a788609a8520897ecaa91875a91b0e921}\label{class_http_servlet_request_a788609a8520897ecaa91875a91b0e921}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Request\+U\+RI@{get\+Request\+U\+RI}}
 \index{get\+Request\+U\+RI@{get\+Request\+U\+RI}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Request\+U\+R\+I()}{getRequestURI()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Request\+U\+RI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Request\+U\+RI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -478,7 +403,7 @@ Q\+Byte\+Array
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Request\+U\+RL@{get\+Request\+U\+RL}}
 \index{get\+Request\+U\+RL@{get\+Request\+U\+RL}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Request\+U\+R\+L()}{getRequestURL()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Request\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Servlet\+Request\+::get\+Request\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -487,11 +412,11 @@ This method returns the requested url.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_servlet_request_ab2d9f9c1b6189a536a5c76dbb2c9dd70}\label{class_http_servlet_request_ab2d9f9c1b6189a536a5c76dbb2c9dd70}} 
+\mbox{\Hypertarget{class_http_servlet_request_a010600c5c9d74b3877b133c1ad6a9250}\label{class_http_servlet_request_a010600c5c9d74b3877b133c1ad6a9250}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Socket@{get\+Socket}}
 \index{get\+Socket@{get\+Socket}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Socket()}{getSocket()}}
-{\footnotesize\ttfamily Q\+Tcp\+Socket \& Http\+Servlet\+Request\+::get\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Tcp\+Socket\& Http\+Servlet\+Request\+::get\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -500,11 +425,11 @@ This method returns a reference to the current socket.
 \begin{DoxyReturn}{Returns}
 Q\+Tcp\+Socket 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_servlet_request_a8ea2cfef7079b3071f64a369f679b972}\label{class_http_servlet_request_a8ea2cfef7079b3071f64a369f679b972}} 
+\mbox{\Hypertarget{class_http_servlet_request_ac36163c6a4400a8068d746e530940f7a}\label{class_http_servlet_request_ac36163c6a4400a8068d746e530940f7a}} 
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!get\+Uploaded\+Files@{get\+Uploaded\+Files}}
 \index{get\+Uploaded\+Files@{get\+Uploaded\+Files}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{get\+Uploaded\+Files()}{getUploadedFiles()}}
-{\footnotesize\ttfamily Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ Http\+Servlet\+Request\+::get\+Uploaded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Http\+Servlet\+Request\+::get\+Uploaded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -517,11 +442,11 @@ Q\+Map$<$\+Q\+Byte\+Array, Q\+Byte\+Array$>$
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!set\+Auto\+Delete\+Attribute@{set\+Auto\+Delete\+Attribute}}
 \index{set\+Auto\+Delete\+Attribute@{set\+Auto\+Delete\+Attribute}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{set\+Auto\+Delete\+Attribute()}{setAutoDeleteAttribute()}}
-{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Auto\+Delete\+Attribute (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Auto\+Delete\+Attribute (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-This method sets the auto delete attribute. When the auto delete attribute is true and the \mbox{\hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}} is destroyed, the attributes that you added will be destroyed. N\+O\+TE\+: By default the auto delete attribute is false. 
+This method sets the auto delete attribute. When the auto delete attribute is true and the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} is destroyed, the attributes that you added will be destroyed. N\+O\+TE\+: By default the auto delete attribute is false. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -532,11 +457,11 @@ This method sets the auto delete attribute. When the auto delete attribute is tr
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!set\+Http\+Parser@{set\+Http\+Parser}}
 \index{set\+Http\+Parser@{set\+Http\+Parser}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{set\+Http\+Parser()}{setHttpParser()}}
-{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Http\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_http_parser}{Http\+Parser}} \&}]{http\+Parser }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Http\+Parser (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_parser}{Http\+Parser} \&}]{http\+Parser }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-This method set the \mbox{\hyperlink{class_http_parser}{Http\+Parser}}. 
+This method set the \hyperlink{class_http_parser}{Http\+Parser}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -547,18 +472,18 @@ This method set the \mbox{\hyperlink{class_http_parser}{Http\+Parser}}.
 \index{Http\+Servlet\+Request@{Http\+Servlet\+Request}!set\+Session@{set\+Session}}
 \index{set\+Session@{set\+Session}!Http\+Servlet\+Request@{Http\+Servlet\+Request}}
 \subsubsection{\texorpdfstring{set\+Session()}{setSession()}}
-{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_http_session}{Http\+Session}} \&}]{session }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Http\+Servlet\+Request\+::set\+Session (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_session}{Http\+Session} \&}]{session }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 This method set the user\textquotesingle{}s session. 
 
 \begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{class_http_session}{Http\+Session}} 
+\hyperlink{class_http_session}{Http\+Session} 
 \end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+h\item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+cpp\end{DoxyCompactItemize}
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletrequest.\+cpp\end{DoxyCompactItemize}

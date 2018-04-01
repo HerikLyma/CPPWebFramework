@@ -2,7 +2,7 @@
 \label{class_http_servlet_response}\index{Http\+Servlet\+Response@{Http\+Servlet\+Response}}
 
 
-The \mbox{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}} class is responsable to response a Http request.  
+The \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} class is responsable to response a Http request.  
 
 
 
@@ -12,8 +12,14 @@ The \mbox{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}} clas
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_http_servlet_response_ac275248f0418ac2a300dc3cbb71056eb}\label{class_http_servlet_response_ac275248f0418ac2a300dc3cbb71056eb}} 
-{\bfseries Http\+Servlet\+Response} (Q\+Tcp\+Socket \&socket)
+\mbox{\Hypertarget{class_http_servlet_response_a8136e9aeeb1b1d28db9a4a5932d17cbc}\label{class_http_servlet_response_a8136e9aeeb1b1d28db9a4a5932d17cbc}} 
+{\bfseries Http\+Servlet\+Response} (Q\+Tcp\+Socket \&socket, const \hyperlink{class_configuration}{Configuration} \&configuration)
+\item 
+\mbox{\Hypertarget{class_http_servlet_response_acb16084af55f1541e67a42ba81cb0b08}\label{class_http_servlet_response_acb16084af55f1541e67a42ba81cb0b08}} 
+void {\bfseries write} (const Q\+Json\+Object \&json, bool write\+Content\+Type=true)
+\item 
+\mbox{\Hypertarget{class_http_servlet_response_ab0f44bd520ab5187491bce5c07cf3f5b}\label{class_http_servlet_response_ab0f44bd520ab5187491bce5c07cf3f5b}} 
+void {\bfseries write} (const Q\+Json\+Array \&array, bool write\+Content\+Type=true)
 \item 
 \mbox{\Hypertarget{class_http_servlet_response_a128d55b31f55938937218632db7aa587}\label{class_http_servlet_response_a128d55b31f55938937218632db7aa587}} 
 void {\bfseries write} (Q\+Byte\+Array \&\&data)
@@ -40,13 +46,13 @@ int {\bfseries get\+Buffer\+Size} () const
 void {\bfseries add\+Header} (const Q\+Byte\+Array \&name, const Q\+Byte\+Array \&value)
 \item 
 \mbox{\Hypertarget{class_http_servlet_response_a40fb3e4c9ababe741ddbda87c932409d}\label{class_http_servlet_response_a40fb3e4c9ababe741ddbda87c932409d}} 
-void {\bfseries add\+Cookie} (const \mbox{\hyperlink{class_http_cookie}{Http\+Cookie}} \&cookie)
+void {\bfseries add\+Cookie} (const \hyperlink{class_http_cookie}{Http\+Cookie} \&cookie)
+\item 
+\mbox{\Hypertarget{class_http_servlet_response_ad0b56cbd0a1ccfc35bfeb3248050cd18}\label{class_http_servlet_response_ad0b56cbd0a1ccfc35bfeb3248050cd18}} 
+Q\+Tcp\+Socket \& {\bfseries get\+Socket} () const
 \item 
 \mbox{\Hypertarget{class_http_servlet_response_a180f9d63cb4640fcf13f01badef9fede}\label{class_http_servlet_response_a180f9d63cb4640fcf13f01badef9fede}} 
 void {\bfseries set\+Status} (const int \&status\+Code, const Q\+Byte\+Array \&description)
-\item 
-\mbox{\Hypertarget{class_http_servlet_response_a723210f05b22fa9cfe84e3460c6b33ff}\label{class_http_servlet_response_a723210f05b22fa9cfe84e3460c6b33ff}} 
-Q\+Tcp\+Socket \& {\bfseries get\+Socket} () const
 \item 
 \mbox{\Hypertarget{class_http_servlet_response_a3f4a749e518ad2b89aaf179c5e5fe034}\label{class_http_servlet_response_a3f4a749e518ad2b89aaf179c5e5fe034}} 
 void {\bfseries send\+Redirect} (const Q\+Byte\+Array \&url)
@@ -180,9 +186,9 @@ static const int {\bfseries S\+C\+\_\+\+H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\
 
 
 \subsection{Detailed Description}
-The \mbox{\hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}} class is responsable to response a Http request. 
+The \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response} class is responsable to response a Http request. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletresponse.\+h\item 
-C\+:/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletresponse.\+cpp\end{DoxyCompactItemize}
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletresponse.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/httpservletresponse.\+cpp\end{DoxyCompactItemize}
