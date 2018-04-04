@@ -9,10 +9,12 @@
 
 
 
-The C++ Web Framework (CWF) is an Open Source web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, 
-created by Herik Lima and Marcelo Eler, using C++ with Qt to be used in the development of web applications, having been heavily inspired by 
-Java Servlets, JavaServer Pages Standard Tag Library (JSTL), designed to consume few computational resources such as memory and processing and a low response time for requests. The CWF also adopts the MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages to take care of data presentation (View) and use the servlets as a between the two layers (Controller). 
+​The C++ Web Framework (CWF) is an Open Source web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, created by Herik Lima and Marcelo Eler, 
+using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources, such as memory and processing, and have a low response time for requests. 
+It also adopts the MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages 
+to take care of data presentation (View) and use the servlets as a between the two layers (Controller). 
 
+​
 Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
 
 <ul>
@@ -21,8 +23,10 @@ Because it is created in Qt, the C++ Web Framework can run on the same platforms
     <li><b>Mobile:</b> Android, iOS, Windows</li>
 </ul>
 
-This web framework consists of a simplified set of classes, only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development as simple as possible, 
-even for beginners.
+
+The CWF has only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development as simple as possible, even for beginners.
+
+
 
 <hr/><b>Hello World - Example</b></br></br>
 
@@ -63,7 +67,6 @@ public slots:
 };
 
 //helloview.xhtml (View)
-<?xml version="1.0" encoding="iso-8859-1" ?>
 <html>
     <head>
         <title>Hello</title>
