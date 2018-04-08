@@ -88,10 +88,21 @@ void HttpReadRequest::run()
                     }
                 }
                 FilterChain chain(controller, configuration);
-                if(filter)
-                    filter->doFilter(request, response, chain);
-                else
-                    chain.doFilter(request, response);
+                try
+                {
+                    if(filter)
+                        filter->doFilter(request, response, chain);
+                    else
+                        chain.doFilter(request, response);
+                }
+                catch(std::exception &e)
+                {
+                    qDebug() << e.what();
+                }
+                catch(...)
+                {
+                    qDebug() << "An unknown exception has occurred\n\n";
+                }
             }
         }
     }
