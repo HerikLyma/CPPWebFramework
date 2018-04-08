@@ -2,42 +2,11 @@
 
 void TST_Configuration::test()
 {
-    /*
-    CWF::Configuration configuration("");
-    configuration.setHost(QHostAddress("127.0.0.1"));
-    configuration.setPort(8080);
-    configuration.setDomain("www.test.com.xyz");
-    configuration.setMaxThread(200);
-    configuration.setCleanupInterval(1000);
-    configuration.setMaxUploadFile(10000);
-    configuration.setPath("/home/Test/server");
-    configuration.setSessionExpirationTime(1000);
-    configuration.setSslCertFile("my.cert");
-    configuration.setSslKeyFile("my.key");
-    configuration.setLogFilePath("/log");
-    configuration.setTimeOut(60000);
-
-
-    QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be 127.0.0.1");
-    QVERIFY2(configuration.getPort() == 8080, "Should be 8080");
-    QVERIFY2(configuration.getDomain() == "www.test.com.xyz", "Should be www.test.com.xyz");
-    QVERIFY2(configuration.getMaxThread() == 200, "Should be 200");
-    QVERIFY2(configuration.getCleanupInterval() == 1000, "Should return 1000");
-    QVERIFY2(configuration.getMaxUploadFile() == 10000, "Should return 10000");
-    QVERIFY2(configuration.getPath() == "/home/Test/server", "Should be /home/Test/server");
-    QVERIFY2(configuration.getSessionExpirationTime() == 1000, "Should return 1000");
-    QVERIFY2(configuration.getSslCertFile() == "my.cert", "Should be my.cert");
-    QVERIFY2(configuration.getSslKeyFile() == "my.key", "Should be my.key");
-    QVERIFY2(configuration.getLogFilePath() == "/log", "Should be /log");
-    QVERIFY2(configuration.getTimeOut() == 60000, "Should return 60000");
-    */
-}
-
-void TST_Configuration::testReadFromFile()
-{    
     QString path(QDir::currentPath() + "/server");
-    QVERIFY2(QDir().mkdir(path), "Could not create server folder");
-    QVERIFY2(QDir().mkdir(path + "/config"), "Could not create server config");
+    if(!QDir(path).exists())
+        QVERIFY2(QDir().mkdir(path), "Could not create server folder");
+    if(!QDir(path + "/config").exists())
+        QVERIFY2(QDir().mkdir(path + "/config"), "Could not create server config");
     QFile file(path + "/config/CPPWeb.ini");
     QVERIFY2(file.open(QIODevice::WriteOnly), "Could not create CPPWeb.ini file");
 

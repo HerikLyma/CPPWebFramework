@@ -11,8 +11,6 @@ class TST_Configuration : public QObject
     Q_OBJECT
 private slots:
     void test();
-
-    void testReadFromFile();
 };   
 
 #endif // TST_CONFIGURATION_H
