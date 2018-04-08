@@ -7,23 +7,24 @@
 
 /**
   * @mainpage The C++ Web Framework
-  * The C++ Web Framework (CWF) is an Open Source web framework, under MIT License, created by Herik Lima and Marcelo Eler,
-  * using C++ with Qt to be used in the development of web applications,  having been heavily inspired by Java Servlets,
-  * JavaServer Pages Standard Tag Library (JSTL),  designed to consume few computational resources such as memory and processing and
-  * a low response time for requests. The CWF also adopts the MVC (Model-View-Controller) architecture, where you can create classes
-  * to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages to take care of
-  * data presentation (View) and use the servlets as a between the two layers (Controller).
   *
-  * Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt: <br>
+  * ​​The C++ Web Framework (CWF) is a MVC web framework, Open Source, under MIT License, created by Herik Lima and Marcelo Eler,
+  * using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources,
+  * such as memory and processing, and have a low response time for requests. With MVC (Model-View-Controller) architecture,
+  * you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library)
+  * within the Web Pages to take care of data presentation (View) and use the controllers as a between the two layers (Controller).
   *
-  * Desktop: Linux, OS X, Windows<br>
-  * Embedded and RTOS: Linux, QNX, VxWorks, Windows<br>
-  * Mobile: Android, iOS, Windows<br>
+  * Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
   *
-  * This web framework consists of a simplified set of classes, only one configuration file, called CPPWeb.ini and a policy of using
-  * only C++ and Qt in the development of its components in order to avoid the installation of numerous libraries to avoid conflicts,
-  * maintain multiplatform characteristics, facilitate installation and keep the learning curve low in order to make web development
-  * as simple as possible, even for beginners.
+  *
+  * Desktop: Linux, OS X, Windows
+  * Embedded and RTOS: Linux, QNX, VxWorks, Windows
+  * Mobile: Android, iOS, Windows
+  *
+  *
+  * The CWF has only one configuration file, called CPPWeb.ini and a policy of using only C++ and Qt in the development
+  * of its components in order to avoid the installation of numerous libraries to avoid conflicts, maintain multiplatform characteristics,
+  * facilitate installation and keep the learning curve low in order to make web development as simple as possible, even for beginners.
   */
 
 #ifndef CPPWEBAPPLICATION_H
@@ -63,25 +64,28 @@ public:
      */
     ~CppWebApplication();
     /**
-     * @brief Hitches a url to a Servlet.
+     * @brief Hitches a url to a Controller.
      * @param const QString &url   : Url name.
-     * @param HttpServlet *servlet : Servlet that will answer requests made to url.
+     * @param Controller *controller : Controller that will answer requests made to url.
      * @par Example
      * @code
      * #include <QCoreApplication>
-     * #include <servlets/helloworldservlet.h>
+     * #include <controllers/helloworldcontroller.h>
      * #include <cwf/cppwebapplication.h>
      *
      * int main(int argc, char *argv[])
      * {
-     *      CWF::CppWebApplication server(argc, argv, CWF::Configuration("/home/herik/CPPWebFramework/examples/HelloWorld/server"));
-     *
-     *      server.addUrlServlet("/hello", new HelloWorldServlet);
+     *      CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server"));
+     *      server.addUrlController<HelloWorldController>("/hello");
      *      return server.start();
      * }
      * @endcode
      */
-    inline void addUrlServlet(const QString &url, HttpServlet *servlet) { server->addUrlServlet(url, servlet); }
+    template<typename CONTROLLER>
+    void addUrlController(const QString &url) noexcept
+    {
+        server->addUrlController<CONTROLLER>(url);
+    }
     /**
      * @brief Starts the server and QCoreApplication.
      * @return int : Returns -1 if it fails.

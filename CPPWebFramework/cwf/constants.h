@@ -41,9 +41,9 @@ namespace GET_SET
 //STATUS CONSTANTS
 namespace STATUS
 {
-    const QByteArray  STATUS_401  = "/config/cppwebserverpages/401.xhtml";
-    const QByteArray  STATUS_403  = "/config/cppwebserverpages/403.xhtml";
-    const QByteArray  STATUS_404  = "/config/cppwebserverpages/404.xhtml";
+    const QByteArray  STATUS_401  = "/config/cppwebserverpages/401.view";
+    const QByteArray  STATUS_403  = "/config/cppwebserverpages/403.view";
+    const QByteArray  STATUS_404  = "/config/cppwebserverpages/404.view";
     const QByteArray  NOT_FOUND   = "Not Found";
 }
 

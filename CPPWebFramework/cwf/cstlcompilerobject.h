@@ -32,22 +32,22 @@ public slots:
      * @brief Returns the value.
      * @return QString : Value.
      */
-    inline QString getValue() const { return value; }
+    inline QString getValue() const noexcept { return value; }
     /**
      * @brief Sets the value.
      * @param const QString &value : Value.
      */
-    inline void setValue(const QString &value) { this->value = value; }
+    inline void setValue(const QString &value) noexcept { this->value = value; }
     /**
      * @brief Returns the type.
      * @return QString : Type.
      */
-    inline QString getType() const { return type; }
+    inline QString getType() const noexcept { return type; }
     /**
      * @brief Sets the type.
      * @param const QString &value : Type.
      */
-    inline void setType(const QString &value) { type = value; }
+    inline void setType(const QString &value) noexcept { type = value; }
 };
 
 CWF_END_NAMESPACE

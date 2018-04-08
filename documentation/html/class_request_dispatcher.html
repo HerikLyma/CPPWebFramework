@@ -83,15 +83,15 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request_dispatcher.html#a19ee59b1fe3c38be480c181cc3408c45">~RequestDispatcher</a> ()</td></tr>
 <tr class="memdesc:a19ee59b1fe3c38be480c181cc3408c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor. <br /></td></tr>
 <tr class="separator:a19ee59b1fe3c38be480c181cc3408c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3d0b282d2c9cd0d850931167a698797"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request_dispatcher.html#ad3d0b282d2c9cd0d850931167a698797">forward</a> (CWF::HttpServletRequest &amp;request, CWF::HttpServletResponse &amp;response)</td></tr>
-<tr class="memdesc:ad3d0b282d2c9cd0d850931167a698797"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will dispatch the xhtml file specificated in path to the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>, the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> will compile the xhtml file and returns the result. After this, the <a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> will take the return and write it on the response.  <a href="#ad3d0b282d2c9cd0d850931167a698797">More...</a><br /></td></tr>
-<tr class="separator:ad3d0b282d2c9cd0d850931167a698797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6416fc9441670d1de84b3c8262d13220"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request_dispatcher.html#a6416fc9441670d1de84b3c8262d13220">forward</a> (CWF::Request &amp;request, CWF::Response &amp;response)</td></tr>
+<tr class="memdesc:a6416fc9441670d1de84b3c8262d13220"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will dispatch the xhtml file specificated in path to the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>, the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> will compile the xhtml file and returns the result. After this, the <a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> will take the return and write it on the response.  <a href="#a6416fc9441670d1de84b3c8262d13220">More...</a><br /></td></tr>
+<tr class="separator:a6416fc9441670d1de84b3c8262d13220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> class can be used to dispatch a requisition to a xhtml page. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad3d0b282d2c9cd0d850931167a698797"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3d0b282d2c9cd0d850931167a698797">&#9670;&nbsp;</a></span>forward()</h2>
+<a id="a6416fc9441670d1de84b3c8262d13220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6416fc9441670d1de84b3c8262d13220">&#9670;&nbsp;</a></span>forward()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -99,13 +99,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
         <tr>
           <td class="memname">CWF_BEGIN_NAMESPACE void RequestDispatcher::forward </td>
           <td>(</td>
-          <td class="paramtype">CWF::HttpServletRequest &amp;&#160;</td>
+          <td class="paramtype">CWF::Request &amp;&#160;</td>
           <td class="paramname"><em>request</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CWF::HttpServletResponse &amp;&#160;</td>
+          <td class="paramtype">CWF::Response &amp;&#160;</td>
           <td class="paramname"><em>response</em>&#160;</td>
         </tr>
         <tr>
@@ -119,8 +119,8 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <p>This method will dispatch the xhtml file specificated in path to the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a>, the <a class="el" href="class_c_s_t_l_compiler.html" title="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). ">CSTLCompiler</a> will compile the xhtml file and returns the result. After this, the <a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> will take the return and write it on the response. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">CWF::HttpServletRequest</td><td>&amp;request : Used to process the response. </td></tr>
-    <tr><td class="paramname">CWF::HttpServletResponse</td><td>&amp;response : Used to response. </td></tr>
+    <tr><td class="paramname">CWF::Request</td><td>&amp;request : Used to process the response. </td></tr>
+    <tr><td class="paramname">CWF::Response</td><td>&amp;response : Used to response. </td></tr>
   </table>
   </dd>
 </dl>
@@ -134,7 +134,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 31 2018 20:57:58 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

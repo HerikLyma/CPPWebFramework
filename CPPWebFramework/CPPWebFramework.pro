@@ -27,7 +27,6 @@ SOURCES += \
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
-    cwf/cppwebservlet.cpp \
     cwf/cstlcompiler.cpp \
     cwf/cstlcompilerattributes.cpp \
     cwf/cstlcompilerfor.cpp \
@@ -38,17 +37,17 @@ SOURCES += \
     cwf/httpcookie.cpp \
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
-    cwf/httpservlet.cpp \
-    cwf/httpservletrequest.cpp \
-    cwf/httpservletresponse.cpp \
-    cwf/httpsession.cpp \
     cwf/metaclassparser.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
     cwf/requestdispatcher.cpp \
     cwf/urlencoder.cpp \
-    cwf/variant.cpp \
-    cwf/sqlquery.cpp
+    cwf/sqlquery.cpp \
+    cwf/response.cpp \
+    cwf/request.cpp \
+    cwf/controller.cpp \
+    cwf/session.cpp \
+    cwf/cppwebcontroller.cpp
 
 HEADERS += \
         cwf/cppwebframework_global.h \
@@ -57,7 +56,6 @@ HEADERS += \
     cwf/cppwebapplication.h \
     cwf/cppwebframework_global.h \
     cwf/cppwebserver.h \
-    cwf/cppwebservlet.h \
     cwf/cstlcompiler.h \
     cwf/cstlcompilerattributes.h \
     cwf/cstlcompilerfor.h \
@@ -70,10 +68,6 @@ HEADERS += \
     cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
-    cwf/httpservlet.h \
-    cwf/httpservletrequest.h \
-    cwf/httpservletresponse.h \
-    cwf/httpsession.h \
     cwf/metaclassparser.h \
     cwf/properties.h \
     cwf/qlistobject.h \
@@ -82,14 +76,19 @@ HEADERS += \
     cwf/urlencoder.h \
     cwf/variant.h \
     cwf/sqldatabasestorage.h \
-    cwf/sqlquery.h
+    cwf/sqlquery.h \
+    cwf/controller.h \
+    cwf/request.h \
+    cwf/response.h \
+    cwf/session.h \
+    cwf/cppwebcontroller.h
 
 DISTFILES += \
     server/config/ssl/my.key \
     server/config/ssl/my.cert \
-    server/config/cppwebserverpages/403.xhtml \
-    server/config/cppwebserverpages/404.xhtml \
-    server/config/cppwebserverpages/index.xhtml \
+    server/config/cppwebserverpages/403.view \
+    server/config/cppwebserverpages/404.view \
+    server/config/cppwebserverpages/index.view \
     server/config/cppwebserverpages/resources/images/logo.jpg \
     server/config/cppwebserverpages/resources/images/favicon.ico \
     server/config/cppwebserverpages/resources/css/cppweb.css \

@@ -12,13 +12,13 @@
 CWF_BEGIN_NAMESPACE
 
 HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
-                                 QMapThreadSafety<QString, HttpServlet *> &urlServlet,
-                                 QMapThreadSafety<QString, HttpSession *> &sessions,
+                                 QMapThreadSafety<QString, Controller *> &urlController,
+                                 QMapThreadSafety<QString, Session *> &sessions,
                                  const Configuration &configuration,
                                  QSslConfiguration *sslConfiguration,
                                  Filter *filter) :
     socketDescriptor(socketDescriptor),
-    urlServlet(urlServlet),
+    urlController(urlController),
     sessions(sessions),
     configuration(configuration),
     sslConfiguration(sslConfiguration),
@@ -57,8 +57,8 @@ void HttpReadRequest::run()
             if(parser.valid)
             {
                 QString              url = parser.url;
-                HttpServletRequest   request(*socket, sessions, configuration);
-                HttpServletResponse  response(*socket, configuration);
+                Request   request(*socket, sessions, configuration);
+                Response  response(*socket, configuration);
                 request.httpParser = &parser;
                 request.response   = &response;
 
@@ -69,10 +69,10 @@ void HttpReadRequest::run()
                         return;
                     }
                 }
-                HttpServlet *servlet = urlServlet.value(url, nullptr);
-                if(!servlet)
+                Controller *controller = urlController.value(url, nullptr);
+                if(!controller)
                 {
-                    for(QMapThreadSafety<QString, HttpServlet *>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
+                    for(QMapThreadSafety<QString, Controller *>::iterator it = urlController.begin(); it != urlController.end(); ++it)
                     {
                         const QString &key = it.key();
                         if(key.endsWith('*'))
@@ -81,13 +81,13 @@ void HttpReadRequest::run()
                             if(url.startsWith(trueUrl))
                             {
                                 url = trueUrl + "*";
-                                servlet = it.value();
+                                controller = it.value();
                                 break;
                             }
                         }
                     }
                 }
-                FilterChain chain(servlet, configuration);
+                FilterChain chain(controller, configuration);
                 if(filter)
                     filter->doFilter(request, response, chain);
                 else
@@ -98,7 +98,7 @@ void HttpReadRequest::run()
 }
 
 
-bool HttpReadRequest::readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response)
+bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &response)
 {
     qint64 contentLength = parser.contentLenght;
     QByteArray content(std::move(parser.body));

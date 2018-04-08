@@ -12,21 +12,21 @@ The \hyperlink{class_filter_chain}{Filter\+Chain} class is responsable to dispat
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_filter_chain_aa4e3e6a2aa98f1cb29c3b8eacfe36dde}{Filter\+Chain} (\hyperlink{class_http_servlet}{Http\+Servlet} $\ast$servlet, const \hyperlink{class_configuration}{Configuration} \&configuration)
+\hyperlink{class_filter_chain_a9d506944c4a8d387aae3c7b0aa7c6ac7}{Filter\+Chain} (\hyperlink{class_controller}{Controller} $\ast$controller, const \hyperlink{class_configuration}{Configuration} \&configuration)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_filter_chain}{Filter\+Chain}. \end{DoxyCompactList}\item 
-void \hyperlink{class_filter_chain_a2792dc5418eeb0914af046d78f679d51}{do\+Filter} (C\+W\+F\+::\+Http\+Servlet\+Request \&request, C\+W\+F\+::\+Http\+Servlet\+Response \&response)
-\begin{DoxyCompactList}\small\item\em This method dispaches a requisition to a \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} or, if the requesition is for a file, it can reads and send the file through the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_filter_chain_a873d7d3362388c2b7f2e958e8971be94}{do\+Filter} (C\+W\+F\+::\+Request \&request, C\+W\+F\+::\+Response \&response)
+\begin{DoxyCompactList}\small\item\em This method dispaches a requisition to a \hyperlink{class_request}{Request} or, if the requesition is for a file, it can reads and send the file through the \hyperlink{class_response}{Response}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The \hyperlink{class_filter_chain}{Filter\+Chain} class is responsable to dispatch a requisition. This class was built to work with \hyperlink{class_filter}{Filter}. Always when a \hyperlink{class_filter}{Filter} makes all the necessary validations, it can dispatches the requisition to the \hyperlink{class_filter_chain}{Filter\+Chain}. N\+O\+TE\+: It is a final class, you can\textquotesingle{}t derive from it. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_filter_chain_aa4e3e6a2aa98f1cb29c3b8eacfe36dde}\label{class_filter_chain_aa4e3e6a2aa98f1cb29c3b8eacfe36dde}} 
+\mbox{\Hypertarget{class_filter_chain_a9d506944c4a8d387aae3c7b0aa7c6ac7}\label{class_filter_chain_a9d506944c4a8d387aae3c7b0aa7c6ac7}} 
 \index{Filter\+Chain@{Filter\+Chain}!Filter\+Chain@{Filter\+Chain}}
 \index{Filter\+Chain@{Filter\+Chain}!Filter\+Chain@{Filter\+Chain}}
 \subsubsection{\texorpdfstring{Filter\+Chain()}{FilterChain()}}
-{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE Filter\+Chain\+::\+Filter\+Chain (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_servlet}{Http\+Servlet} $\ast$}]{servlet,  }\item[{const \hyperlink{class_configuration}{Configuration} \&}]{configuration }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE Filter\+Chain\+::\+Filter\+Chain (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller,  }\item[{const \hyperlink{class_configuration}{Configuration} \&}]{configuration }\end{DoxyParamCaption})}
 
 
 
@@ -34,27 +34,27 @@ The \hyperlink{class_filter_chain}{Filter\+Chain} class is responsable to dispat
 
 
 \begin{DoxyParams}{Parameters}
-{\em servlet} & \\
+{\em controller} & \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_filter_chain_a2792dc5418eeb0914af046d78f679d51}\label{class_filter_chain_a2792dc5418eeb0914af046d78f679d51}} 
+\mbox{\Hypertarget{class_filter_chain_a873d7d3362388c2b7f2e958e8971be94}\label{class_filter_chain_a873d7d3362388c2b7f2e958e8971be94}} 
 \index{Filter\+Chain@{Filter\+Chain}!do\+Filter@{do\+Filter}}
 \index{do\+Filter@{do\+Filter}!Filter\+Chain@{Filter\+Chain}}
 \subsubsection{\texorpdfstring{do\+Filter()}{doFilter()}}
-{\footnotesize\ttfamily void Filter\+Chain\+::do\+Filter (\begin{DoxyParamCaption}\item[{C\+W\+F\+::\+Http\+Servlet\+Request \&}]{request,  }\item[{C\+W\+F\+::\+Http\+Servlet\+Response \&}]{response }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Filter\+Chain\+::do\+Filter (\begin{DoxyParamCaption}\item[{C\+W\+F\+::\+Request \&}]{request,  }\item[{C\+W\+F\+::\+Response \&}]{response }\end{DoxyParamCaption})}
 
 
 
-This method dispaches a requisition to a \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request} or, if the requesition is for a file, it can reads and send the file through the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. 
+This method dispaches a requisition to a \hyperlink{class_request}{Request} or, if the requesition is for a file, it can reads and send the file through the \hyperlink{class_response}{Response}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em request} & \+: This is a reference to the \hyperlink{class_http_servlet_request}{Http\+Servlet\+Request}. \\
+{\em request} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
 \hline
-{\em response} & \+: This is a reference to the \hyperlink{class_http_servlet_response}{Http\+Servlet\+Response}. \\
+{\em response} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
 \hline
 \end{DoxyParams}
 

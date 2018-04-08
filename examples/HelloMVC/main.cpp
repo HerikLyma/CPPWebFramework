@@ -6,11 +6,22 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <controller/hellocontroller.h>
+#include <model/hellomodel.h>
+
+class HelloController : public CWF::Controller
+{
+public:
+    void doGet(CWF::Request &request, CWF::Response &response) const override
+    {
+        HelloModel model;
+        request.addAttribute("model", &model);
+        request.getRequestDispatcher("/pages/helloview.view").forward(request, response);
+    }
+};
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloMVC/server");
-    server.addUrlServlet("/hello", new HelloController);
+    server.addUrlController<HelloController>("/hello");
     return server.start();
 }

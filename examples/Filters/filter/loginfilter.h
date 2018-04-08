@@ -13,7 +13,7 @@
 class LoginFilter : public CWF::Filter
 {
 public:
-    void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, CWF::FilterChain &chain);
+    void doFilter(CWF::Request &request, CWF::Response &response, CWF::FilterChain &chain);
 };
 
 #endif // LOGINFILTER_H

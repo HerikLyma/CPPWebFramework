@@ -1,0 +1,194 @@
+\hypertarget{class_response}{}\section{Response Class Reference}
+\label{class_response}\index{Response@{Response}}
+
+
+The \hyperlink{class_response}{Response} class is responsable to response a Http request.  
+
+
+
+
+{\ttfamily \#include $<$response.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_response_a199c4da036e1bea08eb0693140b8a4e0}\label{class_response_a199c4da036e1bea08eb0693140b8a4e0}} 
+{\bfseries Response} (Q\+Tcp\+Socket \&socket, const \hyperlink{class_configuration}{Configuration} \&configuration)
+\item 
+\mbox{\Hypertarget{class_response_abe45c271ceff4711972d44029d7aca0a}\label{class_response_abe45c271ceff4711972d44029d7aca0a}} 
+void {\bfseries write} (const Q\+Json\+Object \&json, bool write\+Content\+Type=true)
+\item 
+\mbox{\Hypertarget{class_response_aebe6eaba08522c944ad5f05131d0b55b}\label{class_response_aebe6eaba08522c944ad5f05131d0b55b}} 
+void {\bfseries write} (const Q\+Json\+Array \&array, bool write\+Content\+Type=true)
+\item 
+\mbox{\Hypertarget{class_response_a597628c77d25f5f71708bda977daf5bf}\label{class_response_a597628c77d25f5f71708bda977daf5bf}} 
+void {\bfseries write} (Q\+Byte\+Array \&\&data)
+\item 
+\mbox{\Hypertarget{class_response_a438b172ba3b22cfebe453879fbb043f4}\label{class_response_a438b172ba3b22cfebe453879fbb043f4}} 
+void {\bfseries write} (const Q\+Byte\+Array \&data, bool flush=true)
+\item 
+\mbox{\Hypertarget{class_response_af336860cc3e3d6b96c257a1845ec5e48}\label{class_response_af336860cc3e3d6b96c257a1845ec5e48}} 
+void {\bfseries write\+Headers} ()
+\item 
+\mbox{\Hypertarget{class_response_a48dda4add1343ce41fb7c7e2a891b20f}\label{class_response_a48dda4add1343ce41fb7c7e2a891b20f}} 
+void {\bfseries write\+To\+Socket} (const Q\+Byte\+Array \&data)
+\item 
+\mbox{\Hypertarget{class_response_a478441dad471d91725c2d3664b073bd0}\label{class_response_a478441dad471d91725c2d3664b073bd0}} 
+void {\bfseries send\+Error} (int sc, const Q\+Byte\+Array \&msg)
+\item 
+\mbox{\Hypertarget{class_response_a9f70f5c6621b165bcaf1c530ec1db52e}\label{class_response_a9f70f5c6621b165bcaf1c530ec1db52e}} 
+void {\bfseries flush\+Buffer} ()
+\item 
+\mbox{\Hypertarget{class_response_a5e68aaad0a2867d7e00168bb158efea4}\label{class_response_a5e68aaad0a2867d7e00168bb158efea4}} 
+int {\bfseries get\+Buffer\+Size} () const noexcept
+\item 
+\mbox{\Hypertarget{class_response_adae7bde8f1f52edd915e709053b538d5}\label{class_response_adae7bde8f1f52edd915e709053b538d5}} 
+void {\bfseries add\+Header} (const Q\+Byte\+Array \&name, const Q\+Byte\+Array \&value) noexcept
+\item 
+\mbox{\Hypertarget{class_response_aa4f8781c5106b744129b8742965ea18e}\label{class_response_aa4f8781c5106b744129b8742965ea18e}} 
+void {\bfseries add\+Cookie} (const \hyperlink{class_http_cookie}{Http\+Cookie} \&cookie) noexcept
+\item 
+\mbox{\Hypertarget{class_response_a29febc0eaefab2f6d81fb41057d81060}\label{class_response_a29febc0eaefab2f6d81fb41057d81060}} 
+Q\+Tcp\+Socket \& {\bfseries get\+Socket} () const noexcept
+\item 
+\mbox{\Hypertarget{class_response_a6168bc9d8c92941a3780fd56c44c6f82}\label{class_response_a6168bc9d8c92941a3780fd56c44c6f82}} 
+void {\bfseries set\+Status} (const int \&status\+Code, const Q\+Byte\+Array \&description)
+\item 
+\mbox{\Hypertarget{class_response_a7acf6886b6b06704b8bbbb0692948a73}\label{class_response_a7acf6886b6b06704b8bbbb0692948a73}} 
+void {\bfseries send\+Redirect} (const Q\+Byte\+Array \&url)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_response_a3c13b196fd52116f84fb9c1df15041f5}\label{class_response_a3c13b196fd52116f84fb9c1df15041f5}} 
+static const int {\bfseries S\+C\+\_\+\+C\+O\+N\+T\+I\+N\+UE} = 100
+\item 
+\mbox{\Hypertarget{class_response_a9509039bba1450da8a7828a692a38ae5}\label{class_response_a9509039bba1450da8a7828a692a38ae5}} 
+static const int {\bfseries S\+C\+\_\+\+S\+W\+I\+T\+C\+H\+I\+N\+G\+\_\+\+P\+R\+O\+T\+O\+C\+O\+LS} = 101
+\item 
+\mbox{\Hypertarget{class_response_a290c49b3bab45fc87c778b931df89685}\label{class_response_a290c49b3bab45fc87c778b931df89685}} 
+static const int {\bfseries S\+C\+\_\+\+OK} = 200
+\item 
+\mbox{\Hypertarget{class_response_a13f4c7b9b889ed6696a1df400e9adb27}\label{class_response_a13f4c7b9b889ed6696a1df400e9adb27}} 
+static const int {\bfseries S\+C\+\_\+\+C\+R\+E\+A\+T\+ED} = 201
+\item 
+\mbox{\Hypertarget{class_response_a1aa859ddf470694a40ca25014b1e2e8d}\label{class_response_a1aa859ddf470694a40ca25014b1e2e8d}} 
+static const int {\bfseries S\+C\+\_\+\+A\+C\+C\+E\+P\+T\+ED} = 202
+\item 
+\mbox{\Hypertarget{class_response_af586207068c38ee6296ab291368af0fd}\label{class_response_af586207068c38ee6296ab291368af0fd}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+N\+\_\+\+A\+U\+T\+H\+O\+R\+I\+T\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON} = 203
+\item 
+\mbox{\Hypertarget{class_response_a433e0a950ab7d134490fbc310d16dc2c}\label{class_response_a433e0a950ab7d134490fbc310d16dc2c}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+\_\+\+C\+O\+N\+T\+E\+NT} = 204
+\item 
+\mbox{\Hypertarget{class_response_aa7e14d951f72316cb43507e973d53581}\label{class_response_aa7e14d951f72316cb43507e973d53581}} 
+static const int {\bfseries S\+C\+\_\+\+R\+E\+S\+E\+T\+\_\+\+C\+O\+N\+T\+E\+NT} = 205
+\item 
+\mbox{\Hypertarget{class_response_a14c60b047c79a62992f0e8ae08aef23c}\label{class_response_a14c60b047c79a62992f0e8ae08aef23c}} 
+static const int {\bfseries S\+C\+\_\+\+P\+A\+R\+T\+I\+A\+L\+\_\+\+C\+O\+N\+T\+E\+NT} = 206
+\item 
+\mbox{\Hypertarget{class_response_a37ceb73f6ec0b38578e45d859a8efdf3}\label{class_response_a37ceb73f6ec0b38578e45d859a8efdf3}} 
+static const int {\bfseries S\+C\+\_\+\+M\+U\+L\+T\+I\+P\+L\+E\+\_\+\+C\+H\+O\+I\+C\+ES} = 300
+\item 
+\mbox{\Hypertarget{class_response_a86d18e9d38ea9a650cea7de979b65c34}\label{class_response_a86d18e9d38ea9a650cea7de979b65c34}} 
+static const int {\bfseries S\+C\+\_\+\+M\+O\+V\+E\+D\+\_\+\+P\+E\+R\+M\+A\+N\+E\+N\+T\+LY} = 301
+\item 
+\mbox{\Hypertarget{class_response_a8a25dc231422ee757d560fa8c5c45d4f}\label{class_response_a8a25dc231422ee757d560fa8c5c45d4f}} 
+static const int {\bfseries S\+C\+\_\+\+M\+O\+V\+E\+D\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+I\+LY} = 302
+\item 
+\mbox{\Hypertarget{class_response_a1c504fd69000be6893186f008b45fc52}\label{class_response_a1c504fd69000be6893186f008b45fc52}} 
+static const int {\bfseries S\+C\+\_\+\+F\+O\+U\+ND} = 302
+\item 
+\mbox{\Hypertarget{class_response_a0b30946aa3c4061df49d17f5a782f84b}\label{class_response_a0b30946aa3c4061df49d17f5a782f84b}} 
+static const int {\bfseries S\+C\+\_\+\+S\+E\+E\+\_\+\+O\+T\+H\+ER} = 303
+\item 
+\mbox{\Hypertarget{class_response_a503b2f7233819ecc7a45d1429c726529}\label{class_response_a503b2f7233819ecc7a45d1429c726529}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+T\+\_\+\+M\+O\+D\+I\+F\+I\+ED} = 304
+\item 
+\mbox{\Hypertarget{class_response_a36df217f22171bf1a091d35945dbc02b}\label{class_response_a36df217f22171bf1a091d35945dbc02b}} 
+static const int {\bfseries S\+C\+\_\+\+U\+S\+E\+\_\+\+P\+R\+O\+XY} = 305
+\item 
+\mbox{\Hypertarget{class_response_a51484bc55d86b19cf8bdbad338fc5b7b}\label{class_response_a51484bc55d86b19cf8bdbad338fc5b7b}} 
+static const int {\bfseries S\+C\+\_\+\+T\+E\+M\+P\+O\+R\+A\+R\+Y\+\_\+\+R\+E\+D\+I\+R\+E\+CT} = 307
+\item 
+\mbox{\Hypertarget{class_response_ab79ad164134768bb4c9058224e49fb8c}\label{class_response_ab79ad164134768bb4c9058224e49fb8c}} 
+static const int {\bfseries S\+C\+\_\+\+B\+A\+D\+\_\+\+R\+E\+Q\+U\+E\+ST} = 400
+\item 
+\mbox{\Hypertarget{class_response_a56132b00661f6c4f5d0c812af6b97283}\label{class_response_a56132b00661f6c4f5d0c812af6b97283}} 
+static const int {\bfseries S\+C\+\_\+\+U\+N\+A\+U\+T\+H\+O\+R\+I\+Z\+ED} = 401
+\item 
+\mbox{\Hypertarget{class_response_aa48f48f1f117b470906d54b8b25c98fc}\label{class_response_aa48f48f1f117b470906d54b8b25c98fc}} 
+static const int {\bfseries S\+C\+\_\+\+P\+A\+Y\+M\+E\+N\+T\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 402
+\item 
+\mbox{\Hypertarget{class_response_aef26cef9129cfcb52f5e83cff4e78ef4}\label{class_response_aef26cef9129cfcb52f5e83cff4e78ef4}} 
+static const int {\bfseries S\+C\+\_\+\+F\+O\+R\+B\+I\+D\+D\+EN} = 403
+\item 
+\mbox{\Hypertarget{class_response_ab1654ef401f18dd3c9b18df62af7a20d}\label{class_response_ab1654ef401f18dd3c9b18df62af7a20d}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND} = 404
+\item 
+\mbox{\Hypertarget{class_response_a2840d318c42fd9c5ecfa71fefffa9d77}\label{class_response_a2840d318c42fd9c5ecfa71fefffa9d77}} 
+static const int {\bfseries S\+C\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+W\+ED} = 405
+\item 
+\mbox{\Hypertarget{class_response_a0e22fe2ba22dd82d7d8ebd1a735731c4}\label{class_response_a0e22fe2ba22dd82d7d8ebd1a735731c4}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+T\+\_\+\+A\+C\+C\+E\+P\+T\+A\+B\+LE} = 406
+\item 
+\mbox{\Hypertarget{class_response_ae97b4a6f68f2a496b36d187776f3350a}\label{class_response_ae97b4a6f68f2a496b36d187776f3350a}} 
+static const int {\bfseries S\+C\+\_\+\+P\+R\+O\+X\+Y\+\_\+\+A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 407
+\item 
+\mbox{\Hypertarget{class_response_ab8afae9b5616e3bd972c1bef7961b5ec}\label{class_response_ab8afae9b5616e3bd972c1bef7961b5ec}} 
+static const int {\bfseries S\+C\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+T\+I\+M\+E\+O\+UT} = 408
+\item 
+\mbox{\Hypertarget{class_response_ae6249d42d00d41f746afa7416b5238e8}\label{class_response_ae6249d42d00d41f746afa7416b5238e8}} 
+static const int {\bfseries S\+C\+\_\+\+C\+O\+N\+F\+L\+I\+CT} = 409
+\item 
+\mbox{\Hypertarget{class_response_aa3b57625ceefa93997c6b230bdd0276e}\label{class_response_aa3b57625ceefa93997c6b230bdd0276e}} 
+static const int {\bfseries S\+C\+\_\+\+G\+O\+NE} = 410
+\item 
+\mbox{\Hypertarget{class_response_ada22794dd4312e5956e7019dbb5af9c0}\label{class_response_ada22794dd4312e5956e7019dbb5af9c0}} 
+static const int {\bfseries S\+C\+\_\+\+L\+E\+N\+G\+T\+H\+\_\+\+R\+E\+Q\+U\+I\+R\+ED} = 411
+\item 
+\mbox{\Hypertarget{class_response_a601080c0430770211d41140e83b8ed46}\label{class_response_a601080c0430770211d41140e83b8ed46}} 
+static const int {\bfseries S\+C\+\_\+\+P\+R\+E\+C\+O\+N\+D\+I\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED} = 412
+\item 
+\mbox{\Hypertarget{class_response_a26527de203425bb50b47a0b2ee3eb091}\label{class_response_a26527de203425bb50b47a0b2ee3eb091}} 
+static const int {\bfseries S\+C\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+T\+O\+O\+\_\+\+L\+A\+R\+GE} = 413
+\item 
+\mbox{\Hypertarget{class_response_a58b3e815e3e557316664210734400844}\label{class_response_a58b3e815e3e557316664210734400844}} 
+static const int {\bfseries S\+C\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+\_\+\+U\+R\+I\+\_\+\+T\+O\+O\+\_\+\+L\+O\+NG} = 414
+\item 
+\mbox{\Hypertarget{class_response_a1050724bb2aeec0d6a7cd80990eee3ca}\label{class_response_a1050724bb2aeec0d6a7cd80990eee3ca}} 
+static const int {\bfseries S\+C\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D\+\_\+\+M\+E\+D\+I\+A\+\_\+\+T\+Y\+PE} = 415
+\item 
+\mbox{\Hypertarget{class_response_a8d74e0df640fbb20e67cfe385f29e0ba}\label{class_response_a8d74e0df640fbb20e67cfe385f29e0ba}} 
+static const int {\bfseries S\+C\+\_\+\+R\+E\+Q\+U\+E\+S\+T\+E\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+N\+O\+T\+\_\+\+S\+A\+T\+I\+S\+F\+I\+A\+B\+LE} = 416
+\item 
+\mbox{\Hypertarget{class_response_a6a08d4a1bd1a6f8be5bea947dcf26757}\label{class_response_a6a08d4a1bd1a6f8be5bea947dcf26757}} 
+static const int {\bfseries S\+C\+\_\+\+E\+X\+P\+E\+C\+T\+A\+T\+I\+O\+N\+\_\+\+F\+A\+I\+L\+ED} = 417
+\item 
+\mbox{\Hypertarget{class_response_a3df3a79d926428927811db87c6ca4bf5}\label{class_response_a3df3a79d926428927811db87c6ca4bf5}} 
+static const int {\bfseries S\+C\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR} = 500
+\item 
+\mbox{\Hypertarget{class_response_a184bac473b5b16a6974f261e087fb727}\label{class_response_a184bac473b5b16a6974f261e087fb727}} 
+static const int {\bfseries S\+C\+\_\+\+N\+O\+T\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+ED} = 501
+\item 
+\mbox{\Hypertarget{class_response_af3baaf5bb2f84fc3c7a8d0647635a8e4}\label{class_response_af3baaf5bb2f84fc3c7a8d0647635a8e4}} 
+static const int {\bfseries S\+C\+\_\+\+B\+A\+D\+\_\+\+G\+A\+T\+E\+W\+AY} = 502
+\item 
+\mbox{\Hypertarget{class_response_a84d8b235b7205f3d5151bcc4c48251b1}\label{class_response_a84d8b235b7205f3d5151bcc4c48251b1}} 
+static const int {\bfseries S\+C\+\_\+\+S\+E\+R\+V\+I\+C\+E\+\_\+\+U\+N\+A\+V\+A\+I\+L\+A\+B\+LE} = 503
+\item 
+\mbox{\Hypertarget{class_response_a809efeaf200932b0c809a534d96eab2b}\label{class_response_a809efeaf200932b0c809a534d96eab2b}} 
+static const int {\bfseries S\+C\+\_\+\+G\+A\+T\+E\+W\+A\+Y\+\_\+\+T\+I\+M\+E\+O\+UT} = 504
+\item 
+\mbox{\Hypertarget{class_response_a7eb76b1581392c331dccb71c87549b36}\label{class_response_a7eb76b1581392c331dccb71c87549b36}} 
+static const int {\bfseries S\+C\+\_\+\+H\+T\+T\+P\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+S\+U\+P\+P\+O\+R\+T\+ED} = 505
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_response}{Response} class is responsable to response a Http request. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/response.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/response.\+cpp\end{DoxyCompactItemize}

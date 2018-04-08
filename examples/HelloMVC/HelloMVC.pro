@@ -16,8 +16,7 @@ TEMPLATE = app
 SOURCES += main.cpp      
 
 HEADERS += \     
-    model/hellomodel.h \
-    controller/hellocontroller.h
+    model/hellomodel.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -48,4 +47,5 @@ QMAKE_CXXFLAGS_RELEASE += -O3
 #LIBS += -ljemalloc
 
 DISTFILES += \
-    server/pages/helloview.xhtml
+    server/pages/helloview.xhtml \
+    server/pages/helloview.view

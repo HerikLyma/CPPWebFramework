@@ -11,30 +11,30 @@ CWF_BEGIN_NAMESPACE
 
 QString URLEncoder::decode(const QByteArray &url)
 {
-    QUrl original(url);
-    original.setQuery(original.query(QUrl::FullyDecoded), QUrl::DecodedMode);
+    QUrl copy(url);
+    copy.setQuery(copy.query(QUrl::FullyDecoded), QUrl::DecodedMode);
 
-    return original.toString();
+    return copy.toString();
 }
 
 QString URLEncoder::encode(const QByteArray &url)
 {
-    QUrl original(url);
-    return original.toEncoded();
+    QUrl copy(url);
+    return copy.toEncoded();
 }
 
 QString URLEncoder::paramEncode(const QByteArray &param)
 {
-    QUrl original("?p=" + param);
-    original.setQuery(original.query(QUrl::FullyDecoded), QUrl::DecodedMode);
-
-    return original.toString().remove(0, 3);
+    QUrl url("?p=" + param);
+    return url.toEncoded().remove(0, 3);
 }
 
 QString URLEncoder::paramDecode(const QByteArray &param)
 {
-    QUrl original("?p=" + param);
-    return original.toEncoded().remove(0, 3);
+    QUrl url("?p=" + param);
+    url.setQuery(url.query(QUrl::FullyDecoded), QUrl::DecodedMode);
+
+    return url.toString().remove(0, 3);
 }
 
 CWF_END_NAMESPACE

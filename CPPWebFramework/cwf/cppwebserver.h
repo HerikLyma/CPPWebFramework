@@ -17,13 +17,13 @@
 #include <atomic>
 #include "qmapthreadsafety.h"
 #include "httpreadrequest.h"
-#include "httpservlet.h"
-#include "httpsession.h"
+#include "controller.h"
+#include "session.h"
 #include "filter.h"
-#include "httpservlet.h"
+#include "controller.h"
 #include "configuration.h"
-#include "httpservletrequest.h"
-#include "httpservletresponse.h"
+#include "request.h"
+#include "response.h"
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -38,8 +38,8 @@ private:
     Filter *filter;
     QTimer *timer;
     QThreadPool pool;
-    QMapThreadSafety<QString, HttpServlet *> urlServlet;
-    QMapThreadSafety<QString, HttpSession *> sessions;
+    QMapThreadSafety<QString, Controller *> urlController;
+    QMapThreadSafety<QString, Session *> sessions;
     QSslConfiguration *sslConfiguration = nullptr;
     const int sleepTime = 10;
     QAtomicInteger<qint8> block = 0;    
@@ -54,16 +54,21 @@ public:
      */
     explicit CppWebServer(const Configuration &configuration, Filter *filter = nullptr);
     /**
-     * @brief Destroys all servlets and sessions.
+     * @brief Destroys all controllers and sessions.
     */
     ~CppWebServer();
     /**
-     * @brief Hitches a url to a Servlet.
+     * @brief Hitches a url to a Controller.
      * @param const QString &url   : Url name.
-     * @param HttpServlet *servlet : Servlet that will answer requests made to url. If the filter is installed, all requests will be redirected to it and
-     * it will not be possible to map the servlets through the addUrlServlet function, instead everything should be handled inside the Filter.
+     * @param Controller *controller : Controller that will answer requests made to url. If the filter is installed, all requests will be redirected to it and
+     * it will not be possible to map the controllers through the addUrlController function, instead everything should be handled inside the Filter.
      */
-    inline void addUrlServlet(const QString &url, HttpServlet *servlet) { urlServlet.insert(url, servlet); }
+    template<typename CONTROLLER>
+    void addUrlController(const QString &url) noexcept
+    {
+        static_assert(std::is_base_of<Controller, CONTROLLER>::value, "CONTROLLER must be a descendant of Controller");
+        urlController.insert(url, new CONTROLLER);
+    }
 protected:
     /**
      * @brief incomingConnection

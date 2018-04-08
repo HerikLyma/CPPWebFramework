@@ -82,9 +82,9 @@ Inheritance diagram for HttpReadRequest:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a640268a3a27663a31c642381a7cf03b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_read_request.html#a640268a3a27663a31c642381a7cf03b4">HttpReadRequest</a> (qintptr socketDescriptor, <a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_http_servlet.html">HttpServlet</a> *&gt; &amp;urlServlet, <a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_http_session.html">HttpSession</a> *&gt; &amp;sessions, const <a class="el" href="class_configuration.html">Configuration</a> &amp;configuration, QSslConfiguration *sslConfiguration, <a class="el" href="class_filter.html">Filter</a> *filter)</td></tr>
-<tr class="memdesc:a640268a3a27663a31c642381a7cf03b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor provides the necessary information to create a <a class="el" href="class_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a>.  <a href="#a640268a3a27663a31c642381a7cf03b4">More...</a><br /></td></tr>
-<tr class="separator:a640268a3a27663a31c642381a7cf03b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5522be561914b951ebaf580feb2c749a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_read_request.html#a5522be561914b951ebaf580feb2c749a">HttpReadRequest</a> (qintptr socketDescriptor, <a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_controller.html">Controller</a> *&gt; &amp;urlController, <a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_session.html">Session</a> *&gt; &amp;sessions, const <a class="el" href="class_configuration.html">Configuration</a> &amp;configuration, QSslConfiguration *sslConfiguration, <a class="el" href="class_filter.html">Filter</a> *filter)</td></tr>
+<tr class="memdesc:a5522be561914b951ebaf580feb2c749a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor provides the necessary information to create a <a class="el" href="class_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a>.  <a href="#a5522be561914b951ebaf580feb2c749a">More...</a><br /></td></tr>
+<tr class="separator:a5522be561914b951ebaf580feb2c749a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a876bcf62d5428d982c5af6f35e59b963"><td class="memItemLeft" align="right" valign="top"><a id="a876bcf62d5428d982c5af6f35e59b963"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_read_request.html#a876bcf62d5428d982c5af6f35e59b963">~HttpReadRequest</a> ()</td></tr>
 <tr class="memdesc:a876bcf62d5428d982c5af6f35e59b963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys dynamically allocated resources. <br /></td></tr>
@@ -98,8 +98,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <div class="textblock"><p>The <a class="el" href="class_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a> class is created automatically by the <a class="el" href="class_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> and inserted <br />
  in a QThreadPool, always when the <a class="el" href="class_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> has a call by a client(Browser). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a640268a3a27663a31c642381a7cf03b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a640268a3a27663a31c642381a7cf03b4">&#9670;&nbsp;</a></span>HttpReadRequest()</h2>
+<a id="a5522be561914b951ebaf580feb2c749a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5522be561914b951ebaf580feb2c749a">&#9670;&nbsp;</a></span>HttpReadRequest()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -113,13 +113,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_http_servlet.html">HttpServlet</a> *&gt; &amp;&#160;</td>
-          <td class="paramname"><em>urlServlet</em>, </td>
+          <td class="paramtype"><a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_controller.html">Controller</a> *&gt; &amp;&#160;</td>
+          <td class="paramname"><em>urlController</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_http_session.html">HttpSession</a> *&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_session.html">Session</a> *&gt; &amp;&#160;</td>
           <td class="paramname"><em>sessions</em>, </td>
         </tr>
         <tr>
@@ -152,8 +152,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">qintptr</td><td>socketDescriptor : Used to create a socket. </td></tr>
-    <tr><td class="paramname">QMapThreadSafety&lt;QString,<a class="el" href="class_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a></td><td>*&gt; &amp;urlServlet : All mapped servlets </td></tr>
-    <tr><td class="paramname">QMapThreadSafety&lt;QString,<a class="el" href="class_http_session.html" title="The HttpSession class holds information about a client session. ">HttpSession</a></td><td>*&gt; &amp;sessions : Sessions. </td></tr>
+    <tr><td class="paramname">QMapThreadSafety&lt;QString,<a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a></td><td>*&gt; &amp;urlController : All mapped controllers </td></tr>
+    <tr><td class="paramname">QMapThreadSafety&lt;QString,<a class="el" href="class_session.html" title="The Session class holds information about a client session. ">Session</a></td><td>*&gt; &amp;sessions : Sessions. </td></tr>
     <tr><td class="paramname">QSslConfiguration</td><td>*sslConfiguration : SSL configuration. </td></tr>
     <tr><td class="paramname"><a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a></td><td>*filter : <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a> </td></tr>
   </table>
@@ -169,7 +169,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 31 2018 20:57:58 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

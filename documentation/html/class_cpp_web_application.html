@@ -82,9 +82,10 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_application.html#a96a7655a25d2e35ed545cdb7b8d81cc5">~CppWebApplication</a> ()</td></tr>
 <tr class="memdesc:a96a7655a25d2e35ed545cdb7b8d81cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the server dynamically allocated. <br /></td></tr>
 <tr class="separator:a96a7655a25d2e35ed545cdb7b8d81cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8c0b5330f0133fc478b921f2a05dcec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_application.html#aa8c0b5330f0133fc478b921f2a05dcec">addUrlServlet</a> (const QString &amp;url, <a class="el" href="class_http_servlet.html">HttpServlet</a> *servlet)</td></tr>
-<tr class="memdesc:aa8c0b5330f0133fc478b921f2a05dcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a Servlet.  <a href="#aa8c0b5330f0133fc478b921f2a05dcec">More...</a><br /></td></tr>
-<tr class="separator:aa8c0b5330f0133fc478b921f2a05dcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57657865223a43795ce755e77d7b8f27"><td class="memTemplParams" colspan="2">template&lt;typename CONTROLLER &gt; </td></tr>
+<tr class="memitem:a57657865223a43795ce755e77d7b8f27"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cpp_web_application.html#a57657865223a43795ce755e77d7b8f27">addUrlController</a> (const QString &amp;url) noexcept</td></tr>
+<tr class="memdesc:a57657865223a43795ce755e77d7b8f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>.  <a href="#a57657865223a43795ce755e77d7b8f27">More...</a><br /></td></tr>
+<tr class="separator:a57657865223a43795ce755e77d7b8f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e9f2c789934748d6b7c29ad33e9d7c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_application.html#a1e9f2c789934748d6b7c29ad33e9d7c9">start</a> ()</td></tr>
 <tr class="memdesc:a1e9f2c789934748d6b7c29ad33e9d7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the server and QCoreApplication.  <a href="#a1e9f2c789934748d6b7c29ad33e9d7c9">More...</a><br /></td></tr>
 <tr class="separator:a1e9f2c789934748d6b7c29ad33e9d7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,49 +145,41 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa8c0b5330f0133fc478b921f2a05dcec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8c0b5330f0133fc478b921f2a05dcec">&#9670;&nbsp;</a></span>addUrlServlet()</h2>
+<a id="a57657865223a43795ce755e77d7b8f27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57657865223a43795ce755e77d7b8f27">&#9670;&nbsp;</a></span>addUrlController()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename CONTROLLER &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppWebApplication::addUrlServlet </td>
+          <td class="memname">void CppWebApplication::addUrlController </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>url</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>url</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_http_servlet.html">HttpServlet</a> *&#160;</td>
-          <td class="paramname"><em>servlet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Hitches a url to a Servlet. </p>
+<p>Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>QString &amp;url : Url name. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a></td><td>*servlet : Servlet that will answer requests made to url. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a></td><td>*controller : <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a> that will answer requests made to url. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;servlets/helloworldservlet.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cwf/cppwebapplication.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div><div class="line">{</div><div class="line">     CWF::CppWebApplication server(argc, argv, CWF::Configuration(<span class="stringliteral">&quot;/home/herik/CPPWebFramework/examples/HelloWorld/server&quot;</span>));</div><div class="line"></div><div class="line">     server.<a class="code" href="class_cpp_web_server.html#ae94dcf116776b97ec7d5a00cde87c6bd">addUrlServlet</a>(<span class="stringliteral">&quot;/hello&quot;</span>, <span class="keyword">new</span> HelloWorldServlet);</div><div class="line">     <span class="keywordflow">return</span> server.start();</div><div class="line">}</div></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Example</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;controllers/helloworldcontroller.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;cwf/cppwebapplication.h&gt;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div><div class="line">{</div><div class="line">     CWF::CppWebApplication server(argc, argv, <span class="stringliteral">&quot;/PATH_TO_EXAMPLE/server&quot;</span>));</div><div class="line">     server.<a class="code" href="class_cpp_web_server.html#ab876ae8eb6d14b89b9f0a76739c1545d">addUrlController</a>&lt;HelloWorldController&gt;(<span class="stringliteral">&quot;/hello&quot;</span>);</div><div class="line">     <span class="keywordflow">return</span> server.start();</div><div class="line">}</div></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -217,7 +210,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 31 2018 20:57:58 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

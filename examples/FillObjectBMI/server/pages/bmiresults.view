@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Body Mass Index (BMI) - Results</title>
+    </head>
+     <body>        
+        Name: <out value="#{model.getName}"/><br/>
+        Mass(KG): <out value="#{model.getMass}"/><br/>
+        Height(m): <out value="#{model.getHeight}"/><br/>
+        BMI: <out value="#{model.getBmi}"/><br/>
+        Category: <out value="#{model.getCategory}"/>
+    </body>
+</html>

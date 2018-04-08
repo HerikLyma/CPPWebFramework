@@ -13,11 +13,11 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp \     
-    servlets/showfileservlet.cpp
+SOURCES += main.cpp \      
+    controllers/showfilecontroller.cpp
 
-HEADERS += \    
-    servlets/showfileservlet.h 
+HEADERS += \     
+    controllers/showfilecontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -26,7 +26,8 @@ OTHER_FILES += \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \
-    server/pages/showfile.xhtml
+    server/pages/showfile.xhtml \
+    server/pages/showfile.html
 
 
 unix {

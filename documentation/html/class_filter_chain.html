@@ -75,18 +75,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa4e3e6a2aa98f1cb29c3b8eacfe36dde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_filter_chain.html#aa4e3e6a2aa98f1cb29c3b8eacfe36dde">FilterChain</a> (<a class="el" href="class_http_servlet.html">HttpServlet</a> *servlet, const <a class="el" href="class_configuration.html">Configuration</a> &amp;configuration)</td></tr>
-<tr class="memdesc:aa4e3e6a2aa98f1cb29c3b8eacfe36dde"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a>.  <a href="#aa4e3e6a2aa98f1cb29c3b8eacfe36dde">More...</a><br /></td></tr>
-<tr class="separator:aa4e3e6a2aa98f1cb29c3b8eacfe36dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2792dc5418eeb0914af046d78f679d51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_filter_chain.html#a2792dc5418eeb0914af046d78f679d51">doFilter</a> (CWF::HttpServletRequest &amp;request, CWF::HttpServletResponse &amp;response)</td></tr>
-<tr class="memdesc:a2792dc5418eeb0914af046d78f679d51"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method dispaches a requisition to a <a class="el" href="class_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">HttpServletRequest</a> or, if the requesition is for a file, it can reads and send the file through the <a class="el" href="class_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">HttpServletResponse</a>.  <a href="#a2792dc5418eeb0914af046d78f679d51">More...</a><br /></td></tr>
-<tr class="separator:a2792dc5418eeb0914af046d78f679d51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d506944c4a8d387aae3c7b0aa7c6ac7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_filter_chain.html#a9d506944c4a8d387aae3c7b0aa7c6ac7">FilterChain</a> (<a class="el" href="class_controller.html">Controller</a> *controller, const <a class="el" href="class_configuration.html">Configuration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:a9d506944c4a8d387aae3c7b0aa7c6ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a>.  <a href="#a9d506944c4a8d387aae3c7b0aa7c6ac7">More...</a><br /></td></tr>
+<tr class="separator:a9d506944c4a8d387aae3c7b0aa7c6ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873d7d3362388c2b7f2e958e8971be94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_filter_chain.html#a873d7d3362388c2b7f2e958e8971be94">doFilter</a> (CWF::Request &amp;request, CWF::Response &amp;response)</td></tr>
+<tr class="memdesc:a873d7d3362388c2b7f2e958e8971be94"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method dispaches a requisition to a <a class="el" href="class_request.html" title="The Request class holds all information about a http request. ">Request</a> or, if the requesition is for a file, it can reads and send the file through the <a class="el" href="class_response.html" title="The Response class is responsable to response a Http request. ">Response</a>.  <a href="#a873d7d3362388c2b7f2e958e8971be94">More...</a><br /></td></tr>
+<tr class="separator:a873d7d3362388c2b7f2e958e8971be94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a> class is responsable to dispatch a requisition. This class was built to work with <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. Always when a <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a> makes all the necessary validations, it can dispatches the requisition to the <a class="el" href="class_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a>. NOTE: It is a final class, you can't derive from it. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa4e3e6a2aa98f1cb29c3b8eacfe36dde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4e3e6a2aa98f1cb29c3b8eacfe36dde">&#9670;&nbsp;</a></span>FilterChain()</h2>
+<a id="a9d506944c4a8d387aae3c7b0aa7c6ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d506944c4a8d387aae3c7b0aa7c6ac7">&#9670;&nbsp;</a></span>FilterChain()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -94,8 +94,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">CWF_BEGIN_NAMESPACE FilterChain::FilterChain </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_http_servlet.html">HttpServlet</a> *&#160;</td>
-          <td class="paramname"><em>servlet</em>, </td>
+          <td class="paramtype"><a class="el" href="class_controller.html">Controller</a> *&#160;</td>
+          <td class="paramname"><em>controller</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -114,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="class_filter_chain.html" title="The FilterChain class is responsable to dispatch a requisition. This class was built to work with Fil...">FilterChain</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">servlet</td><td></td></tr>
+    <tr><td class="paramname">controller</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -122,8 +122,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2792dc5418eeb0914af046d78f679d51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2792dc5418eeb0914af046d78f679d51">&#9670;&nbsp;</a></span>doFilter()</h2>
+<a id="a873d7d3362388c2b7f2e958e8971be94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873d7d3362388c2b7f2e958e8971be94">&#9670;&nbsp;</a></span>doFilter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -131,13 +131,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void FilterChain::doFilter </td>
           <td>(</td>
-          <td class="paramtype">CWF::HttpServletRequest &amp;&#160;</td>
+          <td class="paramtype">CWF::Request &amp;&#160;</td>
           <td class="paramname"><em>request</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">CWF::HttpServletResponse &amp;&#160;</td>
+          <td class="paramtype">CWF::Response &amp;&#160;</td>
           <td class="paramname"><em>response</em>&#160;</td>
         </tr>
         <tr>
@@ -148,11 +148,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method dispaches a requisition to a <a class="el" href="class_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">HttpServletRequest</a> or, if the requesition is for a file, it can reads and send the file through the <a class="el" href="class_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">HttpServletResponse</a>. </p>
+<p>This method dispaches a requisition to a <a class="el" href="class_request.html" title="The Request class holds all information about a http request. ">Request</a> or, if the requesition is for a file, it can reads and send the file through the <a class="el" href="class_response.html" title="The Response class is responsable to response a Http request. ">Response</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td>: This is a reference to the <a class="el" href="class_http_servlet_request.html" title="The HttpServletRequest class holds all information about a http request. ">HttpServletRequest</a>. </td></tr>
-    <tr><td class="paramname">response</td><td>: This is a reference to the <a class="el" href="class_http_servlet_response.html" title="The HttpServletResponse class is responsable to response a Http request. ">HttpServletResponse</a>. </td></tr>
+    <tr><td class="paramname">request</td><td>: This is a reference to the <a class="el" href="class_request.html" title="The Request class holds all information about a http request. ">Request</a>. </td></tr>
+    <tr><td class="paramname">response</td><td>: This is a reference to the <a class="el" href="class_response.html" title="The Response class is responsable to response a Http request. ">Response</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -166,7 +166,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 31 2018 20:57:58 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

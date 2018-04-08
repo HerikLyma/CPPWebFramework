@@ -1,6 +1,6 @@
 var searchData=
 [
   ['add',['add',['../class_q_list_object.html#ad5e960eabd3e9b7d49228ea7549a9bd7',1,'QListObject']]],
-  ['addattribute',['addAttribute',['../class_http_servlet_request.html#a2537c9716161ea25d83e2aea5b26a945',1,'HttpServletRequest::addAttribute()'],['../class_http_session.html#a9d7250801e2b43f61b28facf2b48c1b5',1,'HttpSession::addAttribute()']]],
-  ['addurlservlet',['addUrlServlet',['../class_cpp_web_application.html#aa8c0b5330f0133fc478b921f2a05dcec',1,'CppWebApplication::addUrlServlet()'],['../class_cpp_web_server.html#ae94dcf116776b97ec7d5a00cde87c6bd',1,'CppWebServer::addUrlServlet()']]]
+  ['addattribute',['addAttribute',['../class_request.html#afe81be45f2fffc0e4baf2830278b8c94',1,'Request::addAttribute()'],['../class_session.html#afe6cfc02c901d3f27924107067f83189',1,'Session::addAttribute()']]],
+  ['addurlcontroller',['addUrlController',['../class_cpp_web_application.html#a57657865223a43795ce755e77d7b8f27',1,'CppWebApplication::addUrlController()'],['../class_cpp_web_server.html#ab876ae8eb6d14b89b9f0a76739c1545d',1,'CppWebServer::addUrlController()']]]
 ];

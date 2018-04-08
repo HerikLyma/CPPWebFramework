@@ -1,0 +1,459 @@
+\hypertarget{class_request}{}\section{Request Class Reference}
+\label{class_request}\index{Request@{Request}}
+
+
+The \hyperlink{class_request}{Request} class holds all information about a http request.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+
+
+Inheritance diagram for Request\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_request_a5dbe3045d76139502b0c0db5c67ea900}\label{class_request_a5dbe3045d76139502b0c0db5c67ea900}} 
+\hyperlink{class_request_a5dbe3045d76139502b0c0db5c67ea900}{Request} (Q\+Tcp\+Socket \&socket, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_session}{Session} $\ast$$>$ \&sessions, const \hyperlink{class_configuration}{Configuration} \&configuration)
+\begin{DoxyCompactList}\small\item\em This constructor needs to receive a reference to a Q\+Tcp\+Socket and Q\+Byte\+Array. The parameter parent is optional. N\+O\+TE\+: The \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} is responsable to create the Q\+Tcp\+Socket, and the \hyperlink{class_http_read_request}{Http\+Read\+Request} is responsable to create a \hyperlink{class_http_read_request}{Http\+Read\+Request} and a \hyperlink{class_response}{Response}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_a4d57c725686701f773eb3630630a7ea2}\label{class_request_a4d57c725686701f773eb3630630a7ea2}} 
+virtual \hyperlink{class_request_a4d57c725686701f773eb3630630a7ea2}{$\sim$\+Request} ()
+\begin{DoxyCompactList}\small\item\em Destroys dynamically allocated resources. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_afe81be45f2fffc0e4baf2830278b8c94}\label{class_request_afe81be45f2fffc0e4baf2830278b8c94}} 
+void \hyperlink{class_request_afe81be45f2fffc0e4baf2830278b8c94}{add\+Attribute} (const Q\+String \&name, Q\+Object $\ast$value) noexcept
+\begin{DoxyCompactList}\small\item\em This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml C\+S\+TL. For this to be possible the object must inherit from Q\+Object and methods and must be in session \char`\"{}public slots\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_affe1bd704eaad1077e5577d0f8a22392}\label{class_request_affe1bd704eaad1077e5577d0f8a22392}} 
+Q\+Map$<$ Q\+String, Q\+Object $\ast$ $>$ \hyperlink{class_request_affe1bd704eaad1077e5577d0f8a22392}{get\+Attributes} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns all the attributes of a \hyperlink{class_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_ab4d1136eebec4011c5512f77dd5e00a2}\label{class_request_ab4d1136eebec4011c5512f77dd5e00a2}} 
+const Q\+Object $\ast$ \hyperlink{class_request_ab4d1136eebec4011c5512f77dd5e00a2}{get\+Attribute} (const Q\+String \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns a specific object given its name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_a284909aadbbfd8f76472f8ebaf4ef16e}\label{class_request_a284909aadbbfd8f76472f8ebaf4ef16e}} 
+const Q\+Byte\+Array \hyperlink{class_request_a284909aadbbfd8f76472f8ebaf4ef16e}{get\+Body} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the request body. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_acb4c1802fbd8cf14183c231ebb586288}\label{class_request_acb4c1802fbd8cf14183c231ebb586288}} 
+Q\+Json\+Object \hyperlink{class_request_acb4c1802fbd8cf14183c231ebb586288}{body\+To\+Json\+Object} () const noexcept
+\begin{DoxyCompactList}\small\item\em Tries returns the body of the converted request to Q\+Json\+Object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_a933c1581ec12d55a0b307c4060d5e127}\label{class_request_a933c1581ec12d55a0b307c4060d5e127}} 
+Q\+Json\+Array \hyperlink{class_request_a933c1581ec12d55a0b307c4060d5e127}{body\+To\+Json\+Array} () const noexcept
+\begin{DoxyCompactList}\small\item\em Tries returns the body of the converted request to Q\+Json\+Array. \end{DoxyCompactList}\item 
+\hyperlink{class_request_dispatcher}{Request\+Dispatcher} \& \hyperlink{class_request_a595822f6e39bf04930f9ad580a5ba34c}{get\+Request\+Dispatcher} (const Q\+String \&page)
+\begin{DoxyCompactList}\small\item\em This method returns a request\+Dispatcher given an specific page. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_request_a975ffb8f0b6aa08879ffecb50d9bb289}{get\+Protocol} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the http protocol. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_a4a1aa80b942621b9bb12f3eca47a415b}\label{class_request_a4a1aa80b942621b9bb12f3eca47a415b}} 
+void \hyperlink{class_request_a4a1aa80b942621b9bb12f3eca47a415b}{clear\+Attributes} ()
+\begin{DoxyCompactList}\small\item\em This method will clear all the attributes. \end{DoxyCompactList}\item 
+void \hyperlink{class_request_a526593ca8b89c6871a36fefb0f2cde1a}{set\+Http\+Parser} (\hyperlink{class_http_parser}{Http\+Parser} \&http\+Parser) noexcept
+\begin{DoxyCompactList}\small\item\em This method set the \hyperlink{class_http_parser}{Http\+Parser}. \end{DoxyCompactList}\item 
+\hyperlink{class_http_parser}{Http\+Parser} \& \hyperlink{class_request_ac593ca2abd88c9e21238a37da8c707f6}{get\+Http\+Parser} () const
+\begin{DoxyCompactList}\small\item\em This method returns the \hyperlink{class_http_parser}{Http\+Parser}. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_request_a48d3b2a3579011b0599e721fdb867b27}{get\+Request\+U\+RL} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the requested url. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_request_aa5f623afcbe306d552a495156e3bb9c1}{get\+Request\+U\+RI} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the requested url. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_request_a004a1262148d077d2de9a9855f5f7ef3}\label{class_request_a004a1262148d077d2de9a9855f5f7ef3}} 
+\hyperlink{class_session}{Session} \& \hyperlink{class_request_a004a1262148d077d2de9a9855f5f7ef3}{get\+Session} ()
+\begin{DoxyCompactList}\small\item\em This method returns the user\textquotesingle{}s session. \end{DoxyCompactList}\item 
+void \hyperlink{class_request_ab11b66e85291c653579fbba30bfa1a70}{set\+Session} (\hyperlink{class_session}{Session} \&session) noexcept
+\begin{DoxyCompactList}\small\item\em This method set the user\textquotesingle{}s session. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_request_a0a78d7b29f1c0d96f101df866c82cef5}{get\+Parameter} (const Q\+Byte\+Array \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the most recent parameter from a request given an specific name. \end{DoxyCompactList}\item 
+Q\+Byte\+Array\+List \hyperlink{class_request_a46c49de1519d33ee2ff3cbe5a2874fc9}{get\+Parameters} (const Q\+Byte\+Array \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the parameters from a request given an specific name. \end{DoxyCompactList}\item 
+Q\+Tcp\+Socket \& \hyperlink{class_request_a0469d7af31664f37234397ce2cc46012}{get\+Socket} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns a reference to the current socket. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_request_ad87c576630126d44838da46c18a90e01}{get\+Path} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns the path. \end{DoxyCompactList}\item 
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_request_a61e5ed8f40ac13d028e27fda8695dace}{get\+Uploaded\+Files} () const noexcept
+\begin{DoxyCompactList}\small\item\em This method returns all the files that the user has sent. \end{DoxyCompactList}\item 
+void \hyperlink{class_request_a934d83fe6fe62aba36a625b6edad8d65}{fill\+Q\+Object} (Q\+Object $\ast$object)
+\begin{DoxyCompactList}\small\item\em Fill a Q\+Object using parameters of a H\+T\+TP message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_request_a4d54f5003e07e218070a449c22a52c7c}\label{class_request_a4d54f5003e07e218070a449c22a52c7c}} 
+class {\bfseries Http\+Read\+Request}
+\item 
+\mbox{\Hypertarget{class_request_ae82f2dbbf52e70637edba766141fd80e}\label{class_request_ae82f2dbbf52e70637edba766141fd80e}} 
+class {\bfseries Request\+Dispatcher}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_request}{Request} class holds all information about a http request. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_request_a934d83fe6fe62aba36a625b6edad8d65}\label{class_request_a934d83fe6fe62aba36a625b6edad8d65}} 
+\index{Request@{Request}!fill\+Q\+Object@{fill\+Q\+Object}}
+\index{fill\+Q\+Object@{fill\+Q\+Object}!Request@{Request}}
+\subsubsection{\texorpdfstring{fill\+Q\+Object()}{fillQObject()}}
+{\footnotesize\ttfamily void Request\+::fill\+Q\+Object (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{object }\end{DoxyParamCaption})}
+
+
+
+Fill a Q\+Object using parameters of a H\+T\+TP message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Object} & $\ast$object \+: Object to be filled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyParagraph}{Example}
+
+\begin{DoxyCode}
+\textcolor{comment}{//----------------bmi.view----------------}
+
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"iso-8859-1"} ?>
+<html>
+     <head>
+         <title>Body Mass Index (BMI)</title>
+     </head>
+     <body>
+         <form method=\textcolor{stringliteral}{"POST"} action=\textcolor{stringliteral}{"/bmi"}>
+             Name<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"name"}/><br/>
+             Mass(KG)<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"mass"}/><br/>
+             Height(m)<br/><input type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"height"}/><br/><br/>
+             <input type=\textcolor{stringliteral}{"submit"} name=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"Calculate"}/>
+         </form>
+     </body>
+ </html>
+
+\textcolor{comment}{//----------------bmiresults.view----------------}
+
+<?xml version=\textcolor{stringliteral}{"1.0"} encoding=\textcolor{stringliteral}{"iso-8859-1"} ?>
+<html>
+     <head>
+         <title>Body Mass Index (BMI) - Results</title>
+     </head>
+     <body>
+         Name: <out value=\textcolor{stringliteral}{"#\{user.getName\}"}/><br/>
+         Mass(KG): <out value=\textcolor{stringliteral}{"#\{user.getMass\}"}/><br/>
+         Height(m): <out value=\textcolor{stringliteral}{"#\{user.getHeight\}"}/><br/>
+         BMI: <out value=\textcolor{stringliteral}{"#\{user.getBmi\}"}/><br/>
+         Category: <out value=\textcolor{stringliteral}{"#\{user.getCategory\}"}/>
+     </body>
+</html>
+
+\textcolor{comment}{//----------------user.h----------------}
+
+#ifndef USER\_H
+#define USER\_H
+
+#include <QObject>
+#include <QString>
+
+class User : public QObject
+\{
+    Q\_OBJECT
+\textcolor{keyword}{private}:
+    QString name;
+    QString category;
+    \textcolor{keywordtype}{double} mass = 0;
+    \textcolor{keywordtype}{double} height = 0;
+    \textcolor{keywordtype}{double} bmi = 0;
+\textcolor{keyword}{public}:
+    \textcolor{keyword}{explicit} User(QObject *parent = 0) : QObject(parent)
+    \{
+    \}
+\textcolor{keyword}{public} slots:
+    QString getName()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} name;
+    \}
+    \textcolor{keywordtype}{void} setName(\textcolor{keyword}{const} QString &value)
+    \{
+        name = value;
+    \}
+    QString getCategory()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} category;
+    \}
+    \textcolor{keywordtype}{double} getMass()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} mass;
+    \}
+    \textcolor{keywordtype}{void} setMass(\textcolor{keywordtype}{double} value)
+    \{
+        mass = value;
+    \}
+    \textcolor{keywordtype}{double} getHeight()\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{keywordflow}{return} height;
+    \}
+    \textcolor{keywordtype}{void} setHeight(\textcolor{keywordtype}{double} value)
+    \{
+        height = value;
+    \}
+    \textcolor{keywordtype}{double} getBmi()
+    \{
+        bmi = height != 0 ? mass / (height * height) : 0;
+
+        \textcolor{keywordflow}{if}(bmi <= 15)
+        \{
+            category = \textcolor{stringliteral}{"Very severely underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 15 && bmi <= 16)
+        \{
+            category = \textcolor{stringliteral}{"Severely underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 16 && bmi <= 18.5)
+        \{
+            category = \textcolor{stringliteral}{"Underweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 18.5 && bmi <= 25)
+        \{
+            category = \textcolor{stringliteral}{"Normal (healthy weight)"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 25 && bmi <= 30)
+        \{
+            category = \textcolor{stringliteral}{"Overweight"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 30 && bmi <= 35)
+        \{
+            category = \textcolor{stringliteral}{"Obese Class I (Moderately obese)"};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(bmi > 35 && bmi <= 40)
+        \{
+            category = \textcolor{stringliteral}{"Obese Class II (Severely obese)"};
+        \}
+        \textcolor{keywordflow}{else}
+        \{
+            category = \textcolor{stringliteral}{"Obese Class III (Very severely obese)"};
+        \}
+
+        \textcolor{keywordflow}{return} bmi;
+    \}
+\};
+
+\textcolor{preprocessor}{#endif // USER\_H}
+
+\textcolor{comment}{//----------------bmicontroller.h----------------}
+
+\textcolor{preprocessor}{#ifndef BMICONTROLLER\_H}
+\textcolor{preprocessor}{#define BMICONTROLLER\_H}
+
+\textcolor{preprocessor}{#include "cwf/controller.h"}
+\textcolor{preprocessor}{#include "cwf/request.h"}
+\textcolor{preprocessor}{#include "cwf/response.h"}
+\textcolor{preprocessor}{#include "entities/user.h"}
+
+\textcolor{keyword}{class }BmiController : \textcolor{keyword}{public} CWF::Controller
+\{
+\textcolor{keyword}{public}:
+    \textcolor{keywordtype}{void} doGet(CWF::Request &request, CWF::Response &response)\textcolor{keyword}{ override}
+\textcolor{keyword}{    }\{
+        request.getRequestDispatcher(\textcolor{stringliteral}{"/pages/bmi"}).forward(request, response);
+    \}
+    \textcolor{keywordtype}{void} doPost(CWF::Request &request, CWF::Response &response)\textcolor{keyword}{ override}
+\textcolor{keyword}{    }\{
+        User user;
+        request.fillQObject(&user);
+        request.addAttribute(\textcolor{stringliteral}{"user"}, &user);
+        request.getRequestDispatcher(\textcolor{stringliteral}{"/pages/bmiresults.view"}).forward(request, response);
+    \}
+\};
+
+\textcolor{preprocessor}{#endif // BMICONTROLLER\_H}
+
+\textcolor{comment}{//----------------main.cpp----------------}
+
+\textcolor{preprocessor}{#include <QCoreApplication>}
+\textcolor{preprocessor}{#include <cwf/cppwebapplication.h>}
+\textcolor{preprocessor}{#include <controllers/bmicontroller.h>}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+\{
+    CWF::CppWebApplication server(argc, argv, \textcolor{stringliteral}{"PATH\_TO\_SERVER\_FOLDER"});
+
+    server.addUrlController<BmiController>(\textcolor{stringliteral}{"/bmi"});
+
+    \textcolor{keywordflow}{return} server.start();
+\}
+\end{DoxyCode}
+ 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{class_request_ac593ca2abd88c9e21238a37da8c707f6}\label{class_request_ac593ca2abd88c9e21238a37da8c707f6}} 
+\index{Request@{Request}!get\+Http\+Parser@{get\+Http\+Parser}}
+\index{get\+Http\+Parser@{get\+Http\+Parser}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Http\+Parser()}{getHttpParser()}}
+{\footnotesize\ttfamily \hyperlink{class_http_parser}{Http\+Parser}\& Request\+::get\+Http\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method returns the \hyperlink{class_http_parser}{Http\+Parser}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_http_parser}{Http\+Parser} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a0a78d7b29f1c0d96f101df866c82cef5}\label{class_request_a0a78d7b29f1c0d96f101df866c82cef5}} 
+\index{Request@{Request}!get\+Parameter@{get\+Parameter}}
+\index{get\+Parameter@{get\+Parameter}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Parameter()}{getParameter()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Request\+::get\+Parameter (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the most recent parameter from a request given an specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: This is a reference to a Q\+Byte\+Array. \\
+\hline
+{\em decode} & \+: If true, decode the parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a46c49de1519d33ee2ff3cbe5a2874fc9}\label{class_request_a46c49de1519d33ee2ff3cbe5a2874fc9}} 
+\index{Request@{Request}!get\+Parameters@{get\+Parameters}}
+\index{get\+Parameters@{get\+Parameters}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Parameters()}{getParameters()}}
+{\footnotesize\ttfamily Q\+Byte\+Array\+List Request\+::get\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the parameters from a request given an specific name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: This is a reference to a Q\+Byte\+Array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_ad87c576630126d44838da46c18a90e01}\label{class_request_ad87c576630126d44838da46c18a90e01}} 
+\index{Request@{Request}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
+{\footnotesize\ttfamily Q\+String Request\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the path. 
+
+\begin{DoxyReturn}{Returns}
+Q\+String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a975ffb8f0b6aa08879ffecb50d9bb289}\label{class_request_a975ffb8f0b6aa08879ffecb50d9bb289}} 
+\index{Request@{Request}!get\+Protocol@{get\+Protocol}}
+\index{get\+Protocol@{get\+Protocol}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Protocol()}{getProtocol()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Request\+::get\+Protocol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the http protocol. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a595822f6e39bf04930f9ad580a5ba34c}\label{class_request_a595822f6e39bf04930f9ad580a5ba34c}} 
+\index{Request@{Request}!get\+Request\+Dispatcher@{get\+Request\+Dispatcher}}
+\index{get\+Request\+Dispatcher@{get\+Request\+Dispatcher}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Request\+Dispatcher()}{getRequestDispatcher()}}
+{\footnotesize\ttfamily \hyperlink{class_request_dispatcher}{Request\+Dispatcher} \& Request\+::get\+Request\+Dispatcher (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{page }\end{DoxyParamCaption})}
+
+
+
+This method returns a request\+Dispatcher given an specific page. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em page} & \+: This is a reference to a Q\+Byte\+Array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_request_dispatcher}{Request\+Dispatcher} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_aa5f623afcbe306d552a495156e3bb9c1}\label{class_request_aa5f623afcbe306d552a495156e3bb9c1}} 
+\index{Request@{Request}!get\+Request\+U\+RI@{get\+Request\+U\+RI}}
+\index{get\+Request\+U\+RI@{get\+Request\+U\+RI}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Request\+U\+R\+I()}{getRequestURI()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Request\+::get\+Request\+U\+RI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the requested url. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a48d3b2a3579011b0599e721fdb867b27}\label{class_request_a48d3b2a3579011b0599e721fdb867b27}} 
+\index{Request@{Request}!get\+Request\+U\+RL@{get\+Request\+U\+RL}}
+\index{get\+Request\+U\+RL@{get\+Request\+U\+RL}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Request\+U\+R\+L()}{getRequestURL()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Request\+::get\+Request\+U\+RL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns the requested url. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a0469d7af31664f37234397ce2cc46012}\label{class_request_a0469d7af31664f37234397ce2cc46012}} 
+\index{Request@{Request}!get\+Socket@{get\+Socket}}
+\index{get\+Socket@{get\+Socket}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Socket()}{getSocket()}}
+{\footnotesize\ttfamily Q\+Tcp\+Socket\& Request\+::get\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns a reference to the current socket. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Tcp\+Socket 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a61e5ed8f40ac13d028e27fda8695dace}\label{class_request_a61e5ed8f40ac13d028e27fda8695dace}} 
+\index{Request@{Request}!get\+Uploaded\+Files@{get\+Uploaded\+Files}}
+\index{get\+Uploaded\+Files@{get\+Uploaded\+Files}!Request@{Request}}
+\subsubsection{\texorpdfstring{get\+Uploaded\+Files()}{getUploadedFiles()}}
+{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Request\+::get\+Uploaded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method returns all the files that the user has sent. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Map$<$\+Q\+Byte\+Array, Q\+Byte\+Array$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_request_a526593ca8b89c6871a36fefb0f2cde1a}\label{class_request_a526593ca8b89c6871a36fefb0f2cde1a}} 
+\index{Request@{Request}!set\+Http\+Parser@{set\+Http\+Parser}}
+\index{set\+Http\+Parser@{set\+Http\+Parser}!Request@{Request}}
+\subsubsection{\texorpdfstring{set\+Http\+Parser()}{setHttpParser()}}
+{\footnotesize\ttfamily void Request\+::set\+Http\+Parser (\begin{DoxyParamCaption}\item[{\hyperlink{class_http_parser}{Http\+Parser} \&}]{http\+Parser }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method set the \hyperlink{class_http_parser}{Http\+Parser}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em http\+Parser} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_request_ab11b66e85291c653579fbba30bfa1a70}\label{class_request_ab11b66e85291c653579fbba30bfa1a70}} 
+\index{Request@{Request}!set\+Session@{set\+Session}}
+\index{set\+Session@{set\+Session}!Request@{Request}}
+\subsubsection{\texorpdfstring{set\+Session()}{setSession()}}
+{\footnotesize\ttfamily void Request\+::set\+Session (\begin{DoxyParamCaption}\item[{\hyperlink{class_session}{Session} \&}]{session }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+This method set the user\textquotesingle{}s session. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_session}{Session} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/request.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/request.\+cpp\end{DoxyCompactItemize}

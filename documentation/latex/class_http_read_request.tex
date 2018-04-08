@@ -17,7 +17,7 @@ Inheritance diagram for Http\+Read\+Request\+:
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_http_read_request_a640268a3a27663a31c642381a7cf03b4}{Http\+Read\+Request} (qintptr socket\+Descriptor, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_servlet}{Http\+Servlet} $\ast$$>$ \&url\+Servlet, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_session}{Http\+Session} $\ast$$>$ \&sessions, const \hyperlink{class_configuration}{Configuration} \&configuration, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \hyperlink{class_filter}{Filter} $\ast$filter)
+\hyperlink{class_http_read_request_a5522be561914b951ebaf580feb2c749a}{Http\+Read\+Request} (qintptr socket\+Descriptor, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_controller}{Controller} $\ast$$>$ \&url\+Controller, \hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_session}{Session} $\ast$$>$ \&sessions, const \hyperlink{class_configuration}{Configuration} \&configuration, Q\+Ssl\+Configuration $\ast$ssl\+Configuration, \hyperlink{class_filter}{Filter} $\ast$filter)
 \begin{DoxyCompactList}\small\item\em This constructor provides the necessary information to create a \hyperlink{class_http_read_request}{Http\+Read\+Request}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}\label{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}} 
 \hyperlink{class_http_read_request_a876bcf62d5428d982c5af6f35e59b963}{$\sim$\+Http\+Read\+Request} ()
@@ -32,11 +32,11 @@ The \hyperlink{class_http_read_request}{Http\+Read\+Request} class is created au
  in a Q\+Thread\+Pool, always when the \hyperlink{class_cpp_web_server}{Cpp\+Web\+Server} has a call by a client(\+Browser). 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_http_read_request_a640268a3a27663a31c642381a7cf03b4}\label{class_http_read_request_a640268a3a27663a31c642381a7cf03b4}} 
+\mbox{\Hypertarget{class_http_read_request_a5522be561914b951ebaf580feb2c749a}\label{class_http_read_request_a5522be561914b951ebaf580feb2c749a}} 
 \index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
 \index{Http\+Read\+Request@{Http\+Read\+Request}!Http\+Read\+Request@{Http\+Read\+Request}}
 \subsubsection{\texorpdfstring{Http\+Read\+Request()}{HttpReadRequest()}}
-{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE Http\+Read\+Request\+::\+Http\+Read\+Request (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_servlet}{Http\+Servlet} $\ast$$>$ \&}]{url\+Servlet,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_http_session}{Http\+Session} $\ast$$>$ \&}]{sessions,  }\item[{const \hyperlink{class_configuration}{Configuration} \&}]{configuration,  }\item[{Q\+Ssl\+Configuration $\ast$}]{ssl\+Configuration,  }\item[{\hyperlink{class_filter}{Filter} $\ast$}]{filter }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE Http\+Read\+Request\+::\+Http\+Read\+Request (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_controller}{Controller} $\ast$$>$ \&}]{url\+Controller,  }\item[{\hyperlink{class_q_map_thread_safety}{Q\+Map\+Thread\+Safety}$<$ Q\+String, \hyperlink{class_session}{Session} $\ast$$>$ \&}]{sessions,  }\item[{const \hyperlink{class_configuration}{Configuration} \&}]{configuration,  }\item[{Q\+Ssl\+Configuration $\ast$}]{ssl\+Configuration,  }\item[{\hyperlink{class_filter}{Filter} $\ast$}]{filter }\end{DoxyParamCaption})}
 
 
 
@@ -46,9 +46,9 @@ This constructor provides the necessary information to create a \hyperlink{class
 \begin{DoxyParams}{Parameters}
 {\em qintptr} & socket\+Descriptor \+: Used to create a socket. \\
 \hline
-{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_http_servlet}{Http\+Servlet}} & $\ast$$>$ \&url\+Servlet \+: All mapped servlets \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_controller}{Controller}} & $\ast$$>$ \&url\+Controller \+: All mapped controllers \\
 \hline
-{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_http_session}{Http\+Session}} & $\ast$$>$ \&sessions \+: Sessions. \\
+{\em Q\+Map\+Thread\+Safety$<$\+Q\+String,\hyperlink{class_session}{Session}} & $\ast$$>$ \&sessions \+: Sessions. \\
 \hline
 {\em Q\+Ssl\+Configuration} & $\ast$ssl\+Configuration \+: S\+SL configuration. \\
 \hline

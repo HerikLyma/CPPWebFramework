@@ -12,8 +12,8 @@
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
-class HttpServletRequest;
-class HttpServletResponse;
+class Request;
+class Response;
 /**
  * @brief The RequestDispatcher class can be used to dispatch a requisition to a xhtml page.
  */
@@ -33,10 +33,10 @@ public:
      * @brief This method will dispatch the xhtml file specificated in path to the CSTLCompiler,
      * the CSTLCompiler will compile the xhtml file and returns the result.
      * After this, the RequestDispatcher will take the return and write it on the response.
-     * @param CWF::HttpServletRequest &request   : Used to process the response.
-     * @param CWF::HttpServletResponse &response : Used to response.
+     * @param CWF::Request &request   : Used to process the response.
+     * @param CWF::Response &response : Used to response.
      */
-    void forward(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response);
+    void forward(CWF::Request &request, CWF::Response &response);
 };
 
 CWF_END_NAMESPACE

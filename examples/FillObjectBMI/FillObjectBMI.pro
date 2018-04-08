@@ -14,13 +14,11 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    servlets/bmiservlet.cpp \
-    entities/user.cpp
+    model/usermodel.cpp
 
 
 HEADERS += \
-    servlets/bmiservlet.h \
-    entities/user.h 
+    model/usermodel.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -30,6 +28,7 @@ OTHER_FILES += \
 
 DISTFILES += \
     server/pages/bmiresults.xhtml \
+    server/pages/bmiresults.view \
     server/pages/bmi.html
 
 

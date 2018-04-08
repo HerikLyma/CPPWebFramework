@@ -54,63 +54,63 @@ public:
     /**
      * @brief setName
      */
-    inline void setName(const QByteArray &value) { name = value; }
+    inline void setName(const QByteArray &value) noexcept { name = value; }
     /**
      * @brief setValue
      */
-    inline void setValue(const QByteArray &value) { this->value = value; }
+    inline void setValue(const QByteArray &value) noexcept { this->value = value; }
     /**
      * @brief setComment
      */
-    inline void setComment(const QByteArray &value) { comment = value; }
+    inline void setComment(const QByteArray &value) noexcept { comment = value; }
     /**
      * @brief setDomain     
      */
-    inline void setDomain(const QByteArray &value) { domain = value; }
+    inline void setDomain(const QByteArray &value) noexcept { domain = value; }
     /**
      * @brief setMaxAge
      */
-    inline void setMaxAge(int value) { maxAge = value; }
+    inline void setMaxAge(int value) noexcept { maxAge = value; }
     /**
      * @brief setPath
      */
-    inline void setPath(const QByteArray &value) { path = value; }
+    inline void setPath(const QByteArray &value) noexcept { path = value; }
     /**
      * @brief setSecure
      */
-    inline void setSecure(bool value) { secure = value; }
+    inline void setSecure(bool value) noexcept { secure = value; }
     /**
      * @brief getName
      */
-    inline QByteArray getName() const { return name; }
+    inline QByteArray getName() const noexcept { return name; }
     /**
      * @brief getValue
      */
-    inline QByteArray getValue() const { return value; }
+    inline QByteArray getValue() const noexcept { return value; }
     /**
      * @brief getComment
      */
-    inline QByteArray getComment() const { return comment; }
+    inline QByteArray getComment() const noexcept { return comment; }
     /**
      * @brief getDomain
      */
-    inline QByteArray getDomain() const { return domain; }
+    inline QByteArray getDomain() const noexcept { return domain; }
     /**
      * @brief getMaxAge
      */
-    inline int getMaxAge() const { return maxAge; }
+    inline int getMaxAge() const noexcept { return maxAge; }
     /**
      * @brief getPath
      */
-    inline QByteArray getPath() const { return path; }
+    inline QByteArray getPath() const noexcept { return path; }
     /**
      * @brief getSecure
      */
-    inline bool getSecure() const { return secure; }
+    inline bool getSecure() const noexcept { return secure; }
     /**
      * @brief getVersion
      */
-    inline int getVersion() const { return version; }
+    inline int getVersion() const noexcept { return version; }
 };
 
 CWF_END_NAMESPACE

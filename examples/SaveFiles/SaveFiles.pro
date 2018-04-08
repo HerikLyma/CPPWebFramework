@@ -13,11 +13,11 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 
-SOURCES += main.cpp \   
-    servlets/savefilesservlet.cpp
+SOURCES += main.cpp \    
+    controllers/savefilecontroller.cpp
 
-HEADERS += \    
-    servlets/savefilesservlet.h 
+HEADERS += \     
+    controllers/savefilescontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -26,7 +26,8 @@ OTHER_FILES += \
     server/config/log/CPPWebServer.log
 
 DISTFILES += \
-    server/pages/savefiles.xhtml
+    server/pages/savefiles.xhtml \
+    server/pages/savefiles.html
 
 
 unix {

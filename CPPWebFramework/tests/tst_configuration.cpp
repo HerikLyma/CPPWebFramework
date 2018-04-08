@@ -36,8 +36,10 @@ void TST_Configuration::test()
 void TST_Configuration::testReadFromFile()
 {    
     QString path(QDir::currentPath() + "/server");
+    QVERIFY2(QDir().mkdir(path), "Could not create server folder");
+    QVERIFY2(QDir().mkdir(path + "/config"), "Could not create server config");
     QFile file(path + "/config/CPPWeb.ini");
-    file.open(QIODevice::WriteOnly);
+    QVERIFY2(file.open(QIODevice::WriteOnly), "Could not create CPPWeb.ini file");
 
     file.write("[config]\n");
     file.write("host=127.0.0.1\n");
@@ -58,8 +60,9 @@ void TST_Configuration::testReadFromFile()
 
     file.close();
 
+
     CWF::Configuration configuration(path);
-    QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be 127.0.0.1");
+    QVERIFY2(configuration.getHost().toString() == "127.0.0.1", "Should be Any");
     QVERIFY2(configuration.getPort() == 8080, "Should be 8080");
     QVERIFY2(configuration.getMaxThread() == 200, "Should be 200");
     QVERIFY2(configuration.getCleanupInterval() == 60000, "Should return 60000");

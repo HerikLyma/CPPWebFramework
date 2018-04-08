@@ -18,7 +18,7 @@ The \hyperlink{class_request_dispatcher}{Request\+Dispatcher} class can be used 
 \mbox{\Hypertarget{class_request_dispatcher_a19ee59b1fe3c38be480c181cc3408c45}\label{class_request_dispatcher_a19ee59b1fe3c38be480c181cc3408c45}} 
 virtual \hyperlink{class_request_dispatcher_a19ee59b1fe3c38be480c181cc3408c45}{$\sim$\+Request\+Dispatcher} ()
 \begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
-void \hyperlink{class_request_dispatcher_ad3d0b282d2c9cd0d850931167a698797}{forward} (C\+W\+F\+::\+Http\+Servlet\+Request \&request, C\+W\+F\+::\+Http\+Servlet\+Response \&response)
+void \hyperlink{class_request_dispatcher_a6416fc9441670d1de84b3c8262d13220}{forward} (C\+W\+F\+::\+Request \&request, C\+W\+F\+::\+Response \&response)
 \begin{DoxyCompactList}\small\item\em This method will dispatch the xhtml file specificated in path to the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler}, the \hyperlink{class_c_s_t_l_compiler}{C\+S\+T\+L\+Compiler} will compile the xhtml file and returns the result. After this, the \hyperlink{class_request_dispatcher}{Request\+Dispatcher} will take the return and write it on the response. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -26,11 +26,11 @@ void \hyperlink{class_request_dispatcher_ad3d0b282d2c9cd0d850931167a698797}{forw
 The \hyperlink{class_request_dispatcher}{Request\+Dispatcher} class can be used to dispatch a requisition to a xhtml page. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_request_dispatcher_ad3d0b282d2c9cd0d850931167a698797}\label{class_request_dispatcher_ad3d0b282d2c9cd0d850931167a698797}} 
+\mbox{\Hypertarget{class_request_dispatcher_a6416fc9441670d1de84b3c8262d13220}\label{class_request_dispatcher_a6416fc9441670d1de84b3c8262d13220}} 
 \index{Request\+Dispatcher@{Request\+Dispatcher}!forward@{forward}}
 \index{forward@{forward}!Request\+Dispatcher@{Request\+Dispatcher}}
 \subsubsection{\texorpdfstring{forward()}{forward()}}
-{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE void Request\+Dispatcher\+::forward (\begin{DoxyParamCaption}\item[{C\+W\+F\+::\+Http\+Servlet\+Request \&}]{request,  }\item[{C\+W\+F\+::\+Http\+Servlet\+Response \&}]{response }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily C\+W\+F\+\_\+\+B\+E\+G\+I\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE void Request\+Dispatcher\+::forward (\begin{DoxyParamCaption}\item[{C\+W\+F\+::\+Request \&}]{request,  }\item[{C\+W\+F\+::\+Response \&}]{response }\end{DoxyParamCaption})}
 
 
 
@@ -38,9 +38,9 @@ This method will dispatch the xhtml file specificated in path to the \hyperlink{
 
 
 \begin{DoxyParams}{Parameters}
-{\em C\+W\+F\+::\+Http\+Servlet\+Request} & \&request \+: Used to process the response. \\
+{\em C\+W\+F\+::\+Request} & \&request \+: Used to process the response. \\
 \hline
-{\em C\+W\+F\+::\+Http\+Servlet\+Response} & \&response \+: Used to response. \\
+{\em C\+W\+F\+::\+Response} & \&response \+: Used to response. \\
 \hline
 \end{DoxyParams}
 

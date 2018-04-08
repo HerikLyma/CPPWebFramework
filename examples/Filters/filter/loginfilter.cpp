@@ -7,7 +7,7 @@
 
 #include "loginfilter.h"
 
-void LoginFilter::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, CWF::FilterChain &chain)
+void LoginFilter::doFilter(CWF::Request &request, CWF::Response &response, CWF::FilterChain &chain)
 {
     QString url = request.getRequestURL();
     if(url.endsWith(".css") || url.endsWith(".png") || url.endsWith(".jpg"))
@@ -18,7 +18,7 @@ void LoginFilter::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
     {
         if(request.getSession().getAttribute("user") == nullptr || request.getSession().isExpired())
         {
-            request.getRequestDispatcher("/pages/login.xhtml").forward(request, response);
+            request.getRequestDispatcher("/pages/login.view").forward(request, response);
         }
         else
         {

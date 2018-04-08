@@ -23,7 +23,7 @@ CSTLCompiler::CSTLCompiler(const QByteArray &str, const QString &path,
                                                  isStrFileName(isStrFileName)
 {
     if(isStrFileName)
-        isXHTML = str.toLower().endsWith(".xhtml");
+        isXHTML = str.toLower().endsWith(".view");
 }
 
 QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)

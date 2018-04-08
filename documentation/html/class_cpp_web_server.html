@@ -77,8 +77,7 @@ $(function() {
 Inheritance diagram for CppWebServer:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_cpp_web_server__inherit__graph.png" border="0" usemap="#_cpp_web_server_inherit__map" alt="Inheritance graph"/></div>
-<map name="_cpp_web_server_inherit__map" id="_cpp_web_server_inherit__map">
-</map>
+<!-- MAP 0 -->
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -88,11 +87,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9c5598c541de45a40d2ebad698e9a616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="memItemLeft" align="right" valign="top"><a id="a6b9d6874d16f6491c511fb4b8793a5f8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a6b9d6874d16f6491c511fb4b8793a5f8">~CppWebServer</a> ()</td></tr>
-<tr class="memdesc:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all servlets and sessions. <br /></td></tr>
+<tr class="memdesc:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all controllers and sessions. <br /></td></tr>
 <tr class="separator:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94dcf116776b97ec7d5a00cde87c6bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#ae94dcf116776b97ec7d5a00cde87c6bd">addUrlServlet</a> (const QString &amp;url, <a class="el" href="class_http_servlet.html">HttpServlet</a> *servlet)</td></tr>
-<tr class="memdesc:ae94dcf116776b97ec7d5a00cde87c6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a Servlet.  <a href="#ae94dcf116776b97ec7d5a00cde87c6bd">More...</a><br /></td></tr>
-<tr class="separator:ae94dcf116776b97ec7d5a00cde87c6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memTemplParams" colspan="2">template&lt;typename CONTROLLER &gt; </td></tr>
+<tr class="memitem:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#ab876ae8eb6d14b89b9f0a76739c1545d">addUrlController</a> (const QString &amp;url) noexcept</td></tr>
+<tr class="memdesc:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>.  <a href="#ab876ae8eb6d14b89b9f0a76739c1545d">More...</a><br /></td></tr>
+<tr class="separator:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -148,45 +148,37 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae94dcf116776b97ec7d5a00cde87c6bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae94dcf116776b97ec7d5a00cde87c6bd">&#9670;&nbsp;</a></span>addUrlServlet()</h2>
+<a id="ab876ae8eb6d14b89b9f0a76739c1545d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab876ae8eb6d14b89b9f0a76739c1545d">&#9670;&nbsp;</a></span>addUrlController()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename CONTROLLER &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppWebServer::addUrlServlet </td>
+          <td class="memname">void CppWebServer::addUrlController </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>url</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>url</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_http_servlet.html">HttpServlet</a> *&#160;</td>
-          <td class="paramname"><em>servlet</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Hitches a url to a Servlet. </p>
+<p>Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>QString &amp;url : Url name. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_http_servlet.html" title="The HttpServlet class is responsable to attend a request from a specific url. You will need to create...">HttpServlet</a></td><td>*servlet : Servlet that will answer requests made to url. If the filter is installed, all requests will be redirected to it and it will not be possible to map the servlets through the addUrlServlet function, instead everything should be handled inside the <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a></td><td>*controller : <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a> that will answer requests made to url. If the filter is installed, all requests will be redirected to it and it will not be possible to map the controllers through the addUrlController function, instead everything should be handled inside the <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -234,7 +226,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 31 2018 20:57:58 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

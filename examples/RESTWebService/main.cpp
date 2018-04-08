@@ -17,10 +17,10 @@
 
 CWF::SqlDatabaseStorage storage("QPSQL", "localhost", "postgres", "postgres", "1234", 5432);
 
-class CountriesServlet : public CWF::HttpServlet
+class CountriesController : public CWF::Controller
 {
 public:
-    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    void doGet(CWF::Request &request, CWF::Response &response) const override
     {
         CWF::SqlQuery qry(storage);
         qry.exec("select * from countries");
@@ -31,6 +31,6 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/RESTWebService/server");
-    server.addUrlServlet("/countries", new CountriesServlet);
+    server.addUrlController<CountriesController>("/countries");
     return server.start();
 }

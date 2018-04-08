@@ -26,9 +26,9 @@ CppWebServer::CppWebServer(const Configuration &configuration, Filter *filter) :
 CppWebServer::~CppWebServer()
 {
     while(!pool.waitForDone());
-    for(QMapThreadSafety<QString, HttpServlet*>::iterator it = urlServlet.begin(); it != urlServlet.end(); ++it)
+    for(QMapThreadSafety<QString, Controller*>::iterator it = urlController.begin(); it != urlController.end(); ++it)
     {
-        HttpServlet *o = it.value();
+        Controller *o = it.value();
         if(o != nullptr)
         {
             delete o;
@@ -36,9 +36,9 @@ CppWebServer::~CppWebServer()
         }
     }
 
-    for(QMapThreadSafety<QString, HttpSession*>::iterator it = sessions.begin(); it != sessions.end(); ++it)
+    for(QMapThreadSafety<QString, Session*>::iterator it = sessions.begin(); it != sessions.end(); ++it)
     {
-        HttpSession *o = it.value();
+        Session *o = it.value();
         if(o != nullptr)
         {
             delete o;
@@ -55,7 +55,7 @@ void CppWebServer::incomingConnection(qintptr socketfd)
 {
     while(block)
         this->thread()->msleep(sleepTime);   
-    pool.start(new HttpReadRequest(socketfd, urlServlet, sessions, configuration, sslConfiguration, filter));
+    pool.start(new HttpReadRequest(socketfd, urlController, sessions, configuration, sslConfiguration, filter));
 }
 
 void CppWebServer::doClean()
@@ -63,7 +63,7 @@ void CppWebServer::doClean()
     block = 1;
     while(!pool.waitForDone(sleepTime));
 
-    HttpSession *session = nullptr;
+    Session *session = nullptr;
     QStringList idSessionsToDelete;
     for(auto it = sessions.begin(); it != sessions.end(); ++it)
     {

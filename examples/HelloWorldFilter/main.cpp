@@ -11,7 +11,7 @@ class HelloWorldFilter : public CWF::Filter
 {
     const QByteArray url{"/hello"};
 public:
-    void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, CWF::FilterChain &chain) override
+    void doFilter(CWF::Request &request, CWF::Response &response, CWF::FilterChain &chain) override
     {
         if(request.getHttpParser().getUrl() == url)
             response.write("<html><body>Hello World!</body></html>");
@@ -22,6 +22,7 @@ public:
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloWorldFilter/server", new HelloWorldFilter);
+    HelloWorldFilter filter;
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloWorldFilter/server", &filter);
     return server.start();
 }

@@ -6,13 +6,13 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <servlets/bmiservlet.h>
+#include <controllers/bmicontroller.h>
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/WebServices/server/");
 
-    server.addUrlServlet("/bmi", new BmiServlet);
+    server.addUrlController<BmiController>("/bmi");
 
     return server.start();
 }

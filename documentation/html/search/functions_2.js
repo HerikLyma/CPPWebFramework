@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['clearattributes',['clearAttributes',['../class_http_servlet_request.html#a5bcadf4489d18ae04399c2340da4726a',1,'HttpServletRequest']]],
+  ['clearattributes',['clearAttributes',['../class_request.html#a4a1aa80b942621b9bb12f3eca47a415b',1,'Request']]],
   ['configuration',['Configuration',['../class_configuration.html#a60b4858740fb32114fa5f4e72577fa7a',1,'Configuration']]],
   ['contains',['contains',['../class_q_map_thread_safety.html#acaafd9933cb391e27a81c26df712786b',1,'QMapThreadSafety']]],
   ['cppwebapplication',['CppWebApplication',['../class_cpp_web_application.html#a76766ee1be8080db9db6df98e1b9e907',1,'CppWebApplication']]],

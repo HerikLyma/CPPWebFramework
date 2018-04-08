@@ -7,15 +7,16 @@
 
 #include <filter/loginfilter.h>
 #include <cwf/cppwebapplication.h>
-#include <servlets/indexservlet.h>
-#include <servlets/loginservlet.h>
+#include <controllers/indexcontroller.h>
+#include <controllers/logincontroller.h>
 
 int main(int argc, char *argv[])
 {        
-    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Filters/server/", new LoginFilter);
+    LoginFilter filter;
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Filters/server/", &filter);
 
-    server.addUrlServlet("/login", new LoginServlet);
-    server.addUrlServlet("/index", new IndexServlet);
+    server.addUrlController<LoginController>("/login");
+    server.addUrlController<IndexController>("/index");
 
     return server.start();
 }

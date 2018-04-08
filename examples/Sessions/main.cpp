@@ -5,17 +5,16 @@
  See file LICENSE for detail.
 */
 
-#include <QCoreApplication>
-#include <servlets/indexservlet.h>
-#include <servlets/loginservlet.h>
+#include <controllers/indexcontroller.h>
+#include <controllers/logincontroller.h>
 #include "cwf/cppwebapplication.h"
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Sessions/server");
 
-    server.addUrlServlet("/login", new LoginServlet);
-    server.addUrlServlet("/index", new IndexServlet);
+    server.addUrlController<LoginController>("/login");
+    server.addUrlController<IndexController>("/index");
 
     return server.start();
 }

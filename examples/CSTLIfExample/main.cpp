@@ -5,14 +5,14 @@
  See file LICENSE for detail.
 */
 
-#include <servlets/usersservlet.h>
+#include <controllers/usercontroller.h>
 #include <cwf/cppwebapplication.h>
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CSTLIfExample/server/");
 
-    server.addUrlServlet("/users", new UsersServlet);
+    server.addUrlController<UsersController>("/users");
 
     return server.start();
 }

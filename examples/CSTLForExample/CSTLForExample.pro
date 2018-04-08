@@ -13,12 +13,12 @@ CONFIG   -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \         
-    entities/user.cpp \
-    servlets/usersservlet.cpp
+    model/user.cpp \
+    controllers/userscontroller.cpp
 
 HEADERS += \        
-    entities/user.h \
-    servlets/usersservlet.h
+    model/user.h \
+    controllers/userscontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 

@@ -11,27 +11,27 @@
 
 CWF_BEGIN_NAMESPACE
 
-FilterChain::FilterChain(HttpServlet *servlet, const Configuration &configuration) :  servlet(servlet), configuration(configuration)
+FilterChain::FilterChain(Controller *controller, const Configuration &configuration) :  controller(controller), configuration(configuration)
 {
 }
 
-void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response)
+void FilterChain::doFilter(CWF::Request &request, CWF::Response &response)
 {
-    if(servlet != nullptr)
+    if(controller != nullptr)
     {
         const HttpParser &parser = request.getHttpParser();
         if(parser.getMethod()      == HTTP::METHOD::GET)
-            servlet->doGet(request, response);
+            controller->doGet(request, response);
         else if(parser.getMethod() == HTTP::METHOD::POST)
-            servlet->doPost(request, response);
+            controller->doPost(request, response);
         else if(parser.getMethod() == HTTP::METHOD::PUT)
-            servlet->doPut(request, response);
+            controller->doPut(request, response);
         else if(parser.getMethod() == HTTP::METHOD::DELETE)
-            servlet->doDelete(request, response);
+            controller->doDelete(request, response);
         else if(parser.getMethod() == HTTP::METHOD::OPTIONS)
-            servlet->doOptions(request, response);
+            controller->doOptions(request, response);
         else if(parser.getMethod() == HTTP::METHOD::TRACE)
-            servlet->doTrace(request, response);
+            controller->doTrace(request, response);
     }
     else
     {
@@ -154,14 +154,14 @@ void FilterChain::doFilter(CWF::HttpServletRequest &request, CWF::HttpServletRes
         }
         else
         {
-            response.setStatus(HttpServletResponse::SC_NOT_FOUND, STATUS::NOT_FOUND);
+            response.setStatus(Response::SC_NOT_FOUND, STATUS::NOT_FOUND);
             response.addHeader("Content-Type; charset=UTF-8", "text/html");
             request.getRequestDispatcher(STATUS::STATUS_404).forward(request, response);
         }
     }
 }
 
-void FilterChain::write(HttpServletResponse &response, const QString &path, const QString &url, const QByteArray &name, const QByteArray &value) const
+void FilterChain::write(Response &response, const QString &path, const QString &url, const QByteArray &name, const QByteArray &value) const
 {
     QFile file(path + url);
     if(file.open(QIODevice::ReadOnly))

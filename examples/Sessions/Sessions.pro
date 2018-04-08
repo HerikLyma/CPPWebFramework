@@ -14,14 +14,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \    
-    servlets/loginservlet.cpp \
-    servlets/indexservlet.cpp \
-    entities/user.cpp
+    model/user.cpp \
+    controllers/indexcontroller.cpp \
+    controllers/logincontroller.cpp
 
 HEADERS += \    
-    servlets/loginservlet.h \
-    servlets/indexservlet.h \
-    entities/user.h 
+    model/user.h \
+    controllers/indexcontroller.h \
+    controllers/logincontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -33,7 +33,9 @@ DISTFILES += \
     server/pages/index.xhtml \
     server/pages/login.xhtml \
     server/pages/index.xhtml \
-    server/pages/login.xhtml
+    server/pages/login.xhtml \
+    server/pages/index.view \
+    server/pages/login.view
 
 
 

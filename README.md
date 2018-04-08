@@ -9,10 +9,10 @@
 
 
 
-​The C++ Web Framework (CWF) is an Open Source web framework, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, created by Herik Lima and Marcelo Eler, 
+​The C++ Web Framework (CWF) is a MVC web framework, Open Source, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, created by Herik Lima and Marcelo Eler, 
 using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources, such as memory and processing, and have a low response time for requests. 
-It also adopts the MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages 
-to take care of data presentation (View) and use the servlets as a between the two layers (Controller). 
+With MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages 
+to take care of data presentation (View) and use the controllers as a between the two layers (Controller). 
 
 ​
 Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
@@ -33,10 +33,10 @@ The CWF has only one configuration file, called CPPWeb.ini and a policy of using
 ```cpp
 #include "cppwebapplication.h"
 
-class HelloWorldServlet : public CWF::HttpServlet
+class HelloWorldController : public CWF::Controller
 {
 public:
-    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    void doGet(CWF::Request &request, CWF::Response &response) const override
     {
         response.write("<html><body>Hello World!</body></html>");
     }
@@ -45,7 +45,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlServlet("/hello", new HelloWorldServlet);
+    server.addUrlController<HelloWorldController>("/hello");
     return server.start();
 }
 ```
@@ -66,7 +66,7 @@ public slots:
     }
 };
 
-//helloview.xhtml (View)
+//helloview.view (View)
 <html>
     <head>
         <title>Hello</title>
@@ -77,17 +77,17 @@ public slots:
 </html>
 
 //hellocontroller.h (Controller)
-#include <cwf/httpservlet.h>
+#include <cwf/controller.h>
 #include <model/hellomodel.h>
 
-class HelloController : public CWF::HttpServlet
+class HelloController : public CWF::Controller
 {
 public:
-    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    void doGet(CWF::Request &request, CWF::Response &response) const override
     {
         HelloModel model;
         request.addAttribute("model", &model);
-        request.getRequestDispatcher("/pages/helloview.xhtml").forward(request, response);
+        request.getRequestDispatcher("/pages/helloview.view").forward(request, response);
     }
 };
 
@@ -98,7 +98,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlServlet("/hello", new HelloController);
+    server.addUrlController<HelloController>("/hello");
     return server.start();
 }
 ```
@@ -118,10 +118,10 @@ int main(int argc, char *argv[])
 
 CWF::SqlDatabaseStorage storage("QPSQL", "localhost", "postgres", "postgres", "1234", 5432);
 
-class CountriesServlet : public CWF::HttpServlet
+class CountriesController : public CWF::Controller
 {
 public:
-    void doGet(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response) override
+    void doGet(CWF::Request &request, CWF::Response &response) const override
     {
         CWF::SqlQuery qry(storage);
         qry.exec("select * from countries");
@@ -132,7 +132,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlServlet("/countries", new CountriesServlet);
+    server.addController<CountriesController>("/countries");
     return server.start();
 }
 ```

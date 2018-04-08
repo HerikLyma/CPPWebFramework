@@ -13,5 +13,4 @@ public slots:
     }
 };
 
-
 #endif // HELLOMODEL_H

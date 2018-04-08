@@ -14,14 +14,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \         
-    entities/user.cpp \
-    servlets/userservlet.cpp \    
-    servlets/homeservlet.cpp
+    model/user.cpp \
+    controllers/homecontroller.cpp \
+    controllers/userscontroller.cpp
 
 HEADERS += \    
-    entities/user.h \
-    servlets/userservlet.h \    
-    servlets/homeservlet.h
+    model/user.h \
+    controllers/homecontroller.h \
+    controllers/userscontroller.h
 
 QMAKE_CXXFLAGS += -std=c++11
 
@@ -34,7 +34,9 @@ DISTFILES += \
     server/pages/home.xhtml \
     server/pages/footer.html \
     server/pages/header.html \
-    server/pages/css/menu.css
+    server/pages/css/menu.css \
+    server/pages/home.view \
+    server/pages/user.view
 
 unix {
     INCLUDEPATH += /usr/lib

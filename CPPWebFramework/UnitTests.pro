@@ -33,7 +33,7 @@ SOURCES += \
     cwf/configuration.cpp \
     cwf/cppwebapplication.cpp \
     cwf/cppwebserver.cpp \
-    cwf/cppwebservlet.cpp \
+    cwf/cppwebcontroller.cpp \
     cwf/cstlcompiler.cpp \
     cwf/cstlcompilerattributes.cpp \
     cwf/cstlcompilerfor.cpp \
@@ -44,10 +44,10 @@ SOURCES += \
     cwf/httpcookie.cpp \
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
-    cwf/httpservlet.cpp \
-    cwf/httpservletrequest.cpp \
-    cwf/httpservletresponse.cpp \
-    cwf/httpsession.cpp \
+    cwf/controller.cpp \
+    cwf/request.cpp \
+    cwf/response.cpp \
+    cwf/session.cpp \
     cwf/metaclassparser.cpp \
     cwf/properties.cpp \
     cwf/qlistobject.cpp \
@@ -55,7 +55,7 @@ SOURCES += \
     cwf/urlencoder.cpp \
     tests/tst_cppwebapplication.cpp \
     tests/tst_cppwebserver.cpp \
-    tests/tst_cppwebservlet.cpp \
+    tests/tst_cppwebcontroller.cpp \
     tests/tst_cstlcompiler.cpp \
     tests/tst_cstlcompilerattributes.cpp \
     tests/tst_cstlcompilerfor.cpp \
@@ -68,15 +68,15 @@ SOURCES += \
     tests/tst_httpcookie.cpp \
     tests/tst_httpparser.cpp \
     tests/tst_httpreadrequest.cpp \
-    tests/tst_httpservletresponse.cpp \
-    tests/tst_httpsession.cpp \
+    tests/tst_response.cpp \
+    tests/tst_session.cpp \
     tests/tst_metaclassparser.cpp \
     tests/tst_properties.cpp \
     tests/tst_qlistobject.cpp \
     tests/tst_qmapthreadsafety.cpp \
     tests/tst_requestdispatcher.cpp \
     tests/tst_urlencoder.cpp \
-    tests/tst_httpservletrequest.cpp
+    tests/tst_request.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
@@ -84,7 +84,7 @@ HEADERS += \
     cwf/configuration.h \
     cwf/cppwebapplication.h \
     cwf/cppwebserver.h \
-    cwf/cppwebservlet.h \
+    cwf/cppwebcontroller.h \
     cwf/cstlcompiler.h \
     cwf/cstlcompilerattributes.h \
     cwf/cstlcompilerfor.h \
@@ -97,10 +97,10 @@ HEADERS += \
     cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
-    cwf/httpservlet.h \
-    cwf/httpservletrequest.h \
-    cwf/httpservletresponse.h \
-    cwf/httpsession.h \
+    cwf/controller.h \
+    cwf/request.h \
+    cwf/response.h \
+    cwf/session.h \
     cwf/metaclassparser.h \
     cwf/properties.h \
     cwf/qlistobject.h \
@@ -109,7 +109,6 @@ HEADERS += \
     cwf/urlencoder.h \
     tests/tst_cppwebapplication.h \
     tests/tst_cppwebserver.h \
-    tests/tst_cppwebservlet.h \
     tests/tst_cstlcompiler.h \
     tests/tst_cstlcompilerattributes.h \
     tests/tst_cstlcompilerfor.h \
@@ -122,17 +121,18 @@ HEADERS += \
     tests/tst_httpcookie.h \
     tests/tst_httpparser.h \
     tests/tst_httpreadrequest.h \
-    tests/tst_httpservletresponse.h \
-    tests/tst_httpsession.h \
+    tests/tst_response.h \
+    tests/tst_session.h \
     tests/tst_metaclassparser.h \
     tests/tst_properties.h \
     tests/tst_qlistobject.h \
     tests/tst_qmapthreadsafety.h \
     tests/tst_requestdispatcher.h \
     tests/tst_urlencoder.h \
-    tests/tst_httpservletrequest.h \
+    tests/tst_request.h \
     cwf/constants.h \
-    cwf/cppwebframework_global.h
+    cwf/cppwebframework_global.h \
+    tests/tst_cppwebcontroller.h
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0

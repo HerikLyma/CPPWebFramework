@@ -14,12 +14,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \         
-    servlets/bmiservlet.cpp \
-    entities/user.cpp
+    model/user.cpp \
+    controllers/bmicontroller.cpp
 
 HEADERS += \ 
-    servlets/bmiservlet.h \
-    entities/user.h
+    model/user.h \
+    controllers/bmicontroller.h
 
 
 QMAKE_CXXFLAGS += -std=c++11

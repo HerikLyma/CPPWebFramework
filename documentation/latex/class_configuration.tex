@@ -14,35 +14,35 @@ All classes of C++ Web Framework are contained within the namespace C\+WF.
 \item 
 \hyperlink{class_configuration_a60b4858740fb32114fa5f4e72577fa7a}{Configuration} (const Q\+String \&server\+Files\+Path=\char`\"{}\char`\"{})
 \begin{DoxyCompactList}\small\item\em Will make reading the C\+P\+P\+Web.\+ini file and extract all of its properties. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_a3cd126ebe20117c04b4d38797e06551d}{get\+Time\+Out} () const
+int \hyperlink{class_configuration_ab39a76ac734b52df96c9c07f71764ae2}{get\+Time\+Out} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the time\+Out property that will be used by the server to expire threads that are not in use. Such threads will be restarted as needed. The default time\+Out is 30000 milliseconds (30 seconds). If time\+Out is negative, newly created threads will not expire, e.\+g., they will not exit until the thread pool is destroyed. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_af14b4f22fdcdfc32fbcac712a9868fd4}{get\+Session\+Expiration\+Time} () const
-\begin{DoxyCompactList}\small\item\em Returns the Session Expiration Time. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_a6a592b2194d4059f31aaf4223ee2e70e}{get\+Cleanup\+Interval} () const
+int \hyperlink{class_configuration_a56f953d35c709126b15603071b4132ab}{get\+Session\+Expiration\+Time} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_session}{Session} Expiration Time. \end{DoxyCompactList}\item 
+int \hyperlink{class_configuration_a7a761377328a3212a8387d033282b78e}{get\+Cleanup\+Interval} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the clean up interval Time. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_ab34eb25aa1e175c7ac8323300b298a8a}{get\+Port} () const
+int \hyperlink{class_configuration_a71c68a3810e4c408e1e76f66b4ab11ff}{get\+Port} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the port number. \end{DoxyCompactList}\item 
-Q\+Host\+Address \hyperlink{class_configuration_a37ca7476a8ab5a1e6c4b5a3e07670d9f}{get\+Host} () const
+Q\+Host\+Address \hyperlink{class_configuration_a47b1c954104ceea3c18fac417c1df323}{get\+Host} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the address. \end{DoxyCompactList}\item 
-int \hyperlink{class_configuration_ad0e836129d0a7e0111b1f2c092729939}{get\+Max\+Thread} () const
+int \hyperlink{class_configuration_a1adc08d559e9e7209dfd73c436c27288}{get\+Max\+Thread} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the max thread number. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a96082bdd3333d8ddf2017a95fe302225}{get\+Ssl\+Key\+File} () const
+Q\+String \hyperlink{class_configuration_aff6b12e5b77552fb0feb9f9598335049}{get\+Ssl\+Key\+File} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the ssl key file. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a10405dacfb3b61f60b290c0a5d79a8fb}{get\+Ssl\+Cert\+File} () const
+Q\+String \hyperlink{class_configuration_a7d58b7b13992eb1ce0789b9442ff663c}{get\+Ssl\+Cert\+File} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the ssl cert file. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a43acf80f787217903281b0a6d3e01e11}{get\+Path} () const
+Q\+String \hyperlink{class_configuration_ae8a0a39c01183a3ffa8d5e1511a2a883}{get\+Path} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the path to the server\textquotesingle{}s folder. \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a005e1d10c605e08d73ff274f2b19fc48}{get\+Log\+File\+Path} () const
+Q\+String \hyperlink{class_configuration_a26a2c6ace6f2fbe725998a3ee3656b1c}{get\+Log\+File\+Path} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the log file path. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_configuration_a8bc88e3cfe151837ee77e213e441953e}{get\+Max\+Upload\+File} () const
+qint64 \hyperlink{class_configuration_a6366d5802568dca07d4a633110f07863}{get\+Max\+Upload\+File} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns max upload file size supported by the server. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_configuration_a1b8f3f5dbc7fe7ff0b2ae20bf18e711b}{get\+Max\+Log\+File} () const
+qint64 \hyperlink{class_configuration_af0ff5f0aca0bd13e5676847db77bac58}{get\+Max\+Log\+File} () const noexcept
 \begin{DoxyCompactList}\small\item\em get\+Max\+Log\+File the max file log \end{DoxyCompactList}\item 
-Q\+String \hyperlink{class_configuration_a2d039a90ec3caaace268f9f101bb1d87}{get\+Index\+Page} () const
+Q\+String \hyperlink{class_configuration_ab67d7ba6abdfc27f5a66042377b01cd4}{get\+Index\+Page} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the index page. \end{DoxyCompactList}\item 
-bool \hyperlink{class_configuration_ad1598252b5ada32f60a243b360ee1675}{get\+Access\+Server\+Pages} () const
+bool \hyperlink{class_configuration_a28db1b4cea9169d74939107f45e18123}{get\+Access\+Server\+Pages} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the access server page. \end{DoxyCompactList}\item 
-bool \hyperlink{class_configuration_add18df7f4c8d8ee3f5ba9cf4b164345d}{is\+Valid} () const
+bool \hyperlink{class_configuration_aad998fe40caeeb4c412f00f0874c67c9}{is\+Valid} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns true if the \hyperlink{class_configuration}{Configuration} is ok. Otherwise returns false. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -84,11 +84,11 @@ Will make reading the C\+P\+P\+Web.\+ini file and extract all of its properties.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_configuration_ad1598252b5ada32f60a243b360ee1675}\label{class_configuration_ad1598252b5ada32f60a243b360ee1675}} 
+\mbox{\Hypertarget{class_configuration_a28db1b4cea9169d74939107f45e18123}\label{class_configuration_a28db1b4cea9169d74939107f45e18123}} 
 \index{Configuration@{Configuration}!get\+Access\+Server\+Pages@{get\+Access\+Server\+Pages}}
 \index{get\+Access\+Server\+Pages@{get\+Access\+Server\+Pages}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Access\+Server\+Pages()}{getAccessServerPages()}}
-{\footnotesize\ttfamily bool Configuration\+::get\+Access\+Server\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Configuration\+::get\+Access\+Server\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -97,11 +97,11 @@ Returns the access server page.
 \begin{DoxyReturn}{Returns}
 bool \+: Access server pages. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_configuration_a6a592b2194d4059f31aaf4223ee2e70e}\label{class_configuration_a6a592b2194d4059f31aaf4223ee2e70e}} 
+\mbox{\Hypertarget{class_configuration_a7a761377328a3212a8387d033282b78e}\label{class_configuration_a7a761377328a3212a8387d033282b78e}} 
 \index{Configuration@{Configuration}!get\+Cleanup\+Interval@{get\+Cleanup\+Interval}}
 \index{get\+Cleanup\+Interval@{get\+Cleanup\+Interval}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Cleanup\+Interval()}{getCleanupInterval()}}
-{\footnotesize\ttfamily int Configuration\+::get\+Cleanup\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Configuration\+::get\+Cleanup\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -112,11 +112,11 @@ Returns the clean up interval Time.
 {\em int} & \+: Time in milliseconds. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a37ca7476a8ab5a1e6c4b5a3e07670d9f}\label{class_configuration_a37ca7476a8ab5a1e6c4b5a3e07670d9f}} 
+\mbox{\Hypertarget{class_configuration_a47b1c954104ceea3c18fac417c1df323}\label{class_configuration_a47b1c954104ceea3c18fac417c1df323}} 
 \index{Configuration@{Configuration}!get\+Host@{get\+Host}}
 \index{get\+Host@{get\+Host}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Host()}{getHost()}}
-{\footnotesize\ttfamily Q\+Host\+Address Configuration\+::get\+Host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Host\+Address Configuration\+::get\+Host (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -127,11 +127,11 @@ Returns the address.
 {\em Q\+Host\+Address} & \+: host. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a2d039a90ec3caaace268f9f101bb1d87}\label{class_configuration_a2d039a90ec3caaace268f9f101bb1d87}} 
+\mbox{\Hypertarget{class_configuration_ab67d7ba6abdfc27f5a66042377b01cd4}\label{class_configuration_ab67d7ba6abdfc27f5a66042377b01cd4}} 
 \index{Configuration@{Configuration}!get\+Index\+Page@{get\+Index\+Page}}
 \index{get\+Index\+Page@{get\+Index\+Page}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Index\+Page()}{getIndexPage()}}
-{\footnotesize\ttfamily Q\+String Configuration\+::get\+Index\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+String Configuration\+::get\+Index\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -140,11 +140,11 @@ Returns the index page.
 \begin{DoxyReturn}{Returns}
 Q\+String \+: index page name. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_configuration_a005e1d10c605e08d73ff274f2b19fc48}\label{class_configuration_a005e1d10c605e08d73ff274f2b19fc48}} 
+\mbox{\Hypertarget{class_configuration_a26a2c6ace6f2fbe725998a3ee3656b1c}\label{class_configuration_a26a2c6ace6f2fbe725998a3ee3656b1c}} 
 \index{Configuration@{Configuration}!get\+Log\+File\+Path@{get\+Log\+File\+Path}}
 \index{get\+Log\+File\+Path@{get\+Log\+File\+Path}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Log\+File\+Path()}{getLogFilePath()}}
-{\footnotesize\ttfamily Q\+String Configuration\+::get\+Log\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+String Configuration\+::get\+Log\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -155,11 +155,11 @@ Returns the log file path.
 {\em Q\+String} & \+: log file. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a1b8f3f5dbc7fe7ff0b2ae20bf18e711b}\label{class_configuration_a1b8f3f5dbc7fe7ff0b2ae20bf18e711b}} 
+\mbox{\Hypertarget{class_configuration_af0ff5f0aca0bd13e5676847db77bac58}\label{class_configuration_af0ff5f0aca0bd13e5676847db77bac58}} 
 \index{Configuration@{Configuration}!get\+Max\+Log\+File@{get\+Max\+Log\+File}}
 \index{get\+Max\+Log\+File@{get\+Max\+Log\+File}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Max\+Log\+File()}{getMaxLogFile()}}
-{\footnotesize\ttfamily qint64 Configuration\+::get\+Max\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily qint64 Configuration\+::get\+Max\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -168,11 +168,11 @@ get\+Max\+Log\+File the max file log
 \begin{DoxyReturn}{Returns}
 qint64 \+: Max file log in bytes. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_configuration_ad0e836129d0a7e0111b1f2c092729939}\label{class_configuration_ad0e836129d0a7e0111b1f2c092729939}} 
+\mbox{\Hypertarget{class_configuration_a1adc08d559e9e7209dfd73c436c27288}\label{class_configuration_a1adc08d559e9e7209dfd73c436c27288}} 
 \index{Configuration@{Configuration}!get\+Max\+Thread@{get\+Max\+Thread}}
 \index{get\+Max\+Thread@{get\+Max\+Thread}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Max\+Thread()}{getMaxThread()}}
-{\footnotesize\ttfamily int Configuration\+::get\+Max\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Configuration\+::get\+Max\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -183,11 +183,11 @@ Returns the max thread number.
 {\em int} & \+: max. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a8bc88e3cfe151837ee77e213e441953e}\label{class_configuration_a8bc88e3cfe151837ee77e213e441953e}} 
+\mbox{\Hypertarget{class_configuration_a6366d5802568dca07d4a633110f07863}\label{class_configuration_a6366d5802568dca07d4a633110f07863}} 
 \index{Configuration@{Configuration}!get\+Max\+Upload\+File@{get\+Max\+Upload\+File}}
 \index{get\+Max\+Upload\+File@{get\+Max\+Upload\+File}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Max\+Upload\+File()}{getMaxUploadFile()}}
-{\footnotesize\ttfamily qint64 Configuration\+::get\+Max\+Upload\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily qint64 Configuration\+::get\+Max\+Upload\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -198,11 +198,11 @@ Returns max upload file size supported by the server.
 {\em qint64} & max file size. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a43acf80f787217903281b0a6d3e01e11}\label{class_configuration_a43acf80f787217903281b0a6d3e01e11}} 
+\mbox{\Hypertarget{class_configuration_ae8a0a39c01183a3ffa8d5e1511a2a883}\label{class_configuration_ae8a0a39c01183a3ffa8d5e1511a2a883}} 
 \index{Configuration@{Configuration}!get\+Path@{get\+Path}}
 \index{get\+Path@{get\+Path}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
-{\footnotesize\ttfamily Q\+String Configuration\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+String Configuration\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -213,11 +213,11 @@ Returns the path to the server\textquotesingle{}s folder.
 {\em Q\+String} & \+: path. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_ab34eb25aa1e175c7ac8323300b298a8a}\label{class_configuration_ab34eb25aa1e175c7ac8323300b298a8a}} 
+\mbox{\Hypertarget{class_configuration_a71c68a3810e4c408e1e76f66b4ab11ff}\label{class_configuration_a71c68a3810e4c408e1e76f66b4ab11ff}} 
 \index{Configuration@{Configuration}!get\+Port@{get\+Port}}
 \index{get\+Port@{get\+Port}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
-{\footnotesize\ttfamily int Configuration\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Configuration\+::get\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -228,26 +228,26 @@ Returns the port number.
 {\em int} & \+: port. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_af14b4f22fdcdfc32fbcac712a9868fd4}\label{class_configuration_af14b4f22fdcdfc32fbcac712a9868fd4}} 
+\mbox{\Hypertarget{class_configuration_a56f953d35c709126b15603071b4132ab}\label{class_configuration_a56f953d35c709126b15603071b4132ab}} 
 \index{Configuration@{Configuration}!get\+Session\+Expiration\+Time@{get\+Session\+Expiration\+Time}}
 \index{get\+Session\+Expiration\+Time@{get\+Session\+Expiration\+Time}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Session\+Expiration\+Time()}{getSessionExpirationTime()}}
-{\footnotesize\ttfamily int Configuration\+::get\+Session\+Expiration\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Configuration\+::get\+Session\+Expiration\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Returns the Session Expiration Time. 
+Returns the \hyperlink{class_session}{Session} Expiration Time. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em int} & \+: Time in milliseconds. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a10405dacfb3b61f60b290c0a5d79a8fb}\label{class_configuration_a10405dacfb3b61f60b290c0a5d79a8fb}} 
+\mbox{\Hypertarget{class_configuration_a7d58b7b13992eb1ce0789b9442ff663c}\label{class_configuration_a7d58b7b13992eb1ce0789b9442ff663c}} 
 \index{Configuration@{Configuration}!get\+Ssl\+Cert\+File@{get\+Ssl\+Cert\+File}}
 \index{get\+Ssl\+Cert\+File@{get\+Ssl\+Cert\+File}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Ssl\+Cert\+File()}{getSslCertFile()}}
-{\footnotesize\ttfamily Q\+String Configuration\+::get\+Ssl\+Cert\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+String Configuration\+::get\+Ssl\+Cert\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -258,11 +258,11 @@ Returns the ssl cert file.
 {\em Q\+String} & \+: ssl\+Cert\+File name. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a96082bdd3333d8ddf2017a95fe302225}\label{class_configuration_a96082bdd3333d8ddf2017a95fe302225}} 
+\mbox{\Hypertarget{class_configuration_aff6b12e5b77552fb0feb9f9598335049}\label{class_configuration_aff6b12e5b77552fb0feb9f9598335049}} 
 \index{Configuration@{Configuration}!get\+Ssl\+Key\+File@{get\+Ssl\+Key\+File}}
 \index{get\+Ssl\+Key\+File@{get\+Ssl\+Key\+File}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Ssl\+Key\+File()}{getSslKeyFile()}}
-{\footnotesize\ttfamily Q\+String Configuration\+::get\+Ssl\+Key\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+String Configuration\+::get\+Ssl\+Key\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -273,11 +273,11 @@ Returns the ssl key file.
 {\em Q\+String} & \+: ssl\+Key\+File name. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_a3cd126ebe20117c04b4d38797e06551d}\label{class_configuration_a3cd126ebe20117c04b4d38797e06551d}} 
+\mbox{\Hypertarget{class_configuration_ab39a76ac734b52df96c9c07f71764ae2}\label{class_configuration_ab39a76ac734b52df96c9c07f71764ae2}} 
 \index{Configuration@{Configuration}!get\+Time\+Out@{get\+Time\+Out}}
 \index{get\+Time\+Out@{get\+Time\+Out}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{get\+Time\+Out()}{getTimeOut()}}
-{\footnotesize\ttfamily int Configuration\+::get\+Time\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int Configuration\+::get\+Time\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -288,11 +288,11 @@ Returns the time\+Out property that will be used by the server to expire threads
 {\em int} & \+: Time in milliseconds. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_configuration_add18df7f4c8d8ee3f5ba9cf4b164345d}\label{class_configuration_add18df7f4c8d8ee3f5ba9cf4b164345d}} 
+\mbox{\Hypertarget{class_configuration_aad998fe40caeeb4c412f00f0874c67c9}\label{class_configuration_aad998fe40caeeb4c412f00f0874c67c9}} 
 \index{Configuration@{Configuration}!is\+Valid@{is\+Valid}}
 \index{is\+Valid@{is\+Valid}!Configuration@{Configuration}}
 \subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
-{\footnotesize\ttfamily bool Configuration\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Configuration\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

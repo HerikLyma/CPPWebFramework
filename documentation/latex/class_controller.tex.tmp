@@ -1,0 +1,151 @@
+\hypertarget{class_controller}{}\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+The \hyperlink{class_controller}{Controller} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_controller}{Controller} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new controller that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Controller.  
+
+
+
+
+{\ttfamily \#include $<$controller.\+h$>$}
+
+
+
+Inheritance diagram for Controller\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_controller_a867c1b386aa6e63d986a01ddaeccea5a}\label{class_controller_a867c1b386aa6e63d986a01ddaeccea5a}} 
+virtual \hyperlink{class_controller_a867c1b386aa6e63d986a01ddaeccea5a}{$\sim$\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_ab98176c753629fff6c8d36bbf28c16b9}{do\+Delete} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the delete request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_aa5d2ca4308e70c23d1d2b31f012b3f00}{do\+Get} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the get request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_a1cec4b14d083984b9f7acbdc20a8e474}{do\+Options} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the options request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_a8de02c2d94545b67c6b2beb8ed28e8a2}{do\+Post} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the post request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_a444a462c40ee74f016959d1731264135}{do\+Put} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the put request method. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_controller_af33788f3aa0b3ee7300ab2f1b2f5f28d}{do\+Trace} (\hyperlink{class_request}{Request} \&req, \hyperlink{class_response}{Response} \&resp) const
+\begin{DoxyCompactList}\small\item\em This is an virtual method that can be overloaded to attend the trace request method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_controller}{Controller} class is responsable to attend a request from a specific url. You will need to create a derived class from \hyperlink{class_controller}{Controller} and then, reconstruct the desired method to response a request, after this, you will need mapping the url to the new controller that you created, you need to do it into the Configure\+Cpp\+Web\+Server using the method add\+Url\+Controller. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_ab98176c753629fff6c8d36bbf28c16b9}\label{class_controller_ab98176c753629fff6c8d36bbf28c16b9}} 
+\index{Controller@{Controller}!do\+Delete@{do\+Delete}}
+\index{do\+Delete@{do\+Delete}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Delete()}{doDelete()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Delete (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the delete request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_aa5d2ca4308e70c23d1d2b31f012b3f00}\label{class_controller_aa5d2ca4308e70c23d1d2b31f012b3f00}} 
+\index{Controller@{Controller}!do\+Get@{do\+Get}}
+\index{do\+Get@{do\+Get}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Get()}{doGet()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Get (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the get request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_cpp_web_controller_a2555abf02a8e377c4f209675831d1a04}{Cpp\+Web\+Controller}.
+
+\mbox{\Hypertarget{class_controller_a1cec4b14d083984b9f7acbdc20a8e474}\label{class_controller_a1cec4b14d083984b9f7acbdc20a8e474}} 
+\index{Controller@{Controller}!do\+Options@{do\+Options}}
+\index{do\+Options@{do\+Options}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Options()}{doOptions()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Options (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the options request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_a8de02c2d94545b67c6b2beb8ed28e8a2}\label{class_controller_a8de02c2d94545b67c6b2beb8ed28e8a2}} 
+\index{Controller@{Controller}!do\+Post@{do\+Post}}
+\index{do\+Post@{do\+Post}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Post()}{doPost()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Post (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the post request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_a444a462c40ee74f016959d1731264135}\label{class_controller_a444a462c40ee74f016959d1731264135}} 
+\index{Controller@{Controller}!do\+Put@{do\+Put}}
+\index{do\+Put@{do\+Put}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Put()}{doPut()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Put (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the put request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_af33788f3aa0b3ee7300ab2f1b2f5f28d}\label{class_controller_af33788f3aa0b3ee7300ab2f1b2f5f28d}} 
+\index{Controller@{Controller}!do\+Trace@{do\+Trace}}
+\index{do\+Trace@{do\+Trace}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{do\+Trace()}{doTrace()}}
+{\footnotesize\ttfamily virtual void Controller\+::do\+Trace (\begin{DoxyParamCaption}\item[{\hyperlink{class_request}{Request} \&}]{req,  }\item[{\hyperlink{class_response}{Response} \&}]{resp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+This is an virtual method that can be overloaded to attend the trace request method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: This is a reference to the \hyperlink{class_request}{Request}. \\
+\hline
+{\em resp} & \+: This is a reference to the \hyperlink{class_response}{Response}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/controller.\+h\item 
+/home/herik/\+C\+P\+P\+Web\+Framework/\+C\+P\+P\+Web\+Framework/cwf/controller.\+cpp\end{DoxyCompactItemize}

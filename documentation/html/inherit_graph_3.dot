@@ -3,5 +3,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="CSTLCompiler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_t_l_compiler.html",tooltip="This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). "];
+  Node5 [label="QTcpServer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node5 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="CppWebServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cpp_web_server.html",tooltip="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. "];
 }

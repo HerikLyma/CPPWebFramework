@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="HttpServletResponse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_http_servlet_response.html",tooltip="The HttpServletResponse class is responsable to response a Http request. "];
+  Node0 [label="MetaClassParser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_meta_class_parser.html",tooltip="This class extracts all information from a QObject. "];
 }

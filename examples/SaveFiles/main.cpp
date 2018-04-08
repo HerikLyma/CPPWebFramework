@@ -6,13 +6,13 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <servlets/savefilesservlet.h>
+#include <controllers/savefilescontroller.h>
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/SaveFiles/server/");
 
-    server.addUrlServlet("/savefiles", new SaveFilesServlet);
+    server.addUrlController<SaveFilesController>("/savefiles");
 
     return server.start();
 }

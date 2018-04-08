@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['clearattributes',['clearAttributes',['../class_http_servlet_request.html#a5bcadf4489d18ae04399c2340da4726a',1,'HttpServletRequest']]],
+  ['clearattributes',['clearAttributes',['../class_request.html#a4a1aa80b942621b9bb12f3eca47a415b',1,'Request']]],
   ['configuration',['Configuration',['../class_configuration.html',1,'Configuration'],['../class_configuration.html#a60b4858740fb32114fa5f4e72577fa7a',1,'Configuration::Configuration()']]],
   ['contains',['contains',['../class_q_map_thread_safety.html#acaafd9933cb391e27a81c26df712786b',1,'QMapThreadSafety']]],
+  ['controller',['Controller',['../class_controller.html',1,'']]],
   ['cppwebapplication',['CppWebApplication',['../class_cpp_web_application.html',1,'CppWebApplication'],['../class_cpp_web_application.html#a76766ee1be8080db9db6df98e1b9e907',1,'CppWebApplication::CppWebApplication()']]],
+  ['cppwebcontroller',['CppWebController',['../class_cpp_web_controller.html',1,'']]],
   ['cppwebserver',['CppWebServer',['../class_cpp_web_server.html',1,'CppWebServer'],['../class_cpp_web_server.html#a9c5598c541de45a40d2ebad698e9a616',1,'CppWebServer::CppWebServer()']]],
-  ['cppwebservlet',['CppWebServlet',['../class_cpp_web_servlet.html',1,'']]],
   ['cstlcompiler',['CSTLCompiler',['../class_c_s_t_l_compiler.html',1,'CSTLCompiler'],['../class_c_s_t_l_compiler.html#a2ff8b8d08a280dea2f9b7474a9759e8f',1,'CSTLCompiler::CSTLCompiler()']]],
   ['cstlcompilerattributes',['CSTLCompilerAttributes',['../class_c_s_t_l_compiler_attributes.html',1,'']]],
   ['cstlcompilerfor',['CSTLCompilerFor',['../class_c_s_t_l_compiler_for.html',1,'CSTLCompilerFor'],['../class_c_s_t_l_compiler_for.html#aca7bad2177039289422199d9ea224ed9',1,'CSTLCompilerFor::CSTLCompilerFor()']]],

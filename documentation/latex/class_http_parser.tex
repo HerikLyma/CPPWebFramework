@@ -14,39 +14,39 @@ The class parses a H\+T\+TP message.
 \item 
 \hyperlink{class_http_parser_a91e6c1876337b53694347476f277d1a2}{Http\+Parser} (Q\+Byte\+Array \&http\+Message)
 \begin{DoxyCompactList}\small\item\em This constructor receives a H\+T\+TP message and parses it. \end{DoxyCompactList}\item 
-qint64 \hyperlink{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}{get\+Content\+Lenght} () const
+qint64 \hyperlink{class_http_parser_a3feddc6667494af792866935f4ccf794}{get\+Content\+Lenght} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the content lenght. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a3adf500c4b0cf85d8249e071a7094f20}{get\+Content\+Type} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_ae17e4400169606e640fda4be21a5421b}{get\+Content\+Type} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the content type. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a760eb9ec81fa1983b8eb5b088b0e6f41}{get\+Http\+Version} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_a58b5506be135040e9c1c1aa84be3090a}{get\+Http\+Version} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the H\+T\+TP version. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a283aa2b313491a592babdb5528086f71}{get\+Method} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_a307aeb76a3a03ab84f3ae090038760ba}{get\+Method} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns H\+T\+TP method. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_abeee6e30f6494121010bc5498b162870}{get\+Body} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_a730d8fa411954d674f602aa385869751}{get\+Body} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns H\+T\+TP body message. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a60292a9b49d1e86becec848c3d0541bc}{get\+Session\+Id} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_ad2c849df15ec861fca8911c0519747ae}{get\+Session\+Id} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns session id. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a7a1db20efbebf30e1f16004a35ab665f}{get\+Url} () const
+Q\+Byte\+Array \hyperlink{class_http_parser_a4fe7e2b589ec377ae0632d12c0db2109}{get\+Url} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the url. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_a69fb981ff2f60058277c51b674006663}{get\+Parameter} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array \hyperlink{class_http_parser_aec19aa9b28449ed359dd0e516f24f3c4}{get\+Parameter} (const Q\+Byte\+Array \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns a specific parameter given a name. If the parameter name does not exists, the function returns default\+Value. If no default\+Value is specified, the function returns a default-\/constructed value. If there are multiple parameters with a name, the value of the most recently inserted one is returned. \end{DoxyCompactList}\item 
-Q\+Byte\+Array\+List \hyperlink{class_http_parser_ab0bb302010df956a954fada3061f59f0}{get\+Parameters} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array\+List \hyperlink{class_http_parser_aa0df65d83e9bdb39a6a667d55de1b742}{get\+Parameters} (const Q\+Byte\+Array \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all parameters with a specific name. \end{DoxyCompactList}\item 
-Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_ae01f9d2a2d1788c0c74fc0a9fa447178}{get\+Parameters} () const
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_a98e85a16d456f61fa032c8d3d9a8c1ba}{get\+Parameters} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all parameters. \end{DoxyCompactList}\item 
-Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_a502683ab11ae1eacec0bcdd0398c6bdd}{get\+Uploaded\+Files} () const
+Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_abbb9bc6fdfbc6f40629d2f8033c9f17f}{get\+Uploaded\+Files} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all uploaded files. \end{DoxyCompactList}\item 
-Q\+Vector$<$ \hyperlink{class_http_cookie}{Http\+Cookie} $>$ \hyperlink{class_http_parser_a0530139afe4e8cbd216b3bd2112ebf49}{get\+Cookies} () const
+Q\+Vector$<$ \hyperlink{class_http_cookie}{Http\+Cookie} $>$ \hyperlink{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}{get\+Cookies} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all cookies. \end{DoxyCompactList}\item 
-Q\+Byte\+Array\+List \hyperlink{class_http_parser_ad1db732c8824dd7e91653fd956fc3bf5}{get\+Header\+Fields} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array\+List \hyperlink{class_http_parser_ab29e0fad07ccfa2ad565d1cc32da76cc}{get\+Header\+Fields} (const Q\+Byte\+Array \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all header fields given a specific name. \end{DoxyCompactList}\item 
-Q\+Byte\+Array \hyperlink{class_http_parser_aa754b731300bd5cf6dc82fa038089aaa}{get\+Header\+Field} (const Q\+Byte\+Array \&name) const
+Q\+Byte\+Array \hyperlink{class_http_parser_adabda41fe6457ab14b573a32085c2eea}{get\+Header\+Field} (const Q\+Byte\+Array \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns a specific header field given a name. If the header field name does not exists, the function returns default\+Value. If no default\+Value is specified, the function returns a default-\/constructed value. If there are multiple header field with a name, the value of the most recently inserted one is returned. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_a75e0872ac2323b7bd583ea5547503a50}{is\+Valid} () const
+bool \hyperlink{class_http_parser_a6d5020425a4dff7b78acbf37a20cccba}{is\+Valid} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns true if H\+T\+TP is valid, else it returns false. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_acbb3148607d2a3c80ba4e74573165f1d}{is\+Multi\+Part} () const
+bool \hyperlink{class_http_parser_a83946a3296e540751e5715d974dc12b1}{is\+Multi\+Part} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the multi part. \end{DoxyCompactList}\item 
-bool \hyperlink{class_http_parser_aba65276efdd7ccfd93ff03f29f80889f}{get\+Read\+File} () const
+bool \hyperlink{class_http_parser_a3be6ae977af47186d80b67f26b4cbd69}{get\+Read\+File} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns true if all message was read. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -78,11 +78,11 @@ This constructor receives a H\+T\+TP message and parses it.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_http_parser_abeee6e30f6494121010bc5498b162870}\label{class_http_parser_abeee6e30f6494121010bc5498b162870}} 
+\mbox{\Hypertarget{class_http_parser_a730d8fa411954d674f602aa385869751}\label{class_http_parser_a730d8fa411954d674f602aa385869751}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Body@{get\+Body}}
 \index{get\+Body@{get\+Body}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -91,11 +91,11 @@ Returns H\+T\+TP body message.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: H\+T\+TP body message. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}\label{class_http_parser_ad42f6a0ff6ab987ccf526ac995af196f}} 
+\mbox{\Hypertarget{class_http_parser_a3feddc6667494af792866935f4ccf794}\label{class_http_parser_a3feddc6667494af792866935f4ccf794}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Content\+Lenght@{get\+Content\+Lenght}}
 \index{get\+Content\+Lenght@{get\+Content\+Lenght}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Content\+Lenght()}{getContentLenght()}}
-{\footnotesize\ttfamily qint64 Http\+Parser\+::get\+Content\+Lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily qint64 Http\+Parser\+::get\+Content\+Lenght (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -104,11 +104,11 @@ Returns the content lenght.
 \begin{DoxyReturn}{Returns}
 qint64 \+: Content length. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a3adf500c4b0cf85d8249e071a7094f20}\label{class_http_parser_a3adf500c4b0cf85d8249e071a7094f20}} 
+\mbox{\Hypertarget{class_http_parser_ae17e4400169606e640fda4be21a5421b}\label{class_http_parser_ae17e4400169606e640fda4be21a5421b}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Content\+Type@{get\+Content\+Type}}
 \index{get\+Content\+Type@{get\+Content\+Type}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Content\+Type()}{getContentType()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Content\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -117,11 +117,11 @@ Returns the content type.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: Content type. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a0530139afe4e8cbd216b3bd2112ebf49}\label{class_http_parser_a0530139afe4e8cbd216b3bd2112ebf49}} 
+\mbox{\Hypertarget{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}\label{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Cookies@{get\+Cookies}}
 \index{get\+Cookies@{get\+Cookies}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Cookies()}{getCookies()}}
-{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_http_cookie}{Http\+Cookie}$>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_http_cookie}{Http\+Cookie}$>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -130,11 +130,11 @@ Returns all cookies.
 \begin{DoxyReturn}{Returns}
 Q\+Vector$<$\+Http\+Cookie$>$ \+: Cookies. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_aa754b731300bd5cf6dc82fa038089aaa}\label{class_http_parser_aa754b731300bd5cf6dc82fa038089aaa}} 
+\mbox{\Hypertarget{class_http_parser_adabda41fe6457ab14b573a32085c2eea}\label{class_http_parser_adabda41fe6457ab14b573a32085c2eea}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Header\+Field@{get\+Header\+Field}}
 \index{get\+Header\+Field@{get\+Header\+Field}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Header\+Field()}{getHeaderField()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Header\+Field (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Header\+Field (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -148,11 +148,11 @@ Returns a specific header field given a name. If the header field name does not 
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: Parameter value. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_ad1db732c8824dd7e91653fd956fc3bf5}\label{class_http_parser_ad1db732c8824dd7e91653fd956fc3bf5}} 
+\mbox{\Hypertarget{class_http_parser_ab29e0fad07ccfa2ad565d1cc32da76cc}\label{class_http_parser_ab29e0fad07ccfa2ad565d1cc32da76cc}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Header\+Fields@{get\+Header\+Fields}}
 \index{get\+Header\+Fields@{get\+Header\+Fields}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Header\+Fields()}{getHeaderFields()}}
-{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Parser\+::get\+Header\+Fields (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Parser\+::get\+Header\+Fields (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -166,11 +166,11 @@ Returns all header fields given a specific name.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array\+List \+: Header fields. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a760eb9ec81fa1983b8eb5b088b0e6f41}\label{class_http_parser_a760eb9ec81fa1983b8eb5b088b0e6f41}} 
+\mbox{\Hypertarget{class_http_parser_a58b5506be135040e9c1c1aa84be3090a}\label{class_http_parser_a58b5506be135040e9c1c1aa84be3090a}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Http\+Version@{get\+Http\+Version}}
 \index{get\+Http\+Version@{get\+Http\+Version}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Http\+Version()}{getHttpVersion()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Http\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Http\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -179,11 +179,11 @@ Returns the H\+T\+TP version.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: H\+T\+TP version. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a283aa2b313491a592babdb5528086f71}\label{class_http_parser_a283aa2b313491a592babdb5528086f71}} 
+\mbox{\Hypertarget{class_http_parser_a307aeb76a3a03ab84f3ae090038760ba}\label{class_http_parser_a307aeb76a3a03ab84f3ae090038760ba}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Method@{get\+Method}}
 \index{get\+Method@{get\+Method}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Method()}{getMethod()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Method (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -192,11 +192,11 @@ Returns H\+T\+TP method.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: H\+T\+TP method. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a69fb981ff2f60058277c51b674006663}\label{class_http_parser_a69fb981ff2f60058277c51b674006663}} 
+\mbox{\Hypertarget{class_http_parser_aec19aa9b28449ed359dd0e516f24f3c4}\label{class_http_parser_aec19aa9b28449ed359dd0e516f24f3c4}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Parameter@{get\+Parameter}}
 \index{get\+Parameter@{get\+Parameter}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Parameter()}{getParameter()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Parameter (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Parameter (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -210,11 +210,11 @@ Returns a specific parameter given a name. If the parameter name does not exists
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: Parameter value. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_ab0bb302010df956a954fada3061f59f0}\label{class_http_parser_ab0bb302010df956a954fada3061f59f0}} 
+\mbox{\Hypertarget{class_http_parser_aa0df65d83e9bdb39a6a667d55de1b742}\label{class_http_parser_aa0df65d83e9bdb39a6a667d55de1b742}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Parameters@{get\+Parameters}}
 \index{get\+Parameters@{get\+Parameters}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Parameters()}{getParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Parser\+::get\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array\+List Http\+Parser\+::get\+Parameters (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -228,11 +228,11 @@ Returns all parameters with a specific name.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array\+List \+: Parameters list. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_ae01f9d2a2d1788c0c74fc0a9fa447178}\label{class_http_parser_ae01f9d2a2d1788c0c74fc0a9fa447178}} 
+\mbox{\Hypertarget{class_http_parser_a98e85a16d456f61fa032c8d3d9a8c1ba}\label{class_http_parser_a98e85a16d456f61fa032c8d3d9a8c1ba}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Parameters@{get\+Parameters}}
 \index{get\+Parameters@{get\+Parameters}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Parameters()}{getParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Http\+Parser\+::get\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Http\+Parser\+::get\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -241,11 +241,11 @@ Returns all parameters.
 \begin{DoxyReturn}{Returns}
 Q\+Map$<$\+Q\+Byte\+Array, Q\+Byte\+Array$>$ \+: Parameters name and value. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_aba65276efdd7ccfd93ff03f29f80889f}\label{class_http_parser_aba65276efdd7ccfd93ff03f29f80889f}} 
+\mbox{\Hypertarget{class_http_parser_a3be6ae977af47186d80b67f26b4cbd69}\label{class_http_parser_a3be6ae977af47186d80b67f26b4cbd69}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Read\+File@{get\+Read\+File}}
 \index{get\+Read\+File@{get\+Read\+File}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Read\+File()}{getReadFile()}}
-{\footnotesize\ttfamily bool Http\+Parser\+::get\+Read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Http\+Parser\+::get\+Read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -254,11 +254,11 @@ Returns true if all message was read.
 \begin{DoxyReturn}{Returns}
 bool \+: Read file. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a60292a9b49d1e86becec848c3d0541bc}\label{class_http_parser_a60292a9b49d1e86becec848c3d0541bc}} 
+\mbox{\Hypertarget{class_http_parser_ad2c849df15ec861fca8911c0519747ae}\label{class_http_parser_ad2c849df15ec861fca8911c0519747ae}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Session\+Id@{get\+Session\+Id}}
 \index{get\+Session\+Id@{get\+Session\+Id}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Session\+Id()}{getSessionId()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Session\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Session\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -267,11 +267,11 @@ Returns session id.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: session id. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a502683ab11ae1eacec0bcdd0398c6bdd}\label{class_http_parser_a502683ab11ae1eacec0bcdd0398c6bdd}} 
+\mbox{\Hypertarget{class_http_parser_abbb9bc6fdfbc6f40629d2f8033c9f17f}\label{class_http_parser_abbb9bc6fdfbc6f40629d2f8033c9f17f}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Uploaded\+Files@{get\+Uploaded\+Files}}
 \index{get\+Uploaded\+Files@{get\+Uploaded\+Files}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Uploaded\+Files()}{getUploadedFiles()}}
-{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Http\+Parser\+::get\+Uploaded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Multi\+Map$<$Q\+Byte\+Array, Q\+Byte\+Array$>$ Http\+Parser\+::get\+Uploaded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -280,11 +280,11 @@ Returns all uploaded files.
 \begin{DoxyReturn}{Returns}
 Q\+Multi\+Map$<$\+Q\+Byte\+Array, Q\+Byte\+Array$>$ \+: Files name and content. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a7a1db20efbebf30e1f16004a35ab665f}\label{class_http_parser_a7a1db20efbebf30e1f16004a35ab665f}} 
+\mbox{\Hypertarget{class_http_parser_a4fe7e2b589ec377ae0632d12c0db2109}\label{class_http_parser_a4fe7e2b589ec377ae0632d12c0db2109}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Url@{get\+Url}}
 \index{get\+Url@{get\+Url}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Url()}{getUrl()}}
-{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Q\+Byte\+Array Http\+Parser\+::get\+Url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -293,11 +293,11 @@ Returns the url.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: url. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_acbb3148607d2a3c80ba4e74573165f1d}\label{class_http_parser_acbb3148607d2a3c80ba4e74573165f1d}} 
+\mbox{\Hypertarget{class_http_parser_a83946a3296e540751e5715d974dc12b1}\label{class_http_parser_a83946a3296e540751e5715d974dc12b1}} 
 \index{Http\+Parser@{Http\+Parser}!is\+Multi\+Part@{is\+Multi\+Part}}
 \index{is\+Multi\+Part@{is\+Multi\+Part}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{is\+Multi\+Part()}{isMultiPart()}}
-{\footnotesize\ttfamily bool Http\+Parser\+::is\+Multi\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Http\+Parser\+::is\+Multi\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -306,11 +306,11 @@ Returns the multi part.
 \begin{DoxyReturn}{Returns}
 bool \+: Multi part. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_a75e0872ac2323b7bd583ea5547503a50}\label{class_http_parser_a75e0872ac2323b7bd583ea5547503a50}} 
+\mbox{\Hypertarget{class_http_parser_a6d5020425a4dff7b78acbf37a20cccba}\label{class_http_parser_a6d5020425a4dff7b78acbf37a20cccba}} 
 \index{Http\+Parser@{Http\+Parser}!is\+Valid@{is\+Valid}}
 \index{is\+Valid@{is\+Valid}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
-{\footnotesize\ttfamily bool Http\+Parser\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily bool Http\+Parser\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

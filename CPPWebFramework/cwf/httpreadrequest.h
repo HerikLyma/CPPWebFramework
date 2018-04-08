@@ -16,10 +16,10 @@
 #include <QStringList>
 #include <QSslConfiguration>
 #include <memory>
-#include "httpservlet.h"
-#include "httpservletrequest.h"
-#include "httpservletresponse.h"
-#include "httpsession.h"
+#include "controller.h"
+#include "request.h"
+#include "response.h"
+#include "session.h"
 #include "filter.h"
 #include "httpparser.h"
 #include "constants.h"
@@ -37,27 +37,27 @@ class Configuration;
 class CPPWEBFRAMEWORKSHARED_EXPORT HttpReadRequest : public QRunnable
 {
     qintptr     socketDescriptor;
-    QMapThreadSafety<QString, HttpServlet *> &urlServlet;
-    QMapThreadSafety<QString, HttpSession *> &sessions;    
+    QMapThreadSafety<QString, Controller *> &urlController;
+    QMapThreadSafety<QString, Session *> &sessions;    
     const Configuration &configuration;
     QSslConfiguration   *sslConfiguration;
     Filter              *filter;
     QTcpSocket          *socket = nullptr;
     qint64 maxUploadFile;
-    bool readBody(HttpParser &parser, HttpServletRequest &request, HttpServletResponse &response);
+    bool readBody(HttpParser &parser, Request &request, Response &response);
     void createSocket();
 public:
     /**
      * @brief This constructor provides the necessary information to create a HttpReadRequest
      * @param qintptr socketDescriptor                             : Used to create a socket.
-     * @param QMapThreadSafety<QString, HttpServlet *> &urlServlet : All mapped servlets
-     * @param QMapThreadSafety<QString, HttpSession *> &sessions   : Sessions.
+     * @param QMapThreadSafety<QString, Controller *> &urlController : All mapped controllers
+     * @param QMapThreadSafety<QString, Session *> &sessions   : Sessions.
      * @param QSslConfiguration *sslConfiguration                  : SSL configuration.
      * @param Filter *filter                                       : Filter
      */
     HttpReadRequest(qintptr socketDescriptor,
-                    QMapThreadSafety<QString, HttpServlet *> &urlServlet,
-                    QMapThreadSafety<QString, HttpSession *> &sessions,
+                    QMapThreadSafety<QString, Controller *> &urlController,
+                    QMapThreadSafety<QString, Session *> &sessions,
                     const Configuration &configuration,
                     QSslConfiguration *sslConfiguration,                    
                     Filter *filter);

@@ -3,7 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node7 [label="QRunnable",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node7 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="HttpReadRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_http_read_request.html",tooltip="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo..."];
+  Node0 [label="HttpParser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_http_parser.html",tooltip="The class parses a HTTP message. "];
 }

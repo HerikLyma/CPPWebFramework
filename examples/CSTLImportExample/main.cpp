@@ -6,16 +6,16 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <servlets/userservlet.h>
-#include <servlets/homeservlet.h>
+#include <controllers/userscontroller.h>
+#include <controllers/homecontroller.h>
 
 
 int main(int argc, char *argv[])
-{        
+{
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CSTLImportExample/server/");
 
-    server.addUrlServlet("/user", new UserServlet);
-    server.addUrlServlet("/home", new HomeServlet);
+    server.addUrlController<UsersController>("/user");
+    server.addUrlController<HomeController>("/home");
 
     return server.start();
 }

@@ -6,13 +6,13 @@
 */
 
 #include <cwf/cppwebapplication.h>
-#include <servlets/userservlet.h>
+#include <controllers/usercontroller.h>
 
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CSTLOutExample/server/");
 
-    server.addUrlServlet("/user", new UserServlet);
+    server.addUrlController<UserController>("/user");
 
     return server.start();
 }

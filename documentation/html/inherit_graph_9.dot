@@ -3,5 +3,13 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="FileManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_file_manager.html",tooltip="The FileManager class can manage file&#39;s name. "];
+  Node11 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="CSTLCompilerObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_c_s_t_l_compiler_object.html",tooltip="The Properties class is an auxiliar class to the CSTLCompiler. "];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="QListObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_q_list_object.html",tooltip="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to..."];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Request",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_request.html",tooltip="The Request class holds all information about a http request. "];
+  Node11 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Variant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_variant.html",tooltip="This class is designed to facilitate the passing of simple type parameters such as qlonglong..."];
 }

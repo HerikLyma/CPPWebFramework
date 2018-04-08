@@ -9,9 +9,9 @@
 #define FILTERCHAIN_H
 
 #include "filemanager.h"
-#include "httpservletrequest.h"
-#include "httpservletresponse.h"
-#include "httpservlet.h"
+#include "request.h"
+#include "response.h"
+#include "controller.h"
 #include "filterchain.h"
 #include "httpparser.h"
 #include "constants.h"
@@ -28,30 +28,30 @@ CWF_BEGIN_NAMESPACE
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT FilterChain final
 {
-    HttpServlet   *servlet = nullptr;
+    Controller *controller = nullptr;
     const Configuration &configuration;
     /**
-     * @brief This method writes a response into the HttpServletResponse.
-     * @param response : This is a reference to the HttpServletResponse.
+     * @brief This method writes a response into the Response.
+     * @param response : This is a reference to the Response.
      * @param path     : This is a reference to the QString.
      * @param url      : This is a reference to the QString.
      * @param name     : This is a reference to the QByteArray.
      * @param value    : This is a reference to the QByteArray.
      */
-    void write(HttpServletResponse &response, const QString &path, const QString &url, const QByteArray &name, const QByteArray &value) const;
+    void write(Response &response, const QString &path, const QString &url, const QByteArray &name, const QByteArray &value) const;
 public:
     /**
      * @brief FilterChain
-     * @param servlet
+     * @param controller
      */
-    FilterChain(HttpServlet *servlet, const Configuration &configuration);
+    FilterChain(Controller *controller, const Configuration &configuration);
     /**
-     * @brief This method dispaches a requisition to a HttpServletRequest or, if the requesition
-     * is for a file, it can reads and send the file through the HttpServletResponse.
-     * @param request  : This is a reference to the HttpServletRequest.
-     * @param response : This is a reference to the HttpServletResponse.
+     * @brief This method dispaches a requisition to a Request or, if the requesition
+     * is for a file, it can reads and send the file through the Response.
+     * @param request  : This is a reference to the Request.
+     * @param response : This is a reference to the Response.
      */
-    void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response);
+    void doFilter(CWF::Request &request, CWF::Response &response);
 };
 
 CWF_END_NAMESPACE

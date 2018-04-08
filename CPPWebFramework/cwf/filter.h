@@ -8,8 +8,8 @@
 #ifndef FILTER_H
 #define FILTER_H
 
-#include "httpservletrequest.h"
-#include "httpservletresponse.h"
+#include "request.h"
+#include "response.h"
 #include "filterchain.h"
 #include "cppwebframework_global.h"
 
@@ -29,8 +29,8 @@ public:
     virtual ~Filter() {}
     /**
      * @brief This method will be called always that the CppWebServer receives a requisition.
-     * @param request  : This is a reference to the HttpServletRequest.
-     * @param response : This is a reference to the HttpServletResponse.
+     * @param request  : This is a reference to the Request.
+     * @param response : This is a reference to the Response.
      * @param chain    : This is a reference to the FilterChain.
      * @par Example
      * @code
@@ -44,7 +44,7 @@ public:
      * class LoginFilter : public CWF::Filter
      * {
      * public:
-     *     void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, CWF::FilterChain &chain)
+     *     void doFilter(CWF::Request &request, CWF::Response &response, CWF::FilterChain &chain)
      *     {
      *         QString url = request.getRequestURL();
      *         if(url.endsWith(".css") || url.endsWith(".png") || url.endsWith(".jpg"))
@@ -88,7 +88,7 @@ public:
      *
      * @endcode
      */
-    virtual void doFilter(CWF::HttpServletRequest &request, CWF::HttpServletResponse &response, FilterChain &chain) { chain.doFilter(request, response); }
+    virtual void doFilter(CWF::Request &request, CWF::Response &response, FilterChain &chain) { chain.doFilter(request, response); }
 };
 
 CWF_END_NAMESPACE

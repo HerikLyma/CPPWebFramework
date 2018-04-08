@@ -6,7 +6,7 @@
 */
 
 #include "cppwebapplication.h"
-#include "cppwebservlet.h"
+#include "cppwebcontroller.h"
 
 CWF_BEGIN_NAMESPACE
 
@@ -14,18 +14,8 @@ QPair<QString, qint64> getFileAndMaxSize()
 {
     QPair<QString, qlonglong> info;
 
-#ifdef Q_OS_WIN32
-#   if (QT_VERSION >= QT_VERSION_CHECK(5, 1, 0))
-        info.first  = qEnvironmentVariable(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
-        info.second = QString(qEnvironmentVariable(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
-#   else
-        info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
-        info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
-#   endif
-#else
     info.first  = qgetenv(CONFIGURATION::CPP_LOG_VAR.toStdString().data());
     info.second = QByteArray(qgetenv(CONFIGURATION::CPP_LOG_MAX_VAR.toStdString().data())).toInt();
-#endif
 
     if(info.second <= 0)
     {
@@ -91,11 +81,11 @@ CppWebApplication::CppWebApplication(int argc, char *argv[],
 
             if(configuration.getAccessServerPages())
             {
-                server->addUrlServlet("/examples"     , new CppWebServlet);
-                server->addUrlServlet("/authors"      , new CppWebServlet);
-                server->addUrlServlet("/documentation", new CppWebServlet);
-                server->addUrlServlet("/ssl"          , new CppWebServlet);
-                server->addUrlServlet("/index"        , new CppWebServlet);
+                server->addUrlController<CppWebController>("/example");
+                server->addUrlController<CppWebController>("/authors");
+                server->addUrlController<CppWebController>("/documentation");
+                server->addUrlController<CppWebController>("/ssl");
+                server->addUrlController<CppWebController>("/index");
             }
         }        
     }
