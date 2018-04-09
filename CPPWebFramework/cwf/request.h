@@ -49,8 +49,17 @@ public:
      */
     virtual ~Request();
     /**
-     * @brief This method add an attribute that will be passed to a xhtml page.
-     * The object can be processed within a page using xhtml CSTL. For this to be possible the object must
+     * @brief This method add attributes that will be passed to a view page.
+     * The object can be processed within a page using view CSTL. For this to be possible the object must
+     * inherit from QObject and methods and must be in session "public slots".
+     */
+    inline void addAttribute(const std::initializer_list<QPair<QString, QObject *>> &value) noexcept
+    {
+        std::for_each(value.begin(), value.end(), [&](const QPair<QString, QObject *> &v){attributes.insert(v.first, v.second);});
+    }
+    /**
+     * @brief This method add an attribute that will be passed to a view page.
+     * The object can be processed within a page using view CSTL. For this to be possible the object must
      * inherit from QObject and methods and must be in session "public slots".
      */
     inline void addAttribute(const QString &name, QObject *value) noexcept { attributes.insert(name, value); }

@@ -29,7 +29,15 @@ public:
      */
     explicit QListObject(QObject *parent = 0) : QObject(parent) {}
     /**
-     * @brief
+     * @brief Contructs a QListObject with N elements.
+     */
+    explicit QListObject(QObject *parent, const std::initializer_list<QObject *> &objects) : QObject(parent) { add(objects); }
+    /**
+     * @brief Contructs a QListObject with N elements.
+     */
+    explicit QListObject(const std::initializer_list<QObject *> &objects) : QObject(nullptr) { add(objects); }
+    /**
+     * @brief Destructor.
      */
     ~QListObject();
     /**
@@ -48,6 +56,13 @@ public:
      * @param QObject *object : Object.
      */
     inline void add(QObject *object) { object->setParent(this); }
+    /**
+     * @brief This method add a N new QObjects to the list.
+     */
+    inline void add(const std::initializer_list<QObject *> &objects)
+    {
+        std::for_each(objects.begin(), objects.end(), [&](QObject *o){ o->setParent(this); });
+    }
     /**
      * @brief This method remove and object from the list.
      * @param o

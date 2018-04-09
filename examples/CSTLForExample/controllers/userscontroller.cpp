@@ -31,11 +31,7 @@ void UsersController::doGet(CWF::Request &request, CWF::Response &response) cons
     userFour.setName("Ana Paula");
     userFour.setAddress("350 5th Ave, New York, NY 118, EUA");
 
-    CWF::QListObject users;
-    users.add(&userOne);
-    users.add(&userTwo);
-    users.add(&userThree);
-    users.add(&userFour);
+    CWF::QListObject users({&userOne, &userTwo, &userThree, &userFour});
 
     request.addAttribute("users", &users);
     request.getRequestDispatcher("/pages/users.view").forward(request, response);
