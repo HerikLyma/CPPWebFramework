@@ -132,7 +132,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addController<CountriesController>("/countries");
+    server.addUrlController<CountriesController>("/countries");
     return server.start();
 }
 ```
