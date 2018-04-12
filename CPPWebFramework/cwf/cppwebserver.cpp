@@ -19,7 +19,7 @@ CppWebServer::CppWebServer(const Configuration &configuration, Filter *filter) :
     if(!filter)
         this->filter = new Filter;
     timer = new QTimer;
-    connect(timer, SIGNAL(timeout()), this, SLOT(doClean()));
+    connect(timer, &QTimer::timeout, this, &CppWebServer::doClean);
     timer->start(configuration.getCleanupInterval());
 }
 
@@ -47,15 +47,14 @@ CppWebServer::~CppWebServer()
     }
 
     delete filter;
-    if(sslConfiguration)
-        delete sslConfiguration;
+    delete sslConfiguration;
 }
 
 void CppWebServer::incomingConnection(qintptr socketfd)
 {
     while(block)
         this->thread()->msleep(sleepTime);   
-    pool.start(new HttpReadRequest(socketfd, urlController, sessions, configuration, sslConfiguration, filter));
+    pool.start(new HttpReadRequest(socketfd, urlController, sessions, configuration, sslConfiguration, filter), QThread::LowPriority);
 }
 
 void CppWebServer::doClean()

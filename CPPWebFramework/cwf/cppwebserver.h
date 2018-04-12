@@ -75,7 +75,6 @@ protected:
      * @param qintptr socketfd : Socket descriptor.
      */
     void incomingConnection(qintptr socketfd) override;
-private slots:
     /**
      * @brief Clean expired sessions on Server.
      */
