@@ -13,15 +13,25 @@ void CppWebController::doGet(CWF::Request &request, CWF::Response &response) con
 {
     QString url(request.getRequestURL());
     if(url.endsWith("/index"))
+    {
         request.getRequestDispatcher("/config/cppwebserverpages/index.view").forward(request, response);
+    }
     else if(url.endsWith("/examples"))
+    {
         request.getRequestDispatcher("/config/cppwebserverpages/examples.view").forward(request, response);
+    }
     else if(url.endsWith("/documentation"))
+    {
         request.getRequestDispatcher("/config/cppwebserverpages/documentation.view").forward(request, response);
+    }
     else if(url.endsWith("/ssl"))
+    {
         request.getRequestDispatcher("/config/cppwebserverpages/ssl.view").forward(request, response);
+    }
     else if(url.endsWith("/authors"))
+    {
         request.getRequestDispatcher("/config/cppwebserverpages/authors.view").forward(request, response);
+    }
 }
 
 CWF_END_NAMESPACE

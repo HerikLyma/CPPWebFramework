@@ -28,10 +28,7 @@ HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
 
 HttpReadRequest::~HttpReadRequest()
 {
-    if(socket)
-    {
-        delete socket;
-    }
+    delete socket;
 }
 
 void HttpReadRequest::run()

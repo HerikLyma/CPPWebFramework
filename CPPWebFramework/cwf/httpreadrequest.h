@@ -65,7 +65,7 @@ public:
     /**
      * @brief Destroys dynamically allocated resources.
      */
-    ~HttpReadRequest();
+    virtual ~HttpReadRequest();
     /**
      * @brief Starts to read the requisition.
      */

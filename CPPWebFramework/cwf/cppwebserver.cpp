@@ -6,7 +6,6 @@
 */
 
 #include "cppwebserver.h"
-#include <QtConcurrent/QtConcurrent>
 
 CWF_BEGIN_NAMESPACE
 
@@ -26,26 +25,9 @@ CppWebServer::CppWebServer(const Configuration &configuration, Filter *filter) :
 CppWebServer::~CppWebServer()
 {
     while(!pool.waitForDone());
-    for(QMapThreadSafety<QString, Controller*>::iterator it = urlController.begin(); it != urlController.end(); ++it)
-    {
-        Controller *o = it.value();
-        if(o != nullptr)
-        {
-            delete o;
-            o = nullptr;
-        }
-    }
 
-    for(QMapThreadSafety<QString, Session*>::iterator it = sessions.begin(); it != sessions.end(); ++it)
-    {
-        Session *o = it.value();
-        if(o != nullptr)
-        {
-            delete o;
-            o = nullptr;
-        }
-    }
-
+    std::for_each(urlController.constBegin(), urlController.constEnd(), [](Controller *i){ delete i; });
+    std::for_each(sessions.constBegin(), sessions.constEnd(), [](Session *i){ delete i; });
     delete filter;
     delete sslConfiguration;
 }
