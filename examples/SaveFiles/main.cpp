@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/SaveFiles/server/");
 
-    server.addUrlController<SaveFilesController>("/savefiles");
+    server.addController<SaveFilesController>("/savefiles");
 
     return server.start();
 }
