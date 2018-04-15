@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Sessions/server");
 
-    server.addUrlController<LoginController>("/login");
-    server.addUrlController<IndexController>("/index");
+    server.addController<LoginController>("/login");
+    server.addController<IndexController>("/index");
 
     return server.start();
 }
