@@ -29,6 +29,6 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/FillObjectBMI/server/");
-    server.addUrlController<BmiController>("/bmi");
+    server.addController<BmiController>("/bmi");
     return server.start();
 }

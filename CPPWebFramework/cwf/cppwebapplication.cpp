@@ -81,11 +81,11 @@ CppWebApplication::CppWebApplication(int argc, char *argv[],
 
             if(configuration.getAccessServerPages())
             {
-                server->addUrlController<CppWebController>("/example");
-                server->addUrlController<CppWebController>("/authors");
-                server->addUrlController<CppWebController>("/documentation");
-                server->addUrlController<CppWebController>("/ssl");
-                server->addUrlController<CppWebController>("/index");
+                server->addController<CppWebController>("/example");
+                server->addController<CppWebController>("/authors");
+                server->addController<CppWebController>("/documentation");
+                server->addController<CppWebController>("/ssl");
+                server->addController<CppWebController>("/index");
             }
         }        
     }

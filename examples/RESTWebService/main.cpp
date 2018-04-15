@@ -31,6 +31,6 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/RESTWebService/server");
-    server.addUrlController<CountriesController>("/countries");
+    server.addController<CountriesController>("/countries");
     return server.start();
 }

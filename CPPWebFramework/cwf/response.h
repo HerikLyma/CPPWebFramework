@@ -117,7 +117,7 @@ public:
 
     Response(QTcpSocket &socket, const Configuration &configuration);
 
-    virtual ~Response() {}
+    ~Response() {}
 
     void write(const QJsonObject &json, bool writeContentType = true);
 

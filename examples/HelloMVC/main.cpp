@@ -22,6 +22,6 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloMVC/server");
-    server.addUrlController<HelloController>("/hello");
+    server.addController<HelloController>("/hello");
     return server.start();
 }

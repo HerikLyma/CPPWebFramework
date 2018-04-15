@@ -60,11 +60,10 @@ public:
     /**
      * @brief Hitches a url to a Controller.
      * @param const QString &url   : Url name.
-     * @param Controller *controller : Controller that will answer requests made to url. If the filter is installed, all requests will be redirected to it and
-     * it will not be possible to map the controllers through the addUrlController function, instead everything should be handled inside the Filter.
+     * it will not be possible to map the controllers through the addController function, instead everything should be handled inside the Filter.
      */
     template<typename CONTROLLER>
-    void addUrlController(const QString &url) noexcept
+    void addController(const QString &url) noexcept
     {
         static_assert(std::is_base_of<Controller, CONTROLLER>::value, "CONTROLLER must be a descendant of Controller");
         urlController.insert(url, new CONTROLLER);

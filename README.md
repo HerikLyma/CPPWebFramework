@@ -45,7 +45,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlController<HelloWorldController>("/hello");
+    server.addController<HelloWorldController>("/hello");
     return server.start();
 }
 ```
@@ -98,7 +98,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlController<HelloController>("/hello");
+    server.addController<HelloController>("/hello");
     return server.start();
 }
 ```
@@ -132,7 +132,7 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
-    server.addUrlController<CountriesController>("/countries");
+    server.addController<CountriesController>("/countries");
     return server.start();
 }
 ```

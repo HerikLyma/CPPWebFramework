@@ -15,7 +15,7 @@ CWF_BEGIN_NAMESPACE
 class Request;
 class Response;
 /**
- * @brief The RequestDispatcher class can be used to dispatch a requisition to a xhtml page.
+ * @brief The RequestDispatcher class can be used to dispatch a requisition to a page.
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT RequestDispatcher
 {
@@ -28,9 +28,9 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~RequestDispatcher() {}
+    ~RequestDispatcher() {}
     /**
-     * @brief This method will dispatch the xhtml file specificated in path to the CSTLCompiler,
+     * @brief This method will dispatch the page file specificated in path to the CSTLCompiler,
      * the CSTLCompiler will compile the xhtml file and returns the result.
      * After this, the RequestDispatcher will take the return and write it on the response.
      * @param CWF::Request &request   : Used to process the response.

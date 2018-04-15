@@ -26,7 +26,7 @@ public:
      * @brief This constructor can set the CSTLCompilerObject's parent.
      * @param QObject *parent : parent.
      */
-    explicit CSTLCompilerObject(QObject *parent = 0) : QObject(parent) {}
+    explicit CSTLCompilerObject(QObject *parent = nullptr) : QObject(parent) {}
 public slots:
     /**
      * @brief Returns the value.

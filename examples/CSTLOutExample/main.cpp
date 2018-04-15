@@ -11,8 +11,6 @@
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CSTLOutExample/server/");
-
-    server.addUrlController<UserController>("/user");
-
+    server.addController<UserController>("/user");
     return server.start();
 }

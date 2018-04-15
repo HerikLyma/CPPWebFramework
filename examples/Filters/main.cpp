@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
     LoginFilter filter;
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/Filters/server/", &filter);
 
-    server.addUrlController<LoginController>("/login");
-    server.addUrlController<IndexController>("/index");
+    server.addController<LoginController>("/login");
+    server.addController<IndexController>("/index");
 
     return server.start();
 }

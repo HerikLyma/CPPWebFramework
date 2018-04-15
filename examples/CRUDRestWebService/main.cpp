@@ -43,6 +43,6 @@ public:
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/CRUDRestWebService/server");
-    server.addUrlController<QueryController>("/service");
+    server.addController<QueryController>("/service");
     return server.start();
 }

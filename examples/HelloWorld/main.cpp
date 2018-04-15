@@ -20,6 +20,6 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/HelloWorld/server");
-    server.addUrlController<HelloWorldController>("/hello");
+    server.addController<HelloWorldController>("/hello");
     return server.start();
 }

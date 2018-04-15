@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/ShowFile/server/");
 
-    server.addUrlController<ShowFileController>("/showfile");
+    server.addController<ShowFileController>("/showfile");
 
     return server.start();
 }

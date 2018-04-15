@@ -82,9 +82,9 @@ public:
      * @endcode
      */
     template<typename CONTROLLER>
-    void addUrlController(const QString &url) noexcept
+    void addController(const QString &url) noexcept
     {
-        server->addUrlController<CONTROLLER>(url);
+        server->addController<CONTROLLER>(url);
     }
     /**
      * @brief Starts the server and QCoreApplication.
