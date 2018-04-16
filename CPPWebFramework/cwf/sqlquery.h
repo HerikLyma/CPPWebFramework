@@ -22,7 +22,7 @@ CWF_BEGIN_NAMESPACE
 /**
  * @brief The SqlQuery class was created to facilitate integration with SqlDataBaseStorage and manipulation to the database through JSON.
  */
-class SqlQuery : public QSqlQuery
+class CPPWEBFRAMEWORKSHARED_EXPORT SqlQuery : public QSqlQuery
 {
     QVector<QString> columns;
 

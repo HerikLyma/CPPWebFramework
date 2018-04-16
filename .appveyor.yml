@@ -1,0 +1,83 @@
+install:
+  - set QTDIR=C:\Qt\5.7\mingw53_32
+  - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+  
+build_script:
+  - cd C:\projects\Test\CPPWebFramework
+  - qmake CPPWebFramework.pro
+  - mingw32-make -j 8
+  - mingw32-make install
+  
+  - cd C:\projects\Test\examples\HelloWorld
+  - qmake HelloWorld.pro
+  - mingw32-make -j 8
+    
+  - cd ..
+  - cd ShowFile
+  - qmake ShowFile.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd SaveFiles
+  - qmake SaveFiles.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd Sessions
+  - qmake Sessions.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd Filters
+  - qmake Filters.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd CSTLOutExample
+  - qmake CSTLOutExample.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd CSTLForExample
+  - qmake CSTLForExample.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd CSTLIfExample
+  - qmake CSTLIfExample.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd FillObjectBMI
+  - qmake FillObjectBMI.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd CSTLImportExample
+  - qmake CSTLImportExample.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd WebServices
+  - qmake WebServices.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd CRUDRestWebService
+  - qmake CRUDRestWebService.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd HelloWorldFilter
+  - qmake HelloWorldFilter.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd HelloMVC
+  - qmake HelloMVC.pro
+  - mingw32-make -j 8
+
+  - cd ..
+  - cd RESTWebService
+  - qmake RESTWebService.pro
+  - mingw32-make -j 8

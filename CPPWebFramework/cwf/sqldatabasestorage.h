@@ -19,7 +19,7 @@ CWF_BEGIN_NAMESPACE
 /**
  * @brief The SqlDatabaseStorage class allows you to reuse connections made to the database through the QSqlDatabase class within QThreadPool.
  */
-class SqlDatabaseStorage
+class CPPWEBFRAMEWORKSHARED_EXPORT SqlDatabaseStorage
 {    
     class Database
     {
