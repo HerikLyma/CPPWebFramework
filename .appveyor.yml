@@ -3,12 +3,12 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
   
 build_script:
-  - cd C:\projects\Test\CPPWebFramework
+  - cd C:\projects\CPPWebFramework\CPPWebFramework
   - qmake CPPWebFramework.pro
   - mingw32-make -j 8
   - mingw32-make install
   
-  - cd C:\projects\Test\examples\HelloWorld
+  - cd C:\projects\CPPWebFramework\examples\HelloWorld
   - qmake HelloWorld.pro
   - mingw32-make -j 8
     
