@@ -43,8 +43,8 @@ void TST_Configuration::test()
     QVERIFY2(configuration.getSslCertFile().endsWith("my.cert") == true, "Should be true");
     QVERIFY2(configuration.getSslKeyFile().endsWith("my.key") == true, "Should be true");
 
-    QVERIFY2(file.remove(), "Should return true");
 
-    CWF::Configuration conf("");
-    QVERIFY2(conf.isValid() == false, "Shoud return false.");
+    QVERIFY2(CWF::Configuration("").isValid(), "Shoud return true.");
+    QVERIFY2(file.remove(), "Should return true");
+    QVERIFY2(CWF::Configuration("").isValid() == false, "Shoud return false.");
 }
