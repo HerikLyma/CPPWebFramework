@@ -19,7 +19,7 @@ What kind of change does this Pull Request introduce?
 [ ] CI related changes
 [ ] Documentation content changes
 [ ] angular.io application / infrastructure changes
-[ ] Other... Please describe:
+[ ] Other (Please describe)
 ```
 
 ## What is the current behavior?
