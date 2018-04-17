@@ -331,6 +331,8 @@ public:
      * @endcode
      */
     void fillQObject(QObject *object);
+
+    void fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &parameters);
 };
 
 CWF_END_NAMESPACE

@@ -30,10 +30,14 @@ Request::~Request()
 
 void Request::fillQObject(QObject *object)
 {
-    QMap<QByteArray, QByteArray> parameters(std::move(httpParser->getParameters()));
+    fillQObject(object, httpParser->getParameters());
+}
+
+void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &parameters)
+{
     MetaClassParser meta(object);
 
-    for(QMap<QByteArray, QByteArray>::iterator it = parameters.begin(); it != parameters.end(); ++it)
+    for(QMap<QByteArray, QByteArray>::const_iterator it = parameters.constBegin(); it != parameters.constEnd(); ++it)
     {
         QString method = it.key();
         if(method.size() > 0)

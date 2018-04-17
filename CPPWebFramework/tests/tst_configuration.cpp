@@ -3,6 +3,13 @@
 void TST_Configuration::test()
 {
     QString path(QDir::currentPath() + "/server");
+    QFile f(path + "/config/CPPWeb.ini");
+    if(f.exists())
+        QVERIFY2(f.remove(), "Should return true");
+
+    QVERIFY2(CWF::Configuration("").isValid() == false, "Shoud return false.");
+
+
     if(!QDir(path).exists())
         QVERIFY2(QDir().mkdir(path), "Could not create server folder");
     if(!QDir(path + "/config").exists())
@@ -42,9 +49,5 @@ void TST_Configuration::test()
     QVERIFY2(configuration.getLogFilePath().endsWith("log") == true, "Should be true");
     QVERIFY2(configuration.getSslCertFile().endsWith("my.cert") == true, "Should be true");
     QVERIFY2(configuration.getSslKeyFile().endsWith("my.key") == true, "Should be true");
-
-
     QVERIFY2(CWF::Configuration("").isValid(), "Shoud return true.");
-    QVERIFY2(file.remove(), "Should return true");
-    QVERIFY2(CWF::Configuration("").isValid() == false, "Shoud return false.");
 }
