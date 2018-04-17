@@ -97,17 +97,17 @@ namespace CSTL
         const QString STD_STRING             = "std::string";
         const QString BOOL                   = "bool";
         const QString CHAR                   = "char";
-        const QString CHAR_POINTER           = "char *";
-        const QString UNSIGNED_CHAR          = "unsigned char";
-        const QString UNSIGNED_CHAR_POINTER  = "unsigned char *";
+        const QString CHAR_POINTER           = "char*";
+        const QString UNSIGNED_CHAR          = "uchar";
+        const QString UNSIGNED_CHAR_POINTER  = "unsigned char*";
         const QString SHORT                  = "short";
-        const QString UNSIGNED_SHORT         = "unsigned short";
+        const QString UNSIGNED_SHORT         = "ushort";
         const QString INT                    = "int";
-        const QString UNSIGNED_INT           = "unsigned int";
+        const QString UNSIGNED_INT           = "uint";
         const QString LONG                   = "long";
-        const QString UNSIGNED_LONG          = "unsigned long";
-        const QString LONG_LONG              = "long long";
-        const QString UNSIGNED_LONG_LONG     = "unsigned long long";
+        const QString UNSIGNED_LONG          = "ulong";
+        const QString LONG_LONG              = "qlonglong";
+        const QString UNSIGNED_LONG_LONG     = "qulonglong";
         const QString FLOAT                  = "float";
         const QString DOUBLE                 = "double";
         const QString CWF_QLISTOBJECT        = "CWF::QListObject";
@@ -118,7 +118,7 @@ namespace CSTL
 namespace HTTP
 {
     const QByteArray SERVER                           = "Server";
-    const QByteArray SERVER_VERSION                   = "C++-Web-Server/1.0";
+    const QByteArray SERVER_VERSION                   = "C++-Web-Server/3.1";
     const QByteArray DATA                             = "Data";
     const QByteArray TRANSFER_ENCODING                = "Transfer-Encoding";
     const QByteArray CHUNKED                          = "chunked";
