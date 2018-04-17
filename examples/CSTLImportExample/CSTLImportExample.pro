@@ -40,12 +40,12 @@ DISTFILES += \
 
 unix {
     INCLUDEPATH += /usr/lib
-    LIBS += -L/usr/lib/cwf -lCPPWebFramework
+    LIBS += -L/usr/lib -lCPPWebFramework
 }
 
 macx {
     INCLUDEPATH += /usr/local/lib
-    LIBS += -L/usr/local/lib/cwf -lCPPWebFramework
+    LIBS += -L/usr/local/lib -lCPPWebFramework
 }
 
 win32 {

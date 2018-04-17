@@ -3,110 +3,120 @@ language: cpp
 env:
   - COVERALLS_REPO_TOKEN=KPDH1Nr3wpZZiXko19X4tkSjcvBUlNoSH
 
+os:
+  - linux
+  - osx
+
 compiler:
   - gcc
+  - clang
 
 sudo: required
 dist: trusty
 
-
 before_install:
-  - pip install --user cpp-coveralls
-  - sudo apt-get install lcov
-  - sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y;
-  - sudo apt-get update -qq
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update     ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install qt5; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew link --force qt5; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --user cpp-coveralls; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install lcov; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq; fi
 
 install:
-  - sudo apt-get install -qq qt57base
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq qt57base; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=$PATH:/opt/qt57/bin; fi
 
 script:
-  - source /opt/qt57/bin/qt57-env.sh;
-
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source qt57-env.sh; fi
   - cd CPPWebFramework
-  - /opt/qt57/bin/qmake CPPWebFramework.pro
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qmake UnitTests.pro; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make -j 8; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./UnitTests; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm *tst_*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm main*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm moc*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make clean; fi
+
+  - qmake CPPWebFramework.pro
   - make -j 8
   - sudo make install
 
-  - /opt/qt57/bin/qmake UnitTests.pro
-  - make -j 8
-  - ./UnitTests
-  - rm *tst_*
-  - rm main*
-  - rm moc*
-  - coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'
-
   - cd ..
-  - cd examples/HelloWorld
-  - /opt/qt57/bin/qmake HelloWorld.pro
+  - cd examples
+
+  - cd HelloWorld
+  - qmake HelloWorld.pro
   - make -j 8
 
   - cd ..
   - cd ShowFile
-  - /opt/qt57/bin/qmake ShowFile.pro
+  - qmake ShowFile.pro
   - make -j 8
 
   - cd ..
   - cd SaveFiles
-  - /opt/qt57/bin/qmake SaveFiles.pro
+  - qmake SaveFiles.pro
   - make -j 8
 
   - cd ..
   - cd Sessions
-  - /opt/qt57/bin/qmake Sessions.pro
+  - qmake Sessions.pro
   - make -j 8
 
   - cd ..
   - cd Filters
-  - /opt/qt57/bin/qmake Filters.pro
+  - qmake Filters.pro
   - make -j 8
 
   - cd ..
   - cd CSTLOutExample
-  - /opt/qt57/bin/qmake CSTLOutExample.pro
+  - qmake CSTLOutExample.pro
   - make
 
   - cd ..
   - cd CSTLForExample
-  - /opt/qt57/bin/qmake CSTLForExample.pro
+  - qmake CSTLForExample.pro
   - make -j 8
 
   - cd ..
   - cd CSTLIfExample
-  - /opt/qt57/bin/qmake CSTLIfExample.pro
+  - qmake CSTLIfExample.pro
   - make -j 8
 
   - cd ..
   - cd FillObjectBMI
-  - /opt/qt57/bin/qmake FillObjectBMI.pro
+  - qmake FillObjectBMI.pro
   - make -j 8
 
   - cd ..
   - cd CSTLImportExample
-  - /opt/qt57/bin/qmake CSTLImportExample.pro
+  - qmake CSTLImportExample.pro
   - make -j 8
 
   - cd ..
   - cd WebServices
-  - /opt/qt57/bin/qmake WebServices.pro
+  - qmake WebServices.pro
   - make -j 8
 
   - cd ..
   - cd CRUDRestWebService
-  - /opt/qt57/bin/qmake CRUDRestWebService.pro
+  - qmake CRUDRestWebService.pro
   - make -j 8
 
   - cd ..
   - cd HelloWorldFilter
-  - /opt/qt57/bin/qmake HelloWorldFilter.pro
+  - qmake HelloWorldFilter.pro
   - make -j 8
 
   - cd ..
   - cd HelloMVC
-  - /opt/qt57/bin/qmake HelloMVC.pro
+  - qmake HelloMVC.pro
   - make -j 8
 
   - cd ..
   - cd RESTWebService
-  - /opt/qt57/bin/qmake RESTWebService.pro
+  - qmake RESTWebService.pro
   - make -j 8
 
