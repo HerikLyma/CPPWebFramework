@@ -24,8 +24,7 @@ Request::Request(QTcpSocket &socket,
 
 Request::~Request()
 {
-    if(requestDispatcher)
-        delete requestDispatcher;
+    delete requestDispatcher;
 }
 
 void Request::fillQObject(QObject *object)
@@ -127,9 +126,7 @@ void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &p
 
 RequestDispatcher &Request::getRequestDispatcher(const QString &page)
 {
-    if(requestDispatcher)
-        delete requestDispatcher;
-
+    delete requestDispatcher;
     requestDispatcher = new RequestDispatcher(configuration.getPath() + page);
     return *requestDispatcher;
 }
