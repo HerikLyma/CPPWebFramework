@@ -20,25 +20,24 @@ before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew link --force qt5; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --user cpp-coveralls; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install lcov; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt551-trusty -y; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo add-apt-repository ppa:beineri/opt-qt571-trusty -y; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update -qq; fi
 
 install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq qt55base; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=$PATH:/opt/qt55/bin; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq qt57base; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export PATH=$PATH:/opt/qt57/bin; fi
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source qt55-env.sh; fi
-
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source qt57-env.sh; fi
   - cd CPPWebFramework
-  - qmake UnitTests.pro
-  - make -j 8
-  - ./UnitTests
-  - rm *tst_*
-  - rm main*
-  - then rm moc
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qmake UnitTests.pro; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make -j 8; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./UnitTests; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm *tst_*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm main*; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm moc*; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'; fi
-  - make clean
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make clean; fi
 
   - qmake CPPWebFramework.pro
   - make -j 8
