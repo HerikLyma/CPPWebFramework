@@ -21,7 +21,8 @@ void TST_Request::test()
     QVERIFY2(client.getC(), "Should return 'true'");
     QVERIFY2(client.getD() == ' ', "Should be equal ' '");
     QVERIFY2(client.getE() == ' ', "Should be equal ' '");
-    QVERIFY2(QString(client.getF()).contains("Test"), "Should be equal 'Test'");
+    QString f(client.getF());
+    QVERIFY2(f == "Test", ("Should be equal 'Test' but returned " + f).toStdString().data());
     QVERIFY2(QString((const char*)client.getG()).contains("Test"), "Should be equal 'Test'");
     QVERIFY2(client.getH() == 10, "Should be equal 10");
     QVERIFY2(client.getI() == 10, "Should be equal 10");
