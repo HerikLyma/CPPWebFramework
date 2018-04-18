@@ -29,7 +29,12 @@ install:
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source qt57-env.sh; fi
-  - cd CPPWebFramework
+
+  - cd CPPWebFramework/cwf 
+  - mv cppwebframework_global.h cppwebframework_global.h.1
+  - mv cppwebframework_global.h.2 cppwebframework_global.h   
+  - cd ..
+
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then qmake UnitTests.pro; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make -j 8; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./UnitTests; fi
@@ -38,6 +43,11 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm moc*; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make clean; fi
+
+  - cd cwf
+  - mv cppwebframework_global.h cppwebframework_global.h.2
+  - mv cppwebframework_global.h.1 cppwebframework_global.h 
+  - cd ..
 
   - qmake CPPWebFramework.pro
   - make -j 8

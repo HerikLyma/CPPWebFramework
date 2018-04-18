@@ -3,13 +3,30 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
   
 build_script:
-  - cd C:\projects\CPPWebFramework\CPPWebFramework
+  - cd C:\projects\CPPWebFramework\CPPWebFramework\cwf
 
+  - rename cppwebframework_global.h cppwebframework_global.h.1
+  - rename cppwebframework_global.h.2 cppwebframework_global.h
+
+  - cd ..
+  - qmake UnitTests.pro
+  - mingw32-make -j 8
+  - release\UnitTests.exe
+  - mingw32-make clean
+
+  - cd cwf
+  - rename cppwebframework_global.h cppwebframework_global.h.2
+  - rename cppwebframework_global.h.1 cppwebframework_global.h
+
+  
+  - cd ..
   - qmake CPPWebFramework.pro
   - mingw32-make -j 8
   - mingw32-make install
   
-  - cd C:\projects\CPPWebFramework\examples\HelloWorld
+  - cd ..
+  - cd examples
+  - cd HelloWorld
   - qmake HelloWorld.pro
   - mingw32-make -j 8
     
