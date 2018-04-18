@@ -23,7 +23,7 @@ CSTLCompiler::CSTLCompiler(const QByteArray &str, const QString &path,
                                                  isStrFileName(isStrFileName)
 {
     if(isStrFileName)
-        isXHTML = str.toLower().endsWith(".view");
+        isView = str.toLower().endsWith(".view");
 }
 
 QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
@@ -36,7 +36,7 @@ QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
 
         QByteArray content(std::move(file.readAll()));
         file.close();
-        if(isXHTML)
+        if(isView)
         {
             xml.addData(content);
         }
@@ -350,7 +350,7 @@ QByteArray CSTLCompiler::output()
 {
     QXmlStreamReader xml;
     QByteArray htmlOutput(std::move(openFile(xml)));
-    if(isXHTML)
+    if(isView)
     {
         if(htmlOutput.isEmpty())
             return processXml(xml);

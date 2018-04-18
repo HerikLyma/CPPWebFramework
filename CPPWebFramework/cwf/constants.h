@@ -97,9 +97,7 @@ namespace CSTL
         const QString STD_STRING             = "std::string";
         const QString BOOL                   = "bool";
         const QString CHAR                   = "char";
-        const QString CHAR_POINTER           = "char*";
         const QString UNSIGNED_CHAR          = "uchar";
-        const QString UNSIGNED_CHAR_POINTER  = "unsigned char*";
         const QString SHORT                  = "short";
         const QString UNSIGNED_SHORT         = "ushort";
         const QString INT                    = "int";

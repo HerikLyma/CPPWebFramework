@@ -13,8 +13,6 @@ class ClientTest : public QObject
     bool c;
     char d;
     unsigned char e;
-    char *f;
-    unsigned char *g;
     short h;
     unsigned short i;
     int j;
@@ -45,14 +43,6 @@ public slots:
     unsigned char getE() const { return e; }
 
     void setE(unsigned char value) { e = value; }
-
-    char* getF() const { return f; }
-
-    void setF(char *value) { f = value; }
-
-    unsigned char* getG() const { return g; }
-
-    void setG(unsigned char *value) { g = value; }
 
     short getH() const { return h; }
 

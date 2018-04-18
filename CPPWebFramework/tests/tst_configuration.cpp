@@ -25,8 +25,6 @@ void TST_Configuration::test()
     file.write("timeOut=60000\n");
     file.write("sessionExpirationTime=6000\n");
     file.write("maxUploadFile=20971520\n");
-    file.write("path=" + path.toLatin1() + "\n");
-    file.write("suffix=.xhtml\n");
     file.write("logFilePath=/config/log/\n");
     file.write("sslKeyFile=/config/ssl/my.key\n");
     file.write("sslCertFile=/config/ssl/my.cert\n");

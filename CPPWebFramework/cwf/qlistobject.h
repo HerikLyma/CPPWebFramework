@@ -13,8 +13,8 @@
 
 CWF_BEGIN_NAMESPACE
 /**
- * @brief The QListObject class is used to pass a list of object to a xhtml page.
- * NOTE: Always when you need to pass a list of object to a xhtml page you will need to use this class,
+ * @brief The QListObject class is used to pass a list of object to a view page.
+ * NOTE: Always when you need to pass a list of object to a view page you will need to use this class,
  * your class need to inherit from the QObject class and all the methods needs to be in the public slots session.
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT QListObject : public QObject

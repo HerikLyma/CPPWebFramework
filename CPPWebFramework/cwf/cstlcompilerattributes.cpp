@@ -128,21 +128,7 @@ void CSTLCompilerAttributes::compile(QString &text, QString &outPutText)
                             unsigned char returnValue;
                             ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(unsigned char, returnValue));
                             value.push_back(returnValue);
-                        }
-                        else if(methodReturnType == CSTL::SUPPORTED_TYPES::CHAR_POINTER)
-                        {
-                            char *returnValue = nullptr;
-                            ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(char *, returnValue));
-                            if(returnValue)
-                                value.push_back(returnValue);
-                        }
-                        else if(methodReturnType == CSTL::SUPPORTED_TYPES::UNSIGNED_CHAR_POINTER)
-                        {
-                            unsigned char *returnValue = nullptr;
-                            ok = QMetaObject::invokeMethod(object, prop.m_method.toStdString().data(), Qt::DirectConnection, Q_RETURN_ARG(unsigned char *, returnValue));
-                            if(returnValue)
-                                value = *returnValue;
-                        }
+                        }                                                
                         else if(methodReturnType == CSTL::SUPPORTED_TYPES::SHORT)
                         {
                             short returnValue;

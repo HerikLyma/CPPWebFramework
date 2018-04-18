@@ -72,14 +72,6 @@ void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &p
                     value.push_back(' ');
                 QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned char, (unsigned char)value.toStdString()[0]));
             }
-            else if(parameterType == CSTL::SUPPORTED_TYPES::CHAR_POINTER)
-            {
-                QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(char*, (char *)value.toStdString().data()));
-            }
-            else if(parameterType == CSTL::SUPPORTED_TYPES::UNSIGNED_CHAR_POINTER)
-            {
-                QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(unsigned char*, (unsigned char *)value.toStdString().data()));
-            }
             else if(parameterType == CSTL::SUPPORTED_TYPES::SHORT)
             {
                 QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(short, (short)value.toInt()));
