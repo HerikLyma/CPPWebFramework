@@ -21,7 +21,7 @@ void TST_Request::test()
     QVERIFY2(client.getC(), "Should return 'true'");
     QVERIFY2(client.getD() == ' ', "Should be equal ' '");
     QVERIFY2(client.getE() == ' ', "Should be equal ' '");
-    QVERIFY2(strcmp(client.getF(), "Test") == 0, "Should be equal 'Test'");
+    QVERIFY2(QString(client.getF()) == "Test", "Should be equal 'Test'");
     QVERIFY2(QString((const char*)client.getG()) == "Test", "Should be equal 'Test'");
     QVERIFY2(client.getH() == 10, "Should be equal 10");
     QVERIFY2(client.getI() == 10, "Should be equal 10");
@@ -33,5 +33,4 @@ void TST_Request::test()
     QVERIFY2(client.getO() == 10, "Should be equal 10");
     QVERIFY2(client.getP() <= 10, "Should be <= 10");
     QVERIFY2(client.getQ() <= 10, "Should be <= 10");
-    int i;
 }
