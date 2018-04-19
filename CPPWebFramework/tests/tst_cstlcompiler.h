@@ -5,6 +5,13 @@
 #include <tests/tst_request.h>
 #include <cwf/cstlcompiler.h>
 
+enum class NUMBER_ATTR : char
+{
+    ZERO,
+    TWO,
+    THREE
+};
+
 class TST_CSTLCompiler : public QObject
 {
     Q_OBJECT
@@ -18,7 +25,7 @@ private slots:
 
     void fillClient(ClientTest &client, short h);
 
-    QByteArray buildHtmlForIf(const QByteArray &condition);
+    QByteArray buildHtmlForIf(const QByteArray &condition, NUMBER_ATTR number = NUMBER_ATTR::TWO);
 
     void createFile(const QString &name, const QByteArray &content);
 };
