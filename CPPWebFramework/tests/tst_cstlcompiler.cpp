@@ -4,6 +4,7 @@
 void TST_CSTLCompiler::test()
 {
     testImport();
+    testForOutIf();
 }
 
 void TST_CSTLCompiler::testImport()
@@ -34,6 +35,67 @@ void TST_CSTLCompiler::testImport()
     QVERIFY2(CWF::CSTLCompiler(copy2, QDir().currentPath(), objects, false).output().contains("NEEDS THE URL"), "Should contains 'NEEDS THE URL'");
     QVERIFY2(CWF::CSTLCompiler(copy3, QDir().currentPath(), objects, false).output().contains("ONLY NEEDS"), "Should contains 'ONLY NEEDS'");
     QVERIFY2(CWF::CSTLCompiler(copy4, QDir().currentPath(), objects, false).output().contains("NEEDS THE URL"), "Should contains 'NEEDS THE URL'");
+}
+
+void TST_CSTLCompiler::testForOutIf()
+{
+    ClientTest a, b;
+    fillClient(a, 0);
+    fillClient(b, 1);
+
+    CWF::QListObject obj;
+    obj.add(&a);
+    obj.add(&b);
+
+    QMap<QString, QObject *> objects({{"clients", &obj}});
+
+    QByteArray html;
+    html  = "<html>";
+    html +=     "<body>";
+    html +=         "<for items=\"clients\" var=\"client\">";
+    html +=             "<if var=\"#{client.getH}\" equal=\"1\">";
+    html +=                 "<center>";
+    html +=                     "<out value=\"#{client.getA}\"/>";
+    html +=                     "<out value=\"#{client.getB}\"/>";
+    html +=                     "<out value=\"#{client.getC}\"/>";
+    html +=                     "<out value=\"#{client.getD}\"/>";
+    html +=                     "<out value=\"#{client.getE}\"/>";
+    html +=                     "<out value=\"#{client.getH}\"/>";
+    html +=                     "<out value=\"#{client.getI}\"/>";
+    html +=                     "<out value=\"#{client.getJ}\"/>";
+    html +=                     "<out value=\"#{client.getK}\"/>";
+    html +=                     "<out value=\"#{client.getL}\"/>";
+    html +=                     "<out value=\"#{client.getM}\"/>";
+    html +=                     "<out value=\"#{client.getN}\"/>";
+    html +=                     "<out value=\"#{client.getO}\"/>";
+    html +=                     "<out value=\"#{client.getP}\"/>";
+    html +=                     "<out value=\"#{client.getQ}\"/>";
+    html +=                  "</center>";
+    html +=             "</if>";
+    html +=         "</for>";
+    html +=     "</body>";
+    html += "</html>";
+
+    QVERIFY2(CWF::CSTLCompiler(html, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
+}
+
+void TST_CSTLCompiler::fillClient(ClientTest &client, short h)
+{
+    client.setA("a");
+    client.setB("b");
+    client.setC(true);
+    client.setD('D');
+    client.setE('E');
+    client.setH(h);
+    client.setI(1);
+    client.setJ(1);
+    client.setK(1);
+    client.setL(1);
+    client.setM(1);
+    client.setN(1);
+    client.setO(1);
+    client.setP(1.5);
+    client.setQ(1.5);
 }
 
 void TST_CSTLCompiler::createFile(const QString &name, const QByteArray &content)
