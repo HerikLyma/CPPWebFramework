@@ -4,6 +4,7 @@ void TST_HttpParser::test()
 {
     testGet();
     testPost();
+    testPostWithFiles();
 }
 
 void TST_HttpParser::testGet()
@@ -12,7 +13,7 @@ void TST_HttpParser::testGet()
     CWF::HttpParser parser(req);
 
     QVERIFY2(parser.getCookies().size() == 1, "Should be 1");
-    QVERIFY2(parser.getUrl() == "/home", "Should be /");
+    QVERIFY2(parser.getUrl() == "/home", "Should be /home");
     QVERIFY2(parser.getParameter("id").toInt() == 10, "Should be 10");
     QVERIFY2(parser.getParameter("nome") == "Herik", "Should be Herik");
     QVERIFY2(parser.getHttpVersion().endsWith("1.1"), "Should be 1.1");
@@ -26,12 +27,25 @@ void TST_HttpParser::testPost()
     CWF::HttpParser parser(req);
 
     QVERIFY2(parser.getCookies().size() == 1, "Should be 1");
-    QVERIFY2(parser.getUrl() == "/home", "Should be /");
+    QVERIFY2(parser.getUrl() == "/home", "Should be /home");
     QVERIFY2(parser.getParameter("id").toInt() == 10, "Should be 10");
-    QVERIFY2(parser.getParameter("nome") == "Herik", "Should be Herik");
     QVERIFY2(parser.getHttpVersion().endsWith("1.1"), "Should be 1.1");
     QVERIFY2(parser.getMethod() == "POST", "Should be POST");
     QVERIFY2(!parser.isMultiPart(), "Should be not be multiPart");
+}
+
+void TST_HttpParser::testPostWithFiles()
+{
+    QByteArray req(buildPostRequestWithFiles());
+    CWF::HttpParser parser(req);
+
+    QVERIFY2(parser.getCookies().size() == 1, "Should be 1");
+    QVERIFY2(parser.getUrl() == "/savefiles", "Should be savefiles");
+    QVERIFY2(parser.getParameter("id") == "", "Should be 10");
+    QVERIFY2(parser.getUploadedFiles().size() == 2, "Should be 2");
+    QVERIFY2(parser.getHttpVersion().endsWith("1.1"), "Should be 1.1");
+    QVERIFY2(parser.getMethod() == "POST", "Should be POST");
+    QVERIFY2(parser.isMultiPart(), "Should be be multiPart");
 }
 
 QByteArray TST_HttpParser::buildGetRequest()
@@ -57,7 +71,29 @@ QByteArray TST_HttpParser::buildPostRequest()
     req += "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n";
     req += "Content-Type: application/x-www-form-urlencoded\r\n";
     req += "Cookie: uid=12345678901234567890\r\n\r\n";
-    req += "id=10&nome=Herik";
+    req += "id=10";
+
+    return req;
+}
+
+QByteArray TST_HttpParser::buildPostRequestWithFiles()
+{
+    QByteArray req;
+
+    req  = "POST /savefiles?id= HTTP/1.1\r\n";
+    req += "Host: localhost:8080\r\n";
+    req += "Connection: keep-alive\r\n";
+    req += "Content-Length: 890\r\nCache-Control: max-age=0\r\n";
+    req += "Origin: http://localhost:8080\r\n";
+    req += "Upgrade-Insecure-Requests: 1\r\n";
+    req += "Cookie: uid=12345678901234567890\r\n";
+    req += "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRfRRkSFRgWLngq8y\r\n";
+    req += "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n";
+    req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n";
+    req += "Referer: http://localhost:8080/pages/savefiles.html\r\n";
+    req += "Accept-Encoding: gzip, deflate, br\r\n";
+    req += "Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7\r\n\r\n";
+    req += "------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"theFile\"; filename=\"test.txt\"\r\nContent-Type: text/plain\r\n\r\naaaaaaaa\n\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"theFile2\"; filename=\"test2.txt\"\r\nContent-Type: text/plain\r\n\r\naaaaaaaa\n\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"theFile3\"; filename=\"\"\r\nContent-Type: application/octet-stream\r\n\r\n\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"theFile4\"; filename=\"\"\r\nContent-Type: application/octet-stream\r\n\r\n\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"theFile5\"; filename=\"\"\r\nContent-Type: application/octet-stream\r\n\r\n\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y\r\nContent-Disposition: form-data; name=\"moo\"\r\n\r\nSend Files\r\n------WebKitFormBoundaryRfRRkSFRgWLngq8y--\r\n";
 
     return req;
 }

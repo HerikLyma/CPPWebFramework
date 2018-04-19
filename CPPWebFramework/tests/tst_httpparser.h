@@ -14,9 +14,13 @@ private slots:
 
     void testPost();
 
+    void testPostWithFiles();
+
     QByteArray buildGetRequest();
 
     QByteArray buildPostRequest();
+
+    QByteArray buildPostRequestWithFiles();
 };
 
 #endif // TST_HTTPPARSER_H
