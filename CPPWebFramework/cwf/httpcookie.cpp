@@ -108,11 +108,11 @@ QList<QByteArray> HttpCookie::splitCSV(const QByteArray &source)
    for(int i = 0; i < size; ++i)
    {
        char c = source.at(i);
-       if(inString==false)
+       if(!inString)
        {
            if(c == '\"')
            {
-               inString=true;
+               inString = true;
            }
            else if(c == ';')
            {

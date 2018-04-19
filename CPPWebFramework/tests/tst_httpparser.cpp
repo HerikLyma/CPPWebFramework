@@ -43,6 +43,8 @@ void TST_HttpParser::testPost()
     QVERIFY2(CWF::HttpParser(req).getParameter("nome").isEmpty(), "Should be true");
     req = buildPostRequest('C');
     QVERIFY2(CWF::HttpParser(req).getParameter("id").toInt() == 10, "Should be 10");
+    req = buildPostRequest('D');
+    QVERIFY2(CWF::HttpParser(req).getParameter("id").isEmpty(), "Should be true");
 }
 
 void TST_HttpParser::testPostWithFiles()
@@ -81,13 +83,15 @@ QByteArray TST_HttpParser::buildPostRequest(char condition)
     req += "Connection: keep-alive\r\n";
     req += "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n";
     req += "Content-Type: application/x-www-form-urlencoded\r\n";
-    req += "Cookie: sessionId=12345678901234567890\r\n\r\n";
+    req += "Cookie: sessionId=\"12345678901234567890\"\r\n\r\n";
     if(condition == 'A')
         req += "id=10&nome=Herik";
     else if(condition == 'B')
         req += "id=10&nome";
     else if(condition == 'C')
         req += "id=10";
+    else if(condition == 'D')
+        req += "id";
     return req;
 }
 
@@ -101,7 +105,7 @@ QByteArray TST_HttpParser::buildPostRequestWithFiles()
     req += "Content-Length: 890\r\nCache-Control: max-age=0\r\n";
     req += "Origin: http://localhost:8080\r\n";
     req += "Upgrade-Insecure-Requests: 1\r\n";
-    req += "Cookie: sessionId=12345678901234567890\r\n";
+    req += "Cookie: = ; xxx=10; yyy=20\r\n";
     req += "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRfRRkSFRgWLngq8y\r\n";
     req += "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n";
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n";
