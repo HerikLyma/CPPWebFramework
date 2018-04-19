@@ -4,6 +4,7 @@
 #include <QtTest>
 #include <cwf/httpparser.h>
 
+
 class TST_HttpParser : public QObject
 {
     Q_OBJECT
@@ -18,9 +19,13 @@ private slots:
 
     QByteArray buildGetRequest();
 
-    QByteArray buildPostRequest();
+    QByteArray buildPostRequest(char condition);
 
     QByteArray buildPostRequestWithFiles();
+
+    QByteArray buildGetRequestWithoutEndMsg();
+
+    QByteArray buildInvalidRequest();
 };
 
 #endif // TST_HTTPPARSER_H
