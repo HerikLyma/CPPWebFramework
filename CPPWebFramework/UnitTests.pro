@@ -132,7 +132,8 @@ HEADERS += \
     tests/tst_request.h \
     cwf/constants.h \
     cwf/cppwebframework_global.h \
-    tests/tst_cppwebcontroller.h
+    tests/tst_cppwebcontroller.h \
+    cwf/variant.h
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0

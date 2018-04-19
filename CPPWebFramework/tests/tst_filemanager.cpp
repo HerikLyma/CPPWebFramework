@@ -24,4 +24,7 @@ void TST_FileManager::test()
     QVERIFY2(fileManager.readAll(QDir::currentPath() + "/server/config/CPPWeb.ini", fileErro).size() > 0, "Should be > 0");
     QVERIFY2(fileManager.readAll("xxxCPPWeb.ini", fileErro) == "No such file or directory", "Should be No such file or directory");
     QVERIFY2(fileErro == QFile::FileError::OpenError, "Should be QFile::FileError::OpenError");
+
+
+    QVERIFY2(fileManager.copyDirectoryFiles("xyz", "abc", true), "Should return true");
 }
