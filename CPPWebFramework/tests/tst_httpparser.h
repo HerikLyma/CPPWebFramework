@@ -10,7 +10,13 @@ class TST_HttpParser : public QObject
 private slots:
     void test();
 
-    QByteArray simpleRequest();
+    void testGet();
+
+    void testPost();
+
+    QByteArray buildGetRequest();
+
+    QByteArray buildPostRequest();
 };
 
 #endif // TST_HTTPPARSER_H
