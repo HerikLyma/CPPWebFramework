@@ -18,6 +18,8 @@ private slots:
 
     void fillClient(ClientTest &client, short h);
 
+    QByteArray buildHtmlForIf(const QByteArray &condition);
+
     void createFile(const QString &name, const QByteArray &content);
 };
 

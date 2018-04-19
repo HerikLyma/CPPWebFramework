@@ -49,34 +49,17 @@ void TST_CSTLCompiler::testForOutIf()
 
     QMap<QString, QObject *> objects({{"clients", &obj}});
 
-    QByteArray html;
-    html  = "<html>";
-    html +=     "<body>";
-    html +=         "<for items=\"clients\" var=\"client\">";
-    html +=             "<if var=\"#{client.getH}\" equal=\"1\">";
-    html +=                 "<center>";
-    html +=                     "<out value=\"#{client.getA}\"/>";
-    html +=                     "<out value=\"#{client.getB}\"/>";
-    html +=                     "<out value=\"#{client.getC}\"/>";
-    html +=                     "<out value=\"#{client.getD}\"/>";
-    html +=                     "<out value=\"#{client.getE}\"/>";
-    html +=                     "<out value=\"#{client.getH}\"/>";
-    html +=                     "<out value=\"#{client.getI}\"/>";
-    html +=                     "<out value=\"#{client.getJ}\"/>";
-    html +=                     "<out value=\"#{client.getK}\"/>";
-    html +=                     "<out value=\"#{client.getL}\"/>";
-    html +=                     "<out value=\"#{client.getM}\"/>";
-    html +=                     "<out value=\"#{client.getN}\"/>";
-    html +=                     "<out value=\"#{client.getO}\"/>";
-    html +=                     "<out value=\"#{client.getP}\"/>";
-    html +=                     "<out value=\"#{client.getQ}\"/>";
-    html +=                  "</center>";
-    html +=             "</if>";
-    html +=         "</for>";
-    html +=     "</body>";
-    html += "</html>";
+    QByteArray equal(buildHtmlForIf("equal"));
+    QByteArray different(buildHtmlForIf("different"));
+    QByteArray greater(buildHtmlForIf("greater"));
+    QByteArray greaterEqual(buildHtmlForIf("greater_equal"));
+    QByteArray lessEqual(buildHtmlForIf("less_equal"));
 
-    QVERIFY2(CWF::CSTLCompiler(html, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
+    QVERIFY2(CWF::CSTLCompiler(equal, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
+    QVERIFY2(CWF::CSTLCompiler(different, QDir().currentPath(), objects, false).output().contains("ab1DE011111111.51.5"), "Should contains 'ab1DE011111111.51.5'");
+    QVERIFY2(!CWF::CSTLCompiler(greater, QDir().currentPath(), objects, false).output().contains("ab1DE"), "Should not contains 'ab1DE'");
+    QVERIFY2(CWF::CSTLCompiler(greaterEqual, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
+    QVERIFY2(CWF::CSTLCompiler(lessEqual, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
 }
 
 void TST_CSTLCompiler::fillClient(ClientTest &client, short h)
@@ -96,6 +79,38 @@ void TST_CSTLCompiler::fillClient(ClientTest &client, short h)
     client.setO(1);
     client.setP(1.5);
     client.setQ(1.5);
+}
+
+QByteArray TST_CSTLCompiler::buildHtmlForIf(const QByteArray &condition)
+{
+    QByteArray html;
+    html  = "<html>";
+    html +=     "<body>";
+    html +=         "<for items=\"clients\" var=\"client\">";
+    html +=             "<if var=\"#{client.getH}\" " + condition + "=\"1\">";
+    html +=                 "<center>";
+    html +=                     "<out value=\"#{client.getA}\"/>";
+    html +=                     "<out value=\"#{client.getB}\"/>";
+    html +=                     "<out value=\"#{client.getC}\"/>";
+    html +=                     "<out value=\"#{client.getD}\"/>";
+    html +=                     "<out value=\"#{client.getE}\"/>";
+    html +=                     "<out value=\"#{client.getH}\"/>";
+    html +=                     "<out value=\"#{client.getI}\"/>";
+    html +=                     "<out value=\"#{client.getJ}\"/>";
+    html +=                     "<out value=\"#{client.getK}\"/>";
+    html +=                     "<out value=\"#{client.getL}\"/>";
+    html +=                     "<out value=\"#{client.getM}\"/>";
+    html +=                     "<out value=\"#{client.getN}\"/>";
+    html +=                     "<out value=\"#{client.getO}\"/>";
+    html +=                     "<out value=\"#{client.getP}\"/>";
+    html +=                     "<out value=\"#{client.getQ}\"/>";
+    html +=                 "</center>";
+    html +=             "</if>";
+    html +=         "</for>";
+    html +=     "</body>";
+    html += "</html>";
+
+    return html;
 }
 
 void TST_CSTLCompiler::createFile(const QString &name, const QByteArray &content)
