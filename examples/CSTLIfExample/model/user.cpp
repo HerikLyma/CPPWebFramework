@@ -7,7 +7,7 @@
 
 #include "user.h"
 
-User::User(QObject *parent) : QObject(parent), id(0)
+User::User(QObject *parent) : QObject(parent), id(0), gender('M')
 {
 
 }
