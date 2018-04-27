@@ -15,7 +15,7 @@ class User : public QObject
 {
     Q_OBJECT
 private:
-    int id;
+    int id = 0;
     char gender;
     QString name;
     QString address;
