@@ -68,6 +68,9 @@ class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompiler
      * @return QByteArray : Tag body.
      */
     QByteArray getBody(QXmlStreamReader &xml, const QString &tagName);
+
+
+    void processText(QString &text);
 public:
     /**
      * @brief Initialize the str, objects and isStrFileName properties.

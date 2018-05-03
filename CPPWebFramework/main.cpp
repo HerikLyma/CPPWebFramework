@@ -23,6 +23,7 @@
 #include <tests/tst_qlistobject.h>
 #include <tests/tst_qmapthreadsafety.h>
 #include <tests/tst_requestdispatcher.h>
+#include <tests/tst_cstlcompilerout.h>
 #include <tests/tst_urlencoder.h>
 
 
@@ -38,7 +39,6 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_CSTLCompiler);
    ASSERT_TEST(new TST_CSTLCompilerAttributes);
    ASSERT_TEST(new TST_CSTLCompilerFor);
-   ASSERT_TEST(new TST_CSTLCompilerFor);
    ASSERT_TEST(new TST_CSTLCompilerIf);
    ASSERT_TEST(new TST_CSTLCompilerImport);
    ASSERT_TEST(new TST_CSTLCompilerObject);
@@ -47,7 +47,7 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_FilterChain);
    ASSERT_TEST(new TST_HttpCookie);
    ASSERT_TEST(new TST_HttpParser);
-   ASSERT_TEST(new TST_HttpReadRequest);   
+   ASSERT_TEST(new TST_HttpReadRequest);
    ASSERT_TEST(new TST_Request);
    ASSERT_TEST(new TST_Response);
    ASSERT_TEST(new TST_Session);
@@ -55,8 +55,9 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_Properties);
    ASSERT_TEST(new TST_QListObject);
    ASSERT_TEST(new TST_QMapThreadSafety);
-   ASSERT_TEST(new TST_RequestDispatcher);   
+   ASSERT_TEST(new TST_RequestDispatcher);
    ASSERT_TEST(new TST_URLEncoder);
+   ASSERT_TEST(new TST_CSTLCompilerOut);
 
    return status;
 }

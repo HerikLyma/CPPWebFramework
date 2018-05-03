@@ -23,7 +23,9 @@ CSTLCompiler::CSTLCompiler(const QByteArray &str, const QString &path,
                                                  isStrFileName(isStrFileName)
 {
     if(isStrFileName)
+    {
         isView = str.toLower().endsWith(".view");
+    }
 }
 
 QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
@@ -32,7 +34,9 @@ QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
     {
         QFile file(str);
         if(!file.open(QIODevice::ReadOnly))
+        {
             return "<html><body>" + file.errorString().toUtf8() + "</body></html>";
+        }
 
         QByteArray content(std::move(file.readAll()));
         file.close();
@@ -51,7 +55,9 @@ QByteArray CSTLCompiler::openFile(QXmlStreamReader &xml)
     }
 
     if (xml.hasError())
+    {
         return "<html><body>XML ERROR: " + xml.errorString().toUtf8() + "</body></html>";
+    }
     return "";
 }
 
@@ -59,21 +65,24 @@ QByteArray CSTLCompiler::processOutTag(QMap<QString, QString> &attr)
 {
     int size = attr.size();
     if(size < 1)
+    {
         return "";
-    else if(size > 1)
+    }
+    if(size > 1)
+    {
         return "***ERROR - OUT TAG DOES NOT HAS MORE THAN PROPERTY***";
-
+    }
     return CSTLCompilerAttributes(objects).buildAttributes(attr, false).toUtf8();
 }
 
 QByteArray CSTLCompiler::getBody(QXmlStreamReader &xml, const QString &tagName)
 {
-    QByteArray name, text, content(XML::HEADER);
+    QByteArray name, text, content(CSTL::TAG::BEGIN);
     QString att;
     CSTLCompilerAttributes compilerAttributes(objects);
     QMap<QString, QString> attributes;
     QMap<QString, QString>::iterator it;
-
+    int start = 0, end = 0;
     xml.readNext();
     while(!xml.atEnd())
     {
@@ -82,22 +91,48 @@ QByteArray CSTLCompiler::getBody(QXmlStreamReader &xml, const QString &tagName)
 
         if(xml.isStartElement())
         {
+            if(name == tagName)
+            {
+                ++start;
+            }
             attributes = std::move(compilerAttributes.getAttributes(xml.attributes()));
             for(it = attributes.begin(); it != attributes.end(); ++it)
+            {
                 att += " " + it.key() + "=\"" + it.value() + "\"";
+            }
             content += "<" + name + att + ">" + text;
             attributes.clear();
             att.clear();
         }
         else if(xml.isEndElement() && name == tagName)
-            break;
+        {
+            if(end < start)
+            {
+                content += text + "</" + name + ">";
+            }
+            ++end;
+            if(end >= start)
+            {
+                break;
+            }
+        }
         else if(xml.isEndElement())
+        {
             content += text + "</" + name + ">";
+        }
         else
+        {
             content += text;
+        }
         xml.readNext();
     }
-    return content;
+    return content + CSTL::TAG::END;
+}
+
+void CSTLCompiler::processText(QString &text)
+{
+    QString copy(std::move(text));
+    CSTLCompilerAttributes(objects).compile(copy, text);
 }
 
 QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
@@ -274,9 +309,13 @@ QByteArray CSTLCompiler::processIfTag(QXmlStreamReader &xml)
         }
 
         if(removeVar)
+        {
             objects.remove(var);
+        }
         if(removeCondition)
+        {
             objects.remove(condition);
+        }
     }
     return htmlOut;
 }
@@ -312,9 +351,13 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
         {
             CSTLCompilerImport importUrl(xml.attributes(), path);
             if(!importUrl.attributes.contains(CSTL::TAG::PROPERTY::ERROR))
+            {
                 htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::IMPORT::URL].toUtf8();
+            }
             else
+            {
                 htmlOut += importUrl.attributes[CSTL::TAG::PROPERTY::ERROR].toUtf8();
+            }
             name.clear();
 
         }
@@ -325,9 +368,13 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
                 attr = std::move(compilerAttributes.getAttributes(xml.attributes()));
                 tagAttributes = compilerAttributes.buildAttributes(attr);
                 if(xml.isStartElement())
+                {
                     name = "<" + name + tagAttributes + ">";
+                }
                 else if(xml.isEndElement())
+                {
                     name = "</" + name + ">";
+                }
             }
             else
             {
@@ -335,7 +382,7 @@ QByteArray CSTLCompiler::processXml(QXmlStreamReader &xml)
             }
         }
 
-        //process(text, number);
+        processText(text);
         htmlOut += name + text;
         xml.readNext();
         if(xml.hasError())
@@ -353,7 +400,9 @@ QByteArray CSTLCompiler::output()
     if(isView)
     {
         if(htmlOutput.isEmpty())
-            return processXml(xml);
+        {
+            return processXml(xml).replace(CSTL::TAG::BEGIN, "").replace(CSTL::TAG::END, "");
+        }
     }
     return htmlOutput;
 }

@@ -57,6 +57,8 @@ namespace CSTL
         const QString FOR    = "for";
         const QString IF     = "if";
         const QString IMPORT = "import";
+        const QByteArray BEGIN  = "<cstl>";
+        const QByteArray END    = "</cstl>";
 
         //PROPERTIES CONSTANTS
         namespace PROPERTY

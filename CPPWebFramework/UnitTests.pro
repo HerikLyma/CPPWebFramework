@@ -76,7 +76,8 @@ SOURCES += \
     tests/tst_qmapthreadsafety.cpp \
     tests/tst_requestdispatcher.cpp \
     tests/tst_urlencoder.cpp \
-    tests/tst_request.cpp
+    tests/tst_request.cpp \
+    tests/tst_cstlcompilerout.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
@@ -133,7 +134,8 @@ HEADERS += \
     cwf/constants.h \
     cwf/cppwebframework_global.h \
     tests/tst_cppwebcontroller.h \
-    cwf/variant.h
+    cwf/variant.h \
+    tests/tst_cstlcompilerout.h
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0

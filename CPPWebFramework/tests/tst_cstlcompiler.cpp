@@ -101,7 +101,6 @@ QByteArray TST_CSTLCompiler::buildHtmlForIf(const QByteArray &condition, NUMBER_
         html +=         "<if var=\"#{client.getH}\" " + condition + "=\"1\">";
     else if(number == NUMBER_ATTR::THREE)
         html +=         "<if var=\"#{client.getH}\" " + condition + "=\"1\" test=\"0\">";
-    html +=                 "<center>";
     html +=                     "<out value=\"#{client.getA}\"/>";
     html +=                     "<out value=\"#{client.getB}\"/>";
     html +=                     "<out value=\"#{client.getC}\"/>";
@@ -117,7 +116,6 @@ QByteArray TST_CSTLCompiler::buildHtmlForIf(const QByteArray &condition, NUMBER_
     html +=                     "<out value=\"#{client.getO}\"/>";
     html +=                     "<out value=\"#{client.getP}\"/>";
     html +=                     "<out value=\"#{client.getQ}\"/>";
-    html +=                 "</center>";
     html +=             "</if>";
     html +=         "</for>";
     html +=     "</body>";
