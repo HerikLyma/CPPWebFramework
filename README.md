@@ -1,6 +1,5 @@
 [![GitHub issues](https://img.shields.io/github/issues/HerikLyma/CPPWebFramework.svg)](https://github.com/HerikLyma/CPPWebFramework/issues)
 [![Travis-CI](https://travis-ci.org/HerikLyma/CPPWebFramework.svg?branch=master)](https://travis-ci.org/HerikLyma/CPPWebFramework)
-[![Build status](https://ci.appveyor.com/api/projects/status/d8u7th2wl1qro6m2?svg=true)](https://ci.appveyor.com/project/HerikLyma/cppwebframework)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8b818182369744f0af42a52785f7b5fe)](https://www.codacy.com/app/HerikLyma/CPPWebFramework?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HerikLyma/CPPWebFramework&amp;utm_campaign=Badge_Grade)
 [![Language (C++)](https://img.shields.io/badge/powered_by-C++-green.svg?style=flat-square)](https://isocpp.org/)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt)
@@ -12,7 +11,7 @@
 
 ​The C++ Web Framework (CWF) is a MVC web framework, Open Source, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources, such as memory and processing, and have a low response time for requests. 
 With MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages 
-to take care of data presentation (View) and use the controllers as a between the two layers (Controller). 
+to take care of data presentation (View) and use the controllers as a between the two layers (Controller). The CWF had inspirations in Java Servlets, JSTL and Spring Framework.
 
 ​
 Because it is created in Qt, the C++ Web Framework can run on the same platforms supported by Qt:
