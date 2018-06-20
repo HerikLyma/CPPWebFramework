@@ -15,10 +15,10 @@
 CWF_BEGIN_NAMESPACE
 
 Request::Request(QTcpSocket &socket,
-                                       QMapThreadSafety<QString, Session *> &sessions,
-                                       const Configuration &configuration) : socket(&socket),
-                                                                             sessions(sessions),
-                                                                             configuration(configuration)
+                 QMapThreadSafety<QString, Session *> &sessions,
+                 const Configuration &configuration) : socket(&socket),
+                                                       sessions(sessions),
+                                                       configuration(configuration)
 {    
 }
 
@@ -135,7 +135,7 @@ Session &Request::getSession()
         if(sessionId.isEmpty() || !sessions.contains(sessionId))
         {
             sessionId = QUuid::createUuid().toString().toLocal8Bit();
-            response->addCookie(HttpCookie(HTTP::SESSION_ID, sessionId));            
+            response->addCookie(QNetworkCookie(HTTP::SESSION_ID, sessionId));
             session = new Session(sessionId, expiration);
             session->creationTime = currentTimeInt;            
             session->sessionExpirationTime = (currentTimeInt + expiration);
@@ -149,7 +149,9 @@ Session &Request::getSession()
     session->expired          = (currentTimeInt >= session->sessionExpirationTime);
     session->lastAccessedTime = currentTimeInt;
     if(!session->expired)
+    {
         session->sessionExpirationTime = (currentTimeInt + expiration);
+    }
     return *session;
 }
 

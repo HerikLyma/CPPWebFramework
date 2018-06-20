@@ -17,7 +17,7 @@ This class is responsible for encapsulating the Q\+Core\+Application, the \hyper
 \mbox{\Hypertarget{class_cpp_web_application_a96a7655a25d2e35ed545cdb7b8d81cc5}\label{class_cpp_web_application_a96a7655a25d2e35ed545cdb7b8d81cc5}} 
 \hyperlink{class_cpp_web_application_a96a7655a25d2e35ed545cdb7b8d81cc5}{$\sim$\+Cpp\+Web\+Application} ()
 \begin{DoxyCompactList}\small\item\em Destroys the server dynamically allocated. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ }\\void \hyperlink{class_cpp_web_application_a57657865223a43795ce755e77d7b8f27}{add\+Url\+Controller} (const Q\+String \&url) noexcept
+{\footnotesize template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ }\\void \hyperlink{class_cpp_web_application_ab4f105dee5ddd0cb7c6c93917057e850}{add\+Controller} (const Q\+String \&url) noexcept
 \begin{DoxyCompactList}\small\item\em Hitches a url to a \hyperlink{class_controller}{Controller}. \end{DoxyCompactList}\item 
 int \hyperlink{class_cpp_web_application_a1e9f2c789934748d6b7c29ad33e9d7c9}{start} ()
 \begin{DoxyCompactList}\small\item\em Starts the server and Q\+Core\+Application. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -51,12 +51,12 @@ Constructs a Q\+Core\+Application, a \hyperlink{class_cpp_web_server}{Cpp\+Web\+
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_cpp_web_application_a57657865223a43795ce755e77d7b8f27}\label{class_cpp_web_application_a57657865223a43795ce755e77d7b8f27}} 
-\index{Cpp\+Web\+Application@{Cpp\+Web\+Application}!add\+Url\+Controller@{add\+Url\+Controller}}
-\index{add\+Url\+Controller@{add\+Url\+Controller}!Cpp\+Web\+Application@{Cpp\+Web\+Application}}
-\subsubsection{\texorpdfstring{add\+Url\+Controller()}{addUrlController()}}
+\mbox{\Hypertarget{class_cpp_web_application_ab4f105dee5ddd0cb7c6c93917057e850}\label{class_cpp_web_application_ab4f105dee5ddd0cb7c6c93917057e850}} 
+\index{Cpp\+Web\+Application@{Cpp\+Web\+Application}!add\+Controller@{add\+Controller}}
+\index{add\+Controller@{add\+Controller}!Cpp\+Web\+Application@{Cpp\+Web\+Application}}
+\subsubsection{\texorpdfstring{add\+Controller()}{addController()}}
 {\footnotesize\ttfamily template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ \\
-void Cpp\+Web\+Application\+::add\+Url\+Controller (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+void Cpp\+Web\+Application\+::add\+Controller (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -79,7 +79,7 @@ Hitches a url to a \hyperlink{class_controller}{Controller}.
 \textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
 \{
      CWF::CppWebApplication server(argc, argv, \textcolor{stringliteral}{"/PATH\_TO\_EXAMPLE/server"}));
-     server.\hyperlink{class_cpp_web_server_ab876ae8eb6d14b89b9f0a76739c1545d}{addUrlController}<HelloWorldController>(\textcolor{stringliteral}{"/hello"});
+     server.addUrlController<HelloWorldController>(\textcolor{stringliteral}{"/hello"});
      \textcolor{keywordflow}{return} server.start();
 \}
 \end{DoxyCode}

@@ -123,6 +123,8 @@ namespace HTTP
     const QByteArray TRANSFER_ENCODING                = "Transfer-Encoding";
     const QByteArray CHUNKED                          = "chunked";
     const QByteArray END_LINE                         = "\r\n";
+    const QByteArray SEPARATOR                        = ": ";
+    const QByteArray HTTP_1_1                         = "HTTP/1.1 ";
     const QByteArray END_OF_MENSAGE                   = "\r\n\r\n";
     const QByteArray END_OF_MENSAGE_WITH_ZERO         = "0\r\n\r\n";
     const QByteArray CONTENT_TYPE                     = "Content-Type";
@@ -133,6 +135,7 @@ namespace HTTP
     const QByteArray MULTIPART                        = "multipart";
     const QByteArray URLENCODED                       = "urlencoded";
     const QByteArray COOKIE                           = "Cookie";
+    const QByteArray SET_COOKIE                       = "Set-Cookie: ";
     const QByteArray SESSION_ID                       = "sessionId";
     const QByteArray FILENAME                         = "filename";
     const QByteArray FORM_DATA_COLON_SPACE            = "form-data; ";

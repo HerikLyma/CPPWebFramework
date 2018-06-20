@@ -59,6 +59,8 @@ void TST_CSTLCompiler::testForOutIf()
     QByteArray zero(buildHtmlForIf("less", NUMBER_ATTR::ZERO));
     QByteArray three(buildHtmlForIf("less", NUMBER_ATTR::THREE));
 
+    QByteArray xx = CWF::CSTLCompiler(equal, QDir().currentPath(), objects, false).output();
+
     QVERIFY2(CWF::CSTLCompiler(equal, QDir().currentPath(), objects, false).output().contains("ab1DE111111111.51.5"), "Should contains 'ab1DE111111111.51.5'");
     QVERIFY2(CWF::CSTLCompiler(different, QDir().currentPath(), objects, false).output().contains("ab1DE011111111.51.5"), "Should contains 'ab1DE011111111.51.5'");
     QVERIFY2(!CWF::CSTLCompiler(greater, QDir().currentPath(), objects, false).output().contains("ab1DE"), "Should not contains 'ab1DE'");
@@ -92,7 +94,8 @@ void TST_CSTLCompiler::fillClient(ClientTest &client, short h)
 QByteArray TST_CSTLCompiler::buildHtmlForIf(const QByteArray &condition, NUMBER_ATTR number)
 {
     QByteArray html;
-    html  = "<html>";
+    html += "<!DOCTYPE html>";
+    html += "<html>";
     html +=     "<body>";
     html +=         "<for items=\"clients\" var=\"client\">";
     if(number == NUMBER_ATTR::ZERO)

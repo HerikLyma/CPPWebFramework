@@ -24,7 +24,7 @@ CWF_BEGIN_NAMESPACE
 /**
  * @brief The Request class holds all information about a http request.
  */
-class CPPWEBFRAMEWORKSHARED_EXPORT Request : public QObject
+class CPPWEBFRAMEWORKSHARED_EXPORT Request
 {
     friend class HttpReadRequest;
     friend class RequestDispatcher;
@@ -47,7 +47,7 @@ public:
     /**
      * @brief Destroys dynamically allocated resources.
      */
-    virtual ~Request();
+    virtual ~Request() noexcept;
     /**
      * @brief This method add attributes that will be passed to a view page.
      * The object can be processed within a page using view CSTL. For this to be possible the object must
@@ -97,7 +97,7 @@ public:
     /**
      * @brief This method will clear all the attributes.
      */
-    inline void clearAttributes() { attributes.clear(); }
+    inline void clearAttributes() noexcept { attributes.clear(); }
     /**
      * @brief This method set the HttpParser.
      * @param httpParser
@@ -107,7 +107,7 @@ public:
      * @brief This method returns the HttpParser.
      * @return HttpParser
      */
-    inline HttpParser &getHttpParser() const { return *httpParser; }
+    inline HttpParser &getHttpParser() const noexcept { return *httpParser; }
     /**
      * @brief This method returns the requested url.
      * @return QByteArray

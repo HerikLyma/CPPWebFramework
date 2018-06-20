@@ -68,7 +68,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...">QListObject</a> class is used to pass a list of object to a xhtml page. NOTE: Always when you need to pass a list of object to a xhtml page you will need to use this class, your class need to inherit from the QObject class and all the methods needs to be in the public slots session.  
+<p>The <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a> class is used to pass a list of object to a view page. NOTE: Always when you need to pass a list of object to a view page you will need to use this class, your class need to inherit from the QObject class and all the methods needs to be in the public slots session.  
  <a href="class_q_list_object.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="qlistobject_8h_source.html">qlistobject.h</a>&gt;</code></p>
@@ -84,15 +84,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a035ee9dc9f035443995b9419d32b07da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#a035ee9dc9f035443995b9419d32b07da">QListObject</a> (QObject *parent=0)</td></tr>
 <tr class="memdesc:a035ee9dc9f035443995b9419d32b07da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor can receive a parent.  <a href="#a035ee9dc9f035443995b9419d32b07da">More...</a><br /></td></tr>
 <tr class="separator:a035ee9dc9f035443995b9419d32b07da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9db03436b596a2f274b01a81e8931c"><td class="memItemLeft" align="right" valign="top"><a id="acc9db03436b596a2f274b01a81e8931c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#acc9db03436b596a2f274b01a81e8931c">QListObject</a> (QObject *parent, const std::initializer_list&lt; QObject *&gt; &amp;objects)</td></tr>
+<tr class="memdesc:acc9db03436b596a2f274b01a81e8931c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructs a <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a> with N elements. <br /></td></tr>
+<tr class="separator:acc9db03436b596a2f274b01a81e8931c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05889c002163fc36f5eaf12b88363fd"><td class="memItemLeft" align="right" valign="top"><a id="af05889c002163fc36f5eaf12b88363fd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#af05889c002163fc36f5eaf12b88363fd">QListObject</a> (const std::initializer_list&lt; QObject *&gt; &amp;objects)</td></tr>
+<tr class="memdesc:af05889c002163fc36f5eaf12b88363fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructs a <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a> with N elements. <br /></td></tr>
+<tr class="separator:af05889c002163fc36f5eaf12b88363fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e06b1d249cf0dbe92b826fed0e7b76"><td class="memItemLeft" align="right" valign="top"><a id="a01e06b1d249cf0dbe92b826fed0e7b76"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#a01e06b1d249cf0dbe92b826fed0e7b76">~QListObject</a> ()</td></tr>
+<tr class="memdesc:a01e06b1d249cf0dbe92b826fed0e7b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:a01e06b1d249cf0dbe92b826fed0e7b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b87308d291c9699a36849e5d8bfedd4"><td class="memItemLeft" align="right" valign="top">QObject *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#a9b87308d291c9699a36849e5d8bfedd4">operator[]</a> (int index) const</td></tr>
 <tr class="memdesc:a9b87308d291c9699a36849e5d8bfedd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is an operator overload and returns a QObject given an specific index.  <a href="#a9b87308d291c9699a36849e5d8bfedd4">More...</a><br /></td></tr>
 <tr class="separator:a9b87308d291c9699a36849e5d8bfedd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ded55097ea08fa5781240883a591216"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#a4ded55097ea08fa5781240883a591216">size</a> () const</td></tr>
-<tr class="memdesc:a4ded55097ea08fa5781240883a591216"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the number of elements in this <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...">QListObject</a>.  <a href="#a4ded55097ea08fa5781240883a591216">More...</a><br /></td></tr>
+<tr class="memdesc:a4ded55097ea08fa5781240883a591216"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the number of elements in this <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a>.  <a href="#a4ded55097ea08fa5781240883a591216">More...</a><br /></td></tr>
 <tr class="separator:a4ded55097ea08fa5781240883a591216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e960eabd3e9b7d49228ea7549a9bd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#ad5e960eabd3e9b7d49228ea7549a9bd7">add</a> (QObject *object)</td></tr>
 <tr class="memdesc:ad5e960eabd3e9b7d49228ea7549a9bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add a new QObject to the list.  <a href="#ad5e960eabd3e9b7d49228ea7549a9bd7">More...</a><br /></td></tr>
 <tr class="separator:ad5e960eabd3e9b7d49228ea7549a9bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8114f712189da4ae507ffb4a12eec2f3"><td class="memItemLeft" align="right" valign="top"><a id="a8114f712189da4ae507ffb4a12eec2f3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#a8114f712189da4ae507ffb4a12eec2f3">add</a> (const std::initializer_list&lt; QObject *&gt; &amp;objects)</td></tr>
+<tr class="memdesc:a8114f712189da4ae507ffb4a12eec2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add a N new QObjects to the list. <br /></td></tr>
+<tr class="separator:a8114f712189da4ae507ffb4a12eec2f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6bc1883142f976bfd3e82c9d0c030bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_q_list_object.html#af6bc1883142f976bfd3e82c9d0c030bb">remove</a> (QObject *object)</td></tr>
 <tr class="memdesc:af6bc1883142f976bfd3e82c9d0c030bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method remove and object from the list.  <a href="#af6bc1883142f976bfd3e82c9d0c030bb">More...</a><br /></td></tr>
 <tr class="separator:af6bc1883142f976bfd3e82c9d0c030bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6c30632fb46f8f7d404f77a9fea49bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...">QListObject</a> class is used to pass a list of object to a xhtml page. NOTE: Always when you need to pass a list of object to a xhtml page you will need to use this class, your class need to inherit from the QObject class and all the methods needs to be in the public slots session. </p>
+<div class="textblock"><p>The <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a> class is used to pass a list of object to a view page. NOTE: Always when you need to pass a list of object to a view page you will need to use this class, your class need to inherit from the QObject class and all the methods needs to be in the public slots session. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a035ee9dc9f035443995b9419d32b07da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a035ee9dc9f035443995b9419d32b07da">&#9670;&nbsp;</a></span>QListObject()</h2>
@@ -329,7 +345,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>This method returns the number of elements in this <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a xhtml page. NOTE: Always when you need to...">QListObject</a>. </p>
+<p>This method returns the number of elements in this <a class="el" href="class_q_list_object.html" title="The QListObject class is used to pass a list of object to a view page. NOTE: Always when you need to ...">QListObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
@@ -341,7 +357,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:09 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

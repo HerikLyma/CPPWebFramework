@@ -8,12 +8,12 @@
 #ifndef RESPONSE_H
 #define RESPONSE_H
 
-#include "httpcookie.h"
+#include <QFile>
 #include <QTcpSocket>
 #include <QTextStream>
-#include <QFile>
-#include <QThread>
 #include <QJsonDocument>
+#include <QNetworkCookie>
+#include "constants.h"
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -26,13 +26,38 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Response
 {
     QTcpSocket     *socket;
     const Configuration &configuration;
-    int            statusCode;
+    int            statusCode = Response::SC_OK;
     QByteArray     content;
-    QByteArray     statusText;
-    QString        httpStatus;
-    QMap<QByteArray,QByteArray> headers;
-    QVector<HttpCookie> cookies;
+    QByteArray     statusText = HTTP::OK;
+    QMap<QByteArray, QByteArray> headers;
+    QVector<QNetworkCookie> cookies;
 public:
+    Response(QTcpSocket &socket, const Configuration &configuration);
+
+    ~Response() noexcept {}
+
+    void write(const QJsonObject &json, bool writeContentType = true);
+
+    void write(const QJsonArray &array, bool writeContentType = true);
+
+    void write(QByteArray &&data);
+
+    void write(const QByteArray &data, bool flush = true);
+
+    void sendError(int sc, const QByteArray &msg);
+
+    void flushBuffer();
+
+    inline int getBufferSize() const noexcept { return content.size(); }
+
+    inline void addHeader(const QByteArray &name, const QByteArray &value) noexcept { headers.insert(name, value); }
+
+    inline void addCookie(const QNetworkCookie &cookie) noexcept { cookies.push_back(cookie); }
+
+    void setStatus(int statusCode, const QByteArray &description);
+
+    void sendRedirect(const QByteArray &url);
+
     static const int SC_CONTINUE;
 
     static const int SC_SWITCHING_PROTOCOLS;
@@ -114,38 +139,6 @@ public:
     static const int SC_GATEWAY_TIMEOUT;
 
     static const int SC_HTTP_VERSION_NOT_SUPPORTED;
-
-    Response(QTcpSocket &socket, const Configuration &configuration);
-
-    ~Response() {}
-
-    void write(const QJsonObject &json, bool writeContentType = true);
-
-    void write(const QJsonArray &array, bool writeContentType = true);
-
-    void write(QByteArray &&data);
-
-    void write(const QByteArray &data, bool flush = true);
-
-    void writeHeaders();
-
-    void writeToSocket(const QByteArray &data);
-
-    void sendError(int sc, const QByteArray &msg);
-
-    void flushBuffer();
-
-    inline int getBufferSize() const noexcept { return content.size(); }
-
-    inline void addHeader(const QByteArray &name, const QByteArray &value) noexcept { headers.insert(name, value); }
-
-    inline void addCookie(const HttpCookie &cookie) noexcept { cookies.push_back(cookie); }
-
-    inline QTcpSocket &getSocket() const noexcept { return *socket; }
-
-    void setStatus(const int &statusCode, const QByteArray &description);
-
-    void sendRedirect(const QByteArray &url);
 };
 
 CWF_END_NAMESPACE

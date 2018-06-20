@@ -19,15 +19,18 @@ Inheritance diagram for Cpp\+Web\+Server\+:
 \hyperlink{class_cpp_web_server_a9c5598c541de45a40d2ebad698e9a616}{Cpp\+Web\+Server} (const \hyperlink{class_configuration}{Configuration} \&configuration, \hyperlink{class_filter}{Filter} $\ast$filter=nullptr)
 \begin{DoxyCompactList}\small\item\em Load S\+SL configuration, configure the thread pool and the filter. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}\label{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}} 
-\hyperlink{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}{$\sim$\+Cpp\+Web\+Server} ()
+virtual \hyperlink{class_cpp_web_server_a6b9d6874d16f6491c511fb4b8793a5f8}{$\sim$\+Cpp\+Web\+Server} ()
 \begin{DoxyCompactList}\small\item\em Destroys all controllers and sessions. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ }\\void \hyperlink{class_cpp_web_server_ab876ae8eb6d14b89b9f0a76739c1545d}{add\+Url\+Controller} (const Q\+String \&url) noexcept
+{\footnotesize template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ }\\void \hyperlink{class_cpp_web_server_a3982d41728fd3237c42dd6dabbf1efb6}{add\+Controller} (const Q\+String \&url) noexcept
 \begin{DoxyCompactList}\small\item\em Hitches a url to a \hyperlink{class_controller}{Controller}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{class_cpp_web_server_a49addc6ee3148d11134062e6b7a56791}{incoming\+Connection} (qintptr socketfd) override
-\begin{DoxyCompactList}\small\item\em incoming\+Connection \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em incoming\+Connection \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_cpp_web_server_a1e53101dea816fe425a44665a8949c4f}\label{class_cpp_web_server_a1e53101dea816fe425a44665a8949c4f}} 
+void \hyperlink{class_cpp_web_server_a1e53101dea816fe425a44665a8949c4f}{do\+Clean} ()
+\begin{DoxyCompactList}\small\item\em Clean expired sessions on Server. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,12 +55,12 @@ Load S\+SL configuration, configure the thread pool and the filter.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_cpp_web_server_ab876ae8eb6d14b89b9f0a76739c1545d}\label{class_cpp_web_server_ab876ae8eb6d14b89b9f0a76739c1545d}} 
-\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!add\+Url\+Controller@{add\+Url\+Controller}}
-\index{add\+Url\+Controller@{add\+Url\+Controller}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
-\subsubsection{\texorpdfstring{add\+Url\+Controller()}{addUrlController()}}
+\mbox{\Hypertarget{class_cpp_web_server_a3982d41728fd3237c42dd6dabbf1efb6}\label{class_cpp_web_server_a3982d41728fd3237c42dd6dabbf1efb6}} 
+\index{Cpp\+Web\+Server@{Cpp\+Web\+Server}!add\+Controller@{add\+Controller}}
+\index{add\+Controller@{add\+Controller}!Cpp\+Web\+Server@{Cpp\+Web\+Server}}
+\subsubsection{\texorpdfstring{add\+Controller()}{addController()}}
 {\footnotesize\ttfamily template$<$typename C\+O\+N\+T\+R\+O\+L\+L\+ER $>$ \\
-void Cpp\+Web\+Server\+::add\+Url\+Controller (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+void Cpp\+Web\+Server\+::add\+Controller (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -65,9 +68,7 @@ Hitches a url to a \hyperlink{class_controller}{Controller}.
 
 
 \begin{DoxyParams}{Parameters}
-{\em const} & Q\+String \&url \+: Url name. \\
-\hline
-{\em \hyperlink{class_controller}{Controller}} & $\ast$controller \+: \hyperlink{class_controller}{Controller} that will answer requests made to url. If the filter is installed, all requests will be redirected to it and it will not be possible to map the controllers through the add\+Url\+Controller function, instead everything should be handled inside the \hyperlink{class_filter}{Filter}. \\
+{\em const} & Q\+String \&url \+: Url name. it will not be possible to map the controllers through the add\+Controller function, instead everything should be handled inside the \hyperlink{class_filter}{Filter}. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_cpp_web_server_a49addc6ee3148d11134062e6b7a56791}\label{class_cpp_web_server_a49addc6ee3148d11134062e6b7a56791}} 

@@ -24,7 +24,6 @@
 #include "httpparser.h"
 #include "constants.h"
 #include "filterchain.h"
-#include "httpcookie.h"
 #include "qmapthreadsafety.h"
 #include "cppwebframework_global.h"
 
@@ -40,12 +39,13 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpReadRequest : public QRunnable
     QMapThreadSafety<QString, Controller *> &urlController;
     QMapThreadSafety<QString, Session *> &sessions;    
     const Configuration &configuration;
-    QSslConfiguration   *sslConfiguration;
+    QSslConfiguration   *ssl;
     Filter              *filter;
     QTcpSocket          *socket = nullptr;
     qint64 maxUploadFile;
     bool readBody(HttpParser &parser, Request &request, Response &response);
-    void createSocket();
+    bool buildSslSocket();
+    void buildSocket();
 public:
     /**
      * @brief This constructor provides the necessary information to create a HttpReadRequest
@@ -59,7 +59,7 @@ public:
                     QMapThreadSafety<QString, Controller *> &urlController,
                     QMapThreadSafety<QString, Session *> &sessions,
                     const Configuration &configuration,
-                    QSslConfiguration *sslConfiguration,                    
+                    QSslConfiguration *ssl,
                     Filter *filter);
 
     /**

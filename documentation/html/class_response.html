@@ -91,12 +91,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (QByteArray
 <tr class="memitem:a438b172ba3b22cfebe453879fbb043f4"><td class="memItemLeft" align="right" valign="top"><a id="a438b172ba3b22cfebe453879fbb043f4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const QByteArray &amp;data, bool flush=true)</td></tr>
 <tr class="separator:a438b172ba3b22cfebe453879fbb043f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af336860cc3e3d6b96c257a1845ec5e48"><td class="memItemLeft" align="right" valign="top"><a id="af336860cc3e3d6b96c257a1845ec5e48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>writeHeaders</b> ()</td></tr>
-<tr class="separator:af336860cc3e3d6b96c257a1845ec5e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48dda4add1343ce41fb7c7e2a891b20f"><td class="memItemLeft" align="right" valign="top"><a id="a48dda4add1343ce41fb7c7e2a891b20f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>writeToSocket</b> (const QByteArray &amp;data)</td></tr>
-<tr class="separator:a48dda4add1343ce41fb7c7e2a891b20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a478441dad471d91725c2d3664b073bd0"><td class="memItemLeft" align="right" valign="top"><a id="a478441dad471d91725c2d3664b073bd0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendError</b> (int sc, const QByteArray &amp;msg)</td></tr>
 <tr class="separator:a478441dad471d91725c2d3664b073bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -109,15 +103,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getBufferSize</b> () c
 <tr class="memitem:adae7bde8f1f52edd915e709053b538d5"><td class="memItemLeft" align="right" valign="top"><a id="adae7bde8f1f52edd915e709053b538d5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addHeader</b> (const QByteArray &amp;name, const QByteArray &amp;value) noexcept</td></tr>
 <tr class="separator:adae7bde8f1f52edd915e709053b538d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4f8781c5106b744129b8742965ea18e"><td class="memItemLeft" align="right" valign="top"><a id="aa4f8781c5106b744129b8742965ea18e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addCookie</b> (const <a class="el" href="class_http_cookie.html">HttpCookie</a> &amp;cookie) noexcept</td></tr>
-<tr class="separator:aa4f8781c5106b744129b8742965ea18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29febc0eaefab2f6d81fb41057d81060"><td class="memItemLeft" align="right" valign="top"><a id="a29febc0eaefab2f6d81fb41057d81060"></a>
-QTcpSocket &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getSocket</b> () const noexcept</td></tr>
-<tr class="separator:a29febc0eaefab2f6d81fb41057d81060"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6168bc9d8c92941a3780fd56c44c6f82"><td class="memItemLeft" align="right" valign="top"><a id="a6168bc9d8c92941a3780fd56c44c6f82"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatus</b> (const int &amp;statusCode, const QByteArray &amp;description)</td></tr>
-<tr class="separator:a6168bc9d8c92941a3780fd56c44c6f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5512fc13abe7abff27529788ba33fe36"><td class="memItemLeft" align="right" valign="top"><a id="a5512fc13abe7abff27529788ba33fe36"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addCookie</b> (const QNetworkCookie &amp;cookie) noexcept</td></tr>
+<tr class="separator:a5512fc13abe7abff27529788ba33fe36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e98562c9c28ba208dc3fc130ff00d77"><td class="memItemLeft" align="right" valign="top"><a id="a2e98562c9c28ba208dc3fc130ff00d77"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setStatus</b> (int statusCode, const QByteArray &amp;description)</td></tr>
+<tr class="separator:a2e98562c9c28ba208dc3fc130ff00d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7acf6886b6b06704b8bbbb0692948a73"><td class="memItemLeft" align="right" valign="top"><a id="a7acf6886b6b06704b8bbbb0692948a73"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendRedirect</b> (const QByteArray &amp;url)</td></tr>
 <tr class="separator:a7acf6886b6b06704b8bbbb0692948a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,7 +248,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>SC_HTTP_V
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:09 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

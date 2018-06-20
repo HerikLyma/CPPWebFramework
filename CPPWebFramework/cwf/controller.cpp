@@ -13,7 +13,7 @@ CWF_BEGIN_NAMESPACE
 
 void Controller::doMessage(Request &req, Response &resp, QString method) const
 {
-    QString msg = "http.method_" + method.toLower() + "_not_supported";
+    QString msg("http.method_" + method.toLower() + "_not_supported");
     if (req.getProtocol().endsWith("1.1"))
         resp.sendError(Response::SC_METHOD_NOT_ALLOWED, msg.toLatin1());
     else

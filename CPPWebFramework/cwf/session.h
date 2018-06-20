@@ -9,7 +9,6 @@
 #define SESSION_H
 
 #include <QMap>
-#include "httpcookie.h"
 #include <atomic>
 #include <QMutex>
 #include <QObject>

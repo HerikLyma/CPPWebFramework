@@ -7,16 +7,76 @@
 
 #include "response.h"
 #include "configuration.h"
-#include "constants.h"
 #include <QDateTime>
 
 CWF_BEGIN_NAMESPACE
 
 Response::Response(QTcpSocket &socket, const Configuration &configuration) : socket(&socket),
-                                                                                                   configuration(configuration)
+                                                                             configuration(configuration)
+
 {
-    statusCode       = Response::SC_OK;
-    statusText       = HTTP::OK;
+}
+
+void sendBytes(QTcpSocket &socket, const QByteArray &text, int timeOut)
+{
+    if(socket.ConnectingState > 0 && text.size() > 0)
+    {
+        socket.write(text, text.size());
+        socket.flush();
+
+        if(socket.ConnectingState > 0)
+        {
+            socket.waitForBytesWritten(timeOut);
+        }
+    }
+}
+
+void buildHeadersString(QByteArray &temp, const QMap<QByteArray, QByteArray> &headers)
+{
+    QList<QByteArray> headersList(std::move(headers.keys()));
+
+    for(const auto &i : headersList)
+    {
+        temp.push_back(i);
+        temp.push_back(HTTP::SEPARATOR);
+        temp.push_back(headers.value(i));
+        temp.push_back(HTTP::END_LINE);
+    }
+}
+
+void buildCookiesString(QByteArray &temp, const QVector<QNetworkCookie> &cookies)
+{
+    for(const auto &i : cookies)
+    {
+        temp.push_back(HTTP::SET_COOKIE);
+        temp.push_back(i.toRawForm());
+        temp.push_back(HTTP::END_LINE);
+    }
+}
+
+void sendHeaders(int statusCode,
+                 int timeOut,
+                 const QByteArray &statusText,
+                 QMap<QByteArray, QByteArray> &headers,
+                 QVector<QNetworkCookie> &cookies,
+                 QTcpSocket &socket)
+{
+    QByteArray temp(HTTP::HTTP_1_1);
+    temp.reserve(100);
+    temp.push_back(QByteArray::number(statusCode));
+    temp.push_back(' ');
+    temp.push_back(statusText);
+    temp.push_back(HTTP::END_LINE);
+
+    if(!headers.contains(HTTP::CONTENT_TYPE))
+    {
+        headers.insert(HTTP::CONTENT_TYPE, HTTP::TEXT_HTML_UTF8);
+    }
+
+    buildHeadersString(temp, headers);
+    buildCookiesString(temp, cookies);
+    temp.push_back(HTTP::END_LINE);
+    sendBytes(socket, temp, timeOut);
 }
 
 void Response::flushBuffer()
@@ -24,6 +84,7 @@ void Response::flushBuffer()
     const int max = 32768;
     if(!content.isEmpty())
     {
+        int timeOut = configuration.getTimeOut();
         bool biggerThanLimit = content.size() > max;
         headers.insert(HTTP::CONTENT_LENGTH, QByteArray::number(content.size()));
         headers.insert(HTTP::SERVER, HTTP::SERVER_VERSION);
@@ -31,13 +92,13 @@ void Response::flushBuffer()
 
         if(!biggerThanLimit)
         {
-            writeHeaders();
-            writeToSocket(content);
+            sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
+            sendBytes(*socket, content, timeOut);
         }
         else
         {
             headers.insert(HTTP::TRANSFER_ENCODING, HTTP::CHUNKED);
-            writeHeaders();
+            sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
             int total = (content.size() / max) + 1, last = 0;
 
             QVector<QByteArray> vetor;
@@ -51,15 +112,13 @@ void Response::flushBuffer()
             {
                 QByteArray data(std::move(vetor[i]));
                 if(!data.isEmpty())
-                {
-                    QByteArray buffer(std::move(QByteArray::number(data.size(), 16)));
-                    buffer.append(HTTP::END_LINE);
-                    writeToSocket(buffer);
-                    writeToSocket(data);
-                    writeToSocket(HTTP::END_LINE);
+                {                    
+                    sendBytes(*socket, (QByteArray::number(data.size(), 16) + HTTP::END_LINE), timeOut);
+                    sendBytes(*socket, data, timeOut);
+                    sendBytes(*socket, HTTP::END_LINE, timeOut);
                 }
             }
-            writeToSocket(HTTP::END_OF_MENSAGE_WITH_ZERO);
+            sendBytes(*socket, HTTP::END_OF_MENSAGE_WITH_ZERO, timeOut);
         }
         socket->disconnectFromHost();
         content.clear();
@@ -68,8 +127,9 @@ void Response::flushBuffer()
 
 void Response::sendError(int sc, const QByteArray &msg)
 {
-    writeHeaders();
-    writeToSocket("<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>");
+    int timeOut = configuration.getTimeOut();
+    sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
+    sendBytes(*socket, "<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>", timeOut);
 }
 
 void Response::write(const QJsonObject &json, bool writeContentType)
@@ -101,60 +161,10 @@ void Response::write(const QByteArray &data, bool flush)
         flushBuffer();
 }
 
-void Response::setStatus(const int &statusCode, const QByteArray &description)
+void Response::setStatus(int statusCode, const QByteArray &description)
 {
     this->statusCode = statusCode;
     statusText       = description;
-}
-
-void Response::writeToSocket(const QByteArray &data)
-{
-    socket->moveToThread(QThread::currentThread());
-    if(socket->ConnectingState > 0 && data.size() > 0)
-    {
-        socket->write(data, data.size());
-        socket->flush();
-        //qDebug() << data;
-        if(socket->ConnectingState > 0)
-        {            
-            int timeOut = configuration.getTimeOut();
-            socket->waitForBytesWritten(timeOut);
-        }
-    }
-}
-
-void Response::writeHeaders()
-{
-    QByteArray buffer;
-
-    buffer.append("HTTP/1.1 ");
-    buffer.append(QByteArray::number(statusCode));
-    buffer.append(' ');
-    buffer.append(statusText);
-    buffer.append(HTTP::END_LINE);
-
-    if(!headers.contains(HTTP::CONTENT_TYPE))
-    {
-        headers.insert(HTTP::CONTENT_TYPE, HTTP::TEXT_HTML_UTF8);
-    }
-
-    QList<QByteArray> headersList(std::move(headers.keys()));
-
-    for(QByteArray &name : headersList)
-    {
-        buffer.append(name);
-        buffer.append(": ");
-        buffer.append(headers.value(name));
-        buffer.append(HTTP::END_LINE);
-    }
-    for(HttpCookie &cookie : cookies)
-    {
-        buffer.append("Set-Cookie: ");
-        buffer.append(cookie.toByteArray());
-        buffer.append(HTTP::END_LINE);
-    }
-    buffer.append(HTTP::END_LINE);
-    writeToSocket(buffer);
 }
 
 void Response::sendRedirect(const QByteArray &url)

@@ -2,7 +2,7 @@
 \label{class_c_s_t_l_compiler}\index{C\+S\+T\+L\+Compiler@{C\+S\+T\+L\+Compiler}}
 
 
-This class compiles xhtml pages with C\+S\+TL (C++ Server Pages Standard Tags Library).  
+This class compiles view pages with C\+S\+TL (C++ Server Pages Standard Tags Library).  
 
 
 
@@ -15,11 +15,11 @@ This class compiles xhtml pages with C\+S\+TL (C++ Server Pages Standard Tags Li
 \hyperlink{class_c_s_t_l_compiler_a2ff8b8d08a280dea2f9b7474a9759e8f}{C\+S\+T\+L\+Compiler} (const Q\+Byte\+Array \&str, const Q\+String \&path, Q\+Map$<$ Q\+String, Q\+Object $\ast$$>$ \&objects, bool is\+Str\+File\+Name=true)
 \begin{DoxyCompactList}\small\item\em Initialize the str, objects and is\+Str\+File\+Name properties. \end{DoxyCompactList}\item 
 Q\+Byte\+Array \hyperlink{class_c_s_t_l_compiler_a3cce5a503e81c5de099859fe0ae1c386}{output} ()
-\begin{DoxyCompactList}\small\item\em Returns the compiled xhtml page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the compiled view page. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This class compiles xhtml pages with C\+S\+TL (C++ Server Pages Standard Tags Library). 
+This class compiles view pages with C\+S\+TL (C++ Server Pages Standard Tags Library). 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_c_s_t_l_compiler_a2ff8b8d08a280dea2f9b7474a9759e8f}\label{class_c_s_t_l_compiler_a2ff8b8d08a280dea2f9b7474a9759e8f}} 
@@ -36,7 +36,7 @@ Initialize the str, objects and is\+Str\+File\+Name properties.
 \begin{DoxyParams}{Parameters}
 {\em const} & Q\+Byte\+Array \&str \+: If is\+Str\+File\+Name is true, it should be a file name, else, it should be the file content. \\
 \hline
-{\em Q\+Map$<$\+Q\+String,Q\+Object} & $\ast$$>$ \&objects \+: Container objects that can be compiled into the xhtml page. \\
+{\em Q\+Map$<$\+Q\+String,Q\+Object} & $\ast$$>$ \&objects \+: Container objects that can be compiled into the view page. \\
 \hline
 {\em bool} & is\+Str\+File\+Name \+: It indicates whether str is the name of a file or its contents. \\
 \hline
@@ -52,7 +52,7 @@ Initialize the str, objects and is\+Str\+File\+Name properties.
 
 
 
-Returns the compiled xhtml page. 
+Returns the compiled view page. 
 
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: Compiled page. 

@@ -86,19 +86,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a9c5598c541de45a40d2ebad698e9a616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load SSL configuration, configure the thread pool and the filter.  <a href="#a9c5598c541de45a40d2ebad698e9a616">More...</a><br /></td></tr>
 <tr class="separator:a9c5598c541de45a40d2ebad698e9a616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="memItemLeft" align="right" valign="top"><a id="a6b9d6874d16f6491c511fb4b8793a5f8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a6b9d6874d16f6491c511fb4b8793a5f8">~CppWebServer</a> ()</td></tr>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a6b9d6874d16f6491c511fb4b8793a5f8">~CppWebServer</a> ()</td></tr>
 <tr class="memdesc:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all controllers and sessions. <br /></td></tr>
 <tr class="separator:a6b9d6874d16f6491c511fb4b8793a5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memTemplParams" colspan="2">template&lt;typename CONTROLLER &gt; </td></tr>
-<tr class="memitem:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#ab876ae8eb6d14b89b9f0a76739c1545d">addUrlController</a> (const QString &amp;url) noexcept</td></tr>
-<tr class="memdesc:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>.  <a href="#ab876ae8eb6d14b89b9f0a76739c1545d">More...</a><br /></td></tr>
-<tr class="separator:ab876ae8eb6d14b89b9f0a76739c1545d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3982d41728fd3237c42dd6dabbf1efb6"><td class="memTemplParams" colspan="2">template&lt;typename CONTROLLER &gt; </td></tr>
+<tr class="memitem:a3982d41728fd3237c42dd6dabbf1efb6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a3982d41728fd3237c42dd6dabbf1efb6">addController</a> (const QString &amp;url) noexcept</td></tr>
+<tr class="memdesc:a3982d41728fd3237c42dd6dabbf1efb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>.  <a href="#a3982d41728fd3237c42dd6dabbf1efb6">More...</a><br /></td></tr>
+<tr class="separator:a3982d41728fd3237c42dd6dabbf1efb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a49addc6ee3148d11134062e6b7a56791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a49addc6ee3148d11134062e6b7a56791">incomingConnection</a> (qintptr socketfd) override</td></tr>
 <tr class="memdesc:a49addc6ee3148d11134062e6b7a56791"><td class="mdescLeft">&#160;</td><td class="mdescRight">incomingConnection  <a href="#a49addc6ee3148d11134062e6b7a56791">More...</a><br /></td></tr>
 <tr class="separator:a49addc6ee3148d11134062e6b7a56791"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e53101dea816fe425a44665a8949c4f"><td class="memItemLeft" align="right" valign="top"><a id="a1e53101dea816fe425a44665a8949c4f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cpp_web_server.html#a1e53101dea816fe425a44665a8949c4f">doClean</a> ()</td></tr>
+<tr class="memdesc:a1e53101dea816fe425a44665a8949c4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clean expired sessions on Server. <br /></td></tr>
+<tr class="separator:a1e53101dea816fe425a44665a8949c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> class is a HTTP server, responsable to receive and dispatch the requisitions. </p>
@@ -148,8 +152,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab876ae8eb6d14b89b9f0a76739c1545d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab876ae8eb6d14b89b9f0a76739c1545d">&#9670;&nbsp;</a></span>addUrlController()</h2>
+<a id="a3982d41728fd3237c42dd6dabbf1efb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3982d41728fd3237c42dd6dabbf1efb6">&#9670;&nbsp;</a></span>addController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +164,7 @@ template&lt;typename CONTROLLER &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void CppWebServer::addUrlController </td>
+          <td class="memname">void CppWebServer::addController </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>url</em></td><td>)</td>
@@ -177,8 +181,7 @@ template&lt;typename CONTROLLER &gt; </div>
 <p>Hitches a url to a <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>QString &amp;url : Url name. </td></tr>
-    <tr><td class="paramname"><a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a></td><td>*controller : <a class="el" href="class_controller.html" title="The Controller class is responsable to attend a request from a specific url. You will need to create ...">Controller</a> that will answer requests made to url. If the filter is installed, all requests will be redirected to it and it will not be possible to map the controllers through the addUrlController function, instead everything should be handled inside the <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. </td></tr>
+    <tr><td class="paramname">const</td><td>QString &amp;url : Url name. it will not be possible to map the controllers through the addController function, instead everything should be handled inside the <a class="el" href="class_filter.html" title="The Filter class works like a filter. You can use this class to validate sessions or measuring runtim...">Filter</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +229,7 @@ template&lt;typename CONTROLLER &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:08 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

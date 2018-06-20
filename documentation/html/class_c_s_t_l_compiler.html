@@ -68,7 +68,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library).  
+<p>This class compiles view pages with CSTL (C++ Server Pages Standard Tags Library).  
  <a href="class_c_s_t_l_compiler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="cstlcompiler_8h_source.html">cstlcompiler.h</a>&gt;</code></p>
@@ -79,11 +79,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2ff8b8d08a280dea2f9b7474a9759e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the str, objects and isStrFileName properties.  <a href="#a2ff8b8d08a280dea2f9b7474a9759e8f">More...</a><br /></td></tr>
 <tr class="separator:a2ff8b8d08a280dea2f9b7474a9759e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cce5a503e81c5de099859fe0ae1c386"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_s_t_l_compiler.html#a3cce5a503e81c5de099859fe0ae1c386">output</a> ()</td></tr>
-<tr class="memdesc:a3cce5a503e81c5de099859fe0ae1c386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the compiled xhtml page.  <a href="#a3cce5a503e81c5de099859fe0ae1c386">More...</a><br /></td></tr>
+<tr class="memdesc:a3cce5a503e81c5de099859fe0ae1c386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the compiled view page.  <a href="#a3cce5a503e81c5de099859fe0ae1c386">More...</a><br /></td></tr>
 <tr class="separator:a3cce5a503e81c5de099859fe0ae1c386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This class compiles xhtml pages with CSTL (C++ Server Pages Standard Tags Library). </p>
+<div class="textblock"><p>This class compiles view pages with CSTL (C++ Server Pages Standard Tags Library). </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ff8b8d08a280dea2f9b7474a9759e8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ff8b8d08a280dea2f9b7474a9759e8f">&#9670;&nbsp;</a></span>CSTLCompiler()</h2>
@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>QByteArray &amp;str : If isStrFileName is true, it should be a file name, else, it should be the file content. </td></tr>
-    <tr><td class="paramname">QMap&lt;QString,QObject</td><td>*&gt; &amp;objects : Container objects that can be compiled into the xhtml page. </td></tr>
+    <tr><td class="paramname">QMap&lt;QString,QObject</td><td>*&gt; &amp;objects : Container objects that can be compiled into the view page. </td></tr>
     <tr><td class="paramname">bool</td><td>isStrFileName : It indicates whether str is the name of a file or its contents. </td></tr>
   </table>
   </dd>
@@ -151,7 +151,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the compiled xhtml page. </p>
+<p>Returns the compiled view page. </p>
 <dl class="section return"><dt>Returns</dt><dd>QByteArray : Compiled page. </dd></dl>
 
 </div>
@@ -163,7 +163,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:08 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

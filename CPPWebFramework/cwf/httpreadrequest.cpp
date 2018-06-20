@@ -15,13 +15,13 @@ HttpReadRequest::HttpReadRequest(qintptr socketDescriptor,
                                  QMapThreadSafety<QString, Controller *> &urlController,
                                  QMapThreadSafety<QString, Session *> &sessions,
                                  const Configuration &configuration,
-                                 QSslConfiguration *sslConfiguration,
+                                 QSslConfiguration *ssl,
                                  Filter *filter) :
     socketDescriptor(socketDescriptor),
     urlController(urlController),
     sessions(sessions),
     configuration(configuration),
-    sslConfiguration(sslConfiguration),
+    ssl(ssl),
     filter(filter)
 {
 }
@@ -31,16 +31,33 @@ HttpReadRequest::~HttpReadRequest()
     delete socket;
 }
 
+bool HttpReadRequest::buildSslSocket()
+{
+#ifndef QT_NO_OPENSSL
+    if(ssl)
+    {
+        socket = new QSslSocket;
+        ((QSslSocket*)socket)->setSslConfiguration(*ssl);
+        socket->setSocketDescriptor(socketDescriptor);
+        ((QSslSocket*)socket)->startServerEncryption();
+        return true;
+    }
+#endif
+    return false;
+}
+
+void HttpReadRequest::buildSocket()
+{
+    if(!buildSslSocket())
+    {
+        socket = new QTcpSocket;
+        socket->setSocketDescriptor(socketDescriptor);
+    }
+}
+
 void HttpReadRequest::run()
 {
-    createSocket();
-    socket->setSocketDescriptor(socketDescriptor);
-#ifndef QT_NO_OPENSSL
-    if (sslConfiguration)
-    {
-        ((QSslSocket*)socket)->startServerEncryption();
-    }
-#endif    
+    buildSocket();
     maxUploadFile = configuration.getMaxUploadFile();
     socket->setReadBufferSize(maxUploadFile);
     if(socket->ConnectedState > 0)
@@ -48,14 +65,14 @@ void HttpReadRequest::run()
         if(socket->waitForReadyRead())
         {
             QByteArray req(std::move(socket->readAll()));
-            //qDebug() << req;
+            qDebug() << req;
 
             HttpParser parser(req);
             if(parser.valid)
             {
-                QString              url = parser.url;
-                Request   request(*socket, sessions, configuration);
-                Response  response(*socket, configuration);
+                QString url = parser.url;
+                Request request(*socket, sessions, configuration);
+                Response response(*socket, configuration);
                 request.httpParser = &parser;
                 request.response   = &response;
 
@@ -88,9 +105,13 @@ void HttpReadRequest::run()
                 try
                 {
                     if(filter)
+                    {
                         filter->doFilter(request, response, chain);
+                    }
                     else
+                    {
                         chain.doFilter(request, response);
+                    }
                 }
                 catch(std::exception &e)
                 {
@@ -116,7 +137,9 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
     while(true)
     {
         if(socket->waitForReadyRead(10))
+        {
             content += socket->readAll();
+        }
 
         int spendTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
 
@@ -126,9 +149,13 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
             break;
         }
         else if(content.size() == contentLength)
+        {
             break;
+        }
         if(spendTime >= maximumTime)
+        {
             break;
+        }
     }
     if(content.size() > maxUploadFile)
     {
@@ -139,25 +166,15 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
     parser.body = std::move(content);
 
     if(parser.contentType.contains(HTTP::APPLICATION_WWW_FORM_URLENCODED))
+    {
         parser.doParseBody();
+    }
     else if(parser.multiPart)
+    {
         parser.doParseFiles();
+    }
 
     return true;
-}
-
-void HttpReadRequest::createSocket()
-{
-#ifndef QT_NO_OPENSSL
-    if (sslConfiguration)
-    {
-        QSslSocket *sslSocket = new QSslSocket;
-        sslSocket->setSslConfiguration(*sslConfiguration);
-        socket = sslSocket;
-        return;
-    }
-#endif
-    socket = new QTcpSocket;
 }
 
 CWF_END_NAMESPACE

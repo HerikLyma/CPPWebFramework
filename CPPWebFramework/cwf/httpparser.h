@@ -11,7 +11,7 @@
 #include <QMap>
 #include <QVector>
 #include <QByteArray>
-#include "httpcookie.h"
+#include <QNetworkCookie>
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -31,7 +31,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpParser
     QMultiMap<QByteArray, QByteArray> parameters;
     QMultiMap<QByteArray, QByteArray> headerField;
     QMultiMap<QByteArray, QByteArray> files;
-    QVector<HttpCookie> cookies;
+    QVector<QNetworkCookie> cookies;
     bool    valid     = false;
     bool    multiPart = false;
     bool    readFile  = false;
@@ -110,9 +110,9 @@ public:
     inline QMultiMap<QByteArray, QByteArray> getUploadedFiles() const noexcept { return files; }
     /**
      * @brief Returns all cookies.
-     * @return QVector<HttpCookie> : Cookies.
+     * @return QVector<QNetworkCookie> : Cookies.
      */
-    inline QVector<HttpCookie> getCookies() const noexcept { return cookies; }
+    inline QVector<QNetworkCookie> getCookies() const noexcept { return cookies; }
     /**
      * @brief Returns all header fields given a specific name.
      * @param const QByteArray &headerField : Header field name.

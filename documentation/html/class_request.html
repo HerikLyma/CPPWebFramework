@@ -73,12 +73,6 @@ $(function() {
  <a href="class_request.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="request_8h_source.html">request.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for Request:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_request__inherit__graph.png" border="0" usemap="#_request_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -86,13 +80,17 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a5dbe3045d76139502b0c0db5c67ea900">Request</a> (QTcpSocket &amp;socket, <a class="el" href="class_q_map_thread_safety.html">QMapThreadSafety</a>&lt; QString, <a class="el" href="class_session.html">Session</a> *&gt; &amp;sessions, const <a class="el" href="class_configuration.html">Configuration</a> &amp;configuration)</td></tr>
 <tr class="memdesc:a5dbe3045d76139502b0c0db5c67ea900"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor needs to receive a reference to a QTcpSocket and QByteArray. The parameter parent is optional. NOTE: The <a class="el" href="class_cpp_web_server.html" title="The CppWebServer class is a HTTP server, responsable to receive and dispatch the requisitions. ">CppWebServer</a> is responsable to create the QTcpSocket, and the <a class="el" href="class_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a> is responsable to create a <a class="el" href="class_http_read_request.html" title="The HttpReadRequest class is created automatically by the CppWebServer and inserted   in a QThreadPoo...">HttpReadRequest</a> and a <a class="el" href="class_response.html" title="The Response class is responsable to response a Http request. ">Response</a>. <br /></td></tr>
 <tr class="separator:a5dbe3045d76139502b0c0db5c67ea900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d57c725686701f773eb3630630a7ea2"><td class="memItemLeft" align="right" valign="top"><a id="a4d57c725686701f773eb3630630a7ea2"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a4d57c725686701f773eb3630630a7ea2">~Request</a> ()</td></tr>
-<tr class="memdesc:a4d57c725686701f773eb3630630a7ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys dynamically allocated resources. <br /></td></tr>
-<tr class="separator:a4d57c725686701f773eb3630630a7ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6936b15e3d926bc4cc208357c4100df"><td class="memItemLeft" align="right" valign="top"><a id="ac6936b15e3d926bc4cc208357c4100df"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#ac6936b15e3d926bc4cc208357c4100df">~Request</a> () noexcept</td></tr>
+<tr class="memdesc:ac6936b15e3d926bc4cc208357c4100df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys dynamically allocated resources. <br /></td></tr>
+<tr class="separator:ac6936b15e3d926bc4cc208357c4100df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad856d106a54dffed5e478858cdaa7618"><td class="memItemLeft" align="right" valign="top"><a id="ad856d106a54dffed5e478858cdaa7618"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#ad856d106a54dffed5e478858cdaa7618">addAttribute</a> (const std::initializer_list&lt; QPair&lt; QString, QObject *&gt;&gt; &amp;value) noexcept</td></tr>
+<tr class="memdesc:ad856d106a54dffed5e478858cdaa7618"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add attributes that will be passed to a view page. The object can be processed within a page using view CSTL. For this to be possible the object must inherit from QObject and methods and must be in session "public slots". <br /></td></tr>
+<tr class="separator:ad856d106a54dffed5e478858cdaa7618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe81be45f2fffc0e4baf2830278b8c94"><td class="memItemLeft" align="right" valign="top"><a id="afe81be45f2fffc0e4baf2830278b8c94"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#afe81be45f2fffc0e4baf2830278b8c94">addAttribute</a> (const QString &amp;name, QObject *value) noexcept</td></tr>
-<tr class="memdesc:afe81be45f2fffc0e4baf2830278b8c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add an attribute that will be passed to a xhtml page. The object can be processed within a page using xhtml CSTL. For this to be possible the object must inherit from QObject and methods and must be in session "public slots". <br /></td></tr>
+<tr class="memdesc:afe81be45f2fffc0e4baf2830278b8c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method add an attribute that will be passed to a view page. The object can be processed within a page using view CSTL. For this to be possible the object must inherit from QObject and methods and must be in session "public slots". <br /></td></tr>
 <tr class="separator:afe81be45f2fffc0e4baf2830278b8c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affe1bd704eaad1077e5577d0f8a22392"><td class="memItemLeft" align="right" valign="top"><a id="affe1bd704eaad1077e5577d0f8a22392"></a>
 QMap&lt; QString, QObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#affe1bd704eaad1077e5577d0f8a22392">getAttributes</a> () const noexcept</td></tr>
@@ -120,16 +118,16 @@ QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 <tr class="memitem:a975ffb8f0b6aa08879ffecb50d9bb289"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a975ffb8f0b6aa08879ffecb50d9bb289">getProtocol</a> () const noexcept</td></tr>
 <tr class="memdesc:a975ffb8f0b6aa08879ffecb50d9bb289"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the http protocol.  <a href="#a975ffb8f0b6aa08879ffecb50d9bb289">More...</a><br /></td></tr>
 <tr class="separator:a975ffb8f0b6aa08879ffecb50d9bb289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1aa80b942621b9bb12f3eca47a415b"><td class="memItemLeft" align="right" valign="top"><a id="a4a1aa80b942621b9bb12f3eca47a415b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a4a1aa80b942621b9bb12f3eca47a415b">clearAttributes</a> ()</td></tr>
-<tr class="memdesc:a4a1aa80b942621b9bb12f3eca47a415b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will clear all the attributes. <br /></td></tr>
-<tr class="separator:a4a1aa80b942621b9bb12f3eca47a415b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1eaaa01ab5eb0cf1a1de7a044e9fa3"><td class="memItemLeft" align="right" valign="top"><a id="a5d1eaaa01ab5eb0cf1a1de7a044e9fa3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a5d1eaaa01ab5eb0cf1a1de7a044e9fa3">clearAttributes</a> () noexcept</td></tr>
+<tr class="memdesc:a5d1eaaa01ab5eb0cf1a1de7a044e9fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will clear all the attributes. <br /></td></tr>
+<tr class="separator:a5d1eaaa01ab5eb0cf1a1de7a044e9fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a526593ca8b89c6871a36fefb0f2cde1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a526593ca8b89c6871a36fefb0f2cde1a">setHttpParser</a> (<a class="el" href="class_http_parser.html">HttpParser</a> &amp;httpParser) noexcept</td></tr>
 <tr class="memdesc:a526593ca8b89c6871a36fefb0f2cde1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method set the <a class="el" href="class_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>.  <a href="#a526593ca8b89c6871a36fefb0f2cde1a">More...</a><br /></td></tr>
 <tr class="separator:a526593ca8b89c6871a36fefb0f2cde1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac593ca2abd88c9e21238a37da8c707f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_http_parser.html">HttpParser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#ac593ca2abd88c9e21238a37da8c707f6">getHttpParser</a> () const</td></tr>
-<tr class="memdesc:ac593ca2abd88c9e21238a37da8c707f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the <a class="el" href="class_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>.  <a href="#ac593ca2abd88c9e21238a37da8c707f6">More...</a><br /></td></tr>
-<tr class="separator:ac593ca2abd88c9e21238a37da8c707f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb678695298dab6ae617e87aaa4f312"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_http_parser.html">HttpParser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#adeb678695298dab6ae617e87aaa4f312">getHttpParser</a> () const noexcept</td></tr>
+<tr class="memdesc:adeb678695298dab6ae617e87aaa4f312"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the <a class="el" href="class_http_parser.html" title="The class parses a HTTP message. ">HttpParser</a>.  <a href="#adeb678695298dab6ae617e87aaa4f312">More...</a><br /></td></tr>
+<tr class="separator:adeb678695298dab6ae617e87aaa4f312"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48d3b2a3579011b0599e721fdb867b27"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a48d3b2a3579011b0599e721fdb867b27">getRequestURL</a> () const noexcept</td></tr>
 <tr class="memdesc:a48d3b2a3579011b0599e721fdb867b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the requested url.  <a href="#a48d3b2a3579011b0599e721fdb867b27">More...</a><br /></td></tr>
 <tr class="separator:a48d3b2a3579011b0599e721fdb867b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +159,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a934d83fe6fe62aba36a625b6edad8d65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_request.html#a934d83fe6fe62aba36a625b6edad8d65">fillQObject</a> (QObject *object)</td></tr>
 <tr class="memdesc:a934d83fe6fe62aba36a625b6edad8d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill a QObject using parameters of a HTTP message.  <a href="#a934d83fe6fe62aba36a625b6edad8d65">More...</a><br /></td></tr>
 <tr class="separator:a934d83fe6fe62aba36a625b6edad8d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad8a1ec4936d077f4d854880ce132227"><td class="memItemLeft" align="right" valign="top"><a id="aad8a1ec4936d077f4d854880ce132227"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>fillQObject</b> (QObject *object, const QMap&lt; QByteArray, QByteArray &gt; &amp;parameters)</td></tr>
+<tr class="separator:aad8a1ec4936d077f4d854880ce132227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -201,8 +202,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDispatcher</b
 
 </div>
 </div>
-<a id="ac593ca2abd88c9e21238a37da8c707f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac593ca2abd88c9e21238a37da8c707f6">&#9670;&nbsp;</a></span>getHttpParser()</h2>
+<a id="adeb678695298dab6ae617e87aaa4f312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb678695298dab6ae617e87aaa4f312">&#9670;&nbsp;</a></span>getHttpParser()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -219,7 +220,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDispatcher</b
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -379,7 +380,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDispatcher</b
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. ">RequestDispatcher</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_request_dispatcher.html" title="The RequestDispatcher class can be used to dispatch a requisition to a page. ">RequestDispatcher</a> </dd></dl>
 
 </div>
 </div>
@@ -565,7 +566,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>RequestDispatcher</b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:09 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -105,7 +105,7 @@ QByteArray TST_HttpParser::buildPostRequestWithFiles()
     req += "Content-Length: 890\r\nCache-Control: max-age=0\r\n";
     req += "Origin: http://localhost:8080\r\n";
     req += "Upgrade-Insecure-Requests: 1\r\n";
-    req += "Cookie: = ; xxx=10; yyy=20\r\n";
+    req += "Cookie: xxx=10; yyy=20\r\n";
     req += "Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryRfRRkSFRgWLngq8y\r\n";
     req += "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36\r\n";
     req += "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8\r\n";

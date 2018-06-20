@@ -135,10 +135,14 @@ void HttpParser::extractCookies()
     int size = temp.size();
     for(int i = 0; i < size; ++i)
     {
-        HttpCookie cookie(temp[i]);
-        if(cookie.getName() == HTTP::SESSION_ID)
-            sessionId = cookie.getValue();
-        cookies.push_back(std::move(cookie));
+        const QByteArray &txt = temp[i];
+        QList<QNetworkCookie> cookiesList = std::move(QNetworkCookie::parseCookies(txt));
+        for(QNetworkCookie &cookie : cookiesList)
+        {
+            if(cookie.name() == HTTP::SESSION_ID)
+                sessionId = cookie.value();
+            cookies.push_back(std::move(cookie));
+        }
     }
 }
 

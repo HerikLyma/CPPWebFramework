@@ -42,8 +42,20 @@ Q\+String \hyperlink{class_configuration_ab67d7ba6abdfc27f5a66042377b01cd4}{get\
 \begin{DoxyCompactList}\small\item\em Returns the index page. \end{DoxyCompactList}\item 
 bool \hyperlink{class_configuration_a28db1b4cea9169d74939107f45e18123}{get\+Access\+Server\+Pages} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the access server page. \end{DoxyCompactList}\item 
+Q\+Byte\+Array \hyperlink{class_configuration_ae5e1bc207332b2f089f2168ada606c48}{get\+Ssl\+Pass\+Phrase} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the ssl pass phrase. \end{DoxyCompactList}\item 
 bool \hyperlink{class_configuration_aad998fe40caeeb4c412f00f0874c67c9}{is\+Valid} () const noexcept
-\begin{DoxyCompactList}\small\item\em Returns true if the \hyperlink{class_configuration}{Configuration} is ok. Otherwise returns false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns true if the \hyperlink{class_configuration}{Configuration} is ok. Otherwise returns false. \end{DoxyCompactList}\item 
+Q\+Ssl\+::\+Key\+Algorithm \hyperlink{class_configuration_a490e50bab0cdb1ccb531ee2472e97ca6}{get\+Ssl\+Key\+Algorithm} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the S\+SL Key Algorithm. The R\+SA is defined by default. \end{DoxyCompactList}\item 
+Q\+Ssl\+::\+Key\+Type \hyperlink{class_configuration_abd78f9eb7315e0b0ed5c7d3088ce1795}{get\+Ssl\+Key\+Type} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the S\+SL Key Type. The private is defined by default. \end{DoxyCompactList}\item 
+Q\+Ssl\+::\+Encoding\+Format \hyperlink{class_configuration_aa839f957ac9af33187140649b38785ef}{get\+Ssl\+Encoding\+Format} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the S\+SL Encoding Format. The P\+EM is defined by default. \end{DoxyCompactList}\item 
+Q\+Ssl\+Socket\+::\+Peer\+Verify\+Mode \hyperlink{class_configuration_ae7e5872717b012e16dc2255d1741e422}{get\+Ssl\+Peer\+Verify\+Mode} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the S\+SL Peer Veryfy Mode. The Verify\+None is defined by default. \end{DoxyCompactList}\item 
+Q\+Ssl\+::\+Ssl\+Protocol \hyperlink{class_configuration_acfe38d1e3f4801c942ad2e57165509f7}{get\+Ssl\+Protocol} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the S\+SL Protocol. The Tls\+V1\+Ssl\+V3 is defined by default. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -258,6 +270,36 @@ Returns the ssl cert file.
 {\em Q\+String} & \+: ssl\+Cert\+File name. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_configuration_aa839f957ac9af33187140649b38785ef}\label{class_configuration_aa839f957ac9af33187140649b38785ef}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Encoding\+Format@{get\+Ssl\+Encoding\+Format}}
+\index{get\+Ssl\+Encoding\+Format@{get\+Ssl\+Encoding\+Format}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Encoding\+Format()}{getSslEncodingFormat()}}
+{\footnotesize\ttfamily Q\+Ssl\+::\+Encoding\+Format Configuration\+::get\+Ssl\+Encoding\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the S\+SL Encoding Format. The P\+EM is defined by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Ssl\+::\+Encoding\+Format} & \+: S\+SL key Encoding Format. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_configuration_a490e50bab0cdb1ccb531ee2472e97ca6}\label{class_configuration_a490e50bab0cdb1ccb531ee2472e97ca6}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Key\+Algorithm@{get\+Ssl\+Key\+Algorithm}}
+\index{get\+Ssl\+Key\+Algorithm@{get\+Ssl\+Key\+Algorithm}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Key\+Algorithm()}{getSslKeyAlgorithm()}}
+{\footnotesize\ttfamily Q\+Ssl\+::\+Key\+Algorithm Configuration\+::get\+Ssl\+Key\+Algorithm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the S\+SL Key Algorithm. The R\+SA is defined by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Ssl\+::\+Key\+Algorithm} & \+: S\+SL key Algorithm. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_configuration_aff6b12e5b77552fb0feb9f9598335049}\label{class_configuration_aff6b12e5b77552fb0feb9f9598335049}} 
 \index{Configuration@{Configuration}!get\+Ssl\+Key\+File@{get\+Ssl\+Key\+File}}
 \index{get\+Ssl\+Key\+File@{get\+Ssl\+Key\+File}!Configuration@{Configuration}}
@@ -271,6 +313,64 @@ Returns the ssl key file.
 
 \begin{DoxyParams}{Parameters}
 {\em Q\+String} & \+: ssl\+Key\+File name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_configuration_abd78f9eb7315e0b0ed5c7d3088ce1795}\label{class_configuration_abd78f9eb7315e0b0ed5c7d3088ce1795}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Key\+Type@{get\+Ssl\+Key\+Type}}
+\index{get\+Ssl\+Key\+Type@{get\+Ssl\+Key\+Type}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Key\+Type()}{getSslKeyType()}}
+{\footnotesize\ttfamily Q\+Ssl\+::\+Key\+Type Configuration\+::get\+Ssl\+Key\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the S\+SL Key Type. The private is defined by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Ssl\+::\+Key\+Type} & \+: S\+SL key Type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_configuration_ae5e1bc207332b2f089f2168ada606c48}\label{class_configuration_ae5e1bc207332b2f089f2168ada606c48}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Pass\+Phrase@{get\+Ssl\+Pass\+Phrase}}
+\index{get\+Ssl\+Pass\+Phrase@{get\+Ssl\+Pass\+Phrase}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Pass\+Phrase()}{getSslPassPhrase()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Configuration\+::get\+Ssl\+Pass\+Phrase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the ssl pass phrase. 
+
+\begin{DoxyReturn}{Returns}
+Q\+Byte\+Array \+: ssl\+Pass\+Phrase. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_configuration_ae7e5872717b012e16dc2255d1741e422}\label{class_configuration_ae7e5872717b012e16dc2255d1741e422}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Peer\+Verify\+Mode@{get\+Ssl\+Peer\+Verify\+Mode}}
+\index{get\+Ssl\+Peer\+Verify\+Mode@{get\+Ssl\+Peer\+Verify\+Mode}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Peer\+Verify\+Mode()}{getSslPeerVerifyMode()}}
+{\footnotesize\ttfamily Q\+Ssl\+Socket\+::\+Peer\+Verify\+Mode Configuration\+::get\+Ssl\+Peer\+Verify\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the S\+SL Peer Veryfy Mode. The Verify\+None is defined by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Ssl\+Socket\+::\+Peer\+Verify\+Mode} & \+: Peer Veryfy Mode; \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_configuration_acfe38d1e3f4801c942ad2e57165509f7}\label{class_configuration_acfe38d1e3f4801c942ad2e57165509f7}} 
+\index{Configuration@{Configuration}!get\+Ssl\+Protocol@{get\+Ssl\+Protocol}}
+\index{get\+Ssl\+Protocol@{get\+Ssl\+Protocol}!Configuration@{Configuration}}
+\subsubsection{\texorpdfstring{get\+Ssl\+Protocol()}{getSslProtocol()}}
+{\footnotesize\ttfamily Q\+Ssl\+::\+Ssl\+Protocol Configuration\+::get\+Ssl\+Protocol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Returns the S\+SL Protocol. The Tls\+V1\+Ssl\+V3 is defined by default. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Ssl\+::\+Ssl\+Protocol} & \+: S\+SL Protocol; \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_configuration_ab39a76ac734b52df96c9c07f71764ae2}\label{class_configuration_ab39a76ac734b52df96c9c07f71764ae2}} 

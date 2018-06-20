@@ -40,13 +40,9 @@ private:
     QThreadPool pool;
     QMapThreadSafety<QString, Controller *> urlController;
     QMapThreadSafety<QString, Session *> sessions;
-    QSslConfiguration *sslConfiguration = nullptr;
+    QSslConfiguration *ssl = nullptr;
     const int sleepTime = 10;
     QAtomicInteger<qint8> block = 0;    
-    /**
-     * @brief Load the SSL Configuration to the server.
-     */
-    void loadSslConfiguration();
 public:
     /**
      * @brief Load SSL configuration, configure the thread pool and the filter.

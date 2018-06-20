@@ -2,7 +2,7 @@
 \label{class_q_list_object}\index{Q\+List\+Object@{Q\+List\+Object}}
 
 
-The \hyperlink{class_q_list_object}{Q\+List\+Object} class is used to pass a list of object to a xhtml page. N\+O\+TE\+: Always when you need to pass a list of object to a xhtml page you will need to use this class, your class need to inherit from the Q\+Object class and all the methods needs to be in the public slots session.  
+The \hyperlink{class_q_list_object}{Q\+List\+Object} class is used to pass a list of object to a view page. N\+O\+TE\+: Always when you need to pass a list of object to a view page you will need to use this class, your class need to inherit from the Q\+Object class and all the methods needs to be in the public slots session.  
 
 
 
@@ -18,12 +18,24 @@ Inheritance diagram for Q\+List\+Object\+:
 \item 
 \hyperlink{class_q_list_object_a035ee9dc9f035443995b9419d32b07da}{Q\+List\+Object} (Q\+Object $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em This constructor can receive a parent. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_list_object_acc9db03436b596a2f274b01a81e8931c}\label{class_q_list_object_acc9db03436b596a2f274b01a81e8931c}} 
+\hyperlink{class_q_list_object_acc9db03436b596a2f274b01a81e8931c}{Q\+List\+Object} (Q\+Object $\ast$parent, const std\+::initializer\+\_\+list$<$ Q\+Object $\ast$$>$ \&objects)
+\begin{DoxyCompactList}\small\item\em Contructs a \hyperlink{class_q_list_object}{Q\+List\+Object} with N elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_list_object_af05889c002163fc36f5eaf12b88363fd}\label{class_q_list_object_af05889c002163fc36f5eaf12b88363fd}} 
+\hyperlink{class_q_list_object_af05889c002163fc36f5eaf12b88363fd}{Q\+List\+Object} (const std\+::initializer\+\_\+list$<$ Q\+Object $\ast$$>$ \&objects)
+\begin{DoxyCompactList}\small\item\em Contructs a \hyperlink{class_q_list_object}{Q\+List\+Object} with N elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_list_object_a01e06b1d249cf0dbe92b826fed0e7b76}\label{class_q_list_object_a01e06b1d249cf0dbe92b826fed0e7b76}} 
+\hyperlink{class_q_list_object_a01e06b1d249cf0dbe92b826fed0e7b76}{$\sim$\+Q\+List\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 Q\+Object $\ast$ \hyperlink{class_q_list_object_a9b87308d291c9699a36849e5d8bfedd4}{operator\mbox{[}$\,$\mbox{]}} (int index) const
 \begin{DoxyCompactList}\small\item\em This is an operator overload and returns a Q\+Object given an specific index. \end{DoxyCompactList}\item 
 int \hyperlink{class_q_list_object_a4ded55097ea08fa5781240883a591216}{size} () const
 \begin{DoxyCompactList}\small\item\em This method returns the number of elements in this \hyperlink{class_q_list_object}{Q\+List\+Object}. \end{DoxyCompactList}\item 
 void \hyperlink{class_q_list_object_ad5e960eabd3e9b7d49228ea7549a9bd7}{add} (Q\+Object $\ast$object)
 \begin{DoxyCompactList}\small\item\em This method add a new Q\+Object to the list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_list_object_a8114f712189da4ae507ffb4a12eec2f3}\label{class_q_list_object_a8114f712189da4ae507ffb4a12eec2f3}} 
+void \hyperlink{class_q_list_object_a8114f712189da4ae507ffb4a12eec2f3}{add} (const std\+::initializer\+\_\+list$<$ Q\+Object $\ast$$>$ \&objects)
+\begin{DoxyCompactList}\small\item\em This method add a N new Q\+Objects to the list. \end{DoxyCompactList}\item 
 void \hyperlink{class_q_list_object_af6bc1883142f976bfd3e82c9d0c030bb}{remove} (Q\+Object $\ast$object)
 \begin{DoxyCompactList}\small\item\em This method remove and object from the list. \end{DoxyCompactList}\item 
 bool \hyperlink{class_q_list_object_ad9d1f7e3c9f2563bcded31b02edc06fb}{get\+Auto\+Delete} () const
@@ -33,7 +45,7 @@ void \hyperlink{class_q_list_object_a6c30632fb46f8f7d404f77a9fea49bee}{set\+Auto
 
 
 \subsection{Detailed Description}
-The \hyperlink{class_q_list_object}{Q\+List\+Object} class is used to pass a list of object to a xhtml page. N\+O\+TE\+: Always when you need to pass a list of object to a xhtml page you will need to use this class, your class need to inherit from the Q\+Object class and all the methods needs to be in the public slots session. 
+The \hyperlink{class_q_list_object}{Q\+List\+Object} class is used to pass a list of object to a view page. N\+O\+TE\+: Always when you need to pass a list of object to a view page you will need to use this class, your class need to inherit from the Q\+Object class and all the methods needs to be in the public slots session. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_q_list_object_a035ee9dc9f035443995b9419d32b07da}\label{class_q_list_object_a035ee9dc9f035443995b9419d32b07da}} 

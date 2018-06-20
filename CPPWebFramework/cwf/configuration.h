@@ -10,6 +10,7 @@
 
 #include <QString>
 #include <QSettings>
+#include <QSslSocket>
 #include <QHostAddress>
 #include "filemanager.h"
 #include "cppwebframework_global.h"
@@ -21,7 +22,7 @@ CWF_BEGIN_NAMESPACE
  * @brief This class is responsable to read a ini file and extract its information.
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT Configuration
-{
+{    
     bool valid                = false;
     bool accessCPPWebIni      = false;
     bool accessServerPages    = false;
@@ -35,9 +36,15 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Configuration
     QString path;
     QString logFilePath;
     QString indexPage;
+    QByteArray sslPassPhrase;
     QHostAddress host;
     qint64 maxUploadFile = 2097152;
     qint64 maxLogFile    = 20000000;
+    QSsl::KeyAlgorithm sslKeyAlgorithm = QSsl::Rsa;
+    QSsl::KeyType sslKeyType = QSsl::PrivateKey;
+    QSsl::EncodingFormat sslEncodingFormat = QSsl::Pem;
+    QSsl::SslProtocol sslProtocol = QSsl::TlsV1SslV3;
+    QSslSocket::PeerVerifyMode sslPeerVerifyMode = QSslSocket::VerifyNone;
     void configure();
 public:
     /**
@@ -129,10 +136,44 @@ public:
      */
     inline bool getAccessServerPages() const noexcept { return accessServerPages; }
     /**
+     * @brief Returns the ssl pass phrase
+     * @return QByteArray : sslPassPhrase.
+     */
+    inline QByteArray getSslPassPhrase() const noexcept { return sslPassPhrase; }
+    /**
      * @brief Returns true if the Configuration is ok. Otherwise returns false.
      * @param bool : is valid.
      */
     inline bool isValid() const noexcept { return valid; }
+    /**
+     * @brief Returns the SSL Key Algorithm. The RSA is defined by default.
+     * @param QSsl::KeyAlgorithm : SSL key Algorithm.
+     */
+    inline QSsl::KeyAlgorithm getSslKeyAlgorithm() const noexcept { return sslKeyAlgorithm; }
+    /**
+     * @brief Returns the SSL Key Type. The private is defined by default.
+     * @param QSsl::KeyType : SSL key Type.
+     */
+    inline QSsl::KeyType getSslKeyType() const noexcept { return sslKeyType; }
+    /**
+     * @brief Returns the SSL Encoding Format. The PEM is defined by default.
+     * @param QSsl::EncodingFormat : SSL key Encoding Format.
+     */
+    inline QSsl::EncodingFormat getSslEncodingFormat() const noexcept { return sslEncodingFormat; }
+    /**
+     * @brief Returns the SSL Peer Veryfy Mode. The VerifyNone is defined by default.
+     * @param QSslSocket::PeerVerifyMode : Peer Veryfy Mode;
+     */
+    inline QSslSocket::PeerVerifyMode getSslPeerVerifyMode() const noexcept { return sslPeerVerifyMode; }
+    /**
+     * @brief Returns the SSL Protocol. The TlsV1SslV3 is defined by default.
+     * @param QSsl::SslProtocol : SSL Protocol;
+     */
+    inline QSsl::SslProtocol getSslProtocol() const noexcept { return sslProtocol; }    
+    /**
+     * @brief Returns the sslOptionDisableEmptyFragments. It is defined false by default.
+     * @param bool : true if is enable otherwise returns false;
+     */
 };
 
 CWF_END_NAMESPACE

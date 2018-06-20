@@ -10,8 +10,7 @@
 
 
 
-​The C++ Web Framework (CWF) is a MVC web framework, Open Source, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, created by Herik Lima and Marcelo Eler, 
-using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources, such as memory and processing, and have a low response time for requests. 
+​The C++ Web Framework (CWF) is a MVC web framework, Open Source, under <a href="https://github.com/HerikLyma/CPPWebFramework/blob/master/LICENSE.txt">MIT License</a>, using C++ with Qt to be used in the development of web applications. The CWF was designed to consume few computational resources, such as memory and processing, and have a low response time for requests. 
 With MVC (Model-View-Controller) architecture, where you can create classes to take care of the business layer (Model), use CSTL (C++ Server Pages Standard Tag Library) within the Web Pages 
 to take care of data presentation (View) and use the controllers as a between the two layers (Controller). 
 
@@ -43,6 +42,8 @@ public:
     }
 };
 
+//Call
+//http://localhost:8080/hello
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
@@ -96,6 +97,8 @@ public:
 #include <cwf/cppwebapplication.h>
 #include <controller/hellocontroller.h>
 
+//Call
+//http://localhost:8080/hello
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
@@ -130,6 +133,8 @@ public:
     }
 };
 
+//Call
+//http://localhost:8080/countries
 int main(int argc, char *argv[])
 {
     CWF::CppWebApplication server(argc, argv, "/PATH_TO_EXAMPLE/server/");
@@ -140,7 +145,7 @@ int main(int argc, char *argv[])
 
 </br><hr/><b>Installation</b></br>
 <ol>
-    <li>Download and install Qt Creator: https://www.qt.io/download-open-source/</li>
+    <li>Download and install Qt 5.5 or higher: https://www.qt.io/download-open-source/</li>
     <li>Open the terminal</li>
     <li>Install Qt Libraries: sudo apt-get install qt5-default (Linux)</li>
     <li>Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git</li>
@@ -165,4 +170,5 @@ int main(int argc, char *argv[])
 </ol>
 
 <hr/><b>Site and documentation:</b> https://www.cppwebframework.com <br>
+<b>cppwebframework mailing list:</b> https://groups.google.com/forum/#!forum/cppwebframework <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ

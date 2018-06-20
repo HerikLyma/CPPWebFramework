@@ -36,7 +36,7 @@ Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser
 \begin{DoxyCompactList}\small\item\em Returns all parameters. \end{DoxyCompactList}\item 
 Q\+Multi\+Map$<$ Q\+Byte\+Array, Q\+Byte\+Array $>$ \hyperlink{class_http_parser_abbb9bc6fdfbc6f40629d2f8033c9f17f}{get\+Uploaded\+Files} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all uploaded files. \end{DoxyCompactList}\item 
-Q\+Vector$<$ \hyperlink{class_http_cookie}{Http\+Cookie} $>$ \hyperlink{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}{get\+Cookies} () const noexcept
+Q\+Vector$<$ Q\+Network\+Cookie $>$ \hyperlink{class_http_parser_ac07c6676461725678a6fe7fcae7e79f7}{get\+Cookies} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all cookies. \end{DoxyCompactList}\item 
 Q\+Byte\+Array\+List \hyperlink{class_http_parser_ab29e0fad07ccfa2ad565d1cc32da76cc}{get\+Header\+Fields} (const Q\+Byte\+Array \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns all header fields given a specific name. \end{DoxyCompactList}\item 
@@ -117,18 +117,18 @@ Returns the content type.
 \begin{DoxyReturn}{Returns}
 Q\+Byte\+Array \+: Content type. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}\label{class_http_parser_ac6ff3fd106a47dc7821723d451c8f9ad}} 
+\mbox{\Hypertarget{class_http_parser_ac07c6676461725678a6fe7fcae7e79f7}\label{class_http_parser_ac07c6676461725678a6fe7fcae7e79f7}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Cookies@{get\+Cookies}}
 \index{get\+Cookies@{get\+Cookies}!Http\+Parser@{Http\+Parser}}
 \subsubsection{\texorpdfstring{get\+Cookies()}{getCookies()}}
-{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_http_cookie}{Http\+Cookie}$>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily Q\+Vector$<$Q\+Network\+Cookie$>$ Http\+Parser\+::get\+Cookies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
 Returns all cookies. 
 
 \begin{DoxyReturn}{Returns}
-Q\+Vector$<$\+Http\+Cookie$>$ \+: Cookies. 
+Q\+Vector$<$\+Q\+Network\+Cookie$>$ \+: Cookies. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_http_parser_adabda41fe6457ab14b573a32085c2eea}\label{class_http_parser_adabda41fe6457ab14b573a32085c2eea}} 
 \index{Http\+Parser@{Http\+Parser}!get\+Header\+Field@{get\+Header\+Field}}

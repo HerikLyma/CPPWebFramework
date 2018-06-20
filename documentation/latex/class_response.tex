@@ -27,12 +27,6 @@ void {\bfseries write} (Q\+Byte\+Array \&\&data)
 \mbox{\Hypertarget{class_response_a438b172ba3b22cfebe453879fbb043f4}\label{class_response_a438b172ba3b22cfebe453879fbb043f4}} 
 void {\bfseries write} (const Q\+Byte\+Array \&data, bool flush=true)
 \item 
-\mbox{\Hypertarget{class_response_af336860cc3e3d6b96c257a1845ec5e48}\label{class_response_af336860cc3e3d6b96c257a1845ec5e48}} 
-void {\bfseries write\+Headers} ()
-\item 
-\mbox{\Hypertarget{class_response_a48dda4add1343ce41fb7c7e2a891b20f}\label{class_response_a48dda4add1343ce41fb7c7e2a891b20f}} 
-void {\bfseries write\+To\+Socket} (const Q\+Byte\+Array \&data)
-\item 
 \mbox{\Hypertarget{class_response_a478441dad471d91725c2d3664b073bd0}\label{class_response_a478441dad471d91725c2d3664b073bd0}} 
 void {\bfseries send\+Error} (int sc, const Q\+Byte\+Array \&msg)
 \item 
@@ -45,14 +39,11 @@ int {\bfseries get\+Buffer\+Size} () const noexcept
 \mbox{\Hypertarget{class_response_adae7bde8f1f52edd915e709053b538d5}\label{class_response_adae7bde8f1f52edd915e709053b538d5}} 
 void {\bfseries add\+Header} (const Q\+Byte\+Array \&name, const Q\+Byte\+Array \&value) noexcept
 \item 
-\mbox{\Hypertarget{class_response_aa4f8781c5106b744129b8742965ea18e}\label{class_response_aa4f8781c5106b744129b8742965ea18e}} 
-void {\bfseries add\+Cookie} (const \hyperlink{class_http_cookie}{Http\+Cookie} \&cookie) noexcept
+\mbox{\Hypertarget{class_response_a5512fc13abe7abff27529788ba33fe36}\label{class_response_a5512fc13abe7abff27529788ba33fe36}} 
+void {\bfseries add\+Cookie} (const Q\+Network\+Cookie \&cookie) noexcept
 \item 
-\mbox{\Hypertarget{class_response_a29febc0eaefab2f6d81fb41057d81060}\label{class_response_a29febc0eaefab2f6d81fb41057d81060}} 
-Q\+Tcp\+Socket \& {\bfseries get\+Socket} () const noexcept
-\item 
-\mbox{\Hypertarget{class_response_a6168bc9d8c92941a3780fd56c44c6f82}\label{class_response_a6168bc9d8c92941a3780fd56c44c6f82}} 
-void {\bfseries set\+Status} (const int \&status\+Code, const Q\+Byte\+Array \&description)
+\mbox{\Hypertarget{class_response_a2e98562c9c28ba208dc3fc130ff00d77}\label{class_response_a2e98562c9c28ba208dc3fc130ff00d77}} 
+void {\bfseries set\+Status} (int status\+Code, const Q\+Byte\+Array \&description)
 \item 
 \mbox{\Hypertarget{class_response_a7acf6886b6b06704b8bbbb0692948a73}\label{class_response_a7acf6886b6b06704b8bbbb0692948a73}} 
 void {\bfseries send\+Redirect} (const Q\+Byte\+Array \&url)

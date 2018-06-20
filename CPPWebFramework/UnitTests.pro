@@ -40,8 +40,7 @@ SOURCES += \
     cwf/cstlcompilerif.cpp \
     cwf/cstlcompilerimport.cpp \
     cwf/filemanager.cpp \
-    cwf/filterchain.cpp \
-    cwf/httpcookie.cpp \
+    cwf/filterchain.cpp \    
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
     cwf/controller.cpp \
@@ -65,7 +64,6 @@ SOURCES += \
     tests/tst_filemanager.cpp \
     tests/tst_filter.cpp \
     tests/tst_filterchain.cpp \
-    tests/tst_httpcookie.cpp \
     tests/tst_httpparser.cpp \
     tests/tst_httpreadrequest.cpp \
     tests/tst_response.cpp \
@@ -77,7 +75,8 @@ SOURCES += \
     tests/tst_requestdispatcher.cpp \
     tests/tst_urlencoder.cpp \
     tests/tst_request.cpp \
-    tests/tst_cstlcompilerout.cpp
+    tests/tst_cstlcompilerout.cpp \
+    cwf/sslloader.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
@@ -95,7 +94,6 @@ HEADERS += \
     cwf/filemanager.h \
     cwf/filter.h \
     cwf/filterchain.h \
-    cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
     cwf/controller.h \
@@ -119,7 +117,6 @@ HEADERS += \
     tests/tst_filemanager.h \
     tests/tst_filter.h \
     tests/tst_filterchain.h \
-    tests/tst_httpcookie.h \
     tests/tst_httpparser.h \
     tests/tst_httpreadrequest.h \
     tests/tst_response.h \
@@ -135,7 +132,8 @@ HEADERS += \
     cwf/cppwebframework_global.h \
     tests/tst_cppwebcontroller.h \
     cwf/variant.h \
-    tests/tst_cstlcompilerout.h
+    tests/tst_cstlcompilerout.h \
+    cwf/sslloader.h
 
 QMAKE_CXXFLAGS += -g -Wall -fprofile-arcs -ftest-coverage -O0
 QMAKE_LFLAGS   += -g -Wall -fprofile-arcs -ftest-coverage -O0

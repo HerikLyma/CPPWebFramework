@@ -12,7 +12,6 @@
 #include <tests/tst_filemanager.h>
 #include <tests/tst_filter.h>
 #include <tests/tst_filterchain.h>
-#include <tests/tst_httpcookie.h>
 #include <tests/tst_httpparser.h>
 #include <tests/tst_httpreadrequest.h>
 #include <tests/tst_request.h>
@@ -45,7 +44,6 @@ int main(int argc, char** argv)
    ASSERT_TEST(new TST_FileManager);
    ASSERT_TEST(new TST_Filter);
    ASSERT_TEST(new TST_FilterChain);
-   ASSERT_TEST(new TST_HttpCookie);
    ASSERT_TEST(new TST_HttpParser);
    ASSERT_TEST(new TST_HttpReadRequest);
    ASSERT_TEST(new TST_Request);

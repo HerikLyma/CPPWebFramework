@@ -34,7 +34,6 @@ SOURCES += \
     cwf/cstlcompilerimport.cpp \
     cwf/filemanager.cpp \
     cwf/filterchain.cpp \
-    cwf/httpcookie.cpp \
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
     cwf/metaclassparser.cpp \
@@ -47,7 +46,8 @@ SOURCES += \
     cwf/request.cpp \
     cwf/controller.cpp \
     cwf/session.cpp \
-    cwf/cppwebcontroller.cpp
+    cwf/cppwebcontroller.cpp \
+    cwf/sslloader.cpp
 
 HEADERS += \
         cwf/cppwebframework_global.h \
@@ -65,7 +65,6 @@ HEADERS += \
     cwf/filemanager.h \
     cwf/filter.h \
     cwf/filterchain.h \
-    cwf/httpcookie.h \
     cwf/httpparser.h \
     cwf/httpreadrequest.h \
     cwf/metaclassparser.h \
@@ -81,7 +80,8 @@ HEADERS += \
     cwf/request.h \
     cwf/response.h \
     cwf/session.h \
-    cwf/cppwebcontroller.h
+    cwf/cppwebcontroller.h \
+    cwf/sslloader.h
 
 DISTFILES += \
     server/config/ssl/my.key \

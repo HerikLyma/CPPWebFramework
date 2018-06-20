@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="RequestDispatcher",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_request_dispatcher.html",tooltip="The RequestDispatcher class can be used to dispatch a requisition to a xhtml page. "];
+  Node0 [label="RequestDispatcher",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_request_dispatcher.html",tooltip="The RequestDispatcher class can be used to dispatch a requisition to a page. "];
 }

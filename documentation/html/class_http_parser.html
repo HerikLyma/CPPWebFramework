@@ -112,9 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abbb9bc6fdfbc6f40629d2f8033c9f17f"><td class="memItemLeft" align="right" valign="top">QMultiMap&lt; QByteArray, QByteArray &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_parser.html#abbb9bc6fdfbc6f40629d2f8033c9f17f">getUploadedFiles</a> () const noexcept</td></tr>
 <tr class="memdesc:abbb9bc6fdfbc6f40629d2f8033c9f17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all uploaded files.  <a href="#abbb9bc6fdfbc6f40629d2f8033c9f17f">More...</a><br /></td></tr>
 <tr class="separator:abbb9bc6fdfbc6f40629d2f8033c9f17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6ff3fd106a47dc7821723d451c8f9ad"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="class_http_cookie.html">HttpCookie</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_parser.html#ac6ff3fd106a47dc7821723d451c8f9ad">getCookies</a> () const noexcept</td></tr>
-<tr class="memdesc:ac6ff3fd106a47dc7821723d451c8f9ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all cookies.  <a href="#ac6ff3fd106a47dc7821723d451c8f9ad">More...</a><br /></td></tr>
-<tr class="separator:ac6ff3fd106a47dc7821723d451c8f9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac07c6676461725678a6fe7fcae7e79f7"><td class="memItemLeft" align="right" valign="top">QVector&lt; QNetworkCookie &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_parser.html#ac07c6676461725678a6fe7fcae7e79f7">getCookies</a> () const noexcept</td></tr>
+<tr class="memdesc:ac07c6676461725678a6fe7fcae7e79f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all cookies.  <a href="#ac07c6676461725678a6fe7fcae7e79f7">More...</a><br /></td></tr>
+<tr class="separator:ac07c6676461725678a6fe7fcae7e79f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab29e0fad07ccfa2ad565d1cc32da76cc"><td class="memItemLeft" align="right" valign="top">QByteArrayList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_http_parser.html#ab29e0fad07ccfa2ad565d1cc32da76cc">getHeaderFields</a> (const QByteArray &amp;name) const noexcept</td></tr>
 <tr class="memdesc:ab29e0fad07ccfa2ad565d1cc32da76cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all header fields given a specific name.  <a href="#ab29e0fad07ccfa2ad565d1cc32da76cc">More...</a><br /></td></tr>
 <tr class="separator:ab29e0fad07ccfa2ad565d1cc32da76cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,8 +259,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>HttpReadRequest</b><
 
 </div>
 </div>
-<a id="ac6ff3fd106a47dc7821723d451c8f9ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6ff3fd106a47dc7821723d451c8f9ad">&#9670;&nbsp;</a></span>getCookies()</h2>
+<a id="ac07c6676461725678a6fe7fcae7e79f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac07c6676461725678a6fe7fcae7e79f7">&#9670;&nbsp;</a></span>getCookies()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +269,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>HttpReadRequest</b><
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;<a class="el" href="class_http_cookie.html">HttpCookie</a>&gt; HttpParser::getCookies </td>
+          <td class="memname">QVector&lt;QNetworkCookie&gt; HttpParser::getCookies </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -283,7 +283,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>HttpReadRequest</b><
 </div><div class="memdoc">
 
 <p>Returns all cookies. </p>
-<dl class="section return"><dt>Returns</dt><dd>QVector&lt;HttpCookie&gt; : Cookies. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>QVector&lt;QNetworkCookie&gt; : Cookies. </dd></dl>
 
 </div>
 </div>
@@ -686,7 +686,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>HttpReadRequest</b><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 8 2018 19:45:38 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 28 2018 11:09:09 for C++ Web Framework by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>
