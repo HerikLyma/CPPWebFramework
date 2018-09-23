@@ -166,8 +166,8 @@ int main(int argc, char *argv[])
     <li>Change the path in the main.cpp file: CWF::CppWebApplication a(argc, argv, "/PATH_TO_EXAMPLE/server/");</li>
     <li>Run the project</li>
     <li>Open your browser and type: http://localhost:8080 to check if the server is online</li>
-</ol>
-<hr/>
+</ol><hr/>
+
 <b>Steps to test the C++ Web Framework's HelloWorldDocker example with Docker containers</b></br>
 <ol>
     <li>Install Docker</li>
