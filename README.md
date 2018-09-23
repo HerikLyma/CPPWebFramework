@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
 <b>Steps to test the C++ Web Framework's HelloWorldDocker example with Docker containers</b></br>
 <ol>
     <li>Install Docker</li>
-    <li>sudo docker run -d -p 80:80 imacellone/cwf-helloworld</li>
+    <li>sudo docker run -d -p 80:80 imacellone/cwf-helloworld:1.0</li>
     <li>Open your browser and type: http://localhost to check if the server is online</li>
     <li>If you want to test your own examples, please follow the steps demonstrated on the CPPWebFramework/examples/helloworld.Dockerfile file, build and run the image.</li>
 </ol>
