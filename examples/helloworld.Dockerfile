@@ -1,4 +1,4 @@
-FROM imacellone/cwf
+FROM imacellone/cwf:1.0
 
 LABEL maintainer="imacellone <italomacellone@gmail.com>"
 
