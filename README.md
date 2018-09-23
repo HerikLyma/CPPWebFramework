@@ -167,7 +167,14 @@ int main(int argc, char *argv[])
     <li>Run the project</li>
     <li>Open your browser and type: http://localhost:8080 to check if the server is online</li>
 </ol>
-
+<hr/>
+<b>Steps to test the C++ Web Framework's HelloWorldDocker example with Docker containers</b></br>
+<ol>
+    <li>Install Docker</li>
+    <li>sudo docker run -d -p 80:80 imacellone/cwf-helloworld</li>
+    <li>Open your browser and type: http://localhost to check if the server is online</li>
+    <li>If you want to test your own examples, please follow the steps demonstrated on the CPPWebFramework/examples/helloworld.Dockerfile file, build and run the image.</li>
+</ol>
 <hr/><b>Site and documentation:</b> https://www.cppwebframework.com <br>
 <b>cppwebframework mailing list:</b> https://groups.google.com/forum/#!forum/cppwebframework <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
