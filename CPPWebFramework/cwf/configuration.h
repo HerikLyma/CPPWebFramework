@@ -26,10 +26,10 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Configuration
     bool valid                = false;
     bool accessCPPWebIni      = false;
     bool accessServerPages    = false;
+    quint16 port              = 8080;
     int timeOut               = 30000;
     int sessionExpirationTime = 1800000;
-    int cleanupInterval       = 86400000;
-    int port                  = 8080;
+    int cleanupInterval       = 86400000;    
     int maxThread             = 100;
     QString sslKeyFile;
     QString sslCertFile;
@@ -82,9 +82,9 @@ public:
     inline int getCleanupInterval() const noexcept { return cleanupInterval; }
     /**
      * @brief Returns the port number.
-     * @param int : port.
+     * @param quint16 : port.
      */
-    inline int getPort() const noexcept { return port; }
+    inline quint16 getPort() const noexcept { return port; }
     /**
      * @brief Returns the address.
      * @param QHostAddress : host.

@@ -46,7 +46,7 @@ void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &p
             method[0] = method[0].toUpper();
             method = GET_SET::SET_LOWER + method;
 
-            QString parameterType(std::move(meta.getParameterType(method)));
+            QString parameterType(meta.getParameterType(method));
 
             if(parameterType == CSTL::SUPPORTED_TYPES::QSTRING)
             {

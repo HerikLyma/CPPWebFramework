@@ -77,7 +77,7 @@ public:
      * @param json
      * @param table
      * @return QJsonObject
-     */
+     */    
     QJsonObject updateFromJson(const QJsonObject &json, const QString &table, const QString &condition);
 };
 

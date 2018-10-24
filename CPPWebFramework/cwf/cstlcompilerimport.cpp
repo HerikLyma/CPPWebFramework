@@ -21,8 +21,8 @@ CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr, QString
     }
     else if(size == 1)
     {
-         QString name(std::move(attr[0].name().toString().toLower()));
-         QString value(std::move(attr[0].value().toString()));
+         QString name(attr[0].name().toString().toLower());
+         QString value(attr[0].value().toString());
 
          if(name != CSTL::TAG::PROPERTY::IMPORT::URL)
          {

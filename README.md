@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
 
 </br><hr/><b>Installation</b></br>
 <ol>
-    <li>Download and install Qt 5.5 or higher: https://www.qt.io/download-open-source/</li>
+    <li>Download and install Qt 5.9 or higher: https://www.qt.io/download-open-source/</li>
     <li>Open the terminal</li>
     <li>Install Qt Libraries: sudo apt-get install qt5-default (Linux)</li>
     <li>Make a project clone: git clone https://github.com/HerikLyma/CPPWebFramework.git</li>

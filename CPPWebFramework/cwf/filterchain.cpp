@@ -144,7 +144,7 @@ void FilterChain::doFilter(CWF::Request &request, CWF::Response &response)
         }
         else if(extention == FILE_EXTENTION::INI)
         {
-            QString file(std::move(fileManager.fileName(url)));
+            QString file(fileManager.fileName(url));
             if(file != CONFIGURATION::CPP_WEB_INI)
                 write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
             else if(configuration.getAccessServerPages())

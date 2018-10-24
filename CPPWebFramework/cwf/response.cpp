@@ -33,7 +33,7 @@ void sendBytes(QTcpSocket &socket, const QByteArray &text, int timeOut)
 
 void buildHeadersString(QByteArray &temp, const QMap<QByteArray, QByteArray> &headers)
 {
-    QList<QByteArray> headersList(std::move(headers.keys()));
+    QList<QByteArray> headersList(headers.keys());
 
     for(const auto &i : headersList)
     {

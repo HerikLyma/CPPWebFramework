@@ -61,7 +61,7 @@ bool FileManager::copyDirectoryFiles(const QString &fromDir, const QString &toDi
             return false;
     }
 
-    QFileInfoList fileInfoList(std::move(sourceDir.entryInfoList()));
+    QFileInfoList fileInfoList(sourceDir.entryInfoList());
     for(const QFileInfo &fileInfo : fileInfoList)
     {
         if(fileInfo.fileName() == "." || fileInfo.fileName() == "..")

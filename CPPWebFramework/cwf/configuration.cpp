@@ -112,7 +112,7 @@ void Configuration::configure()
         QSettings settings(iniFile, QSettings::Format::IniFormat);
         settings.beginGroup("config");
         host.setAddress(settings.value("host").toString());
-        port                  = settings.value("port").toInt();
+        port                  = static_cast<quint16>(settings.value("port").toInt());
         maxThread             = settings.value("maxThread").toInt();
         cleanupInterval       = settings.value("cleanupInterval").toInt();
         timeOut               = settings.value("timeOut").toInt();

@@ -43,7 +43,7 @@ void SqlQuery::loadColumns()
     columns.resize(total);
     for(int i = 0; i < total; ++i)
     {
-        columns[i] = std::move(record().fieldName(i));
+        columns[i] = record().fieldName(i);
     }
 }
 

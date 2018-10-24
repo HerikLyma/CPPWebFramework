@@ -33,13 +33,14 @@ HttpReadRequest::~HttpReadRequest()
 
 bool HttpReadRequest::buildSslSocket()
 {
-#ifndef QT_NO_OPENSSL
+#ifndef QT_NO_SSL
     if(ssl)
     {
-        socket = new QSslSocket;
-        ((QSslSocket*)socket)->setSslConfiguration(*ssl);
-        socket->setSocketDescriptor(socketDescriptor);
-        ((QSslSocket*)socket)->startServerEncryption();
+        QSslSocket *sslSocket = new QSslSocket;
+        socket = sslSocket;
+        sslSocket->setSslConfiguration(*ssl);
+        sslSocket->setSocketDescriptor(socketDescriptor);
+        sslSocket->startServerEncryption();
         return true;
     }
 #endif
@@ -64,7 +65,7 @@ void HttpReadRequest::run()
     {
         if(socket->waitForReadyRead())
         {
-            QByteArray req(std::move(socket->readAll()));
+            QByteArray req(socket->readAll());
             qDebug() << req;
 
             HttpParser parser(req);
@@ -91,7 +92,7 @@ void HttpReadRequest::run()
                         const QString &key = it.key();
                         if(key.endsWith('*'))
                         {
-                            QString trueUrl(std::move(key.mid(0, key.size() - 1)));
+                            QString trueUrl(key.mid(0, key.size() - 1));
                             if(url.startsWith(trueUrl))
                             {
                                 url = trueUrl + "*";

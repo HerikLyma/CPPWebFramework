@@ -14,7 +14,7 @@ CWF_BEGIN_NAMESPACE
 
 void RequestDispatcher::forward(CWF::Request &request, CWF::Response &response)
 {    
-    response.write(std::move(CSTLCompiler(file.toLatin1(), request.getPath(), request.attributes).output()));
+    response.write(CSTLCompiler(file.toLatin1(), request.getPath(), request.attributes).output());
 }
 
 CWF_END_NAMESPACE

@@ -22,8 +22,8 @@ CSTLCompilerIf::CSTLCompilerIf(const QXmlStreamAttributes &attr)
     {
         for(int i = 0; i < size; ++i)
         {
-            QString name(std::move(attr[i].name().toString().toLower()));
-            QString value(std::move(attr[i].value().toString()));
+            QString name(attr[i].name().toString().toLower());
+            QString value(attr[i].value().toString());
             if(name == CSTL::TAG::PROPERTY::VAR)
             {
                 attributes.insert(CSTL::TAG::PROPERTY::VAR, value);

@@ -38,15 +38,15 @@ QSslConfiguration *buildSslConfiguration(const QSslKey &keySsl,
 
 QSslConfiguration *SslLoader::getSslConfiguration() const
 {
-#ifdef QT_NO_OPENSSL
+#ifdef QT_NO_SSL
     qDebug() << "Secure Sockets Layer (SSL) is not supported, please check your configuration.";
     return nullptr;
 #else
     if(!configuration.getSslKeyFile().isEmpty() && !configuration.getSslCertFile().isEmpty())
     {
         bool okKey, okCert;
-        QByteArray myKeyStr(std::move(getFileContent(configuration.getSslKeyFile(), okKey)));
-        QByteArray myCertificateStr(std::move(getFileContent(configuration.getSslCertFile(), okCert)));
+        QByteArray myKeyStr(getFileContent(configuration.getSslKeyFile(), okKey));
+        QByteArray myCertificateStr(getFileContent(configuration.getSslCertFile(), okCert));
 
         if(!okKey || !okCert)
         {
