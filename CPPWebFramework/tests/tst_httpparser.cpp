@@ -52,7 +52,7 @@ void TST_HttpParser::testPostWithFiles()
     QByteArray req(buildPostRequestWithFiles());
     CWF::HttpParser parser(req);
 
-    QVERIFY2(parser.getCookies().size() == 1, "Should be 1");
+    QVERIFY2(parser.getCookies().size() == 2, "Should be 2");
     QVERIFY2(parser.getUrl() == "/savefiles", "Should be savefiles");
     QVERIFY2(parser.getParameter("id") == "", "Should be 10");
     QVERIFY2(parser.getUploadedFiles().size() == 2, "Should be 2");
