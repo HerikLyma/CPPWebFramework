@@ -5,19 +5,6 @@ install:
 build_script:
   - cd C:\projects\CPPWebFramework\CPPWebFramework\cwf
 
-  - rename cppwebframework_global.h cppwebframework_global.h.1
-  - rename cppwebframework_global.h.2 cppwebframework_global.h
-
-  - cd ..
-  - qmake UnitTests.pro
-  - mingw32-make -j 8
-  - release\UnitTests.exe
-  - mingw32-make clean
-
-  - cd cwf
-  - rename cppwebframework_global.h cppwebframework_global.h.2
-  - rename cppwebframework_global.h.1 cppwebframework_global.h
-
   
   - cd ..
   - qmake CPPWebFramework.pro
