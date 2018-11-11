@@ -52,7 +52,7 @@ public:
     /**
      * @brief Destroys all controllers and sessions.
     */
-    virtual ~CppWebServer();
+    ~CppWebServer() override;
     /**
      * @brief Hitches a url to a Controller.
      * @param const QString &url   : Url name.

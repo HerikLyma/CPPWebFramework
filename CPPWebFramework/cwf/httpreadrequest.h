@@ -42,7 +42,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT HttpReadRequest : public QRunnable
     QSslConfiguration   *ssl;
     Filter              *filter;
     QTcpSocket          *socket = nullptr;
-    qint64 maxUploadFile;
+    qint64 maxUploadFile{};
     bool readBody(HttpParser &parser, Request &request, Response &response);
     bool buildSslSocket();
     void buildSocket();
@@ -65,7 +65,7 @@ public:
     /**
      * @brief Destroys dynamically allocated resources.
      */
-    virtual ~HttpReadRequest();
+    ~HttpReadRequest() override;
     /**
      * @brief Starts to read the requisition.
      */

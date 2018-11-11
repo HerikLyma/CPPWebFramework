@@ -33,7 +33,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Controller
      * @param resp   : This is a reference to the Response.
      * @param method : This parameter holds the method name.
      */
-    void doMessage(Request &req, Response &resp, QString method) const;
+    void doMessage(Request &req, Response &resp, const QString &method) const;
 public:
     /**
      * @brief Destructor.

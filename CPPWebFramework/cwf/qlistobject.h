@@ -27,7 +27,7 @@ public:
      * @brief This constructor can receive a parent.
      * @param QObject *parent : Parent.
      */
-    explicit QListObject(QObject *parent = 0) : QObject(parent) {}
+    explicit QListObject(QObject *parent = nullptr) : QObject(parent) {}
     /**
      * @brief Contructs a QListObject with N elements.
      */

@@ -29,14 +29,13 @@ CSTLCompilerImport::CSTLCompilerImport(const QXmlStreamAttributes &attr, QString
              attributes.insert(CSTL::TAG::PROPERTY::ERROR, "***ERROR IMPORT TAG - IMPORT TAG NEEDS THE URL ATTRIBUTE***");
          }
          else
-         {             
-             FileManager fileManager;
-             fileManager.removeLastBar(path);
+         {
+             CWF::FileManager::removeLastBar(path);
 
              path += value;
 
              QFile::FileError fileError;
-             attributes.insert(CSTL::TAG::PROPERTY::IMPORT::URL, fileManager.readAll(path, fileError));
+             attributes.insert(CSTL::TAG::PROPERTY::IMPORT::URL, CWF::FileManager::readAll(path, fileError));
          }
     }
     else

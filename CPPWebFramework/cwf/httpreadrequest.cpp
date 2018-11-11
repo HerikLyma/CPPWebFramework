@@ -36,7 +36,7 @@ bool HttpReadRequest::buildSslSocket()
 #ifndef QT_NO_SSL
     if(ssl)
     {
-        QSslSocket *sslSocket = new QSslSocket;
+        auto *sslSocket = new QSslSocket;
         socket = sslSocket;
         sslSocket->setSslConfiguration(*ssl);
         sslSocket->setSocketDescriptor(socketDescriptor);
@@ -149,7 +149,7 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
             content.remove(contentLength, content.size());
             break;
         }
-        else if(content.size() == contentLength)
+        if(content.size() == contentLength)
         {
             break;
         }

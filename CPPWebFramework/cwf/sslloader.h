@@ -17,7 +17,7 @@ public:
     /**
      * @brief SslLoader constructor requires a Configuration object.
      */
-    SslLoader(const Configuration &configuration);
+    SslLoader(Configuration configuration);
     /**
      * @brief Returns a QSslConfiguration. It will returns nullptr if it fails.
      */

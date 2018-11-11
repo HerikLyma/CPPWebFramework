@@ -30,7 +30,7 @@ QJsonObject SqlQuery::validate(const QJsonObject &json, const QString &table)
     {
         return QJsonObject{{"success", false}, {"message", "JSON is empty"}};
     }
-    else if(table.isEmpty())
+    if(table.isEmpty())
     {
         return QJsonObject{{"success", false}, {"message", "Table name is empty"}};
     }

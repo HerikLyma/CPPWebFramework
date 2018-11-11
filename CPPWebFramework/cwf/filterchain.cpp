@@ -35,10 +35,9 @@ void FilterChain::doFilter(CWF::Request &request, CWF::Response &response)
     }
     else
     {
-        FileManager fileManager;
         QString url  = request.getRequestURL();
         QString path = request.getPath();
-        const QString &extention = fileManager.fileExtention(url);
+        const QString &extention = CWF::FileManager::fileExtention(url);
 
         if(url == FILE_EXTENTION::BAR)
         {
@@ -144,7 +143,7 @@ void FilterChain::doFilter(CWF::Request &request, CWF::Response &response)
         }
         else if(extention == FILE_EXTENTION::INI)
         {
-            QString file(fileManager.fileName(url));
+            QString file(CWF::FileManager::fileName(url));
             if(file != CONFIGURATION::CPP_WEB_INI)
                 write(response, path, url, HTTP::CONTENT_TYPE, ("text/" + extention.toLatin1() + "; charset=UTF-8") );
             else if(configuration.getAccessServerPages())

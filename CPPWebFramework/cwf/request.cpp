@@ -22,7 +22,7 @@ Request::Request(QTcpSocket &socket,
 {    
 }
 
-Request::~Request()
+Request::~Request() noexcept
 {
     delete requestDispatcher;
 }

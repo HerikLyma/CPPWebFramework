@@ -39,7 +39,7 @@ void CppWebServer::incomingConnection(qintptr socketfd)
 {
     while(block)
     {
-        this->thread()->msleep(sleepTime);   
+        this->thread()->msleep(static_cast<unsigned long>(sleepTime));
     }
     pool.start(new HttpReadRequest(socketfd, urlController, sessions, configuration, ssl, filter), QThread::LowPriority);
 }

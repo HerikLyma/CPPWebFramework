@@ -39,7 +39,7 @@ void HttpParser::doParseHttpHeader(QByteArray &httpMessage)
     httpMessage.replace("\r", "");
     QByteArrayList lines(httpMessage.split('\n'));
     QByteArrayList firstHeaderLine;
-    if(lines.size() > 0)
+    if(!lines.empty())
         firstHeaderLine = lines[0].split(' ');
 
     if(firstHeaderLine.size() < 3)
@@ -60,7 +60,7 @@ void HttpParser::doParseHttpHeader(QByteArray &httpMessage)
         if(line.isEmpty())
             continue;
         column = line.indexOf(':');
-        headerField.insert(std::move(line.left(column).trimmed()), std::move(line.mid(column + 1).trimmed()));
+        headerField.insert(line.left(column).trimmed(), line.mid(column + 1).trimmed());
     }
 
     contentLenght = headerField.value(HTTP::CONTENT_LENGTH).toLongLong();
@@ -97,9 +97,9 @@ void HttpParser::doParseUrl()
         {
             QByteArrayList p(tempParam[i].split('='));
             if(p.size() == 2)
-                parameters.insert(std::move(p[0]), std::move(p[1]));
+                parameters.insert(p[0], p[1]);
             else if(p.size() == 1)
-                parameters.insert(std::move(p[0]), std::move(""));
+                parameters.insert(p[0], "");
         }
     }
 }
@@ -114,18 +114,18 @@ void HttpParser::doParseBody()
         {
             QByteArrayList p(tempBody[i].split('='));
             if(p.size() == 2)
-                parameters.insert(std::move(p[0]), std::move(p[1]));
+                parameters.insert(p[0], p[1]);
             else if(p.size() == 1)
-                parameters.insert(std::move(p[0]), std::move(""));
+                parameters.insert(p[0], "");
         }
     }
     else
     {
         QByteArrayList p(body.split('='));
         if(p.size() == 2)
-            parameters.insert(std::move(p[0]), std::move(p[1]));
+            parameters.insert(p[0], p[1]);
         else if(p.size() == 1)
-            parameters.insert(std::move(p[0]), std::move(""));
+            parameters.insert(p[0], "");
     }
 }
 

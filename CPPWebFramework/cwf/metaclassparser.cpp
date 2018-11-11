@@ -26,7 +26,6 @@ MetaClassParser::MetaClassParser(QObject *object)
     {
         QMetaMethod method(meta->method(i));
         QString returnType(method.typeName());
-        QString xxx = method.methodSignature();
         std::tuple<QString, QString> signature(returnType, method.methodSignature());
         methods.insert(signature, method);
     }
@@ -37,7 +36,7 @@ QString MetaClassParser::getReturnType(const QString &methodName)
     for(QMap<std::tuple<QString, QString>, QMetaMethod>::iterator it = methods.begin();
         it != methods.end(); ++it)
     {
-        QString name = std::get<1>(it.key());
+        const QString &name = std::get<1>(it.key());
         if(name == methodName)
         {
             return std::get<0>(it.key());
@@ -51,7 +50,7 @@ QString MetaClassParser::getParameterType(const QString &methodName)
     for(QMap<std::tuple<QString, QString>, QMetaMethod>::iterator it = methods.begin();
         it != methods.end(); ++it)
     {
-        QString name = std::get<1>(it.key());
+        const QString &name = std::get<1>(it.key());
         if(name.startsWith(methodName + "("))
         {
             return it.value().methodSignature().replace(methodName, "").replace("(", "").replace(")", "");

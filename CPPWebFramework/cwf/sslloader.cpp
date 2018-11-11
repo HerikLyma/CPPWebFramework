@@ -4,10 +4,11 @@
 #include <QSslKey>
 #include <QSslCertificate>
 #include <QSslConfiguration>
+#include <utility>
 
 CWF_BEGIN_NAMESPACE
 
-SslLoader::SslLoader(const Configuration &configuration) : configuration(configuration)
+SslLoader::SslLoader(Configuration configuration) : configuration(std::move(configuration))
 {
 }
 
@@ -28,7 +29,7 @@ QSslConfiguration *buildSslConfiguration(const QSslKey &keySsl,
                                          const QSslCertificate &certificateSsl,
                                          const Configuration &configuration)
 {
-    QSslConfiguration *temp = new QSslConfiguration;
+    auto *temp = new QSslConfiguration;
     temp->setProtocol(configuration.getSslProtocol());
     temp->setPeerVerifyMode(configuration.getSslPeerVerifyMode());
     temp->setPrivateKey(keySsl);

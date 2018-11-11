@@ -18,7 +18,6 @@ CWF_BEGIN_NAMESPACE
 class CPPWEBFRAMEWORKSHARED_EXPORT CSTLCompilerObject : public QObject
 {
     Q_OBJECT
-private:
     QString value;
     QString type;
 public:

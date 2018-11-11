@@ -11,7 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-void Controller::doMessage(Request &req, Response &resp, QString method) const
+void Controller::doMessage(Request &req, Response &resp, const QString &method) const
 {
     QString msg("http.method_" + method.toLower() + "_not_supported");
     if (req.getProtocol().endsWith("1.1"))

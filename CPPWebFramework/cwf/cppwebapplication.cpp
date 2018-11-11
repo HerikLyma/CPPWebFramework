@@ -108,7 +108,7 @@ int CppWebApplication::start()
         qDebug() << "Invalid configuration.\nServer offline\n";
         return -1;
     }
-    else if(!server->listen(configuration.getHost(), configuration.getPort()))
+    if(!server->listen(configuration.getHost(), configuration.getPort()))
     {
         qDebug() << "Error: " << server->errorString() << "\n";
         qDebug() << "Server offline\n";

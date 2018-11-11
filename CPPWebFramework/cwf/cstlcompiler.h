@@ -78,7 +78,7 @@ public:
      * @param QMap<QString, QObject *> &objects : Container objects that can be compiled into the view page.
      * @param bool isStrFileName                : It indicates whether str is the name of a file or its contents.
      */
-    CSTLCompiler(const QByteArray &str, const QString &path, QMap<QString, QObject *> &objects, bool isStrFileName = true);
+    CSTLCompiler(const QByteArray &str, QString path, QMap<QString, QObject *> &objects, bool isStrFileName = true);
     /**
      * @brief Returns the compiled view page.
      * @return QByteArray : Compiled page.

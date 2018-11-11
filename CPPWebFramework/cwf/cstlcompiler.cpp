@@ -6,6 +6,8 @@
 */
 
 #include "cstlcompiler.h"
+
+#include <utility>
 #include "cstlcompilerattributes.h"
 #include "cstlcompilerfor.h"
 #include "cstlcompilerobject.h"
@@ -15,10 +17,10 @@
 
 CWF_BEGIN_NAMESPACE
 
-CSTLCompiler::CSTLCompiler(const QByteArray &str, const QString &path,
+CSTLCompiler::CSTLCompiler(const QByteArray &str, QString path,
                            QMap<QString, QObject *> &objects,
                            bool isStrFileName) : str(str),
-                                                 path(path),
+                                                 path(std::move(path)),
                                                  objects(objects),
                                                  isStrFileName(isStrFileName)
 {
@@ -153,7 +155,7 @@ QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
         items.replace("#{", "").replace("}", "");
         if(objects.contains(items))
         {
-            QObject *object = static_cast<QObject*>(objects[items]);
+            auto *object = static_cast<QObject*>(objects[items]);
             QString type(object->metaObject()->className());
 
             if(!items.isEmpty())
@@ -165,8 +167,8 @@ QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
                 }
                 else
                 {
-                    QListObject *qListObject = static_cast<QListObject*>(object);
-                    QString ret(std::move(getBody(xml, CSTL::TAG::FOR)));
+                    auto *qListObject = dynamic_cast<QListObject*>(object);
+                    QString ret(getBody(xml, CSTL::TAG::FOR));
                     QString var(forAttributes.attributes[CSTL::TAG::PROPERTY::VAR]);
                     var.replace("#{", "").replace("}", "");
                     for(int iL = 0; iL < qListObject->size(); ++iL)
@@ -184,7 +186,7 @@ QByteArray CSTLCompiler::processForTag(QXmlStreamReader &xml)
             int from      = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::FROM].toInt();
             int to        = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::TO].toInt();
             int increment = forAttributes.attributes[CSTL::TAG::PROPERTY::FOR::INCREMENT].toInt();
-            QString tagBody(std::move(getBody(xml, CSTL::TAG::FOR)));
+            QString tagBody(getBody(xml, CSTL::TAG::FOR));
             QString &var = forAttributes.attributes[CSTL::TAG::PROPERTY::VAR];
             for(int i = from; i <= to; i += increment)
             {
@@ -237,7 +239,7 @@ QByteArray CSTLCompiler::processIfTag(QXmlStreamReader &xml)
         }
 
         CSTLCompilerAttributes compilerAttributes(objects);
-        QString tagBody(std::move(getBody(xml, CSTL::TAG::IF)));
+        QString tagBody(getBody(xml, CSTL::TAG::IF));
         compilerAttributes.compileAttributes(ifAttributes.attributes);
 
         bool isTrue = false;

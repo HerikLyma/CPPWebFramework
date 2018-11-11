@@ -6,11 +6,13 @@
 */
 
 #include "session.h"
+
+#include <utility>
 #include "configuration.h"
 
 CWF_BEGIN_NAMESPACE
 
-Session::Session(const QString &id, qint64 sessionTimeOut) : id(id),
+Session::Session(QString id, qint64 sessionTimeOut) : id(std::move(id)),
     sessionTimeOut(sessionTimeOut),
     autoClearAttributes(false),
     expired (false)
@@ -24,9 +26,7 @@ Session::~Session()
     {
         for(QMapThreadSafety<QString, QObject*>::iterator it = attributes.begin(); it != attributes.end(); ++it)
         {
-            QObject *o = it.value();
-            if(o != nullptr)
-                delete o;
+            delete it.value();
         }
     }
 }

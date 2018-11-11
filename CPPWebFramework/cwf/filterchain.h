@@ -56,4 +56,4 @@ public:
 
 CWF_END_NAMESPACE
 
-#endif // FILTERCHAIN_H
+#endif

@@ -88,7 +88,7 @@ void Response::flushBuffer()
         bool biggerThanLimit = content.size() > max;
         headers.insert(HTTP::CONTENT_LENGTH, QByteArray::number(content.size()));
         headers.insert(HTTP::SERVER, HTTP::SERVER_VERSION);
-        headers.insert(HTTP::DATA, QByteArray(std::move(QDateTime::currentDateTime().toString("ddd, dd MMM yyyy hh:mm:ss").toLatin1() + " GMT")));
+        headers.insert(HTTP::DATA, QByteArray(QDateTime::currentDateTime().toString("ddd, dd MMM yyyy hh:mm:ss").toLatin1() + " GMT"));
 
         if(!biggerThanLimit)
         {
@@ -104,15 +104,15 @@ void Response::flushBuffer()
             QVector<QByteArray> vetor;
             for(int i = 0; i < total; ++i)
             {
-                vetor.push_back(std::move(content.mid(last, max)));
+                vetor.push_back(content.mid(last, max));
                 last += max;
             }
 
-            for(int i = 0; i < vetor.size(); ++i)
+            for(auto &i : vetor)
             {
-                QByteArray data(std::move(vetor[i]));
+                QByteArray data(std::move(i));
                 if(!data.isEmpty())
-                {                    
+                {
                     sendBytes(*socket, (QByteArray::number(data.size(), 16) + HTTP::END_LINE), timeOut);
                     sendBytes(*socket, data, timeOut);
                     sendBytes(*socket, HTTP::END_LINE, timeOut);
@@ -136,7 +136,7 @@ void Response::write(const QJsonObject &json, bool writeContentType)
 {
     if(writeContentType)
         addHeader(CWF::HTTP::CONTENT_TYPE, CWF::HTTP::APPLICATION_JSON);
-    content = std::move(QJsonDocument(json).toJson());
+    content = QJsonDocument(json).toJson();
     flushBuffer();
 }
 
@@ -144,7 +144,7 @@ void Response::write(const QJsonArray &array, bool writeContentType)
 {
     if(writeContentType)
         addHeader(CWF::HTTP::CONTENT_TYPE, CWF::HTTP::APPLICATION_JSON);
-    content = std::move(QJsonDocument(array).toJson());
+    content = QJsonDocument(array).toJson();
     flushBuffer();
 }
 

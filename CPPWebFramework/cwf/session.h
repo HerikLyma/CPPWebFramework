@@ -45,7 +45,7 @@ public:
     /**
      * @brief Construct a session with a unique identifier
      */
-    explicit Session(const QString &id, qint64 sessionTimeOut);
+    explicit Session(QString id, qint64 sessionTimeOut);
 
 
     ~Session();
