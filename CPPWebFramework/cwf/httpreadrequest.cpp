@@ -66,7 +66,6 @@ void HttpReadRequest::run()
         if(socket->waitForReadyRead())
         {
             QByteArray req(socket->readAll());
-            qDebug() << req;
 
             HttpParser parser(req);
             if(parser.valid)
