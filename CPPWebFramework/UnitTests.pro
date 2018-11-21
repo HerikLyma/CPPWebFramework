@@ -40,6 +40,7 @@ SOURCES += \
     cwf/cstlcompilerif.cpp \
     cwf/cstlcompilerimport.cpp \
     cwf/filemanager.cpp \
+    cwf/filter.cpp \
     cwf/filterchain.cpp \    
     cwf/httpparser.cpp \
     cwf/httpreadrequest.cpp \
@@ -77,6 +78,7 @@ SOURCES += \
     tests/tst_request.cpp \
     tests/tst_cstlcompilerout.cpp \
     cwf/sslloader.cpp
+
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 HEADERS += \
