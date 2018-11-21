@@ -47,7 +47,8 @@ SOURCES += \
     cwf/controller.cpp \
     cwf/session.cpp \
     cwf/cppwebcontroller.cpp \
-    cwf/sslloader.cpp
+    cwf/sslloader.cpp \
+    cwf/filter.cpp
 
 HEADERS += \
         cwf/cppwebframework_global.h \

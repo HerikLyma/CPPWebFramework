@@ -20,4 +20,38 @@ void Controller::doMessage(Request &req, Response &resp, const QString &method) 
         resp.sendError(Response::SC_BAD_REQUEST, msg.toLatin1());
 }
 
+Controller::~Controller()
+{
+}
+
+void Controller::doDelete(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::DELETE);
+}
+
+void Controller::doGet(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::GET);
+}
+
+void Controller::doOptions(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::OPTIONS);
+}
+
+void Controller::doPost(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::POST);
+}
+
+void Controller::doPut(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::PUT);
+}
+
+void Controller::doTrace(Request &req, Response &resp) const
+{
+    doMessage(req, resp, HTTP::METHOD::TRACE);
+}
+
 CWF_END_NAMESPACE

@@ -26,7 +26,7 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~Filter() {}
+    virtual ~Filter();
     /**
      * @brief This method will be called always that the CppWebServer receives a requisition.
      * @param request  : This is a reference to the Request.
@@ -88,7 +88,7 @@ public:
      *
      * @endcode
      */
-    virtual void doFilter(CWF::Request &request, CWF::Response &response, FilterChain &chain) { chain.doFilter(request, response); }
+    virtual void doFilter(CWF::Request &request, CWF::Response &response, FilterChain &chain);
 };
 
 CWF_END_NAMESPACE

@@ -65,7 +65,7 @@ QJsonObject SqlQuery::exec(const QString &query)
 QJsonArray SqlQuery::toJson()
 {
     QJsonArray array;
-    QString error(std::move(lastError().text()));
+    QString error(lastError().text());
     if(!error.trimmed().isEmpty())
     {
         array.push_back(QJsonObject{{"success", false}, {"message", error}});

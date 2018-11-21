@@ -24,7 +24,7 @@ class Configuration;
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT Response
 {
-    QTcpSocket     *socket;
+    QTcpSocket     &socket;
     const Configuration &configuration;
     int            statusCode = Response::SC_OK;
     QByteArray     content;

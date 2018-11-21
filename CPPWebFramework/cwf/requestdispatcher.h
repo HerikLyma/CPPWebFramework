@@ -12,6 +12,7 @@
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
+
 class Request;
 class Response;
 /**
@@ -25,10 +26,6 @@ public:
      * @brief This constructor receives a file name.
      */
     explicit RequestDispatcher(const QString &file) : file(file) {}
-    /**
-     * @brief Virtual destructor.
-     */
-    ~RequestDispatcher() {}
     /**
      * @brief This method will dispatch the page file specificated in path to the CSTLCompiler,
      * the CSTLCompiler will compile the xhtml file and returns the result.

@@ -11,7 +11,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-Response::Response(QTcpSocket &socket, const Configuration &configuration) : socket(&socket),
+Response::Response(QTcpSocket &socket, const Configuration &configuration) : socket(socket),
                                                                              configuration(configuration)
 
 {
@@ -92,13 +92,13 @@ void Response::flushBuffer()
 
         if(!biggerThanLimit)
         {
-            sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
-            sendBytes(*socket, content, timeOut);
+            sendHeaders(statusCode, timeOut, statusText, headers, cookies, socket);
+            sendBytes(socket, content, timeOut);
         }
         else
         {
             headers.insert(HTTP::TRANSFER_ENCODING, HTTP::CHUNKED);
-            sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
+            sendHeaders(statusCode, timeOut, statusText, headers, cookies, socket);
             int total = (content.size() / max) + 1, last = 0;
 
             QVector<QByteArray> vetor;
@@ -113,14 +113,14 @@ void Response::flushBuffer()
                 QByteArray data(std::move(i));
                 if(!data.isEmpty())
                 {
-                    sendBytes(*socket, (QByteArray::number(data.size(), 16) + HTTP::END_LINE), timeOut);
-                    sendBytes(*socket, data, timeOut);
-                    sendBytes(*socket, HTTP::END_LINE, timeOut);
+                    sendBytes(socket, (QByteArray::number(data.size(), 16) + HTTP::END_LINE), timeOut);
+                    sendBytes(socket, data, timeOut);
+                    sendBytes(socket, HTTP::END_LINE, timeOut);
                 }
             }
-            sendBytes(*socket, HTTP::END_OF_MENSAGE_WITH_ZERO, timeOut);
+            sendBytes(socket, HTTP::END_OF_MENSAGE_WITH_ZERO, timeOut);
         }
-        socket->disconnectFromHost();
+        socket.disconnectFromHost();
         content.clear();
     }
 }
@@ -128,8 +128,8 @@ void Response::flushBuffer()
 void Response::sendError(int sc, const QByteArray &msg)
 {
     int timeOut = configuration.getTimeOut();
-    sendHeaders(statusCode, timeOut, statusText, headers, cookies, *socket);
-    sendBytes(*socket, "<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>", timeOut);
+    sendHeaders(statusCode, timeOut, statusText, headers, cookies, socket);
+    sendBytes(socket, "<html><body><h1>" + QByteArray::number(sc) + " " + msg + "</h1></body></html>", timeOut);
 }
 
 void Response::write(const QJsonObject &json, bool writeContentType)

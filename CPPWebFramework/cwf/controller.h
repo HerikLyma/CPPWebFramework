@@ -38,43 +38,43 @@ public:
     /**
      * @brief Destructor.
      */
-    virtual ~Controller() {}
+    virtual ~Controller();
     /**
      * @brief This is an virtual method that can be overloaded to attend the delete request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doDelete(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::DELETE); }
+    virtual void doDelete(Request &req, Response &resp) const;
     /**
      * @brief This is an virtual method that can be overloaded to attend the get request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doGet(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::GET); }
+    virtual void doGet(Request &req, Response &resp) const;
     /**
      * @brief This is an virtual method that can be overloaded to attend the options request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doOptions(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::OPTIONS); }
+    virtual void doOptions(Request &req, Response &resp) const;
     /**
      * @brief This is an virtual method that can be overloaded to attend the post request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doPost(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::POST); }
+    virtual void doPost(Request &req, Response &resp) const;
     /**
      * @brief This is an virtual method that can be overloaded to attend the put request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doPut(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::PUT); }
+    virtual void doPut(Request &req, Response &resp) const;
     /**
      * @brief This is an virtual method that can be overloaded to attend the trace request method.
      * @param req    : This is a reference to the Request.
      * @param resp   : This is a reference to the Response.
      */
-    virtual void doTrace(Request &req, Response &resp) const { doMessage(req, resp, HTTP::METHOD::TRACE); }
+    virtual void doTrace(Request &req, Response &resp) const;
 };
 
 CWF_END_NAMESPACE

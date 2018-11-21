@@ -135,7 +135,7 @@ void HttpParser::extractCookies()
     int size = temp.size();
     for(int i = 0; i < size; ++i)
     {
-        const QByteArray &txt = temp[i].replace(";",";\n");;
+        const QByteArray &txt = temp[i].replace(";", ";\n");;
         QList<QNetworkCookie> cookiesList = QNetworkCookie::parseCookies(txt);
         for(QNetworkCookie &cookie : cookiesList)
         {

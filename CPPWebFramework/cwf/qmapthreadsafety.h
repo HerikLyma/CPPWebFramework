@@ -196,7 +196,7 @@ public:
     QList<Key> keys(const T &value) const
     {
         QMutexLocker locker(&mutex);
-        return m_map.keys();
+        return m_map.keys(value);
     }
 
     T &last()

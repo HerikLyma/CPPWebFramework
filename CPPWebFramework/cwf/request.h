@@ -28,7 +28,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Request
 {
     friend class HttpReadRequest;
     friend class RequestDispatcher;
-    QTcpSocket         *socket;
+    QTcpSocket         &socket;
     Session            *session            = nullptr;
     HttpParser         *httpParser         = nullptr;
     RequestDispatcher  *requestDispatcher  = nullptr;
@@ -47,7 +47,7 @@ public:
     /**
      * @brief Destroys dynamically allocated resources.
      */
-    virtual ~Request() noexcept;
+    ~Request() noexcept;
     /**
      * @brief This method add attributes that will be passed to a view page.
      * The object can be processed within a page using view CSTL. For this to be possible the object must
@@ -144,7 +144,7 @@ public:
      * @brief This method returns a reference to the current socket.
      * @return QTcpSocket
      */
-    inline QTcpSocket &getSocket() const noexcept { return *socket; }
+    inline QTcpSocket &getSocket() const noexcept { return socket; }
     /**
      * @brief This method returns the path.
      * @return QString
