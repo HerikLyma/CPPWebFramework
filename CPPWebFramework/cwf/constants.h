@@ -186,6 +186,8 @@ namespace HTTP
     const QByteArray APPLICATION_CAB_COMPRESSED              = "application/vnd.ms-cab-compressed";
     const QByteArray APPLICATION_POSTSCRIPT                  = "application/postscript";
     const QByteArray APPLICATION_WWW_FORM_URLENCODED         = "application/x-www-form-urlencoded";
+    const QByteArray APPLICATION_FONT_WOFF                   = "application/x-font-woff";
+    const QByteArray APPLICATION_FONT_TTF                    = "application/octet-stream";
 
     //HTTP METHODS CONSTANTS
     namespace METHOD
@@ -253,6 +255,10 @@ namespace FILE_EXTENTION
     const QByteArray EPS  = "eps";
     const QByteArray PS   = "ps";
     const QByteArray INI  = "ini";
+    const QByteArray EOT  = "eot";
+    const QByteArray TTF  = "ttf";
+    const QByteArray WOFF = "woff";
+    const QByteArray WOFF2= "woff2";
 }
 
 CWF_END_NAMESPACE
