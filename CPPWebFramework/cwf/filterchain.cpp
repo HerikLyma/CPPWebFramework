@@ -141,6 +141,14 @@ void FilterChain::doFilter(CWF::Request &request, CWF::Response &response)
         {
             write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_POSTSCRIPT);
         }
+        else if (extention == FILE_EXTENTION::WOFF || extention == FILE_EXTENTION::WOFF2)
+        {
+            write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_FONT_WOFF);
+        }
+        else if (extention == FILE_EXTENTION::EOT || extention == FILE_EXTENTION::TTF)
+        {
+            write(response, path, url, HTTP::CONTENT_TYPE, HTTP::APPLICATION_FONT_TTF);
+        }
         else if(extention == FILE_EXTENTION::INI)
         {
             QString file(CWF::FileManager::fileName(url));
