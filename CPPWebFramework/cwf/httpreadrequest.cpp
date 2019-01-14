@@ -138,7 +138,11 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
     {
         if(socket->waitForReadyRead(10))
         {
-            content += socket->readAll();
+            if (content.size() > maxUploadFile) {
+                socket->readAll();
+            } else {
+                content += socket->readAll();
+            }
         }
 
         int spendTime = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count();
@@ -157,6 +161,7 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
             break;
         }
     }
+
     if(content.size() > maxUploadFile)
     {
         request.getRequestDispatcher(STATUS::STATUS_403).forward(request, response);
