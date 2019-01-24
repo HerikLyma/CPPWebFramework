@@ -7,7 +7,7 @@
 
 #include "cppwebapplication.h"
 #include "cppwebcontroller.h"
-
+//  clazy:excludeall=qgetenv
 CWF_BEGIN_NAMESPACE
 
 QPair<QString, qint64> getFileAndMaxSize()

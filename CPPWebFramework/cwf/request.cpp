@@ -11,7 +11,7 @@
 #include "response.h"
 #include "urlencoder.h"
 #include <QUuid>
-
+//  clazy:excludeall=connect-not-normalized
 CWF_BEGIN_NAMESPACE
 
 Request::Request(QTcpSocket &socket,

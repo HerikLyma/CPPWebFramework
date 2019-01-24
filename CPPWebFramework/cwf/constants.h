@@ -8,6 +8,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+// clazy:excludeall=non-pod-global-static
 #include <QString>
 #include <QByteArray>
 #include "cppwebframework_global.h"

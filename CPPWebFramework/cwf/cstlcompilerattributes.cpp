@@ -9,7 +9,7 @@
 #include "constants.h"
 #include <QVariant>
 #include "metaclassparser.h"
-
+//  clazy:excludeall=connect-not-normalized
 CWF_BEGIN_NAMESPACE
 
 CSTLCompilerAttributes::CSTLCompilerAttributes(QMap<QString, QObject *> &objects) : objects(objects)

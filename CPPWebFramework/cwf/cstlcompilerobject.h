@@ -7,7 +7,7 @@
 
 #ifndef CSTLCOMPILEROBJECT_H
 #define CSTLCOMPILEROBJECT_H
-
+//  clazy:excludeall=const-signal-or-slot
 #include <QObject>
 #include "cppwebframework_global.h"
 
