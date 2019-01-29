@@ -67,7 +67,7 @@ void HttpReadRequest::run()
         {
             QByteArray req;
             try {
-                QByteArray req = socket->readAll();
+                req = socket->readAll();
             } catch (const std::bad_alloc & e) {
                 qDebug() << e.what() << "\n";
             }
