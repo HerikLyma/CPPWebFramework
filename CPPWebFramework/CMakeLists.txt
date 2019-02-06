@@ -46,5 +46,5 @@ target_link_libraries(
     Qt5::Sql
 
 )
-
+INSTALL(TARGETS CPPWebFramework LIBRARY DESTINATION lib COMPONENT CPPWebFramework)
 add_definitions(-DCPPWEBFRAMEWORK_LIBRARY)
