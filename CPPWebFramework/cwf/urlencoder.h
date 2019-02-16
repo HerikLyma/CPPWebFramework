@@ -24,7 +24,7 @@ public:
      * @param url
      * @return
      */
-    static QString decode(const QByteArray &url);
+    static QString decode(QByteArray url, bool replacePlusForSpace = true);
     /**
      * @brief encode
      * @param url
@@ -42,7 +42,7 @@ public:
      * @param param
      * @return
      */
-    static QString paramDecode(const QByteArray &param);
+    static QString paramDecode(QByteArray param, bool replacePlusForSpace = true);
 };
 
 CWF_END_NAMESPACE

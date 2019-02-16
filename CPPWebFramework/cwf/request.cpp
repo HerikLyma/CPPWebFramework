@@ -27,12 +27,12 @@ Request::~Request() noexcept
     delete requestDispatcher;
 }
 
-void Request::fillQObject(QObject *object)
+void Request::fillQObject(QObject *object, bool urlDecode, bool replacePlusForSpace)
 {
-    fillQObject(object, httpParser->getParameters());
+    fillQObject(object, httpParser->getParameters(), urlDecode, replacePlusForSpace);
 }
 
-void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &parameters)
+void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &parameters, bool urlDecode, bool replacePlusForSpace)
 {
     MetaClassParser meta(object);
 
@@ -50,10 +50,12 @@ void Request::fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &p
 
             if(parameterType == CSTL::SUPPORTED_TYPES::QSTRING)
             {
+                value = URLEncoder::paramDecode(value.toLatin1(), replacePlusForSpace);
                 QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(QString, value));
             }
             else if(parameterType == CSTL::SUPPORTED_TYPES::STD_STRING)
             {
+                value = URLEncoder::paramDecode(value.toLatin1(), replacePlusForSpace);
                 QMetaObject::invokeMethod(object, method.toStdString().data(), Q_ARG(std::string, value.toStdString()));
             }
             else if(parameterType == CSTL::SUPPORTED_TYPES::BOOL)

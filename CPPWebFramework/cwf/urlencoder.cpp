@@ -9,10 +9,13 @@
 
 CWF_BEGIN_NAMESPACE
 
-QString URLEncoder::decode(const QByteArray &url)
+QString URLEncoder::decode(QByteArray url, bool replacePlusForSpace)
 {
+    if(replacePlusForSpace)
+        url = url.replace("+", " ");
     QUrl copy(url);
     copy.setQuery(copy.query(QUrl::FullyDecoded), QUrl::DecodedMode);
+
 
     return copy.toString();
 }
@@ -29,8 +32,10 @@ QString URLEncoder::paramEncode(const QByteArray &param)
     return url.toEncoded().remove(0, 3);
 }
 
-QString URLEncoder::paramDecode(const QByteArray &param)
+QString URLEncoder::paramDecode(QByteArray param, bool replacePlusForSpace)
 {
+    if(replacePlusForSpace)
+        param = param.replace("+", " ");
     QUrl url("?p=" + param);
     url.setQuery(url.query(QUrl::FullyDecoded), QUrl::DecodedMode);
 

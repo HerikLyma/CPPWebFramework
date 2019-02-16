@@ -14,11 +14,13 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include "httpparser.h"
+#include "urlencoder.h"
 #include "session.h"
 #include "filemanager.h"
 #include "configuration.h"
 #include "requestdispatcher.h"
 #include "cppwebframework_global.h"
+
 
 CWF_BEGIN_NAMESPACE
 /**
@@ -133,7 +135,10 @@ public:
      * @param decode : If true, decode the parameter.
      * @return QByteArray
      */
-    QByteArray getParameter(const QByteArray &name) const noexcept { return httpParser->getParameter(name); }
+    QByteArray getParameter(const QByteArray &name, bool urlDecode = true, bool replacePlusForSpace = true) const noexcept
+    {
+        return httpParser->getParameter(name, urlDecode, replacePlusForSpace);
+    }
     /**
      * @brief This method returns the parameters from a request given an specific name.
      * @param name : This is a reference to a QByteArray.     
@@ -330,9 +335,11 @@ public:
      * }
      * @endcode
      */
-    void fillQObject(QObject *object);
+    void fillQObject(QObject *object, bool urlDecode = true, bool replacePlusForSpace = true);
 
-    void fillQObject(QObject *object, const QMap<QByteArray, QByteArray> &parameters);
+    void fillQObject(QObject *object,
+                     const QMap<QByteArray, QByteArray> &parameters,
+                     bool urlDecode = true, bool replacePlusForSpace = true);
 };
 
 CWF_END_NAMESPACE
