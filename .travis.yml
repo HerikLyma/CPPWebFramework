@@ -41,7 +41,7 @@ script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm *tst_*; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm main*; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then rm moc*; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'; fi
+#  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then coveralls --exclude lib --exclude tests --exclude *Qt* --exclude */usr/* --gcov-options '\-lp'; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then make clean; fi
 
   - cd cwf
