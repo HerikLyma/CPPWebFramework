@@ -47,10 +47,13 @@ SOURCES += \
     cwf/session.cpp \
     cwf/cppwebcontroller.cpp \
     cwf/sslloader.cpp \
-    cwf/filter.cpp
+    cwf/filter.cpp \
+    cwf/model.cpp \
+    cwf/modelbasicoperation.cpp \
+    cwf/sqlquerymanager.cpp
 
 HEADERS += \
-        cwf/cppwebframework_global.h \
+    cwf/cppwebframework_global.h \
     cwf/configuration.h \
     cwf/constants.h \
     cwf/cppwebapplication.h \
@@ -81,7 +84,11 @@ HEADERS += \
     cwf/response.h \
     cwf/session.h \
     cwf/cppwebcontroller.h \
-    cwf/sslloader.h
+    cwf/sslloader.h \
+    cwf/model.h \
+    cwf/modelbasicoperation.h \
+    cwf/dbstorage.h \
+    cwf/sqlquerymanager.h
 
 DISTFILES += \
     server/config/ssl/my.key \
