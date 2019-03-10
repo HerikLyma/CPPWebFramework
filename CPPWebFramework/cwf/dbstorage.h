@@ -3,8 +3,8 @@
 CWF_BEGIN_NAMESPACE
 
 namespace DbStorage {
-    extern CWF::SqlDatabaseStorage _storage;
-    extern QString _secret;
+    CPPWEBFRAMEWORKSHARED_EXPORT static CWF::SqlDatabaseStorage _storage;
+    CPPWEBFRAMEWORKSHARED_EXPORT static QString _secret;
 }
 
 CWF_END_NAMESPACE
