@@ -2,16 +2,6 @@
 
 CWF_BEGIN_NAMESPACE
 
-Model::Model(const QString &name) : QObject(nullptr)
-{
-    m_name = name;
-}
-
-Model::~Model()
-{
-
-}
-
 void Model::updateDB()
 {
     // ****************************************************************
@@ -45,7 +35,7 @@ void Model::build(const QMap<QString, QVariant> &selectCondition)
 
     QStringList properties = listAllProperties();
 
-    QMap<QString, QVariant> propValueMap = m_basicOperation.build(m_name, selectCondition, properties);
+    QMap<QString, QVariant> propValueMap = basicOperation.build(name, selectCondition, properties);
 
     // Loop on all the prop value to update the current object
     for(const auto& it : propValueMap.toStdMap() )
@@ -56,9 +46,9 @@ void Model::build(const QMap<QString, QVariant> &selectCondition)
     // Depending on the content of propValueMap, we set the built flag to true or false.
     // If the db query failed then the list is empty here.
     if(propValueMap.empty() )
-        m_built = false;
+        built = false;
     else
-        m_built = true;
+        built = true;
 }
 
 void Model::buildFromJson(const QJsonObject &json, bool withTableNamePrefix)
@@ -79,7 +69,7 @@ void Model::buildFromJson(const QJsonObject &json, bool withTableNamePrefix)
 
         if(jsonValue.isUndefined() )
         {
-            m_built = false;
+            built = false;
             break;
         }
 
@@ -89,7 +79,7 @@ void Model::buildFromJson(const QJsonObject &json, bool withTableNamePrefix)
 
         if(!success)
         {
-            m_built = false;
+            built = false;
             break;
         }
     }
@@ -113,14 +103,14 @@ bool Model::save()
     QDateTime currentDt = QDateTime::currentDateTime();
 
     // Creation of a new object
-    if(m_id == -1)
+    if(id == -1)
     {
-        this->setProperty("createdDateTime", currentDt.toString(m_dtFormat) );
+        this->setProperty("createdDateTime", currentDt.toString(dtFormat) );
         setCreatedDt(currentDt);
     }
 
     // Modification
-    this->setProperty("lastModifiedDateTime", currentDt.toString(m_dtFormat) );
+    this->setProperty("lastModifiedDateTime", currentDt.toString(dtFormat) );
     setLastModifiedDt(currentDt);
 
     // --------------------------------------------------
@@ -133,7 +123,7 @@ bool Model::save()
 
     QMap<QString, QVariant> propsMap = computePropsMap(*this);
 
-    qint64 id = m_basicOperation.save(m_name, propsMap);
+    qint64 id = basicOperation.save(name, propsMap);
 
     setProperty("id", id);
 
@@ -147,27 +137,27 @@ bool Model::remove()
 {
     const qint64& id = getId();
 
-    return m_basicOperation.remove(getTableName(), id);
+    return basicOperation.remove(getTableName(), id);
 }
 
 QString Model::getCreatedDtStr() const
 {
-    return m_createdDateTime;
+    return createdDateTime;
 }
 
 QDateTime Model::getCreatedDt() const
 {
-    return QDateTime::fromString(m_createdDateTime, m_dtFormat);
+    return QDateTime::fromString(createdDateTime, dtFormat);
 }
 
 QDateTime Model::getLastModifiedDt() const
 {
-    return QDateTime::fromString(m_lastModifiedDateTime, m_dtFormat);
+    return QDateTime::fromString(lastModifiedDateTime, dtFormat);
 }
 
 QString Model::getLastModifiedDtStr() const
 {
-    return m_lastModifiedDateTime;
+    return lastModifiedDateTime;
 }
 
 QStringList Model::listAllProperties() const
@@ -207,15 +197,15 @@ bool Model::preSaveCheck() const
 
 void Model::verifyDbTableExist()
 {
-    bool tableExistInDb = m_basicOperation.isTableInDb(m_name);
+    bool tableExistInDb = basicOperation.isTableInDb(name);
 
     if(!tableExistInDb)
     {
-       bool success = m_basicOperation.createTable(m_name);
+       bool success = basicOperation.createTable(name);
 
        if(success)
        {
-           qInfo() << "Model::verifyDbTableExist:" << "Table " << m_name << " was successfuly created";
+           qInfo() << "Model::verifyDbTableExist:" << "Table " << name << " was successfuly created";
        }
     }
 }
@@ -229,7 +219,7 @@ void Model::verifyDbFields()
     QStringList fieldsFromObject = listAllProperties();
 
     // Then get all the fields of the object that are stored in the db
-    QStringList fieldsFromDb = m_basicOperation.fields(m_name);
+    QStringList fieldsFromDb = basicOperation.fields(name);
 
     // Loop on all the fields of the object and check if they are in the database
     for(const QString& fieldName : fieldsFromObject)
@@ -240,7 +230,7 @@ void Model::verifyDbFields()
         {
             // The field is not present in the db and we need to add it
 
-            qInfo() << "Model::verifyDbFields:"<< "In" << m_name
+            qInfo() << "Model::verifyDbFields:"<< "In" << name
                      << "the field" << fieldName << "is present in the object but was not found in database."
                      << "We update the database."
                         ;
@@ -250,9 +240,9 @@ void Model::verifyDbFields()
 
             QVariant::Type propertyType = this->propertyType(fieldName);
 
-            m_basicOperation.addFieldToTable(fieldName, propertyType, m_name);
+            basicOperation.addFieldToTable(fieldName, propertyType, name);
 
-            customizeField(fieldName, propertyType, m_name);
+            customizeField(fieldName, propertyType, name);
         }
     }
 
@@ -272,13 +262,13 @@ void Model::verifyDbFields()
     // If we performed a change in the db
     if(dbChangedPerformed)
     {
-        qInfo() << "The database was modified to update the table" << m_name << "."
+        qInfo() << "The database was modified to update the table" << name << "."
                 << "We will update the version for this table."
                 ;
 
-        qint32 tableVersion = m_basicOperation.tableVersion(m_name);
+        qint32 tableVersion = basicOperation.tableVersion(name);
         tableVersion += 1;
-        m_basicOperation.changeTableVersion(m_name, tableVersion);
+        basicOperation.changeTableVersion(name, tableVersion);
     }
 }
 
@@ -310,7 +300,7 @@ QMetaProperty Model::findProperty(const QString &propertyName) const
 
     if(!found)
     {
-        QString msg = QString("") + "Model::findProperty:" + " The property " + propertyName + " was not found in " + m_name;
+        QString msg = QString("") + "Model::findProperty:" + " The property " + propertyName + " was not found in " + name;
         qDebug() << msg;
         qFatal("Property should always be found here");
     }
@@ -362,7 +352,7 @@ void Model::setCreatedDt(const QDateTime &dt)
 {
     if(dt != getCreatedDt() )
     {
-        m_createdDateTime = dt.toString(m_dtFormat);
+        createdDateTime = dt.toString(dtFormat);
 
         createdDateTimeChanged();
     }
@@ -372,7 +362,7 @@ void Model::setLastModifiedDt(const QDateTime &dt)
 {
     if(dt != getLastModifiedDt() )
     {
-        m_lastModifiedDateTime = dt.toString(m_dtFormat);
+        lastModifiedDateTime = dt.toString(dtFormat);
 
         lastModifiedDateTimeChanged();
     }

@@ -32,7 +32,7 @@ CWF_BEGIN_NAMESPACE
  * {
  *    Q_OBJECT
  *
- *    Q_PROPERTY(QString email MEMBER m_email NOTIFY emailChanged)
+ *    Q_PROPERTY(QString email MEMBER email NOTIFY emailChanged)
  *
  *    public:
  *      UserModel() : Model("user") // Name of the model and database table
@@ -45,7 +45,7 @@ CWF_BEGIN_NAMESPACE
  *      void emailChanged();
  *
  *    private:
- *      QString m_email;
+ *      QString email;
  * }
  * ```
  *
@@ -83,29 +83,31 @@ class CPPWEBFRAMEWORKSHARED_EXPORT Model : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(qint64 id MEMBER m_id NOTIFY idChanged)
-    Q_PROPERTY(QString createdDateTime MEMBER m_createdDateTime NOTIFY createdDateTimeChanged)
-    Q_PROPERTY(QString lastModifiedDateTime MEMBER m_lastModifiedDateTime NOTIFY lastModifiedDateTimeChanged)
+    Q_PROPERTY(qint64 id MEMBER id NOTIFY idChanged)
+    Q_PROPERTY(QString createdDateTime MEMBER createdDateTime NOTIFY createdDateTimeChanged)
+    Q_PROPERTY(QString lastModifiedDateTime MEMBER lastModifiedDateTime NOTIFY lastModifiedDateTimeChanged)
 
 public:
-    Model(const QString& name); ///< @brief Constructor
-    virtual ~Model(); ///< @brief Destructor
-
     /**
-     * @brief updateDB Will create or update the database schema to match the model class.
-     *
+      * @brief Constructor
+     */
+    Model(const QString &name) : name(name) {}
+    /**
+      * @brief Destructor
+      */
+    virtual ~Model() = default;
+    /**
+     * @brief updateDB Will create or update the database schema to match the model class.     
      * This allows to create a working table from scratch or to update one. Note that a table update can add new
      * fields (Qt properties in the model code) but cannot remove any. Therefore, a developer should only add new
      * properties to a model and never remove one.
      */
     void updateDB();
-
     /**
      * @brief build Populate the model with data from the database.
      * @param id The id of the data to be used to populate the model.
      */
     void build(const qint64& id);
-
     /**
      * @brief build Populate the model with data from the database.
      * @param selectCondition A map ([propertyName] = propertyValue) of property values
@@ -113,56 +115,50 @@ public:
      *
      * The first entry of database table that matchs all the property values will be used to populate the model.
      */
-    void build(const QMap<QString, QVariant>& selectCondition);
-
+    void build(const QMap<QString, QVariant> &selectCondition);
     /**
      * @brief buildFromJson Populate a model from json data
      * @param json The data used to populate the model instance
      * @param withTableNamePrefix Are the date properties prefixed with the name of this model db table ? This is false by default.
      */
-    void buildFromJson(const QJsonObject& json, bool withTableNamePrefix=false);
-
+    void buildFromJson(const QJsonObject &json, bool withTableNamePrefix = false);
     /**
      * @brief save Persist the model in the database
      * @return Bool: Was the model correctly persisted ?
      */
     bool save();
-
     /**
      * @brief remove Delete the model from the database
      * @return Bool: Was the data removed without error ?
      */
     bool remove();
-
     /**
      * @brief setCreatedDt Manually set the creation date
      * @param dt Date of the model first save into the database.
      */
     void setCreatedDt(const QDateTime& dt);
-
     /**
      * @brief setLastModifiedDt Set the last date at which the model was persisted in the database.
      * @param dt The date to be used.
      */
     void setLastModifiedDt(const QDateTime& dt);
-
     /**
      * @brief setWasBuild Set the "was build" flag that indicate if a model instance was correctly populated (build) by data.
      * @param b The flag.
      */
-    void setWasBuild(bool b) {m_built = b;}
+    void setWasBuild(bool b) { built = b;}
 
     /**
      * @brief getWasBuild Get the value of the "was build" flag.
      * @return Bool: Was the model instance populated by data from the database ?
      */
-    bool getWasBuild() const {return m_built;}
+    bool getWasBuild() const { return built; }
 
     /**
      * @brief getId Get the id of the model
      * @return qint64: The id of the model
      */
-    const qint64& getId() const {return m_id;}
+    const qint64& getId() const { return id; }
 
     /**
      * @brief getCreatedDt Get the creation date of the model
@@ -192,7 +188,7 @@ public:
      * @brief getTableName The name of database table corresponding to the model
      * @return QString: Name of database table and of the model
      */
-    const QString& getTableName() const {return m_name;}
+    const QString& getTableName() const { return name; }
 
     /**
      * @brief findProperty Find a property with its name
@@ -233,7 +229,7 @@ signals:
     void lastModifiedDateTimeChanged();
 
 protected:
-    ModelBasicOperation m_basicOperation;
+    ModelBasicOperation basicOperation;
 
     /**
      * @brief preSaveCheck Perform some checks before persisting (saving) the model instance.
@@ -241,32 +237,29 @@ protected:
      * @return Bool: Was the check successful ?
      */
     virtual bool preSaveCheck() const;
-
     /**
      * @brief customizeField Allow to give special instructions when a field is created in the database.
      */
-    virtual void customizeField(const QString &/*fieldName*/,
-                                const QVariant::Type /*type*/,
-                                const QString &/*tableName*/
-                                ) const {;}
+    virtual void customizeField(const QString &fieldName,
+                                const QVariant::Type &type,
+                                const QString &tableName
+                                ) const = 0;
 
 private:
-    QString m_name; ///< @brief m_name The name of the model
-
+    QString name; ///< @brief name The name of the model
     /**
-     * @brief m_id The database id of the model
-     *
+     * @brief id The database id of the model
      * The id is set to -1 by default. It may change if the model was populated with data from the database (the id will become the one
      * of the entity stored in the database) or if a user manually set the variable before.
      */
-    qint64 m_id = -1;
+    qint64 id = -1;
 
-    qint64 m_version; ///< @brief The version of the table (database side)
-    bool m_built = false; ///< @brief Was the model instance populated with data ?
+    qint64 version; ///< @brief The version of the table (database side)
+    bool built = false; ///< @brief Was the model instance populated with data ?
 
-    QString m_dtFormat = "dd/MM/yyyy hh:mm:ss.zzz"; ///< @brief Format of the date used in this class
-    QString m_createdDateTime; ///< @brief First save in the database date
-    QString m_lastModifiedDateTime; ///< @brief Last modified and persisted date
+    QString dtFormat = "dd/MM/yyyy hh:mm:ss.zzz"; ///< @brief Format of the date used in this class
+    QString createdDateTime; ///< @brief First save in the database date
+    QString lastModifiedDateTime; ///< @brief Last modified and persisted date
 
     void verifyDbTableExist(); ///< @brief Check the database contains table corresponding to this model. Also create or update the table if needed.
     void verifyDbFields(); ///< @brief Check the database table contains all required fields (columns). If not, create them.

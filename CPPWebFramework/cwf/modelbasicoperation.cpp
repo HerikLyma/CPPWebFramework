@@ -2,16 +2,6 @@
 
 CWF_BEGIN_NAMESPACE
 
-ModelBasicOperation::ModelBasicOperation()
-{
-
-}
-
-ModelBasicOperation::~ModelBasicOperation()
-{
-
-}
-
 bool ModelBasicOperation::createTable(const QString &name)
 {
     bool success = true;
@@ -96,8 +86,7 @@ bool ModelBasicOperation::changeTableVersion(const QString& tableName, qint32 ve
     {
         qDebug() << "ModelBasicOperation::changeTableVersion:"
                  << "Error in UPDATE version"
-                 << "message:"<<json.value("message").toString()
-                 ;
+                 << "message:"<<json.value("message").toString();
 
         success = false;
     }
@@ -118,21 +107,16 @@ QStringList ModelBasicOperation::tables() const
 QStringList ModelBasicOperation::fields(const QString &tableName) const
 {
     QStringList output;
-
     QSqlDatabase& db = DbStorage::_storage.getDatabase();
-
     QSqlRecord record = db.record(tableName);
 
     int numOfFields = record.count();
 
-    // Loop on all the fields
     for(int i=0; i<numOfFields; i++)
     {
-        const QString& field = record.fieldName(i);
-
+        const auto &field = record.fieldName(i);
         output.push_back(field);
     }
-
     return output;
 }
 
@@ -152,8 +136,7 @@ qint32 ModelBasicOperation::tableVersion(const QString &tableName) const
     {
         qDebug() << "ModelBasicOperation::tableVersion:"
                  << "SELECT"
-                 << json.value("message").toString()
-                 ;
+                 << json.value("message").toString();
     }
 
     jsonArray = queryManager.toJson();
@@ -162,8 +145,7 @@ qint32 ModelBasicOperation::tableVersion(const QString &tableName) const
     {
         qDebug() << "ModelBasicOperation::tableVersion:"
                  << "Empty array"
-                 << json.value("message").toString()
-                 ;
+                 << json.value("message").toString();
     }
 
     qint32 versionNumber = jsonArray.at(1).toInt();
@@ -177,51 +159,48 @@ QString ModelBasicOperation::convertQVariantTypeToSQLType(const QVariant::Type t
 
     switch(type)
     {
-    case QVariant::Invalid:
-    {
-        qDebug() << "ModelBasicOperation::convertQVariantTypeToSQLType:"
-                 << "Type was invalid"
-                 ;
-        qFatal("Type was invalid");
-    }
-
-    case QVariant::Type::ByteArray:
-    {
-        output = "BLOB";
-        break;
-    }
-    case QVariant::Int:
-    {
-        output = "INTEGER";
-        break;
-    }
-    case QVariant::Bool:
-    {
-        output = "INTEGER";
-        break;
-    }
-    case QVariant::LongLong:
-    {
-        output = "INTEGER";
-        break;
-    }
-    case QVariant::String:
-    {
-        output = "TEXT";
-        break;
-    }
-    case QVariant::Double:
-    {
-        output = "REAL";
-        break;
-    }
-    default:
-    {
-        qDebug() << "ModelBasicOperation::convertQVariantTypeToSQLType:"
-                 << "Type was not defined"
-                 ;
-        qFatal("Type was not defined");
-    }
+        case QVariant::Invalid:
+        {
+            qDebug() << "ModelBasicOperation::convertQVariantTypeToSQLType:"
+                     << "Type was invalid";
+            qFatal("Type was invalid");
+        }
+        case QVariant::Type::ByteArray:
+        {
+            output = "BLOB";
+            break;
+        }
+        case QVariant::Int:
+        {
+            output = "INTEGER";
+            break;
+        }
+        case QVariant::Bool:
+        {
+            output = "INTEGER";
+            break;
+        }
+        case QVariant::LongLong:
+        {
+            output = "INTEGER";
+            break;
+        }
+        case QVariant::String:
+        {
+            output = "TEXT";
+            break;
+        }
+        case QVariant::Double:
+        {
+            output = "REAL";
+            break;
+        }
+        default:
+        {
+            qDebug() << "ModelBasicOperation::convertQVariantTypeToSQLType:"
+                     << "Type was not defined";
+            qFatal("Type was not defined");
+        }
     }
 
     return output;
@@ -405,8 +384,7 @@ bool ModelBasicOperation::remove(const QString &tableName, const qint64 &id)
     {
         qDebug() << "ModelBasicOperation::remove:"
                  << "Error in index creation for table" << tableName
-                 << json.value("message").toString() << query.executedQuery()
-                 ;
+                 << json.value("message").toString() << query.executedQuery();
 
         return false;
     }
@@ -447,8 +425,7 @@ bool ModelBasicOperation::createIndex(const QString &tableName, const QString &c
     {
         qDebug() << "ModelBasicOperation::createIndex:"
                  << "Error in index creation for table" << tableName
-                 << json.value("message").toString() << query.executedQuery()
-                 ;
+                 << json.value("message").toString() << query.executedQuery();
 
         return false;
     }
@@ -576,8 +553,7 @@ qint64 ModelBasicOperation::insertEntry(const QString &tableName, const QMap<QSt
     {
         qDebug() << "ModelBasicOperation::insertEntry:"
                  << "Error in insert for table" << tableName
-                 << json.value("message").toString() << query.executedQuery()
-                 ;
+                 << json.value("message").toString() << query.executedQuery();
     }
 
     return query.lastInsertId().toInt();
@@ -626,8 +602,7 @@ void ModelBasicOperation::updateEntry(const QString &tableName, const QMap<QStri
     {
         qDebug() << "ModelBasicOperation::updateEntry:"
                  << "Error in insert for table" << tableName
-                 << json.value("message").toString()
-                 ;
+                 << json.value("message").toString();
     }
 }
 

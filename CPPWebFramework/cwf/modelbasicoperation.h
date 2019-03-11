@@ -17,16 +17,20 @@ CWF_BEGIN_NAMESPACE
 class CPPWEBFRAMEWORKSHARED_EXPORT ModelBasicOperation
 {
 public:
-    ModelBasicOperation(); ///< @brief Contructor
-    ~ModelBasicOperation(); ///< @brief Destructor
-
+    /**
+     * @brief Contructor
+     */
+    ModelBasicOperation() = default;
+    /**
+      * @brief Destructor
+      */
+    ~ModelBasicOperation() = default;
     /**
      * @brief createTable Create a table in the database
      * @param name The name of the table to create
      * @return Bool
      */
     bool createTable(const QString& name);
-
     /**
      * @brief addFieldToTable Add a column in a database table
      * @param fieldName The name of the column to add
@@ -35,7 +39,6 @@ public:
      * @return Bool
      */
     bool addFieldToTable(const QString& fieldName, const QVariant::Type type, const QString& tableName) const;
-
     /**
      * @brief changeTableVersion Change the version number of a database table
      * @param tableName The name of the table
@@ -43,7 +46,6 @@ public:
      * @return Bool
      */
     bool changeTableVersion(const QString& tableName, qint32 version) const;
-
     /**
      * @brief tables List all the tables of a database
      * @return QStringList: a list of all tables
@@ -56,14 +58,12 @@ public:
      * @return QStringList
      */
     QStringList fields(const QString& tableName) const;
-
     /**
      * @brief tableVersion Get the version of the database table
      * @param tableName The name of the database table
      * @return qint32
      */
     qint32 tableVersion(const QString& tableName) const;
-
     /**
      * @brief convertQVariantTypeToSQLType Convert a given type (enum) to a string representing an sql type
      * @param type The type of the data to be converted
@@ -78,7 +78,6 @@ public:
      * @return qint64: The id of the new entry
      */
     qint64 save(const QString& tableName, const QMap<QString, QVariant>& map);
-
     /**
      * @brief buildVector Build a vector of map where each map represents an entry that was retrieved from the database
      * @param tableName The name of the database table on which the method should work
@@ -112,7 +111,6 @@ public:
      * @return Bool
      */
     bool remove(const QString& tableName, const qint64& id);
-
     /**
      * @brief constructInsertTextQuery Build an insert query and return its text version
      * @param tableName The name of the table in which an insertion should be done
@@ -121,7 +119,6 @@ public:
      * @return QString
      */
     QString constructInsertTextQuery(const QString& tableName, const QMap<QString, QVariant> &map, QVector<QVariant>& values);
-
     /**
      * @brief constructUpdateTextQuery
      * @param tableName
@@ -139,14 +136,12 @@ public:
      * @return Bool
      */
     bool createIndex(const QString& tableName, const QString& column, bool unique=false) const;
-
     /**
      * @brief isTableInDb Check if a table is present within the database
      * @param tableName The name of the table
      * @return Bool
      */
     bool isTableInDb(const QString &tableName) const;
-
 private:
     /**
      * @brief insertEntry Insert an entry in a database table.
@@ -155,7 +150,6 @@ private:
      * @return qint64: The id of the new entry
      */
     qint64 insertEntry(const QString& tableName, const QMap<QString, QVariant>& map);
-
     /**
      * @brief updateEntry Update a database entry
      * @param tableName The name of the database table to be updated
