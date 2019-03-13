@@ -28,11 +28,12 @@ class CPPWEBFRAMEWORKSHARED_EXPORT MetaClassParser
 public:
     QMap<std::tuple<QString, QString>, QMetaMethod> methods;
     QMap<QString, QMetaProperty> properties;
+    QMap<QPair<QString, QString>, QMetaProperty> props;
     /**
      * @brief Extracts all properties and methods names from a QObject.
      * @param QObject *object : Object.
      */
-    explicit MetaClassParser(QObject *object);
+    explicit MetaClassParser(QObject *object, bool removeObjectName = false);
     /**
      * @brief Returns the method return type given a method name.
      * @param const QString &methodName : Method name.
@@ -45,6 +46,14 @@ public:
      * @return QString : Parameter type.
      */
     QString getParameterType(const QString &methodName);
+    /**
+     * @brief Returns all properties names.
+     */
+    QStringList getAllPropertiesNames() const;
+    /**
+     * @brief Tries to find a property.
+     */
+    QMetaProperty findProperty(const QString &propertyName);
     /**
      * @brief Instantiate a class by name.
      * @param const QByteArray &name : Class name.

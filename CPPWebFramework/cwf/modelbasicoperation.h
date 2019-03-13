@@ -2,7 +2,6 @@
 #define MODELBASICOPERATION_HH
 
 #include "sqlquery.h"
-#include "dbstorage.h"
 #include "sqlquerymanager.h"
 
 #include <QSqlField>
@@ -16,11 +15,13 @@ CWF_BEGIN_NAMESPACE
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT ModelBasicOperation
 {
+protected:
+    SqlDatabaseStorage &connection;
 public:
     /**
      * @brief Contructor
      */
-    ModelBasicOperation() = default;
+    explicit ModelBasicOperation(SqlDatabaseStorage &connection) : connection(connection) {}
     /**
       * @brief Destructor
       */
@@ -30,7 +31,12 @@ public:
      * @param name The name of the table to create
      * @return Bool
      */
-    bool createTable(const QString& name);
+    bool createTable(const QString &name);
+    /**
+     * @brief Creates a version table.
+     * @return  Bool
+     */
+    bool createVersionTable();
     /**
      * @brief addFieldToTable Add a column in a database table
      * @param fieldName The name of the column to add
@@ -50,8 +56,7 @@ public:
      * @brief tables List all the tables of a database
      * @return QStringList: a list of all tables
      */
-    QStringList tables() const;
-
+    inline QStringList tables() const  { return connection.getDatabase().tables(); }
     /**
      * @brief fields List all the fields of a database table
      * @param tableName The name of the database table
@@ -70,7 +75,6 @@ public:
      * @return QString
      */
     QString convertQVariantTypeToSQLType(const QVariant::Type type) const;
-
     /**
      * @brief save Save the data contained in a map (given as an argument) in the given database table.
      * @param tableName The name of the database table to receive a new entry
@@ -127,7 +131,6 @@ public:
      * @return QString
      */
     QString constructUpdateTextQuery(const QString& tableName, const QMap<QString, QVariant> &map, QVector<QVariant>& values);
-
     /**
      * @brief createIndex Create an index for a given table and column
      * @param tableName The name of the table to have an index
@@ -141,7 +144,7 @@ public:
      * @param tableName The name of the table
      * @return Bool
      */
-    bool isTableInDb(const QString &tableName) const;
+    inline bool isTableInDb(const QString &tableName) const { return connection.getDatabase().tables().contains(QLatin1String(tableName.toLatin1())); }
 private:
     /**
      * @brief insertEntry Insert an entry in a database table.
@@ -155,7 +158,7 @@ private:
      * @param tableName The name of the database table to be updated
      * @param map The data to be inserted in the entry. An id should be present here to select the correct entry.
      */
-    void updateEntry(const QString& tableName, const QMap<QString, QVariant>& map);
+    qint64 updateEntry(const QString& tableName, const QMap<QString, QVariant>& map);
 };
 
 CWF_END_NAMESPACE

@@ -9,7 +9,7 @@
 
 CWF_BEGIN_NAMESPACE
 
-MetaClassParser::MetaClassParser(QObject *object)
+MetaClassParser::MetaClassParser(QObject *object, bool removeObjectName)
 {
     const QMetaObject *meta = object->metaObject();
     int total = meta->propertyCount();
@@ -18,7 +18,10 @@ MetaClassParser::MetaClassParser(QObject *object)
         QMetaProperty prop(meta->property(i));
         QString propertyType(prop.typeName());
         QString propertyName(prop.name());
+        if(removeObjectName && propertyName == "objectName")
+            continue;
         properties.insert(propertyType + " " + propertyName, prop);
+        props.insert(QPair<QString, QString>(propertyType, propertyName), prop);
     }
 
     total = meta->methodCount();
@@ -57,6 +60,27 @@ QString MetaClassParser::getParameterType(const QString &methodName)
         }
     }
     return "";
+}
+
+QStringList MetaClassParser::getAllPropertiesNames() const
+{
+    QStringList temp;
+    temp.reserve(props.size());
+    for(const auto &it : props.keys())
+    {
+        temp.push_back(it.second);
+    }
+    return temp;
+}
+
+QMetaProperty MetaClassParser::findProperty(const QString &propertyName)
+{
+    for(auto it = props.begin(); it != props.end(); ++it)
+    {
+        if(it.key().second == propertyName)
+            return it.value();
+    }
+    return {};
 }
 
 void *MetaClassParser::instantiateClassByName(const QByteArray &name)

@@ -4,35 +4,38 @@ CWF_BEGIN_NAMESPACE
 
 bool ModelBasicOperation::createTable(const QString &name)
 {
-    bool success = true;
-
-    SqlQueryManager queryManager;
-    QJsonObject json;
-
-    // Creation of the table
-    queryManager.createTable(name);
-    queryManager.prepare();
-    json = queryManager.exec();
-
-    if(!json.value("success").toBool() )
+    SqlQueryManager queryManager(connection);
+    QJsonObject json = queryManager.exec(queryManager.createTable(name));
+    bool success = json["success"].toBool();
+    if(!success)
     {
-        qDebug() << "ModelBasicOperation::createTable" << "CREATE TABLE" << name << json.value("message").toString();
-        success = false;
+        qFatal("%s", ("ModelBasicOperation::createTable: CREATE TABLE " + name + json["message"].toString()).toStdString().data());
     }
 
     queryManager.reset();
 
-    queryManager.insert(name, "tableName, number");
+    queryManager.insert("table_version", "table_name, version_number");
+    queryManager.prepare();
     queryManager.addBindValue(name);
     queryManager.addBindValue(0);
     json = queryManager.exec();
-
-    if(!json.value("success").toBool() )
+    success = json["success"].toBool();
+    if(!success)
     {
-        qDebug() << "ModelBasicOperation::createTable" << "INSERT INTO version" << name << json.value("message").toString();
-        success = false;
+        qFatal("%s", ("ModelBasicOperation::createTable: INSERT INTO table_version " + json["message"].toString()).toStdString().data());
     }
 
+    return success;
+}
+
+bool ModelBasicOperation::createVersionTable()
+{
+    const auto &json = SqlQueryManager(connection).exec("CREATE TABLE table_version (table_name TEXT, version_number INTEGER);");
+    bool success = json["success"].toBool();
+    if(!success)
+    {
+        qFatal("ModelBasicOperation::createTable: CREATE TABLE table_version (tableName TEXT, version_number INTEGER);");
+    }
     return success;
 }
 
@@ -41,27 +44,16 @@ bool ModelBasicOperation::addFieldToTable(const QString &fieldName,
                                      const QString &tableName
                                      ) const
 {
-    bool success = true;
-
     QString fieldTypeStr = convertQVariantTypeToSQLType(type);
 
-    SqlQueryManager queryManager;
-    QJsonObject json;
-
-    queryManager.alterTable(tableName)
-                .addColumn(fieldName, fieldTypeStr)
-            ;
-    queryManager.prepare();
-    json = queryManager.exec();
-
-    if(!json.value("success").toBool() )
+    SqlQueryManager queryManager(connection);
+    QJsonObject json = queryManager.exec(queryManager.alterTable(tableName).addColumn(fieldName, fieldTypeStr).getQueryText());
+    bool success = json.value("success").toBool();
+    if(!success)
     {
         qDebug() << "ModelBasicOperation::addFieldToTable:"
                  << "ALTER TABLE"
-                 << json.value("message").toString()
-                 ;
-
-        success = false;
+                 << json.value("message").toString();
     }
 
     return success;
@@ -69,88 +61,60 @@ bool ModelBasicOperation::addFieldToTable(const QString &fieldName,
 
 bool ModelBasicOperation::changeTableVersion(const QString& tableName, qint32 version) const
 {
-    bool success = true;
-
-    SqlQueryManager queryManager;
+    SqlQueryManager queryManager(connection);
     QJsonObject json;
 
-    queryManager.update("version", "number=?")
-                .where("tableName=?");
+    queryManager.update("table_version", "version_number=?")
+                .where("table_name=?");
     queryManager.prepare();
     queryManager.addBindValue(version);
     queryManager.addBindValue(tableName);
 
     json = queryManager.exec();
-
-    if(!json.value("success").toBool() )
+    bool success = json["success"].toBool();
+    if(!success)
     {
-        qDebug() << "ModelBasicOperation::changeTableVersion:"
-                 << "Error in UPDATE version"
-                 << "message:"<<json.value("message").toString();
-
-        success = false;
+        qFatal("%s", ("ModelBasicOperation::changeTableVersion: Error in UPDATE version message:" +
+                      json["message"].toString()).toStdString().data());
     }
 
     return success;
 }
 
-QStringList ModelBasicOperation::tables() const
-{
-    QStringList output;
-
-    QSqlDatabase& db = DbStorage::_storage.getDatabase();
-    output = db.tables();
-
-    return output;
-}
 
 QStringList ModelBasicOperation::fields(const QString &tableName) const
 {
     QStringList output;
-    QSqlDatabase& db = DbStorage::_storage.getDatabase();
-    QSqlRecord record = db.record(tableName);
-
-    int numOfFields = record.count();
-
-    for(int i=0; i<numOfFields; i++)
+    const auto &record = connection.getDatabase().record(tableName);
+    for(int i = 0, numOfFields = record.count(); i < numOfFields; i++)
     {
-        const auto &field = record.fieldName(i);
-        output.push_back(field);
+        output.push_back(record.fieldName(i));
     }
     return output;
 }
 
 qint32 ModelBasicOperation::tableVersion(const QString &tableName) const
 {
-    SqlQueryManager queryManager;
+    SqlQueryManager queryManager(connection);
     QJsonObject json;
     QJsonArray jsonArray;
 
-    queryManager.select("id, number", "version").where("tableName=?");
+    queryManager.select("version_number", "table_version").where("table_name=?");
     queryManager.prepare();
     queryManager.addBindValue(tableName);
-
     json = queryManager.exec();
 
     if(!json.value("success").toBool() )
     {
-        qDebug() << "ModelBasicOperation::tableVersion:"
-                 << "SELECT"
-                 << json.value("message").toString();
+        qFatal("%s", ("ModelBasicOperation::tableVersion: SELECT " + json["message"].toString()).toStdString().data());
     }
-
-    jsonArray = queryManager.toJson();
-
-    if(jsonArray.isEmpty() )
+    auto array = queryManager.toJson();
+    if(array.isEmpty())
     {
-        qDebug() << "ModelBasicOperation::tableVersion:"
-                 << "Empty array"
-                 << json.value("message").toString();
+        qFatal("%s", ("ModelBasicOperation::tableVersion: Empty array " + json["message"].toString()).toStdString().data());
     }
-
-    qint32 versionNumber = jsonArray.at(1).toInt();
-
-    return versionNumber;
+    int version = array.at(0).toObject()["version_number"].toInt();
+    return version;
 }
 
 QString ModelBasicOperation::convertQVariantTypeToSQLType(const QVariant::Type type) const
@@ -208,19 +172,16 @@ QString ModelBasicOperation::convertQVariantTypeToSQLType(const QVariant::Type t
 
 qint64 ModelBasicOperation::save(const QString &tableName, const QMap<QString, QVariant> &map)
 {
-    // Look for the id property
     QVariant idValue = map["id"];
     qint64 id = idValue.toInt();
 
-    // Case where the object is a new one
-    if(id==-1)
+    if(id == -1)
     {
         id = insertEntry(tableName, map);
     }
-    // Case where the object already exists
     else
     {
-        updateEntry(tableName, map);
+        id = updateEntry(tableName, map);
     }
 
     return id;
@@ -236,7 +197,7 @@ QVector<QMap<QString, QVariant> > ModelBasicOperation::buildVector(const QString
         SELECT id, type, datetime, entry, comment, status, priority, observerId, observationId FROM data WHERE id = ?;
     */
 
-    CWF::SqlQuery query(DbStorage::_storage);
+    CWF::SqlQuery query(connection);
     QJsonObject json;
 
     // *****************************
@@ -276,11 +237,10 @@ QVector<QMap<QString, QVariant> > ModelBasicOperation::buildVector(const QString
         count++;
     }
 
-    SqlQueryManager queryManager;
+    SqlQueryManager queryManager(connection);
     queryManager.select(what, tableName)
                 .where(cond)
-                .orderBy(orderBy)
-            ;
+                .orderBy(orderBy);
 
     QString queryText = queryManager.textQuery(true);
 
@@ -292,9 +252,8 @@ QVector<QMap<QString, QVariant> > ModelBasicOperation::buildVector(const QString
     // *****************************
 
     // Loop on all the prop inserted in the sql query
-    for(int i=0, ie=selectValues.size(); i<ie; i++)
+    for(const auto & v : selectValues)
     {
-        const QVariant& v = selectValues.at(i);
         query.addBindValue(v);
     }
 
@@ -343,39 +302,21 @@ QMap<QString, QVariant> ModelBasicOperation::build(const QString& tableName,
                                               const QStringList& props)
 {
     QVector<QMap<QString, QVariant> > output = buildVector(tableName, selectCondition, props);
-
-    if(output.size() > 0 )
+    if(!output.empty())
         return output.at(0);
-    else
-        return QMap<QString, QVariant>();
+    return QMap<QString, QVariant>();
 }
 
 bool ModelBasicOperation::remove(const QString &tableName, const qint64 &id)
 {
-    CWF::SqlQuery query(DbStorage::_storage);
-
-    // *****************************
-    // Query contruction
-    // *****************************
-
-    SqlQueryManager qm;
+    CWF::SqlQuery query(connection);
+    SqlQueryManager qm(connection);
     qm.remove(tableName, "id=?");
 
     QString textQuery = qm.textQuery(true);
 
     query.prepare(textQuery);
-
-    // *****************************
-    // Bindings with values
-    // *****************************
-
     query.bindValue(0, id);
-
-    // *****************************
-
-    // *****************************
-    // Run the query
-    // *****************************
 
     QJsonObject json;
     json = query.exec();
@@ -396,28 +337,13 @@ bool ModelBasicOperation::createIndex(const QString &tableName, const QString &c
 {
     QString indexName = QString("index_") + tableName + QString("_") + column;
 
-    /* Example of insert query
-        CREATE [UNIQUE] INDEX index_name ON table_name(indexed_column);
-    */
-
-    CWF::SqlQuery query(DbStorage::_storage);
+    CWF::SqlQuery query(connection);
     QJsonObject json;
-
-    // *****************************
-    // Query contruction
-    // *****************************
-
-    SqlQueryManager queryManager;
+    SqlQueryManager queryManager(connection);
     queryManager.createIndex(indexName, tableName, column, unique);
 
     QString queryText = queryManager.textQuery(true);
-
-    // Prepare the query
     query.prepare(queryText);
-
-    // *****************************
-    // Run the query
-    // *****************************
 
     json = query.exec();
 
@@ -433,43 +359,26 @@ bool ModelBasicOperation::createIndex(const QString &tableName, const QString &c
     return true;
 }
 
-bool ModelBasicOperation::isTableInDb(const QString &tableName) const
-{
-    QSqlDatabase& db = DbStorage::_storage.getDatabase();
-
-    bool exist = db.tables().contains( QLatin1String(tableName.toLatin1() ) );
-
-    return exist;
-}
-
 QString ModelBasicOperation::constructInsertTextQuery(const QString& tableName, const QMap<QString, QVariant> &map, QVector<QVariant>& values)
 {
-    QString fields ("");
+    QString fields;
 
-    qint32 count = 0;
-    qint32 numOfProps = map.size();
-
-    // Loop on all the properties
-    for(const auto& it : map.toStdMap() )
+    for(const auto &it : map.toStdMap() )
     {
-        const QString& name = it.first;
-        const QVariant& value = it.second;
+        const QString  &name  = it.first.toLower();
+        const QVariant &value = it.second;
 
-        // Skip the id field since it is auto set
         if(name == "id")
             continue;
 
         fields += name;
-
-        if(count >= 0 && count < numOfProps-2)
-            fields += ", ";
+        fields += ",";
 
         values.push_back(value);
-
-        count++;
     }
+    fields = fields.remove(fields.size() - 1, 1);
 
-    SqlQueryManager queryManager;
+    SqlQueryManager queryManager(connection);
     queryManager.insert(tableName, fields);
 
     QString queryText = queryManager.textQuery(true);
@@ -479,131 +388,67 @@ QString ModelBasicOperation::constructInsertTextQuery(const QString& tableName, 
 
 QString ModelBasicOperation::constructUpdateTextQuery(const QString &tableName, const QMap<QString, QVariant> &map, QVector<QVariant> &values)
 {
-    QString fieldValues ("");
-
-    qint32 count = 0;
-    qint32 numOfProps = map.size();
-
-    // Loop on all the properties
+    QString fieldValues;
     for(const auto& it : map.toStdMap() )
     {
-        const QString& name = it.first;
+        const QString&  name  = it.first;
         const QVariant& value = it.second;
 
-        // Skip the id field since it is auto set
         if(name == "id")
             continue;
-
-        fieldValues += name + " = ?";
-
-        if(count >= 0 && count < numOfProps-2)
-            fieldValues += ", ";
-
+        fieldValues += name + " = ?,";
         values.push_back(value);
-
-        count++;
     }
-
-    SqlQueryManager queryManager;
+    fieldValues = fieldValues.remove(fieldValues.size() - 1, 1);
+    SqlQueryManager queryManager(connection);
     queryManager.update(tableName, fieldValues);
     queryManager.where("id=?");
 
-    QString queryText = queryManager.textQuery(true);
-
-    return fieldValues;
+    return queryManager.getQueryText() + ";";
 }
 
 qint64 ModelBasicOperation::insertEntry(const QString &tableName, const QMap<QString, QVariant> &map)
 {
-    /* Example of insert query
-        INSERT INTO tableName(priority, entryOrder) VALUES(?,?));
-    */
-
-    CWF::SqlQuery query(DbStorage::_storage);
+    CWF::SqlQuery query(connection);
     QJsonObject json;
-
-    // *****************************
-    // Query contruction
-    // *****************************
-
     QVector<QVariant> values;
-    QString queryText = constructInsertTextQuery(tableName, map, values);
+    query.prepare(constructInsertTextQuery(tableName, map, values));
 
-    // Prepare the query
-    query.prepare(queryText);
-
-    // *****************************
-    // Bindings with values
-    // *****************************
-
-    // Loop on all the prop inserted in the sql query
-    for(int i=0, ie=values.size(); i<ie; i++)
+    for(const auto &it : values)
     {
-        const QVariant& v = values.at(i);
-        query.addBindValue(v);
+        query.addBindValue(it);
     }
 
-    // *****************************
-    // Run the query
-    // *****************************
-
     json = query.exec();
-
-    if(!json.value("success").toBool() )
+    if(!json["success"].toBool())
     {
         qDebug() << "ModelBasicOperation::insertEntry:"
                  << "Error in insert for table" << tableName
-                 << json.value("message").toString() << query.executedQuery();
+                 << json["message"].toString() << query.executedQuery();
+        return -1;
     }
 
     return query.lastInsertId().toInt();
 }
 
-void ModelBasicOperation::updateEntry(const QString &tableName, const QMap<QString, QVariant> &map)
+qint64 ModelBasicOperation::updateEntry(const QString &tableName, const QMap<QString, QVariant> &map)
 {
-    /* Example of update query
-        UPDATE data SET datetime = ?, type = ? WHERE id = ?
-    */
-
-    CWF::SqlQuery query(DbStorage::_storage);
-    QJsonObject json;
-
-    // *****************************
-    // Query contruction
-    // *****************************
-
+    CWF::SqlQuery query(connection);
     QVector<QVariant> values;
-    QString queryText = constructUpdateTextQuery(tableName, map, values);
-
-    // Prepare the query
-    query.prepare(queryText);
-
-    // *****************************
-    // Bindings with values
-    // *****************************
-
-    // Loop on all the prop inserted in the sql query
-    // Loop on all the properties
-    for(int i=0; i<values.size(); i++)
+    query.prepare(constructUpdateTextQuery(tableName, map, values));
+    for(const auto &it : values)
     {
-        const QVariant& v = values.at(i);
-        query.addBindValue(v);
+        query.addBindValue(it);
     }
-
-    query.addBindValue(map.value("id") );
-
-    // *****************************
-    // Run the query
-    // *****************************
-
-    json = query.exec();
-
-    if(!json.value("success").toBool() )
+    int id = map.value("id").toInt();
+    query.addBindValue(map.value("id"));
+    QJsonObject json = query.exec();
+    if(!json["success"].toBool())
     {
-        qDebug() << "ModelBasicOperation::updateEntry:"
-                 << "Error in insert for table" << tableName
-                 << json.value("message").toString();
+        id = -1;
+        qDebug() << "ModelBasicOperation::updateEntry: Error in insert for table" << tableName << json["message"].toString();
     }
+    return id;
 }
 
 CWF_END_NAMESPACE

@@ -87,7 +87,6 @@ HEADERS += \
     cwf/sslloader.h \
     cwf/model.h \
     cwf/modelbasicoperation.h \
-    cwf/dbstorage.h \
     cwf/sqlquerymanager.h
 
 DISTFILES += \

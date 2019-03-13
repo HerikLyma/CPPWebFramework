@@ -19,19 +19,18 @@ class Model;
  */
 class CPPWEBFRAMEWORKSHARED_EXPORT SqlQueryManager
 {
+    SqlDatabaseStorage &connection;
 public:
-    SqlQueryManager(); ///< @brief Constructor
-
+    explicit SqlQueryManager(SqlDatabaseStorage &connection) : connection(connection) {} ///< @brief Constructor
     /**
      * @brief reset Reset the query manager
      */
     void reset();
-
     /**
      * @brief createTable Construct a query to create a new table in a database
      * @param tableName The name of the table to be added
      */
-    void createTable(const QString& tableName);
+    QString createTable(const QString& tableName);
 
     /**
      * @brief createIndex Construct a query to create a new index in the database
@@ -60,6 +59,7 @@ public:
 
     bool prepare(); ///< @brief Prepare the query
     QJsonObject exec(); ///< @brief // Executte the query
+    QJsonObject exec(const QString &sql); ///< @brief // Executte the query
     QJsonArray toJson(); ///< @brief // Get the result of the query in JSON format
 
     /**
@@ -76,12 +76,13 @@ public:
      *
      * This feature is useful when building complex leftJoin request: it allows to build aliases to avoid name conflicts.
      */
-    QString prefixPropNames(const Model& model) const;
+    QString prefixPropNames(Model &model);
 
+    inline QString getQueryText() const { return m_queryText; }
 private:
     QString m_queryText; ///< @brief The text of the query being contructed by the manager
-    std::shared_ptr<CWF::SqlQuery> m_query; ///< @brief The query being constructed
-    qint32 m_bindingDone; ///< @brief How many bindings were done with the current query ?
+    CWF::SqlQuery m_query; ///< @brief The query being constructed
+    qint32 m_bindingDone = 0; ///< @brief How many bindings were done with the current query ?
 };
 
 CWF_END_NAMESPACE
