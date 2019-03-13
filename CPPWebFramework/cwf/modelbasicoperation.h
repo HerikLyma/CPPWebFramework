@@ -21,7 +21,7 @@ public:
     /**
      * @brief Contructor
      */
-    explicit ModelBasicOperation(SqlDatabaseStorage &connection) : connection(connection) {}
+    explicit ModelBasicOperation(SqlDatabaseStorage &connection);
     /**
       * @brief Destructor
       */

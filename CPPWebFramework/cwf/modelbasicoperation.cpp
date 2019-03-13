@@ -2,6 +2,10 @@
 
 CWF_BEGIN_NAMESPACE
 
+ModelBasicOperation::ModelBasicOperation(SqlDatabaseStorage &connection) : connection(connection)
+{
+}
+
 bool ModelBasicOperation::createTable(const QString &name)
 {
     SqlQueryManager queryManager(connection);

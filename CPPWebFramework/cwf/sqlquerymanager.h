@@ -20,8 +20,11 @@ class Model;
 class CPPWEBFRAMEWORKSHARED_EXPORT SqlQueryManager
 {
     SqlDatabaseStorage &connection;
+    QString queryText; ///< @brief The text of the query being contructed by the manager
+    CWF::SqlQuery query; ///< @brief The query being constructed
+    qint32 bindingDone = 0; ///< @brief How many bindings were done with the current query ?
 public:
-    explicit SqlQueryManager(SqlDatabaseStorage &connection) : connection(connection) {} ///< @brief Constructor
+    explicit SqlQueryManager(SqlDatabaseStorage &connection) : connection(connection), query(connection) {} ///< @brief Constructor
     /**
      * @brief reset Reset the query manager
      */
@@ -31,7 +34,6 @@ public:
      * @param tableName The name of the table to be added
      */
     QString createTable(const QString& tableName);
-
     /**
      * @brief createIndex Construct a query to create a new index in the database
      * @param indexName The name of the new index
@@ -48,27 +50,21 @@ public:
     SqlQueryManager& insert(const QString& tableName, const QString& fields); ///< @brief Insert statement (can be chained)
     SqlQueryManager& remove(const QString& tableName, const QString& cond); ///< @brief Remove statement (can be chained)
     SqlQueryManager& update(const QString& tableName, const QString& fieldValue); ///< @brief Update statement (can be chained)
-
     SqlQueryManager& where(const QString& c); ///< @brief Where statement (can be chained)
     SqlQueryManager& orderBy(const QString& c); ///< @brief OrderBy statement (can be chained)
-
     SqlQueryManager& leftJoin(const QString& tableName, const QString& cond); ///< @brief leftJoin statement (can be chained)
     SqlQueryManager& innerJoin(const QString& tableName, const QString& cond); ///< @brief innerJoin statement (can be chained)
-
     SqlQueryManager& addBindValue(const QVariant& v); ///< @brief addBindValue statemnet (can be chained)
-
     bool prepare(); ///< @brief Prepare the query
     QJsonObject exec(); ///< @brief // Executte the query
     QJsonObject exec(const QString &sql); ///< @brief // Executte the query
-    QJsonArray toJson(); ///< @brief // Get the result of the query in JSON format
-
+    inline QJsonArray toJson() { return query.toJson(); } ///< @brief // Get the result of the query in JSON format
     /**
      * @brief textQuery Get the text of the query (raw sql)
      * @param addEndDot Should we add ";" at the end of the query if it is not present ?
      * @return QString
      */
-    QString textQuery(bool addEndDot=false) const;
-
+    QString textQuery(bool addEndDot = false) const;
     /**
      * @brief prefixPropNames Create a string made of all the properties of a given model. These are all prefixed by the name of the model.
      * @param model The targeted model object
@@ -78,11 +74,7 @@ public:
      */
     QString prefixPropNames(Model &model);
 
-    inline QString getQueryText() const { return m_queryText; }
-private:
-    QString m_queryText; ///< @brief The text of the query being contructed by the manager
-    CWF::SqlQuery m_query; ///< @brief The query being constructed
-    qint32 m_bindingDone = 0; ///< @brief How many bindings were done with the current query ?
+    inline QString getQueryText() const { return queryText; }
 };
 
 CWF_END_NAMESPACE
