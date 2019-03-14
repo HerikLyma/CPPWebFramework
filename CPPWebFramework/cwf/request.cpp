@@ -129,7 +129,7 @@ RequestDispatcher &Request::getRequestDispatcher(const QString &page)
 
 Session &Request::getSession()
 {
-    QMutex mutex;
+    static QMutex mutex;
     QMutexLocker locker(&mutex);
     qint64 currentTimeInt = QDateTime::currentMSecsSinceEpoch();
     qint64 expiration = configuration.getSessionExpirationTime();
