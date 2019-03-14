@@ -172,7 +172,7 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/ORM/server");
-	UserModel{conexao}.updateDB();//Create or update the table in database
+    UserModel{conexao}.updateDB();//Create or update the table in database
     server.addController<ORMController>("/orm");
     return server.start();
 }
