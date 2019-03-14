@@ -160,8 +160,6 @@ public:
     void doGet(CWF::Request &request, CWF::Response &response) const override
     {
         UserModel user{conexao};
-        user.updateDB();
-        user.build();
         user.setName("Herik Lima");
         user.setPhone("+55 11 9 99999-0000");
         user.setCountry("Brazil");
@@ -174,6 +172,7 @@ public:
 int main(int argc, char *argv[])
 {        
     CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/ORM/server");
+	UserModel{conexao}.updateDB();//Create or update the table in database
     server.addController<ORMController>("/orm");
     return server.start();
 }

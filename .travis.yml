@@ -130,3 +130,7 @@ script:
   - qmake RESTWebService.pro
   - make -j 8
 
+  - cd ..
+  - cd ORM
+  - qmake ORM.pro
+  - mingw32-make -j 8

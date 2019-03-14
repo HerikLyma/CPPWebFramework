@@ -98,3 +98,8 @@ build_script:
   - cd RESTWebService
   - qmake RESTWebService.pro
   - mingw32-make -j 8
+
+  - cd ..
+  - cd ORM
+  - qmake ORM.pro
+  - mingw32-make -j 8
