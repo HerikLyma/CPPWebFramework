@@ -149,12 +149,12 @@ int main(int argc, char *argv[])
 #include <usermodel.h>
 #include <cwf/cppwebapplication.h>
 #include <cwf/sqldatabasestorage.h>
- /*
- * ORM (Experimental) - Tested only on PostgreSQL
- */
- CWF::SqlDatabaseStorage conexao("QPSQL", "localhost", "postgres", "postgres", "1234", 5432);
+/*
+* ORM (Experimental) - Tested only on PostgreSQL
+*/
+CWF::SqlDatabaseStorage conexao("QPSQL", "localhost", "postgres", "postgres", "1234", 5432);
 
- class ORMController : public CWF::Controller
+class ORMController : public CWF::Controller
 {
 public:
     void doGet(CWF::Request &request, CWF::Response &response) const override
