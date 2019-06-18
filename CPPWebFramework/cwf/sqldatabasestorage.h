@@ -7,7 +7,7 @@
 
 #ifndef SQLDATABASESTORAGE_H
 #define SQLDATABASESTORAGE_H
-
+#include <iostream>
 #include <QUuid>
 #include <QDebug>
 #include <QSqlError>
@@ -15,31 +15,54 @@
 #include <QThreadStorage>
 #include "cppwebframework_global.h"
 
+#if __cplusplus >= 201703L
+#include <optional>
+#endif
+#if __cplusplus == 201402L
+#include <experimental/optional>
+#endif
 CWF_BEGIN_NAMESPACE
 /**
  * @brief The SqlDatabaseStorage class allows you to reuse connections made to the database through the QSqlDatabase class within QThreadPool.
  */
+
 class CPPWEBFRAMEWORKSHARED_EXPORT SqlDatabaseStorage
 {    
     class Database
     {
         friend class SqlDatabaseStorage;
-        QSqlDatabase *db = nullptr;
+        //Map database connection names the library user uses to database connection names
+        //which are valid for this thread
+        std::map<QString, QString> trivialNameToUniqueID;
+#if __cplusplus == 201402L
+        std::experimental::optional<QSqlDatabase> DBConnection; //C++ 14 Compatablity
+#endif
+#if __cplusplus >= 201703L
+        std::optional<QSqlDatabase> DBConnection;
+#endif
     public:
         Database() = default;
         Database(Database &other)
         {
-            db = other.db;
-            other.db = nullptr;
+            DBConnection = other.DBConnection;
+            trivialNameToUniqueID = other.trivialNameToUniqueID;
+            qDebug() << "Database Constructed";
         }
         ~Database()
         {
-            if(db)
+            qDebug() << "Database Destructed";
+            if(DBConnection)
             {
-                const QString conName(db->connectionName());
-                db->close();
-                delete db;
-                QSqlDatabase::removeDatabase(conName);
+                const QString conName(DBConnection->connectionName());
+
+                DBConnection->close();
+                 //Remove all Database connnections this thread has and which will become invalid
+                for (auto const & ConnectionNamePair : trivialNameToUniqueID) {
+                    DBConnection = QSqlDatabase::database(ConnectionNamePair.second, false);
+                    DBConnection->close();
+                    qDebug() << ConnectionNamePair.first << ConnectionNamePair.second;
+                    QSqlDatabase::removeDatabase(ConnectionNamePair.second);
+                }
             }
         }
     };
@@ -50,6 +73,7 @@ class CPPWEBFRAMEWORKSHARED_EXPORT SqlDatabaseStorage
     QString password;
     int port;
     QThreadStorage<Database> pool;
+
 public:
     /**
      * @brief This constructor receives informations to create a connection to the database.
@@ -103,20 +127,68 @@ public:
      */
     QSqlDatabase &getDatabase()
     {
-        if(!pool.hasLocalData())
+        if(!pool.hasLocalData()) //Pool has no Local Data -> create DataBaseConnection
         {
             Database database;
-            database.db = new QSqlDatabase(QSqlDatabase::addDatabase(type, QUuid::createUuid().toString()));
-            database.db->setHostName(hostName);
-            database.db->setDatabaseName(databaseName);
-            database.db->setPort(port);
-            database.db->setUserName(userName);
-            database.db->setPassword(password);
-            if(!database.db->open())
-                qDebug() << database.db->lastError().text();
+            QString UniqueID = QUuid::createUuid().toString();
+            database.DBConnection = QSqlDatabase(QSqlDatabase::addDatabase(type, UniqueID));
+            database.DBConnection->setHostName(hostName);
+            database.DBConnection->setDatabaseName(databaseName);
+            database.DBConnection->setPort(port);
+            database.DBConnection->setUserName(userName);
+            database.DBConnection->setPassword(password);
+            if (!database.DBConnection->open()) {
+                qDebug() << database.DBConnection->lastError().text();
+            }
             pool.setLocalData(database);
+            pool.localData().trivialNameToUniqueID.insert({databaseName, UniqueID});
+        } else { //Pool has Local Data
+            auto PublicDBName = pool.localData().trivialNameToUniqueID.find(databaseName);
+            QString NameOfDBConnectionToThread;
+            QString UniqueConnectionName;
+
+            if (PublicDBName != pool.localData().trivialNameToUniqueID.end()) {
+                // this thread has a Connection to the Database
+                if (PublicDBName->second == pool.localData().DBConnection->connectionName()) {
+                    //already right connection
+                } else {
+                    //set the right connection
+                    NameOfDBConnectionToThread = PublicDBName->first;
+                    UniqueConnectionName = PublicDBName->second;
+                    //pool.localData().DBConnection->close();
+                    pool.localData().DBConnection = QSqlDatabase::database(UniqueConnectionName, false);
+                    pool.localData().DBConnection->setHostName(hostName);
+                    pool.localData().DBConnection->setDatabaseName(databaseName);
+                    pool.localData().DBConnection->setPort(port);
+                    pool.localData().DBConnection->setUserName(userName);
+                    pool.localData().DBConnection->setPassword(password);
+                    if(!pool.localData().DBConnection->open()) {
+                        qDebug() << pool.localData().DBConnection->lastError().text();
+                    }
+                }
+            } else {
+                //make new Database connection for this thread
+                QString UniqueID = QUuid::createUuid().toString();
+                pool.localData().DBConnection->close();
+                pool.localData().DBConnection = QSqlDatabase(QSqlDatabase::addDatabase(type, UniqueID));
+                pool.localData().DBConnection->setHostName(hostName);
+                pool.localData().DBConnection->setDatabaseName(databaseName);
+                pool.localData().DBConnection->setPort(port);
+                pool.localData().DBConnection->setUserName(userName);
+                pool.localData().DBConnection->setPassword(password);
+                if (!pool.localData().DBConnection->open()) {
+                    qDebug() << pool.localData().DBConnection->lastError().text();
+                }
+                pool.localData().trivialNameToUniqueID.insert({databaseName, UniqueID});
+            }
         }
-        return *pool.localData().db;
+        std::cerr << "Name To ID Mapping";
+        for ( auto const & foo : pool.localData().trivialNameToUniqueID) {
+            std::cerr << "Name " << foo.first.toStdString()
+                      << "\tID " << foo.second.toStdString()
+                      << "\n";
+        }
+        return pool.localData().DBConnection.value();
     }
 };
 
