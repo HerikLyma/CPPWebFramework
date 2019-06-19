@@ -7,7 +7,6 @@
 QT       += network xml sql
 QT       -= gui
 
-TARGET = CPPWebFramework
 TEMPLATE = lib
 
 DEFINES += CPPWEBFRAMEWORK_LIBRARY
@@ -48,10 +47,13 @@ SOURCES += \
     cwf/session.cpp \
     cwf/cppwebcontroller.cpp \
     cwf/sslloader.cpp \
-    cwf/filter.cpp
+    cwf/filter.cpp \
+    cwf/model.cpp \
+    cwf/modelbasicoperation.cpp \
+    cwf/sqlquerymanager.cpp
 
 HEADERS += \
-        cwf/cppwebframework_global.h \
+    cwf/cppwebframework_global.h \
     cwf/configuration.h \
     cwf/constants.h \
     cwf/cppwebapplication.h \
@@ -82,7 +84,10 @@ HEADERS += \
     cwf/response.h \
     cwf/session.h \
     cwf/cppwebcontroller.h \
-    cwf/sslloader.h
+    cwf/sslloader.h \
+    cwf/model.h \
+    cwf/modelbasicoperation.h \
+    cwf/sqlquerymanager.h
 
 DISTFILES += \
     server/config/ssl/my.key \
@@ -120,13 +125,21 @@ win32 {
     config.files   = server/*
 }
 
+CONFIG += debug_and_release
+CONFIG += build_all
+
+CONFIG(debug, debug|release) {
+    TARGET = CPPWebFrameworkd
+} else {
+    TARGET = CPPWebFramework
+    QMAKE_CXXFLAGS_RELEASE -= -O1
+    QMAKE_CXXFLAGS_RELEASE -= -O2
+    QMAKE_CXXFLAGS_RELEASE += -O3
+}
+
 INSTALLS += target
 INSTALLS += headers
 INSTALLS += config
-
-QMAKE_CXXFLAGS_RELEASE -= -O1
-QMAKE_CXXFLAGS_RELEASE -= -O2
-QMAKE_CXXFLAGS_RELEASE += -O3
 
 QMAKE_CXXFLAGS += -std=c++11
 

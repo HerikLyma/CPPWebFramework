@@ -32,8 +32,12 @@ set(CPP_WebFrameWork_SRCS
     cwf/session.cpp
     cwf/cppwebcontroller.cpp
     cwf/sslloader.cpp
+    cwf/model.cpp
+    cwf/modelbasicoperation.cpp
+    cwf/sqlquerymanager.cpp
     cwf/cstlcompilerobject.h
     cwf/variant.h
+    cwf/dbstorage.h
     )
 
 add_library(CPPWebFramework SHARED ${CPP_WebFrameWork_SRCS} )

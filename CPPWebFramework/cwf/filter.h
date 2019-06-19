@@ -26,7 +26,7 @@ public:
     /**
      * @brief Virtual destructor.
      */
-    virtual ~Filter();
+    virtual ~Filter() = default;
     /**
      * @brief This method will be called always that the CppWebServer receives a requisition.
      * @param request  : This is a reference to the Request.

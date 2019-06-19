@@ -12,6 +12,7 @@
 #include <QVector>
 #include <QByteArray>
 #include <QNetworkCookie>
+#include "urlencoder.h"
 #include "cppwebframework_global.h"
 
 CWF_BEGIN_NAMESPACE
@@ -91,7 +92,10 @@ public:
      * @param const QByteArray &name : Parameter name.
      * @return QByteArray : Parameter value.
      */
-    inline QByteArray getParameter(const QByteArray &name) const noexcept { return parameters.value(name); }
+    inline QByteArray getParameter(const QByteArray &name, bool urlDecode = true, bool replacePlusForSpace = true) const noexcept
+    {
+        return urlDecode ? URLEncoder::paramDecode(parameters.value(name), replacePlusForSpace).toUtf8() : parameters.value(name);
+    }
     /**
      * @brief Returns all parameters with a specific name.
      * @param const QByteArray &name : Parameter name.

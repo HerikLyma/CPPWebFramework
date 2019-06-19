@@ -15,7 +15,7 @@ CWF_BEGIN_NAMESPACE
 
 bool HttpParser::extractHeaderAndBody(QByteArray &httpMessage)
 {
-    int index = httpMessage.indexOf(HTTP::END_OF_MENSAGE);
+    int index = httpMessage.indexOf(HTTP::END_OF_MESSAGE);
     if(index != -1)
     {
         index += 4;

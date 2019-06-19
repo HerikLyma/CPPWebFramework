@@ -38,7 +38,7 @@ public:
     /**
      * @brief Destructor.
      */
-    virtual ~Controller();
+    virtual ~Controller() = default;
     /**
      * @brief This is an virtual method that can be overloaded to attend the delete request method.
      * @param req    : This is a reference to the Request.

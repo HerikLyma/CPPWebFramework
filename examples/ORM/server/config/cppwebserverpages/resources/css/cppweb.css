@@ -1,0 +1,119 @@
+body 
+{
+    margin: 10px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 p, ul, ol 
+{
+    margin: 0 0 0.5em;
+}
+
+h1 
+{
+    font-size: 50pt;
+    margin: 0.5em 0 0;
+}
+
+h2 
+{
+    font-size: 16pt;
+}
+
+h3 
+{
+    font-size: 13pt;
+}
+
+h4 
+{
+    font-size: 12pt;
+}
+
+br.separator 
+{
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.container 
+{
+    padding: 10px;
+    margin: 0 0 10px;
+}
+
+.curved 
+{
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+}
+
+.footer 
+{
+    font-size: 10pt;
+    color: #666;
+}
+
+#menu 
+{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    min-width: 720px;
+    max-width: 1000px;
+}
+
+#nav 
+{
+    background-color: #DCDCDC;
+    margin: 0 0 10px;
+    padding: 0;
+}
+
+#nav span 
+{
+    float: left;
+}
+
+#nav span a 
+{
+    display: block;
+    padding: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #fff;
+}
+
+#nav span a:link,
+#nav span a:visited,
+#nav span a:hover,
+#nav span a:active 
+{
+    color: #666;
+    text-decoration: none;
+}
+
+#nav span#authors 
+{
+    float: right;
+    margin-right: 0;
+}
+
+#server 
+{
+    text-align: center;
+    padding: 10px;
+    margin: 0 40px 20px;
+    background-color: #00FF00;
+}
+
+#server h2 
+{
+    font-size: 14pt;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}

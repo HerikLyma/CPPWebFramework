@@ -20,10 +20,6 @@ void Controller::doMessage(Request &req, Response &resp, const QString &method) 
         resp.sendError(Response::SC_BAD_REQUEST, msg.toLatin1());
 }
 
-Controller::~Controller()
-{
-}
-
 void Controller::doDelete(Request &req, Response &resp) const
 {
     doMessage(req, resp, HTTP::METHOD::DELETE);

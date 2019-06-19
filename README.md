@@ -143,6 +143,75 @@ int main(int argc, char *argv[])
 }
 ```
 
+<hr/><b>ORM (Object Relational Mapper) - Experimental - Example</b></br></br>
+
+```cpp
+#include <usermodel.h>
+#include <cwf/cppwebapplication.h>
+#include <cwf/sqldatabasestorage.h>
+/*
+* ORM (Experimental) - Tested only on PostgreSQL
+*/
+CWF::SqlDatabaseStorage conexao("QPSQL", "localhost", "postgres", "postgres", "1234", 5432);
+
+class ORMController : public CWF::Controller
+{
+public:
+    void doGet(CWF::Request &request, CWF::Response &response) const override
+    {
+        UserModel user{conexao};
+        user.setName("Herik Lima");
+        user.setPhone("+55 11 9 99999-0000");
+        user.setCountry("Brazil");
+        user.setState("São Paulo");
+        response.write(QByteArray("<html><body>") + (user.save() ? "Saved" : "Error") + "</body></html>");
+    }
+};
+//Call
+//http://localhost:8080/orm
+int main(int argc, char *argv[])
+{        
+    CWF::CppWebApplication server(argc, argv, "/home/herik/CPPWebFramework/examples/ORM/server");
+    UserModel{conexao}.updateDB();//Create or update the table in database
+    server.addController<ORMController>("/orm");
+    return server.start();
+}
+
+//usermodel.h
+#ifndef USERMODEL_H
+#define USERMODEL_H
+
+#include <cwf/model.h>
+
+class UserModel : public CWF::Model
+{
+    Q_OBJECT
+    Q_PROPERTY(QString name READ getName WRITE setName)
+    Q_PROPERTY(QString phone READ getPhone WRITE setPhone)
+    Q_PROPERTY(QString country READ getCountry WRITE setCountry)
+    Q_PROPERTY(QString state READ getState WRITE setState)
+    QString name;
+    QString phone;
+    QString country;
+    QString state;
+public:
+    explicit UserModel(CWF::SqlDatabaseStorage &connection) : CWF::Model(connection, "usuario") {}
+public slots:
+    QString getName() const { return name; }
+    void setName(const QString &value) { name = value; }
+    QString getPhone() const { return phone; }
+    void setPhone(const QString &value) { phone = value; }
+    QString getCountry() const { return country; }
+    void setCountry(const QString &value) { country = value; }
+    QString getState() const { return state; }
+    void setState(const QString &value) { state = value; }
+};
+
+#endif // USERMODEL_H
+
+```
+
+
 </br><hr/><b>Installation</b></br>
 <ol>
     <li>Download and install Qt 5.9 or higher: https://www.qt.io/download-open-source/</li>

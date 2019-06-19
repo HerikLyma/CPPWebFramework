@@ -118,7 +118,7 @@ void Response::flushBuffer()
                     sendBytes(socket, HTTP::END_LINE, timeOut);
                 }
             }
-            sendBytes(socket, HTTP::END_OF_MENSAGE_WITH_ZERO, timeOut);
+            sendBytes(socket, HTTP::END_OF_MESSAGE_WITH_ZERO, timeOut);
         }
         socket.disconnectFromHost();
         content.clear();

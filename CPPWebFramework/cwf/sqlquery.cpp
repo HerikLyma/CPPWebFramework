@@ -58,8 +58,11 @@ QJsonObject SqlQuery::exec()
 
 QJsonObject SqlQuery::exec(const QString &query)
 {
-    prepare(query);
-    return exec();
+    if(QSqlQuery::exec(query))
+    {
+        return QJsonObject{{"success", true}, {"message", "Success"}};
+    }
+    return QJsonObject{{"success", false}, {"message", lastError().text()}};
 }
 
 QJsonArray SqlQuery::toJson()
