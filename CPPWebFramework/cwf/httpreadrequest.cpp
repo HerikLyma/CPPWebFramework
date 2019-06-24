@@ -65,7 +65,13 @@ void HttpReadRequest::run()
     {
         if(socket->waitForReadyRead())
         {
-            QByteArray req(socket->readAll());
+            QByteArray req;
+            try {
+                req = socket->readAll();
+            } catch (const std::bad_alloc & e) {
+                qDebug() << e.what() << "\n";
+            }
+
 
             HttpParser parser(req);
             if(parser.valid)
@@ -139,9 +145,15 @@ bool HttpReadRequest::readBody(HttpParser &parser, Request &request, Response &r
         if(socket->waitForReadyRead(10))
         {
             if (content.size() > maxUploadFile) {
-                socket->readAll();
+                socket->readAll();// what if the  internal buffer throws a
             } else {
-                content += socket->readAll();
+                try {
+                    content += socket->readAll();
+                } catch (const std::bad_alloc &e) {
+                    qDebug() << e.what() << "\n";
+                    break;
+                }
+
             }
         }
 

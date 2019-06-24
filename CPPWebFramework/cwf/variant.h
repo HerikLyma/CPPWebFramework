@@ -7,7 +7,7 @@
 
 #ifndef VARIANT_H
 #define VARIANT_H
-
+// clazy:excludeall=const-signal-or-slot
 #include <QObject>
 #include <QVariant>
 #include "cppwebframework_global.h"

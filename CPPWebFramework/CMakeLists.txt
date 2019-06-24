@@ -37,7 +37,7 @@ set(CPP_WebFrameWork_SRCS
     cwf/sqlquerymanager.cpp
     cwf/cstlcompilerobject.h
     cwf/variant.h
-    cwf/dbstorage.h
+
     )
 
 add_library(CPPWebFramework SHARED ${CPP_WebFrameWork_SRCS} )
@@ -50,5 +50,5 @@ target_link_libraries(
     Qt5::Sql
 
 )
-
+INSTALL(TARGETS CPPWebFramework LIBRARY DESTINATION lib COMPONENT CPPWebFramework)
 add_definitions(-DCPPWEBFRAMEWORK_LIBRARY)
