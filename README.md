@@ -245,6 +245,6 @@ public slots:
     <li>Open your browser and type: http://localhost to check if the server is online</li>
     <li>If you want to test your own examples, please follow the steps demonstrated on the CPPWebFramework/examples/helloworld.Dockerfile file, build and run the image.</li>
 </ol>
-<hr/><b>Site and documentation:</b> https://www.cppwebframework.com <br>
+<hr/>
 <b>cppwebframework mailing list:</b> https://groups.google.com/forum/#!forum/cppwebframework <br>
 <b>Videos:</b> https://www.youtube.com/channel/UCf-Jt44A1k-PQ6z_mhN2GYQ
