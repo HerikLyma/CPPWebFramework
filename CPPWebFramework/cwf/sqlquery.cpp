@@ -84,12 +84,14 @@ QJsonArray SqlQuery::toJson()
             for(int i = 0; i < total; ++i)
             {
                 QVariant var(record().value(i));
-                if(var.type() == QVariant::Double)
-                    json[columns[i]] = var.toDouble();
+                if(var.type() == QVariant::Bool)
+                    json[columns[i]] = var.toBool();
                 else if(var.type() == QVariant::Int)
                     json[columns[i]] = var.toInt();
-                else if(var.type() == QVariant::Bool)
-                    json[columns[i]] = var.toBool();
+                else if(var.type() == QVariant::LongLong)
+                    json[columns[i]] = var.toLongLong();
+                else if(var.type() == QVariant::Double)
+                    json[columns[i]] = var.toDouble();
                 else
                     json[columns[i]] = var.toString();
             }
