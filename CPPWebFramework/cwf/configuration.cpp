@@ -11,9 +11,8 @@
 
 CWF_BEGIN_NAMESPACE
 
-Configuration::Configuration(const QString &serverFilesPath)
+Configuration::Configuration(const QString &serverFilesPath) : path(serverFilesPath)
 {            
-    path = serverFilesPath;
     FileManager::removeLastBar(path);
     const QString iniFile("/config/CPPWeb.ini");
     if(QFile(path + iniFile).exists())
