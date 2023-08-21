@@ -60,7 +60,6 @@ void HttpParser::doParseHttpHeader(QByteArray &httpMessage)
         if(line.isEmpty())
             continue;
         column = line.indexOf(':');
-
         QByteArray key = line.left(column).trimmed().toLower();
         headerField.insert(key, line.mid(column + 1).trimmed());
     }
