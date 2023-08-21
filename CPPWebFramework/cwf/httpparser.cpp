@@ -60,12 +60,14 @@ void HttpParser::doParseHttpHeader(QByteArray &httpMessage)
         if(line.isEmpty())
             continue;
         column = line.indexOf(':');
-        headerField.insert(line.left(column).trimmed(), line.mid(column + 1).trimmed());
+
+        QByteArray key = line.left(column).trimmed().toLower();
+        headerField.insert(key, line.mid(column + 1).trimmed());
     }
 
-    contentLenght = headerField.value(HTTP::CONTENT_LENGTH).toLongLong();
-    contentType   = headerField.value(HTTP::CONTENT_TYPE);
-    multiPart     = contentType.contains(HTTP::MULTIPART);
+    contentLenght = headerField.value(HTTP::CONTENT_LENGTH.toLower()).toLongLong();
+    contentType   = headerField.value(HTTP::CONTENT_TYPE.toLower());
+    multiPart     = contentType.contains(HTTP::MULTIPART.toLower());
     if(contentType.contains(HTTP::URLENCODED))
         doParseBody();
 
